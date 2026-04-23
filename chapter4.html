@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics Chapter 4 - Toppers Edition</title>
+    <style>
+        /* BASE RESET */
+        * { box-sizing: border-box; }
+        body { background-color: #000; font-family: 'Arial', sans-serif; margin: 0; padding: 15px; overflow-x: hidden; }
+
+        /* HEADER AREA (Photo 1000022966) */
+        .nav-header { 
+            display: flex; justify-content: space-between; align-items: center; 
+            padding: 10px 5%; margin-bottom: 25px; 
+        }
+        .back-btn { 
+            background: none; border: 2px solid #00d4ff; color: #00d4ff; 
+            padding: 8px 20px; border-radius: 8px; font-weight: bold; 
+            text-decoration: none; text-transform: uppercase;
+        }
+        .top-brand { text-align: right; line-height: 1.2; }
+        .s-study { color: #ffcc00; font-size: 0.75rem; font-weight: bold; display: block; }
+        .f-top { color: #fff; font-size: 1.3rem; font-weight: 900; }
+
+        /* FULL RAINBOW CARD - NO WHITE BG (Photo 1000023854) */
+        .rainbow-card {
+            padding: 35px 20px; border-radius: 40px; margin-bottom: 40px; 
+            position: relative; overflow: hidden;
+            background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8);
+            background-size: 400% 400%;
+            animation: moveBg 12s ease infinite;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.7);
+        }
+        @keyframes moveBg { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+
+        .topic-title { color: #000; font-size: 2.1rem; font-weight: 900; margin-bottom: 25px; border-bottom: 5px solid #000; display: inline-block; }
+
+        /* CONTENT BOXES - Glass Style (No White Box) */
+        .content-box { 
+            background: rgba(255, 255, 255, 0.12); 
+            padding: 20px; border-radius: 18px; margin-bottom: 15px; 
+            color: #000; font-size: 1.2rem; border: 1px solid rgba(0,0,0,0.1);
+            backdrop-filter: blur(3px);
+        }
+        
+        .key-points-area { 
+            background: rgba(0,0,0,0.06); padding: 20px; border-radius: 18px; 
+            border: 2px dashed #000; color: #000; font-weight: bold; margin-bottom: 25px; 
+        }
+
+        /* BLACK FORMULA BOX (Photo 1000023854) */
+        .formula-box { 
+            background: #000; color: #00ffd5; padding: 30px 15px; border-radius: 25px; 
+            text-align: center; font-size: 2.3rem; font-weight: bold; 
+            box-shadow: 0 12px 25px rgba(0,0,0,0.5); margin-top: 15px;
+        }
+
+        /* VERTICAL MATH (Photo 1000023373) */
+        .math-v { display: flex; align-items: center; justify-content: center; margin: 15px 0; font-size: 1.7rem; font-weight: bold; color: #000; }
+        .frac { display: inline-flex; flex-direction: column; align-items: center; margin: 0 10px; }
+        .num { border-bottom: 3px solid #000; padding: 0 12px; }
+        .den { padding: 0 12px; }
+
+        .label-exp { color: #000; font-weight: 900; text-transform: uppercase; font-size: 0.95rem; margin-bottom: 8px; display: block; padding-left: 5px; }
+    </style>
+</head>
+<body>
+
+    <div class="nav-header">
+        <a href="phy-chapters.html" class="back-btn">BACK</a>
+        <div class="top-brand">
+            <span class="s-study">SMART STUDY</span>
+            <span class="f-top">FOR TOPPERS</span>
+        </div>
+    </div>
+
+    <div class="rainbow-card">
+        <div class="topic-title">1. Magnetic Force</div>
+        <div class="content-box"><b>English:</b> Force experienced by a moving charge or wire in a magnetic field.</div>
+        <div class="content-box"><b>Hindi:</b> Magnetic field mein kisi moving charge ya wire par lagne wala force.</div>
+        <div class="key-points-area">Key Points: Force tab max hota hai jab angle 90 degree ho.</div>
+        <span class="label-exp">English Explanation</span>
+        <div class="formula-box">F = B I L sin(&theta;)</div>
+    </div>
+
+    <div class="rainbow-card">
+        <div class="topic-title">2. Force on Moving Charge</div>
+        <div class="content-box"><b>English:</b> Magnetic field exerts force on charge 'q' moving with velocity 'v'.</div>
+        <div class="content-box"><b>Hindi:</b> 'B' field mein 'v' velocity se chalne wale 'q' charge par lagne wala mechanical force.</div>
+        <div class="key-points-area">Key Points: Agar velocity zero hai, toh force bhi zero hoga.</div>
+        <span class="label-exp">English Explanation</span>
+        <div class="formula-box">F = q v B sin(&theta;)</div>
+    </div>
+
+    <div class="rainbow-card">
+        <div class="topic-title">3. Lorentz Force</div>
+        <div class="content-box"><b>English:</b> Combined force of Electric and Magnetic fields on a moving charge.</div>
+        <div class="content-box"><b>Hindi:</b> Electric aur Magnetic dono fields ka milakar lagne wala total force.</div>
+        <div class="key-points-area">Key Points: Ye force dono fields ke vector sum ke barabar hota hai.</div>
+        <span class="label-exp">English Explanation</span>
+        <div class="formula-box">F = q [ E + (v &times; B) ]</div>
+    </div>
+
+    <div class="rainbow-card">
+        <div class="topic-title">4. Motion of Charge</div>
+        <div class="content-box"><b>English:</b> Trajectory of a charged particle when entering a uniform B-field.</div>
+        <div class="content-box"><b>Hindi:</b> Magnetic field mein ghusne ke baad charge particle kis raste par chalta hai.</div>
+        <div class="key-points-area">Key Points: Rasta entry angle par depend karta hai.</div>
+        <span class="label-exp">English Explanation</span>
+        <div class="content-box" style="background: rgba(0,0,0,0.05);">
+            • 0°/180°: Straight Line<br>
+            • 90°: Circular Path<br>
+            • Other Angle: Helical Path
+        </div>
+    </div>
+
+    <div class="rainbow-card">
+        <div class="topic-title">5. Circular Motion</div>
+        <div class="content-box"><b>English:</b> At 90 degrees, magnetic force provides necessary centripetal force.</div>
+        <div class="content-box"><b>Hindi:</b> 90 degree par magnetic force charge ko gole mein ghumane wala force deta hai.</div>
+        <div class="key-points-area">Key Points: Radius of path mass aur velocity ke directly proportional hai.</div>
+        <span class="label-exp">English Explanation</span>
+        <div class="math-v">qvB = <div class="frac"><span class="num">mv<sup>2</sup></span><span class="den">r</span></div></div>
+        <div class="formula-box">r = <div class="math-v" style="display:inline-flex; color:#00ffd5; margin:0;"><div class="frac"><span class="num" style="border-color:#00ffd5">mv</span><span class="den">qB</span></div></div></div>
+    </div>
+
+    <div class="rainbow-card">
+        <div class="topic-title">6. Helical Motion</div>
+        <div class="content-box"><b>English:</b> Spiral movement when velocity is at an acute angle to field.</div>
+        <div class="content-box"><b>Hindi:</b> Spiral rasta jab velocity field ke saath kisi angle par hoti hai.</div>
+        <div class="key-points-area">Key Points: Pitch wo doori hai jo ek ghere mein charge aage badhta hai.</div>
+        <span class="label-exp">English Explanation</span>
+        <div class="formula-box">Pitch = v cos&theta; &times; T</div>
+    </div>
+
+    <div class="rainbow-card">
+        <div class="topic-title">7. Magnetic Field (B)</div>
+        <div class="content-box"><b>English:</b> Region around a magnet where magnetic influence is observed.</div>
+        <div class="content-box"><b>Hindi:</b> Magnet ke charo taraf ka area jaha magnetic force mehsoos kiya ja sake.</div>
+        <div class="key-points-area">Key Points: SI Unit: Tesla (T). CGS Unit: Gauss (G).</div>
+        <span class="label-exp">English Explanation</span>
+        <div class="formula-box" style="font-size: 1.5rem;">B = F / (q v sin&theta;)</div>
+    </div>
+
+    <div class="rainbow-card">
+        <div class="topic-title">8. Magnetic Field Lines</div>
+        <div class="content-box"><b>English:</b> Imaginary curves representing the direction of the magnetic field.</div>
+        <div class="content-box"><b>Hindi:</b> Field ki direction dikhane wali kalpanik lines jo North se shuru hoti hain.</div>
+        <div class="key-points-area">Key Points: Ye lines kabhi ek dusre ko cross nahi karti.</div>
+        <span class="label-exp">English Explanation</span>
+        <div class="content-box" style="background: rgba(0,0,0,0.05);">Lines denser hone ka matlab hai ki field bahut strong hai.</div>
+    </div>
+
+    <div class="rainbow-card">
+        <div class="topic-title">9. Properties of Lines</div>
+        <div class="content-box"><b>English:</b> They form closed loops and emerge from North pole.</div>
+        <div class="content-box"><b>Hindi:</b> Lines jo closed loops banati hain aur ek dusre ko nahi kaati.</div>
+        <div class="key-points-area">Key Points: Bahar: North to South | Andar: South to North.</div>
+        <span class="label-exp">English Explanation</span>
+        <div class="content-box" style="background: rgba(0,0,0,0.05);">1. Form continuous closed loops.<br>2. Tangent gives direction of B.</div>
+    </div>
+
+<div class="rainbow-card">
+    <div class="topic-title">1. Biot-Savart Law</div>
+    <div class="content-box"><b>English:</b> It gives the magnetic field produced by a small current-carrying element.</div>
+    <div class="content-box"><b>Hindi:</b> Ye law kisi chhote current element ki wajah se paida hone wali magnetic field batata hai.</div>
+    <div class="key-points-area">Key Points: Magnetic field (dB) current aur length ke directly proportional hoti hai.</div>
+    <span class="label-exp">English Explanation</span>
+    <div class="formula-box">dB = <div class="math-v" style="display:inline-flex; color:#00ffd5; margin:0;"><div class="frac"><span class="num">&mu;₀</span><span class="den">4&pi;</span></div></div> &sdot; <div class="math-v" style="display:inline-flex; color:#00ffd5; margin:0;"><div class="frac"><span class="num">I dl sin&theta;</span><span class="den">r²</span></div></div></div>
+</div>
+
+<div class="rainbow-card">
+    <div class="topic-title">2. Field Due to Current Element</div>
+    <div class="content-box"><b>English:</b> Field produced by 'I dl' at a distance 'r'.</div>
+    <div class="content-box"><b>Hindi:</b> Kisi current element 'I dl' se 'r' doori par magnetic field ki calculation.</div>
+    <div class="key-points-area">Key Points: Direction Right Hand Thumb Rule se nikaali jati hai.</div>
+    <span class="label-exp">English Explanation</span>
+    <div class="formula-box" style="font-size:1.8rem;">dB &prop; I, dB &prop; dl, dB &prop; sin&theta;, dB &prop; 1/r²</div>
+</div>
+
+<div class="rainbow-card">
+    <div class="topic-title">3. Straight Conductor</div>
+    <div class="content-box"><b>English:</b> Magnetic field at a point near an infinitely long straight wire.</div>
+    <div class="content-box"><b>Hindi:</b> Ek lambe seedhe taar ke paas kisi point par magnetic field.</div>
+    <div class="key-points-area">Key Points: Field lines taar ke charo taraf concentric circles banati hain.</div>
+    <span class="label-exp">English Explanation</span>
+    <div class="formula-box">B = <div class="math-v" style="display:inline-flex; color:#00ffd5; margin:0;"><div class="frac"><span class="num">&mu;₀ I</span><span class="den">2&pi; r</span></div></div></div>
+</div>
+
+<div class="rainbow-card">
+    <div class="topic-title">4. Circular Loop Field</div>
+    <div class="content-box"><b>English:</b> Magnetic field at any point on the axis of a circular current loop.</div>
+    <div class="content-box"><b>Hindi:</b> Ek circular loop ke axis par magnetic field ki value.</div>
+    <div class="key-points-area">Key Points: Axis par field hamesha loop ke plane ke perpendicular hoti hai.</div>
+    <span class="label-exp">English Explanation</span>
+    <div class="formula-box" style="font-size:1.5rem;">B = <div class="math-v" style="display:inline-flex; color:#00ffd5; margin:0;"><div class="frac"><span class="num">&mu;₀ I R²</span><span class="den">2(R² + x²)^{3/2}</span></div></div></div>
+</div>
+
+<div class="rainbow-card">
+    <div class="topic-title">5. Field at Center of Loop</div>
+    <div class="content-box"><b>English:</b> Special case of circular loop where point is at the center (x=0).</div>
+    <div class="content-box"><b>Hindi:</b> Circular loop ke ekdam beech (center) mein magnetic field.</div>
+    <div class="key-points-area">Key Points: Center par field sabse zyada strong hoti hai.</div>
+    <span class="label-exp">English Explanation</span>
+    <div class="formula-box">B = <div class="math-v" style="display:inline-flex; color:#00ffd5; margin:0;"><div class="frac"><span class="num">&mu;₀ I</span><span class="den">2 R</span></div></div></div>
+</div>
+
+<div class="rainbow-card">
+    <div class="topic-title">6. Ampere's Circuital Law</div>
+    <div class="content-box"><b>English:</b> Line integral of magnetic field around any closed loop is &mu;₀ times total current.</div>
+    <div class="content-box"><b>Hindi:</b> Kisi band loop ke charo taraf magnetic field ka total sum total current ka &mu;₀ guna hota hai.</div>
+    <div class="key-points-area">Key Points: Ye law Gauss Law ke jaisa hi hai par magnetism ke liye.</div>
+    <span class="label-exp">English Explanation</span>
+    <div class="formula-box">&oint; B &sdot; dl = &mu;₀ I</div>
+</div>
+
+<div class="rainbow-card">
+    <div class="topic-title">7. Application: Straight Wire</div>
+    <div class="content-box"><b>English:</b> Using Ampere's Law to find field for an infinitely long wire.</div>
+    <div class="content-box"><b>Hindi:</b> Ampere Law ka use karke seedhe taar ki magnetic field nikalna.</div>
+    <div class="key-points-area">Key Points: Isme loop (Amperian loop) circular lete hain.</div>
+    <span class="label-exp">English Explanation</span>
+    <div class="formula-box">B (2&pi;r) = &mu;₀ I</div>
+</div>
+
+<div class="rainbow-card">
+    <div class="topic-title">8. Application: Solenoid</div>
+    <div class="content-box"><b>English:</b> Field inside a long coil of wire with many turns.</div>
+    <div class="content-box"><b>Hindi:</b> Ek lambi coil (Solenoid) ke andar magnetic field ki calculation.</div>
+    <div class="key-points-area">Key Points: Solenoid ke bahar magnetic field zero mani jati hai.</div>
+    <span class="label-exp">English Explanation</span>
+    <div class="formula-box">B = &mu;₀ n I</div>
+</div>
+
+<div class="rainbow-card">
+    <div class="topic-title">9. Application: Toroid</div>
+    <div class="content-box"><b>English:</b> A solenoid bent into the form of a closed ring.</div>
+    <div class="content-box"><b>Hindi:</b> Ek Solenoid jise gol ring ki tarah mod diya gaya ho.</div>
+    <div class="key-points-area">Key Points: Toroid ke andar khali jagah aur bahar field zero hoti hai.</div>
+    <span class="label-exp">English Explanation</span>
+    <div class="formula-box">B = <div class="math-v" style="display:inline-flex; color:#00ffd5; margin:0;"><div class="frac"><span class="num">&mu;₀ N I</span><span class="den">2&pi; r</span></div></div></div>
+</div>
+<div class="rainbow-card">
+    <div class="topic-title">1. Force on Current Wire</div>
+    <div class="content-box"><b>English:</b> A current-carrying conductor experiences a magnetic force when placed in an external magnetic field.</div>
+    <div class="content-box"><b>Hindi:</b> Jab kisi current wale taar ko magnetic field mein rakha jata hai, toh us par ek bal (force) lagta hai.</div>
+    <div class="key-points-area">Key Points: Force tab zero hota hai jab taar field ke parallel rakha ho.</div>
+    <span class="label-exp">English Explanation</span>
+    <div class="formula-box">F = B I l sin(&theta;)</div>
+</div>
+
+<div class="rainbow-card">
+    <div class="topic-title">2. Fleming's Left Hand Rule</div>
+    <div class="content-box"><b>English:</b> Rule to find the direction of magnetic force on a conductor.</div>
+    <div class="content-box"><b>Hindi:</b> Force ki direction nikalne ke liye baayein haath (left hand) ka niyam.</div>
+    <div class="key-points-area">Key Points: Thumb=Force, Forefinger=Field, Middle finger=Current.</div>
+    <span class="label-exp">English Explanation</span>
+    <div class="content-box" style="background: rgba(0,0,0,0.05);">
+        Keep fingers mutually perpendicular:<br>
+        • <b>Thumb:</b> Direction of Motion/Force<br>
+        • <b>Forefinger:</b> Magnetic Field (B)<br>
+        • <b>Central Finger:</b> Current (I)
+    </div>
+</div>
+
+<div class="rainbow-card">
+    <div class="topic-title">3. Parallel Conductors Force</div>
+    <div class="content-box"><b>English:</b> Two parallel wires carrying current exert force on each other.</div>
+    <div class="content-box"><b>Hindi:</b> Do parallel taar ek dusre par magnetic force lagate hain.</div>
+    <div class="key-points-area">Key Points: Same direction current = Attract | Opposite direction = Repel.</div>
+    <span class="label-exp">English Explanation</span>
+    <div class="math-v">F/l = <div class="frac"><span class="num">&mu;₀ I₁ I₂</span><span class="den">2&pi; d</span></div></div>
+    <div class="formula-box">f = <div class="math-v" style="display:inline-flex; color:#00ffd5; margin:0;"><div class="frac"><span class="num" style="border-color:#00ffd5">&mu;₀ I₁ I₂</span><span class="den">2&pi; d</span></div></div></div>
+</div>
+
+<div class="rainbow-card">
+    <div class="topic-title">4. Definition of Ampere</div>
+    <div class="content-box"><b>English:</b> Standard unit of current defined by the force between two wires.</div>
+    <div class="content-box"><b>Hindi:</b> Do taaron ke beech lagne wale force se 1 Ampere ki definition.</div>
+    <div class="key-points-area">Key Points: 1m doori par 2 &times; 10⁻⁷ N/m ka force lagna chahiye.</div>
+    <span class="label-exp">English Explanation</span>
+    <div class="content-box" style="background: rgba(0,0,0,0.05);">It is that steady current which produces a force of 2 &times; 10⁻⁷ Newton per meter.</div>
+</div>
+
+<div class="rainbow-card">
+    <div class="topic-title">5. Torque on Current Loop</div>
+    <div class="content-box"><b>English:</b> A current loop in a uniform magnetic field experiences a turning effect.</div>
+    <div class="content-box"><b>Hindi:</b> Magnetic field mein rakha current loop ghumne lagta hai (Torque).</div>
+    <div class="key-points-area">Key Points: Torque loop ko field ke perpendicular lane ki koshish karta hai.</div>
+    <span class="label-exp">English Explanation</span>
+    <div class="formula-box">&tau; = N I A B sin(&theta;)</div>
+</div>
+
+<div class="rainbow-card">
+    <div class="topic-title">6. Magnetic Dipole Moment</div>
+    <div class="content-box"><b>English:</b> Strength of a magnetic dipole, defined as the product of current and area.</div>
+    <div class="content-box"><b>Hindi:</b> Current aur area ka product, jo magnet ki takat batata hai.</div>
+    <div class="key-points-area">Key Points: Unit: Ampere-meter² (A m²).</div>
+    <span class="label-exp">English Explanation</span>
+    <div class="formula-box">M = N I A</div>
+</div>
+
+<div class="rainbow-card">
+    <div class="topic-title">7. Direction of Moment</div>
+    <div class="content-box"><b>English:</b> Direction is determined by the Right-Hand Thumb Rule.</div>
+    <div class="content-box"><b>Hindi:</b> Magnetic moment ki direction Right-Hand Thumb Rule se nikaalte hain.</div>
+    <div class="key-points-area">Key Points: Fingers ko current ki direction mein modo, thumb direction batayega.</div>
+    <span class="label-exp">English Explanation</span>
+    <div class="formula-box" style="font-size: 1.8rem;">Vector M = I &times; Vector A</div>
+</div>
+<div class="rainbow-card">
+    <div class="topic-title">1. Moving Coil Galvanometer</div>
+    <div class="content-box"><b>English:</b> An instrument used to detect and measure small electric currents.</div>
+    <div class="content-box"><b>Hindi:</b> Ek aisa yantra jo bahut chhote electric current ko naapne aur pata lagane ke kaam aata hai.</div>
+    <div class="key-points-area">Key Points: Isme coil ek strong magnetic field ke beech ghumti hai.</div>
+    <span class="label-exp">English Explanation</span>
+    <div class="formula-box">I = k &phi;</div>
+</div>
+
+<div class="rainbow-card">
+    <div class="topic-title">2. Principle of Galvanometer</div>
+    <div class="content-box"><b>English:</b> It works on the principle that a current-carrying coil in a magnetic field experiences torque.</div>
+    <div class="content-box"><b>Hindi:</b> Iska sidhhant ye hai ki magnetic field mein rakhi current coil par torque lagta hai.</div>
+    <div class="key-points-area">Key Points: Torque loop ko ghumane ki koshish karta hai (&tau; = NIAB).</div>
+    <span class="label-exp">English Explanation</span>
+    <div class="formula-box" style="font-size: 1.8rem;">Restoring Torque = Deflecting Torque</div>
+</div>
+
+<div class="rainbow-card">
+    <div class="topic-title">3. Sensitivity</div>
+    <div class="content-box"><b>English:</b> Deflection produced per unit current or voltage.</div>
+    <div class="content-box"><b>Hindi:</b> Thoda sa current dene par bhi galvanometer kitna deflection dikhata hai.</div>
+    <div class="key-points-area">Key Points: Isme Current Sensitivity (Si) aur Voltage Sensitivity (Sv) hoti hai.</div>
+    <span class="label-exp">English Explanation</span>
+    <div class="formula-box">Si = <div class="math-v" style="display:inline-flex; color:#00ffd5; margin:0;"><div class="frac"><span class="num" style="border-color:#00ffd5">NBA</span><span class="den">k</span></div></div></div>
+</div>
+
+<div class="rainbow-card">
+    <div class="topic-title">4. Conversion to Ammeter</div>
+    <div class="content-box"><b>English:</b> Done by connecting a low resistance (Shunt) in parallel with the galvanometer.</div>
+    <div class="content-box"><b>Hindi:</b> Galvanometer ke parallel mein ek chhota resistance (Shunt) lagakar Ammeter banate hain.</div>
+    <div class="key-points-area">Key Points: Ammeter hamesha series mein connect kiya jata hai.</div>
+    <span class="label-exp">English Explanation</span>
+    <div class="formula-box">S = <div class="math-v" style="display:inline-flex; color:#00ffd5; margin:0;"><div class="frac"><span class="num" style="border-color:#00ffd5">Ig G</span><span class="den">I - Ig</span></div></div></div>
+</div>
+
+<div class="rainbow-card">
+    <div class="topic-title">5. Conversion to Voltmeter</div>
+    <div class="content-box"><b>English:</b> Done by connecting a high resistance in series with the galvanometer.</div>
+    <div class="content-box"><b>Hindi:</b> Galvanometer ke saath series mein ek bada resistance lagakar Voltmeter banate hain.</div>
+    <div class="key-points-area">Key Points: Voltmeter hamesha parallel mein connect kiya jata hai.</div>
+    <span class="label-exp">English Explanation</span>
+    <div class="formula-box">R = <div class="math-v" style="display:inline-flex; color:#00ffd5; margin:0;"><div class="frac"><span class="num" style="border-color:#00ffd5">V</span><span class="den">Ig</span></div></div> - G</div>
+</div>
+
+<div class="rainbow-card">
+    <div class="topic-title">6. Cyclotron</div>
+    <div class="content-box"><b>English:</b> A device used to accelerate charged particles to high energies.</div>
+    <div class="content-box"><b>Hindi:</b> Ek aisi machine jo charged particles ko bahut high speed par bhagati hai.</div>
+    <div class="key-points-area">Key Points: Isme particles 'D' shape ke chambers (Dees) mein ghumte hain.</div>
+    <span class="label-exp">English Explanation</span>
+    <div class="content-box" style="background: rgba(0,0,0,0.05);">Used to study nuclear reactions by smashing particles.</div>
+</div>
+
+<div class="rainbow-card">
+    <div class="topic-title">7. Principle of Cyclotron</div>
+    <div class="content-box"><b>English:</b> Electric field accelerates the particle and Magnetic field makes it move in a circle.</div>
+    <div class="content-box"><b>Hindi:</b> Electric field speed badhati hai aur Magnetic field particle ko gol ghumati hai.</div>
+    <div class="key-points-area">Key Points: Particle ki frequency energy se independent hoti hai.</div>
+    <span class="label-exp">English Explanation</span>
+    <div class="formula-box" style="font-size:1.8rem;">qvB = mv²/r</div>
+</div>
+
+<div class="rainbow-card">
+    <div class="topic-title">8. Cyclotron Frequency</div>
+    <div class="content-box"><b>English:</b> The frequency at which the particle completes its circular path.</div>
+    <div class="content-box"><b>Hindi:</b> Wo frequency jis par particle apne chakkar poore karta hai.</div>
+    <div class="key-points-area">Key Points: Isse resonance frequency bhi kehte hain.</div>
+    <span class="label-exp">English Explanation</span>
+    <div class="formula-box">f = <div class="math-v" style="display:inline-flex; color:#00ffd5; margin:0;"><div class="frac"><span class="num" style="border-color:#00ffd5">q B</span><span class="den">2 &pi; m</span></div></div></div>
+</div>
+
+<div class="rainbow-card">
+    <div class="topic-title">9. Limitations</div>
+    <div class="content-box"><b>English:</b> Cannot accelerate neutral particles or very light ones like electrons.</div>
+    <div class="content-box"><b>Hindi:</b> Cyclotron se neutral particles (neutron) aur electrons ko accelerate nahi kiya ja sakta.</div>
+    <div class="key-points-area">Key Points: Electrons ka mass relativistic speed par badh jata hai.</div>
+    <span class="label-exp">English Explanation</span>
+    <div class="content-box" style="background: rgba(0,0,0,0.05);">It cannot be used for neutrons as they carry no charge.</div>
+</div>
+<div class="rainbow-card">
+    <div class="topic-title">1. Infinite Straight Wire</div>
+    <div class="content-box"><b>English:</b> Magnetic field at a distance 'r' from an infinitely long wire carrying current 'I'.</div>
+    <div class="content-box"><b>Hindi:</b> Ek anant lambe seedhe taar se 'r' doori par paida hone wali magnetic field.</div>
+    <div class="key-points-area">Key Points: Field lines taar ke charo taraf circular hoti hain.</div>
+    <span class="label-exp">English Explanation</span>
+    <div class="formula-box">B = <div class="math-v" style="display:inline-flex; color:#00ffd5; margin:0;"><div class="frac"><span class="num" style="border-color:#00ffd5">&mu;₀ I</span><span class="den">2&pi; r</span></div></div></div>
+</div>
+
+<div class="rainbow-card">
+    <div class="topic-title">2. Circular Loop</div>
+    <div class="content-box"><b>English:</b> Magnetic field produced by a circular coil at its center.</div>
+    <div class="content-box"><b>Hindi:</b> Ek circular loop (gole) ke center par magnetic field ki value.</div>
+    <div class="key-points-area">Key Points: Agar loop mein 'N' turns hain, toh field 'N' guna badh jati hai.</div>
+    <span class="label-exp">English Explanation</span>
+    <div class="formula-box">B = <div class="math-v" style="display:inline-flex; color:#00ffd5; margin:0;"><div class="frac"><span class="num" style="border-color:#00ffd5">&mu;₀ N I</span><span class="den">2 R</span></div></div></div>
+</div>
+
+<div class="rainbow-card">
+    <div class="topic-title">3. Solenoid</div>
+    <div class="content-box"><b>English:</b> A long tightly wound helical coil of insulated wire.</div>
+    <div class="content-box"><b>Hindi:</b> Taar ko spring ki tarah lapet kar banayi gayi coil (Solenoid) ke andar ki field.</div>
+    <div class="key-points-area">Key Points: Solenoid ke andar field hamesha uniform (ek jaisi) hoti hai.</div>
+    <span class="label-exp">English Explanation</span>
+    <div class="formula-box">B = &mu;₀ n I</div>
+</div>
+
+<div class="rainbow-card">
+    <div class="topic-title">4. Toroid</div>
+    <div class="content-box"><b>English:</b> A hollow circular ring on which a large number of turns of wire are wound.</div>
+    <div class="content-box"><b>Hindi:</b> Ek Solenoid jise mod kar ring bana diya gaya ho, uske andar ki field.</div>
+    <div class="key-points-area">Key Points: Toroid ke bahar aur beech ki khali jagah mein field zero hoti hai.</div>
+    <span class="label-exp">English Explanation</span>
+    <div class="formula-box">B = <div class="math-v" style="display:inline-flex; color:#00ffd5; margin:0;"><div class="frac"><span class="num" style="border-color:#00ffd5">&mu;₀ N I</span><span class="den">2&pi; r</span></div></div></div>
+</div>
+
+<div class="rainbow-card">
+    <div class="topic-title">5. Motion Parallel to Field</div>
+    <div class="content-box"><b>English:</b> When a charge moves along the direction of the magnetic field (0° or 180°).</div>
+    <div class="content-box"><b>Hindi:</b> Jab koi charge field ki hi direction mein ya uske opposite chalta hai.</div>
+    <div class="key-points-area">Key Points: Is case mein magnetic force zero hota hai.</div>
+    <span class="label-exp">English Explanation</span>
+    <div class="content-box" style="background: rgba(0,0,0,0.05);">Path: <b>Straight Line</b> (no change in direction).</div>
+    <div class="formula-box">F = q v B sin(0°) = 0</div>
+</div>
+
+<div class="rainbow-card">
+    <div class="topic-title">6. Motion Perpendicular to Field</div>
+    <div class="content-box"><b>English:</b> When a charge enters the field at an angle of 90°.</div>
+    <div class="content-box"><b>Hindi:</b> Jab koi charge field ke bilkul perpendicular (90 degree par) ghusta hai.</div>
+    <div class="key-points-area">Key Points: Isme force hamesha maximum hota hai.</div>
+    <span class="label-exp">English Explanation</span>
+    <div class="content-box" style="background: rgba(0,0,0,0.05);">Path: <b>Circular Path</b> (force works as centripetal force).</div>
+    <div class="formula-box">r = <div class="math-v" style="display:inline-flex; color:#00ffd5; margin:0;"><div class="frac"><span class="num" style="border-color:#00ffd5">mv</span><span class="den">qB</span></div></div></div>
+</div>
+
+<div class="rainbow-card">
+    <div class="topic-title">7. Motion at Angle</div>
+    <div class="content-box"><b>English:</b> When a charge enters the field at an acute angle &theta; (other than 0, 90, 180).</div>
+    <div class="content-box"><b>Hindi:</b> Jab koi charge kisi tede angle (acute angle) par field mein ghusta hai.</div>
+    <div class="key-points-area">Key Points: Velocity ke do components ban jate hain (v sin&theta; aur v cos&theta;).</div>
+    <span class="label-exp">English Explanation</span>
+    <div class="content-box" style="background: rgba(0,0,0,0.05);">Path: <b>Helical (Spiral) Path</b>.</div>
+    <div class="formula-box" style="font-size: 1.6rem;">Pitch = (v cos&theta;) &times; <div class="math-v" style="display:inline-flex; color:#00ffd5; margin:0;"><div class="frac"><span class="num" style="border-color:#00ffd5">2&pi;m</span><span class="den">qB</span></div></div></div>
+</div>
+<div style="text-align:center; margin-bottom:20px;">
+    <h1 style="color:#fff; font-family:sans-serif; text-transform:uppercase; text-shadow:2px 2px 10px rgba(0,0,0,0.5);">Chapter 4: 50 MCQ Practice</h1>
+    <p style="color:#000; font-family:sans-serif; font-weight:bold; background:#fff; display:inline-block; padding:2px 10px; border-radius:5px;">Target: 50/50 for Toppers</p>
+</div>
+
+<div id="quiz-box" style="max-width:600px; margin:auto; position:relative; z-index:1;"></div>
+
+<div id="quiz-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; z-index:9999; flex-direction:column; align-items:center; justify-content:center; pointer-events:none;">
+    <div id="status-strip" style="width:100%; text-align:center; padding:30px 0;">
+        <h1 id="status-title" style="margin:0; padding:0;"></h1>
+        <p id="status-message" style="margin:10px 0; font-family:sans-serif; font-weight:bold;"></p>
+        <p id="next-msg" style="margin:0; font-family:sans-serif;"></p>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+const questions = [
+{ q:"Magnetic field is produced by:",opts:["Static charge","Moving charge","Neutral atoms","None"],ans:1},
+{ q:"SI unit of magnetic field induction is:",opts:["Gauss","Tesla","Oersted","Weber"],ans:1},
+{ q:"Force on charge 'q' moving with 'v' in field 'B':",opts:["q(v.B)","q(v x B)","qv/B","Zero"],ans:1},
+{ q:"Path of charge entering 90° in B-field:",opts:["Straight","Helix","Circle","Parabola"],ans:2},
+{ q:"Magnetic field at center of circular coil:",opts:["μ₀I/2R","μ₀I/4R","Zero","μ₀I/R"],ans:0},
+{ q:"Work done by magnetic force on charge is:",opts:["Positive","Negative","Zero","Infinite"],ans:2},
+{ q:"Cyclotron accelerates which particle?",opts:["Electrons","Neutrons","Protons","None"],ans:2},
+{ q:"Ampere's Circuital Law is &oint;B.dl = ",opts:["μ₀I","I/μ₀","Zero","μ₀/I"],ans:0},
+{ q:"Force between parallel wires (same current direction):",opts:["Repulsive","Attractive","Zero","Perpendicular"],ans:1},
+{ q:"Unit of magnetic dipole moment is:",opts:["A m","A m²","Tesla","Weber"],ans:1},
+{ q:"Convert MCG to Ammeter by connecting:",opts:["High R series","Low R parallel","Low R series","None"],ans:1},
+{ q:"Ideal Ammeter resistance is:",opts:["Infinite","Zero","100Ω","1Ω"],ans:1},
+{ q:"Field inside a long ideal solenoid is:",opts:["Zero","Uniform","Non-uniform","Infinite"],ans:1},
+{ q:"Rule for direction of magnetic force:",opts:["Right Hand Thumb","Fleming's Left Hand","Lenz Law","Ohm's Law"],ans:1},
+{ q:"Value of permeability μ₀ is:",opts:["4π×10⁻⁷","4π×10⁷","9×10⁹","1.6×10⁻¹⁹"],ans:0},
+{ q:"Lorentz force is sum of Electric and ____ force:",opts:["Nuclear","Magnetic","Frictional","Gravity"],ans:1},
+{ q:"Biot-Savart law depends on:",opts:["Current element","Static charge","Toroid","None"],ans:0},
+{ q:"Ideal Voltmeter resistance is:",opts:["Zero","Infinite","100Ω","Low"],ans:1},
+{ q:"Field in open space of toroid is:",opts:["Maximum","Minimum","Zero","Uniform"],ans:2},
+{ q:"Pitch of helix depends on:",opts:["v sinθ","v cosθ","Total v","None"],ans:1},
+{ q:"MCG to Voltmeter needs:",opts:["High R series","Low R parallel","Shunt","None"],ans:0},
+{ q:"Magnetic field of straight infinite wire is ∝:",opts:["r","1/r","1/r²","r²"],ans:1},
+{ q:"1 Tesla = ____ Gauss:",opts:["10²","10⁴","10⁻²","10⁻⁴"],ans:1},
+{ q:"Charge at rest in B-field experiences force:",opts:["qvB","qB","Zero","Infinite"],ans:2},
+{ q:"Force on wire of length L in B-field:",opts:["BIL sinθ","BIL cosθ","Zero","B/IL"],ans:0},
+{ q:"Magnetic field lines form:",opts:["Open loops","Closed loops","Straight lines","None"],ans:1},
+{ q:"Radius of charge in B-field (r) = ",opts:["mv/qB","qB/mv","mB/qv","None"],ans:0},
+{ q:"Magnetic moment direction:",opts:["N to S","S to N","Radial","None"],ans:1},
+{ q:"Sensitivity of MCG increases if 'k':",opts:["Increases","Decreases","Constant","Zero"],ans:1},
+{ q:"Cyclotron frequency is independent of:",opts:["Mass","Charge","Velocity","Field"],ans:2},
+{ q:"Torque on current loop τ = ",opts:["MB cosθ","MB sinθ","Zero","M/B"],ans:1},
+{ q:"Two charges moving opposite in B-field feel:",opts:["Same force","Opposite force","No force","Attractive"],ans:1},
+{ q:"Magnetic field inside hollow conductor:",opts:["Maximum","Uniform","Zero","Infinite"],ans:2},
+{ q:"Fleming's Left Hand Middle finger is:",opts:["Field","Force","Current","Motion"],ans:2},
+{ q:"Shunt is a ____ resistance:",opts:["High","Low","Zero","Infinite"],ans:1},
+{ q:"Moving charge produces:",opts:["Only E","Only B","Both E & B","None"],ans:2},
+{ q:"Magnetic field at axial point of solenoid:",opts:["μ₀nI","Zero","Infinite","μ₀I"],ans:0},
+{ q:"Force per unit length of parallel wires ∝:",opts:["I₁I₂","I₁/I₂","I₁+I₂","Zero"],ans:0},
+{ q:"Radial field in MCG makes torque:",opts:["Zero","Minimum","Maximum","Variable"],ans:2},
+{ q:"Dimension of B-field is:",opts:["MT⁻²A⁻¹","MLT⁻²A⁻¹","MTA⁻¹","L²"],ans:0},
+{ q:"Angle for maximum force on wire is:",opts:["0°","45°","90°","180°"],ans:2},
+{ q:"Cyclotron is not for:",opts:["Protons","Alphas","Electrons","Deuterons"],ans:2},
+{ q:"Force on charge 'q' parallel to B-field:",opts:["qvB","Zero","qE","Infinite"],ans:1},
+{ q:"If distance between wires doubles, force:",opts:["Doubles","Halves","4 times","Same"],ans:1},
+{ q:"Net force on dipole in uniform B-field:",opts:["mB","2mB","Zero","Infinite"],ans:2},
+{ q:"Oersted discovered relation between:",opts:["E & B","E & G","Force & Mass","None"],ans:0},
+{ q:"Current sensitivity unit:",opts:["rad/A","A/rad","Volt/A","None"],ans:0},
+{ q:"Force on wire is zero if θ is:",opts:["0°","90°","45°","60°"],ans:0},
+{ q:"Magnetic field at distance x on axis of loop ∝:",opts:["1/x","1/x²","1/x³","x"],ans:2},
+{ q:"Standard μ₀ value is 4π × ____:",opts:["10⁻⁷","10⁷","10⁹","10⁻⁹"],ans:0}
+];
+
+const quizBox = document.getElementById('quiz-box');
+
+questions.forEach((item, index) => {
+    let card = document.createElement('div');
+    card.style.cssText = "background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:25px; margin:20px 0; border-radius:25px; box-shadow: 0 10px 20px rgba(0,0,0,0.3);";
+
+    card.innerHTML = `<p style="color:#000; font-size:20px; font-weight:900; margin-bottom:15px; border-bottom:3px solid #000; display:inline-block;">Q${index+1}. ${item.q}</p>`;
+
+    item.opts.forEach((opt, oIdx) => {
+        let btn = document.createElement('button');
+        btn.innerText = opt;
+        btn.style.cssText = "display:block; width:100%; margin:10px 0; padding:15px; background:#000; color:#00ffd5; border:none; border-radius:15px; text-align:left; font-weight:bold; font-size:1.1rem; cursor:pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.5);";
+
+        btn.onclick = () => {
+            const overlay = document.getElementById('quiz-overlay');
+            const title = document.getElementById('status-title');
+            const msg = document.getElementById('status-message');
+            const nxt = document.getElementById('next-msg');
+            const strip = document.getElementById('status-strip');
+
+            overlay.style.display = "flex";
+            overlay.style.pointerEvents = "auto"; 
+
+            if(oIdx === item.ans){
+                overlay.style.background = "rgba(0,0,0,0.85)";
+                strip.style.background = "transparent";
+                title.style.cssText = "font-family:'Dancing Script', cursive; color:#fff; font-size:60px; text-shadow:0 0 20px #48ff00, 0 0 40px #48ff00;";
+                title.innerText = "Congratulations";
+                msg.innerText = "Excellent! You are a true Topper.";
+                msg.style.color = "#48ff00";
+                nxt.innerText = "Go to next question...";
+
+                var end = Date.now() + 1500;
+                var colors = ['#ff0000', '#fffb00', '#48ff00', '#00ffd5', '#7a00ff', '#ff00c8', '#ffffff'];
+                (function frame(){
+                    confetti({particleCount:15,angle:60,spread:65,origin:{x:0},colors:colors, zIndex: 999999});
+                    confetti({particleCount:15,angle:120,spread:65,origin:{x:1},colors:colors, zIndex: 999999});
+                    if(Date.now() < end) requestAnimationFrame(frame);
+                })();
+            } else {
+                overlay.style.background = "radial-gradient(rgba(139,0,0,0.5) 10%, rgba(0,0,0,0.85) 90%)";
+                strip.style.background = "rgba(0,0,0,0.6)";
+                strip.style.width = "100%";
+                strip.style.padding = "30px 0";
+                title.style.cssText = "font-family:'Oswald', sans-serif; color:red; font-size:80px; font-weight:900; letter-spacing:10px; text-shadow:4px 4px 0px #000;";
+                title.innerText = "WASTED";
+                msg.innerText = "Oops! Try again with focus.";
+                msg.style.color = "#fff";
+                nxt.innerText = "";
+            }
+
+            setTimeout(() => {
+                overlay.style.display = "none";
+                overlay.style.pointerEvents = "none"; 
+            }, 2500);
+        };
+        card.appendChild(btn);
+    });
+    quizBox.appendChild(card);
+});
+});
+</script>
+
+<div id="quiz-box-2" style="max-width:600px; margin:auto; position:relative; z-index:1;"></div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+const questions51to100 = [
+{ q:"The magnetic field at a point on the wire itself is:",opts:["Maximum","Zero","Minimum","Infinite"],ans:1},
+{ q:"Condition for a velocity selector is:",opts:["v = E/B","v = B/E","v = EB","v = E+B"],ans:0},
+{ q:"Magnetic field due to a toroid is non-zero only:",opts:["Inside the core","In open space","Outside","Everywhere"],ans:0},
+{ q:"The path of a charge moving at an angle θ (0 < θ < 90°) is:",opts:["Circle","Helix","Straight line","Parabola"],ans:1},
+{ q:"Conversion of Galvanometer to Voltmeter needs:",opts:["High R in series","Low R in parallel","Shunt","None"],ans:0},
+{ q:"The core of a moving coil galvanometer is made of:",opts:["Steel","Soft Iron","Copper","Aluminum"],ans:1},
+{ q:"Work done by magnetic force on a moving charge is:",opts:["Positive","Negative","Zero","Maximum"],ans:2},
+{ q:"Which device accelerates charged particles to high speeds?",opts:["Voltmeter","Galvanometer","Cyclotron","Spectrometer"],ans:2},
+{ q:"1 Weber/m² is equal to:",opts:["1 Tesla","10 Tesla","10⁴ Tesla","0.1 Tesla"],ans:0},
+{ q:"Magnetic field lines ____ intersect each other:",opts:["Can","Never","Always","Sometimes"],ans:1},
+{ q:"Force between two opposite currents in parallel wires is:",opts:["Attractive","Repulsive","Zero","Lateral"],ans:1},
+{ q:"Voltage sensitivity of a galvanometer is defined as:",opts:["φ/I","φ/V","V/φ","I/φ"],ans:1},
+{ q:"Unit of the product of (μ₀ε₀) is:",opts:["s²/m²","m²/s²","s/m","m/s"],ans:0},
+{ q:"The frequency of a cyclotron does not depend on:",opts:["Radius","Velocity","Both 0 & 1","Mass"],ans:2},
+{ q:"Magnetic field of a solenoid is independent of its:",opts:["Current","Turns","Radius","Core"],ans:2},
+{ q:"In Fleming's Left Hand Rule, the thumb points to:",opts:["Field","Current","Force","Voltage"],ans:2},
+{ q:"Sensitivity of MCG increases if torsional constant 'k':",opts:["Increases","Decreases","Constant","Zero"],ans:1},
+{ q:"If current in a circular loop is doubled, B at center is:",opts:["Half","Double","4 times","Same"],ans:1},
+{ q:"Lorentz force is perpendicular to:",opts:["v only","B only","Both v and B","None"],ans:2},
+{ q:"Ratio of Current Sensitivity to Voltage Sensitivity is:",opts:["R","1/R","R²","Zero"],ans:0},
+{ q:"Force on a stationary charge in a B-field is:",opts:["qvB","qB","Zero","Infinite"],ans:2},
+{ q:"Magnetic field inside a current carrying hollow pipe is:",opts:["Uniform","Maximum","Zero","Infinite"],ans:2},
+{ q:"Angle for maximum force on a wire in B-field is:",opts:["0°","45°","90°","180°"],ans:2},
+{ q:"A moving charge produces:",opts:["Only E","Only B","Both E & B","None"],ans:2},
+{ q:"The SI unit of magnetic permeability μ₀ is:",opts:["T m/A","T/m","A/m","Weber"],ans:0},
+{ q:"In MCG, cylindrical pole pieces provide:",opts:["Uniform field","Radial field","Weak field","No field"],ans:1},
+{ q:"Cyclotron is not suitable for accelerating:",opts:["Protons","Alphas","Electrons","Deuterons"],ans:2},
+{ q:"Energy of a charge in cyclotron is maximum at:",opts:["Center","Exit","Entrance","Everywhere"],ans:1},
+{ q:"Standard value of μ₀ is 4π × ____:",opts:["10⁻⁷","10⁷","10⁹","10⁻⁹"],ans:0},
+{ q:"Magnetic field at a large distance on loop axis ∝:",opts:["1/x","1/x²","1/x³","x"],ans:2},
+{ q:"Biot-Savart law is analogous to which law?",opts:["Gauss Law","Coulomb's Law","Ohm's Law","Lenz Law"],ans:1},
+{ q:"Direction of magnetic moment M is from:",opts:["N to S","S to N","Radial","None"],ans:1},
+{ q:"Resistance of an ideal Ammeter should be:",opts:["Infinite","Zero","100Ω","1Ω"],ans:1},
+{ q:"Magnetic force ____ change the K.E. of a particle:",opts:["Can","Cannot","Always","Sometimes"],ans:1},
+{ q:"A current loop in a non-uniform B-field feels:",opts:["Only force","Only torque","Both","None"],ans:2},
+{ q:"Ideal Voltmeter has resistance:",opts:["Zero","Infinite","High","Low"],ans:1},
+{ q:"Current sensitivity of MCG increases when:",opts:["k increases","N increases","B decreases","A decreases"],ans:1},
+{ q:"A voltmeter is always connected in:",opts:["Series","Parallel","Mixed","None"],ans:1},
+{ q:"Maximum torque on a loop of area A is:",opts:["BIA","BIA sinθ","Zero","B/IA"],ans:0},
+{ q:"SI unit of magnetic dipole moment is:",opts:["A m","A m²","Tesla","Weber"],ans:1},
+{ q:"Ampere's law is valid for:",opts:["Straight wires","Loops","Any closed path","None"],ans:2},
+{ q:"Magnetic field due to a point charge moving with v ∝:",opts:["v","1/v","v²","Constant"],ans:0},
+{ q:"If number of turns in solenoid doubles, B is:",opts:["Half","Double","Same","4 times"],ans:1},
+{ q:"Shunt is a ____ resistance:",opts:["High","Low","Zero","Infinite"],ans:1},
+{ q:"Magnetic field inside conductor with uniform current ∝:",opts:["r","1/r","1/r²","Constant"],ans:0},
+{ q:"Force per unit length of parallel wires ∝:",opts:["I₁I₂","I₁/I₂","I₁+I₂","Zero"],ans:0},
+{ q:"Net force on dipole in uniform B-field is:",opts:["mB","2mB","Zero","Infinite"],ans:2},
+{ q:"Oersted discovered relation between:",opts:["E & B","E & G","Force & Mass","None"],ans:0},
+{ q:"Current sensitivity unit is:",opts:["rad/A","A/rad","Volt/A","None"],ans:0},
+{ q:"Force on wire is zero if angle θ is:",opts:["0°","90°","45°","60°"],ans:0}
+];
+
+const quizBox2 = document.getElementById('quiz-box-2');
+
+questions51to100.forEach((item, index) => {
+    let card = document.createElement('div');
+    card.style.cssText = "background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:25px; margin:20px 0; border-radius:25px; box-shadow: 0 10px 20px rgba(0,0,0,0.3);";
+
+    // Yahan numbering 51 se shuru hogi
+    card.innerHTML = `<p style="color:#000; font-size:20px; font-weight:900; margin-bottom:15px; border-bottom:3px solid #000; display:inline-block;">Q${index+51}. ${item.q}</p>`;
+
+    item.opts.forEach((opt, oIdx) => {
+        let btn = document.createElement('button');
+        btn.innerText = opt;
+        btn.style.cssText = "display:block; width:100%; margin:10px 0; padding:15px; background:#000; color:#00ffd5; border:none; border-radius:15px; text-align:left; font-weight:bold; font-size:1.1rem; cursor:pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.5);";
+
+        btn.onclick = () => {
+            const overlay = document.getElementById('quiz-overlay');
+            const title = document.getElementById('status-title');
+            const msg = document.getElementById('status-message');
+            const nxt = document.getElementById('next-msg');
+            const strip = document.getElementById('status-strip');
+
+            overlay.style.display = "flex";
+            overlay.style.pointerEvents = "auto"; 
+
+            if(oIdx === item.ans){
+                overlay.style.background = "rgba(0,0,0,0.85)";
+                strip.style.background = "transparent";
+                title.style.cssText = "font-family:'Dancing Script', cursive; color:#fff; font-size:60px; text-shadow:0 0 20px #48ff00, 0 0 40px #48ff00;";
+                title.innerText = "Congratulations";
+                msg.innerText = "Excellent! You are a true Topper.";
+                msg.style.color = "#48ff00";
+                nxt.innerText = "Go to next question...";
+
+                var end = Date.now() + 1500;
+                var colors = ['#ff0000', '#fffb00', '#48ff00', '#00ffd5', '#7a00ff', '#ff00c8', '#ffffff'];
+                (function frame(){
+                    confetti({particleCount:15,angle:60,spread:65,origin:{x:0},colors:colors, zIndex: 999999});
+                    confetti({particleCount:15,angle:120,spread:65,origin:{x:1},colors:colors, zIndex: 999999});
+                    if(Date.now() < end) requestAnimationFrame(frame);
+                })();
+            } else {
+                overlay.style.background = "radial-gradient(rgba(139,0,0,0.5) 10%, rgba(0,0,0,0.85) 90%)";
+                strip.style.background = "rgba(0,0,0,0.6)";
+                strip.style.width = "100%";
+                strip.style.padding = "30px 0";
+                title.style.cssText = "font-family:'Oswald', sans-serif; color:red; font-size:80px; font-weight:900; letter-spacing:10px; text-shadow:4px 4px 0px #000;";
+                title.innerText = "WASTED";
+                msg.innerText = "Oops! Try again with focus.";
+                msg.style.color = "#fff";
+                nxt.innerText = "";
+            }
+
+            setTimeout(() => {
+                overlay.style.display = "none";
+                overlay.style.pointerEvents = "none"; 
+            }, 2500);
+        };
+        card.appendChild(btn);
+    });
+    quizBox2.appendChild(card);
+});
+});
+</script>
+
+<div id="long-questions-final" style="max-width:800px; margin:auto; font-family:Arial, sans-serif;">
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q1. Derive the expression for magnetic field at the center of a circular current loop using Biot-Savart Law.</p>
+        <button onclick="toggleBox('longAns1')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Answer</button>
+        
+        <div id="longAns1" style="display:none; margin-top:15px; background:rgba(0,0,0,0.9); color:#fff; padding:20px; border-radius:15px; line-height:1.8;">
+            <b style="color:#fffb00;">Full 10-Line Derivation:</b><br>
+            1. Consider a circular loop of radius <b>R</b> carrying current <b>I</b>.<br>
+            2. Take a small element <b>dl</b> at the circumference.<br>
+            3. According to Biot-Savart Law, magnetic field <b>dB</b> is:<br>
+            <div style="text-align:center; padding:10px;">
+                <b>dB = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">&mu;<sub>0</sub></td></tr><tr><td>4&pi;</td></tr></table> &times; <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">I &middot; dl &middot; sin&theta;</td></tr><tr><td>R<sup>2</sup></td></tr></table></b>
+            </div>
+            4. Angle &theta; between <b>dl</b> and radius is 90&deg;, so <b>sin 90&deg; = 1</b>.<br>
+            5. The formula becomes: <b>dB = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">&mu;<sub>0</sub></td></tr><tr><td>4&pi;</td></tr></table> &times; <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">I &middot; dl</td></tr><tr><td>R<sup>2</sup></td></tr></table></b><br>
+            6. Total field <b>B</b> is the integration of <b>dB</b>: <b>B = &int; dB</b>.<br>
+            7. Taking constants out: <b>B = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">&mu;<sub>0</sub> &middot; I</td></tr><tr><td>4&pi; &middot; R<sup>2</sup></td></tr></table> &int; dl</b>.<br>
+            8. Integration of length <b>&int; dl = 2&pi;R</b> (total circumference).<br>
+            9. Putting the value: <b>B = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">&mu;<sub>0</sub> &middot; I</td></tr><tr><td>4&pi; &middot; R<sup>2</sup></td></tr></table> &times; (2&pi;R)</b>.<br>
+            10. <b>Final Result:</b>
+            <div style="background:#222; border:2px solid #00ffd5; padding:15px; margin-top:10px; border-radius:10px; text-align:center; font-size:1.4rem; color:#48ff00;">
+                B = <table style="display:inline-table; vertical-align:middle; color:#48ff00;"><tr><td style="border-bottom:1px solid #48ff00;">&mu;<sub>0</sub> I</td></tr><tr><td>2R</td></tr></table>
+            </div>
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q2. Derive the expression for force per unit length between two parallel current-carrying wires.</p>
+        <button onclick="toggleBox('longAns2')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Answer</button>
+        
+        <div id="longAns2" style="display:none; margin-top:15px; background:rgba(0,0,0,0.9); color:#fff; padding:20px; border-radius:15px; line-height:1.8;">
+            <b style="color:#fffb00;">Full 10-Line Derivation:</b><br>
+            1. Consider two long parallel wires carrying currents <b>I<sub>1</sub></b> and <b>I<sub>2</sub></b> at distance <b>d</b>.<br>
+            2. Magnetic field <b>B<sub>1</sub></b> due to wire 1 at the position of wire 2 is:<br>
+            <div style="text-align:center; padding:10px;">
+                <b>B<sub>1</sub> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">&mu;<sub>0</sub> I<sub>1</sub></td></tr><tr><td>2&pi;d</td></tr></table></b>
+            </div>
+            3. Wire 2 experiences a force <b>F<sub>2</sub></b> in the field of wire 1.<br>
+            4. Force formula: <b>F = I &middot; L &middot; B &middot; sin&theta;</b>.<br>
+            5. Here, &theta; is 90&deg;, so <b>sin 90&deg; = 1</b>.<br>
+            6. Force on wire 2: <b>F<sub>2</sub> = I<sub>2</sub> &middot; L &middot; B<sub>1</sub></b>.<br>
+            7. Substituting <b>B<sub>1</sub></b> value: <b>F<sub>2</sub> = I<sub>2</sub> &middot; L &middot; <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">&mu;<sub>0</sub> I<sub>1</sub></td></tr><tr><td>2&pi;d</td></tr></table></b>.<br>
+            8. Rearranging terms: <b>F<sub>2</sub> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">&mu;<sub>0</sub> I<sub>1</sub> I<sub>2</sub> L</td></tr><tr><td>2&pi;d</td></tr></table></b>.<br>
+            9. Force per unit length: <b>f = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">F<sub>2</sub></td></tr><tr><td>L</td></tr></table></b>.<br>
+            10. <b>Final Result:</b>
+            <div style="background:#222; border:2px solid #00ffd5; padding:15px; margin-top:10px; border-radius:10px; text-align:center; font-size:1.4rem; color:#48ff00;">
+                f = <table style="display:inline-table; vertical-align:middle; color:#48ff00;"><tr><td style="border-bottom:1px solid #48ff00;">&mu;<sub>0</sub> I<sub>1</sub> I<sub>2</sub></td></tr><tr><td>2&pi;d</td></tr></table>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+function toggleBox(id) {
+    var x = document.getElementById(id);
+    x.style.display = (x.style.display === "none") ? "block" : "none";
+}
+</script>
+<div id="physics-long-questions" style="max-width:800px; margin:auto; font-family:Arial, sans-serif;">
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px; box-shadow: 0 10px 15px rgba(0,0,0,0.3);">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q3. Explain the principle and working of a Moving Coil Galvanometer. Derive the expression for deflection.</p>
+        <button onclick="toggleLong('ans3')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ans3" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:1.8;">
+            <b style="color:#fffb00;">Full Step-by-Step Derivation:</b><br>
+            1. <b>Principle:</b> A current-carrying coil in a magnetic field experiences torque.<br>
+            2. Deflecting torque on the coil: <b>&tau;<sub>def</sub> = N I A B sin&theta;</b>.<br>
+            3. Using radial magnetic field, <b>&theta; = 90&deg;</b>, so <b>sin 90&deg; = 1</b>.<br>
+            4. Therefore, <b>&tau;<sub>def</sub> = N I A B</b>.<br>
+            5. This torque twists the spring, creating a restoring torque: <b>&tau;<sub>res</sub> = k &phi;</b>.<br>
+            6. Here <b>k</b> is the torsional constant and <b>&phi;</b> is the deflection.<br>
+            7. In equilibrium: <b>Deflecting Torque = Restoring Torque</b>.<br>
+            8. <b>N I A B = k &phi;</b>.<br>
+            9. Rearranging for current: <b>I = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">k</td></tr><tr><td>NAB</td></tr></table> &times; &phi;</b>.<br>
+            10. <b>Final Relation:</b> <b>I &prop; &phi;</b> (Current is proportional to deflection).
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q4. What is a Cyclotron? Derive the expression for Cyclotron frequency and Maximum Kinetic Energy.</p>
+        <button onclick="toggleLong('ans4')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ans4" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:1.8;">
+            <b style="color:#fffb00;">Full Step-by-Step Derivation:</b><br>
+            1. Magnetic force provides centripetal force: <b>qvB = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">mv<sup>2</sup></td></tr><tr><td>r</td></tr></table></b>.<br>
+            2. Solving for radius: <b>r = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">mv</td></tr><tr><td>qB</td></tr></table></b>.<br>
+            3. Time for one semi-circle: <b>t = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">&pi;r</td></tr><tr><td>v</td></tr></table></b>.<br>
+            4. Substituting <b>r</b>: <b>t = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">&pi;m</td></tr><tr><td>qB</td></tr></table></b>.<br>
+            5. Total time period <b>T = 2t = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">2&pi;m</td></tr><tr><td>qB</td></tr></table></b>.<br>
+            6. <b>Cyclotron Frequency:</b> <b>f = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1</td></tr><tr><td>T</td></tr></table> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">qB</td></tr><tr><td>2&pi;m</td></tr></table></b>.<br>
+            7. Maximum Velocity: <b>v<sub>max</sub> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">qBR<sub>max</sub></td></tr><tr><td>m</td></tr></table></b>.<br>
+            8. <b>Max Kinetic Energy:</b> <b>K.E. = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1</td></tr><tr><td>2</td></tr></table> mv<sup>2</sup></b>.<br>
+            9. <b>K.E.<sub>max</sub> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">q<sup>2</sup>B<sup>2</sup>R<sup>2</sup></td></tr><tr><td>2m</td></tr></table></b>.
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q5. Derive the expression for magnetic field at a point on the axis of a circular current loop.</p>
+        <button onclick="toggleLong('ans5')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ans5" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:1.8;">
+            <b style="color:#fffb00;">Full Step-by-Step Derivation:</b><br>
+            1. Consider a loop of radius <b>R</b>, point <b>P</b> is at distance <b>x</b> on the axis.<br>
+            2. Distance from element <b>dl</b> to point <b>P</b> is <b>r = &radic;(R<sup>2</sup> + x<sup>2</sup>)</b>.<br>
+            3. Field <b>dB = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">&mu;<sub>0</sub></td></tr><tr><td>4&pi;</td></tr></table> <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">I dl</td></tr><tr><td>r<sup>2</sup></td></tr></table></b>.<br>
+            4. Vertical components of <b>dB</b> cancel out, only horizontal <b>dB sin&phi;</b> remains.<br>
+            5. Total field <b>B = &int; dB sin&phi;</b>.<br>
+            6. From geometry, <b>sin&phi; = R / r</b>.<br>
+            7. <b>B = &int; <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">&mu;<sub>0</sub> I dl</td></tr><tr><td>4&pi; r<sup>2</sup></td></tr></table> &times; <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">R</td></tr><tr><td>r</td></tr></table></b>.<br>
+            8. <b>B = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">&mu;<sub>0</sub> I R</td></tr><tr><td>4&pi; r<sup>3</sup></td></tr></table> &int; dl</b>.<br>
+            9. <b>&int; dl = 2&pi;R</b>. Substituting <b>r = (R<sup>2</sup> + x<sup>2</sup>)<sup>1/2</sup></b>.<br>
+            10. <b>Final Formula:</b> <b>B = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">&mu;<sub>0</sub> I R<sup>2</sup></td></tr><tr><td>2(R<sup>2</sup> + x<sup>2</sup>)<sup>3/2</sup></td></tr></table></b>.
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q6. Using Ampere's Circuital Law, find the magnetic field due to a Toroid.</p>
+        <button onclick="toggleLong('ans6')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ans6" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:1.8;">
+            <b style="color:#fffb00;">Full Step-by-Step Derivation:</b><br>
+            1. A toroid is a solenoid bent into a circle of mean radius <b>r</b>.<br>
+            2. Ampere's Law: <b>&oint; B &middot; dl = &mu;<sub>0</sub> I<sub>en</sub></b>.<br>
+            3. For a circular path inside toroid, <b>B</b> is parallel to <b>dl</b>.<br>
+            4. <b>&oint; B &middot; dl = B (2&pi;r)</b>.<br>
+            5. Let <b>N</b> be the total number of turns.<br>
+            6. Total enclosed current <b>I<sub>en</sub> = N &times; I</b>.<br>
+            7. Applying Ampere's Law: <b>B (2&pi;r) = &mu;<sub>0</sub> N I</b>.<br>
+            8. <b>B = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">&mu;<sub>0</sub> N I</td></tr><tr><td>2&pi;r</td></tr></table></b>.<br>
+            9. Let <b>n = N / 2&pi;r</b> (turns per unit length).<br>
+            10. <b>Final Formula:</b> <b>B = &mu;<sub>0</sub> n I</b>.
+        </div>
+    </div>
+
+</div>
+
+<script>
+function toggleLong(id) {
+    var x = document.getElementById(id);
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+</script>
+<div id="long-questions-part2" style="max-width:800px; margin:auto; font-family:Arial, sans-serif;">
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px; box-shadow: 0 10px 15px rgba(0,0,0,0.3);">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q7. How is a Galvanometer converted into an Ammeter and a Voltmeter? Derive the formulas.</p>
+        <button onclick="toggleQ('ans7')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ans7" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:1.8;">
+            <b style="color:#fffb00;">1. Conversion to Ammeter:</b><br>
+            - Connect a small resistance (Shunt <b>S</b>) in parallel.<br>
+            - Potential across G = Potential across S.<br>
+            - <b>I<sub>g</sub> &times; G = (I - I<sub>g</sub>) &times; S</b>.<br>
+            - <b>Shunt Formula:</b> 
+            <div style="text-align:center; padding:10px;">
+                <b>S = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">I<sub>g</sub> &middot; G</td></tr><tr><td>I - I<sub>g</sub></td></tr></table></b>
+            </div>
+            <b style="color:#fffb00;">2. Conversion to Voltmeter:</b><br>
+            - Connect a high resistance <b>R</b> in series.<br>
+            - Total Voltage <b>V = I<sub>g</sub>(G + R)</b>.<br>
+            - <b>Series Resistance:</b>
+            <div style="text-align:center; padding:10px;">
+                <b>R = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">V</td></tr><tr><td>I<sub>g</sub></td></tr></table> - G</b>
+            </div>
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q8. Derive the expression for Torque acting on a rectangular current loop in a uniform magnetic field.</p>
+        <button onclick="toggleQ('ans8')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ans8" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:2;">
+            <b style="color:#fffb00;">Derivation Steps:</b><br>
+            1. Consider a loop of length <b>l</b> and breadth <b>b</b> in field <b>B</b>.<br>
+            2. Forces on the upper and lower arms act along the same line and cancel.<br>
+            3. Force on the side arm: <b>F = I l B</b>.<br>
+            4. Perpendicular distance between forces = <b>b sin&theta;</b>.<br>
+            5. Torque <b>&tau; = Force &times; Perpendicular distance</b>.<br>
+            6. <b>&tau; = (I l B) &times; (b sin&theta;)</b>.<br>
+            7. Area of loop <b>A = l &times; b</b>.<br>
+            8. <b>&tau; = I A B sin&theta;</b>.<br>
+            9. For <b>N</b> turns: <b>&tau; = N I A B sin&theta;</b>.<br>
+            10. In vector form: <b>&tau; = M &times; B</b> (where M = NIA).
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q9. Explain the helical motion of a charged particle in a magnetic field. Derive its Pitch.</p>
+        <button onclick="toggleQ('ans9')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ans9" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:1.8;">
+            <b style="color:#fffb00;">Full Step-by-Step Analysis:</b><br>
+            1. Particle enters at angle <b>&theta;</b> with velocity <b>v</b>.<br>
+            2. <b>v sin&theta;</b> (perpendicular) makes it move in a circle.<br>
+            3. Radius: <b>r = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">m (v sin&theta;)</td></tr><tr><td>qB</td></tr></table></b>.<br>
+            4. <b>v cos&theta;</b> (parallel) moves it forward along the field.<br>
+            5. Resultant path is a <b>Helix</b>.<br>
+            6. Time period: <b>T = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">2&pi;m</td></tr><tr><td>qB</td></tr></table></b>.<br>
+            7. <b>Pitch</b> is the forward distance in one rotation.<br>
+            8. <b>Pitch = v cos&theta; &times; T</b>.<br>
+            9. <b>Pitch = v cos&theta; &times; <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">2&pi;m</td></tr><tr><td>qB</td></tr></table></b>.<br>
+            10. Pitch represents linear distance per revolution.
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q10. Find the magnetic field due to an infinitely long straight wire using Ampere's Law.</p>
+        <button onclick="toggleQ('ans10')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ans10" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:2.2;">
+            1. Ampere's Law: <b>&oint; B &middot; dl = &mu;<sub>0</sub> I</b>.<br>
+            2. Take a circular Amperian loop of radius <b>r</b>.<br>
+            3. Since <b>B</b> is constant and parallel to <b>dl</b>, the integral is <b>B(2&pi;r)</b>.<br>
+            4. <b>B &times; 2&pi;r = &mu;<sub>0</sub> I</b>.<br>
+            5. <b>Final Result:</b>
+            <div style="text-align:center; padding:15px; background:#222; border-radius:10px; margin-top:10px; color:#48ff00; font-size:1.4rem;">
+                <b>B = <table style="display:inline-table; vertical-align:middle; color:#48ff00;"><tr><td style="border-bottom:1px solid #48ff00;">&mu;<sub>0</sub> I</td></tr><tr><td>2&pi;r</td></tr></table></b>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+function toggleQ(id) {
+    var x = document.getElementById(id);
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+</script>
+
+<style>
+@keyframes moveBg { 
+    0% { background-position: 0% 50%; } 
+    50% { background-position: 100% 50%; } 
+    100% { background-position: 0% 50%; } 
+}
+</style>
+
+
+</body>
+</html>

@@ -1,0 +1,1856 @@
+<!DOCTYPE html>  <html lang="en">    <head>    
+    <meta charset="UTF-8">    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>Ray Optics - Smart Study for Toppers</title>    
+    <style>    
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap');  
+        
+        body {    
+            background-color: #000;    
+            color: #fff;    
+            font-family: 'Poppins', sans-serif;    
+            margin: 0;    
+            padding: 0;    
+            overflow-x: hidden;    
+        }    
+
+        /* HEADER FIXED - NO SHAKING */    
+        .header {    
+            position: fixed;    
+            top: 0;    
+            left: 0;    
+            width: 100%;    
+            height: 65px;    
+            background: #000;    
+            display: flex;    
+            justify-content: space-between;    
+            align-items: center;    
+            padding: 0 20px;    
+            z-index: 10000;    
+            box-sizing: border-box;    
+            border-bottom: 1px solid rgba(0, 247, 255, 0.2);    
+        }    
+
+        .back-btn {    
+            background: transparent;    
+            color: #00f7ff;    
+            border: 2px solid #00f7ff;    
+            padding: 5px 18px;    
+            border-radius: 8px;    
+            text-decoration: none;    
+            font-weight: bold;    
+            font-size: 14px;    
+            text-transform: uppercase;    
+        }    
+
+        .topper-text {    
+            text-align: right;    
+            line-height: 1.1;    
+        }    
+
+        .topper-text .small {    
+            color: #FFD700;    
+            font-size: 10px;    
+            font-weight: bold;    
+            display: block;    
+        }    
+
+        .topper-text .large {    
+            color: #fff;    
+            font-size: 16px;    
+            font-weight: bold;    
+        }    
+
+        /* CONTAINER WITH TOP MARGIN TO PREVENT SHAKING */    
+        .container {    
+            padding: 80px 15px 20px 15px; 
+        }    
+
+        @keyframes neon-glow {    
+            0% { border-color: #ff00ff; box-shadow: 0 0 15px #ff00ff; }    
+            25% { border-color: #00f7ff; box-shadow: 0 0 25px #00f7ff; }    
+            50% { border-color: #48ff00; box-shadow: 0 0 15px #48ff00; }    
+            75% { border-color: #FFD700; box-shadow: 0 0 25px #FFD700; }    
+            100% { border-color: #ff00ff; box-shadow: 0 0 15px #ff00ff; }    
+        }    
+
+        .topic-page {    
+            min-height: 85vh;    
+            border: 4px solid;    
+            border-radius: 40px;    
+            margin-bottom: 40px;    
+            padding: 25px;    
+            display: flex;    
+            flex-direction: column;    
+            justify-content: center;    
+            animation: neon-glow 8s infinite linear;    
+            background: linear-gradient(180deg, rgba(15,15,15,1) 0%, rgba(0,0,0,1) 100%);    
+            box-sizing: border-box;
+        }    
+
+        .topic-title {    
+            font-size: 26px;    
+            color: #00f7ff;    
+            text-decoration: underline;    
+            margin-bottom: 20px;    
+            text-shadow: 0 0 10px #00f7ff;    
+            text-transform: uppercase;    
+        }    
+
+        .box {    
+            background: rgba(255, 255, 255, 0.05);    
+            padding: 15px;    
+            border-radius: 15px;    
+            margin-bottom: 12px;    
+        }    
+
+        .box span { font-weight: bold; display: block; margin-bottom: 5px; }    
+        .eng-txt { color: #00f7ff; }    
+        .hin-txt { color: #FFD700; }    
+
+        .key-points {    
+            border: 1.5px dashed #48ff00;    
+            border-radius: 15px;    
+            padding: 15px;    
+            background: rgba(72, 255, 0, 0.03);    
+        }    
+
+        ul { margin: 0; padding-left: 20px; }    
+        li { margin-bottom: 8px; font-size: 14px; color: #ddd; }    
+
+        .formula-box {    
+            background: #000;    
+            border: 1px solid rgba(255,255,255,0.1);    
+            border-radius: 20px;    
+            padding: 20px;    
+            text-align: center;    
+            font-size: 24px;    
+            color: #00f7ff;    
+            margin-top: 20px;    
+            box-shadow: inset 0 0 15px rgba(0, 247, 255, 0.3);    
+        }
+    </style>    
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>    
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>  
+</head>    
+<body>  
+    <div class="header">    
+        <a href="phy-chapters.html" class="back-btn">BACK</a>    
+        <div class="topper-text">    
+            <span class="small">SMART STUDY</span>    
+            <span class="large">FOR TOPPERS</span>    
+        </div>    
+    </div>    
+
+    <div class="container">    
+        <div class="topic-page">    
+            <h1 class="topic-title">1. Nature of Light</h1>    
+            <div class="box"><span class="eng-txt">English:</span> Light is a form of energy that enables us to see objects.</div>    
+            <div class="box"><span class="hin-txt">Hindi:</span> Light energy ka ek roop hai jo humein cheezon ko dekhne mein madad karta hai.</div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>It travels in a straight line path.</li>    
+                    <li>The speed of light in vacuum is $3 \times 10^8$ m/s.</li>    
+                    <li>Light does not require any material medium for propagation.</li>    
+                    <li>It exhibits dual nature: wave and particle.</li>    
+                </ul>    
+            </div>    
+            <div class="formula-box">$$ c = 3 \times 10^8 \, m/s $$</div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">2. Ray of Light</h1>    
+            <div class="box"><span class="eng-txt">English:</span> The direction or path along which light energy travels.</div>    
+            <div class="box"><span class="hin-txt">Hindi:</span> Wo disha ya rasta jis par light chalti hai use Ray kehte hain.</div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>Represented by a straight line with an arrow.</li>    
+                    <li>The arrow represents the direction of propagation.</li>    
+                    <li>A bundle of rays is called a beam of light.</li>    
+                    <li>Light rays always follow the shortest path.</li>    
+                </ul>    
+            </div>    
+            <div class="formula-box">$$ \text{Ray} \rightarrow \text{Beam} $$</div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">3. Rectilinear Propagation</h1>    
+            <div class="box"><span class="eng-txt">English:</span> Light travels in a straight line in a homogeneous medium.</div>    
+            <div class="box"><span class="hin-txt">Hindi:</span> Ek hi tarah ke medium mein light hamesha seedhi line mein chalti hai.</div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>Formation of shadows is a result of this property.</li>    
+                    <li>Occurence of eclipses depends on this principle.</li>    
+                    <li>Pinhole camera works based on rectilinear propagation.</li>    
+                    <li>Light bends only when the medium changes.</li>    
+                </ul>    
+            </div>    
+            <div class="formula-box">$$ \text{Straight Line Path} $$</div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">4. Reflection of Light</h1>    
+            <div class="box"><span class="eng-txt">English:</span> Bouncing back of light when it strikes a polished surface.</div>    
+            <div class="box"><span class="hin-txt">Hindi:</span> Jab light kisi chamkili satah se takra kar wapas lout-ti hai.</div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>Mirrors are the most common examples of reflectors.</li>    
+                    <li>Smooth surfaces show regular reflection.</li>    
+                    <li>Rough surfaces show diffused or irregular reflection.</li>    
+                    <li>Silvering is done on glass to make it a mirror.</li>    
+                </ul>    
+            </div>    
+            <div class="formula-box">$$ \text{Bounce Back} $$</div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">5. Laws of Reflection</h1>    
+            <div class="box"><span class="eng-txt">English:</span> Rules that light rays follow during the process of reflection.</div>    
+            <div class="box"><span class="hin-txt">Hindi:</span> Reflection ke waqt light rays jin niyamon ka palan karti hain.</div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>The angle of incidence is equal to the angle of reflection.</li>    
+                    <li>Incident ray, normal, and reflected ray lie in the same plane.</li>    
+                    <li>These laws are valid for all reflecting surfaces.</li>    
+                    <li>Normal is drawn perpendicular to the surface.</li>    
+                </ul>    
+            </div>    
+            <div class="formula-box">$$ \angle i = \angle r $$</div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">6. Plane Mirror</h1>    
+            <div class="box"><span class="eng-txt">English:</span> A mirror with a flat reflecting surface that forms virtual images.</div>    
+            <div class="box"><span class="hin-txt">Hindi:</span> Ek bilkul seedhi satah wala mirror jo virtual image banata hai.</div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>Focal length of a plane mirror is infinity.</li>    
+                    <li>Power of a plane mirror is always zero.</li>    
+                    <li>Image distance equals object distance.</li>    
+                    <li>The image formed is always erect.</li>    
+                </ul>    
+            </div>    
+            <div class="formula-box">$$ f = \infty $$</div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">7. Image Formation in Plane Mirror</h1>    
+            <div class="box"><span class="eng-txt">English:</span> Process of creating an image of an object using a flat mirror.</div>    
+            <div class="box"><span class="hin-txt">Hindi:</span> Plane mirror dwara kisi object ki photo banane ki prakriya.</div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>The image is virtual (cannot be taken on screen).</li>    
+                    <li>The size of the image is equal to the size of the object.</li>    
+                    <li>Magnification produced is exactly +1.</li>    
+                    <li>Image is formed as far behind as the object is in front.</li>    
+                </ul>    
+            </div>    
+            <div class="formula-box">$$ m = +1 $$</div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">8. Lateral Inversion</h1>    
+            <div class="box"><span class="eng-txt">English:</span> Reversal of left and right sides in a mirror image.</div>    
+            <div class="box"><span class="hin-txt">Hindi:</span> Mirror mein baayein ka daayein aur daayein ka baayein dikhna.</div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>Left side of the object appears as the right side of image.</li>    
+                    <li>This is why AMBULANCE is written in reverse.</li>    
+                    <li>The image is not inverted vertically (upside down).</li>    
+                    <li>Only the lateral (side) orientation changes.</li>    
+                </ul>    
+            </div>    
+            <div class="formula-box">$$ \text{Left} \leftrightarrow \text{Right} $$</div>    
+        </div>    
+
+
+<div class="topic-page">    
+    <h1 class="topic-title">1. Spherical Mirrors</h1>    
+    <div class="box"><span class="eng-txt">English:</span> A mirror whose reflecting surface is a part of a hollow sphere.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Wo mirror jiski chamkili satah kisi khokhle gole ka ek hissa hoti hai.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Two types: Concave and Convex mirrors.</li>    
+            <li>Follows laws of reflection like plane mirrors.</li>    
+            <li>Used to converge or diverge light rays.</li>    
+            <li>One side is silvered/opaque for reflection.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ R = 2f $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">2. Concave Mirror</h1>    
+    <div class="box"><span class="eng-txt">English:</span> A spherical mirror whose reflecting surface is curved inwards.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Wo mirror jiski chamkili satah andar ki taraf dhasi hui hoti hai.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Also known as a converging mirror.</li>    
+            <li>Forms both real and virtual images.</li>    
+            <li>Used in car headlights and shaving mirrors.</li>    
+            <li>Parallel rays meet at a point after reflection.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ \text{Converging Mirror} $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">3. Convex Mirror</h1>    
+    <div class="box"><span class="eng-txt">English:</span> A spherical mirror whose reflecting surface is curved outwards.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Wo mirror jiski chamkili satah bahar ki taraf ubhri hui hoti hai.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Also known as a diverging mirror.</li>    
+            <li>Always forms virtual, erect, and small images.</li>    
+            <li>Used as rear-view mirrors in vehicles.</li>    
+            <li>Provides a much wider field of view.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ \text{Diverging Mirror} $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">4. Principal Axis</h1>    
+    <div class="box"><span class="eng-txt">English:</span> The straight line passing through the Pole and Center of Curvature.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Pole aur Center of Curvature se guzarne wali seedhi rekha.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Perpendicular to the mirror at its pole.</li>    
+            <li>Acts as a reference for measuring distances.</li>    
+            <li>Parallel incident rays meet on this axis.</li>    
+            <li>Extends infinitely on both sides.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ \text{CP Line} $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">5. Pole</h1>    
+    <div class="box"><span class="eng-txt">English:</span> The center point of the reflecting surface of a spherical mirror.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Spherical mirror ki chamkili satah ka bilkul center bindu.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Represented by the letter 'P'.</li>    
+            <li>Lies directly on the surface of the mirror.</li>    
+            <li>Used as the origin for all distance measurements.</li>    
+            <li>Located at the center of the mirror's aperture.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ \text{Point P} $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">6. Centre of Curvature</h1>    
+    <div class="box"><span class="eng-txt">English:</span> The center of the sphere of which the mirror is a part.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Us gole ka kendra jiska mirror ek chhota hissa hai.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Represented by the letter 'C'.</li>    
+            <li>It is not a part of the mirror's surface.</li>    
+            <li>Ray passing through 'C' reflects back on same path.</li>    
+            <li>Position depends on the type of mirror.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ \text{Point C} $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">7. Radius of Curvature</h1>    
+    <div class="box"><span class="eng-txt">English:</span> The distance between the Pole and Center of Curvature.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Mirror ke Pole aur Center of Curvature ke beech ki doori.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Represented by the letter 'R'.</li>    
+            <li>Equal to the radius of the original sphere.</li>    
+            <li>$R = 2f$ (twice the focal length).</li>    
+            <li>Measured along the principal axis.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ R = CP $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">8. Principal Focus</h1>    
+    <div class="box"><span class="eng-txt">English:</span> Point where parallel rays meet or appear to meet after reflection.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Wo bindu jahan parallel rays reflection ke baad milti hain.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Represented by the letter 'F'.</li>    
+            <li>Lies exactly midway between P and C.</li>    
+            <li>Real for Concave, Virtual for Convex.</li>    
+            <li>Essential for ray diagram construction.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ \text{Point F} $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">9. Focal Length</h1>    
+    <div class="box"><span class="eng-txt">English:</span> The distance between the Pole and the Principal Focus.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Mirror ke Pole aur Focus ke beech ki doori.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Represented by the letter 'f'.</li>    
+            <li>$f = R/2$ (half of radius of curvature).</li>    
+            <li>Negative for Concave, Positive for Convex.</li>    
+            <li>Determines the convergence/divergence power.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ f = \frac{R}{2} $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">10. Ray Diagrams (Concave)</h1>    
+    <div class="box"><span class="eng-txt">English:</span> Visualization of image formation for concave mirrors.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Concave mirror dwara image banane ka chitra.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>6 cases based on object distance.</li>    
+            <li>Produces real, inverted, and varied size images.</li>    
+            <li>Virtual image only when object is between P and F.</li>    
+            <li>Ray through 'C' reflects back along same path.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ \text{6 Image Cases} $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">11. Ray Diagrams (Convex)</h1>    
+    <div class="box"><span class="eng-txt">English:</span> Visualization of image formation for convex mirrors.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Convex mirror dwara image banane ka chitra.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Mainly 2 cases: Infinity and finite distance.</li>    
+            <li>Always forms virtual, erect, and small images.</li>    
+            <li>Image always forms behind the mirror.</li>    
+            <li>Parallel rays appear to diverge from 'F'.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ \text{Always Virtual} $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">12. Mirror Formula</h1>    
+    <div class="box"><span class="eng-txt">English:</span> Relation between object distance, image distance and focal length.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> u, v aur f ke beech ka mathematical sambandh.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>$u$ = Object distance (always negative).</li>    
+            <li>$v$ = Image distance.</li>    
+            <li>$f$ = Focal length of the mirror.</li>    
+            <li>Works for both Concave and Convex mirrors.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ \frac{1}{f} = \frac{1}{v} + \frac{1}{u} $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">13. Magnification</h1>    
+    <div class="box"><span class="eng-txt">English:</span> Ratio of height of image to height of object.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Image aur object ki unchai ka anupaat (ratio).</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>If $m$ is negative, image is real and inverted.</li>    
+            <li>If $m$ is positive, image is virtual and erect.</li>    
+            <li>$m = 1$ means image is same size as object.</li>    
+            <li>Also related to distances: $m = -v/u$.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ m = \frac{h'}{h} = -\frac{v}{u} $$</div>    
+</div>
+<div class="topic-page">    
+    <h1 class="topic-title">1. Refraction of Light</h1>    
+    <div class="box"><span class="eng-txt">English:</span> The bending of light when it passes from one medium to another.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Jab light ek medium se dusre medium mein jati hai, toh uska mudna.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Occurs due to change in speed of light.</li>    
+            <li>Bends towards normal in denser medium.</li>    
+            <li>Bends away from normal in rarer medium.</li>    
+            <li>Frequency remains constant during refraction.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ \text{Bending of Light} $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">2. Laws of Refraction</h1>    
+    <div class="box"><span class="eng-txt">English:</span> Rules followed by light while changing its path between media.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Wo niyam jo light refraction ke waqt follow karti hai.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Incident ray, refracted ray, and normal lie in same plane.</li>    
+            <li>Second law is also known as Snell's Law.</li>    
+            <li>Ratio of $\sin i$ to $\sin r$ is always constant.</li>    
+            <li>This constant is the refractive index.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ \frac{\sin i}{\sin r} = \text{constant} $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">3. Refractive Index</h1>    
+    <div class="box"><span class="eng-txt">English:</span> Measure of how much light slows down in a medium.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Ye batata hai ki light kisi medium mein kitni dheemi hoti hai.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Represented by the symbol '$n$' or '$\mu$'.</li>    
+            <li>It is a unitless and dimensionless quantity.</li>    
+            <li>Higher index means light bends more.</li>    
+            <li>Depends on the optical density of material.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ n = \frac{c}{v} $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">4. Absolute Refractive Index</h1>    
+    <div class="box"><span class="eng-txt">English:</span> Refractive index of a medium with respect to vacuum.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Vacuum ke muqable kisi medium ka refractive index.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Speed of light in vacuum ($c$) is $3 \times 10^8$ m/s.</li>    
+            <li>Value is always greater than or equal to 1.</li>    
+            <li>For Diamond, it is approx 2.42.</li>    
+            <li>Indicates overall optical density.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ n_m = \frac{c}{v_m} $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">5. Relative Refractive Index</h1>    
+    <div class="box"><span class="eng-txt">English:</span> Refractive index of medium 2 with respect to medium 1.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Pehle medium ke muqable dusre medium ka index.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Compares speed of light in two different media.</li>    
+            <li>Formula is $n_{21} = v_1 / v_2$.</li>    
+            <li>Can be less than or greater than 1.</li>    
+            <li>Used for glass-to-water calculations.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ n_{21} = \frac{n_2}{n_1} $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">6. Snell’s Law</h1>    
+    <div class="box"><span class="eng-txt">English:</span> The ratio $\sin i / \sin r$ is constant for a pair of media.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Do mediums ke liye $\sin i$ aur $\sin r$ ka ratio fix hota hai.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Fundamental law for all refraction cases.</li>    
+            <li>Constant value equals the relative refractive index.</li>    
+            <li>If $i = 0^\circ$, then $r = 0^\circ$ (no bending).</li>    
+            <li>Valid for light of a specific color.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ n_1 \sin i = n_2 \sin r $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">7. Optical Density</h1>    
+    <div class="box"><span class="eng-txt">English:</span> The ability of a medium to refract or bend light.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Kisi medium ki light ko modne ki kshamta.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Different from mass (physical) density.</li>    
+            <li>Denser medium = Slower speed of light.</li>    
+            <li>Rarer medium = Higher speed of light.</li>    
+            <li>Kerosene is optically denser than water.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ \text{Speed} \propto \frac{1}{\text{Density}} $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">8. Lateral Displacement</h1>    
+    <div class="box"><span class="eng-txt">English:</span> Perpendicular distance between incident and emergent rays.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Incident aur emergent rays ke beech ki seedhi doori.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Observed in rectangular glass slabs.</li>    
+            <li>Increases with thickness of the slab.</li>    
+            <li>Increases with the angle of incidence.</li>    
+            <li>Depends on the refractive index.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ \text{Lateral Shift} $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">9. Emergent Ray</h1>    
+    <div class="box"><span class="eng-txt">English:</span> The ray of light that finally comes out of a medium.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Wo kiran jo medium se bahar nikal jati hai.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Parallel to incident ray in a glass slab.</li>    
+            <li>Angle of emergence ($e$) equals angle of incidence ($i$).</li>    
+            <li>Undergoes lateral shift from original path.</li>    
+            <li>Moves into the surrounding medium (usually air).</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ \angle i = \angle e $$</div>    
+</div>
+<div class="topic-page">    
+    <h1 class="topic-title">10. Total Internal Reflection</h1>    
+    <div class="box"><span class="eng-txt">English:</span> Complete reflection of a ray of light within a medium back into the same medium.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Jab light ki kiran poori tarah se takra kar wapas usi medium mein laut jati hai.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Light must travel from a denser to a rarer medium.</li>    
+            <li>Angle of incidence must be greater than the critical angle.</li>    
+            <li>No light is refracted; 100% light is reflected back.</li>    
+            <li>Responsible for the sparkling of diamonds.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ \angle i > \angle C $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">11. Critical Angle</h1>    
+    <div class="box"><span class="eng-txt">English:</span> The angle of incidence for which the angle of refraction is 90°.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Wo incidence angle jis par refraction angle $90^\circ$ ho jata hai.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>At this angle, the refracted ray grazes the boundary surface.</li>    
+            <li>Depends on the refractive index of the two media.</li>    
+            <li>Symbolized as $C$ or $\theta_c$.</li>    
+            <li>If $i$ increases beyond this, TIR occurs.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ \sin C = \frac{1}{n} $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">12. Conditions for TIR</h1>    
+    <div class="box"><span class="eng-txt">English:</span> Necessary requirements for total internal reflection to happen.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> TIR hone ke liye zaroori shartein.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Light must move from Optically Denser to Rarer medium.</li>    
+            <li>Angle of incidence ($i$) > Critical angle ($C$).</li>    
+            <li>The interface must be transparent.</li>    
+            <li>If either condition fails, refraction or simple reflection occurs.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ \text{Denser } \rightarrow \text{ Rarer} $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">13. Optical Fibre</h1>    
+    <div class="box"><span class="eng-txt">English:</span> A thin glass/plastic fiber used to transmit light signals using TIR.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Ek patli glass ki taar jo light signals ko TIR ke zariye bhejti hai.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Consists of a Core (high $n$) and Cladding (low $n$).</li>    
+            <li>Signals travel at the speed of light with very little loss.</li>    
+            <li>Used extensively in high-speed internet and telecommunications.</li>    
+            <li>Also used in endoscopy (medical imaging).</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ \text{Based on TIR Principle} $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">14. Working of Optical Fibre</h1>    
+    <div class="box"><span class="eng-txt">English:</span> Light undergoes multiple TIRs inside the core to reach the end.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Light core ke andar baar-baar TIR karke aage badhti hai.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Light enters at one end at a specific angle.</li>    
+            <li>It strikes the core-cladding boundary at $i > C$.</li>    
+            <li>It keeps bouncing inside until it exits from the other end.</li>    
+            <li>Even if the fiber is bent, the signal follows the curve.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ \text{Multiple TIRs} $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">15. Refraction at Curved Surface</h1>    
+    <div class="box"><span class="eng-txt">English:</span> Refraction of light through spherical boundaries like glass spheres.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Golaakaar (curved) satah se light ka refraction.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Applies to single spherical surfaces separating two media.</li>    
+            <li>The normal is always the radius passing through the center.</li>    
+            <li>Follows specific sign conventions for $u$, $v$, and $R$.</li>    
+            <li>Foundation for understanding how lenses work.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ \frac{n_2}{v} - \frac{n_1}{u} = \frac{n_2 - n_1}{R} $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">16. Lens</h1>    
+    <div class="box"><span class="eng-txt">English:</span> A transparent material bound by two surfaces, at least one being curved.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Ek transparent cheez jiski kam se kam ek satah curved ho.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Convex Lens: Thick at center, thin at edges (Converging).</li>    
+            <li>Concave Lens: Thin at center, thick at edges (Diverging).</li>    
+            <li>Used in spectacles, cameras, and microscopes.</li>    
+            <li>Forms images by the process of refraction.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ \frac{1}{f} = \frac{1}{v} - \frac{1}{u} $$</div>    
+</div>
+<div class="main-wrapper" style="width: 100%; max-width: 100%; overflow-x: hidden; margin: 0; padding: 0;">
+
+    <div class="topic-page" style="width: 100%; box-sizing: border-box; display: block; overflow: hidden;">    
+        <h1 class="topic-title">17. Convex Lens</h1>    
+        <div class="box"><span class="eng-txt">English:</span> A lens that is thicker at the center than at the edges; it converges light rays.</div>    
+        <div class="box"><span class="hin-txt">Hindi:</span> Wo lens jo beech mein se mota aur kinaro se patla hota hai.</div>    
+        <div class="key-points">    
+            <ul>    
+                <li>Also known as a Converging Lens.</li>    
+                <li>Can form both real and virtual images.</li>    
+                <li>Used in magnifying glasses and cameras.</li>    
+                <li>It has a positive focal length ($+f$).</li>    
+            </ul>    
+        </div>    
+        <div class="formula-box">$$ \text{Converging Action} $$</div>    
+    </div>    
+
+    <div class="topic-page" style="width: 100%; box-sizing: border-box; display: block; overflow: hidden;">    
+        <h1 class="topic-title">18. Concave Lens</h1>    
+        <div class="box"><span class="eng-txt">English:</span> A lens that is thinner at the center than at the edges; it diverges light rays.</div>    
+        <div class="box"><span class="hin-txt">Hindi:</span> Wo lens jo beech mein se patla aur kinaro se mota hota hai.</div>    
+        <div class="key-points">    
+            <ul>    
+                <li>Also known as a Diverging Lens.</li>    
+                <li>Always forms a virtual, erect, and diminished image.</li>    
+                <li>Used in spectacles for correcting Myopia.</li>    
+                <li>It has a negative focal length ($-f$).</li>    
+            </ul>    
+        </div>    
+        <div class="formula-box">$$ \text{Diverging Action} $$</div>    
+    </div>    
+
+    <div class="topic-page" style="width: 100%; box-sizing: border-box; display: block; overflow: hidden;">    
+        <h1 class="topic-title">19. Optical Centre</h1>    
+        <div class="box"><span class="eng-txt">English:</span> The central point of a lens through which light passes without deviation.</div>    
+        <div class="box"><span class="hin-txt">Hindi:</span> Lens ka wo beech ka point jahan se light bina mude nikal jati hai.</div>    
+        <div class="key-points">    
+            <ul>    
+                <li>Represented by the symbol '$O$'.</li>    
+                <li>Any ray passing through it does not bend.</li>    
+                <li>All distances in lenses are measured from here.</li>    
+                <li>Located on the principal axis.</li>    
+            </ul>    
+        </div>    
+        <div class="formula-box">$$ \text{Point O} $$</div>    
+    </div>    
+
+    <div class="topic-page" style="width: 100%; box-sizing: border-box; display: block; overflow: hidden;">    
+        <h1 class="topic-title">20. Principal Focus</h1>    
+        <div class="box"><span class="eng-txt">English:</span> Point where parallel rays meet or appear to meet after refraction.</div>    
+        <div class="box"><span class="hin-txt">Hindi:</span> Wo point jahan parallel rays refraction ke baad milti hain.</div>    
+        <div class="key-points">    
+            <ul>    
+                <li>A lens has two principal foci ($F_1$ and $F_2$).</li>    
+                <li>Real for Convex lens, Virtual for Concave lens.</li>    
+                <li>It lies on the principal axis.</li>    
+                <li>Light appears to diverge from it in concave lenses.</li>    
+            </ul>    
+        </div>    
+        <div class="formula-box">$$ F_1, F_2 $$</div>    
+    </div>    
+
+    <div class="topic-page" style="width: 100%; box-sizing: border-box; display: block; overflow: hidden;">    
+        <h1 class="topic-title">21. Focal Length</h1>    
+        <div class="box"><span class="eng-txt">English:</span> The distance between the optical centre and the principal focus.</div>    
+        <div class="box"><span class="hin-txt">Hindi:</span> Optical centre aur focus ke beech ki doori.</div>    
+        <div class="key-points">    
+            <ul>    
+                <li>Represented by '$f$'.</li>    
+                <li>Positive for Convex, Negative for Concave.</li>    
+                <li>Determines how strongly the lens bends light.</li>    
+                <li>SI unit is meters (m).</li>    
+            </ul>    
+        </div>    
+        <div class="formula-box">$$ f = \text{Distance}(O-F) $$</div>    
+    </div>    
+
+    <div class="topic-page" style="width: 100%; box-sizing: border-box; display: block; overflow: hidden;">    
+        <h1 class="topic-title">22. Ray Diagrams (Convex)</h1>    
+        <div class="box"><span class="eng-txt">English:</span> Visual representation of images formed by a convex lens.</div>    
+        <div class="box"><span class="hin-txt">Hindi:</span> Convex lens dwara image banne ka diagram.</div>    
+        <div class="key-points">    
+            <ul>    
+                <li>Image can be real, inverted, or virtual.</li>    
+                <li>Virtual image forms when object is between F and O.</li>    
+                <li>Ray through $O$ goes straight.</li>    
+                <li>Parallel ray passes through Focus.</li>    
+            </ul>    
+        </div>    
+        <div class="formula-box">$$ \text{6 Image Cases} $$</div>    
+    </div>    
+
+    <div class="topic-page" style="width: 100%; box-sizing: border-box; display: block; overflow: hidden;">    
+        <h1 class="topic-title">23. Ray Diagrams (Concave)</h1>    
+        <div class="box"><span class="eng-txt">English:</span> Visual representation of images formed by a concave lens.</div>    
+        <div class="box"><span class="hin-txt">Hindi:</span> Concave lens dwara image banne ka diagram.</div>    
+        <div class="key-points">    
+            <ul>    
+                <li>Always forms virtual and erect images.</li>    
+                <li>Image is always smaller than the object.</li>    
+                <li>Image is always between F and O.</li>    
+                <li>Light rays appear to diverge from Focus.</li>    
+            </ul>    
+        </div>    
+        <div class="formula-box">$$ \text{Always Virtual} $$</div>    
+    </div>    
+
+    <div class="topic-page" style="width: 100%; box-sizing: border-box; display: block; overflow: hidden;">    
+        <h1 class="topic-title">24. Lens Formula</h1>    
+        <div class="box"><span class="eng-txt">English:</span> Relation between object distance, image distance, and focal length.</div>    
+        <div class="box"><span class="hin-txt">Hindi:</span> u, v aur f ke beech ka sambandh.</div>    
+        <div class="key-points">    
+            <ul>    
+                <li>$u$ is object distance, $v$ is image distance.</li>    
+                <li>Uses Cartesian sign convention.</li>    
+                <li>Different from mirror formula (minus sign).</li>    
+                <li>Valid for all types of spherical lenses.</li>    
+            </ul>    
+        </div>    
+        <div class="formula-box">$$ \frac{1}{v} - \frac{1}{u} = \frac{1}{f} $$</div>    
+    </div>    
+
+    <div class="topic-page" style="width: 100%; box-sizing: border-box; display: block; overflow: hidden;">    
+        <h1 class="topic-title">25. Magnification</h1>    
+        <div class="box"><span class="eng-txt">English:</span> Ratio of height of image to height of object.</div>    
+        <div class="box"><span class="hin-txt">Hindi:</span> Image ki unchai aur object ki unchai ka anupaat.</div>    
+        <div class="key-points">    
+            <ul>    
+                <li>Positive 'm' means virtual and erect image.</li>    
+                <li>Negative 'm' means real and inverted image.</li>    
+                <li>Also expressed as the ratio $v/u$.</li>    
+                <li>No units as it is a ratio.</li>    
+            </ul>    
+        </div>    
+        <div class="formula-box">$$ m = \frac{h'}{h} = \frac{v}{u} $$</div>    
+    </div>    
+
+    <div class="topic-page" style="width: 100%; box-sizing: border-box; display: block; overflow: hidden;">    
+        <h1 class="topic-title">26. Power of Lens</h1>    
+        <div class="box"><span class="eng-txt">English:</span> Degree of convergence or divergence of light rays.</div>    
+        <div class="box"><span class="hin-txt">Hindi:</span> Lens ki light ko modne ki kshamta.</div>    
+        <div class="key-points">    
+            <ul>    
+                <li>It is the reciprocal of focal length.</li>    
+                <li>$P = 1/f$ when $f$ is in meters.</li>    
+                <li>More power means more bending.</li>    
+                <li>Power is positive for Convex lens.</li>    
+            </ul>    
+        </div>    
+        <div class="formula-box">$$ P = \frac{1}{f(m)} $$</div>    
+    </div>    
+
+    <div class="topic-page" style="width: 100%; box-sizing: border-box; display: block; overflow: hidden;">    
+        <h1 class="topic-title">27. Unit of Power (Dioptre)</h1>    
+        <div class="box"><span class="eng-txt">English:</span> The SI unit of power of a lens.</div>    
+        <div class="box"><span class="hin-txt">Hindi:</span> Lens ki power napne ki SI unit.</div>    
+        <div class="key-points">    
+            <ul>    
+                <li>Represented by the letter 'D'.</li>    
+                <li>1D is the power of a lens with $f = 1$ meter.</li>    
+                <li>Calculated using $f$ in meters only.</li>    
+                <li>Concave lens has negative power in Dioptres.</li>    
+            </ul>    
+        </div>    
+        <div class="formula-box">$$ 1D = 1m^{-1} $$</div>    
+    </div>
+
+</div>
+<div class="main-wrapper" style="width: 100%; max-width: 100%; overflow-x: hidden; margin: 0; padding: 0;">
+
+    <div class="topic-page" style="width: 100%; box-sizing: border-box; display: block; overflow: hidden; padding: 10px;">    
+        <h1 class="topic-title">28. Combination of Lenses</h1>    
+        <div class="box"><span class="eng-txt">English:</span> Placing two or more lenses in contact to increase magnification or sharpen the image.</div>    
+        <div class="box"><span class="hin-txt">Hindi:</span> Do ya zyada lenses ko ek saath rakhna taaki power ya clarity badh sake.</div>    
+        <div class="key-points">    
+            <ul>    
+                <li>The net power ($P$) is the algebraic sum of individual powers.</li>    
+                <li>Used in cameras, microscopes, and telescopes.</li>    
+                <li>If one lens is convex ($+P$) and another concave ($-P$), they can cancel out.</li>    
+                <li>Total magnification ($m$) is the product of individual magnifications ($m_1 \times m_2$).</li>    
+            </ul>    
+        </div>    
+        <div class="formula-box">$$ P = P_1 + P_2 + P_3 + \dots $$</div>    
+    </div>    
+
+    <div class="topic-page" style="width: 100%; box-sizing: border-box; display: block; overflow: hidden; padding: 10px;">    
+        <h1 class="topic-title">29. Optical Instruments</h1>    
+        <div class="box"><span class="eng-txt">English:</span> Devices that use mirrors and lenses to assist the eye in seeing objects.</div>    
+        <div class="box"><span class="hin-txt">Hindi:</span> Wo tools jo mirrors aur lenses ka istemal karke dekhne mein madad karte hain.</div>    
+        <div class="key-points">    
+            <ul>    
+                <li>Simple Microscope: Uses a single convex lens of short focal length.</li>    
+                <li>Compound Microscope: Uses two convex lenses (Objective and Eyepiece).</li>    
+                <li>Telescope: Used to see distant objects like stars or planets.</li>    
+                <li>Projectors and Cameras are also common optical instruments.</li>    
+            </ul>    
+        </div>    
+        <div class="formula-box">$$ \text{Microscope / Telescope} $$</div>    
+    </div>    
+
+    <div class="topic-page" style="width: 100%; box-sizing: border-box; display: block; overflow: hidden; padding: 10px;">    
+        <h1 class="topic-title">30. Structure of Eye</h1>    
+        <div class="box"><span class="eng-txt">English:</span> The biological organ responsible for vision, acting like a natural camera.</div>    
+        <div class="box"><span class="hin-txt">Hindi:</span> Insaani aankh ki banawat jo ek natural camera ki tarah kaam karti hai.</div>    
+        <div class="key-points">    
+            <ul>    
+                <li>Cornea: Front transparent part that refracts most of the light.</li>    
+                <li>Iris & Pupil: Control the amount of light entering the eye.</li>    
+                <li>Eye Lens: A crystalline convex lens that focuses light on the retina.</li>    
+                <li>Retina: The screen where the image is formed (contains light-sensitive cells).</li>    
+            </ul>    
+        </div>    
+        <div class="formula-box">$$ \text{Natural Convex Lens} $$</div>    
+    </div>    
+
+    <div class="topic-page" style="width: 100%; box-sizing: border-box; display: block; overflow: hidden; padding: 10px;">    
+        <h1 class="topic-title">31. Power of Accommodation</h1>    
+        <div class="box"><span class="eng-txt">English:</span> The ability of the eye lens to adjust its focal length to see near and far objects clearly.</div>    
+        <div class="box"><span class="hin-txt">Hindi:</span> Aankh ke lens ki focal length badalne ki kshamta taaki door aur paas ka saaf dikhe.</div>    
+        <div class="key-points">    
+            <ul>    
+                <li>Ciliary muscles help in changing the curvature of the eye lens.</li>    
+                <li>To see far: Muscles relax, lens becomes thin (focal length increases).</li>    
+                <li>To see near: Muscles contract, lens becomes thick (focal length decreases).</li>    
+                <li>This ability decreases with age (Presbyopia).</li>    
+            </ul>    
+        </div>    
+        <div class="formula-box">$$ \text{Focal Length Adjustment} $$</div>    
+    </div>    
+
+    <div class="topic-page" style="width: 100%; box-sizing: border-box; display: block; overflow: hidden; padding: 10px;">    
+        <h1 class="topic-title">32. Near Point</h1>    
+        <div class="box"><span class="eng-txt">English:</span> The minimum distance at which the eye can see objects clearly without strain.</div>    
+        <div class="box"><span class="hin-txt">Hindi:</span> Wo kam se kam doori jahan aankh bina kisi dabaav ke saaf dekh sakti hai.</div>    
+        <div class="key-points">    
+            <ul>    
+                <li>Also called the "Least Distance of Distinct Vision".</li>    
+                <li>For a normal adult eye, this distance is 25 cm.</li>    
+                <li>Closer than this, the image appears blurred or causes eye strain.</li>    
+                <li>It can increase with age or due to Hypermetropia.</li>    
+            </ul>    
+        </div>    
+        <div class="formula-box">$$ D = 25 \, \text{cm} $$</div>    
+    </div>    
+
+    <div class="topic-page" style="width: 100%; box-sizing: border-box; display: block; overflow: hidden; padding: 10px;">    
+        <h1 class="topic-title">33. Far Point</h1>    
+        <div class="box"><span class="eng-txt">English:</span> The maximum distance up to which the eye can see objects clearly.</div>    
+        <div class="box"><span class="hin-txt">Hindi:</span> Wo zyada se zyada doori jahan tak aankh saaf dekh sakti hai.</div>    
+        <div class="key-points">    
+            <ul>    
+                <li>For a normal human eye, the far point is at Infinity ($\infty$).</li>    
+                <li>A healthy eye can see stars (which are very far) clearly.</li>    
+                <li>In Myopia (nearsightedness), the far point shifts closer to the eye.</li>    
+                <li>Corrected using a concave lens to shift the image back to the retina.</li>    
+            </ul>    
+        </div>    
+        <div class="formula-box">$$ \text{Far Point} = \infty $$</div>    
+    </div>
+
+</div>
+<div class="main-wrapper" style="width: 100%; max-width: 100%; overflow-x: hidden; margin: 0; padding: 0; position: relative;">
+
+    <div class="topic-page" style="width: 100%; box-sizing: border-box; display: block; overflow: hidden; padding: 10px; margin-bottom: 15px;">    
+        <h1 class="topic-title">34. Myopia (Short Sightedness)</h1>    
+        <div class="box"><span class="eng-txt">English:</span> A defect where a person can see nearby objects clearly but cannot see distant objects.</div>    
+        <div class="box"><span class="hin-txt">Hindi:</span> Isme insaan ko paas ka saaf dikhta hai, lekin door ka dhundhla (blur) dikhta hai.</div>    
+        <div class="key-points">    
+            <ul>    
+                <li>Image is formed in front of the retina instead of on it.</li>    
+                <li>Causes: Excessive curvature of eye lens or elongation of eyeball.</li>    
+                <li>Far point of the eye becomes less than infinity.</li>    
+                <li>Corrected using a Concave lens.</li>    
+            </ul>    
+        </div>    
+        <div class="formula-box">$$ \text{Concave Lens Required} $$</div>    
+    </div>    
+
+    <div class="topic-page" style="width: 100%; box-sizing: border-box; display: block; overflow: hidden; padding: 10px; margin-bottom: 15px;">    
+        <h1 class="topic-title">35. Hypermetropia</h1>    
+        <div class="box"><span class="eng-txt">English:</span> A defect where a person can see distant objects clearly but cannot see nearby objects.</div>    
+        <div class="box"><span class="hin-txt">Hindi:</span> Isme door ka saaf dikhta hai, par paas ki cheezein dhundhli dikhti hain.</div>    
+        <div class="key-points">    
+            <ul>    
+                <li>Image is formed behind the retina.</li>    
+                <li>Causes: Focal length of eye lens is too long or eyeball is too small.</li>    
+                <li>Near point of the eye shifts further away from 25 cm.</li>    
+                <li>Corrected using a Convex lens.</li>    
+            </ul>    
+        </div>    
+        <div class="formula-box">$$ \text{Convex Lens Required} $$</div>    
+    </div>    
+
+    <div class="topic-page" style="width: 100%; box-sizing: border-box; display: block; overflow: hidden; padding: 10px; margin-bottom: 15px;">    
+        <h1 class="topic-title">36. Presbyopia</h1>    
+        <div class="box"><span class="eng-txt">English:</span> Age-related loss of the eye's ability to focus on nearby objects.</div>    
+        <div class="box"><span class="hin-txt">Hindi:</span> Umra badhne ke saath paas ki nazar kamzor hona.</div>    
+        <div class="key-points">    
+            <ul>    
+                <li>Occurs due to weakening of ciliary muscles and loss of lens flexibility.</li>    
+                <li>Person may suffer from both myopia and hypermetropia.</li>    
+                <li>Often corrected using Bi-focal lenses.</li>    
+                <li>Upper part is concave (for distance) and lower is convex (for reading).</li>    
+            </ul>    
+        </div>    
+        <div class="formula-box">$$ \text{Bi-focal Lenses} $$</div>    
+    </div>    
+
+    <div class="topic-page" style="width: 100%; box-sizing: border-box; display: block; overflow: hidden; padding: 10px; margin-bottom: 15px;">    
+        <h1 class="topic-title">37. Correction of Myopia</h1>    
+        <div class="box"><span class="eng-txt">English:</span> Using a concave lens of suitable power to shift the image back to the retina.</div>    
+        <div class="box"><span class="hin-txt">Hindi:</span> Concave lens laga kar image ko wapas retina par lana.</div>    
+        <div class="key-points">    
+            <ul>    
+                <li>The lens diverges incoming rays so they focus correctly on retina.</li>    
+                <li>Power of correcting lens is negative ($-D$).</li>    
+                <li>Focal length of lens matches the distance to the eye's new far point.</li>    
+                <li>Restores clear vision for distant objects.</li>    
+            </ul>    
+        </div>    
+        <div class="formula-box">$$ P = -\frac{1}{f} $$</div>    
+    </div>    
+
+    <div class="topic-page" style="width: 100%; box-sizing: border-box; display: block; overflow: hidden; padding: 10px; margin-bottom: 15px;">    
+        <h1 class="topic-title">38. Correction of Hypermetropia</h1>    
+        <div class="box"><span class="eng-txt">English:</span> Using a convex lens to increase converging power of the eye.</div>    
+        <div class="box"><span class="hin-txt">Hindi:</span> Convex lens se light ko pehle modna taaki image retina par ban jaye.</div>    
+        <div class="key-points">    
+            <ul>    
+                <li>Convex lens provides additional converging power.</li>    
+                <li>Power of correcting lens is positive ($+D$).</li>    
+                <li>Helps the eye to focus on objects at 25 cm again.</li>    
+                <li>The virtual image of the object is formed at the eye's actual near point.</li>    
+            </ul>    
+        </div>    
+        <div class="formula-box">$$ P = +\frac{1}{f} $$</div>    
+    </div>    
+
+    <div class="topic-page" style="width: 100%; box-sizing: border-box; display: block; overflow: hidden; padding: 10px; margin-bottom: 15px;">    
+        <h1 class="topic-title">39. Simple Microscope</h1>    
+        <div class="box"><span class="eng-txt">English:</span> A magnifying glass consisting of a single convex lens of short focal length.</div>    
+        <div class="box"><span class="hin-txt">Hindi:</span> Ek akela convex lens jo cheezon ko bada karke dikhata hai.</div>    
+        <div class="key-points">    
+            <ul>    
+                <li>Object is placed within the focal length ($u < f$).</li>    
+                <li>Forms a virtual, erect, and magnified image.</li>    
+                <li>Image is formed at the least distance of distinct vision ($D$).</li>    
+                <li>Commonly used by watchmakers and jewelers.</li>    
+            </ul>    
+        </div>    
+        <div class="formula-box">$$ \text{Virtual & Enlarged Image} $$</div>    
+    </div>    
+
+    <div class="topic-page" style="width: 100%; box-sizing: border-box; display: block; overflow: hidden; padding: 10px; margin-bottom: 15px;">    
+        <h1 class="topic-title">40. Magnifying Power</h1>    
+        <div class="box"><span class="eng-txt">English:</span> The ratio of the angle subtended by the image at the eye to the angle subtended by the object.</div>    
+        <div class="box"><span class="hin-txt">Hindi:</span> Ye batata hai ki koi instrument cheez ko kitna bada dikha sakta hai.</div>    
+        <div class="key-points">    
+            <ul>    
+                <li>Represented by '$M$'.</li>    
+                <li>For Simple Microscope: $M = 1 + D/f$ (when image is at $D$).</li>    
+                <li>For Simple Microscope: $M = D/f$ (when image is at infinity).</li>    
+                <li>Increasing the curvature of the lens increases magnifying power.</li>    
+            </ul>    
+        </div>    
+        <div class="formula-box">$$ M = 1 + \frac{D}{f} $$</div>    
+    </div>
+
+</div>
+<div class="main-wrapper" style="width: 100%; max-width: 100%; overflow-x: hidden; margin: 0; padding: 0;">
+
+    <div class="topic-page" style="width: 100%; box-sizing: border-box; display: block; overflow: hidden; padding: 10px; margin-bottom: 15px;">    
+        <h1 class="topic-title">41. Compound Microscope</h1>    
+        <div class="box"><span class="eng-txt">English:</span> An optical instrument used to see high magnification of tiny objects using two convex lenses.</div>    
+        <div class="box"><span class="hin-txt">Hindi:</span> Bahut chhoti cheezon ko bada karke dekhne wala yantra jisme do convex lenses hote hain.</div>    
+        <div class="key-points">    
+            <ul>    
+                <li>Uses two lenses: Objective (small $f$) and Eyepiece (larger $f$).</li>    
+                <li>The objective lens forms a real, inverted, and magnified image.</li>    
+                <li>The eyepiece acts as a simple magnifying glass for the first image.</li>    
+                <li>Final image is virtual, inverted, and highly magnified.</li>    
+            </ul>    
+        </div>    
+        <div class="formula-box">$$ \text{Two-stage Magnification} $$</div>    
+    </div>    
+
+    <div class="topic-page" style="width: 100%; box-sizing: border-box; display: block; overflow: hidden; padding: 10px; margin-bottom: 15px;">    
+        <h1 class="topic-title">42. Magnifying Power (Microscope)</h1>    
+        <div class="box"><span class="eng-txt">English:</span> The total magnification produced by the combination of objective and eyepiece.</div>    
+        <div class="box"><span class="hin-txt">Hindi:</span> Objective aur Eyepiece lens milkar cheez ko kitna bada dikhate hain.</div>    
+        <div class="key-points">    
+            <ul>    
+                <li>Total $M = m_o \times m_e$.</li>    
+                <li>For image at $D$: $M = \frac{L}{f_o} (1 + \frac{D}{f_e})$.</li>    
+                <li>Short focal lengths of both lenses increase the magnification.</li>    
+                <li>$L$ is the length of the microscope tube.</li>    
+            </ul>    
+        </div>    
+        <div class="formula-box">$$ M = m_o \times m_e $$</div>    
+    </div>    
+
+    <div class="topic-page" style="width: 100%; box-sizing: border-box; display: block; overflow: hidden; padding: 10px; margin-bottom: 15px;">    
+        <h1 class="topic-title">43. Astronomical Telescope</h1>    
+        <div class="box"><span class="eng-txt">English:</span> An instrument used to see distant celestial objects like stars and planets.</div>    
+        <div class="box"><span class="hin-txt">Hindi:</span> Door ki khagoliya cheezein (tare, grah) dekhne wala yantra.</div>    
+        <div class="key-points">    
+            <ul>    
+                <li>Uses two convex lenses: Objective (large aperture) and Eyepiece (small $f$).</li>    
+                <li>Objective lens collects maximum light from distant objects.</li>    
+                <li>The intermediate image is real and inverted.</li>    
+                <li>The final image is virtual and inverted with respect to the object.</li>    
+            </ul>    
+        </div>    
+        <div class="formula-box">$$ \text{For Distant Objects} $$</div>    
+    </div>    
+
+    <div class="topic-page" style="width: 100%; box-sizing: border-box; display: block; overflow: hidden; padding: 10px; margin-bottom: 15px;">    
+        <h1 class="topic-title">44. Magnifying Power (Telescope)</h1>    
+        <div class="box"><span class="eng-txt">English:</span> The ratio of the angle subtended at the eye by the image to the angle subtended by the distant object.</div>    
+        <div class="box"><span class="hin-txt">Hindi:</span> Door ki cheez ka aankh par banne wala angle aur image ke angle ka ratio.</div>    
+        <div class="key-points">    
+            <ul>    
+                <li>For normal adjustment (image at infinity): $M = f_o / f_e$.</li>    
+                <li>Length of the tube in normal adjustment is $L = f_o + f_e$.</li>    
+                <li>To increase $M$, the focal length of the objective ($f_o$) should be large.</li>    
+                <li>Final image is at a large distance from the eye for relaxed vision.</li>    
+            </ul>    
+        </div>    
+        <div class="formula-box">$$ M = \frac{f_o}{f_e} $$</div>    
+    </div>
+
+</div>
+</div>
+
+<div style="text-align:center; margin-bottom:20px;">
+    <h1 style="color:#00f7ff; font-family:sans-serif; text-transform:uppercase; text-shadow:0 0 10px #00f7ff;">Ray Optics MCQ Practice</h1>
+    <p style="color:#FFD700; font-family:sans-serif; font-weight:bold;">Click to choose correct answer</p>
+</div>
+
+<div id="quiz-box" style="max-width:600px; margin:auto; position:relative; z-index:1;"></div>
+
+<div id="quiz-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; z-index:9999; flex-direction:column; align-items:center; justify-content:center; pointer-events:none;">
+    <div id="status-strip" style="width:100%; text-align:center; padding:30px 0;">
+        <h1 id="status-title" style="margin:0; padding:0;"></h1>
+        <p id="status-message" style="margin:10px 0; font-family:sans-serif; font-weight:bold;"></p>
+        <p id="next-msg" style="margin:0; font-family:sans-serif;"></p>
+    </div>
+</div>
+
+<style>
+@keyframes rgb-glow {
+    0% { border-color: #00f7ff; box-shadow: 0 0 8px #00f7ff; }
+    33% { border-color: #ff00c8; box-shadow: 0 0 8px #ff00c8; }
+    66% { border-color: #48ff00; box-shadow: 0 0 8px #48ff00; }
+    100% { border-color: #00f7ff; box-shadow: 0 0 8px #00f7ff; }
+}
+.quiz-card {
+    background: rgba(255,255,255,0.05); 
+    padding: 20px; 
+    margin: 15px 0; 
+    border-radius: 15px; 
+    border: 2px solid #00f7ff; 
+    animation: rgb-glow 4s linear infinite;
+}
+.opt-btn {
+    display: block; 
+    width: 100%; 
+    margin: 12px 0; 
+    padding: 15px; 
+    background: rgba(255,255,255,0.08); 
+    color: #fff; 
+    border: 1.5px solid #00f7ff; 
+    border-radius: 12px; 
+    text-align: left; 
+    font-weight: 600; 
+    cursor: pointer;
+    animation: rgb-glow 3s linear infinite;
+}
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+const questions = [
+    { q:"A convex lens is also known as a ______ lens.", opts:["Diverging","Converging","Bifocal","None"], ans:1 },
+    { q:"The unit of power of a lens is:", opts:["Meter","Watt","Dioptre","Lumen"], ans:2 },
+    { q:"In Myopia, the image is formed ______ the retina.", opts:["On","Behind","In front of","At blind spot"], ans:2 },
+    { q:"Which lens is used to correct Hypermetropia?", opts:["Concave","Convex","Cylindrical","Bifocal"], ans:1 },
+    { q:"The speed of light is maximum in:", opts:["Glass","Water","Diamond","Vacuum"], ans:3 },
+    { q:"Snell's Law is related to:", opts:["Reflection","Refraction","Dispersion","Scattering"], ans:1 },
+    { q:"Total Internal Reflection occurs when light travels from:", opts:["Rarer to Denser","Denser to Rarer","Air to Water","None"], ans:1 },
+    { q:"The focal length of a plane mirror is:", opts:["Zero","Infinite","25 cm","10 cm"], ans:1 },
+    { q:"Least distance of distinct vision for a normal eye is:", opts:["Infinity","25 m","25 cm","10 cm"], ans:2 },
+    { q:"Power of a lens is reciprocal of its ______ in meters.", opts:["Radius","Focal Length","Diameter","Aperture"], ans:1 },
+    { q:"The lens formula is given by:", opts:["1/v + 1/u = 1/f","1/v - 1/u = 1/f","v - u = f","uv = f"], ans:1 },
+    { q:"A concave lens always forms a ______ image.", opts:["Real","Inverted","Virtual & Diminished","Magnified"], ans:2 },
+    { q:"Optical fibers work on the principle of:", opts:["Refraction","Interference","TIR","Polarization"], ans:2 },
+    { q:"The color of light that deviates least in a prism is:", opts:["Violet","Blue","Green","Red"], ans:3 },
+    { q:"A simple microscope uses a ______ lens.", opts:["Concave","Short focal length Convex","Long focal length Convex","Cylindrical"], ans:1 },
+    { q:"Magnifying power of a telescope is:", opts:["fo / fe","fe / fo","fo + fe","fo - fe"], ans:0 },
+    { q:"Presbyopia is corrected by using:", opts:["Convex lens","Concave lens","Bifocal lens","Prism"], ans:2 },
+    { q:"The far point of a normal human eye is:", opts:["25 cm","100 cm","Infinity","Zero"], ans:2 },
+    { q:"Magnification (m) for a lens is:", opts:["-v/u","v/u","u/v","1/v"], ans:1 },
+    { q:"Radius of curvature is equal to ______ of focal length.", opts:["Half","Double","Triple","Equal"], ans:1 },
+    { q:"Refractive index of vacuum is:", opts:["0","1","1.33","1.5"], ans:1 },
+    { q:"Critical angle depends on:", opts:["Nature of media","Color of light","Both","None"], ans:2 },
+    { q:"When light enters a denser medium, it bends ______ the normal.", opts:["Away from","Towards","Doesn't bend","Backwards"], ans:1 },
+    { q:"Mirage is an example of:", opts:["Reflection","Scattering","TIR","Interference"], ans:2 },
+    { q:"The part of the eye that controls light entry is:", opts:["Retina","Cornea","Iris/Pupil","Lens"], ans:2 },
+    { q:"For a convex lens, if the object is at infinity, image is at:", opts:["Focus","Center of curvature","Infinity","Optical center"], ans:0 },
+    { q:"SI unit of refractive index is:", opts:["Dioptre","Meter","No unit","Watt"], ans:2 },
+    { q:"In a compound microscope, the objective has ______ focal length.", opts:["Small","Very Large","Infinite","Zero"], ans:0 },
+    { q:"Power of accommodation is the ability to change ______.", opts:["Iris size","Focal length","Retina position","Eye color"], ans:1 },
+    { q:"Combination of two lenses with power P1 and P2 is:", opts:["P1*P2","P1/P2","P1+P2","P1-P2"], ans:2 },
+    { q:"Linear magnification of a plane mirror is:", opts:["0","+1","-1","Infinity"], ans:1 },
+    { q:"Lateral displacement occurs in:", opts:["Prism","Glass slab","Lens","Mirror"], ans:1 },
+    { q:"The center of the lens is called:", opts:["Pole","Focus","Optical Centre","Curvature"], ans:2 },
+    { q:"A lens of power -2.0 D is a:", opts:["Convex lens","Concave lens","Plane glass","Bifocal"], ans:1 },
+    { q:"The image on the retina is:", opts:["Virtual and erect","Real and inverted","Real and erect","Virtual and inverted"], ans:1 },
+    { q:"Diamond sparkles because of its high ______.", opts:["Hardness","Mass","Refractive index (TIR)","Color"], ans:2 },
+    { q:"Formula for power P is:", opts:["1/f (cm)","100/f (cm)","f/100","f"], ans:1 },
+    { q:"Distance between two lenses in a telescope (normal) is:", opts:["fo - fe","fo + fe","fo * fe","fo / fe"], ans:1 },
+    { q:"Ciliary muscles help in:", opts:["Protecting eye","Changing lens shape","Cleaning eye","Moving eye"], ans:1 },
+    { q:"Light appears to travel in a ______ line.", opts:["Curved","Straight","Circular","Zigzag"], ans:1 },
+    { q:"Angle of deviation is minimum for which color?", opts:["Red","Violet","Yellow","Blue"], ans:0 },
+    { q:"Concave lens is also called ______ lens.", opts:["Converging","Diverging","Focusing","Magnifying"], ans:1 },
+    { q:"Magnification of a simple microscope at infinity is:", opts:["D/f","1+D/f","f/D","1"], ans:0 },
+    { q:"Sign of focal length for a concave lens is:", opts:["Positive","Negative","Neutral","Infinite"], ans:1 },
+    { q:"Sky appears blue due to:", opts:["Refraction","Reflection","Scattering","TIR"], ans:2 },
+    { q:"1 Dioptre = ______.", opts:["1 m","1 m⁻¹","1 cm","1 cm⁻¹"], ans:1 },
+    { q:"Absolute refractive index is always ______.", opts: ["Less than 1", "Equal to 0", "Greater than 1", "Negative"], ans: 2},
+    { q:"An object is at 2F of a convex lens, image is at:", opts:["F","2F","Infinity","Optical center"], ans:1 },
+    { q:"Which instrument is used to see stars?", opts:["Microscope","Telescope","Periscope","Spectrometer"], ans:1 },
+    { q:"The focal length of a lens depends on:", opts:["Radius of curvature","Refractive index","Both","None"], ans:2 }
+];
+
+const quizBox = document.getElementById('quiz-box');
+questions.forEach((item, index) => {
+    let card = document.createElement('div');
+    card.className = "quiz-card";
+    card.innerHTML = `<p style="color:#FFD700; font-size:18px; font-weight:bold;">Q${index+1}. ${item.q}</p>`;
+    item.opts.forEach((opt, oIdx) => {
+        let btn = document.createElement('button');
+        btn.innerText = opt;
+        btn.className = "opt-btn";
+        btn.onclick = () => {
+            const overlay = document.getElementById('quiz-overlay');
+            const title = document.getElementById('status-title');
+            const msg = document.getElementById('status-message');
+            const nxt = document.getElementById('next-msg');
+            const strip = document.getElementById('status-strip');
+            overlay.style.display = "flex";
+            overlay.style.pointerEvents = "auto"; 
+            if(oIdx === item.ans){
+                overlay.style.background = "rgba(0,0,0,0.85)";
+                strip.style.background = "transparent";
+                title.style.cssText = "font-family:'Dancing Script', cursive; color:#fff; font-size:60px; text-shadow:0 0 20px #00f7ff, 0 0 40px #00f7ff;";
+                title.innerText = "Congratulations";
+                msg.innerText = "Excellent! You are a Ray Optics Expert.";
+                msg.style.color = "#00f7ff";
+                nxt.innerText = "Keep going, Topper!";
+                var end = Date.now() + 1500;
+                var colors = ['#00f7ff','#ff0000','#ffffff','#ff00c8','#48ff00'];
+                (function frame(){
+                    confetti({particleCount:15,angle:60,spread:65,origin:{x:0},colors:colors, zIndex: 999999});
+                    confetti({particleCount:15,angle:120,spread:65,origin:{x:1},colors:colors, zIndex: 999999});
+                    if(Date.now() < end) requestAnimationFrame(frame);
+                })();
+            } else {
+                overlay.style.background = "radial-gradient(rgba(139,0,0,0.5) 10%, rgba(0,0,0,0.85) 90%)";
+                strip.style.background = "rgba(0,0,0,0.6)";
+                title.style.cssText = "font-family:'Oswald', sans-serif; color:red; font-size:80px; font-weight:900; letter-spacing:10px; text-shadow:4px 4px 0px #000;";
+                title.innerText = "WASTED";
+                msg.innerText = "Focus on the diagram and try again!";
+                msg.style.color = "#fff";
+                nxt.innerText = "";
+            }
+            setTimeout(() => {
+                overlay.style.display = "none";
+                overlay.style.pointerEvents = "none"; 
+            }, 2000);
+        };
+        card.appendChild(btn);
+    });
+    quizBox.appendChild(card);
+});
+});
+</script>
+
+<div style="text-align:center; margin-bottom:20px;">
+    <h1 style="color:#00ffcc; font-family:sans-serif; text-transform:uppercase; text-shadow:0 0 15px #00ffcc;">Advanced Level: Q51 - Q100</h1>
+    <p style="color:#ffffff; font-family:sans-serif; font-weight:bold;">Conceptual Depth: Ray Optics Toppers Pack</p>
+</div>
+
+<div id="quiz-box" style="max-width:600px; margin:auto; position:relative; z-index:1;"></div>
+
+<div id="quiz-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; z-index:9999; flex-direction:column; align-items:center; justify-content:center; pointer-events:none;">
+    <div id="status-strip" style="width:100%; text-align:center; padding:30px 0;">
+        <h1 id="status-title"></h1>
+        <p id="status-message" style="font-weight:bold;"></p>
+        <p id="next-msg"></p>
+    </div>
+</div>
+
+<style>
+@keyframes rgb-glow {
+    0% { border-color: #00f7ff; box-shadow: 0 0 8px #00f7ff; }
+    33% { border-color: #ff00c8; box-shadow: 0 0 8px #ff00c8; }
+    66% { border-color: #48ff00; box-shadow: 0 0 8px #48ff00; }
+    100% { border-color: #00f7ff; box-shadow: 0 0 8px #00f7ff; }
+}
+.quiz-card {
+    background: linear-gradient(145deg, #0f2027, #203a43, #2c5364); 
+    padding: 20px; 
+    margin: 15px 0; 
+    border-radius: 15px; 
+    border: 2px solid #00f7ff; 
+    animation: rgb-glow 4s linear infinite; 
+}
+.opt-btn {
+    display: block; 
+    width: 100%; 
+    margin: 10px 0; 
+    padding: 14px; 
+    background: rgba(255,255,255,0.05); 
+    color: #fff; 
+    border: 1.5px solid #00ffcc; 
+    border-radius: 10px; 
+    text-align: left; 
+    font-weight: 600; 
+    cursor: pointer;
+    transition: 0.3s;
+    animation: rgb-glow 3s linear infinite; 
+}
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+const questions = [
+    {q:"If a convex lens is immersed in water, its focal length will:",opts:["Decrease","Increase","Remain same","Become zero"],ans:1},
+    {q:"The refractive index of a prism depends on:",opts:["Angle of prism","Material","Color of light","All of these"],ans:3},
+    {q:"In TIR, the angle of refraction is:",opts:["0°","45°","90°","180°"],ans:2},
+    {q:"Which of the following has the highest refractive index?",opts:["Glass","Water","Diamond","Ruby"],ans:2},
+    {q:"The power of a combination of a convex lens (f=20cm) and concave lens (f=25cm) is:",opts:["+1 D","-1 D","+5 D","+9 D"],ans:0},
+    {q:"For a given prism, the angle of minimum deviation depends on:",opts:["Angle of incidence","Angle of prism","Both","None"],ans:1},
+    {q:"In a compound microscope, the intermediate image is:",opts:["Virtual and erect","Real and magnified","Virtual and diminished","Real and inverted"],ans:3},
+    {q:"If the aperture of a telescope is doubled, its resolving power will:",opts:["Be halved","Be doubled","Be four times","Remain same"],ans:1},
+    {q:"A fish in water sees a bird in air. To the fish, the bird appears:",opts:["Closer","Farther","At same distance","Inverted"],ans:1},
+    {q:"The focal length of a lens for violet light is ______ than for red light.",opts:["Greater","Smaller","Equal","Double"],ans:1},
+    {q:"Astigmatism is corrected by using which lens?",opts:["Convex","Concave","Cylindrical","Bifocal"],ans:2},
+    {q:"A lens becomes invisible in a liquid if its refractive index is:",opts:["Greater than liquid","Smaller than liquid","Equal to liquid","Zero"],ans:2},
+    {q:"The magnifying power of an astronomical telescope in normal adjustment is:",opts:["fo / fe","fo + fe","fo * fe","fe / fo"],ans:0},
+    {q:"In Myopia, the eye lens becomes too:",opts:["Thin","Curved (Thick)","Flat","Small"],ans:1},
+    {q:"The length of a compound microscope is approximately:",opts:["fo + fe","vo + ve","vo + fe","fo + ve"],ans:2},
+    {q:"Critical angle for a medium is 30°. Its refractive index is:",opts:["1.5","2.0","1.33","2.42"],ans:1},
+    {q:"If an object moves toward a plane mirror at speed v, the image moves at:",opts:["v","2v","v/2","Zero"],ans:1},
+    {q:"The relation between 'i', 'e', 'A' and 'δ' for a prism is:",opts:["i + e = A + δ","i + A = e + δ","i - e = A - δ","None"],ans:0},
+    {q:"A convex lens of power +4D and concave lens of -2D are in contact. Net focal length is:",opts:["25 cm","50 cm","100 cm","10 cm"],ans:1},
+    {q:"The final image in a telescope is ______ with respect to the object.",opts:["Erect","Inverted","Sideways","None"],ans:1},
+    {q:"Scattering of light is inversely proportional to ______ power of wavelength.",opts:["2nd","3rd","4th","1st"],ans:2},
+    {q:"For TIR to occur, the angle of incidence must be ______ than critical angle.",opts:["Smaller","Greater","Equal","None"],ans:1},
+    {q:"The refractive index of air is approximately:",opts:["0","1.0003","1.33","1.5"],ans:1},
+    {q:"Magnification of a simple microscope is max when image is at:",opts:["Infinity","Near point (D)","Focus","Optical center"],ans:1},
+    {q:"In an optical fibre, the cladding index is ______ than core index.",opts:["Higher","Lower","Equal","Double"],ans:1},
+    {q:"Optical density is related to:",opts:["Mass density","Speed of light","Weight","Volume"],ans:1},
+    {q:"Lateral shift depends on which of the following?",opts:["Thickness of slab","Angle of incidence","Refractive index","All of these"],ans:3},
+    {q:"The focal length of a lens of power +1D is:",opts:["1 cm","10 cm","100 cm","1000 cm"],ans:2},
+    {q:"Mirage is common in which region?",opts:["Mountains","Deserts","Oceans","Forests"],ans:1},
+    {q:"The wavelength of light ______ when it enters a denser medium.",opts:["Increases","Decreases","Remains same","Becomes zero"],ans:1},
+    {q:"The magnifying power of a telescope for relaxed eye is:",opts:["fo / fe","fo(1 + fe/D)","(1 + D/f)","None"],ans:0},
+    {q:"A ray of light passing through the optical center suffers ______ deviation.",opts:["Maximum","Zero","90°","45°"],ans:1},
+    {q:"When a lens is cut into two equal vertical halves, the power of each half:",opts:["Doubles","Halves","Remains same","Becomes zero"],ans:1},
+    {q:"For a normal eye, the power of accommodation is about:",opts:["4D","40D","10D","1D"],ans:0},
+    {q:"Which phenomenon proves the transverse nature of light?",opts:["Reflection","Refraction","Polarization","Interference"],ans:2},
+    {q:"A person cannot see beyond 2m. The power of lens required is:",opts:["+0.5 D","-0.5 D","+2 D","-2 D"],ans:1},
+    {q:"Angle of deviation in a thin prism of angle A is:",opts:["(n-1)A","(1-n)A","nA","A/n"],ans:0},
+    {q:"If a mirror is rotated by θ, the reflected ray rotates by:",opts:["θ","θ/2","2θ","Zero"],ans:2},
+    {q:"The velocity of light in a medium is 2 x 10^8 m/s. Refractive index is:",opts:["1.33","1.5","2.0","1.0"],ans:1},
+    {q:"At minimum deviation, the refracted ray inside prism is ______ to the base.",opts:["Perpendicular","Inclined","Parallel","None"],ans:2},
+    {q:"Lens maker's formula is:",opts:["1/f = (n-1)(1/R1 - 1/R2)","1/f = (n-1)(1/R1 + 1/R2)","1/f = n(1/R1)","None"],ans:0},
+    {q:"Secondary rainbows are ______ than primary ones.",opts:["Brighter","Fainter","Same","Dark"],ans:1},
+    {q:"A glass slab is placed over letters. Letter of which color appears most raised?",opts:["Red","Green","Yellow","Violet"],ans:3},
+    {q:"The ratio of sin i to sin r is constant. This is:",opts:["Lenz Law","Ohm Law","Snell Law","Boyle Law"],ans:2},
+    {q:"For a convex mirror, the magnification is always:",opts:["Greater than 1","Less than 1","Equal to 1","Negative"],ans:1},
+    {q:"Frequency of light ______ during refraction.",opts:["Changes","Does not change","Increases","Decreases"],ans:1},
+    {q:"The SI unit of linear magnification is:",opts:["Meter","Dioptre","No unit","Watt"],ans:2},
+    {q:"If a biconvex lens has R1=R2=R, its focal length is (if n=1.5):",opts:["R","R/2","2R","R/4"],ans:0},
+    {q:"Sun appears reddish during sunrise/sunset due to:",opts:["Dispersion","Reflection","Scattering","TIR"],ans:2},
+    {q:"Virtual images can be:",opts:["Seen by eye","Caught on screen","Both","None"],ans:0}
+];
+
+const quizBox = document.getElementById('quiz-box');
+questions.forEach((item, index) => {
+    let card = document.createElement('div');
+    card.className = "quiz-card";
+    card.innerHTML = `<p style="color:#00ffcc; font-size:18px; font-weight:bold;">Q${index+51}. ${item.q}</p>`;
+    item.opts.forEach((opt, oIdx) => {
+        let btn = document.createElement('button');
+        btn.innerText = opt;
+        btn.className = "opt-btn";
+        btn.onclick = () => {
+            const overlay = document.getElementById('quiz-overlay');
+            const title = document.getElementById('status-title');
+            const msg = document.getElementById('status-message');
+            const nxt = document.getElementById('next-msg');
+            const strip = document.getElementById('status-strip');
+            overlay.style.display = "flex";
+            overlay.style.pointerEvents = "auto"; 
+            if(oIdx === item.ans){
+                overlay.style.background = "rgba(0,0,0,0.85)";
+                strip.style.background = "transparent";
+                title.style.cssText = "font-family:'Dancing Script', cursive; color:#fff; font-size:60px; text-shadow:0 0 20px #00f7ff, 0 0 40px #00f7ff;";
+                title.innerText = "Physics Master";
+                msg.innerText = "Incredible! Your concepts are solid.";
+                msg.style.color = "#00f7ff";
+                nxt.innerText = "Next conceptual challenge...";
+                var end = Date.now() + 1500;
+                var colors = ['#00f7ff','#ff0000','#ffffff','#ff00c8','#48ff00'];
+                (function frame(){
+                    confetti({particleCount:15,angle:60,spread:65,origin:{x:0},colors:colors, zIndex: 999999});
+                    confetti({particleCount:15,angle:120,spread:65,origin:{x:1},colors:colors, zIndex: 999999});
+                    if(Date.now() < end) requestAnimationFrame(frame);
+                })();
+            } else {
+                overlay.style.background = "radial-gradient(rgba(139,0,0,0.5) 10%, rgba(0,0,0,0.85) 90%)";
+                strip.style.background = "rgba(0,0,0,0.6)";
+                title.style.cssText = "font-family:'Oswald', sans-serif; color:red; font-size:80px; font-weight:900; letter-spacing:10px; text-shadow:4px 4px 0px #000;";
+                title.innerText = "WASTED";
+                msg.innerText = "Wrong! Focus on the theory.";
+                msg.style.color = "#fff";
+                nxt.innerText = "";
+            }
+            setTimeout(() => {
+                overlay.style.display = "none";
+                overlay.style.pointerEvents = "none"; 
+            }, 2500);
+        };
+        card.appendChild(btn);
+    });
+    quizBox.appendChild(card);
+});
+});
+</script>
+<div id="long-questions-part1" style="max-width:800px; margin:auto; font-family:Arial, sans-serif;">
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px; box-shadow: 0 10px 15px rgba(0,0,0,0.3);">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q1. Derive the Mirror Formula for a Concave Mirror (Real Image formation).</p>
+        <button onclick="toggleQ('ans1')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ans1" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:1.8;">
+            <b style="color:#fffb00;">Full 10-Step Derivation:</b><br>
+            1. Consider object <b>AB</b> beyond C of a concave mirror.<br>
+            2. Triangle <b>ABC</b> and <b>A'B'C</b> are similar triangles.<br>
+            3. So, <b><table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">A'B'</td></tr><tr><td>AB</td></tr></table> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">CB'</td></tr><tr><td>CB</td></tr></table></b> (Equation 1).<br>
+            4. Triangle <b>ABP</b> and <b>A'B'P</b> are also similar triangles.<br>
+            5. So, <b><table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">A'B'</td></tr><tr><td>AB</td></tr></table> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">PB'</td></tr><tr><td>PB</td></tr></table></b> (Equation 2).<br>
+            6. From 1 and 2: <b><table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">CB'</td></tr><tr><td>CB</td></tr></table> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">PB'</td></tr><tr><td>PB</td></tr></table></b>.<br>
+            7. Put distances: <b>CB = u - R</b> and <b>CB' = R - v</b>.<br>
+            8. Using sign convention: <b>u &rightarrow; -u</b>, <b>v &rightarrow; -v</b>, <b>R &rightarrow; -R</b>.<br>
+            9. Solving <b><table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">-R + v</td></tr><tr><td>-u + R</td></tr></table> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">-v</td></tr><tr><td>-u</td></tr></table></b> gives <b><table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">2</td></tr><tr><td>R</td></tr></table> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1</td></tr><tr><td>v</td></tr></table> + <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1</td></tr><tr><td>u</td></tr></table></b>.<br>
+            10. Since <b>R = 2f</b>, the final formula is: <b><table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1</td></tr><tr><td>f</td></tr></table> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1</td></tr><tr><td>v</td></tr></table> + <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1</td></tr><tr><td>u</td></tr></table></b>.
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q2. Derive the relation between u, v, n1, n2 and R for refraction at a spherical surface.</p>
+        <button onclick="toggleQ('ans2')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ans2" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:2;">
+            <b style="color:#fffb00;">Full 10-Step Derivation:</b><br>
+            1. Consider a spherical surface separating media of <b>n<sub>1</sub></b> and <b>n<sub>2</sub></b>.<br>
+            2. Let <b>O</b> be a point object and <b>I</b> be its real image.<br>
+            3. From triangle <b>OMC</b>, outer angle <b>i = &alpha; + &gamma;</b>.<br>
+            4. From triangle <b>IMC</b>, outer angle <b>&gamma; = r + &beta;</b>, so <b>r = &gamma; - &beta;</b>.<br>
+            5. Using Snell's Law for small angles: <b>n<sub>1</sub> i = n<sub>2</sub> r</b>.<br>
+            6. Substitute i and r: <b>n<sub>1</sub> (&alpha; + &gamma;) = n<sub>2</sub> (&gamma; - &beta;)</b>.<br>
+            7. For small apertures: <b>&alpha; &approx; tan &alpha; = h/-u</b>, <b>&beta; &approx; tan &beta; = h/v</b>, <b>&gamma; &approx; tan &gamma; = h/R</b>.<br>
+            8. Put these in equation: <b>n<sub>1</sub> (<table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">h</td></tr><tr><td>-u</td></tr></table> + <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">h</td></tr><tr><td>R</td></tr></table>) = n<sub>2</sub> (<table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">h</td></tr><tr><td>R</td></tr></table> - <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">h</td></tr><tr><td>v</td></tr></table>)</b>.<br>
+            9. Cancel <b>h</b> and rearrange the terms.<br>
+            10. <b>Final Result:</b> <b><table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">n<sub>2</sub></td></tr><tr><td>v</td></tr></table> - <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">n<sub>1</sub></td></tr><tr><td>u</td></tr></table> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">n<sub>2</sub> - n<sub>1</sub></td></tr><tr><td>R</td></tr></table></b>.
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q3. Derive Lens Maker's Formula for a double convex lens.</p>
+        <button onclick="toggleQ('ans3')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ans3" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:1.8;">
+            <b style="color:#fffb00;">Full 10-Step Derivation:</b><br>
+            1. A thin lens has two surfaces with radii <b>R<sub>1</sub></b> and <b>R<sub>2</sub></b>.<br>
+            2. For 1st surface: <b><table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">n<sub>2</sub></td></tr><tr><td>v'</td></tr></table> - <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">n<sub>1</sub></td></tr><tr><td>u</td></tr></table> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">n<sub>2</sub> - n<sub>1</sub></td></tr><tr><td>R<sub>1</sub></td></tr></table></b> (Equation A).<br>
+            3. Image <b>v'</b> acts as a virtual object for the 2nd surface.<br>
+            4. For 2nd surface: <b><table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">n<sub>1</sub></td></tr><tr><td>v</td></tr></table> - <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">n<sub>2</sub></td></tr><tr><td>v'</td></tr></table> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">n<sub>1</sub> - n<sub>2</sub></td></tr><tr><td>R<sub>2</sub></td></tr></table></b> (Equation B).<br>
+            5. Adding Eq A and Eq B: <b><table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">n<sub>1</sub></td></tr><tr><td>v</td></tr></table> - <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">n<sub>1</sub></td></tr><tr><td>u</td></tr></table> = (n<sub>2</sub> - n<sub>1</sub>) ( <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1</td></tr><tr><td>R<sub>1</sub></td></tr></table> - <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1</td></tr><tr><td>R<sub>2</sub></td></tr></table> )</b>.<br>
+            6. Divide the whole equation by <b>n<sub>1</sub></b>.<br>
+            7. Result: <b><table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1</td></tr><tr><td>v</td></tr></table> - <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1</td></tr><tr><td>u</td></tr></table> = ( <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">n<sub>2</sub></td></tr><tr><td>n<sub>1</sub></td></tr></table> - 1 ) ( <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1</td></tr><tr><td>R<sub>1</sub></td></tr></table> - <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1</td></tr><tr><td>R<sub>2</sub></td></tr></table> )</b>.<br>
+            8. Let <b>n = n<sub>2</sub>/n<sub>1</sub></b> (Refractive index of lens w.r.t medium).<br>
+            9. If object is at infinity (<b>u = &infin;</b>), then <b>v = f</b>.<br>
+            10. <b>Final Formula:</b> <b><table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1</td></tr><tr><td>f</td></tr></table> = (n - 1) ( <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1</td></tr><tr><td>R<sub>1</sub></td></tr></table> - <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1</td></tr><tr><td>R<sub>2</sub></td></tr></table> )</b>.
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q4. Derive the Prism Formula for refractive index of a prism.</p>
+        <button onclick="toggleQ('ans4')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ans4" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:2.2;">
+            <b style="color:#fffb00;">Full 10-Step Derivation:</b><br>
+            1. For a prism, the deviation is: <b>&delta; = (i + e) - A</b>.<br>
+            2. From the geometry of the prism: <b>A = r<sub>1</sub> + r<sub>2</sub></b>.<br>
+            3. At minimum deviation (<b>&delta; = &delta;<sub>m</sub></b>), we have <b>i = e</b>.<br>
+            4. This implies <b>r<sub>1</sub> = r<sub>2</sub> = r</b>.<br>
+            5. From step 2: <b>A = r + r = 2r</b> &rArr; <b>r = A/2</b>.<br>
+            6. From step 1: <b>&delta;<sub>m</sub> = 2i - A</b> &rArr; <b>2i = A + &delta;<sub>m</sub></b>.<br>
+            7. So, the angle of incidence is: <b>i = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">A + &delta;<sub>m</sub></td></tr><tr><td>2</td></tr></table></b>.<br>
+            8. Using Snell's Law: <b>n = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">sin i</td></tr><tr><td>sin r</td></tr></table></b>.<br>
+            9. Substitute the values of <b>i</b> and <b>r</b> into the Snell's Law formula.<br>
+            10. <b>Final Result:</b> <b>n = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">sin ( <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">A + &delta;<sub>m</sub></td></tr><tr><td>2</td></tr></table> )</td></tr><tr><td>sin ( A/2 )</td></tr></table></b>.
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q5. Derive the expression for Magnifying Power of a Compound Microscope.</p>
+        <button onclick="toggleQ('ans5')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ans5" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:2.2;">
+            <b style="color:#fffb00;">Full 10-Step Analysis:</b><br>
+            1. Total Magnification <b>M</b> is the product of <b>m<sub>o</sub></b> and <b>m<sub>e</sub></b>.<br>
+            2. For objective lens: <b>m<sub>o</sub> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">v<sub>o</sub></td></tr><tr><td>-u<sub>o</sub></td></tr></table></b>.<br>
+            3. For eyepiece (acting as simple mic.): <b>m<sub>e</sub> = ( 1 + <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">D</td></tr><tr><td>f<sub>e</sub></td></tr></table> )</b>.<br>
+            4. Total <b>M = m<sub>o</sub> &times; m<sub>e</sub> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">v<sub>o</sub></td></tr><tr><td>-u<sub>o</sub></td></tr></table> ( 1 + <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">D</td></tr><tr><td>f<sub>e</sub></td></tr></table> )</b>.<br>
+            5. Since object is very close to <b>f<sub>o</sub></b>, <b>u<sub>o</sub> &approx; f<sub>o</sub></b>.<br>
+            6. Image <b>v<sub>o</sub></b> is formed near the eyepiece, so <b>v<sub>o</sub> &approx; L</b> (Length of tube).<br>
+            7. Substitute <b>v<sub>o</sub> = L</b> and <b>u<sub>o</sub> = f<sub>o</sub></b> into the formula.<br>
+            8. So, <b>m<sub>o</sub> &approx; <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">L</td></tr><tr><td>f<sub>o</sub></td></tr></table></b>.<br>
+            9. Combine both magnifications again.<br>
+            10. <b>Final Formula:</b> <b>M = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">-L</td></tr><tr><td>f<sub>o</sub></td></tr></table> ( 1 + <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">D</td></tr><tr><td>f<sub>e</sub></td></tr></table> )</b>.
+        </div>
+    </div>
+
+</div>
+
+<script>
+function toggleQ(id) {
+    var x = document.getElementById(id);
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+</script>
+
+<style>
+@keyframes moveBg { 
+    0% { background-position: 0% 50%; } 
+    50% { background-position: 100% 50%; } 
+    100% { background-position: 0% 50%; } 
+}
+</style>
+<div id="long-questions-part2" style="max-width:800px; margin:auto; font-family:Arial, sans-serif;">
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px; box-shadow: 0 10px 15px rgba(0,0,0,0.3);">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q6. Derive the expression for Magnifying Power of an Astronomical Telescope in normal adjustment.</p>
+        <button onclick="toggleQ('ans6')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ans6" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:1.8;">
+            <b style="color:#fffb00;">Full 10-Step Derivation:</b><br>
+            1. In normal adjustment, the final image is formed at infinity (&infin;).<br>
+            2. Magnifying power <b>M</b> is the ratio of angles <b>&beta;</b> (image) and <b>&alpha;</b> (object).<br>
+            3. Since angles are small: <b>M &approx; <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">tan &beta;</td></tr><tr><td>tan &alpha;</td></tr></table></b>.<br>
+            4. From objective lens triangle: <b>tan &alpha; = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">h'</td></tr><tr><td>f<sub>o</sub></td></tr></table></b>.<br>
+            5. From eyepiece lens triangle: <b>tan &beta; = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">h'</td></tr><tr><td>-f<sub>e</sub></td></tr></table></b> (since image is at f<sub>e</sub>).<br>
+            6. Substitute these in M: <b>M = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">h' / -f<sub>e</sub></td></tr><tr><td>h' / f<sub>o</sub></td></tr></table></b>.<br>
+            7. Cancel <b>h'</b> (the height of the intermediate image).<br>
+            8. This gives the magnification: <b>M = - <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">f<sub>o</sub></td></tr><tr><td>f<sub>e</sub></td></tr></table></b>.<br>
+            9. The negative sign indicates that the final image is inverted.<br>
+            10. The length of the telescope tube is: <b>L = f<sub>o</sub> + f<sub>e</sub></b>.
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q7. Derive the formula for equivalent focal length of two thin lenses in contact.</p>
+        <button onclick="toggleQ('ans7')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ans7" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:2;">
+            <b style="color:#fffb00;">Full 10-Step Derivation:</b><br>
+            1. Consider two thin lenses <b>L<sub>1</sub></b> and <b>L<sub>2</sub></b> with focal lengths <b>f<sub>1</sub></b> and <b>f<sub>2</sub></b>.<br>
+            2. For the first lens: <b><table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1</td></tr><tr><td>v<sub>1</sub></td></tr></table> - <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1</td></tr><tr><td>u</td></tr></table> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1</td></tr><tr><td>f<sub>1</sub></td></tr></table></b> (Equation 1).<br>
+            3. The image <b>v<sub>1</sub></b> acts as a virtual object for the second lens.<br>
+            4. For the second lens: <b><table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1</td></tr><tr><td>v</td></tr></table> - <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1</td></tr><tr><td>v<sub>1</sub></td></tr></table> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1</td></tr><tr><td>f<sub>2</sub></td></tr></table></b> (Equation 2).<br>
+            5. Adding Equation 1 and Equation 2.<br>
+            6. The term <b>1/v<sub>1</sub></b> cancels out from both sides.<br>
+            7. We get: <b><table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1</td></tr><tr><td>v</td></tr></table> - <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1</td></tr><tr><td>u</td></tr></table> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1</td></tr><tr><td>f<sub>1</sub></td></tr></table> + <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1</td></tr><tr><td>f<sub>2</sub></td></tr></table></b>.<br>
+            8. For an equivalent lens: <b><table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1</td></tr><tr><td>v</td></tr></table> - <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1</td></tr><tr><td>u</td></tr></table> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1</td></tr><tr><td>F</td></tr></table></b>.<br>
+            9. Comparing the two equations gives the final result.<br>
+            10. <b>Final Formula:</b> <b><table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1</td></tr><tr><td>F</td></tr></table> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1</td></tr><tr><td>f<sub>1</sub></td></tr></table> + <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1</td></tr><tr><td>f<sub>2</sub></td></tr></table></b>.
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q8. Explain Total Internal Reflection and derive the relation between Refractive Index and Critical Angle.</p>
+        <button onclick="toggleQ('ans8')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ans8" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:1.8;">
+            <b style="color:#fffb00;">Full 10-Step Explanation:</b><br>
+            1. Light must travel from a <b>Denser</b> medium to a <b>Rarer</b> medium.<br>
+            2. As the angle of incidence <b>i</b> increases, the angle of refraction <b>r</b> also increases.<br>
+            3. At a specific angle <b>i = i<sub>c</sub></b>, the refracted ray grazes the surface (<b>r = 90&deg;</b>).<br>
+            4. This specific angle <b>i<sub>c</sub></b> is called the <b>Critical Angle</b>.<br>
+            5. Using Snell's Law: <b>n<sub>1</sub> sin i = n<sub>2</sub> sin r</b>.<br>
+            6. Here, <b>n<sub>1</sub> = n</b> (Denser), <b>n<sub>2</sub> = 1</b> (Air/Rarer).<br>
+            7. Substitute values: <b>n sin i<sub>c</sub> = 1 sin 90&deg;</b>.<br>
+            8. We know <b>sin 90&deg; = 1</b>.<br>
+            9. So, <b>n sin i<sub>c</sub> = 1</b> or <b>sin i<sub>c</sub> = 1/n</b>.<br>
+            10. <b>Final Relation:</b> <b>n = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1</td></tr><tr><td>sin i<sub>c</sub></td></tr></table></b>.
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q9. Derive the Magnifying Power of a Simple Microscope for image at Near Point (D).</p>
+        <button onclick="toggleQ('ans9')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ans9" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:2.2;">
+            <b style="color:#fffb00;">Full 10-Step Derivation:</b><br>
+            1. Magnifying power <b>m = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">Angle subtended by image (&beta;)</td></tr><tr><td>Angle subtended by object at D (&alpha;)</td></tr></table></b>.<br>
+            2. For small angles: <b>m = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">tan &beta;</td></tr><tr><td>tan &alpha;</td></tr></table></b>.<br>
+            3. From triangle: <b>tan &beta; = h/-u</b> and <b>tan &alpha; = h/-D</b>.<br>
+            4. Substitute in m: <b>m = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">h / -u</td></tr><tr><td>h / -D</td></tr></table> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">D</td></tr><tr><td>u</td></tr></table></b>.<br>
+            5. Using Lens Formula: <b><table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1</td></tr><tr><td>v</td></tr></table> - <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1</td></tr><tr><td>u</td></tr></table> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1</td></tr><tr><td>f</td></tr></table></b>.<br>
+            6. Multiply the whole equation by <b>v</b>: <b>1 - <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">v</td></tr><tr><td>u</td></tr></table> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">v</td></tr><tr><td>f</td></tr></table></b>.<br>
+            7. Since <b>m = v/u</b>, we have: <b>m = 1 - <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">v</td></tr><tr><td>f</td></tr></table></b>.<br>
+            8. Apply sign convention for image at near point: <b>v = -D</b>.<br>
+            9. Substitute <b>-D</b> for <b>v</b> in the magnification formula.<br>
+            10. <b>Final Result:</b> <b>m = 1 + <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">D</td></tr><tr><td>f</td></tr></table></b>.
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q10. Explain Rayleigh's Scattering Law and its applications (Blue sky, Red sunset).</p>
+        <button onclick="toggleQ('ans10')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Explanation</button>
+        <div id="ans10" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:2.2;">
+            1. Rayleigh scattering occurs when the size of particles is much smaller than wavelength.<br>
+            2. The intensity of scattered light <b>I</b> depends on wavelength <b>&lambda;</b>.<br>
+            3. <b>Rayleigh Law:</b> <b>I &propto; <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1</td></tr><tr><td>&lambda;<sup>4</sup></td></tr></table></b>.<br>
+            4. This means shorter wavelengths (blue/violet) scatter much more than longer ones (red).<br>
+            5. <b>Blue Sky:</b> Sunlight enters atmosphere; blue light scatters 10x more than red, filling the sky.<br>
+            6. <b>Red Sunset:</b> Sun is at horizon; light travels a long path through atmosphere.<br>
+            7. Most blue light is scattered away before reaching the eye.<br>
+            8. Only the least scattered light (red/orange) survives the long journey.<br>
+            9. <b>Danger Signals:</b> Red color is used because it scatters the least and is visible from far.<br>
+            10. In space (no atmosphere), there is no scattering, so the sky looks black.
+        </div>
+    </div>
+
+</div>
+
+<script>
+function toggleQ(id) {
+    var x = document.getElementById(id);
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+</script>
+
+<style>
+@keyframes moveBg { 
+    0% { background-position: 0% 50%; } 
+    50% { background-position: 100% 50%; } 
+    100% { background-position: 0% 50%; } 
+}
+</style>
+<div id="long-questions-part3" style="max-width:800px; margin:auto; font-family:Arial, sans-serif;">
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px; box-shadow: 0 10px 15px rgba(0,0,0,0.3);">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q11. What is Myopia? Explain its causes and show its correction using a ray diagram.</p>
+        <button onclick="toggleQ('ans11')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Explanation</button>
+        <div id="ans11" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:1.8;">
+            <b style="color:#fffb00;">Full 10-Step Analysis:</b><br>
+            1. Myopia is a defect where a person can see nearby objects clearly but not distant ones.<br>
+            2. The far point of a myopic eye is not at infinity but shifts closer.<br>
+            3. Image of a distant object is formed <b>in front of the retina</b>, not on it.<br>
+            4. <b>Cause 1:</b> Excessive curvature of the eye lens (lens becomes too thick).<br>
+            5. <b>Cause 2:</b> Elongation of the eyeball (eyeball becomes too long).<br>
+            6. To correct this, a <b>Concave Lens</b> of suitable focal length is used.<br>
+            7. The concave lens diverges the parallel rays coming from infinity.<br>
+            8. These diverged rays appear to come from the eye's new (shifted) far point.<br>
+            9. Finally, the eye lens focuses these rays exactly on the retina.<br>
+            10. <b>Formula:</b> Required power <b>P = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1</td></tr><tr><td>- (Far Point)</td></tr></table></b>.
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q12. What is Hypermetropia? Discuss its causes and method of correction.</p>
+        <button onclick="toggleQ('ans12')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Explanation</button>
+        <div id="ans12" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:2;">
+            <b style="color:#fffb00;">Full 10-Step Analysis:</b><br>
+            1. Defect where far objects are clear, but nearby objects (at 25cm) look blurry.<br>
+            2. The near point of the eye shifts farther away from 25 cm.<br>
+            3. Light rays from a nearby object are focused <b>behind the retina</b>.<br>
+            4. <b>Cause 1:</b> Focal length of the eye lens is too long.<br>
+            5. <b>Cause 2:</b> Eyeball has become too small.<br>
+            6. To correct this, a <b>Convex Lens</b> (converging lens) is used.<br>
+            7. The convex lens provides additional converging power to the eye.<br>
+            8. It creates a virtual image of the object at the person's shifted near point.<br>
+            9. The eye then sees this virtual image as if it were a real object.<br>
+            10. This allows the final image to be formed perfectly on the retina.
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q13. Derive the expression for Lateral Shift produced by a parallel-sided glass slab.</p>
+        <button onclick="toggleQ('ans13')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ans13" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:2.2;">
+            <b style="color:#fffb00;">Full 10-Step Derivation:</b><br>
+            1. Consider a glass slab of thickness <b>t</b> and refractive index <b>n</b>.<br>
+            2. Ray <b>AB</b> is incident at angle <b>i</b> and refracted at angle <b>r</b>.<br>
+            3. The emergent ray is parallel to the incident ray but shifted sideways.<br>
+            4. Lateral Shift <b>d</b> is the perpendicular distance between these two rays.<br>
+            5. In triangle <b>ABC</b>: <b>cos r = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">t</td></tr><tr><td>AB</td></tr></table></b> &rArr; <b>AB = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">t</td></tr><tr><td>cos r</td></tr></table></b>.<br>
+            6. The angle between original path and refracted ray is <b>(i - r)</b>.<br>
+            7. In the small triangle for shift: <b>sin(i - r) = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">d</td></tr><tr><td>AB</td></tr></table></b>.<br>
+            8. So, <b>d = AB &times; sin(i - r)</b>.<br>
+            9. Substitute <b>AB</b> from step 5: <b>d = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">t &middot; sin(i - r)</td></tr><tr><td>cos r</td></tr></table></b>.<br>
+            10. <b>Final Formula:</b> <b>d = t &middot; <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">sin(i - r)</td></tr><tr><td>cos r</td></tr></table></b>.
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q14. Prove that Refractive Index is the ratio of Real Depth to Apparent Depth.</p>
+        <button onclick="toggleQ('ans14')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ans14" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:2.2;">
+            1. Let an object be at the bottom of a tank at real depth <b>h</b>.<br>
+            2. Ray travels from denser (water) to rarer (air) medium.<br>
+            3. Ray bends away from the normal; the virtual image is formed at <b>h'</b>.<br>
+            4. For small angles: <b>tan i &approx; sin i</b> and <b>tan r &approx; sin r</b>.<br>
+            5. From diagram: <b>tan i = p / h</b> and <b>tan r = p / h'</b>.<br>
+            6. By Snell's Law (Rarer w.r.t Denser): <b><sub>w</sub>n<sub>a</sub> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">sin i</td></tr><tr><td>sin r</td></tr></table></b>.<br>
+            7. So, <b><sub>w</sub>n<sub>a</sub> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">p/h</td></tr><tr><td>p/h'</td></tr></table> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">h'</td></tr><tr><td>h</td></tr></table></b>.<br>
+            8. We need <b><sub>a</sub>n<sub>w</sub></b> (Denser w.r.t Rarer), which is <b>1 / <sub>w</sub>n<sub>a</sub></b>.<br>
+            9. Therefore, <b>n = h / h'</b>.<br>
+            10. <b>Final Result:</b> <b>n = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">Real Depth</td></tr><tr><td>Apparent Depth</td></tr></table></b>.
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q15. Explain the construction and working of an Optical Fibre.</p>
+        <button onclick="toggleQ('ans15')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Explanation</button>
+        <div id="ans15" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:2.2;">
+            1. An optical fibre is a very thin strand of high-quality glass or quartz.<br>
+            2. It consists of three main parts: <b>Core</b>, <b>Cladding</b>, and <b>Buffer Coating</b>.<br>
+            3. The <b>Core</b> (inner part) has a higher refractive index (<b>n<sub>1</sub></b>).<br>
+            4. The <b>Cladding</b> (outer layer) has a lower refractive index (<b>n<sub>2</sub></b>).<br>
+            5. It works on the principle of <b>Total Internal Reflection (TIR)</b>.<br>
+            6. Light is launched into the core at an angle greater than the critical angle.<br>
+            7. The light undergoes multiple TIRs at the core-cladding interface.<br>
+            8. There is almost <b>zero loss</b> of light energy during this process.<br>
+            9. It can carry light signals over several kilometers even if the fibre is bent.<br>
+            10. Main use: High-speed internet data transmission and medical endoscopy.
+        </div>
+    </div>
+
+</div>
+
+<script>
+function toggleQ(id) {
+    var x = document.getElementById(id);
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+</script>
+
+<style>
+@keyframes moveBg { 
+    0% { background-position: 0% 50%; } 
+    50% { background-position: 100% 50%; } 
+    100% { background-position: 0% 50%; } 
+}
+</style>
+
+<div id="long-questions-part4" style="max-width:800px; margin:auto; font-family:Arial, sans-serif;">
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px; box-shadow: 0 10px 15px rgba(0,0,0,0.3);">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q16. Define Angular Dispersion and derive the expression for Dispersive Power of a prism material.</p>
+        <button onclick="toggleQ('ans16')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ans16" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:1.8;">
+            <b style="color:#fffb00;">Full 10-Step Derivation:</b><br>
+            1. For a thin prism, deviation is <b>&delta; = (n - 1)A</b>.<br>
+            2. Deviation for Violet light: <b>&delta;<sub>v</sub> = (n<sub>v</sub> - 1)A</b>.<br>
+            3. Deviation for Red light: <b>&delta;<sub>r</sub> = (n<sub>r</sub> - 1)A</b>.<br>
+            4. Angular Dispersion <b>&theta;</b> is the difference <b>&delta;<sub>v</sub> - &delta;<sub>r</sub></b>.<br>
+            5. So, <b>&theta; = (n<sub>v</sub> - n<sub>r</sub>)A</b> (Equation 1).<br>
+            6. Mean deviation (for yellow) is <b>&delta;<sub>y</sub> = (n<sub>y</sub> - 1)A</b>.<br>
+            7. Dispersive power <b>&omega;</b> is the ratio of Angular Dispersion to Mean Deviation.<br>
+            8. <b>&omega; = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">&delta;<sub>v</sub> - &delta;<sub>r</sub></td></tr><tr><td>&delta;<sub>y</sub></td></tr></table></b>.<br>
+            9. Substitute the values from step 5 and 6: <b>&omega; = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">(n<sub>v</sub> - n<sub>r</sub>)A</td></tr><tr><td>(n<sub>y</sub> - 1)A</td></tr></table></b>.<br>
+            10. <b>Final Formula:</b> <b>&omega; = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">n<sub>v</sub> - n<sub>r</sub></td></tr><tr><td>n<sub>y</sub> - 1</td></tr></table></b>.
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q17. Derive the effective focal length when one surface of a convex lens is silvered.</p>
+        <button onclick="toggleQ('ans17')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ans17" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:2;">
+            <b style="color:#fffb00;">Full 10-Step Analysis:</b><br>
+            1. A silvered lens behaves like a mirror (light enters lens, reflects from mirror, and exits lens).<br>
+            2. Total Power <b>P<sub>eff</sub></b> = <b>P<sub>lens</sub> + P<sub>mirror</sub> + P<sub>lens</sub></b>.<br>
+            3. This simplifies to <b>P = 2P<sub>l</sub> + P<sub>m</sub></b>.<br>
+            4. Power of lens: <b>P<sub>l</sub> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1</td></tr><tr><td>f<sub>l</sub></td></tr></table></b>.<br>
+            5. Power of mirror: <b>P<sub>m</sub> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">-1</td></tr><tr><td>f<sub>m</sub></td></tr></table> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">2</td></tr><tr><td>R</td></tr></table></b>.<br>
+            6. Since the system acts as a mirror, <b>P<sub>eff</sub> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">-1</td></tr><tr><td>F</td></tr></table></b>.<br>
+            7. Substitute into power eq: <b><table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">-1</td></tr><tr><td>F</td></tr></table> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">2</td></tr><tr><td>f<sub>l</sub></td></tr></table> + <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1</td></tr><tr><td>f<sub>m</sub></td></tr></table></b>.<br>
+            8. For convex lens, <b>f<sub>l</sub></b> is positive. For concave mirror (silvered back), <b>f<sub>m</sub></b> is <b>-R/2</b>.<br>
+            9. Calculate <b>1/f<sub>l</sub></b> using lens maker's formula <b>(n-1)(1/R<sub>1</sub> - 1/R<sub>2</sub>)</b>.<br>
+            10. <b>Final Formula:</b> <b><table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1</td></tr><tr><td>F</td></tr></table> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">2</td></tr><tr><td>f<sub>l</sub></td></tr></table> + <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">2</td></tr><tr><td>R</td></tr></table></b>.
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q18. Explain the Cassegrain Reflecting Telescope and its advantages over refracting telescopes.</p>
+        <button onclick="toggleQ('ans18')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Analysis</button>
+        <div id="ans18" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:2.2;">
+            1. It uses a large Concave Parabolic Mirror as the objective to gather light.<br>
+            2. A smaller Secondary Convex Mirror is placed in front of the primary mirror.<br>
+            3. Light enters, hits the primary mirror, and reflects toward the secondary mirror.<br>
+            4. The secondary mirror reflects light through a hole in the center of the primary mirror.<br>
+            5. The final image is viewed through an eyepiece behind the primary mirror.<br>
+            6. <b>Advantage 1:</b> No <b>Chromatic Aberration</b> because mirrors don't refract light.<br>
+            7. <b>Advantage 2:</b> No <b>Spherical Aberration</b> because parabolic mirrors are used.<br>
+            8. <b>Advantage 3:</b> Mirrors are lighter than lenses, making it easier to support mechanically.<br>
+            9. <b>Advantage 4:</b> It can have a much larger aperture, providing high resolving power.<br>
+            10. <b>Formula:</b> Magnifying Power <b>M = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">f<sub>o</sub></td></tr><tr><td>f<sub>e</sub></td></tr></table></b> (f<sub>o</sub> = R/2 of primary mirror).
+        </div>
+    </div>
+
+</div>
+
+<script>
+function toggleQ(id) {
+    var x = document.getElementById(id);
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+</script>
+
+<style>
+@keyframes moveBg { 
+    0% { background-position: 0% 50%; } 
+    50% { background-position: 100% 50%; } 
+    100% { background-position: 0% 50%; } 
+}
+</style>
+
+</body>    
+</html>

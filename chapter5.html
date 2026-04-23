@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magnetism - Smart Study for Toppers</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap');
+
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* HEADER - PHOTO KE JESA SAME SIZE AUR SAME JAGAH */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 65px;
+            background: #000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            z-index: 10000;
+            box-sizing: border-box;
+            border-bottom: 1px solid rgba(0, 247, 255, 0.2);
+        }
+
+        .back-btn {
+            background: transparent;
+            color: #00f7ff;
+            border: 2px solid #00f7ff;
+            padding: 5px 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        .topper-text {
+            text-align: right;
+            line-height: 1.1;
+        }
+
+        .topper-text .small {
+            color: #FFD700;
+            font-size: 10px;
+            font-weight: bold;
+            display: block;
+        }
+
+        .topper-text .large {
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        /* NEON LIGHTING CONTAINER */
+        .container {
+            padding: 85px 15px 20px 15px; /* Added padding for fixed header */
+        }
+
+        @keyframes neon-glow {
+            0% { border-color: #ff00ff; box-shadow: 0 0 15px #ff00ff; }
+            25% { border-color: #00f7ff; box-shadow: 0 0 25px #00f7ff; }
+            50% { border-color: #48ff00; box-shadow: 0 0 15px #48ff00; }
+            75% { border-color: #FFD700; box-shadow: 0 0 25px #FFD700; }
+            100% { border-color: #ff00ff; box-shadow: 0 0 15px #ff00ff; }
+        }
+
+        .topic-page {
+            min-height: 90vh;
+            border: 4px solid;
+            border-radius: 40px;
+            margin-bottom: 40px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            animation: neon-glow 8s infinite linear;
+            background: linear-gradient(180deg, rgba(15,15,15,1) 0%, rgba(0,0,0,1) 100%);
+        }
+
+        .topic-title {
+            font-size: 28px;
+            color: #00f7ff;
+            text-decoration: underline;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px #00f7ff;
+            text-transform: uppercase;
+        }
+
+        .box {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 15px;
+            margin-bottom: 12px;
+        }
+
+        .box span { font-weight: bold; display: block; margin-bottom: 5px; }
+        .eng-txt { color: #00f7ff; }
+        .hin-txt { color: #FFD700; }
+
+        .key-points {
+            border: 1.5px dashed #48ff00;
+            border-radius: 15px;
+            padding: 15px;
+            background: rgba(72, 255, 0, 0.03);
+        }
+
+        ul { margin: 0; padding-left: 20px; }
+        li { margin-bottom: 8px; font-size: 14px; color: #ddd; }
+
+        .formula-box {
+            background: #000;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            font-size: 26px;
+            color: #00f7ff;
+            margin-top: 20px;
+            box-shadow: inset 0 0 15px rgba(0, 247, 255, 0.3);
+        }
+    </style>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+    <div class="header">
+        <a href="phy-chapters.html" class="back-btn">BACK</a>
+        <div class="topper-text">
+            <span class="small">SMART STUDY</span>
+            <span class="large">FOR TOPPERS</span>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="topic-page">
+            <h1 class="topic-title">1. Bar Magnet</h1>
+            <div class="box"><span class="eng-txt">English:</span> A rectangular object that possesses permanent magnetic properties.</div>
+            <div class="box"><span class="hin-txt">Hindi:</span> Ek rectangular tukda jisme hamesha rehne wali magnetic shakti hoti hai.</div>
+            <div class="key-points">
+                <ul>
+                    <li>It has two poles: North Pole and South Pole.</li>
+                    <li>Always points North-South when suspended freely.</li>
+                    <li>Like poles repel, unlike poles attract each other.</li>
+                    <li>Magnetic strength is highest at the ends (poles).</li>
+                </ul>
+            </div>
+            <div class="formula-box">$$ M = m \times 2l $$</div>
+        </div>
+
+        <div class="topic-page">
+            <h1 class="topic-title">2. Properties of Bar Magnet</h1>
+            <div class="box"><span class="eng-txt">English:</span> The characteristic behaviors exhibited by a bar magnet.</div>
+            <div class="box"><span class="hin-txt">Hindi:</span> Bar magnet ke wo gun jo use dusre padarthon se alag banate hain.</div>
+            <div class="key-points">
+                <ul>
+                    <li>Attractive Property: It attracts ferromagnetic materials.</li>
+                    <li>Directive Property: It aligns with Earth's magnetic field.</li>
+                    <li>Poles exist in pairs: Monopoles cannot exist.</li>
+                    <li>Inductive Property: It can induce magnetism in others.</li>
+                </ul>
+            </div>
+            <div class="formula-box">$$ F = \frac{\mu_0}{4\pi} \frac{m_1 m_2}{r^2} $$</div>
+        </div>
+
+        <div class="topic-page">
+            <h1 class="topic-title">3. Magnetic Poles</h1>
+            <div class="box"><span class="eng-txt">English:</span> The regions at the ends of a magnet where magnetism is strongest.</div>
+            <div class="box"><span class="hin-txt">Hindi:</span> Magnet ke kinaro wala wo hissa jahan magnetic power sabse zyada hoti hai.</div>
+            <div class="key-points">
+                <ul>
+                    <li>Every magnet must have at least two poles.</li>
+                    <li>North pole is where field lines emerge.</li>
+                    <li>South pole is where field lines enter.</li>
+                    <li>Poles cannot be separated by cutting the magnet.</li>
+                </ul>
+            </div>
+            <div class="formula-box">$$ Pole \, Strength = m $$</div>
+        </div>
+
+        <div class="topic-page">
+            <h1 class="topic-title">4. Magnetic Axis</h1>
+            <div class="box"><span class="eng-txt">English:</span> The imaginary straight line passing through the two poles of a magnet.</div>
+            <div class="box"><span class="hin-txt">Hindi:</span> Magnet ke dono poles ke beech se guzarne wali kalpanik seedhi rekha.</div>
+            <div class="key-points">
+                <ul>
+                    <li>It represents the orientation of the magnet.</li>
+                    <li>Magnetic length is measured along this axis.</li>
+                    <li>Magnetic field along the axis is called axial field.</li>
+                    <li>It is longer than the actual physical length of the bar.</li>
+                </ul>
+            </div>
+            <div class="formula-box">$$ B_{axial} = \frac{\mu_0}{4\pi} \frac{2M}{r^3} $$</div>
+        </div>
+
+        <div class="topic-page">
+            <h1 class="topic-title">5. Magnetic Dipole</h1>
+            <div class="box"><span class="eng-txt">English:</span> A pair of two equal and opposite poles separated by a distance.</div>
+            <div class="box"><span class="hin-txt">Hindi:</span> Do barabar aur vipreet poles ka joda jo thodi doori par ho.</div>
+            <div class="key-points">
+                <ul>
+                    <li>A bar magnet is a perfect example of a dipole.</li>
+                    <li>It produces a magnetic field in its surrounding space.</li>
+                    <li>Magnetic dipole moment is a vector quantity.</li>
+                    <li>Atomic loops of current also act as dipoles.</li>
+                </ul>
+            </div>
+            <div class="formula-box">$$ \vec{\tau} = \vec{M} \times \vec{B} $$</div>
+        </div>
+
+        <div class="topic-page">
+            <h1 class="topic-title">6. Magnetic Field Lines</h1>
+            <div class="box"><span class="eng-txt">English:</span> Imaginary curves used to represent the magnetic field.</div>
+            <div class="box"><span class="hin-txt">Hindi:</span> Magnetic field ko darshane ke liye banayi gayi kalpanik curve rekhayein.</div>
+            <div class="key-points">
+                <ul>
+                    <li>They start from North and end at South pole outside.</li>
+                    <li>They form continuous closed loops (N to S to N).</li>
+                    <li>Two field lines never intersect each other.</li>
+                    <li>Density of lines shows the strength of the field.</li>
+                </ul>
+            </div>
+            <div class="formula-box">$$ \phi = \int \vec{B} \cdot d\vec{A} $$</div>
+        </div>
+
+        <div class="topic-page">
+            <h1 class="topic-title">7. Properties of Field Lines</h1>
+            <div class="box"><span class="eng-txt">English:</span> The specific characteristics of magnetic field lines.</div>
+            <div class="box"><span class="hin-txt">Hindi:</span> Magnetic field lines ki wo khasiyat jo unki disha aur taqat batati hai.</div>
+            <div class="key-points">
+                <ul>
+                    <li>Tangent at any point gives the field direction.</li>
+                    <li>They are crowded near poles where the field is strong.</li>
+                    <li>Inside the magnet, lines travel from South to North.</li>
+                    <li>They behave like stretched elastic strings.</li>
+                </ul>
+            </div>
+            <div class="formula-box">$$ \vec{B} = \text{Field Vector} $$</div>
+        </div>
+
+        <div class="topic-page">
+            <h1 class="topic-title">8. Field Lines of Bar Magnet</h1>
+            <div class="box"><span class="eng-txt">English:</span> The specific pattern of lines created by a single bar magnet.</div>
+            <div class="box"><span class="hin-txt">Hindi:</span> Ek bar magnet dwara banaye gaye magnetic field ka nishchit pattern.</div>
+            <div class="key-points">
+                <ul>
+                    <li>Lines are symmetrical about the magnetic axis.</li>
+                    <li>They are most concentrated at the pole tips.</li>
+                    <li>They spread out as they move away from the magnet.</li>
+                    <li>They represent a non-uniform magnetic field.</li>
+                </ul>
+            </div>
+            <div class="formula-box">$$ B = \frac{Force}{m} $$</div>
+        </div>
+
+    </div>
+<div class="container">
+
+    <div class="topic-page">
+        <h1 class="topic-title">1. Magnetic Dipole Moment</h1>
+        <div class="box">
+            <span class="eng-txt">Detailed English:</span>
+            Magnetic Dipole Moment is defined as the product of the strength of either magnetic pole (m) and the magnetic length (2l) between them. It measures the strength and orientation of a magnet.
+        </div>
+        <div class="box">
+            <span class="hin-txt">Hinglish Detail:</span>
+            Magnetic Dipole Moment ka matlab hota hai magnet ke kisi ek pole ki shakti (pole strength) aur dono poles ke beech ki magnetic doori (length) ka guna. Yeh magnet ki power ko dikhata hai.
+        </div>
+        <div class="key-points">
+            <ul>
+                <li>It is a vector quantity (magnitude aur direction dono hote hain).</li>
+                <li>Its direction is always from South to North pole internally.</li>
+                <li>Formula: $M = m \times 2l$, jahan 'm' pole strength hai.</li>
+            </ul>
+        </div>
+        <div class="formula-box">$$ M = m \times 2l $$</div>
+    </div>
+
+    <div class="topic-page">
+        <h1 class="topic-title">2. Direction of Magnetic Moment</h1>
+        <div class="box">
+            <span class="eng-txt">Detailed English:</span>
+            The direction of the magnetic dipole moment vector points from the South Pole to the North Pole along the magnetic axis of the magnet.
+        </div>
+        <div class="box">
+            <span class="hin-txt">Hinglish Detail:</span>
+            Magnetic moment ki disha hamesha magnet ke andar South pole se North pole ki taraf hoti hai. Yeh hamesha magnetic axis ke parallel chalti hai.
+        </div>
+        <div class="key-points">
+            <ul>
+                <li>For current loops, it is determined by the Right-Hand Thumb Rule.</li>
+                <li>It helps in aligning the magnet in an external magnetic field.</li>
+            </ul>
+        </div>
+        <div class="formula-box">$$ \vec{M}: S \rightarrow N $$</div>
+    </div>
+
+    <div class="topic-page">
+        <h1 class="topic-title">3. Unit of Magnetic Moment</h1>
+        <div class="box">
+            <span class="eng-txt">Detailed English:</span>
+            The SI unit of magnetic dipole moment is Ampere-meter square ($A \cdot m^2$). It can also be expressed in terms of energy as Joules per Tesla ($J/T$).
+        </div>
+        <div class="box">
+            <span class="hin-txt">Hinglish Detail:</span>
+            Magnetic moment ko napne ke liye SI unit Ampere-meter square ($A \cdot m^2$) ka use hota hai. Iski ek aur unit Joule per Tesla ($J/T$) bhi hoti hai.
+        </div>
+        <div class="key-points">
+            <ul>
+                <li>SI Unit: $A \cdot m^2$.</li>
+                <li>Dimensions: $[L^2 A]$.</li>
+                <li>It is a derived quantity from current and area.</li>
+            </ul>
+        </div>
+        <div class="formula-box">$$ Unit = A \cdot m^2 \text{ or } J/T $$</div>
+    </div>
+
+    <div class="topic-page">
+        <h1 class="topic-title">4. Earth’s Magnetism</h1>
+        <div class="box">
+            <span class="eng-txt">Detailed English:</span>
+            The Earth behaves like a giant bar magnet. This is likely due to the "Dynamo Effect" caused by the motion of molten iron and nickel in its outer core.
+        </div>
+        <div class="box">
+            <span class="hin-txt">Hinglish Detail:</span>
+            Prithvi ek bahut bade bar magnet ki tarah kaam karti hai. Iska magnetic field core mein moujood pighle hue lohe (molten iron) ki movement ki wajah se banta hai.
+        </div>
+        <div class="key-points">
+            <ul>
+                <li>Earth's magnetic poles are near but not exactly at the geographic poles.</li>
+                <li>A magnetic compass needle aligns itself with Earth's magnetic lines.</li>
+            </ul>
+        </div>
+        <div class="formula-box">$$ B_{earth} \approx 0.3 \times 10^{-4} T $$</div>
+    </div>
+
+    <div class="topic-page">
+        <h1 class="topic-title">5. Magnetic Elements</h1>
+        <div class="box">
+            <span class="eng-txt">Detailed English:</span>
+            Magnetic elements are parameters required to completely specify the magnitude and direction of the Earth's magnetic field at any point on its surface.
+        </div>
+        <div class="box">
+            <span class="hin-txt">Hinglish Detail:</span>
+            Magnetic elements wo rashiyaan (parameters) hain jo kisi bhi jagah par Prithvi ke magnetic field ki puri jaankari (taqat aur disha) dene ke liye zaroori hoti hain.
+        </div>
+        <div class="key-points">
+            <ul>
+                <li>Declination ($\theta$)</li>
+                <li>Inclination or Dip ($\delta$)</li>
+                <li>Horizontal ($B_H$) and Vertical ($B_V$) Components.</li>
+            </ul>
+        </div>
+        <div class="formula-box">$$ \text{Dec, Dip, } B_H, B_V $$</div>
+    </div>
+
+    <div class="topic-page">
+        <h1 class="topic-title">6. Magnetic Declination</h1>
+        <div class="box">
+            <span class="eng-txt">Detailed English:</span>
+            It is the angle between the Geographic Meridian (true North-South) and the Magnetic Meridian (where the compass points) at a particular location.
+        </div>
+        <div class="box">
+            <span class="hin-txt">Hinglish Detail:</span>
+            Geographic meridian aur magnetic meridian ke beech banne wale kon (angle) ko declination kehte hain. Yeh batata hai ki compass 'True North' se kitna bhatak raha hai.
+        </div>
+        <div class="formula-box">$$ \text{Angle } (\theta) $$</div>
+    </div>
+
+    <div class="topic-page">
+        <h1 class="topic-title">7. Magnetic Inclination (Dip)</h1>
+        <div class="box">
+            <span class="eng-txt">Detailed English:</span>
+            Magnetic Inclination or Angle of Dip is the angle that the total magnetic field of the Earth makes with the horizontal line at any place.
+        </div>
+        <div class="box">
+            <span class="hin-txt">Hinglish Detail:</span>
+            Angle of Dip wo angle hai jo Prithvi ka total magnetic field zameen (horizontal) ke saath banata hai. Equator par yeh 0° aur Poles par 90° hota hai.
+        </div>
+        <div class="formula-box">$$ \tan \delta = \frac{B_V}{B_H} $$</div>
+    </div>
+
+    <div class="topic-page">
+        <h1 class="topic-title">8. Horizontal Component</h1>
+        <div class="box">
+            <span class="eng-txt">Detailed English:</span>
+            It is the component of the total magnetic field of the Earth acting in the horizontal direction. It is the part that drives the magnetic compass needle.
+        </div>
+        <div class="box">
+            <span class="hin-txt">Hinglish Detail:</span>
+            Prithvi ke total magnetic field ka wo hissa jo horizontal (zameen ke parallel) disha mein kaam karta hai. Compass ki needle isi component ki wajah se ghoomti hai.
+        </div>
+        <div class="formula-box">$$ B_H = B \cos \delta $$</div>
+    </div>
+
+    <div class="topic-page">
+        <h1 class="topic-title">9. Vertical Component</h1>
+        <div class="box">
+            <span class="eng-txt">Detailed English:</span>
+            It is the component of the total magnetic field of the Earth acting in the vertical (downward or upward) direction.
+        </div>
+        <div class="box">
+            <span class="hin-txt">Hinglish Detail:</span>
+            Prithvi ke total magnetic field ka wo hissa jo vertical (sidha upar ya neeche) disha mein kaam karta hai. Poles par total field isi component ke barabar hota hai.
+        </div>
+        <div class="formula-box">$$ B_V = B \sin \delta $$</div>
+    </div>
+
+</div>
+
+<div class="container">
+
+    <div class="topic-page">
+        <h1 class="topic-title">1. Torque on Bar Magnet</h1>
+        <div class="box">
+            <span class="eng-txt">Detailed English:</span>
+            When a bar magnet is placed in a uniform magnetic field ($B$), it experiences a turning effect called torque. This torque tries to rotate the magnet to align its magnetic moment ($M$) with the field.
+        </div>
+        <div class="box">
+            <span class="hin-txt">Hinglish Detail:</span>
+            Jab kisi bar magnet ko ek jaise magnetic field ($B$) mein rakha jata hai, toh us par ek ghumane wali taqat lagti hai jise torque kehte hain. Yeh torque magnet ko field ki disha mein seedha karne ki koshish karta hai.
+        </div>
+        <div class="key-points">
+            <ul>
+                <li>Vector form: $\vec{\tau} = \vec{M} \times \vec{B}$.</li>
+                <li>Magnitude: $\tau = MB \sin \theta$.</li>
+                <li>Maximum torque occurs at $\theta = 90^\circ$.</li>
+            </ul>
+        </div>
+        <div class="formula-box">$$ \tau = MB \sin \theta $$</div>
+    </div>
+
+    <div class="topic-page">
+        <h1 class="topic-title">2. Stable Equilibrium</h1>
+        <div class="box">
+            <span class="eng-txt">Detailed English:</span>
+            Stable equilibrium occurs when the magnet's magnetic moment is perfectly aligned with the magnetic field ($\theta = 0^\circ$). The potential energy is at its minimum.
+        </div>
+        <div class="box">
+            <span class="hin-txt">Hinglish Detail:</span>
+            Stable equilibrium tab hota hai jab magnet aur field dono ek hi disha mein hote hain ($\theta = 0^\circ$). Is halat mein magnet sabse zyada shant rehta hai kyunki energy sabse kam hoti hai.
+        </div>
+        <div class="key-points">
+            <ul>
+                <li>Condition: $\theta = 0^\circ$.</li>
+                <li>Potential Energy: $U = -MB$ (Minimum).</li>
+                <li>Torque is zero in this state.</li>
+            </ul>
+        </div>
+        <div class="formula-box">$$ U_{min} = -MB $$</div>
+    </div>
+
+    <div class="topic-page">
+        <h1 class="topic-title">3. Unstable Equilibrium</h1>
+        <div class="box">
+            <span class="eng-txt">Detailed English:</span>
+            Unstable equilibrium occurs when the magnetic moment is exactly opposite to the magnetic field ($\theta = 180^\circ$). The potential energy is at its maximum value.
+        </div>
+        <div class="box">
+            <span class="hin-txt">Hinglish Detail:</span>
+            Unstable equilibrium tab hota hai jab magnet field ke bilkul ulta rakha ho ($\theta = 180^\circ$). Is waqt torque zero toh hota hai par energy itni zyada hoti hai ki magnet turant palatne ko taiyar rehta hai.
+        </div>
+        <div class="key-points">
+            <ul>
+                <li>Condition: $\theta = 180^\circ$.</li>
+                <li>Potential Energy: $U = +MB$ (Maximum).</li>
+                <li>Slight disturbance will flip the magnet.</li>
+            </ul>
+        </div>
+        <div class="formula-box">$$ U_{max} = +MB $$</div>
+    </div>
+
+    <div class="topic-page">
+        <h1 class="topic-title">4. Magnetic Materials</h1>
+        <div class="box">
+            <span class="eng-txt">Detailed English:</span>
+            Magnetic materials are substances that show a response when kept in an external magnetic field. Their behavior depends on the alignment of atomic dipoles.
+        </div>
+        <div class="box">
+            <span class="hin-txt">Hinglish Detail:</span>
+            Magnetic materials wo cheezein hain jinhe magnetic field mein rakhne par wo reaction dikhati hain. Ye depend karta hai ki unke andar ke chhote dipoles kaise align ho rahe hain.
+        </div>
+        <div class="key-points">
+            <ul>
+                <li>Based on Magnetic Susceptibility ($\chi$).</li>
+                <li>Determines how easily a material can be magnetized.</li>
+            </ul>
+        </div>
+        <div class="formula-box">$$ \vec{M} = \chi \vec{H} $$</div>
+    </div>
+
+    <div class="topic-page">
+        <h1 class="topic-title">5. Classification</h1>
+        <div class="box">
+            <span class="eng-txt">Detailed English:</span>
+            Materials are classified based on their reaction to magnetic fields and how their magnetization changes with temperature and field strength.
+        </div>
+        <div class="box">
+            <span class="hin-txt">Hinglish Detail:</span>
+            Materials ko unke magnetic field ke prati bartaav (behavior) ke aadhar par teen mukhya bhagon mein banta gaya hai: Dia, Para aur Ferro.
+        </div>
+        <div class="key-points">
+            <ul>
+                <li>Diamagnetic (Weak Repulsion).</li>
+                <li>Paramagnetic (Weak Attraction).</li>
+                <li>Ferromagnetic (Strong Attraction).</li>
+            </ul>
+        </div>
+        <div class="formula-box">$$ Dia, Para, Ferro $$</div>
+    </div>
+
+    <div class="topic-page">
+        <h1 class="topic-title">6. Diamagnetic Substances</h1>
+        <div class="box">
+            <span class="eng-txt">Detailed English:</span>
+            These materials develop weak magnetization opposite to the external field. They are feebly repelled by magnets.
+        </div>
+        <div class="box">
+            <span class="hin-txt">Hinglish Detail:</span>
+            Ye materials magnetic field ke ulte disha mein magnetize hote hain. Magnet inhein halka sa door dhakelta hai.
+        </div>
+        <div class="key-points">
+            <ul>
+                <li>$\chi$ is negative and small.</li>
+                <li>Relative permeability ($\mu_r$) < 1.</li>
+                <li>Example: Water, Copper, Bismuth.</li>
+            </ul>
+        </div>
+        <div class="formula-box">$$ \chi < 0 $$</div>
+    </div>
+
+    <div class="topic-page">
+        <h1 class="topic-title">7. Paramagnetic Substances</h1>
+        <div class="box">
+            <span class="eng-txt">Detailed English:</span>
+            These materials develop weak magnetization in the same direction as the field. They are feebly attracted by magnets.
+        </div>
+        <div class="box">
+            <span class="hin-txt">Hinglish Detail:</span>
+            Ye materials field ki disha mein hi halke se magnetize hote hain. Magnet inhein apni taraf thoda sa khinchta hai.
+        </div>
+        <div class="key-points">
+            <ul>
+                <li>$\chi$ is positive and small.</li>
+                <li>$\mu_r$ is slightly greater than 1.</li>
+                <li>Example: Aluminium, Sodium, Platinum.</li>
+            </ul>
+        </div>
+        <div class="formula-box">$$ \chi > 0 \text{ (Small)} $$</div>
+    </div>
+
+    <div class="topic-page">
+        <h1 class="topic-title">8. Ferromagnetic Substances</h1>
+        <div class="box">
+            <span class="eng-txt">Detailed English:</span>
+            These materials get strongly magnetized in the direction of the field and are strongly attracted by magnets.
+        </div>
+        <div class="box">
+            <span class="hin-txt">Hinglish Detail:</span>
+            Ye materials field ki disha mein bahut zor se magnetize hote hain aur magnet inhein bahut tezi se apni taraf khinchta hai.
+        </div>
+        <div class="key-points">
+            <ul>
+                <li>$\chi$ is very large and positive.</li>
+                <li>$\mu_r \gg 1$.</li>
+                <li>Example: Iron, Nickel, Cobalt.</li>
+            </ul>
+        </div>
+        <div class="formula-box">$$ \mu_r \gg 1 $$</div>
+    </div>
+
+</div>
+<div class="container">
+
+    <div class="topic-page">
+        <h1 class="topic-title">1. Magnetization</h1>
+        <div class="box">
+            <span class="eng-txt">Detailed English:</span>
+            Magnetization ($I$) is defined as the net magnetic dipole moment per unit volume of a material. It represents the extent to which a specimen is magnetized.
+        </div>
+        <div class="box">
+            <span class="hin-txt">Hinglish Detail:</span>
+            Kisi material ke unit volume mein kitna total magnetic dipole moment paida hua hai, usey Magnetization ($I$) kehte hain. Ye batata hai ki material kitna magnetize ho chuka hai.
+        </div>
+        <div class="key-points">
+            <ul>
+                <li>Formula: $I = M_{net} / V$.</li>
+                <li>SI Unit: Ampere/meter ($A/m$).</li>
+                <li>It is a vector quantity.</li>
+            </ul>
+        </div>
+        <div class="formula-box">$$ I = \frac{M}{V} $$</div>
+    </div>
+
+    <div class="topic-page">
+        <h1 class="topic-title">2. Magnetic Intensity</h1>
+        <div class="box">
+            <span class="eng-txt">Detailed English:</span>
+            Magnetic Intensity ($H$) is the capability of an external magnetic field to magnetize a material. It depends on the external currents and not on the material itself.
+        </div>
+        <div class="box">
+            <span class="hin-txt">Hinglish Detail:</span>
+            Magnetic Intensity ($H$) wo taqat hai jo kisi material ko magnetize karne ki koshish karti hai. Ye bahar se lagaye gaye field ki strength hoti hai.
+        </div>
+        <div class="key-points">
+            <ul>
+                <li>SI Unit: Ampere/meter ($A/m$).</li>
+                <li>Relation with B: $B = \mu H$.</li>
+                <li>Independent of the medium's properties.</li>
+            </ul>
+        </div>
+        <div class="formula-box">$$ H = \frac{B_0}{\mu_0} $$</div>
+    </div>
+
+    <div class="topic-page">
+        <h1 class="topic-title">3. Magnetic Susceptibility</h1>
+        <div class="box">
+            <span class="eng-txt">Detailed English:</span>
+            Magnetic Susceptibility ($\chi$) measures how easily a substance can be magnetized in an external field. It is the ratio of Magnetization ($I$) to Intensity ($H$).
+        </div>
+        <div class="box">
+            <span class="hin-txt">Hinglish Detail:</span>
+            Susceptibility ($\chi$) ye batati hai ki koi material kitni aasani se magnet ban sakta hai. Agar ye zyada hai, toh material jaldi magnetize hoga.
+        </div>
+        <div class="key-points">
+            <ul>
+                <li>Formula: $\chi = I / H$.</li>
+                <li>It is a dimensionless quantity (no unit).</li>
+                <li>Negative for Diamagnetic, Positive for Para/Ferro.</li>
+            </ul>
+        </div>
+        <div class="formula-box">$$ \chi = \frac{I}{H} $$</div>
+    </div>
+
+    <div class="topic-page">
+        <h1 class="topic-title">4. Magnetic Permeability</h1>
+        <div class="box">
+            <span class="eng-txt">Detailed English:</span>
+            Magnetic permeability is the ability of a material to allow magnetic lines of force to pass through it.
+        </div>
+        <div class="box">
+            <span class="hin-txt">Hinglish Detail:</span>
+            Permeability ($ \mu $) ka matlab hai ki koi material apne andar se magnetic lines ko kitni aasani se guzarne deta hai.
+        </div>
+        <div class="key-points">
+            <ul>
+                <li>Relative Permeability: $\mu_r = \mu / \mu_0$.</li>
+                <li>Relation with Susceptibility: $\mu_r = 1 + \chi$.</li>
+                <li>For Ferromagnetic materials, $\mu$ is very high.</li>
+            </ul>
+        </div>
+        <div class="formula-box">$$ \mu = \mu_0(1 + \chi) $$</div>
+    </div>
+
+    <div class="topic-page">
+        <h1 class="topic-title">5. Hysteresis Curve</h1>
+        <div class="box">
+            <span class="eng-txt">Detailed English:</span>
+            The Hysteresis Curve (B-H loop) shows that the magnetic flux density ($B$) lags behind the magnetic intensity ($H$) during magnetization and demagnetization.
+        </div>
+        <div class="box">
+            <span class="hin-txt">Hinglish Detail:</span>
+            Hysteresis Curve ye dikhata hai ki jab hum magnetic field badhate ya ghatate hain, toh material ka magnetism ($B$) piche reh jata hai. Is cycle mein energy heat ke roop mein loss hoti hai.
+        </div>
+        <div class="key-points">
+            <ul>
+                <li>Area of the loop = Energy loss per cycle.</li>
+                <li>Used to select materials for transformers and magnets.</li>
+            </ul>
+        </div>
+        <div class="formula-box">$$ B \text{ lags behind } H $$</div>
+    </div>
+
+    <div class="topic-page">
+        <h1 class="topic-title">6. Retentivity</h1>
+        <div class="box">
+            <span class="eng-txt">Detailed English:</span>
+            Retentivity (Residual Magnetism) is the amount of magnetization remaining in the material when the external magnetic intensity ($H$) is reduced to zero.
+        </div>
+        <div class="box">
+            <span class="hin-txt">Hinglish Detail:</span>
+            Jab bahar ka magnetic field ($H$) zero kar diya jaye, tab bhi material ke andar jo magnetism bacha reh jata hai, usey Retentivity kehte hain.
+        </div>
+        <div class="key-points">
+            <ul>
+                <li>High for Steel (used for permanent magnets).</li>
+                <li>Represents the 'memory' of the material.</li>
+            </ul>
+        </div>
+        <div class="formula-box">$$ B \neq 0 \text{ when } H = 0 $$</div>
+    </div>
+
+    <div class="topic-page">
+        <h1 class="topic-title">7. Coercivity</h1>
+        <div class="box">
+            <span class="eng-txt">Detailed English:</span>
+            Coercivity is the reverse magnetic intensity ($H$) required to completely demagnetize the material (make the residual magnetism zero).
+        </div>
+        <div class="box">
+            <span class="hin-txt">Hinglish Detail:</span>
+            Bache huye magnetism ko khatam karne ke liye jitna 'ulta' magnetic field lagana padta hai, usey Coercivity kehte hain.
+        </div>
+        <div class="key-points">
+            <ul>
+                <li>High Coercivity = Strong Permanent Magnet.</li>
+                <li>Low Coercivity = Soft Iron (Easy to demagnetize).</li>
+            </ul>
+        </div>
+        <div class="formula-box">$$ H_c \text{ for } B = 0 $$</div>
+    </div>
+
+</div>
+<div class="container">
+
+    <div class="topic-page">
+        <h1 class="topic-title">1. Permanent Magnets</h1>
+        <div class="box">
+            <span class="eng-txt">Detailed English:</span>
+            Permanent magnets are materials that retain their ferromagnetic properties for a long time at room temperature. They require high retentivity so the magnet is strong, and high coercivity so it doesn't lose magnetism easily.
+        </div>
+        <div class="box">
+            <span class="hin-txt">Hinglish Detail:</span>
+            Permanent magnets wo hote hain jo apna magnetism lambe samay tak barkarar rakhte hain. Inhein banane ke liye aisa material chahiye jiski retentivity high ho (taaki magnet mazboot ho) aur coercivity bhi high ho (taaki wo jaldi demagnetize na ho).
+        </div>
+        <div class="key-points">
+            <ul>
+                <li>High Retentivity (Strong residual magnetism).</li>
+                <li>High Coercivity (Resistant to magnetic loss).</li>
+                <li>Example: Steel, Alnico (Aluminium, Nickel, Cobalt).</li>
+            </ul>
+        </div>
+        <div class="formula-box">Steel / Alnico</div>
+    </div>
+
+    <div class="topic-page">
+        <h1 class="topic-title">2. Electromagnets</h1>
+        <div class="box">
+            <span class="eng-txt">Detailed English:</span>
+            An electromagnet consists of a core of magnetic material placed inside a solenoid. It behaves as a magnet only as long as electric current flows through the coil. It requires high permeability and low coercivity.
+        </div>
+        <div class="box">
+            <span class="hin-txt">Hinglish Detail:</span>
+            Electromagnet tabhi tak magnet rehta hai jab tak usme current flow hota hai. Iske liye Soft Iron ka use hota hai kyunki iski permeability bahut zyada hoti hai (jaldi magnetize hota hai) aur coercivity kam hoti hai (current band hote hi magnetism khatam).
+        </div>
+        <div class="key-points">
+            <ul>
+                <li>High Permeability (Easy to magnetize).</li>
+                <li>Low Coercivity (Loses magnetism quickly).</li>
+                <li>Example: Soft Iron core in a solenoid.</li>
+            </ul>
+        </div>
+        <div class="formula-box">Soft Iron Core</div>
+    </div>
+
+    <div class="topic-page">
+        <h1 class="topic-title">3. Comparison</h1>
+        <div class="box">
+            <span class="eng-txt">Detailed English:</span>
+            Permanent magnets have fixed strength and polarity, whereas electromagnets' strength can be controlled by current and their poles can be reversed. Permanent magnets use Steel; Electromagnets use Soft Iron.
+        </div>
+        <div class="box">
+            <span class="hin-txt">Hinglish Detail:</span>
+            Permanent magnet ki taqat fix rehti hai, par electromagnet ki taqat current badha kar badhayi ja sakti hai. Permanent magnet ko demagnetize karna mushkil hai, jabki electromagnet switch off karte hi khatam ho jata hai.
+        </div>
+        <div class="key-points">
+            <ul>
+                <li>Steel: High Retentivity, High Coercivity.</li>
+                <li>Soft Iron: High Retentivity, Low Coercivity.</li>
+                <li>Electromagnets are used in electric bells and cranes.</li>
+            </ul>
+        </div>
+        <div class="formula-box">Steel vs Soft Iron</div>
+    </div>
+
+</div>
+<div style="text-align:center; margin-bottom:20px;">
+    <h1 style="color:#00ffcc; font-family:sans-serif; text-transform:uppercase; text-shadow:0 0 15px #00ffcc;">Let's start questions practice</h1>
+    <p style="color:#ffffff; font-family:sans-serif; font-weight:bold;">Click to choose correct answer</p>
+</div>
+
+<div id="quiz-box" style="max-width:600px; margin:auto; position:relative; z-index:1;"></div>
+
+<div id="quiz-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; z-index:9999; flex-direction:column; align-items:center; justify-content:center; pointer-events:none;">
+    <div id="status-strip" style="width:100%; text-align:center; padding:30px 0;">
+        <h1 id="status-title"></h1>
+        <p id="status-message" style="font-weight:bold;"></p>
+        <p id="next-msg"></p>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+const questions = [
+{q:"Magnetic field is produced by:",opts:["Stationary charges","Neutrons","Moving charges","Photons"],ans:2},
+{q:"SI unit of magnetic field is:",opts:["Gauss","Tesla","Weber","Henry"],ans:1},
+{q:"Magnetic field lines are:",opts:["Closed loops","Open lines","Straight lines","Random"],ans:0},
+{q:"Direction of magnetic field is given by:",opts:["Ohm's law","Gauss law","Left hand rule","Right hand rule"],ans:3},
+{q:"Force on moving charge depends on:",opts:["Velocity","Time","Distance","Pressure"],ans:0},
+{q:"Lorentz force formula is:",opts:["q/B","v/B","qvB","qB²"],ans:2},
+{q:"Force on charge moving parallel to B is:",opts:["Maximum","Minimum","Zero","Infinite"],ans:2},
+{q:"Magnetic field inside a long solenoid is:",opts:["Uniform","Zero","Random","Weak"],ans:0},
+{q:"Unit of magnetic flux is:",opts:["Tesla","Volt","Weber","Ampere"],ans:2},
+{q:"Magnetic moment unit is:",opts:["N·m","A·m²","Joule","Tesla"],ans:1},
+{q:"A Bar magnet hase:",opts:["One pole","Two poles","Three poles","No poles"],ans:1},
+{q:"Like magnetic poles:",opts:["Attract","Neutral","Combine","Repel"],ans:3},
+{q:"Unlike magnetic poles:",opts:["Attract","Repel","Neutral","Combine"],ans:0},
+{q:"Magnetic field at center of a circular loop:",opts:["Zero","Maximum","Minimum","Infinite"],ans:1},
+{q:"Earth behaves like a giant:",opts:["Electric dipole","Neutral body","Bar magnet","None"],ans:2},
+{q:"Magnetic dipole moment direction is:",opts:["N to S","Random","S to N","Circular"],ans:2},
+{q:"Torque on a magnetic dipole:",opts:["mB cosθ","mB sinθ","mB","Zero"],ans:1},
+{q:"Magnetic susceptibility is:",opts:["Unitful","Dimensionless","Vector","Complex"],ans:1},
+{q:"Diamagnetic materials are:",opts:["Strongly attracted","Neutral","Weakly repelled","Conductors"],ans:2},
+{q:"Paramagnetic materials are:",opts:["Weakly attracted","Repelled","Neutral","Insulators"],ans:0},
+{q:"Ferromagnetic materials are:",opts:["Weakly repelled","Strongly attracted","Neutral","None"],ans:1},
+{q:"Magnetic field lines never:",opts:["Curve","Intersect","Close","Loop"],ans:1},
+{q:"Unit of magnetization is:",opts:["Tesla","Weber","Volt","A/m"],ans:3},
+{q:"Relative permeability of vacuum is:",opts:["0","1","Infinity","10"],ans:1},
+{q:"Magnetic field at equator of a magnet is:",opts:["Weak","Strong","Zero","Infinite"],ans:0},
+{q:"Magnetic field at the poles is:",opts:["Weak","Zero","Strong","Infinite"],ans:2},
+{q:"Inside a bar magnet, field lines go:",opts:["N to S","Random","Circular","S to N"],ans:3},
+{q:"Outside a magnet, field lines go:",opts:["N to S","S to N","Random","Circular"],ans:0},
+{q:"Magnetic dipole is equivalent to a:",opts:["Current loop","Charge pair","Neutral body","None"],ans:0},
+{q:"Unit of permeability (μ) is:",opts:["T","Wb","H/m","A"],ans:2},
+{q:"Gauss law for magnetism states:",opts:["Flux max","Net flux zero","Flux min","None"],ans:1},
+{q:"Magnetic field due to a straight wire is:",opts:["Straight","Circular","Random","Zero"],ans:1},
+{q:"Right hand thumb rule gives:",opts:["Force direction","Field direction","Energy","Power"],ans:1},
+{q:"Ampere's law relates:",opts:["Current & field","Charge & field","Voltage & current","Energy"],ans:0},
+{q:"Magnetic force on a conductor:",opts:["IL/B","B/I","IL²","BIL sinθ"],ans:3},
+{q:"Field inside a toroid is:",opts:["Zero","Circular","Straight","Random"],ans:1},
+{q:"Magnetic energy is stored in the:",opts:["Charge","Mass","Field","Velocity"],ans:2},
+{q:"Magnetic lines density shows:",opts:["Field strength","Charge","Energy","Force"],ans:0},
+{q:"Magnetic induction symbol is:",opts:["E","V","I","B"],ans:3},
+{q:"Magnetic field at infinite distance is:",opts:["Max","Zero","Min","Infinite"],ans:1},
+{q:"Unit of magnetic intensity (H):",opts:["T","Wb","V","A/m"],ans:3},
+{q:"Magnetic field due to dipole varies as:",opts:["1/r²","1/r","r","1/r³"],ans:3},
+{q:"Magnet loses magnetism by:",opts:["Cooling","Charging","Heating","None"],ans:2},
+{q:"Soft iron is used for:",opts:["Electromagnets","Permanent magnets","Insulators","None"],ans:0},
+{q:"Steel is used for:",opts:["Temporary magnets","Permanent magnets","Conductors","None"],ans:1},
+{q:"Magnetic field lines are denser at:",opts:["Center","Ends","Poles","None"],ans:2},
+{q:"Magnetic dipole moment increases with:",opts:["Mass","Time","Area","Charge"],ans:2},
+{q:"Magnetic field is strongest where:",opts:["Lines far","Lines close","No lines","Random"],ans:1},
+{q:"Magnetic force does no work because:",opts:["Force is perpendicular","Zero force","No field","Infinite"],ans:0},
+{q:"The path of a charge in a perpendicular field is:",opts:["Straight","Parabolic","Circular","Helical"],ans:2}
+];
+
+const quizBox = document.getElementById('quiz-box');
+
+questions.forEach((item, index) => {
+    let card = document.createElement('div');
+    card.style.cssText = "background:linear-gradient(145deg,#0f2027,#203a43,#2c5364); padding:20px; margin:15px 0; border-radius:15px; border:1px solid #00ffcc; box-shadow:0 0 15px rgba(0,255,204,0.3);";
+
+    card.innerHTML = `<p style="color:#00ffcc; font-size:18px; font-weight:bold;">Q${index+1}. ${item.q}</p>`;
+
+    item.opts.forEach((opt, oIdx) => {
+        let btn = document.createElement('button');
+        btn.innerText = opt;
+        btn.style.cssText = "display:block; width:100%; margin:10px 0; padding:14px; background:#111; color:#fff; border:1.5px solid #00ffcc; border-radius:10px; text-align:left; font-weight:600; cursor:pointer; transition:0.3s;";
+
+        btn.onmouseover = () => btn.style.background = "#00ffcc";
+        btn.onmouseout = () => btn.style.background = "#111";
+
+        btn.onclick = () => {
+            const overlay = document.getElementById('quiz-overlay');
+            const title = document.getElementById('status-title');
+            const msg = document.getElementById('status-message');
+            const nxt = document.getElementById('next-msg');
+            const strip = document.getElementById('status-strip');
+
+            overlay.style.display = "flex";
+            overlay.style.pointerEvents = "auto"; 
+
+            if(oIdx === item.ans){
+                overlay.style.background = "rgba(0,0,0,0.85)";
+                strip.style.background = "transparent";
+                title.style.cssText = "font-family:'Dancing Script', cursive; color:#fff; font-size:60px; text-shadow:0 0 20px #00f7ff, 0 0 40px #00f7ff;";
+                title.innerText = "Congratulations";
+                msg.innerText = "Excellent! You are a true Topper.";
+                msg.style.color = "#00f7ff";
+                nxt.innerText = "Go to next question...";
+
+                var end = Date.now() + 1500;
+                var colors = ['#00f7ff','#ff0000','#ffffff','#ff00c8','#48ff00'];
+                (function frame(){
+                    confetti({particleCount:15,angle:60,spread:65,origin:{x:0},colors:colors, zIndex: 999999});
+                    confetti({particleCount:15,angle:120,spread:65,origin:{x:1},colors:colors, zIndex: 999999});
+                    if(Date.now() < end) requestAnimationFrame(frame);
+                })();
+            } else {
+                overlay.style.background = "radial-gradient(rgba(139,0,0,0.5) 10%, rgba(0,0,0,0.85) 90%)";
+                strip.style.background = "rgba(0,0,0,0.6)";
+                strip.style.width = "100%";
+                strip.style.padding = "30px 0";
+                title.style.cssText = "font-family:'Oswald', sans-serif; color:red; font-size:80px; font-weight:900; letter-spacing:10px; text-shadow:4px 4px 0px #000;";
+                title.innerText = "WASTED";
+                msg.innerText = "Oops! Try again with focus.";
+                msg.style.color = "#fff";
+                nxt.innerText = "";
+            }
+
+            setTimeout(() => {
+                overlay.style.display = "none";
+                overlay.style.pointerEvents = "none"; 
+            }, 2500);
+        };
+        card.appendChild(btn);
+    });
+    quizBox.appendChild(card);
+});
+});
+</script>
+<div style="text-align:center; margin-bottom:20px;">
+    <h1 style="color:#00ffcc; font-family:sans-serif; text-transform:uppercase; text-shadow:0 0 15px #00ffcc;">Advanced Level: Q51 - Q100 is completed</h1>
+    <p style="color:#ffffff; font-family:sans-serif; font-weight:bold;">Conceptual Depth: Smart Study for Toppers lets start practice long questions for exam</p>
+</div>
+
+<div id="quiz-box" style="max-width:600px; margin:auto; position:relative; z-index:1;"></div>
+
+<div id="quiz-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; z-index:9999; flex-direction:column; align-items:center; justify-content:center; pointer-events:none;">
+    <div id="status-strip" style="width:100%; text-align:center; padding:30px 0;">
+        <h1 id="status-title"></h1>
+        <p id="status-message" style="font-weight:bold;"></p>
+        <p id="next-msg"></p>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+// Maine yahan se numbers hata diye hain taaki double numbering na ho
+const questions = [
+{q:"A charged particle moves in a magnetic field. Which of the following can change?",opts:["Speed","Kinetic Energy","Momentum","None of these"],ans:2},
+{q:"If a particle of charge q is moving in B-field with velocity v, the force is zero if the angle is:",opts:["90°","45°","60°","180°"],ans:3},
+{q:"The magnetic field at a distance r from a long wire is B. What is the field at r/2?",opts:["B/2","2B","B","4B"],ans:1},
+{q:"A current carrying loop is placed in a uniform B-field. The net force on it is:",opts:["Always zero","Depends on area","Depends on current","Never zero"],ans:0},
+{q:"The work done by a magnetic field on a moving charge is zero because:",opts:["B is uniform","v is constant","F is perpendicular to v","F is zero"],ans:2},
+{q:"A solenoid has N turns. If N is doubled and length is halved, the magnetic field becomes:",opts:["Double","Half","Four times","Eight times"],ans:2},
+{q:"The sensitivity of a moving coil galvanometer is inversely proportional to:",opts:["Number of turns","Area of coil","Magnetic field","Torsional constant (k)"],ans:3},
+{q:"In a cyclotron, the time taken by a particle to complete a semicircle is:",opts:["Dependent on speed","Independent of speed","Dependent on radius","None"],ans:1},
+{q:"The torque on a current loop of n turns, area A, and current I in field B is:",opts:["nIAB cosθ","nI/AB","nIAB sinθ","Zero"],ans:2},
+{q:"At the magnetic poles of Earth, the angle of dip is:",opts:["0°","45°","180°","90°"],ans:3},
+{q:"Magnetic susceptibility of a superconductor is:",opts:["0","1","Infinity","-1"],ans:3},
+{q:"Above Curie temperature, a ferromagnetic material behaves like:",opts:["Diamagnetic","Paramagnetic","Superconductor","Insulator"],ans:1},
+{q:"The property of a material to retain magnetism even after the field is removed is:",opts:["Coercivity","Retentivity","Permeability","Susceptibility"],ans:1},
+{q:"Which of the following materials has the highest permeability?",opts:["Diamagnetic","Paramagnetic","Ferromagnetic","All same"],ans:2},
+{q:"A magnetic needle is free to rotate in a vertical plane. At the magnetic equator, it will be:",opts:["Vertical","Horizontal","Inclined at 45°","Random"],ans:1},
+{q:"The SI unit of magnetic intensity (H) is:",opts:["Tesla","Weber","Ampere-meter","Ampere/meter"],ans:3},
+{q:"The relation between B, H, and I (intensity of magnetization) is:",opts:["B = μ₀(H+I)","B = μ₀H/I","B = H + μ₀I","None"],ans:0},
+{q:"For a diamagnetic substance, susceptibility (χ) is:",opts:["Small and positive","Large and positive","Small and negative","Zero"],ans:2},
+{q:"The temperature at which a ferromagnetic material becomes paramagnetic is:",opts:["Inversion temp","Curie temp","Critical temp","Boyle temp"],ans:1},
+{q:"Soft iron is used in transformer cores because it has:",opts:["High retentivity","Low coercivity","Low hysteresis loss","Both B and C"],ans:3},
+{q:"If a magnet is cut into two halves along its length, the pole strength:",opts:["Is doubled","Is halved","Remains same","Becomes zero"],ans:1},
+{q:"If the same magnet is cut perpendicular to its length, the pole strength:",opts:["Is halved","Is doubled","Remains same","None"],ans:2},
+{q:"The unit of magnetic flux is Weber. 1 Weber is equal to:",opts:["1 T·m²","1 T/m²","1 T·m","1 T/m"],ans:0},
+{q:"Gauss's Law for magnetism (∮B·dA = 0) implies:",opts:["Monopoles exist","Monopoles do not exist","Field is uniform","Flux is infinite"],ans:1},
+{q:"An electron moves in a circle in a B-field. The period of revolution is independent of:",opts:["Mass","Charge","Velocity","Magnetic field"],ans:2},
+{q:"A current loop behaves as a magnetic dipole. Its dipole moment is:",opts:["I/A","IA","I²A","A/I"],ans:1},
+{q:"The magnetic field at the center of a circular coil of radius R is B. At a point on the axis at distance R, it is:",opts:["B/2","B/4","B/2√2","B/8"],ans:2},
+{q:"Two wires carry currents in the same direction. The force between them is:",opts:["Repulsive","Attractive","Zero","Rotating"],ans:1},
+{q:"Shunt resistance required to convert G to Ammeter of range 'n' times is:",opts:["G/n","G(n-1)","G/(n-1)","G/n²"],ans:2},
+{q:"High resistance 'R' connected in series with G to make it a Voltmeter is:",opts:["V/Ig - G","V/Ig + G","Ig/V - G","None"],ans:0},
+{q:"Lorentz force on a charge q moving with v in E and B fields is:",opts:["q(E - v×B)","q(E + v×B)","q(v×B)","qE"],ans:1},
+{q:"The trajectory of a charge entering a B-field at an angle of 45° is:",opts:["Circle","Helix","Straight line","Parabola"],ans:1},
+{q:"In a MCG, the purpose of a phosphor-bronze strip is:",opts:["To provide large torque","To conduct current","Both B and C","To provide small k"],ans:2},
+{q:"Magnetic field inside a hollow conductor carrying current is:",opts:["Constant","Infinite","Zero","Decreasing"],ans:2},
+{q:"Permanent magnets should have:",opts:["High retentivity, high coercivity","High retentivity, low coercivity","Low retentivity, low coercivity","None"],ans:0},
+{q:"The ratio of magnetic field at center and at distance R on axis of a circular loop is:",opts:["2:1","1:1","2√2 : 1","1:2"],ans:2},
+{q:"A dip circle is used to measure:",opts:["Magnetic field","Angle of Dip","Magnetic Declination","Magnetic Moment"],ans:1},
+{q:"The core of an electromagnet is made of soft iron because it has:",opts:["High permeability","Low retentivity","High coercivity","Both A and B"],ans:3},
+{q:"Relative permeability (μr) of a paramagnetic substance is:",opts:["μr < 1","μr = 1","μr > 1","μr = 0"],ans:2},
+{q:"A wire of length L is bent into a circle. Field at center is B. If bent into 2 turns, field is:",opts:["2B","B/2","B/4","4B"],ans:3},
+{q:"Torque on a dipole is zero when it is:",opts:["Parallel to B","Perpendicular to B","At 45° to B","None"],ans:0},
+{q:"Potential energy of a magnetic dipole in B-field is:",opts:["m·B","m×B","Zero","-m·B"],ans:3},
+{q:"The value of Earth's magnetic field at the core is:",opts:["Maximum","Zero","Same as surface","Very high"],ans:1},
+{q:"Which has a negative susceptibility?",opts:["Iron","Aluminum","Copper","None"],ans:2},
+{q:"Biot-Savart law is the magnetic equivalent of:",opts:["Ohm's law","Coulomb's law","Faraday's law","None"],ans:1},
+{q:"Force per unit length between two parallel wires is:",opts:["μ₀I₁I₂ / 2πr","μ₀I₁I₂ / r","μ₀I₁I₂ / 4πr","None"],ans:0},
+{q:"A cyclotron is not suitable for:",opts:["Protons","Electrons","Alphas","Deuterons"],ans:1},
+{q:"For a paramagnetic material, χ is proportional to:",opts:["T","1/T","T²","1/√T"],ans:1},
+{q:"1 Tesla is how many Gauss?",opts:["10²","10⁶","10⁴","10⁻⁴"],ans:2},
+{q:"Magnetic field lines due to a toroid are confined:",opts:["Outside it","Only inside its core","At the center","None"],ans:1}
+];
+
+const quizBox = document.getElementById('quiz-box');
+
+questions.forEach((item, index) => {
+    let card = document.createElement('div');
+    card.style.cssText = "background:linear-gradient(145deg,#0f2027,#203a43,#2c5364); padding:20px; margin:15px 0; border-radius:15px; border:1px solid #00ffcc; box-shadow:0 0 15px rgba(0,255,204,0.3);";
+
+    // CLEAN NUMBERING: Sirf ek baar "Q" aur "Number" aayega
+    card.innerHTML = `<p style="color:#00ffcc; font-size:18px; font-weight:bold;">Q${index+51}. ${item.q}</p>`;
+
+    item.opts.forEach((opt, oIdx) => {
+        let btn = document.createElement('button');
+        btn.innerText = opt;
+        btn.style.cssText = "display:block; width:100%; margin:10px 0; padding:14px; background:#111; color:#fff; border:1.5px solid #00ffcc; border-radius:10px; text-align:left; font-weight:600; cursor:pointer; transition:0.3s;";
+
+        btn.onmouseover = () => btn.style.background = "#00ffcc";
+        btn.onmouseout = () => btn.style.background = "#111";
+
+        btn.onclick = () => {
+            const overlay = document.getElementById('quiz-overlay');
+            const title = document.getElementById('status-title');
+            const msg = document.getElementById('status-message');
+            const nxt = document.getElementById('next-msg');
+            const strip = document.getElementById('status-strip');
+
+            overlay.style.display = "flex";
+            overlay.style.pointerEvents = "auto"; 
+
+            if(oIdx === item.ans){
+                overlay.style.background = "rgba(0,0,0,0.85)";
+                strip.style.background = "transparent";
+                title.style.cssText = "font-family:'Dancing Script', cursive; color:#fff; font-size:60px; text-shadow:0 0 20px #00f7ff, 0 0 40px #00f7ff;";
+                title.innerText = "Physics Master";
+                msg.innerText = "Incredible! Your concepts are solid.";
+                msg.style.color = "#00f7ff";
+                nxt.innerText = "Next conceptual challenge...";
+
+                var end = Date.now() + 1500;
+                var colors = ['#00f7ff','#ff0000','#ffffff','#ff00c8','#48ff00'];
+                (function frame(){
+                    confetti({particleCount:15,angle:60,spread:65,origin:{x:0},colors:colors, zIndex: 999999});
+                    confetti({particleCount:15,angle:120,spread:65,origin:{x:1},colors:colors, zIndex: 999999});
+                    if(Date.now() < end) requestAnimationFrame(frame);
+                })();
+            } else {
+                overlay.style.background = "radial-gradient(rgba(139,0,0,0.5) 10%, rgba(0,0,0,0.85) 90%)";
+                strip.style.background = "rgba(0,0,0,0.6)";
+                strip.style.width = "100%";
+                strip.style.padding = "30px 0";
+                title.style.cssText = "font-family:'Oswald', sans-serif; color:red; font-size:80px; font-weight:900; letter-spacing:10px; text-shadow:4px 4px 0px #000;";
+                title.innerText = "WASTED";
+                msg.innerText = "Wrong! Focus on the theory.";
+                msg.style.color = "#fff";
+                nxt.innerText = "";
+            }
+
+            setTimeout(() => {
+                overlay.style.display = "none";
+                overlay.style.pointerEvents = "none"; 
+            }, 2500);
+        };
+        card.appendChild(btn);
+    });
+    quizBox.appendChild(card);
+});
+});
+</script>
+<div id="chapter5-fixed-container" style="max-width:800px; margin:auto; font-family:Arial, sans-serif; overflow:hidden;">
+
+    <div style="text-align:center; margin-bottom:20px;">
+        <h2 style="color:#00ffcc; text-transform:uppercase;">Chapter 5: Magnetism & Matter (Top 10)</h2>
+    </div>
+
+    <div class="q-card" style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px; box-shadow: 0 10px 15px rgba(0,0,0,0.3);">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q1. Define Magnetic Declination, Angle of Dip, and Horizontal Component of Earth's Magnetic Field.</p>
+        <button onclick="toggleQ('c5q1')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Answer</button>
+        <div id="c5q1" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:1.8;">
+            1. <b>Magnetic Declination (θ):</b> The angle between the geographic meridian and the magnetic meridian at a place.<br>
+            2. <b>Magnetic Dip (δ):</b> The angle that the total magnetic field of the earth makes with the horizontal line.<br>
+            3. <b>Horizontal Component (B<sub>H</sub>):</b> The component of the earth's magnetic field in the horizontal direction.<br>
+            <b>Formula:</b> B<sub>H</sub> = B cos δ ; B<sub>V</sub> = B sin δ ; <b>tan δ = B<sub>V</sub> / B<sub>H</sub></b>
+        </div>
+    </div>
+
+    <div class="q-card" style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q2. Prove that a current-carrying solenoid behaves like a bar magnet (Axial Field Derivation).</p>
+        <button onclick="toggleQ('c5q2')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Answer</button>
+        <div id="c5q2" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:1.8;">
+            1. Consider solenoid length 2L, radius 'a', n turns per unit length.<br>
+            2. Field due to small element dx: dB = [μ₀ n dx I a²] / 2(r-x)³.<br>
+            3. For r >> x and r >> a, integrate from -L to +L.<br>
+            4. Result: <b>B = (μ₀ / 4π) × (2M / r³)</b>.<br>
+            5. This is the same as a bar magnet's axial field, proving the equivalence.
+        </div>
+    </div>
+
+    <div class="q-card" style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q3. Compare properties of Diamagnetic, Paramagnetic, and Ferromagnetic materials.</p>
+        <button onclick="toggleQ('c5q3')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Answer</button>
+        <div id="c5q3" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:1.8;">
+            <table border="1" style="width:100%; border-collapse:collapse; color:#fff; font-size:0.9rem;">
+                <tr><td>Property</td><td>Dia</td><td>Para</td><td>Ferro</td></tr>
+                <tr><td>Susceptibility (χ)</td><td>-ve (Small)</td><td>+ve (Small)</td><td>+ve (Huge)</td></tr>
+                <tr><td>Permeability (μᵣ)</td><td>μᵣ < 1</td><td>μᵣ > 1</td><td>μᵣ >> 1000</td></tr>
+                <tr><td>Temp Effect</td><td>None</td><td>χ ∝ 1/T</td><td>Decreases</td></tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="q-card" style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q4. State Gauss's Law in Magnetism. What is its physical significance?</p>
+        <button onclick="toggleQ('c5q4')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Answer</button>
+        <div id="c5q4" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:1.8;">
+            1. <b>Statement:</b> The net magnetic flux through any closed surface is always zero. ∮ B · dA = 0.<br>
+            2. <b>Significance:</b> It proves that isolated magnetic poles (monopoles) do not exist. Magnetic poles always exist in pairs (North and South).
+        </div>
+    </div>
+
+    <div class="q-card" style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q5. Derive the Torque acting on a magnetic dipole in a uniform magnetic field.</p>
+        <button onclick="toggleQ('c5q5')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Answer</button>
+        <div id="c5q5" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:1.8;">
+            1. Consider a magnet of length 2L and pole strength 'm' in field B.<br>
+            2. Force on North pole = mB, Force on South pole = -mB.<br>
+            3. Torque τ = Force × Perpendicular distance.<br>
+            4. τ = mB × (2L sin θ) = (m × 2L) B sin θ.<br>
+            5. Since M = m × 2L, <b>τ = MB sin θ</b> or <b>τ = M × B</b>.
+        </div>
+    </div>
+
+    <div class="q-card" style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q6. Derive Potential Energy of a magnetic dipole in a uniform magnetic field.</p>
+        <button onclick="toggleQ('c5q6')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Answer</button>
+        <div id="c5q6" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:1.8;">
+            1. Work done in rotating dipole by angle dθ: dW = τ dθ.<br>
+            2. dW = MB sin θ dθ.<br>
+            3. Integrate from θ₁ to θ₂: W = ∫ MB sin θ dθ = -MB [cos θ₂ - cos θ₁].<br>
+            4. If θ₁ = 90°, then <b>U = -MB cos θ</b> or <b>U = -M · B</b>.
+        </div>
+    </div>
+
+    <div class="q-card" style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q7. State Curie’s Law for paramagnetic substances. What is Curie Temperature?</p>
+        <button onclick="toggleQ('c5q7')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Answer</button>
+        <div id="c5q7" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:1.8;">
+            1. <b>Curie's Law:</b> Susceptibility (χ) is inversely proportional to absolute temperature (T).<br>
+            2. <b>χ = C / T</b> (where C is Curie constant).<br>
+            3. <b>Curie Temperature (T<sub>C</sub>):</b> The transition temperature above which a ferromagnetic material becomes paramagnetic.
+        </div>
+    </div>
+
+    <div class="q-card" style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q8. Explain the terms: Retentivity and Coercivity using a Hysteresis Loop.</p>
+        <button onclick="toggleQ('c5q8')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Answer</button>
+        <div id="c5q8" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:1.8;">
+            1. <b>Retentivity:</b> The value of magnetic field (B) left in the material when the external magnetizing field (H) is zero.<br>
+            2. <b>Coercivity:</b> The reverse magnetizing field (H) required to make the residual magnetism (B) zero.<br>
+            3. Steel has high coercivity (used for permanent magnets); Soft iron has low coercivity.
+        </div>
+    </div>
+
+    <div class="q-card" style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q9. What are the characteristics of materials used for making Electromagnets?</p>
+        <button onclick="toggleQ('c5q9')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Answer</button>
+        <div id="c5q9" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:1.8;">
+            1. <b>High Permeability:</b> To easily concentrate magnetic field lines.<br>
+            2. <b>Low Retentivity:</b> So magnetism is lost immediately when current is switched off.<br>
+            3. <b>Low Coercivity:</b> To reduce energy loss.<br>
+            4. <b>Example:</b> Soft Iron is the best material.
+        </div>
+    </div>
+
+    <div class="q-card" style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q10. Derive the relation between Magnetic Susceptibility (χ) and Relative Permeability (μᵣ).</p>
+        <button onclick="toggleQ('c5q10')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Answer</button>
+        <div id="c5q10" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:1.8;">
+            1. Total magnetic field B = B₀ + B<sub>m</sub>.<br>
+            2. B = μ₀H + μ₀I = μ₀(H + I).<br>
+            3. Since I = χH, we get B = μ₀(H + χH) = μ₀H(1 + χ).<br>
+            4. Also B = μH = μ₀μᵣH.<br>
+            5. Comparing both: <b>μᵣ = 1 + χ</b>.
+        </div>
+    </div>
+
+</div>
+
+<script>
+function toggleQ(id) {
+    var x = document.getElementById(id);
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+</script>
+
+<style>
+@keyframes moveBg { 
+    0% { background-position: 0% 50%; } 
+    50% { background-position: 100% 50%; } 
+    100% { background-position: 0% 50%; } 
+}
+.q-card { box-sizing: border-box; }
+</style>
+
+
+</body>
+</html>

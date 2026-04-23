@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 7 - AC Basics</title>
+    <style>
+        :root {
+            --neon-border: #ff7300;
+            --neon-glow: #00ffd5;
+            --text-main: #fff;
+            --bg-dark: #020617;
+            --accent-yellow: #fffb00;
+            --accent-purple: #7a00ff;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0; padding: 0;
+        }
+
+        .header {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 20px; border-bottom: 2px solid var(--neon-glow);
+            box-shadow: 0 0 25px var(--neon-glow); background: rgba(2, 6, 23, 0.9);
+            position: sticky; top: 0; z-index: 1000;
+        }
+
+        .back-btn {
+            background: transparent; border: 2px solid var(--neon-glow);
+            color: var(--neon-glow); padding: 8px 25px; border-radius: 8px;
+            font-weight: bold; cursor: pointer; text-decoration: none;
+            box-shadow: 0 0 10px var(--neon-glow); transition: 0.3s;
+        }
+
+        .back-btn:hover { background: var(--neon-glow); color: #000; }
+
+        .header-title {
+            color: var(--accent-yellow); font-weight: 900; font-size: 14px;
+            text-align: right; text-shadow: 0 0 10px var(--accent-yellow);
+        }
+
+        .main-title {
+            text-align: center; color: var(--neon-glow);
+            text-shadow: 0 0 20px var(--neon-glow); font-size: 2rem;
+            margin: 30px 0; text-transform: uppercase;
+        }
+
+        .container { max-width: 600px; margin: auto; padding: 20px; }
+
+        .topic-page {
+            border-left: 6px solid;
+            border-image: linear-gradient(to bottom, #ff7300, #fffb00, #00ffd5, #7a00ff) 1;
+            background: rgba(15, 23, 42, 0.95); margin-bottom: 40px;
+            padding: 25px; border-radius: 0 25px 25px 0;
+            box-shadow: 0 0 35px rgba(0, 255, 213, 0.3);
+        }
+
+        .topic-title {
+            color: var(--neon-glow); font-size: 1.6rem; margin-top: 0;
+            text-shadow: 0 0 10px var(--neon-glow);
+            border-bottom: 1px solid rgba(0, 255, 213, 0.3); padding-bottom: 10px;
+        }
+
+        .box {
+            background: rgba(0, 0, 0, 0.6); border: 2px solid var(--neon-border);
+            padding: 15px; margin: 15px 0; border-radius: 12px;
+            box-shadow: 0 0 15px var(--neon-border), inset 0 0 10px var(--neon-border);
+        }
+
+        .eng-txt { color: #00ffd5; font-weight: 800; display: block; margin-bottom: 5px; }
+        .hin-txt { color: #fffb00; font-weight: 800; display: block; margin-bottom: 5px; }
+
+        .key-points {
+            background: rgba(122, 0, 255, 0.15); padding: 15px;
+            border-radius: 12px; border: 1px solid rgba(122, 0, 255, 0.4);
+        }
+
+        ul { margin: 10px 0; padding-left: 20px; }
+        li { margin-bottom: 8px; color: #e2e8f0; font-weight: 500; }
+
+        .formula-box {
+            text-align: center; font-size: 1.4rem;
+            background: linear-gradient(45deg, var(--accent-purple), #000);
+            padding: 20px; margin-top: 20px; border-radius: 15px;
+            border: 3px solid var(--neon-glow); color: #fff;
+            box-shadow: 0 0 25px var(--neon-glow);
+            animation: thunder 2s infinite ease-in-out;
+        }
+
+        @keyframes thunder { 
+            0%, 100% { opacity: 0.8; box-shadow: 0 0 15px var(--neon-glow); }
+            50% { opacity: 1; box-shadow: 0 0 40px var(--neon-glow); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <a href="phy-chapters.html" class="back-btn">BACK</a>
+        <div class="header-title">SMART STUDY<br>FOR TOPPERS</div>
+    </div>
+
+    <h1 class="main-title">Chapter 7: Alternating Current</h1>
+
+    <div class="container">
+        
+        <div class="topic-page">
+            <h1 class="topic-title">1. Alternating Current</h1>
+            <div class="box"><span class="eng-txt">Detailed Definition:</span> An electric current that reverses its direction many times a second at regular intervals, typically having a sinusoidal waveform.</div>
+            <div class="box"><span class="hin-txt">Hindi Explain:</span> Aisa current jo har thode samay baad apni disha (direction) badalta rehta hai aur jiski value badalti rehti hai.</div>
+            <div class="key-points">
+                <ul>
+                    <li>It reverses direction periodically.</li>
+                    <li>Easily transmitted over long distances.</li>
+                    <li>Voltage can be changed using Transformers.</li>
+                    <li>Magnitude changes at every instant.</li>
+                    <li>Frequency in India is 50 Hz.</li>
+                </ul>
+            </div>
+            <div class="formula-box">$$ I = I_0 \sin(\omega t) $$</div>
+        </div>
+
+        <div class="topic-page">
+            <h1 class="topic-title">2. Direct Current</h1>
+            <div class="box"><span class="eng-txt">Detailed Definition:</span> An electric current flowing in one direction only, which maintains a constant polarity and magnitude over time.</div>
+            <div class="box"><span class="hin-txt">Hindi Explain:</span> Wo current jo hamesha ek hi direction mein behta hai aur change nahi hota, jaise battery ka current.</div>
+            <div class="key-points">
+                <ul>
+                    <li>Flows in a single direction.</li>
+                    <li>Magnitude remains constant usually.</li>
+                    <li>Frequency is zero.</li>
+                    <li>Difficult to transmit over very long distances.</li>
+                    <li>Obtained from electrochemical cells.</li>
+                </ul>
+            </div>
+            <div class="formula-box">$$ I = \text{Constant} $$</div>
+        </div>
+
+        <div class="topic-page">
+            <h1 class="topic-title">3. Difference between AC and DC</h1>
+            <div class="box"><span class="eng-txt">Detailed Definition:</span> AC varies in magnitude and direction periodically, whereas DC flows steadily in one direction without any variation.</div>
+            <div class="box"><span class="hin-txt">Hindi Explain:</span> AC apni disha badalta hai par DC nahi badalta; AC door bhejna sasta hai par DC mehnga padta hai.</div>
+            <div class="key-points">
+                <ul>
+                    <li>AC direction changes, DC direction is fixed.</li>
+                    <li>AC frequency > 0, DC frequency = 0.</li>
+                    <li>AC is dangerous at high voltage, DC is also lethal.</li>
+                    <li>AC can be stepped up/down, DC cannot.</li>
+                    <li>AC used in homes, DC used in electronics.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="topic-page">
+            <h1 class="topic-title">4. Time Period</h1>
+            <div class="box"><span class="eng-txt">Detailed Definition:</span> The time taken by an alternating current or voltage to complete one full cycle of its variations.</div>
+            <div class="box"><span class="hin-txt">Hindi Explain:</span> AC ko ek poora chakkar (one full cycle) khatam karne mein jitna samay lagta hai.</div>
+            <div class="key-points">
+                <ul>
+                    <li>Denoted by letter 'T'.</li>
+                    <li>Unit is seconds (s).</li>
+                    <li>It is the reciprocal of frequency.</li>
+                    <li>Depends on the generator's rotation speed.</li>
+                    <li>For 50Hz, T is 0.02 seconds.</li>
+                </ul>
+            </div>
+            <div class="formula-box">$$ T = \frac{1}{f} = \frac{2\pi}{\omega} $$</div>
+        </div>
+
+        <div class="topic-page">
+            <h1 class="topic-title">5. Frequency</h1>
+            <div class="box"><span class="eng-txt">Detailed Definition:</span> The number of complete cycles of alternating current or voltage produced per unit time (usually per second).</div>
+            <div class="box"><span class="hin-txt">Hindi Explain:</span> Ek second mein AC kitne chakkar (cycles) poore kar leti hai, use frequency kehte hain.</div>
+            <div class="key-points">
+                <ul>
+                    <li>Unit is Hertz (Hz).</li>
+                    <li>India's standard frequency is 50 Hz.</li>
+                    <li>Determines the speed of AC machines.</li>
+                    <li>High frequency means more cycles per second.</li>
+                    <li>Frequency of DC is always zero.</li>
+                </ul>
+            </div>
+            <div class="formula-box">$$ f = \frac{1}{T} $$</div>
+        </div>
+
+        <div class="topic-page">
+            <h1 class="topic-title">6. Angular Frequency</h1>
+            <div class="box"><span class="eng-txt">Detailed Definition:</span> The angular displacement per unit time, representing the rate of change of the phase of a sinusoidal wave.</div>
+            <div class="box"><span class="hin-txt">Hindi Explain:</span> AC ki wave kis speed se ghum rahi hai (angle ke hisaab se), use &omega; batata hai.</div>
+            <div class="key-points">
+                <ul>
+                    <li>Unit is rad/sec.</li>
+                    <li>Represented by &omega; (Omega).</li>
+                    <li>Related to linear frequency.</li>
+                    <li>Used in reactance calculations (L & C).</li>
+                    <li>Full rotation is 2&pi; radians.</li>
+                </ul>
+            </div>
+            <div class="formula-box">$$ \omega = 2\pi f = \frac{2\pi}{T} $$</div>
+        </div>
+
+        <div class="topic-page">
+            <h1 class="topic-title">7. AC Voltage</h1>
+            <div class="box"><span class="eng-txt">Detailed Definition:</span> An alternating potential difference that changes its magnitude and polarity according to a sine or cosine function of time.</div>
+            <div class="box"><span class="hin-txt">Hindi Explain:</span> Wo voltage jo samay ke saath badalta rehta hai aur direction badalta hai.</div>
+            <div class="key-points">
+                <ul>
+                    <li>Changes polarity periodically.</li>
+                    <li>Represented by instantaneous value 'v'.</li>
+                    <li>Produced by AC generators.</li>
+                    <li>Follows a sinusoidal curve.</li>
+                    <li>Peak voltage is denoted as $V_0$.</li>
+                </ul>
+            </div>
+            <div class="formula-box">$$ v = V_0 \sin(\omega t) $$</div>
+        </div>
+
+        <div class="topic-page">
+            <h1 class="topic-title">8. AC Current</h1>
+            <div class="box"><span class="eng-txt">Detailed Definition:</span> The flow of electric charge that changes its direction and magnitude periodically following a wave pattern.</div>
+            <div class="box"><span class="hin-txt">Hindi Explain:</span> Jab charge ka bahaav badalti direction mein ho, toh use AC Current kehte hain.</div>
+            <div class="key-points">
+                <ul>
+                    <li>It varies sinusoidally.</li>
+                    <li>Phase depends on circuit components.</li>
+                    <li>In pure Resistor, it's in phase with V.</li>
+                    <li>Represented as 'i' (instantaneous).</li>
+                    <li>Thermal effect works even if direction changes.</li>
+                </ul>
+            </div>
+            <div class="formula-box">$$ i = I_0 \sin(\omega t \pm \phi) $$</div>
+        </div>
+
+        <div class="topic-page">
+            <h1 class="topic-title">9. Sinusoidal Waveform</h1>
+            <div class="box"><span class="eng-txt">Detailed Definition:</span> A mathematical curve that describes a smooth periodic oscillation, representing the most fundamental type of alternating current.</div>
+            <div class="box"><span class="hin-txt">Hindi Explain:</span> AC ka graph jo ek chikni lehar (sine curve) ki tarah upar-neeche hota hai.</div>
+            <div class="key-points">
+                <ul>
+                    <li>Most basic AC wave shape.</li>
+                    <li>Smooth and continuous variation.</li>
+                    <li>Positive half and negative half cycles.</li>
+                    <li>Zero crossing happens twice per cycle.</li>
+                    <li>Peak values at 90° and 270°.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="topic-page">
+            <h1 class="topic-title">10. Peak Value</h1>
+            <div class="box"><span class="eng-txt">Detailed Definition:</span> The maximum positive or negative value reached by an alternating current or voltage during one complete cycle.</div>
+            <div class="box"><span class="hin-txt">Hindi Explain:</span> AC apne raste mein sabse oonchi jahan tak jati hai (max value), use Peak value kehte hain.</div>
+            <div class="key-points">
+                <ul>
+                    <li>Symbol: $V_0$ or $I_0$.</li>
+                    <li>Also called Amplitude.</li>
+                    <li>Occurs at the crest and trough.</li>
+                    <li>Twice the RMS value (approx 1.414).</li>
+                    <li>Important for insulation safety.</li>
+                </ul>
+            </div>
+            <div class="formula-box">$$ I_0 = I_{rms} \times \sqrt{2} $$</div>
+        </div>
+
+        <div class="topic-page">
+            <h1 class="topic-title">11. Average Value</h1>
+            <div class="box"><span class="eng-txt">Detailed Definition:</span> The arithmetic mean of all instantaneous values of AC over a specific period, usually half a cycle.</div>
+            <div class="box"><span class="hin-txt">Hindi Explain:</span> Adhi cycle (half cycle) ke liye AC ki saari values ka औसत (average). Poori cycle mein ye zero hota hai.</div>
+            <div class="key-points">
+                <ul>
+                    <li>Full cycle average is zero.</li>
+                    <li>Calculated for 0 to T/2 time.</li>
+                    <li>About 63.7% of peak value.</li>
+                    <li>Used in electrolytic processes.</li>
+                    <li>Relation: $0.637 \times \text{Peak}$.</li>
+                </ul>
+            </div>
+            <div class="formula-box">$$ I_{avg} = \frac{2I_0}{\pi} = 0.637 I_0 $$</div>
+        </div>
+
+        <div class="topic-page">
+            <h1 class="topic-title">12. RMS Value</h1>
+            <div class="box"><span class="eng-txt">Detailed Definition:</span> The Root Mean Square value is the effective value of AC that produces the same heating effect as a DC of same value in a resistor.</div>
+            <div class="box"><span class="hin-txt">Hindi Explain:</span> AC ki wo effective value jo DC ke barabar heat de. Ghar ke saare meters RMS value hi batate hain.</div>
+            <div class="key-points">
+                <ul>
+                    <li>Also called 'Virtual' or 'Effective' value.</li>
+                    <li>Most AC meters read this value.</li>
+                    <li>Standard home 220V is RMS.</li>
+                    <li>70.7% of peak value.</li>
+                    <li>Used for power calculation.</li>
+                </ul>
+            </div>
+            <div class="formula-box">$$ I_{rms} = \frac{I_0}{\sqrt{2}} = 0.707 I_0 $$</div>
+        </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+            <div class="topic-page">
+            <h1 class="topic-title">1. AC Circuit Elements</h1>
+            <div class="box">
+                <span class="eng-txt">Detailed Definition:</span> The basic components used in an AC circuit, namely Resistors (R), Inductors (L), and Capacitors (C), which react differently to alternating current.
+            </div>
+            <div class="box">
+                <span class="hin-txt">Hindi Explain:</span> AC circuit ke wo buniyadi hisse (R, L, C) jo current ke bahaav mein alag-alag tarah se rukawat paida karte hain.
+            </div>
+            <div class="key-points">
+                <ul>
+                    <li>Resistor (R) consumes energy as heat.</li>
+                    <li>Inductor (L) stores energy in magnetic field.</li>
+                    <li>Capacitor (C) stores energy in electric field.</li>
+                    <li>Each element has a different effect on phase.</li>
+                    <li>Combined effect is called Impedance (Z).</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="topic-page">
+            <h1 class="topic-title">2. Resistor in AC Circuit</h1>
+            <div class="box">
+                <span class="eng-txt">Detailed Definition:</span> A circuit containing only a pure resistance connected to an AC source, where Ohm's law applies at every instant.
+            </div>
+            <div class="box">
+                <span class="hin-txt">Hindi Explain:</span> Jab AC source ke saath sirf ek resistor juda ho, toh current aur voltage ek saath chalte hain.
+            </div>
+            <div class="key-points">
+                <ul>
+                    <li>Opposes the flow of current.</li>
+                    <li>Resistance (R) is independent of frequency.</li>
+                    <li>Energy is lost as heat ($I^2R$).</li>
+                    <li>Voltage and Current start and end together.</li>
+                    <li>Ohm's Law: $V = IR$.</li>
+                </ul>
+            </div>
+            <div class="formula-box">$$ I = \frac{V_m}{R} \sin(\omega t) $$</div>
+        </div>
+
+        <div class="topic-page">
+            <h1 class="topic-title">3. Inductor in AC Circuit</h1>
+            <div class="box">
+                <span class="eng-txt">Detailed Definition:</span> A circuit with a pure inductor where the changing AC current induces a back EMF that opposes the current flow.
+            </div>
+            <div class="box">
+                <span class="hin-txt">Hindi Explain:</span> Jab coil (inductor) ko AC se jodte hain, toh wo magnetic field bana kar current ko rokne ki koshish karta hai.
+            </div>
+            <div class="key-points">
+                <ul>
+                    <li>Creates an opposition called Inductive Reactance.</li>
+                    <li>Does not dissipate power in an ideal case.</li>
+                    <li>Current lags behind the voltage.</li>
+                    <li>Opposition increases with higher frequency.</li>
+                    <li>Used in filters and chokes.</li>
+                </ul>
+            </div>
+            <div class="formula-box">$$ V = L \frac{di}{dt} $$</div>
+        </div>
+
+        <div class="topic-page">
+            <h1 class="topic-title">4. Capacitor in AC Circuit</h1>
+            <div class="box">
+                <span class="eng-txt">Detailed Definition:</span> A circuit where an AC source is connected to a capacitor, causing it to constantly charge and discharge.
+            </div>
+            <div class="box">
+                <span class="hin-txt">Hindi Explain:</span> Capacitor AC ko rasta deta hai par DC ko block kar deta hai; ye charge hone ki wajah se current ko lead karwata hai.
+            </div>
+            <div class="key-points">
+                <ul>
+                    <li>Current leads the voltage.</li>
+                    <li>Opposition decreases as frequency increases.</li>
+                    <li>Blocks Direct Current (DC).</li>
+                    <li>Stores energy in the electric field.</li>
+                    <li>Used for smooth power supply.</li>
+                </ul>
+            </div>
+            <div class="formula-box">$$ X_C = \frac{1}{\omega C} $$</div>
+        </div>
+
+        <div class="topic-page">
+            <h1 class="topic-title">5. Voltage and Current in Phase</h1>
+            <div class="box">
+                <span class="eng-txt">Detailed Definition:</span> A condition in a purely resistive circuit where both voltage and current reach their maximum and zero values at the same time.
+            </div>
+            <div class="box">
+                <span class="hin-txt">Hindi Explain:</span> Iska matlab hai ki Voltage aur Current ke beech koi "gap" nahi hai, dono saath-saath upar-neeche hote hain.
+            </div>
+            <div class="key-points">
+                <ul>
+                    <li>Phase difference ($\phi$) is zero.</li>
+                    <li>Power factor is maximum (1).</li>
+                    <li>Seen only in purely resistive circuits.</li>
+                    <li>Graphically, both waves overlap in time.</li>
+                    <li>Maximum efficiency of power transfer.</li>
+                </ul>
+            </div>
+            <div class="formula-box">$$ \phi = 0^\circ $$</div>
+        </div>
+
+        <div class="topic-page">
+            <h1 class="topic-title">6. Power in Pure Resistive Circuit</h1>
+            <div class="box">
+                <span class="eng-txt">Detailed Definition:</span> The rate at which energy is dissipated as heat in a resistor, calculated as the product of RMS voltage and RMS current.
+            </div>
+            <div class="box">
+                <span class="hin-txt">Hindi Explain:</span> Resistor mein jo bijli kharch hoti hai wo garmi ke roop mein nikal jati hai, isse average power nikalte hain.
+            </div>
+            <div class="key-points">
+                <ul>
+                    <li>Average power is $V_{rms} \times I_{rms}$.</li>
+                    <li>Instanteous power is always positive.</li>
+                    <li>All electrical energy is converted to heat.</li>
+                    <li>No energy is returned to the source.</li>
+                    <li>Power Factor = $\cos(0^\circ) = 1$.</li>
+                </ul>
+            </div>
+            <div class="formula-box">$$ P_{avg} = V_{rms} I_{rms} = I_{rms}^2 R $$</div>
+        </div>
+
+        <div class="topic-page">
+            <h1 class="topic-title">7. Inductive Reactance</h1>
+            <div class="box">
+                <span class="eng-txt">Detailed Definition:</span> The opposition offered by an inductor to the flow of alternating current, which is proportional to frequency and inductance.
+            </div>
+            <div class="box">
+                <span class="hin-txt">Hindi Explain:</span> Inductor current ko jo "resistance" dikhata hai use Inductive Reactance kehte hain; frequency badhne par ye badh jati hai.
+            </div>
+            <div class="key-points">
+                <ul>
+                    <li>Represented by $X_L$.</li>
+                    <li>Unit is Ohm ($\Omega$).</li>
+                    <li>Directly proportional to frequency ($f$).</li>
+                    <li>$X_L$ is zero for DC ($f=0$).</li>
+                    <li>Formula connects $\omega$ and $L$.</li>
+                </ul>
+            </div>
+            <div class="formula-box">$$ X_L = \omega L = 2\pi f L $$</div>
+        </div>
+        <div class="topic-page">
+            <h1 class="topic-title">1. AC through Capacitor</h1>
+            <div class="box">
+                <span class="eng-txt">Detailed Definition:</span> An AC circuit consisting only of a capacitor where the current is proportional to the rate of change of voltage, causing it to lead the voltage.
+            </div>
+            <div class="box">
+                <span class="hin-txt">Hindi Explain:</span> Jab sirf ek capacitor AC source se juda ho, toh capacitor ke charge hone ki wajah se current, voltage se aage nikal jata hai.
+            </div>
+            <div class="key-points">
+                <ul>
+                    <li>Blocks DC but allows AC to pass.</li>
+                    <li>Current leads voltage by 90 degrees.</li>
+                    <li>Energy is stored in the electric field.</li>
+                    <li>No power is dissipated in an ideal capacitor.</li>
+                    <li>Opposition offered is called Capacitive Reactance.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="topic-page">
+            <h1 class="topic-title">2. Phase Difference (Lead)</h1>
+            <div class="box">
+                <span class="eng-txt">Detailed Definition:</span> In a purely capacitive circuit, the current reaches its peak value one-fourth of a cycle before the voltage does.
+            </div>
+            <div class="box">
+                <span class="hin-txt">Hindi Explain:</span> Capacitor wale circuit mein current, voltage se $\pi/2$ (90°) pehle apne peak par pahunch jata hai, ise hi "Lead" karna kehte hain.
+            </div>
+            <div class="key-points">
+                <ul>
+                    <li>Phase angle $\phi = +90^\circ$ or $+\pi/2$.</li>
+                    <li>Current starts from peak when Voltage is zero.</li>
+                    <li>Represented by a phasor pointing upwards.</li>
+                    <li>Happens because capacitor must charge before voltage builds.</li>
+                    <li>Phase factor $\cos(\phi) = 0$.</li>
+                </ul>
+            </div>
+            <div class="formula-box">$$ i = I_0 \sin(\omega t + \pi/2) $$</div>
+        </div>
+
+        <div class="topic-page">
+            <h1 class="topic-title">3. Capacitive Reactance</h1>
+            <div class="box">
+                <span class="eng-txt">Detailed Definition:</span> The opposition offered by a capacitor to the flow of AC, which inversely depends on the frequency of the source and the capacitance.
+            </div>
+            <div class="box">
+                <span class="hin-txt">Hindi Explain:</span> Capacitor jo AC ko rokne ke liye rukawat paida karta hai. Frequency jitni zyada hogi, rukawat utni hi kam hogi.
+            </div>
+            <div class="key-points">
+                <ul>
+                    <li>Inversely proportional to frequency ($f$).</li>
+                    <li>Unit is Ohm ($\Omega$).</li>
+                    <li>For DC ($f=0$), $X_c$ is infinite (blocks DC).</li>
+                    <li>Decreases as Capacitance ($C$) increases.</li>
+                    <li>Helps in filtering low frequencies.</li>
+                </ul>
+            </div>
+            <div class="formula-box">$$ X_C = \frac{1}{\omega C} = \frac{1}{2\pi f C} $$</div>
+        </div>
+
+        <div class="topic-page">
+            <h1 class="topic-title">4. Series LCR Circuit</h1>
+            <div class="box">
+                <span class="eng-txt">Detailed Definition:</span> An AC circuit where a resistor (R), an inductor (L), and a capacitor (C) are connected in series with an AC voltage source.
+            </div>
+            <div class="box">
+                <span class="hin-txt">Hindi Explain:</span> Jab ek hi line (series) mein Resistor, Inductor aur Capacitor teeno ko ek saath AC se jod diya jaye.
+            </div>
+            <div class="key-points">
+                <ul>
+                    <li>Teeno elements mein same current behta hai.</li>
+                    <li>Voltage drop alag-alag hota hai ($V_R, V_L, V_C$).</li>
+                    <li>Used in radio and TV tuning circuits.</li>
+                    <li>Behavior depends on which reactance is larger.</li>
+                    <li>Total opposition is called Impedance ($Z$).</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="topic-page">
+            <h1 class="topic-title">5. Impedance</h1>
+            <div class="box">
+                <span class="eng-txt">Detailed Definition:</span> The total effective opposition offered by a combination of L, C, and R elements to the flow of alternating current.
+            </div>
+            <div class="box">
+                <span class="hin-txt">Hindi Explain:</span> LCR circuit ki kul rukawat (Total Resistance) jo current ko milti hai, use Impedance kehte hain.
+            </div>
+            <div class="key-points">
+                <ul>
+                    <li>Vector sum of Resistance and Reactance.</li>
+                    <li>Unit is Ohm ($\Omega$).</li>
+                    <li>Minimum at resonance.</li>
+                    <li>Calculated using a right-angled triangle (Impedance Triangle).</li>
+                    <li>Formula uses the square of differences between $X_L$ and $X_C$.</li>
+                </ul>
+            </div>
+            <div class="formula-box">$$ Z = \sqrt{R^2 + (X_L - X_C)^2} $$</div>
+        </div>
+
+        <div class="topic-page">
+            <h1 class="topic-title">6. Phase Angle</h1>
+            <div class="box">
+                <span class="eng-txt">Detailed Definition:</span> The angle by which the total voltage leads or lags the total current in an AC circuit, determined by the ratio of reactance to resistance.
+            </div>
+            <div class="box">
+                <span class="hin-txt">Hindi Explain:</span> LCR circuit mein voltage aur current ke beech ka jo final kona (angle) banta hai, use phase angle kehte hain.
+            </div>
+            <div class="key-points">
+                <ul>
+                    <li>Represented by $\phi$.</li>
+                    <li>If $X_L > X_C$, phase is positive (Inductive).</li>
+                    <li>If $X_C > X_L$, phase is negative (Capacitive).</li>
+                    <li>Determines the power factor of the circuit.</li>
+                    <li>Can be zero at resonance.</li>
+                </ul>
+            </div>
+            <div class="formula-box">$$ \tan \phi = \frac{X_L - X_C}{R} $$</div>
+        </div>
+
+        <div class="topic-page">
+            <h1 class="topic-title">7. Resonance Condition</h1>
+            <div class="box">
+                <span class="eng-txt">Detailed Definition:</span> A specific state in a series LCR circuit where the inductive reactance equals the capacitive reactance, resulting in minimum impedance.
+            </div>
+            <div class="box">
+                <span class="hin-txt">Hindi Explain:</span> Wo khaas halat jab $X_L$ aur $X_C$ barabar ho jate hain aur circuit mein current sabse zyada behta hai.
+            </div>
+            <div class="key-points">
+                <ul>
+                    <li>$X_L = X_C$ always.</li>
+                    <li>Impedance ($Z$) is minimum and equal to $R$.</li>
+                    <li>Current reaches its maximum value.</li>
+                    <li>Voltage and current come in phase ($\phi = 0$).</li>
+                    <li>Circuit behaves as a purely resistive circuit.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="topic-page">
+            <h1 class="topic-title">8. Resonant Frequency</h1>
+            <div class="box">
+                <span class="eng-txt">Detailed Definition:</span> The frequency at which the resonance occurs in an LCR circuit, allowing maximum power to be absorbed from the source.
+            </div>
+            <div class="box">
+                <span class="hin-txt">Hindi Explain:</span> Wo frequency jispar resonance hota hai. Is frequency par signal sabse mazboot pakda jata hai.
+            </div>
+            <div class="key-points">
+                <ul>
+                    <li>Depends only on L and C values.</li>
+                    <li>Used in tuning radios and mobile signals.</li>
+                    <li>Current curve shows a sharp peak here.</li>
+                    <li>Independent of resistance $R$.</li>
+                    <li>Calculated in Hertz (Hz).</li>
+                </ul>
+            </div>
+            <div class="formula-box">$$ f_r = \frac{1}{2\pi\sqrt{LC}} $$</div>
+        </div>
+
+        <div class="topic-page">
+            <h1 class="topic-title">9. Power Factor</h1>
+            <div class="box">
+                <span class="eng-txt">Detailed Definition:</span> The ratio of real power to apparent power in an AC circuit, mathematically equal to the cosine of the phase angle.
+            </div>
+            <div class="box">
+                <span class="hin-txt">Hindi Explain:</span> Circuit mein kitni bijli asliyat mein kaam aa rahi hai, ye Power Factor ($\cos \phi$) batata hai.
+            </div>
+            <div class="key-points">
+                <ul>
+                    <li>Value ranges from 0 to 1.</li>
+                    <li>High power factor means less energy waste.</li>
+                    <li>Ratio of Resistance ($R$) to Impedance ($Z$).</li>
+                    <li>For pure Resistor, it is 1.</li>
+                    <li>For pure L or C, it is 0.</li>
+                </ul>
+            </div>
+            <div class="formula-box">$$ \cos \phi = \frac{R}{Z} $$</div>
+        </div>
+
+        <div class="topic-page">
+            <h1 class="topic-title">10. Wattless Current</h1>
+            <div class="box">
+                <span class="eng-txt">Detailed Definition:</span> The component of AC current that flows in a purely inductive or capacitive circuit without consuming any net average power.
+            </div>
+            <div class="box">
+                <span class="hin-txt">Hindi Explain:</span> Wo current jo circuit mein behta toh hai lekin koi bijli (power) kharch nahi karta, use Wattless current kehte hain.
+            </div>
+            <div class="key-points">
+                <ul>
+                    <li>Power consumption is zero.</li>
+                    <li>Occurs when phase difference is 90 degrees.</li>
+                    <li>Energy is just swapped between source and element.</li>
+                    <li>Ideal inductors/capacitors draw this current.</li>
+                    <li>Mathematically: $I_{rms} \sin \phi$.</li>
+                </ul>
+            </div>
+            <div class="formula-box">$$ P_{avg} = 0 $$</div>
+        </div>
+        <div class="topic-page">
+            <h1 class="topic-title">1. Transformer</h1>
+            <div class="box">
+                <span class="eng-txt">Detailed Definition:</span> An electrical device that transfers electrical energy between two or more circuits through electromagnetic induction, used to increase or decrease AC voltages.
+            </div>
+            <div class="box">
+                <span class="hin-txt">Hindi Explain:</span> Ek aisi machine jo bina frequency badle voltage ko kam ya zyada kar sakti hai. Ye sirf AC par kaam karta hai.
+            </div>
+            <div class="key-points">
+                <ul>
+                    <li>Works only on Alternating Current (AC).</li>
+                    <li>Consists of Primary and Secondary coils.</li>
+                    <li>Does not change the power (ideally).</li>
+                    <li>Frequency remains constant throughout.</li>
+                    <li>Used in power grids and electronic adapters.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="topic-page">
+            <h1 class="topic-title">2. Working Principle</h1>
+            <div class="box">
+                <span class="eng-txt">Detailed Definition:</span> It works on the principle of Mutual Induction, where a changing current in the primary coil induces a voltage in the secondary coil.
+            </div>
+            <div class="box">
+                <span class="hin-txt">Hindi Explain:</span> Iska kaam Mutual Induction par tika hai—ek coil mein current badlo toh doosri coil mein bijli paida ho jati hai.
+            </div>
+            <div class="key-points">
+                <ul>
+                    <li>Based on Faraday's Law of Induction.</li>
+                    <li>Requires a changing magnetic flux.</li>
+                    <li>Soft iron core is used to link the flux.</li>
+                    <li>No electrical connection between coils.</li>
+                    <li>Magnetic field acts as the medium of transfer.</li>
+                </ul>
+            </div>
+            <div class="formula-box">$$ \frac{V_s}{V_p} = \frac{N_s}{N_p} = K $$</div>
+        </div>
+
+        <div class="topic-page">
+            <h1 class="topic-title">3. Step-up Transformer</h1>
+            <div class="box">
+                <span class="eng-txt">Detailed Definition:</span> A transformer that increases the voltage from primary to secondary by having more turns in the secondary coil than the primary.
+            </div>
+            <div class="box">
+                <span class="hin-txt">Hindi Explain:</span> Ye voltage ko badha deta hai. Isme secondary coil mein zyada pheron (turns) ki sankhya hoti hai.
+            </div>
+            <div class="key-points">
+                <ul>
+                    <li>$V_s > V_p$ (Output voltage is higher).</li>
+                    <li>$N_s > N_p$ (Secondary has more turns).</li>
+                    <li>Current decreases as voltage increases.</li>
+                    <li>Used in power stations for transmission.</li>
+                    <li>Transformation ratio $K > 1$.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="topic-page">
+            <h1 class="topic-title">4. Step-down Transformer</h1>
+            <div class="box">
+                <span class="eng-txt">Detailed Definition:</span> A transformer that decreases the voltage from primary to secondary by having fewer turns in the secondary coil compared to the primary.
+            </div>
+            <div class="box">
+                <span class="hin-txt">Hindi Explain:</span> Ye high voltage ko kam karta hai. Hamare gharon ke paas lage transformers yahi hote hain.
+            </div>
+            <div class="key-points">
+                <ul>
+                    <li>$V_s < V_p$ (Output voltage is lower).</li>
+                    <li>$N_s < N_p$ (Primary has more turns).</li>
+                    <li>Current increases as voltage decreases.</li>
+                    <li>Used in mobile chargers and doorbells.</li>
+                    <li>Transformation ratio $K < 1$.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="topic-page">
+            <h1 class="topic-title">5. Losses in Transformer</h1>
+            <div class="box">
+                <span class="eng-txt">Detailed Definition:</span> The reduction in energy efficiency due to heat, magnetic flux leakage, and resistance within the transformer components.
+            </div>
+            <div class="box">
+                <span class="hin-txt">Hindi Explain:</span> Transformer mein energy ka nuksan garmi aur magnetic leakage ki wajah se hota hai.
+            </div>
+            <div class="key-points">
+                <ul>
+                    <li><b>Copper Loss:</b> Heat in coils due to resistance.</li>
+                    <li><b>Iron/Core Loss:</b> Eddy currents and hysteresis.</li>
+                    <li><b>Flux Leakage:</b> Not all flux reaches secondary.</li>
+                    <li><b>Humming Loss:</b> Energy lost as sound/vibration.</li>
+                    <li>Laminated cores help reduce these losses.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="topic-page">
+            <h1 class="topic-title">6. Efficiency (&eta;)</h1>
+            <div class="box">
+                <span class="eng-txt">Detailed Definition:</span> The ratio of the output power delivered to the secondary circuit to the input power supplied to the primary circuit.
+            </div>
+            <div class="box">
+                <span class="hin-txt">Hindi Explain:</span> Transformer kitna accha kaam kar raha hai (Output aur Input ka ratio). Ideal transformer ki efficiency 100% hoti hai.
+            </div>
+            <div class="key-points">
+                <ul>
+                    <li>Represented by &eta; (Eta).</li>
+                    <li>Expressed as a percentage.</li>
+                    <li>Real transformers have 90-99% efficiency.</li>
+                    <li>$\text{Efficiency} = \frac{\text{Output Power}}{\text{Input Power}}$.</li>
+                    <li>High efficiency means less heat generation.</li>
+                </ul>
+            </div>
+            <div class="formula-box">$$ \eta = \frac{V_s I_s}{V_p I_p} \times 100\% $$</div>
+        </div>
+      </div>
+<div style="text-align:center; margin-bottom:20px;">
+    <h1 style="color:#00f7ff; font-family:sans-serif; text-transform:uppercase; text-shadow:0 0 10px #00f7ff;">AC Questions Practice</h1>
+    <p style="color:#FFD700; font-family:sans-serif; font-weight:bold;">Click to choose correct answer</p>
+</div>
+
+<div id="quiz-box" style="max-width:600px; margin:auto; position:relative; z-index:1;"></div>
+
+<div id="quiz-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; z-index:9999; flex-direction:column; align-items:center; justify-content:center; pointer-events:none;">
+    <div id="status-strip" style="width:100%; text-align:center; padding:30px 0;">
+        <h1 id="status-title" style="margin:0; padding:0;"></h1>
+        <p id="status-message" style="margin:10px 0; font-family:sans-serif; font-weight:bold;"></p>
+        <p id="next-msg" style="margin:0; font-family:sans-serif;"></p>
+    </div>
+</div>
+
+<style>
+/* RGB Border Animation */
+@keyframes rgb-glow {
+    0% { border-color: #00f7ff; box-shadow: 0 0 8px #00f7ff; }
+    33% { border-color: #ff00c8; box-shadow: 0 0 8px #ff00c8; }
+    66% { border-color: #48ff00; box-shadow: 0 0 8px #48ff00; }
+    100% { border-color: #00f7ff; box-shadow: 0 0 8px #00f7ff; }
+}
+
+.quiz-card {
+    background: rgba(255,255,255,0.05); 
+    padding: 20px; 
+    margin: 15px 0; 
+    border-radius: 15px; 
+    border: 2px solid #00f7ff; 
+    animation: rgb-glow 4s linear infinite;
+}
+
+.opt-btn {
+    display: block; 
+    width: 100%; 
+    margin: 12px 0; 
+    padding: 15px; 
+    background: rgba(255,255,255,0.08); 
+    color: #fff; 
+    border: 1.5px solid #00f7ff; 
+    border-radius: 12px; 
+    text-align: left; 
+    font-weight: 600; 
+    cursor: pointer;
+    animation: rgb-glow 3s linear infinite;
+}
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+const questions = [
+    { q:"The peak value of AC voltage is 440V. Its RMS value is:", opts:["220V","311V","440V","110V"], ans:1 },
+    { q:"Frequency of AC used in India is:", opts:["60 Hz","50 Hz","100 Hz","0 Hz"], ans:1 },
+    { q:"Average value of AC over a full cycle is:", opts:["I0/2","I0/√2","Zero","2I0/π"], ans:2 },
+    { q:"The power factor of a purely resistive circuit is:", opts:["Zero","0.5","1","Infinity"], ans:2 },
+    { q:"In a purely inductive circuit, current ______ the voltage by 90°.", opts:["Leads","Lags","In Phase","None"], ans:1 },
+    { q:"In a purely capacitive circuit, current ______ the voltage by 90°.", opts:["Leads","Lags","In Phase","None"], ans:0 },
+    { q:"The unit of inductive reactance (XL) is:", opts:["Henry","Farad","Ohm","Tesla"], ans:2 },
+    { q:"With increase in frequency, inductive reactance:", opts:["Decreases","Increases","Remains same","Becomes Zero"], ans:1 },
+    { q:"With increase in frequency, capacitive reactance:", opts:["Decreases","Increases","Remains same","Becomes Infinite"], ans:0 },
+    { q:"For DC, the reactance of a capacitor is:", opts:["Zero","Infinite","1 Ohm","Negative"], ans:1 },
+    { q:"The ratio of RMS value to Average value is called:", opts:["Power factor","Form factor","Peak factor","Q factor"], ans:1 },
+    { q:"The power factor of a purely inductive circuit is:", opts:["1","0.5","Zero","0.8"], ans:2 },
+    { q:"Total opposition in an LCR circuit is called:", opts:["Resistance","Reactance","Impedance","Admittance"], ans:2 },
+    { q:"At resonance, the impedance of LCR series circuit is:", opts:["Maximum","Minimum","Zero","Infinite"], ans:1 },
+    { q:"At resonance, the phase angle is:", opts:["90°","180°","0°","45°"], ans:2 },
+    { q:"In India, AC voltage changes its direction every:", opts:["0.02 s","0.01 s","0.5 s","1 s"], ans:1 },
+    { q:"Transformer works on the principle of:", opts:["Self Induction","Mutual Induction","Eddy Currents","None"], ans:1 },
+    { q:"Core of a transformer is laminated to reduce:", opts:["Copper loss","Hysteresis loss","Eddy current loss","None"], ans:2 },
+    { q:"The efficiency of an ideal transformer is:", opts:["50%","90%","100%","75%"], ans:2 },
+    { q:"Wattless current flows in a circuit containing:", opts:["Pure Resistor","Pure Inductor","R-L Circuit","R-C Circuit"], ans:1 },
+    { q:"Unit of Impedance is:", opts:["Henry","Weber","Ohm","Mho"], ans:2 },
+    { q:"Q-factor of resonance is given by:", opts:["(1/R)√(L/C)","(1/L)√(R/C)","R√(L/C)","L√(R/C)"], ans:0 },
+    { q:"Choke coil is used to control AC in:", opts:["DC circuits","AC circuits","Both","None"], ans:1 },
+    { q:"A choke coil has ______ inductance and ______ resistance.", opts:["High, Low","Low, High","High, High","Low, Low"], ans:0 },
+    { q:"Dimension of L/R is same as:", opts:["Velocity","Force","Time","Frequency"], ans:2 },
+    { q:"In a series LCR circuit, at resonance, current is:", opts:["Minimum","Maximum","Zero","Negative"], ans:1 },
+    { q:"Which value of AC is measured by hot wire ammeters?", opts:["Peak","Average","RMS","Instantaneous"], ans:2 },
+    { q:"Ratio of Peak value to RMS value of AC is:", opts:["√2","1/√2","2","1/2"], ans:0 },
+    { q:"Power Factor (cos φ) is equal to:", opts:["R/Z","Z/R","XL/R","XC/R"], ans:0 },
+    { q:"A transformer cannot work on DC because:", opts:["V is high","No flux change","Resistance is zero","None"], ans:1 },
+    { q:"Energy stored in an inductor is:", opts:["1/2 CV²","1/2 LI²","QV","LI"], ans:1 },
+    { q:"Inductor blocks ______ and allows ______.", opts:["AC, DC","DC, AC","High Freq, Low Freq","None"], ans:2 },
+    { q:"If L=2H and f=50Hz, then XL is:", opts:["100π","200π","50π","314"], ans:1 },
+    { q:"Capacitor blocks ______ and allows ______.", opts:["AC, DC","DC, AC","Both","None"], ans:1 },
+    { q:"At resonance, XL - XC is:", opts:["Maximum","Minimum","Zero","1"], ans:2 },
+    { q:"Transformation ratio K for step-up transformer is:", opts:["K > 1","K < 1","K = 1","K = 0"], ans:0 },
+    { q:"Average power dissipated in pure capacitor is:", opts:["VI","1/2 CV²","Zero","V²/R"], ans:2 },
+    { q:"The unit of 'ω' (Angular frequency) is:", opts:["Hertz","Radian/sec","Degrees","Sec"], ans:1 },
+    { q:"Phase difference in purely resistive circuit is:", opts:["π","π/2","Zero","π/4"], ans:2 },
+    { q:"Hysteresis loss is less for:", opts:["Steel","Soft Iron","Copper","Aluminum"], ans:1 },
+    { q:"Current in AC circuit is I = 5 sin(100t). Peak current is:", opts:["100A","5A","50A","5/√2 A"], ans:1 },
+    { q:"RMS value of current is related to peak value as:", opts:["Irms = 0.707 I0","Irms = 0.637 I0","Irms = 1.414 I0","None"], ans:0 },
+    { q:"Sharpness of resonance depends on:", opts:["L only","C only","R only","None"], ans:2 },
+    { q:"Unit of RC (Resistance × Capacitance) is:", opts:["Seconds","Hertz","Ohm","Farad"], ans:0 },
+    { q:"Soft iron is used in transformer core because it has:", opts:["Low Hysteresis","High Hysteresis","Low Conductivity","None"], ans:0 },
+    { q:"The frequency of DC is:", opts:["50 Hz","Zero","Infinite","100 Hz"], ans:1 },
+    { q:"In step-down transformer, secondary current is:", opts:["Less than Primary","More than Primary","Equal","Zero"], ans:1 },
+    { q:"Apparent power is measured in:", opts:["Watts","VAR","Volt-Ampere (VA)","Joules"], ans:2 },
+    { q:"1 Weber is equal to:", opts:["1 Tesla × m²","1 Tesla/m²","1 Henry","1 Gauss"], ans:0 },
+    { q:"Phase difference between VL and VC in LCR is:", opts:["Zero","90°","180°","45°"], ans:2 }
+];
+
+const quizBox = document.getElementById('quiz-box');
+
+questions.forEach((item, index) => {
+    let card = document.createElement('div');
+    card.className = "quiz-card";
+
+    card.innerHTML = `<p style="color:#FFD700; font-size:18px; font-weight:bold;">Q${index+1}. ${item.q}</p>`;
+
+    item.opts.forEach((opt, oIdx) => {
+        let btn = document.createElement('button');
+        btn.innerText = opt;
+        btn.className = "opt-btn";
+
+        btn.onclick = () => {
+            const overlay = document.getElementById('quiz-overlay');
+            const title = document.getElementById('status-title');
+            const msg = document.getElementById('status-message');
+            const nxt = document.getElementById('next-msg');
+            const strip = document.getElementById('status-strip');
+
+            overlay.style.display = "flex";
+            overlay.style.pointerEvents = "auto"; 
+
+            if(oIdx === item.ans){
+                overlay.style.background = "rgba(0,0,0,0.85)";
+                strip.style.background = "transparent";
+                title.style.cssText = "font-family:'Dancing Script', cursive; color:#fff; font-size:60px; text-shadow:0 0 20px #00f7ff, 0 0 40px #00f7ff;";
+                title.innerText = "Congratulations";
+                msg.innerText = "Excellent! You are a true Topper.";
+                msg.style.color = "#00f7ff";
+                nxt.innerText = "Go to next question...";
+
+                var end = Date.now() + 1500;
+                var colors = ['#00f7ff','#ff0000','#ffffff','#ff00c8','#48ff00'];
+                (function frame(){
+                    confetti({particleCount:15,angle:60,spread:65,origin:{x:0},colors:colors, zIndex: 999999});
+                    confetti({particleCount:15,angle:120,spread:65,origin:{x:1},colors:colors, zIndex: 999999});
+                    if(Date.now() < end) requestAnimationFrame(frame);
+                })();
+            } else {
+                overlay.style.background = "radial-gradient(rgba(139,0,0,0.5) 10%, rgba(0,0,0,0.85) 90%)";
+                strip.style.background = "rgba(0,0,0,0.6)";
+                strip.style.width = "100%";
+                strip.style.padding = "30px 0";
+                title.style.cssText = "font-family:'Oswald', sans-serif; color:red; font-size:80px; font-weight:900; letter-spacing:10px; text-shadow:4px 4px 0px #000;";
+                title.innerText = "WASTED";
+                msg.innerText = "Oops! Try again with focus.";
+                msg.style.color = "#fff";
+                nxt.innerText = "";
+            }
+
+            setTimeout(() => {
+                overlay.style.display = "none";
+                overlay.style.pointerEvents = "none"; 
+            }, 2500);
+        };
+        card.appendChild(btn);
+    });
+    quizBox.appendChild(card);
+});
+});
+</script>
+<div style="text-align:center; margin-bottom:20px;">
+    <h1 style="color:#00f7ff; font-family:sans-serif; text-transform:uppercase; text-shadow:0 0 10px #00f7ff;">Physics Advanced: Q51 - Q100</h1>
+    <p style="color:#FFD700; font-family:sans-serif; font-weight:bold;">Conceptual Depth: Smart Study for Toppers</p>
+</div>
+
+<div id="quiz-box" style="max-width:600px; margin:auto; position:relative; z-index:1;"></div>
+
+<div id="quiz-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; z-index:9999; flex-direction:column; align-items:center; justify-content:center; pointer-events:none;">
+    <div id="status-strip" style="width:100%; text-align:center; padding:30px 0;">
+        <h1 id="status-title" style="margin:0; padding:0;"></h1>
+        <p id="status-message" style="margin:10px 0; font-family:sans-serif; font-weight:bold;"></p>
+        <p id="next-msg" style="margin:0; font-family:sans-serif;"></p>
+    </div>
+</div>
+
+<style>
+/* RGB Border Animation - Jo tune manga tha */
+@keyframes rgb-glow {
+    0% { border-color: #00f7ff; box-shadow: 0 0 8px #00f7ff; }
+    33% { border-color: #ff00c8; box-shadow: 0 0 8px #ff00c8; }
+    66% { border-color: #48ff00; box-shadow: 0 0 8px #48ff00; }
+    100% { border-color: #00f7ff; box-shadow: 0 0 8px #00f7ff; }
+}
+
+.quiz-card {
+    background: rgba(255,255,255,0.05); 
+    padding: 20px; 
+    margin: 15px 0; 
+    border-radius: 15px; 
+    border: 2px solid #00f7ff; 
+    animation: rgb-glow 4s linear infinite; /* RGB Animation added back */
+}
+
+.opt-btn {
+    display: block; 
+    width: 100%; 
+    margin: 12px 0; 
+    padding: 15px; 
+    background: rgba(255,255,255,0.08); 
+    color: #fff; 
+    border: 1.5px solid #00f7ff; 
+    border-radius: 12px; 
+    text-align: left; 
+    font-weight: 600; 
+    cursor: pointer;
+    animation: rgb-glow 3s linear infinite; /* Options also glow */
+}
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+const questions = [
+    {q:"A charged particle moves in a magnetic field. Which of the following can change?",opts:["Speed","Kinetic Energy","Momentum","None of these"],ans:2},
+    {q:"If a particle of charge q is moving in B-field with velocity v, the force is zero if the angle is:",opts:["90°","45°","60°","180°"],ans:3},
+    {q:"The magnetic field at a distance r from a long wire is B. What is the field at r/2?",opts:["B/2","2B","B","4B"],ans:1},
+    {q:"A current carrying loop is placed in a uniform B-field. The net force on it is:",opts:["Always zero","Depends on area","Depends on current","Never zero"],ans:0},
+    {q:"The work done by a magnetic field on a moving charge is zero because:",opts:["B is uniform","v is constant","F is perpendicular to v","F is zero"],ans:2},
+    {q:"A solenoid has N turns. If N is doubled and length is halved, the magnetic field becomes:",opts:["Double","Half","Four times","Eight times"],ans:2},
+    {q:"The sensitivity of a moving coil galvanometer is inversely proportional to:",opts:["Number of turns","Area of coil","Magnetic field","Torsional constant (k)"],ans:3},
+    {q:"In a cyclotron, the time taken by a particle to complete a semicircle is:",opts:["Dependent on speed","Independent of speed","Dependent on radius","None"],ans:1},
+    {q:"The torque on a current loop of n turns, area A, and current I in field B is:",opts:["nIAB cosθ","nI/AB","nIAB sinθ","Zero"],ans:2},
+    {q:"At the magnetic poles of Earth, the angle of dip is:",opts:["0°","45°","180°","90°"],ans:3},
+    {q:"Magnetic susceptibility of a superconductor is:",opts:["0","1","Infinity","-1"],ans:3},
+    {q:"Above Curie temperature, a ferromagnetic material behaves like:",opts:["Diamagnetic","Paramagnetic","Superconductor","Insulator"],ans:1},
+    {q:"The property of a material to retain magnetism even after the field is removed is:",opts:["Coercivity","Retentivity","Permeability","Susceptibility"],ans:1},
+    {q:"Which of the following materials has the highest permeability?",opts:["Diamagnetic","Paramagnetic","Ferromagnetic","All same"],ans:2},
+    {q:"A magnetic needle is free to rotate in a vertical plane. At the magnetic equator, it will be:",opts:["Vertical","Horizontal","Inclined at 45°","Random"],ans:1},
+    {q:"The SI unit of magnetic intensity (H) is:",opts:["Tesla","Weber","Ampere-meter","Ampere/meter"],ans:3},
+    {q:"The relation between B, H, and I (intensity of magnetization) is:",opts:["B = μ₀(H+I)","B = μ₀H/I","B = H + μ₀I","None"],ans:0},
+    {q:"For a diamagnetic substance, susceptibility (χ) is:",opts:["Small and positive","Large and positive","Small and negative","Zero"],ans:2},
+    {q:"The temperature at which a ferromagnetic material becomes paramagnetic is:",opts:["Inversion temp","Curie temp","Critical temp","Boyle temp"],ans:1},
+    {q:"Soft iron is used in transformer cores because it has:",opts:["High retentivity","Low coercivity","Low hysteresis loss","Both B and C"],ans:3},
+    {q:"If a magnet is cut into two halves along its length, the pole strength:",opts:["Is doubled","Is halved","Remains same","Becomes zero"],ans:1},
+    {q:"If the same magnet is cut perpendicular to its length, the pole strength:",opts:["Is halved","Is doubled","Remains same","None"],ans:2},
+    {q:"The unit of magnetic flux is Weber. 1 Weber is equal to:",opts:["1 T·m²","1 T/m²","1 T·m","1 T/m"],ans:0},
+    {q:"Gauss's Law for magnetism (∮B·dA = 0) implies:",opts:["Monopoles exist","Monopoles do not exist","Field is uniform","Flux is infinite"],ans:1},
+    {q:"An electron moves in a circle in a B-field. The period of revolution is independent of:",opts:["Mass","Charge","Velocity","Magnetic field"],ans:2},
+    {q:"A current loop behaves as a magnetic dipole. Its dipole moment is:",opts:["I/A","IA","I²A","A/I"],ans:1},
+    {q:"The magnetic field at the center of a circular coil of radius R is B. At a point on the axis at distance R, it is:",opts:["B/2","B/4","B/2√2","B/8"],ans:2},
+    {q:"Two wires carry currents in the same direction. The force between them is:",opts:["Repulsive","Attractive","Zero","Rotating"],ans:1},
+    {q:"Shunt resistance required to convert G to Ammeter of range 'n' times is:",opts:["G/n","G(n-1)","G/(n-1)","G/n²"],ans:2},
+    {q:"High resistance 'R' connected in series with G to make it a Voltmeter is:",opts:["V/Ig - G","V/Ig + G","Ig/V - G","None"],ans:0},
+    {q:"Lorentz force on a charge q moving with v in E and B fields is:",opts:["q(E - v×B)","q(E + v×B)","q(v×B)","qE"],ans:1},
+    {q:"The trajectory of a charge entering a B-field at an angle of 45° is:",opts:["Circle","Helix","Straight line","Parabola"],ans:1},
+    {q:"In a MCG, the purpose of a phosphor-bronze strip is:",opts:["To provide large torque","To conduct current","Both B and C","To provide small k"],ans:2},
+    {q:"Magnetic field inside a hollow conductor carrying current is:",opts:["Constant","Infinite","Zero","Decreasing"],ans:2},
+    {q:"Permanent magnets should have:",opts:["High retentivity, high coercivity","High retentivity, low coercivity","Low retentivity, low coercivity","None"],ans:0},
+    {q:"The ratio of magnetic field at center and at distance R on axis of a circular loop is:",opts:["2:1","1:1","2√2 : 1","1:2"],ans:2},
+    {q:"A dip circle is used to measure:",opts:["Magnetic field","Angle of Dip","Magnetic Declination","Magnetic Moment"],ans:1},
+    {q:"The core of an electromagnet is made of soft iron because it has:",opts:["High permeability","Low retentivity","High coercivity","Both A and B"],ans:3},
+    {q:"Relative permeability (μr) of a paramagnetic substance is:",opts:["μr < 1","μr = 1","μr > 1","μr = 0"],ans:2},
+    {q:"A wire of length L is bent into a circle. Field at center is B. If bent into 2 turns, field is:",opts:["2B","B/2","B/4","4B"],ans:3},
+    {q:"Torque on a dipole is zero when it is:",opts:["Parallel to B","Perpendicular to B","At 45° to B","None"],ans:0},
+    {q:"Potential energy of a magnetic dipole in B-field is:",opts:["m·B","m×B","Zero","-m·B"],ans:3},
+    {q:"The value of Earth's magnetic field at the core is:",opts:["Maximum","Zero","Same as surface","Very high"],ans:1},
+    {q:"Which has a negative susceptibility?",opts:["Iron","Aluminum","Copper","None"],ans:2},
+    {q:"Biot-Savart law is the magnetic equivalent of:",opts:["Ohm's law","Coulomb's law","Faraday's law","None"],ans:1},
+    {q:"Force per unit length between two parallel wires is:",opts:["μ₀I₁I₂ / 2πr","μ₀I₁I₂ / r","μ₀I₁I₂ / 4πr","None"],ans:0},
+    {q:"A cyclotron is not suitable for:",opts:["Protons","Electrons","Alphas","Deuterons"],ans:1},
+    {q:"For a paramagnetic material, χ is proportional to:",opts:["T","1/T","T²","1/√T"],ans:1},
+    {q:"1 Tesla is how many Gauss?",opts:["10²","10⁶","10⁴","10⁻⁴"],ans:2},
+    {q:"Magnetic field lines due to a toroid are confined:",opts:["Outside it","Only inside its core","At the center","None"],ans:1}
+];
+
+const quizBox = document.getElementById('quiz-box');
+
+questions.forEach((item, index) => {
+    let card = document.createElement('div');
+    card.className = "quiz-card";
+
+    card.innerHTML = `<p style="color:#FFD700; font-size:18px; font-weight:bold;">Q${index+51}. ${item.q}</p>`;
+
+    item.opts.forEach((opt, oIdx) => {
+        let btn = document.createElement('button');
+        btn.innerText = opt;
+        btn.className = "opt-btn";
+
+        btn.onclick = () => {
+            const overlay = document.getElementById('quiz-overlay');
+            const title = document.getElementById('status-title');
+            const msg = document.getElementById('status-message');
+            const nxt = document.getElementById('next-msg');
+            const strip = document.getElementById('status-strip');
+
+            overlay.style.display = "flex";
+            overlay.style.pointerEvents = "auto"; 
+
+            if(oIdx === item.ans){
+                overlay.style.background = "rgba(0,0,0,0.85)";
+                strip.style.background = "transparent";
+                title.style.cssText = "font-family:'Dancing Script', cursive; color:#fff; font-size:60px; text-shadow:0 0 20px #00f7ff, 0 0 40px #00f7ff;";
+                title.innerText = "Physics Master";
+                msg.innerText = "Incredible! Your concepts are solid.";
+                msg.style.color = "#00f7ff";
+                nxt.innerText = "Next conceptual challenge...";
+
+                var end = Date.now() + 1500;
+                var colors = ['#00f7ff','#ff0000','#ffffff','#ff00c8','#48ff00'];
+                (function frame(){
+                    confetti({particleCount:15,angle:60,spread:65,origin:{x:0},colors:colors, zIndex: 999999});
+                    confetti({particleCount:15,angle:120,spread:65,origin:{x:1},colors:colors, zIndex: 999999});
+                    if(Date.now() < end) requestAnimationFrame(frame);
+                })();
+            } else {
+                overlay.style.background = "radial-gradient(rgba(139,0,0,0.5) 10%, rgba(0,0,0,0.85) 90%)";
+                strip.style.background = "rgba(0,0,0,0.6)";
+                strip.style.width = "100%";
+                strip.style.padding = "30px 0";
+                title.style.cssText = "font-family:'Oswald', sans-serif; color:red; font-size:80px; font-weight:900; letter-spacing:10px; text-shadow:4px 4px 0px #000;";
+                title.innerText = "WASTED";
+                msg.innerText = "Wrong! Focus on the theory.";
+                msg.style.color = "#fff";
+                nxt.innerText = "";
+            }
+
+            setTimeout(() => {
+                overlay.style.display = "none";
+                overlay.style.pointerEvents = "none"; 
+            }, 2500);
+        };
+        card.appendChild(btn);
+    });
+    quizBox.appendChild(card);
+});
+});
+</script>
+
+<div id="long-questions-part2" style="max-width:800px; margin:auto; font-family:Arial, sans-serif;">
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px; box-shadow: 0 10px 15px rgba(0,0,0,0.3);">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q1. Derive the expression for the Root Mean Square (RMS) value of Alternating Current.</p>
+        <button onclick="toggleQ('ans1')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ans1" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:1.8;">
+            <b style="color:#fffb00;">Theory:</b> RMS value is that DC current which produces the same heat in a resistor as the AC.<br>
+            1. Let <b>I = I<sub>0</sub> sin(&omega;t)</b> be the alternating current.<br>
+            2. Heat produced in small time <b>dt</b> is <b>dH = I<sup>2</sup>R dt</b>.<br>
+            3. Substitute I: <b>dH = (I<sub>0</sub> sin &omega;t)<sup>2</sup> R dt</b>.<br>
+            4. Total heat <b>H</b> is found by integrating from <b>0</b> to <b>T</b>.<br>
+            5. Use identity: <b>sin<sup>2</sup>&omega;t = (1 - cos2&omega;t)/2</b>.<br>
+            6. After integration: <b>H = (I<sub>0</sub><sup>2</sup> R T) / 2</b>.<br>
+            7. By definition of RMS: <b>H = I<sub>rms</sub><sup>2</sup> R T</b>.<br>
+            8. Equating both: <b>I<sub>rms</sub><sup>2</sup> = I<sub>0</sub><sup>2</sup> / 2</b>.<br>
+            9. <b>Final Result:</b>
+            <div style="text-align:center; padding:10px;">
+                <b>I<sub>rms</sub> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">I<sub>0</sub></td></tr><tr><td>&radic;2</td></tr></table> &asymp; 0.707 I<sub>0</sub></b>
+            </div>
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q2. Derive the expression for Average Power in an LCR circuit (Power Factor).</p>
+        <button onclick="toggleQ('ans2')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ans2" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:1.8;">
+            <b style="color:#fffb00;">Theory:</b> Average power depends on the phase difference (&phi;) between voltage and current.<br>
+            1. Let <b>V = V<sub>0</sub> sin &omega;t</b> and <b>I = I<sub>0</sub> sin(&omega;t - &phi;)</b>.<br>
+            2. Instantaneous power <b>P = V &times; I</b>.<br>
+            3. <b>P = V<sub>0</sub>I<sub>0</sub> sin(&omega;t) sin(&omega;t - &phi;)</b>.<br>
+            4. Use: <b>2 sinA sinB = cos(A-B) - cos(A+B)</b>.<br>
+            5. Integrate over full cycle <b>T</b> to find average.<br>
+            6. Average of <b>cos(2&omega;t - &phi;)</b> term becomes zero.<br>
+            7. Remaining: <b>P<sub>avg</sub> = (V<sub>0</sub>I<sub>0</sub> cos&phi;) / 2</b>.<br>
+            8. Split 2 as &radic;2 &times; &radic;2 to get RMS values.<br>
+            9. <b>Final Result:</b>
+            <div style="text-align:center; padding:10px;">
+                <b>P<sub>avg</sub> = V<sub>rms</sub> I<sub>rms</sub> cos&phi;</b>
+            </div>
+            10. Here <b>cos&phi;</b> is the Power Factor.
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q3. Derive the expression for Resonant Frequency in a series LCR circuit.</p>
+        <button onclick="toggleQ('ans3')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ans3" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:1.8;">
+            <b style="color:#fffb00;">Theory:</b> Resonance occurs when the circuit impedance is purely resistive and current is maximum.<br>
+            1. Impedance <b>Z = &radic;[R<sup>2</sup> + (X<sub>L</sub> - X<sub>C</sub>)<sup>2</sup>]</b>.<br>
+            2. For resonance, <b>X<sub>L</sub> = X<sub>C</sub></b>.<br>
+            3. Inductive reactance <b>X<sub>L</sub> = &omega;L</b>.<br>
+            4. Capacitive reactance <b>X<sub>C</sub> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1</td></tr><tr><td>&omega;C</td></tr></table></b>.<br>
+            5. Equating them: <b>&omega;L = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1</td></tr><tr><td>&omega;C</td></tr></table></b>.<br>
+            6. <b>&omega;<sup>2</sup> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1</td></tr><tr><td>LC</td></tr></table></b>.<br>
+            7. Taking root: <b>&omega;<sub>r</sub> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1</td></tr><tr><td>&radic;LC</td></tr></table></b>.<br>
+            8. Since <b>&omega; = 2&pi;f</b>, we have <b>2&pi;f<sub>r</sub> = 1/&radic;LC</b>.<br>
+            9. <b>Final Result:</b>
+            <div style="text-align:center; padding:10px;">
+                <b>f<sub>r</sub> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1</td></tr><tr><td>2&pi;&radic;LC</td></tr></table></b>
+            </div>
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q4. Explain Transformer principle and derive the Voltage-Turn ratio formula.</p>
+        <button onclick="toggleQ('ans4')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ans4" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:1.8;">
+            <b style="color:#fffb00;">Theory:</b> Works on Mutual Induction. AC in primary coil induces EMF in secondary coil.<br>
+            1. Flux linked per turn <b>&phi;</b> is same for both coils.<br>
+            2. Primary EMF: <b>E<sub>p</sub> = -N<sub>p</sub> (d&phi;/dt)</b>.<br>
+            3. Secondary EMF: <b>E<sub>s</sub> = -N<sub>s</sub> (d&phi;/dt)</b>.<br>
+            4. Divide E<sub>s</sub> by E<sub>p</sub>.<br>
+            5. <b>E<sub>s</sub> / E<sub>p</sub> = N<sub>s</sub> / N<sub>p</sub> = K</b> (Transformation Ratio).<br>
+            6. For ideal transformer, Input Power = Output Power.<br>
+            7. <b>V<sub>p</sub> I<sub>p</sub> = V<sub>s</sub> I<sub>s</sub></b>.<br>
+            8. <b>Final Relation:</b>
+            <div style="text-align:center; padding:10px;">
+                <b><table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">V<sub>s</sub></td></tr><tr><td>V<sub>p</sub></td></tr></table> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">N<sub>s</sub></td></tr><tr><td>N<sub>p</sub></td></tr></table> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">I<sub>p</sub></td></tr><tr><td>I<sub>s</sub></td></tr></table> = K</b>
+            </div>
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q5. Derive the expression for Impedance in a series LCR circuit using Phaser Diagram.</p>
+        <button onclick="toggleQ('ans5')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ans5" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:2;">
+            <b style="color:#fffb00;">Theory:</b> Impedance is the total opposition offered by R, L, and C to AC flow.<br>
+            1. Let <b>V<sub>R</sub> = IR</b>, <b>V<sub>L</sub> = IX<sub>L</sub></b>, and <b>V<sub>C</sub> = IX<sub>C</sub></b>.<br>
+            2. <b>V<sub>R</sub></b> is in phase with current <b>I</b>.<br>
+            3. <b>V<sub>L</sub></b> leads <b>I</b> by 90&deg; and <b>V<sub>C</sub></b> lags <b>I</b> by 90&deg;.<br>
+            4. Net reactive voltage = <b>(V<sub>L</sub> - V<sub>C</sub>)</b>.<br>
+            5. Resultant voltage <b>V<sup>2</sup> = V<sub>R</sub><sup>2</sup> + (V<sub>L</sub> - V<sub>C</sub>)<sup>2</sup></b>.<br>
+            6. Substitute IR, IX<sub>L</sub>, IX<sub>C</sub> into the equation.<br>
+            7. <b>V<sup>2</sup> = I<sup>2</sup> [R<sup>2</sup> + (X<sub>L</sub> - X<sub>C</sub>)<sup>2</sup>]</b>.<br>
+            8. <b>Z = V / I</b>.<br>
+            9. <b>Final Result:</b>
+            <div style="text-align:center; padding:10px; color:#48ff00; font-size:1.2rem;">
+                <b>Z = &radic;[R<sup>2</sup> + (X<sub>L</sub> - X<sub>C</sub>)<sup>2</sup>]</b>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+function toggleQ(id) {
+    var x = document.getElementById(id);
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+</script>
+
+<style>
+@keyframes moveBg { 
+    0% { background-position: 0% 50%; } 
+    50% { background-position: 100% 50%; } 
+    100% { background-position: 0% 50%; } 
+}
+</style>
+<div id="long-questions-part3" style="max-width:800px; margin:auto; font-family:Arial, sans-serif;">
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px; box-shadow: 0 10px 15px rgba(0,0,0,0.3);">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q6. Explain the phenomenon of LC Oscillations and derive the differential equation.</p>
+        <button onclick="toggleQ('ans6')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ans6" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:1.8;">
+            <b style="color:#fffb00;">Theory:</b> When a charged capacitor is connected to an inductor, energy oscillates between E-field and B-field.<br>
+            1. Total energy <b>U = U<sub>E</sub> + U<sub>B</sub></b> is constant.<br>
+            2. <b>U = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">q<sup>2</sup></td></tr><tr><td>2C</td></tr></table> + <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1</td></tr><tr><td>2</td></tr></table> LI<sup>2</sup></b>.<br>
+            3. Differentiating with respect to time: <b>dU/dt = 0</b>.<br>
+            4. <b><table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">2q</td></tr><tr><td>2C</td></tr></table> (dq/dt) + <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1</td></tr><tr><td>2</td></tr></table> L (2I) (dI/dt) = 0</b>.<br>
+            5. Put <b>I = dq/dt</b> and <b>dI/dt = d<sup>2</sup>q/dt<sup>2</sup></b>.<br>
+            6. <b>(q/C)I + L I (d<sup>2</sup>q/dt<sup>2</sup>) = 0</b>.<br>
+            7. Dividing by <b>LI</b>, we get the differential equation.<br>
+            8. <b>Final Equation:</b>
+            <div style="text-align:center; padding:10px; color:#48ff00;">
+                <b><table style="display:inline-table; vertical-align:middle; color:#48ff00;"><tr><td style="border-bottom:1px solid #48ff00;">d<sup>2</sup>q</td></tr><tr><td>dt<sup>2</sup></td></tr></table> + <table style="display:inline-table; vertical-align:middle; color:#48ff00;"><tr><td style="border-bottom:1px solid #48ff00;">1</td></tr><tr><td>LC</td></tr></table> q = 0</b>
+            </div>
+            9. This represents Simple Harmonic Motion (SHM).
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q7. Define Quality Factor (Q-factor) and derive its expression for LCR resonance.</p>
+        <button onclick="toggleQ('ans7')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ans7" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:1.8;">
+            <b style="color:#fffb00;">Theory:</b> Q-factor measures the sharpness of resonance in a series LCR circuit.<br>
+            1. It is the ratio of resonance frequency to bandwidth: <b>Q = &omega;<sub>r</sub> / 2&Delta;&omega;</b>.<br>
+            2. Also defined as: <b>Q = Voltage across L or C / Applied Voltage</b>.<br>
+            3. <b>Q = (I &omega;<sub>r</sub> L) / (I R)</b>.<br>
+            4. <b>Q = &omega;<sub>r</sub> L / R</b>.<br>
+            5. Substitute <b>&omega;<sub>r</sub> = 1/&radic;LC</b>.<br>
+            6. <b>Q = (1/&radic;LC) &times; (L/R)</b>.<br>
+            7. Simplify: <b>Q = (1/R) &times; (L/&radic;LC)</b>.<br>
+            8. <b>Final Result:</b>
+            <div style="text-align:center; padding:15px; background:#222; border-radius:10px; margin-top:10px; color:#48ff00; font-size:1.4rem;">
+                <b>Q = <table style="display:inline-table; vertical-align:middle; color:#48ff00;"><tr><td style="border-bottom:1px solid #48ff00;">1</td></tr><tr><td>R</td></tr></table> &radic;<table style="display:inline-table; vertical-align:middle; color:#48ff00;"><tr><td style="border-bottom:1px solid #48ff00;">L</td></tr><tr><td>C</td></tr></table></b>
+            </div>
+            9. High Q means sharp resonance and low energy loss.
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q8. Show that in a purely inductive circuit, current lags voltage by 90 degrees.</p>
+        <button onclick="toggleQ('ans8')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ans8" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:2;">
+            <b style="color:#fffb00;">Derivation:</b><br>
+            1. Applied AC voltage: <b>V = V<sub>0</sub> sin &omega;t</b>.<br>
+            2. Back EMF in inductor: <b>e = -L(dI/dt)</b>.<br>
+            3. By Kirchhoff's law: <b>V + e = 0 &rArr; V = L(dI/dt)</b>.<br>
+            4. <b>dI = (V/L) dt = (V<sub>0</sub>/L) sin(&omega;t) dt</b>.<br>
+            5. Integrating both sides: <b>I = -(V<sub>0</sub>/&omega;L) cos(&omega;t)</b>.<br>
+            6. Use identity: <b>-cos&theta; = sin(&theta; - &pi;/2)</b>.<br>
+            7. <b>I = I<sub>0</sub> sin(&omega;t - &pi;/2)</b>, where <b>I<sub>0</sub> = V<sub>0</sub>/&omega;L</b>.<br>
+            8. <b>Inductive Reactance:</b> <b>X<sub>L</sub> = &omega;L</b>.<br>
+            9. Comparison shows phase difference is <b>-&pi;/2</b>.<br>
+            10. <b>Conclusion:</b> Current lags voltage by 90&deg;.
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q9. Show that in a purely capacitive circuit, current leads voltage by 90 degrees.</p>
+        <button onclick="toggleQ('ans9')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ans9" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:2;">
+            <b style="color:#fffb00;">Derivation:</b><br>
+            1. Applied AC voltage: <b>V = V<sub>0</sub> sin &omega;t</b>.<br>
+            2. Charge on capacitor: <b>q = CV = CV<sub>0</sub> sin &omega;t</b>.<br>
+            3. Current: <b>I = dq/dt</b>.<br>
+            4. <b>I = d/dt (CV<sub>0</sub> sin &omega;t) = CV<sub>0</sub> &omega; cos &omega;t</b>.<br>
+            5. Rewrite as: <b>I = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">V<sub>0</sub></td></tr><tr><td>1/&omega;C</td></tr></table> cos &omega;t</b>.<br>
+            6. Use identity: <b>cos&theta; = sin(&theta; + &pi;/2)</b>.<br>
+            7. <b>I = I<sub>0</sub> sin(&omega;t + &pi;/2)</b>.<br>
+            8. <b>Capacitive Reactance:</b> <b>X<sub>C</sub> = 1/&omega;C</b>.<br>
+            9. Comparison shows phase difference is <b>+&pi;/2</b>.<br>
+            10. <b>Conclusion:</b> Current leads voltage by 90&deg;.
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q10. Discuss the various energy losses in a Transformer and how to minimize them.</p>
+        <button onclick="toggleQ('ans10')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Explanation</button>
+        <div id="ans10" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:1.6;">
+            1. <b>Copper Loss:</b> Heating in windings. <i>Minimize:</i> Use thick copper wires.<br>
+            2. <b>Iron/Eddy Loss:</b> Current induced in core. <i>Minimize:</i> Use laminated core.<br>
+            3. <b>Hysteresis Loss:</b> Repeated magnetization of core. <i>Minimize:</i> Use Soft Iron core.<br>
+            4. <b>Flux Leakage:</b> Not all primary flux links secondary. <i>Minimize:</i> Wind coils over each other.<br>
+            5. <b>Humming Loss:</b> Vibration of core due to magnetostriction.<br>
+            6. Efficiency <b>&eta; = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">Output Power</td></tr><tr><td>Input Power</td></tr></table> &times; 100</b>.<br>
+            7. For ideal transformer, <b>&eta; = 100%</b>.<br>
+            8. Practical transformers have <b>90-99%</b> efficiency.<br>
+            9. Cooling is often required using oil or air circulation.<br>
+            10. Core should have high permeability and low retentivity.
+        </div>
+    </div>
+
+</div>
+
+<script>
+function toggleQ(id) {
+    var x = document.getElementById(id);
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+</script>
+
+<style>
+@keyframes moveBg { 
+    0% { background-position: 0% 50%; } 
+    50% { background-position: 100% 50%; } 
+    100% { background-position: 0% 50%; } 
+}
+</style>
+
+</body>
+</html>

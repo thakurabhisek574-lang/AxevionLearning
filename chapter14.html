@@ -1,0 +1,1411 @@
+<!DOCTYPE html>  <html lang="en">    <head>    
+    <meta charset="UTF-8">    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>Semiconductors - Smart Study for Toppers</title>    
+    <style>    
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap');  
+        
+        body {    
+            background-color: #000;    
+            color: #fff;    
+            font-family: 'Poppins', sans-serif;    
+            margin: 0;    
+            padding: 0;    
+            overflow-x: hidden;    
+        }    
+
+        .header {    
+            position: fixed;    
+            top: 0;    
+            left: 0;    
+            width: 100%;    
+            height: 65px;    
+            background: #000;    
+            display: flex;    
+            justify-content: space-between;    
+            align-items: center;    
+            padding: 0 20px;    
+            z-index: 10000;    
+            box-sizing: border-box;    
+            border-bottom: 1px solid rgba(0, 247, 255, 0.2);    
+        }    
+
+        .back-btn {    
+            background: transparent;    
+            color: #00f7ff;    
+            border: 2px solid #00f7ff;    
+            padding: 5px 18px;    
+            border-radius: 8px;    
+            text-decoration: none;    
+            font-weight: bold;    
+            font-size: 14px;    
+            text-transform: uppercase;    
+        }    
+
+        .topper-text {    
+            text-align: right;    
+            line-height: 1.1;    
+        }    
+
+        .topper-text .small {    
+            color: #FFD700;    
+            font-size: 10px;    
+            font-weight: bold;    
+            display: block;    
+        }    
+
+        .topper-text .large {    
+            color: #fff;    
+            font-size: 16px;    
+            font-weight: bold;    
+        }    
+
+        .container {    
+            padding: 80px 15px 20px 15px; 
+        }    
+
+        @keyframes neon-glow {    
+            0% { border-color: #ff00ff; box-shadow: 0 0 15px #ff00ff; }    
+            25% { border-color: #00f7ff; box-shadow: 0 0 25px #00f7ff; }    
+            50% { border-color: #48ff00; box-shadow: 0 0 15px #48ff00; }    
+            75% { border-color: #FFD700; box-shadow: 0 0 25px #FFD700; }    
+            100% { border-color: #ff00ff; box-shadow: 0 0 15px #ff00ff; }    
+        }    
+
+        .topic-page {    
+            min-height: 85vh;    
+            border: 4px solid;    
+            border-radius: 40px;    
+            margin-bottom: 40px;    
+            padding: 25px;    
+            display: flex;    
+            flex-direction: column;    
+            justify-content: center;    
+            animation: neon-glow 8s infinite linear;    
+            background: linear-gradient(180deg, rgba(15,15,15,1) 0%, rgba(0,0,0,1) 100%);    
+            box-sizing: border-box;
+        }    
+
+        .topic-title {    
+            font-size: 26px;    
+            color: #00f7ff;    
+            text-decoration: underline;    
+            margin-bottom: 20px;    
+            text-shadow: 0 0 10px #00f7ff;    
+            text-transform: uppercase;    
+        }    
+
+        .box {    
+            background: rgba(255, 255, 255, 0.05);    
+            padding: 15px;    
+            border-radius: 15px;    
+            margin-bottom: 12px;    
+        }    
+
+        .box span { font-weight: bold; display: block; margin-bottom: 5px; }    
+        .eng-txt { color: #00f7ff; }    
+        .hin-txt { color: #FFD700; }    
+
+        .key-points {    
+            border: 1.5px dashed #48ff00;    
+            border-radius: 15px;    
+            padding: 15px;    
+            background: rgba(72, 255, 0, 0.03);    
+        }    
+
+        ul { margin: 0; padding-left: 20px; }    
+        li { margin-bottom: 8px; font-size: 14px; color: #ddd; }    
+
+        .formula-box {    
+            background: #000;    
+            border: 1px solid rgba(255,255,255,0.1);    
+            border-radius: 20px;    
+            padding: 20px;    
+            text-align: center;    
+            font-size: 24px;    
+            color: #00f7ff;    
+            margin-top: 20px;    
+            box-shadow: inset 0 0 15px rgba(0, 247, 255, 0.3);    
+        }
+    </style>    
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>    
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>  
+</head>    
+<body>  
+    <div class="header">    
+        <a href="phy-chapters.html" class="back-btn">BACK</a>    
+        <div class="topper-text">    
+            <span class="small">SMART STUDY</span>    
+            <span class="large">FOR TOPPERS</span>    
+        </div>    
+    </div>    
+
+    <div class="container">    
+        <div class="topic-page">    
+            <h1 class="topic-title">1. Conductors</h1>    
+            <div class="box"><span class="eng-txt">English:</span> Materials that allow electric current to flow through them easily.</div>    
+            <div class="box"><span class="hin-txt">Hindi:</span> Wo materials jinme se bijli ka flow aasani se ho jata hai.</div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>They have high electrical conductivity.</li>    
+                    <li>Contains a large number of free electrons.</li>    
+                    <li>Examples: Silver, Copper, Aluminum.</li>    
+                </ul>    
+            </div>    
+            <div class="formula-box">$$ \rho \approx 10^{-8} \, \Omega \cdot m $$</div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">2. Insulators</h1>    
+            <div class="box"><span class="eng-txt">English:</span> Materials that do not allow electric current to pass through them.</div>    
+            <div class="box"><span class="hin-txt">Hindi:</span> Wo materials jo apne andar se bijli ko behne nahi dete.</div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>They have very low electrical conductivity.</li>    
+                    <li>Electrons are tightly bound to atoms.</li>    
+                    <li>Examples: Wood, Rubber, Glass, Plastic.</li>    
+                </ul>    
+            </div>    
+            <div class="formula-box">$$ \rho > 10^{11} \, \Omega \cdot m $$</div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">3. Semiconductors</h1>    
+            <div class="box"><span class="eng-txt">English:</span> Materials whose conductivity lies between conductors and insulators.</div>    
+            <div class="box"><span class="hin-txt">Hindi:</span> Inki conductivity conductors se kam aur insulators se zyada hoti hai.</div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>Conductivity can be controlled by adding impurities.</li>    
+                    <li>Their resistance decreases as temperature increases.</li>    
+                    <li>Examples: Silicon (Si) and Germanium (Ge).</li>    
+                </ul>    
+            </div>    
+            <div class="formula-box">$$ \text{Cond.} < \text{Semi.} < \text{Insul.} $$</div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">4. Intrinsic Semiconductor</h1>    
+            <div class="box"><span class="eng-txt">English:</span> A semiconductor in its purest form without any added impurities.</div>    
+            <div class="box"><span class="hin-txt">Hindi:</span> Ekdum shuddh semiconductor jisme koi milawat nahi hoti.</div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>Number of electrons equals the number of holes ($n_e = n_h$).</li>    
+                    <li>Low conductivity at room temperature.</li>    
+                </ul>    
+            </div>    
+            <div class="formula-box">$$ n_e = n_h = n_i $$</div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">5. Extrinsic Semiconductor</h1>    
+            <div class="box"><span class="eng-txt">English:</span> Semiconductor formed by adding specific impurities (doping) to pure semiconductor.</div>    
+            <div class="box"><span class="hin-txt">Hindi:</span> Shuddh semiconductor mein milawat (doping) karke banaya gaya material.</div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>Doping increases the number of charge carriers.</li>    
+                    <li>Two types: n-type (pentavalent) and p-type (trivalent).</li>    
+                </ul>    
+            </div>    
+            <div class="formula-box">$$ n_e \cdot n_h = n_i^2 $$</div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">6. Charge Carriers</h1>    
+            <div class="box"><span class="eng-txt">English:</span> Particles that carry electric charge and create current in semiconductors.</div>    
+            <div class="box"><span class="hin-txt">Hindi:</span> Wo particles jo semiconductor mein bijli le jaane ka kaam karte hain.</div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>In metals, only electrons are carriers.</li>    
+                    <li>In semiconductors, both electrons and holes are carriers.</li>    
+                </ul>    
+            </div>    
+            <div class="formula-box">$$ I = I_e + I_h $$</div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">7. Electrons and Holes</h1>    
+            <div class="box"><span class="eng-txt">English:</span> The two types of charge carriers responsible for conduction.</div>    
+            <div class="box"><span class="hin-txt">Hindi:</span> Do tarah ke carriers jo conduction mein madad karte hain.</div>    
+            <div class="key-points">    
+                <ul>    
+                    <li><b>Electrons:</b> Negatively charged particles in the conduction band.</li>    
+                    <li><b>Holes:</b> Positively charged vacancy left by an electron in the valence band.</li>    
+                </ul>    
+            </div>    
+            <div class="formula-box">$$ \text{e}^- \, \& \, \text{h}^+ $$</div>    
+        </div>  
+        <div class="topic-page">    
+    <h1 class="topic-title">1. Doping</h1>    
+    <div class="box"><span class="eng-txt">English:</span> The process of adding impurities to a pure semiconductor to increase its conductivity.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Shudh semiconductor me ashuddhiyan milakar uski conductivity badhane ki process.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Done in very small quantities.</li>    
+            <li>Changes electrical properties of semiconductor.</li>    
+            <li>Creates free charge carriers.</li>    
+            <li>Types: n-type and p-type doping.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ \text{Impurity Addition} $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">2. n-type Semiconductor</h1>    
+    <div class="box"><span class="eng-txt">English:</span> A semiconductor formed by adding pentavalent impurities.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Pentavalent impurity milakar banaya gaya semiconductor.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Extra electrons are available.</li>    
+            <li>Electrons are majority carriers.</li>    
+            <li>Donor atoms donate electrons.</li>    
+            <li>Examples: Phosphorus, Arsenic.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ \text{Majority = Electrons} $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">3. p-type Semiconductor</h1>    
+    <div class="box"><span class="eng-txt">English:</span> A semiconductor formed by adding trivalent impurities.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Trivalent impurity milakar banaya gaya semiconductor.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Holes are created due to lack of electrons.</li>    
+            <li>Holes are majority carriers.</li>    
+            <li>Acceptor atoms accept electrons.</li>    
+            <li>Examples: Boron, Aluminium.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ \text{Majority = Holes} $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">4. Majority Carriers</h1>    
+    <div class="box"><span class="eng-txt">English:</span> Charge carriers present in large quantity in a semiconductor.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Semiconductor me adhik matra me paye jane wale charge carriers.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>In n-type → electrons.</li>    
+            <li>In p-type → holes.</li>    
+            <li>Responsible for current conduction.</li>    
+            <li>Determines conductivity type.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ \text{Dominant Charge} $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">5. Minority Carriers</h1>    
+    <div class="box"><span class="eng-txt">English:</span> Charge carriers present in very small quantity.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Bahut kam matra me paye jane wale charge carriers.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>In n-type → holes.</li>    
+            <li>In p-type → electrons.</li>    
+            <li>Important in p-n junction behavior.</li>    
+            <li>Increase with temperature.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ \text{Less in Number} $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">6. p-n Junction</h1>    
+    <div class="box"><span class="eng-txt">English:</span> A boundary formed between p-type and n-type semiconductors.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> p-type aur n-type semiconductor ke beech ka junction.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Basic building block of diodes.</li>    
+            <li>Allows current in one direction.</li>    
+            <li>Forms depletion region.</li>    
+            <li>Used in rectifiers and circuits.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ \text{p + n} $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">7. Formation of p-n Junction</h1>    
+    <div class="box"><span class="eng-txt">English:</span> Process of joining p-type and n-type materials together.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> p-type aur n-type material ko jodne ki process.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Electrons diffuse from n to p side.</li>    
+            <li>Holes diffuse from p to n side.</li>    
+            <li>Creates charge imbalance.</li>    
+            <li>Leads to depletion region formation.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ \text{Diffusion Process} $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">8. Depletion Region</h1>    
+    <div class="box"><span class="eng-txt">English:</span> Region near the junction where no free charge carriers exist.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Junction ke paas ka wo area jahan free charge carriers nahi hote.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Also called depletion layer.</li>    
+            <li>Contains immobile ions.</li>    
+            <li>Acts as barrier for current.</li>    
+            <li>Width depends on doping.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ \text{No Free Charges} $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">9. Barrier Potential</h1>    
+    <div class="box"><span class="eng-txt">English:</span> The potential difference developed across the depletion region.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Depletion region ke across banne wala potential difference.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Prevents further diffusion.</li>    
+            <li>Depends on material type.</li>    
+            <li>For silicon ≈ 0.7V.</li>    
+            <li>For germanium ≈ 0.3V.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ V_B $$</div>    
+</div>
+<div class="topic-page">    
+    <h1 class="topic-title">1. p-n Junction Diode</h1>    
+    <div class="box"><span class="eng-txt">English:</span> A semiconductor device formed by joining p-type and n-type materials.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> p-type aur n-type semiconductor ko jodkar bana device.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Allows current in one direction.</li>    
+            <li>Acts as a rectifier.</li>    
+            <li>Used in electronic circuits.</li>    
+            <li>Has two terminals: anode and cathode.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ \text{One-way Conduction} $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">2. Forward Bias</h1>    
+    <div class="box"><span class="eng-txt">English:</span> Condition when p-side is connected to positive and n-side to negative terminal.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Jab p-side positive aur n-side negative terminal se jodi jati hai.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Reduces depletion region width.</li>    
+            <li>Current flows easily.</li>    
+            <li>Barrier potential decreases.</li>    
+            <li>Used in normal diode operation.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ V > V_B $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">3. Reverse Bias</h1>    
+    <div class="box"><span class="eng-txt">English:</span> Condition when p-side is connected to negative and n-side to positive terminal.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Jab p-side negative aur n-side positive terminal se jodi jati hai.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Increases depletion region width.</li>    
+            <li>Very small current flows.</li>    
+            <li>Blocks current flow.</li>    
+            <li>Used in Zener diode applications.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ I \approx 0 $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">4. V-I Characteristics</h1>    
+    <div class="box"><span class="eng-txt">English:</span> Graph showing relationship between voltage and current of a diode.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Diode ke voltage aur current ke beech ka graph.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Forward region shows exponential increase.</li>    
+            <li>Reverse region shows small leakage current.</li>    
+            <li>Cut-in voltage is important.</li>    
+            <li>Breakdown occurs at high reverse voltage.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ I \propto e^V $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">5. Rectifier</h1>    
+    <div class="box"><span class="eng-txt">English:</span> Device used to convert AC into DC.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> AC ko DC me badalne wala device.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Uses diodes.</li>    
+            <li>Used in power supplies.</li>    
+            <li>Output is pulsating DC.</li>    
+            <li>Can be half or full wave.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ AC \rightarrow DC $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">6. Half Wave Rectifier</h1>    
+    <div class="box"><span class="eng-txt">English:</span> Rectifier that uses only one half cycle of AC.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Sirf ek half cycle ka use karke AC ko DC banata hai.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Uses one diode.</li>    
+            <li>Low efficiency.</li>    
+            <li>Output has high ripple.</li>    
+            <li>Simple circuit.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ \eta \approx 40\% $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">7. Full Wave Rectifier</h1>    
+    <div class="box"><span class="eng-txt">English:</span> Rectifier that uses both half cycles of AC.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> AC ke dono half cycles ka use karta hai.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Uses two or four diodes.</li>    
+            <li>High efficiency.</li>    
+            <li>Low ripple output.</li>    
+            <li>Better than half wave rectifier.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ \eta \approx 81\% $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">8. Zener Diode</h1>    
+    <div class="box"><span class="eng-txt">English:</span> Special diode designed to operate in reverse breakdown region.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Reverse breakdown region me kaam karne wala special diode.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Maintains constant voltage.</li>    
+            <li>Used in voltage regulation.</li>    
+            <li>Works in reverse bias.</li>    
+            <li>Highly doped junction.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ V = V_Z $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">9. Zener Breakdown</h1>    
+    <div class="box"><span class="eng-txt">English:</span> Sudden increase in current in reverse bias at a specific voltage.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Reverse bias me ek fixed voltage par achanak current ka badhna.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Occurs at Zener voltage.</li>    
+            <li>Safe for Zener diode.</li>    
+            <li>Used for regulation.</li>    
+            <li>Voltage remains constant.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ V = V_Z $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">10. Voltage Regulation</h1>    
+    <div class="box"><span class="eng-txt">English:</span> Process of maintaining constant output voltage.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Output voltage ko constant banaye rakhne ki process.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Uses Zener diode.</li>    
+            <li>Protects circuits.</li>    
+            <li>Works in reverse bias.</li>    
+            <li>Stable voltage output.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ V_{out} = \text{constant} $$</div>    
+</div>
+<div class="topic-page">    
+    <h1 class="topic-title">1. Light Emitting Diode (LED)</h1>    
+    <div class="box"><span class="eng-txt">English:</span> A diode that emits light when current flows through it.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Ek diode jo current flow hone par light emit karta hai.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Works in forward bias.</li>    
+            <li>Converts electrical energy into light.</li>    
+            <li>Low power consumption.</li>    
+            <li>Used in indicators and displays.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ \text{Electrical} \rightarrow \text{Light} $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">2. Photodiode</h1>    
+    <div class="box"><span class="eng-txt">English:</span> A diode that converts light into electrical current.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Ek diode jo light ko electrical current me badalta hai.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Operates in reverse bias.</li>    
+            <li>Current increases with light intensity.</li>    
+            <li>Used in sensors and detectors.</li>    
+            <li>Fast response to light.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ \text{Light} \rightarrow \text{Current} $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">3. Solar Cell</h1>    
+    <div class="box"><span class="eng-txt">English:</span> A device that converts solar energy into electrical energy.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Ek device jo solar energy ko electrical energy me badalta hai.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Works on photovoltaic effect.</li>    
+            <li>No external voltage required.</li>    
+            <li>Used in solar panels.</li>    
+            <li>Produces DC current.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ \text{Sunlight} \rightarrow \text{Electricity} $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">4. Transistor</h1>    
+    <div class="box"><span class="eng-txt">English:</span> A semiconductor device used to amplify or switch electronic signals.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Ek semiconductor device jo signal ko amplify ya switch karta hai.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Has three terminals: emitter, base, collector.</li>    
+            <li>Used as amplifier and switch.</li>    
+            <li>Small input controls large output.</li>    
+            <li>Made of p-n junctions.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ \text{Amplification} $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">5. p-n-p Transistor</h1>    
+    <div class="box"><span class="eng-txt">English:</span> A transistor with p-type layers on both sides and n-type in the middle.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Ek transistor jisme p-type dono taraf aur beech me n-type hota hai.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Current flows from emitter to collector.</li>    
+            <li>Holes are majority carriers.</li>    
+            <li>Requires negative base voltage.</li>    
+            <li>Symbol arrow points inward.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ \text{p-n-p} $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">6. n-p-n Transistor</h1>    
+    <div class="box"><span class="eng-txt">English:</span> A transistor with n-type layers on both sides and p-type in the middle.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Ek transistor jisme n-type dono taraf aur beech me p-type hota hai.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Current flows from collector to emitter.</li>    
+            <li>Electrons are majority carriers.</li>    
+            <li>Requires positive base voltage.</li>    
+            <li>Symbol arrow points outward.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ \text{n-p-n} $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">7. Transistor Action</h1>    
+    <div class="box"><span class="eng-txt">English:</span> The process by which a transistor amplifies current.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Wo process jisme transistor current ko badhata hai.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Emitter-base junction is forward biased.</li>    
+            <li>Collector-base junction is reverse biased.</li>    
+            <li>Small base current controls large collector current.</li>    
+            <li>Used in amplification circuits.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ I_C = \beta I_B $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">8. Current Components</h1>    
+    <div class="box"><span class="eng-txt">English:</span> Different currents flowing in a transistor.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Transistor me flow hone wale alag-alag current.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Emitter current (I_E).</li>    
+            <li>Base current (I_B).</li>    
+            <li>Collector current (I_C).</li>    
+            <li>Relation: I_E = I_B + I_C.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ I_E = I_B + I_C $$</div>    
+</div>
+<div class="topic-page">    
+    <h1 class="topic-title">1. Common Base Configuration</h1>    
+    <div class="box"><span class="eng-txt">English:</span> A transistor configuration where base is common to both input and output.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Transistor ka wo configuration jisme base input aur output dono ke liye common hota hai.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Input between emitter-base.</li>    
+            <li>Output between collector-base.</li>    
+            <li>Low input impedance.</li>    
+            <li>Current gain is less than 1.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ \alpha = \frac{I_C}{I_E} $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">2. Common Emitter Configuration</h1>    
+    <div class="box"><span class="eng-txt">English:</span> A transistor configuration where emitter is common to input and output.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Transistor ka wo configuration jisme emitter input aur output dono ke liye common hota hai.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Input between base-emitter.</li>    
+            <li>Output between collector-emitter.</li>    
+            <li>High current and voltage gain.</li>    
+            <li>Most widely used configuration.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ \beta = \frac{I_C}{I_B} $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">3. Common Collector Configuration</h1>    
+    <div class="box"><span class="eng-txt">English:</span> A transistor configuration where collector is common to input and output.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Transistor ka wo configuration jisme collector input aur output dono ke liye common hota hai.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Input between base-collector.</li>    
+            <li>Output between emitter-collector.</li>    
+            <li>High input impedance.</li>    
+            <li>Voltage gain ≈ 1.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ \gamma = \frac{I_E}{I_B} $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">4. Amplifier</h1>    
+    <div class="box"><span class="eng-txt">English:</span> A device that increases the amplitude of a signal.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Ek device jo signal ki strength (amplitude) ko badhata hai.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Uses transistor for amplification.</li>    
+            <li>Input signal is small.</li>    
+            <li>Output signal is large.</li>    
+            <li>Used in audio and communication systems.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ \text{Output} > \text{Input} $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">5. Voltage Gain</h1>    
+    <div class="box"><span class="eng-txt">English:</span> The ratio of output voltage to input voltage.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Output voltage aur input voltage ka anupaat.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Indicates amplification strength.</li>    
+            <li>Higher gain means stronger output.</li>    
+            <li>Can be positive or negative.</li>    
+            <li>Important in amplifier circuits.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ A_v = \frac{V_{out}}{V_{in}} $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">6. Working of Amplifier</h1>    
+    <div class="box"><span class="eng-txt">English:</span> Process of increasing signal strength using transistor action.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Transistor ke dwara signal ko bada karne ki process.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Small input signal is applied at base.</li>    
+            <li>Large output taken from collector.</li>    
+            <li>Requires proper biasing.</li>    
+            <li>Uses external power source.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ \text{Signal Amplification} $$</div>    
+</div>
+<div class="topic-page">    
+    <h1 class="topic-title">1. Logic Gates</h1>    
+    <div class="box"><span class="eng-txt">English:</span> Basic digital circuits that perform logical operations on binary inputs.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Digital circuits jo binary inputs par logical operation karte hain.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Works on binary values (0 and 1).</li>    
+            <li>Used in digital electronics.</li>    
+            <li>Based on Boolean algebra.</li>    
+            <li>Examples: AND, OR, NOT.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ 0,1 $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">2. NOT Gate</h1>    
+    <div class="box"><span class="eng-txt">English:</span> A gate that gives the complement of the input.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Ek gate jo input ka ulta (complement) output deta hai.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Single input gate.</li>    
+            <li>Also called inverter.</li>    
+            <li>Output is opposite of input.</li>    
+            <li>If input = 1, output = 0.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ Y = \overline{A} $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">3. OR Gate</h1>    
+    <div class="box"><span class="eng-txt">English:</span> A gate that gives output 1 if any input is 1.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Agar koi bhi input 1 ho to output 1 deta hai.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Multiple input gate.</li>    
+            <li>Output is 0 only when all inputs are 0.</li>    
+            <li>Symbol: +</li>    
+            <li>Used in decision making circuits.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ Y = A + B $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">4. AND Gate</h1>    
+    <div class="box"><span class="eng-txt">English:</span> A gate that gives output 1 only when all inputs are 1.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Jab sabhi inputs 1 ho tabhi output 1 deta hai.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Multiple input gate.</li>    
+            <li>Output is 0 if any input is 0.</li>    
+            <li>Symbol: ·</li>    
+            <li>Used in control systems.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ Y = A \cdot B $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">5. NAND Gate</h1>    
+    <div class="box"><span class="eng-txt">English:</span> A gate that gives the opposite output of AND gate.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> AND gate ka ulta output dene wala gate.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Universal gate.</li>    
+            <li>Output is 0 only when all inputs are 1.</li>    
+            <li>Can implement any logic circuit.</li>    
+            <li>Widely used in digital circuits.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ Y = \overline{A \cdot B} $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">6. NOR Gate</h1>    
+    <div class="box"><span class="eng-txt">English:</span> A gate that gives the opposite output of OR gate.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> OR gate ka ulta output dene wala gate.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Universal gate.</li>    
+            <li>Output is 1 only when all inputs are 0.</li>    
+            <li>Can implement any logic circuit.</li>    
+            <li>Used in memory circuits.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ Y = \overline{A + B} $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">7. Binary Number System</h1>    
+    <div class="box"><span class="eng-txt">English:</span> A number system that uses only two digits: 0 and 1.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Ek number system jisme sirf 0 aur 1 ka use hota hai.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Base is 2.</li>    
+            <li>Used in computers.</li>    
+            <li>Each digit is called a bit.</li>    
+            <li>Easy for digital systems.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ (101)_2 $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">8. Boolean Algebra</h1>    
+    <div class="box"><span class="eng-txt">English:</span> A mathematical system used for logical operations.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Logical operations ke liye use hone wali ganit ki branch.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Uses variables with values 0 and 1.</li>    
+            <li>Includes operations AND, OR, NOT.</li>    
+            <li>Used in logic gate design.</li>    
+            <li>Simplifies digital circuits.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ A + 0 = A $$</div>    
+</div>
+    </div> 
+    <div style="text-align:center; margin-bottom:20px;">  
+    <h1 style="color:#00f7ff; font-family:sans-serif; text-transform:uppercase; text-shadow:0 0 10px #00f7ff;">Semiconductors MCQs Practice</h1>  
+    <p style="color:#FFD700; font-family:sans-serif; font-weight:bold;">Click to choose correct answer</p>  
+</div>
+
+<div id="quiz-box" style="max-width:600px; margin:auto; position:relative; z-index:1;"></div>
+
+<div id="quiz-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; z-index:9999; flex-direction:column; align-items:center; justify-content:center; pointer-events:none;">  
+    <div id="status-strip" style="width:100%; text-align:center; padding:30px 0;">  
+        <h1 id="status-title" style="margin:0; padding:0;"></h1>  
+        <p id="status-message" style="margin:10px 0; font-family:sans-serif; font-weight:bold;"></p>  
+        <p id="next-msg" style="margin:0; font-family:sans-serif;"></p>  
+    </div>  
+</div>
+
+<style>  
+@keyframes rgb-glow {  
+    0% { border-color: #00f7ff; box-shadow: 0 0 8px #00f7ff; }  
+    33% { border-color: #ff00c8; box-shadow: 0 0 8px #ff00c8; }  
+    66% { border-color: #48ff00; box-shadow: 0 0 8px #48ff00; }  
+    100% { border-color: #00f7ff; box-shadow: 0 0 8px #00f7ff; }  
+}  
+.quiz-card { background: rgba(255,255,255,0.05); padding: 20px; margin: 15px 0; border-radius: 15px; border: 2px solid #00f7ff; animation: rgb-glow 4s linear infinite; }  
+.opt-btn { display: block; width: 100%; margin: 12px 0; padding: 15px; background: rgba(255,255,255,0.08); color: #fff; border: 1.5px solid #00f7ff; border-radius: 12px; text-align: left; font-weight: 600; cursor: pointer; animation: rgb-glow 3s linear infinite; }  
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<script>  
+document.addEventListener("DOMContentLoaded", function () {  
+  
+const questions = [
+    { q:"At 0K, a pure semiconductor behaves as:", opts:["Conductor","Insulator","Superconductor","Metals"], ans:1 },
+    { q:"The charge carriers in intrinsic semiconductors are:", opts:["Only Electrons","Only Holes","Both Electrons and Holes","Protons"], ans:2 },
+    { q:"The process of adding impurities is called:", opts:["Diffusion","Doping","Drift","Ionization"], ans:1 },
+    { q:"In n-type semiconductor, majority carriers are:", opts:["Holes","Electrons","Neutrons","Protons"], ans:1 },
+    { q:"Which impurity is used to make p-type semiconductor?", opts:["Phosphorus","Arsenic","Antimony","Boron"], ans:3 },
+    { q:"Pentavalent impurities are also called ______ impurities.", opts:["Acceptor","Donor","Neutral","Negative"], ans:1 },
+    { q:"In p-type semiconductor, the majority carriers are:", opts:["Electrons","Holes","Photons","Positrons"], ans:1 },
+    { q:"The energy gap in Silicon is approximately:", opts:["0.7 eV","1.1 eV","0.3 eV","5 eV"], ans:1 },
+    { q:"Width of depletion layer ______ in forward bias.", opts:["Increases","Decreases","Remains Constant","Becomes Infinite"], ans:1 },
+    { q:"Width of depletion layer ______ in reverse bias.", opts:["Increases","Decreases","Remains Constant","Becomes Zero"], ans:0 },
+    { q:"A p-n junction diode acts as a:", opts:["Amplifier","Rectifier","Oscillator","Inductor"], ans:1 },
+    { q:"Resistance of p-n junction is ______ in forward bias.", opts:["High","Very Low","Infinite","Zero"], ans:1 },
+    { q:"Barrier potential of Germanium is:", opts:["0.7 V","0.3 V","1.1 V","0 V"], ans:1 },
+    { q:"The minority carriers in n-type semiconductor are:", opts:["Electrons","Holes","Ions","Molecules"], ans:1 },
+    { q:"Zener diode is used for:", opts:["Rectification","Voltage Regulation","Amplification","Filtration"], ans:1 },
+    { q:"LED converts electrical energy into:", opts:["Heat","Sound","Light","Mechanical Energy"], ans:2 },
+    { q:"Solar cell works on the principle of:", opts:["Thermionic emission","Photo-voltaic effect","Seebeck effect","Hall effect"], ans:1 },
+    { q:"Full wave rectifier uses ______ diodes.", opts:["One","Two","Three","None"], ans:1 },
+    { q:"Logic gate which gives high output only when all inputs are high:", opts:["OR","AND","NOT","NAND"], ans:1 },
+    { q:"The 'Universal Gate' is:", opts:["AND","OR","NAND","NOT"], ans:2 },
+    { q:"NOT gate is also called:", opts:["Inverter","Buffer","Adder","Multiplier"], ans:0 },
+    { q:"Holes are the vacancy created by:", opts:["Protons","Free electrons","Neutrons","Photons"], ans:1 },
+    { q:"A trivalent impurity has ______ valence electrons.", opts:["5","4","3","2"], ans:2 },
+    { q:"Conductivity of semiconductor ______ with increase in temperature.", opts:["Decreases","Increases","Unchanged","Zero"], ans:1 },
+    { q:"In reverse bias, current is mainly due to:", opts:["Majority carriers","Minority carriers","Diffusion","Static charges"], ans:1 },
+    { q:"The depletion region contains:", opts:["Mobile electrons","Mobile holes","Immobile ions","Free atoms"], ans:2 },
+    { q:"Knee voltage is also known as:", opts:["Barrier potential","Reverse voltage","Peak voltage","Zener voltage"], ans:0 },
+    { q:"An ideal diode in forward bias acts as a:", opts:["Open switch","Closed switch","Resistor","Capacitor"], ans:1 },
+    { q:"Photodiode is always used in ______ bias.", opts:["Forward","Reverse","No bias","Zero bias"], ans:1 },
+    { q:"In India, the frequency of AC used in rectifiers is:", opts:["60 Hz","50 Hz","100 Hz","220 Hz"], ans:1 },
+    { q:"Which material is a elemental semiconductor?", opts:["GaAs","Silicon","CdS","InP"], ans:1 },
+    { q:"Valence band and Conduction band overlap in:", opts:["Semiconductors","Insulators","Conductors","None"], ans:2 },
+    { q:"Which gate is represented by Y = A + B?", opts:["AND","OR","NOT","NOR"], ans:1 },
+    { q:"Which gate is represented by Y = A . B?", opts:["OR","AND","NAND","XOR"], ans:1 },
+    { q:"Donor level in n-type lies just below the:", opts:["Valence band","Conduction band","Forbidden gap","Fermi level"], ans:1 },
+    { q:"Intrinsic concentration (ni) depends on:", opts:["Doping","Temperature","Volume","Mass"], ans:1 },
+    { q:"Mass action law is given by:", opts:["ne.nh = ni^2","ne/nh = ni","ne+nh = ni","ne-nh = 0"], ans:0 },
+    { q:"A p-n junction cannot be used as:", opts:["Rectifier","Detector","Amplifier","LED"], ans:2 },
+    { q:"Reverse breakdown in Zener diode is due to:", opts:["High field","Heat","Diffusion","Light"], ans:0 },
+    { q:"Ripple factor for full wave rectifier is:", opts:["1.21","0.48","0.81","1.0"], ans:1 },
+    { q:"The forbidden energy gap in Diamond is:", opts:["1 eV","6 eV","0.7 eV","1.1 eV"], ans:1 },
+    { q:"In a p-n junction, diffusion current flows from:", opts:["n to p","p to n","Both ways","Nowhere"], ans:1 },
+    { q:"The current in a p-n junction is measured in:", opts:["Amperes","milli-Amperes","Mega-Amperes","None"], ans:1 },
+    { q:"Boolean expression for NOR gate is:", opts:["A+B","A.B","(A+B)'","(A.B)'"], ans:2 },
+    { q:"A hole acts as a ______ charge.", opts:["Negative","Positive","Neutral","Variable"], ans:1 },
+    { q:"Carbon, Silicon and Germanium have 4 valence electrons, yet C is an insulator because:", opts:["Gap is large","Gap is small","No gap","It is gas"], ans:0 },
+    { q:"The output of NAND gate is 0 only when:", opts:["A=0, B=0","A=1, B=0","A=0, B=1","A=1, B=1"], ans:3 },
+    { q:"In a half wave rectifier, the output frequency is ______ input frequency.", opts:["Double","Half","Same","Triple"], ans:2 },
+    { q:"A solar cell is made of:", opts:["Si","Ge","Both A and B","Copper"], ans:2 },
+    { q:"Transistor acts as a switch in:", opts:["Active region","Cut-off and Saturation","Linear region","None"], ans:1 }
+];
+
+const quizBox = document.getElementById('quiz-box');  
+  
+questions.forEach((item, index) => {  
+    let card = document.createElement('div');  
+    card.className = "quiz-card";  
+    card.innerHTML = `<p style="color:#FFD700; font-size:18px; font-weight:bold;">Q${index+1}. ${item.q}</p>`;  
+  
+    item.opts.forEach((opt, oIdx) => {  
+        let btn = document.createElement('button');  
+        btn.innerText = opt;  
+        btn.className = "opt-btn";  
+  
+        btn.onclick = () => {  
+            const overlay = document.getElementById('quiz-overlay');  
+            const title = document.getElementById('status-title');  
+            const msg = document.getElementById('status-message');  
+            const nxt = document.getElementById('next-msg');  
+            const strip = document.getElementById('status-strip');  
+  
+            overlay.style.display = "flex";  
+            overlay.style.pointerEvents = "auto";   
+  
+            if(oIdx === item.ans){  
+                overlay.style.background = "rgba(0,0,0,0.85)";  
+                strip.style.background = "transparent";  
+                title.style.cssText = "font-family:'Dancing Script', cursive; color:#fff; font-size:60px; text-shadow:0 0 20px #00f7ff, 0 0 40px #00f7ff;";  
+                title.innerText = "Congratulations";  
+                msg.innerText = "Excellent! You are a true Topper.";  
+                msg.style.color = "#00f7ff";  
+                nxt.innerText = "Sahi jawab! Agle sawal par chalein...";  
+  
+                var end = Date.now() + 1500;  
+                var colors = ['#00f7ff','#ff0000','#ffffff','#ff00c8','#48ff00'];  
+                (function frame(){  
+                    confetti({particleCount:15,angle:60,spread:65,origin:{x:0},colors:colors, zIndex: 999999});  
+                    confetti({particleCount:15,angle:120,spread:65,origin:{x:1},colors:colors, zIndex: 999999});  
+                    if(Date.now() < end) requestAnimationFrame(frame);  
+                })();  
+            } else {  
+                overlay.style.background = "radial-gradient(rgba(139,0,0,0.5) 10%, rgba(0,0,0,0.85) 90%)";  
+                strip.style.background = "rgba(0,0,0,0.6)";  
+                strip.style.width = "100%";  
+                strip.style.padding = "30px 0";  
+                title.style.cssText = "font-family:'Oswald', sans-serif; color:red; font-size:80px; font-weight:900; letter-spacing:10px; text-shadow:4px 4px 0px #000;";  
+                title.innerText = "WASTED";  
+                msg.innerText = "Oops! Galat jawab. Fir se koshish karo.";  
+                msg.style.color = "#fff";  
+                nxt.innerText = "";  
+            }  
+  
+            setTimeout(() => {  
+                overlay.style.display = "none";  
+                overlay.style.pointerEvents = "none";   
+            }, 2500);  
+        };  
+        card.appendChild(btn);  
+    });  
+    quizBox.appendChild(card);  
+});  
+});  
+</script>
+<div style="text-align:center; margin-bottom:20px;">
+    <h1 style="color:#00f7ff; font-family:sans-serif; text-transform:uppercase; text-shadow:0 0 15px #00f7ff;">Topper's Trap: Q01 - Q50 (Semiconductors)</h1>
+    <p style="color:#ffffff; font-family:sans-serif; font-weight:bold;">Warning: No Pattern Followed! Har option ek naya jaal hai.</p>
+</div>
+
+<div id="quiz-box" style="max-width:600px; margin:auto; position:relative; z-index:1;"></div>
+
+<div id="quiz-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; z-index:9999; flex-direction:column; align-items:center; justify-content:center; pointer-events:none;">
+    <div id="status-strip" style="width:100%; text-align:center; padding:30px 0;">
+        <h1 id="status-title"></h1>
+        <p id="status-message" style="font-weight:bold;"></p>
+        <p id="next-msg"></p>
+    </div>
+</div>
+
+<style>
+@keyframes rgb-8-glow {
+    0% { border-color: #00f7ff; box-shadow: 0 0 10px #00f7ff; }
+    12.5% { border-color: #ff00c8; box-shadow: 0 0 10px #ff00c8; }
+    25% { border-color: #48ff00; box-shadow: 0 0 10px #48ff00; }
+    37.5% { border-color: #ffff00; box-shadow: 0 0 10px #ffff00; }
+    50% { border-color: #ff8c00; box-shadow: 0 0 10px #ff8c00; }
+    62.5% { border-color: #9400d3; box-shadow: 0 0 10px #9400d3; }
+    75% { border-color: #ff0000; box-shadow: 0 0 10px #ff0000; }
+    87.5% { border-color: #0000ff; box-shadow: 0 0 10px #0000ff; }
+    100% { border-color: #00f7ff; box-shadow: 0 0 10px #00f7ff; }
+}
+
+.quiz-card {
+    background: linear-gradient(145deg, #0f2027, #203a43, #2c5364); 
+    padding: 20px; 
+    margin: 15px 0; 
+    border-radius: 15px; 
+    border: 3px solid #00f7ff; 
+    animation: rgb-8-glow 6s linear infinite;
+}
+
+.opt-btn {
+    display: block; 
+    width: 100%; 
+    margin: 10px 0; 
+    padding: 14px; 
+    background: rgba(255,255,255,0.05); 
+    color: #fff; 
+    border: 2px solid #00f7ff; 
+    border-radius: 10px; 
+    text-align: left; 
+    font-weight: 600; 
+    cursor: pointer;
+    animation: rgb-8-glow 5s linear infinite;
+}
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+const questions = [
+    {q:"At absolute zero (0K), an intrinsic semiconductor acts as:", opts:["Perfect Conductor","Superconductor","Perfect Insulator","Half-conductor"], ans:2},
+    {q:"What happens to the conductivity of a semiconductor when its temperature is increased?", opts:["Decreases","Increases","Remains Constant","First increases then decreases"], ans:1},
+    {q:"In an n-type semiconductor, the majority charge carriers are:", opts:["Holes","Protons","Electrons","Neutral Atoms"], ans:2},
+    {q:"Adding trivalent impurity (like Boron) to pure Silicon creates:", opts:["n-type","p-type","Insulator","Metal"], ans:1},
+    {q:"The energy gap ($E_g$) in a semiconductor is of the order of:", opts:["10 eV","0 eV","1 eV","100 eV"], ans:2},
+    {q:"Which of the following is a pentavalent impurity?", opts:["Indium","Boron","Phosphorus","Aluminum"], ans:2},
+    {q:"The depletion region in a p-n junction contains:", opts:["Mobile Electrons","Mobile Holes","Immobile Ions","Free Atoms"], ans:2},
+    {q:"In forward bias, the width of the depletion layer:", opts:["Increases","Remains same","Decreases","Becomes Infinite"], ans:2},
+    {q:"The barrier potential for Silicon at room temperature is approximately:", opts:["0.3 V","1.1 V","0.7 V","0.1 V"], ans:2},
+    {q:"A Zener diode is always connected in:", opts:["Forward Bias","Reverse Bias","Series only","Open Circuit"], ans:1},
+    {q:"The 'Universal Gate' among the following is:", opts:["AND","OR","NAND","NOT"], ans:2},
+    {q:"In a half-wave rectifier, if the input frequency is 50 Hz, the output ripple frequency is:", opts:["25 Hz","50 Hz","100 Hz","0 Hz"], ans:1},
+    {q:"Which material has a negative temperature coefficient of resistance?", opts:["Copper","Silver","Germanium","Iron"], ans:2},
+    {q:"In p-type semiconductor, the majority carriers are:", opts:["Electrons","Protons","Holes","Photons"], ans:2},
+    {q:"The Boolean expression $Y = \overline{A \cdot B}$ represents which gate?", opts:["AND","OR","NAND","NOR"], ans:2},
+    {q:"When a p-n junction is reverse biased, the current is mainly due to:", opts:["Majority Carriers","Minority Carriers","Both","Protons"], ans:1},
+    {q:"A hole in a semiconductor is defined as:", opts:["A free proton","An empty energy level in valence band","A neutron","A positive ion"], ans:1},
+    {q:"The process of adding a small amount of impurity to a pure semiconductor is:", opts:["Doping","Ionization","Diffusion","Drift"], ans:0},
+    {q:"Which gate is known as an 'Inverter'?", opts:["OR","AND","NAND","NOT"], ans:3},
+    {q:"For a Silicon diode, the maximum energy gap is about:", opts:["0.7 eV","1.1 eV","5.0 eV","0.3 eV"], ans:1},
+    {q:"In a Full-wave rectifier, if input is 50 Hz, the output ripple frequency is:", opts:["50 Hz","25 Hz","100 Hz","200 Hz"], ans:2},
+    {q:"LEDs are usually made of semiconductors like:", opts:["Silicon","Germanium","Gallium Arsenide","Carbon"], ans:2},
+    {q:"The conductivity of n-type semiconductor is $\sigma = $:", opts:["$e \cdot n_h \cdot \mu_h$","$e(n_e \cdot \mu_e + n_h \cdot \mu_h)$","$e \cdot n_e \cdot \mu_e$","None"], ans:2},
+    {q:"Mass Action Law for semiconductors is:", opts:["$n_e + n_h = n_i^2$","$n_e \cdot n_h = n_i^2$","$n_e / n_h = n_i$","$n_e \cdot n_h = n_i$"], ans:1},
+    {q:"Which of the following is NOT a semiconductor?", opts:["Silicon","Germanium","Selenium","Copper"], ans:3},
+    {q:"The output of an OR gate is 1 when:", opts:["Both inputs are 0","At least one input is 1","Only both inputs are 1","Never"], ans:1},
+    {q:"A photodiode is used to detect:", opts:["Heat","Optical signals","Sound","Magnetic field"], ans:1},
+    {q:"Solar cell works on the principle of:", opts:["Thermionic Emission","Photoelectric Effect","Photovoltaic Effect","Compton Effect"], ans:2},
+    {q:"The impurity atom used for making n-type semiconductor is called:", opts:["Acceptor","Donor","Neutral","Isotope"], ans:1},
+    {q:"In forward bias, the p-side is connected to:", opts:["Negative terminal","Positive terminal","Ground","Infinity"], ans:1},
+    {q:"Germanium's barrier potential is approx:", opts:["0.7 V","0.1 V","0.3 V","1.1 V"], ans:2},
+    {q:"Boolean expression for NOR gate is:", opts:["$A+B$","$\overline{A+B}$","$A \cdot B$","$\overline{A \cdot B}$"], ans:1},
+    {q:"At room temperature, an intrinsic semiconductor has:", opts:["$n_e > n_h$","$n_h > n_e$","$n_e = n_h$","$n_e = 0$"], ans:2},
+    {q:"The leakage current in reverse bias is of the order of:", opts:["Amperes","milli-Amperes","micro-Amperes","Mega-Amperes"], ans:2},
+    {q:"Which band is completely filled at 0K in semiconductors?", opts:["Conduction Band","Valence Band","Forbidden Gap","Empty Band"], ans:1},
+    {q:"The doping ratio in a typical semiconductor is around:", opts:["1 : 1","1 : 100","1 : 1,000,000","1 : 10"], ans:2},
+    {q:"Carbon, Silicon, and Germanium all have 4 valence electrons. Why is Carbon an insulator?", opts:["Gap is small","Gap is very large","It's a gas","It has no holes"], ans:1},
+    {q:"The function of a Rectifier is to convert:", opts:["AC to DC","DC to AC","Low V to High V","High V to Low V"], ans:0},
+    {q:"A transistor acts as a switch in which region?", opts:["Active","Saturation only","Cut-off only","Both Cut-off and Saturation"], ans:3},
+    {q:"Logic gate that gives output 0 only when both inputs are 1:", opts:["AND","OR","NAND","NOT"], ans:2},
+    {q:"Smallest energy gap is found in:", opts:["Insulators","Semiconductors","Metals","Wood"], ans:2},
+    {q:"Donor level in n-type semiconductor lies:", opts:["Above conduction band","Below conduction band","Below valence band","Middle of gap"], ans:1},
+    {q:"The resistance of a p-n junction in forward bias is roughly:", opts:["1000 Ohm","10 Ohm","Infinite","Zero"], ans:1},
+    {q:"Acceptor levels are created by:", opts:["Pentavalent atoms","Trivalent atoms","Tetravalent atoms","None"], ans:1},
+    {q:"Which of these is an elemental semiconductor?", opts:["GaAs","InP","CdS","Silicon"], ans:3},
+    {q:"Reverse breakdown due to high electric field is called:", opts:["Zener Breakdown","Avalanche Breakdown","Thermal Runaway","Drift"], ans:0},
+    {q:"If $A=1$ and $B=0$, output of AND gate is:", opts:["1","0","Infinity","None"], ans:1},
+    {q:"Number of valence electrons in Silicon atom is:", opts:["2","3","4","5"], ans:2},
+    {q:"Width of forbidden gap in Germanium is:", opts:["0.72 eV","1.1 eV","0.3 eV","5 eV"], ans:0},
+    {q:"In an extrinsic semiconductor, the Fermi level shifts towards:", opts:["Valence Band","Conduction Band","Depends on doping type","Does not shift"], ans:2}
+];
+
+const quizBox = document.getElementById('quiz-box');
+
+questions.forEach((item, index) => {
+    let card = document.createElement('div');
+    card.className = "quiz-card";
+    card.innerHTML = `<p style="color:#00ffcc; font-size:18px; font-weight:bold;">Q${index+1}. ${item.q}</p>`;
+
+    item.opts.forEach((opt, oIdx) => {
+        let btn = document.createElement('button');
+        btn.innerText = opt;
+        btn.className = "opt-btn";
+
+        btn.onclick = () => {
+            const overlay = document.getElementById('quiz-overlay');
+            const title = document.getElementById('status-title');
+            const msg = document.getElementById('status-message');
+            const nxt = document.getElementById('next-msg');
+            const strip = document.getElementById('status-strip');
+
+            overlay.style.display = "flex";
+            overlay.style.pointerEvents = "auto"; 
+
+            if(oIdx === item.ans){
+                overlay.style.background = "rgba(0,0,0,0.85)";
+                strip.style.background = "transparent";
+                title.style.cssText = "font-family:'Dancing Script', cursive; color:#fff; font-size:60px; text-shadow:0 0 20px #00f7ff, 0 0 40px #00f7ff;";
+                title.innerText = "Physics Master";
+                msg.innerText = "Kya baat hai! Trap se bach gaya.";
+                msg.style.color = "#00f7ff";
+                nxt.innerText = "Next challenge loading...";
+
+                var end = Date.now() + 1500;
+                var colors = ['#00f7ff','#ff00c8','#48ff00','#ffff00','#ff8c00','#9400d3','#ff0000','#0000ff'];
+                (function frame(){
+                    confetti({particleCount:15,angle:60,spread:65,origin:{x:0},colors:colors, zIndex: 999999});
+                    confetti({particleCount:15,angle:120,spread:65,origin:{x:1},colors:colors, zIndex: 999999});
+                    if(Date.now() < end) requestAnimationFrame(frame);
+                })();
+            } else {
+                overlay.style.background = "radial-gradient(rgba(139,0,0,0.5) 10%, rgba(0,0,0,0.85) 90%)";
+                strip.style.background = "rgba(0,0,0,0.6)";
+                strip.style.width = "100%";
+                strip.style.padding = "30px 0";
+                title.style.cssText = "font-family:'Oswald', sans-serif; color:red; font-size:80px; font-weight:900; letter-spacing:10px; text-shadow:4px 4px 0px #000;";
+                title.innerText = "WASTED";
+                msg.innerText = "Trap mein phans gaya! Dhyan se padho.";
+                msg.style.color = "#fff";
+                nxt.innerText = "";
+            }
+
+            setTimeout(() => {
+                overlay.style.display = "none";
+                overlay.style.pointerEvents = "none"; 
+            }, 2500);
+        };
+        card.appendChild(btn);
+    });
+    quizBox.appendChild(card);
+});
+});
+</script>
+<div id="semiconductor-long-questions" style="max-width:800px; margin:auto; font-family:Arial, sans-serif;">
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px; box-shadow: 0 10px 15px rgba(0,0,0,0.3);">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q1. Explain the working of a Full Wave Rectifier with a neat circuit diagram and input-output waveforms.</p>
+        <button onclick="toggleQ('ans1')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Explanation</button>
+        <div id="ans1" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:1.8;">
+            <b style="color:#fffb00;">Step-by-Step Working:</b><br>
+            1. It uses a center-tapped transformer and two p-n junction diodes (D1 and D2).<br>
+            2. During the positive half cycle of AC, D1 is forward biased and D2 is reverse biased.<br>
+            3. Current flows through D1 and reaches the load resistance R<sub>L</sub>.<br>
+            4. During the negative half cycle, D1 becomes reverse biased and D2 becomes forward biased.<br>
+            5. Current now flows through D2 and reaches the load R<sub>L</sub> in the same direction.<br>
+            6. Thus, output is obtained for both halves of the AC input cycle.<br>
+            7. Average DC voltage formula:<br>
+            <div style="text-align:center; padding:10px;">
+                <b>V<sub>dc</sub> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">2V<sub>m</sub></td></tr><tr><td>&pi;</td></tr></table></b>
+            </div>
+            8. Ripple frequency is double the input frequency (f<sub>out</sub> = 2f<sub>in</sub>).<br>
+            9. Efficiency is approx 81.2%.<br>
+            10. Output is unidirectional but pulsating, which is later filtered.
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q2. Describe the formation of a p-n junction. Explain the terms: Diffusion, Drift, and Depletion Layer.</p>
+        <button onclick="toggleQ('ans2')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Process</button>
+        <div id="ans2" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:2;">
+            <b style="color:#fffb00;">Step-by-Step Formation:</b><br>
+            1. When a p-type and n-type semiconductor are joined, a junction is formed.<br>
+            2. <b>Diffusion:</b> Holes from p-side move to n-side and electrons from n-side move to p-side due to concentration gradient.<br>
+            3. This creates a region of immobile ions near the junction called the <b>Depletion Layer</b>.<br>
+            4. The n-side becomes positively charged and the p-side becomes negatively charged.<br>
+            5. An internal electric field (E) is setup from n-side to p-side.<br>
+            6. <b>Drift:</b> This field forces minority carriers to move (holes to p-side, electrons to n-side).<br>
+            7. Initially, Diffusion current is large, but Drift current increases as the field grows.<br>
+            8. Equilibrium is reached when <b>Diffusion Current = Drift Current</b>.<br>
+            9. The potential difference across the layer is called <b>Barrier Potential (V<sub>b</sub>)</b>.<br>
+            10. Width of layer depends on doping; heavy doping means a thinner layer.
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q3. How does a Zener diode work as a Voltage Regulator? Explain with circuit and formula.</p>
+        <button onclick="toggleQ('ans3')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ans3" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:1.8;">
+            <b style="color:#fffb00;">Working Mechanism:</b><br>
+            1. Zener diode is operated in the reverse breakdown region.<br>
+            2. It is connected in parallel with the load resistance R<sub>L</sub>.<br>
+            3. A series resistance R<sub>S</sub> is used to limit the current.<br>
+            4. If input voltage V<sub>in</sub> increases, the current through Zener (I<sub>z</sub>) increases.<br>
+            5. The voltage drop across R<sub>S</sub> increases, keeping the voltage across Zener constant.<br>
+            6. Output voltage V<sub>out</sub> remains equal to Zener voltage V<sub>z</sub>.<br>
+            7. Total current formula:<br>
+            <div style="text-align:center; padding:10px;">
+                <b>I<sub>total</sub> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">V<sub>in</sub> - V<sub>z</sub></td></tr><tr><td>R<sub>s</sub></td></tr></table></b>
+            </div>
+            8. Also, I<sub>total</sub> = I<sub>z</sub> + I<sub>L</sub>.<br>
+            9. Even if V<sub>in</sub> fluctuates, V<sub>out</sub> stays stable.<br>
+            10. This property makes it a perfect voltage stabilizer.
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q4. Differentiate between Conductors, Insulators, and Semiconductors on the basis of Energy Band Theory.</p>
+        <button onclick="toggleQ('ans4')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Comparison</button>
+        <div id="ans4" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:2.2;">
+            1. <b>Valence Band (VB):</b> Contains valence electrons. <b>Conduction Band (CB):</b> Responsible for conduction.<br>
+            2. <b>Conductors:</b> CB and VB overlap each other.<br>
+            3. Energy Gap (E<sub>g</sub>) in conductors is approx zero.<br>
+            4. <b>Insulators:</b> There is a very large energy gap (E<sub>g</sub> > 3 eV).<br>
+            5. Electrons cannot jump from VB to CB, so no conduction occurs.<br>
+            6. <b>Semiconductors:</b> Energy gap is small (E<sub>g</sub> < 3 eV).<br>
+            7. For Silicon, E<sub>g</sub> is approx 1.1 eV and for Germanium, it is 0.72 eV.<br>
+            8. At 0K, they act as insulators.<br>
+            9. At room temperature, some electrons jump to CB, allowing small conduction.<br>
+            10. Conductivity formula:<br>
+            <div style="text-align:center; padding:15px; background:#222; border-radius:10px; margin-top:10px; color:#48ff00; font-size:1.1rem;">
+                <b>&sigma; = e (n<sub>e</sub>&mu;<sub>e</sub> + n<sub>h</sub>&mu;<sub>h</sub>)</b>
+            </div>
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q5. What are Logic Gates? Prove that NAND gate is a Universal Gate by realizing AND, OR, and NOT gates.</p>
+        <button onclick="toggleQ('ans5')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Realizations</button>
+        <div id="ans5" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:1.8;">
+            <b style="color:#fffb00;">Derivation & Logic:</b><br>
+            1. Logic gates are the basic building blocks of digital circuits.<br>
+            2. NAND gate Boolean expression: <b>Y = <span style="border-top:1px solid #fff;">A &cdot; B</span></b>.<br>
+            3. <b>Realizing NOT:</b> Short both inputs of NAND gate. Y = <span style="border-top:1px solid #fff;">A &cdot; A</span> = <span style="border-top:1px solid #fff;">A</span>.<br>
+            4. <b>Realizing AND:</b> Pass output of one NAND gate through a NAND-NOT gate.<br>
+            5. Formula for AND: Y = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-top:1px solid #fff;"><span style="border-top:1px solid #fff;">A &cdot; B</span></td></tr></table> = A &cdot; B.<br>
+            6. <b>Realizing OR:</b> Invert inputs A and B using NAND-NOT gates, then pass through another NAND.<br>
+            7. By De Morgan's Law: <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-top:1px solid #fff;"><span style="border-top:1px solid #fff;">A</span> &cdot; <span style="border-top:1px solid #fff;">B</span></td></tr></table> = A + B.<br>
+            8. NAND gate can perform all basic operations, hence it's Universal.<br>
+            9. Truth tables are drawn for each realization to verify logic.<br>
+            10. This reduces the cost and complexity of digital IC designs.
+        </div>
+    </div>
+
+</div>
+
+<script>
+function toggleQ(id) {
+    var x = document.getElementById(id);
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+</script>
+
+<style>
+@keyframes moveBg { 
+    0% { background-position: 0% 50%; } 
+    50% { background-position: 100% 50%; } 
+    100% { background-position: 0% 50%; } 
+}
+</style>
+<div id="semiconductor-long-questions-part2" style="max-width:800px; margin:auto; font-family:Arial, sans-serif;">
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px; box-shadow: 0 10px 15px rgba(0,0,0,0.3);">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q6. Explain the working of an n-p-n transistor in Common Emitter (CE) configuration with current relations.</p>
+        <button onclick="toggleQ('ans6')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Explanation</button>
+        <div id="ans6" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:1.8;">
+            <b style="color:#fffb00;">Working Steps:</b><br>
+            1. In n-p-n transistor, the emitter-base junction is forward biased and collector-base is reverse biased.<br>
+            2. Electrons from the n-type emitter are pushed towards the p-type base.<br>
+            3. Since the base is very thin and lightly doped, only about 5% electrons recombine with holes.<br>
+            4. The remaining 95% electrons diffuse through the base to reach the collector region.<br>
+            5. These electrons are quickly swept by the strong positive potential of the collector.<br>
+            6. Emitter current (I<sub>e</sub>) is the sum of Base current (I<sub>b</sub>) and Collector current (I<sub>c</sub>).<br>
+            7. <b>Fundamental Relation:</b> <b>I<sub>e</sub> = I<sub>b</sub> + I<sub>c</sub></b>.<br>
+            8. Current amplification factor in CE mode ($\beta$):<br>
+            <div style="text-align:center; padding:10px;">
+                <b>&beta; = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">&Delta;I<sub>c</sub></td></tr><tr><td>&Delta;I<sub>b</sub></td></tr></table></b>
+            </div>
+            9. A small change in base current causes a large change in collector current.<br>
+            10. This makes the transistor useful as an amplifier and a switch.
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q7. What is a Photodiode? Explain its working and why it is always operated in Reverse Bias.</p>
+        <button onclick="toggleQ('ans7')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Analysis</button>
+        <div id="ans7" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:2;">
+            <b style="color:#fffb00;">Detailed Mechanism:</b><br>
+            1. A photodiode is a p-n junction diode made of photosensitive semiconductor material.<br>
+            2. It is operated in reverse bias so that the initial dark current is very low.<br>
+            3. When light of energy $h\nu > E_g$ falls on the depletion layer, electron-hole pairs are generated.<br>
+            4. The junction electric field separates these pairs before they can recombine.<br>
+            5. Electrons move to the n-side and holes move to the p-side, increasing the reverse current.<br>
+            6. The change in reverse current is proportional to the incident light intensity.<br>
+            7. <b>Why Reverse Bias?</b> In forward bias, the change in majority carriers is negligible.<br>
+            8. But in reverse bias, even a small change in minority carriers is easily detectable.<br>
+            9. Fractional change in minority carriers is much larger than in majority carriers.<br>
+            <div style="text-align:center; padding:10px;">
+                <b><table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">&Delta;I</td></tr><tr><td>I<sub>reverse</sub></td></tr></table> >> <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">&Delta;I</td></tr><tr><td>I<sub>forward</sub></td></tr></table></b>
+            </div>
+            10. It is used in light detectors, optical switches, and smoke detectors.
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q8. Explain the principle and working of a Solar Cell. What are the criteria for material selection?</p>
+        <button onclick="toggleQ('ans8')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Working & Criteria</button>
+        <div id="ans8" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:1.8;">
+            1. Solar cell works on the Photovoltaic Effect (converting light directly into electricity).<br>
+            2. It consists of a p-n junction where the n-layer is very thin so light can reach the junction.<br>
+            3. Three main steps: <b>Generation</b> (of e-h pairs), <b>Separation</b> (by E-field), and <b>Collection</b> (at electrodes).<br>
+            4. No external biasing is required; the cell itself acts as a voltage source.<br>
+            5. Open circuit voltage (V<sub>oc</sub>) is the max voltage when no current is drawn.<br>
+            6. Short circuit current (I<sub>sc</sub>) is the max current when terminals are shorted.<br>
+            7. <b>Material Criteria 1:</b> Band gap should be between 1.0 eV to 1.8 eV (Silicon is 1.1 eV).<br>
+            8. <b>Material Criteria 2:</b> High optical absorption coefficient to capture maximum photons.<br>
+            9. <b>Material Criteria 3:</b> High electrical conductivity and availability of raw material.<br>
+            10. Efficiency is defined as:<br>
+            <div style="text-align:center; padding:10px;">
+                <b>&eta; = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">P<sub>out</sub> (Electrical)</td></tr><tr><td>P<sub>in</sub> (Solar)</td></tr></table> &times; 100%</b>
+            </div>
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q9. Discuss the V-I characteristics of a Zener diode. How does it differ from a normal diode?</p>
+        <button onclick="toggleQ('ans9')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show V-I Analysis</button>
+        <div id="ans9" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:2;">
+            1. Zener diode is a heavily doped p-n junction diode designed for reverse breakdown.<br>
+            2. In forward bias, its characteristics are same as a normal p-n junction diode.<br>
+            3. In reverse bias, a very small leakage current flows initially.<br>
+            4. As reverse voltage reaches <b>Zener Voltage (V<sub>z</sub>)</b>, current increases sharply.<br>
+            5. This sharp increase is due to <b>Zener Breakdown</b> (rupturing of covalent bonds by E-field).<br>
+            6. After breakdown, voltage across the diode remains constant even if current changes.<br>
+            7. Normal diodes get damaged in the breakdown region, but Zener is built to handle it.<br>
+            8. The Zener resistance ($r_z$) in the breakdown region is very small.<br>
+            <div style="text-align:center; padding:10px;">
+                <b>r<sub>z</sub> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">&Delta;V<sub>z</sub></td></tr><tr><td>&Delta;I<sub>z</sub></td></tr></table> &approx; 0</b>
+            </div>
+            9. Heavily doped depletion layer is very thin ($\approx 10^{-6}$ m).<br>
+            10. This makes Zener ideal for voltage regulation in power supplies.
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q10. Distinguish between Intrinsic and Extrinsic Semiconductors. Explain p-type and n-type doping.</p>
+        <button onclick="toggleQ('ans10')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Detailed Comparison</button>
+        <div id="ans10" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:2.2;">
+            1. <b>Intrinsic:</b> Pure form of semiconductor (e.g., pure Si or Ge).<br>
+            2. In intrinsic, number of electrons (n<sub>e</sub>) = number of holes (n<sub>h</sub>).<br>
+            3. <b>Extrinsic:</b> Prepared by adding impurities to pure semiconductor (Doping).<br>
+            4. <b>n-type:</b> Formed by adding pentavalent impurity (P, As, Sb).<br>
+            5. In n-type, electrons are majority carriers (n<sub>e</sub> >> n<sub>h</sub>).<br>
+            6. <b>p-type:</b> Formed by adding trivalent impurity (B, Al, In).<br>
+            7. In p-type, holes are majority carriers (n<sub>h</sub> >> n<sub>e</sub>).<br>
+            8. Conductivity of extrinsic is much higher than intrinsic at room temperature.<br>
+            9. The Fermi level shifts towards CB in n-type and towards VB in p-type.<br>
+            10. Relationship between carrier concentrations (Mass Action Law):<br>
+            <div style="text-align:center; padding:15px; background:#222; border-radius:10px; margin-top:10px; color:#48ff00; font-size:1.3rem;">
+                <b>n<sub>e</sub> &middot; n<sub>h</sub> = n<sub>i</sub><sup>2</sup></b>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+function toggleQ(id) {
+    var x = document.getElementById(id);
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+</script>
+
+<style>
+@keyframes moveBg { 
+    0% { background-position: 0% 50%; } 
+    50% { background-position: 100% 50%; } 
+    100% { background-position: 0% 50%; } 
+}
+</style>
+
+</body>    
+</html>

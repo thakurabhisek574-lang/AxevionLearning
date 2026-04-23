@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Study</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: radial-gradient(circle at top, #0f2027, #203a43, #2c5364);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    font-size: clamp(30px, 14vw, 80px);
+    line-height: 1.2;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #00f7ff, #ff00ff, #00ff88);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 20px rgba(0,255,255,0.7),
+                 0 0 40px rgba(255,0,255,0.5);
+}
+
+.sub {
+    font-size: clamp(16px, 8vw, 30px);
+    margin-top: 10px;
+    color: #00eaff;
+    text-shadow: 0 0 10px #00eaff;
+}
+
+/* Button Fixed */
+.button {
+    display: inline-block;
+    text-decoration: none;
+    margin-top: 30px;
+    padding: 15px 35px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(90deg, #ff00ff, #00f7ff);
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 0 20px #ff00ff, 0 0 40px #00f7ff;
+    transition: 0.3s;
+}
+
+.button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 40px #ff00ff, 0 0 80px #00f7ff;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>
+        Smart Study <br>
+        For <br>
+        Toppers
+    </h1>
+
+    <div class="sub">
+        Physics Class 12th
+    </div>
+
+    <a href="phy-chapters.html" class="button">
+        Explore Notes
+    </a>
+</div>
+<div id="privacy-modal" style="position: fixed; bottom: -100%; left: 0; width: 100%; height: 85%; background: #0a141e; border-top: 4px solid #00f7ff; z-index: 100000; transition: 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); box-shadow: 0 -20px 60px rgba(0,0,0,0.9); font-family: 'Segoe UI', Tahoma, sans-serif; color: #fff; display: flex; flex-direction: column;">
+    
+    <div style="flex: 1; overflow-y: auto; padding: 40px 25px 20px 25px;">
+        <div style="max-width: 800px; margin: auto;">
+            <h1 style="color: #00f7ff; text-align: center; text-transform: uppercase; letter-spacing: 3px; font-size: 1.8rem; text-shadow: 0 0 15px #00f7ff;">Privacy Policy & Data Access</h1>
+            
+            <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin-bottom: 30px;">
+
+            <div style="line-height: 1.8; font-size: 15px; color: #d1d1d1; text-align: justify;">
+                <h3 style="color: #ff00c8;">1. Introduction & Services</h3>
+                <p>Welcome to <b>Smart Study For Toppers</b>. We are dedicated to providing the best Physics resources, including Class 12th derivations, specialized notes, and interactive MCQs. This policy explains our data practices to ensure your trust and security while using our educational tools.</p>
+
+                <h3 style="color: #ff00c8;">2. Data Collection (IP & Device)</h3>
+                <p>To ensure our neon-themed UI and complex Physics formulas render perfectly on your screen, we access non-personal information like your IP address, browser type, and device model. This allows our system to optimize performance and prevent unauthorized access to our premium topper ranking systems.</p>
+
+                <h3 style="color: #ff00c8;">3. Cookie Usage & Personalization</h3>
+                <p>Our website uses essential cookies to remember your quiz scores, progress, and preferences. Without these cookies, the interactive features and ranking systems of the site would not function correctly. These small data files help us provide a seamless and personalized learning experience.</p>
+
+                <h3 style="color: #ff00c8;">4. Google AdSense & Third-Party Advertising</h3>
+                <p>Google, as a third-party vendor, uses cookies (DART cookies) to serve ads based on your interests and previous visits. We do not have direct control over these cookies. You can opt-out by visiting Google's official ad settings. This advertising model is what allows us to provide all our high-quality notes and quizzes for free to every student.</p>
+
+                <h3 style="color: #ff00c8;">5. Data Security & Protection</h3>
+                <p>We employ advanced encryption and industry-standard security protocols to safeguard any personal data you may share via our contact forms. Your data is treated with the highest level of confidentiality and is never sold or shared with external parties for marketing purposes.</p>
+
+                <h3 style="color: #ff00c8;">6. Children's Data Protection</h3>
+                <p>In strict compliance with global privacy standards, we do not knowingly collect any information from children under the age of 13. If any such data is found to be collected inadvertently, it is immediately purged from our servers to maintain a secure and safe educational environment for everyone.</p>
+
+                <h3 style="color: #ff00c8;">7. Final Legal Consent</h3>
+                <p>By proceeding and clicking the accept button, you acknowledge that you have read and understood these terms in full. Your continued use of the platform signifies your legal consent to our data processing activities, cookie usage, and privacy standards as described in this comprehensive documentation.</p>
+            </div>
+        </div>
+    </div>
+
+    <div style="background: rgba(10, 20, 30, 0.95); border-top: 1px solid rgba(255,255,255,0.1); padding: 20px; text-align: center; box-shadow: 0 -10px 20px rgba(0,0,0,0.5);">
+        <button onclick="acceptPrivacy()" style="background: linear-gradient(45deg, #00f7ff, #002bff); color: #fff; border: none; padding: 15px 50px; border-radius: 50px; font-weight: 900; cursor: pointer; box-shadow: 0 0 25px rgba(0, 247, 255, 0.6); text-transform: uppercase; letter-spacing: 2px; transition: 0.3s;">
+            Accept All Cookies
+        </button>
+        <p style="margin-top: 10px; font-size: 11px; color: #555;">Unlock all Physics Notes & Quizzes by agreeing to our terms.</p>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Checking for a fresh key to show it immediately for testing
+        if (!localStorage.getItem("topper_privacy_final")) {
+            setTimeout(() => {
+                document.getElementById('privacy-modal').style.bottom = "0";
+            }, 500);
+        }
+    });
+
+    function acceptPrivacy() {
+        const modal = document.getElementById('privacy-modal');
+        modal.style.bottom = "-110%";
+        localStorage.setItem("topper_privacy_final", "true");
+    }
+</script>
+
+
+</body>
+</html>

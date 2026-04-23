@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics Chapters - Smart Study</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            font-family: 'Poppins', sans-serif;
+            color: white;
+            min-height: 100vh;
+        }
+
+        /* STICKY HEADER */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 70px;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(12px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            box-sizing: border-box;
+            border-bottom: 2px solid #00f7ff;
+            z-index: 1000;
+        }
+
+        .back-btn {
+            text-decoration: none;
+            color: #00f7ff;
+            border: 2px solid #00f7ff;
+            padding: 8px 20px;
+            border-radius: 10px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            background: #00f7ff;
+            color: black;
+            box-shadow: 0 0 20px rgba(0, 247, 255, 0.6);
+        }
+
+        .brand-text {
+            text-align: right;
+            font-size: 12px;
+            font-weight: bold;
+            color: #ffcc00;
+            text-transform: uppercase;
+        }
+
+        /* CONTAINER */
+        .main-container {
+            padding: 100px 20px 40px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .page-title {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 30px;
+            background: linear-gradient(90deg, #00f7ff, #ff00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 10px rgba(255, 0, 255, 0.2);
+        }
+
+        /* CLICKABLE CHAPTER CARDS */
+        .chapter-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            margin-bottom: 18px;
+        }
+
+        .chapter-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 15px;
+            border-left: 6px solid #ff00ff; /* Pink from your button */
+            border-right: 1px solid rgba(0, 247, 255, 0.3);
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+        }
+
+        .chapter-card:hover {
+            transform: scale(1.02) translateX(5px);
+            background: rgba(255, 255, 255, 0.08);
+            border-left-width: 10px;
+            box-shadow: 0 10px 30px rgba(255, 0, 255, 0.2);
+        }
+
+        .chapter-card h3 {
+            margin: 0;
+            font-size: 18px;
+            color: #00f7ff; /* Cyan from your button */
+        }
+
+        .chapter-card p {
+            margin: 8px 0 0;
+            font-size: 13px;
+            color: #cbd5e1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <a href="index.html" class="back-btn">BACK</a>
+        <div class="brand-text">SMART STUDY<br>FOR TOPPERS</div>
+    </div>
+
+    <div class="main-container">
+        <h1 class="page-title">Physics Class 12th</h1>
+
+        <a href="chapter1.html" class="chapter-link">
+            <div class="chapter-card">
+                <h3>01. Electric Charges & Fields</h3>
+                <p>Coulomb's Law, Electric Field & Gauss Theorem.</p>
+            </div>
+        </a>
+
+        <a href="chapter2.html" class="chapter-link">
+            <div class="chapter-card">
+                <h3>02. Electrostatic Potential & Capacitance</h3>
+                <p>Potential Energy, Capacitors & Dielectrics.</p>
+            </div>
+        </a>
+
+        <a href="chapter3.html" class="chapter-link">
+            <div class="chapter-card">
+                <h3>03. Current Electricity</h3>
+                <p>Ohm's Law, Kirchhoff's Rules & Cells.</p>
+            </div>
+        </a>
+
+        <a href="chapter4.html" class="chapter-link">
+            <div class="chapter-card">
+                <h3>04. Moving Charges & Magnetism</h3>
+                <p>Biot-Savart Law, Ampere's Law & Lorentz Force.</p>
+            </div>
+        </a>
+
+        <a href="chapter5.html" class="chapter-link">
+            <div class="chapter-card">
+                <h3>05. Magnetism & Matter</h3>
+                <p>Earth's Magnetism & Magnetic Materials.</p>
+            </div>
+        </a>
+
+        <a href="chapter6.html" class="chapter-link">
+            <div class="chapter-card">
+                <h3>06. Electromagnetic Induction</h3>
+                <p>Faraday's Law, Lenz's Law & AC Generator.</p>
+            </div>
+        </a>
+
+        <a href="chapter7.html" class="chapter-link">
+            <div class="chapter-card">
+                <h3>07. Alternating Current</h3>
+                <p>LCR Circuits, Resonance & Transformers.</p>
+            </div>
+        </a>
+
+        <a href="chapter8.html" class="chapter-link">
+            <div class="chapter-card">
+                <h3>08. Electromagnetic Waves</h3>
+                <p>EM Spectrum & Displacement Current.</p>
+            </div>
+        </a>
+
+        <a href="chapter9.html" class="chapter-link">
+            <div class="chapter-card">
+                <h3>09. Ray Optics & Instruments</h3>
+                <p>Lenses, Mirrors & Microscopes.</p>
+            </div>
+        </a>
+
+        <a href="chapter10.html" class="chapter-link">
+            <div class="chapter-card">
+                <h3>10. Wave Optics</h3>
+                <p>Interference, Diffraction & Polarization.</p>
+            </div>
+        </a>
+
+        <a href="chapter11.html" class="chapter-link">
+            <div class="chapter-card">
+                <h3>11. Dual Nature of Matter</h3>
+                <p>Photoelectric Effect & de-Broglie Waves.</p>
+            </div>
+        </a>
+
+        <a href="chapter12.html" class="chapter-link">
+            <div class="chapter-card">
+                <h3>12. Atoms</h3>
+                <p>Bohr's Model & Hydrogen Spectrum.</p>
+            </div>
+        </a>
+
+        <a href="chapter13.html" class="chapter-link">
+            <div class="chapter-card">
+                <h3>13. Nuclei</h3>
+                <p>Radioactivity, Binding Energy & Fission.</p>
+            </div>
+        </a>
+
+        <a href="chapter14.html" class="chapter-link">
+            <div class="chapter-card">
+                <h3>14. Semiconductor Electronics</h3>
+                <p>p-n Junction, Diodes & Logic Gates.</p>
+            </div>
+        </a>
+<a href="contact.html" class="chapter-link" style="text-decoration: none;">
+    <div class="chapter-card" style="border-left: 5px solid #ff00c8; margin-top: 20px;">
+        <h3 style="color: #00f7ff;">📩 Contact Us</h3>
+        <p style="color: #ccc;">Physics ka koi doubt ho ya help chahiye? Humein message karein!</p>
+    </div>
+</a>
+<a href="disclaimer.html" class="chapter-link" style="text-decoration: none;">
+    <div class="chapter-card" style="border-left: 5px solid #ffcc00; margin-top: 20px;">
+        <h3 style="color: #ffcc00;">⚖️ Disclaimer</h3>
+        <p style="color: #ccc;">Humari website ke terms aur educational rules yahan padhein.</p>
+    </div>
+</a>
+<a href="about.html" class="chapter-link" style="text-decoration: none;">
+    <div class="chapter-card" style="border-left: 5px solid #00f7ff; margin-top: 20px;">
+        <h3 style="color: #00f7ff;">📖 About Us</h3>
+        <p style="color: #ccc;">Janiye Smart Study For Toppers aur hamari team ke baare mein.</p>
+    </div>
+</a>
+
+    </div>
+
+</body>
+</html>

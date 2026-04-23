@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dual Nature - Smart Study for Toppers</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap');
+        
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* HEADER FIXED - NEON GLOW */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 65px;
+            background: #000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            z-index: 10000;
+            box-sizing: border-box;
+            border-bottom: 2px solid #00f7ff;
+            box-shadow: 0 0 15px #00f7ff;
+        }
+
+        .back-btn {
+            background: transparent;
+            color: #00f7ff;
+            border: 2px solid #00f7ff;
+            padding: 5px 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            text-transform: uppercase;
+            box-shadow: 0 0 10px #00f7ff;
+        }
+
+        .topper-text {
+            text-align: right;
+            line-height: 1.1;
+        }
+
+        .topper-text .small {
+            color: #FFD700;
+            font-size: 10px;
+            font-weight: bold;
+            display: block;
+        }
+
+        .topper-text .large {
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .container {
+            padding: 100px 15px 20px 15px; 
+        }    
+
+        /* 8 STEP LIGHTING ANIMATION */
+        @keyframes ultra-lighting {    
+            0% { border-color: #ff0000; box-shadow: 0 0 25px #ff0000; }    
+            12.5% { border-color: #ff7300; box-shadow: 0 0 35px #ff7300; } 
+            25% { border-color: #fffb00; box-shadow: 0 0 25px #fffb00; }   
+            37.5% { border-color: #48ff00; box-shadow: 0 0 35px #48ff00; } 
+            50% { border-color: #00f7ff; box-shadow: 0 0 25px #00f7ff; }   
+            62.5% { border-color: #002bff; box-shadow: 0 0 35px #002bff; } 
+            75% { border-color: #7a00ff; box-shadow: 0 0 25px #7a00ff; }   
+            100% { border-color: #ff00ff; box-shadow: 0 0 35px #ff00ff; } 
+        }    
+
+        .topic-page {    
+            min-height: 85vh;    
+            border: 5px solid;    
+            border-radius: 40px;    
+            margin-bottom: 50px;    
+            padding: 30px;    
+            display: flex;    
+            flex-direction: column;    
+            justify-content: center;    
+            animation: ultra-lighting 5s infinite alternate;    
+            background: linear-gradient(180deg, #0f0f0f 0%, #000 100%);    
+            box-sizing: border-box;
+        }    
+
+        .topic-title {    
+            font-size: 28px;    
+            color: #00f7ff;    
+            text-align: center;
+            text-decoration: underline;    
+            margin-bottom: 25px;    
+            text-shadow: 0 0 15px #00f7ff;    
+            text-transform: uppercase;    
+        }    
+
+        .box {    
+            background: rgba(255, 255, 255, 0.05);    
+            padding: 20px;    
+            border-radius: 15px;    
+            margin-bottom: 15px;    
+            border-left: 5px solid #00f7ff;
+        }    
+
+        .box span { font-weight: bold; display: block; margin-bottom: 8px; }    
+        .eng-txt { color: #00f7ff; font-size: 15px; }    
+        .hin-txt { color: #FFD700; font-size: 15px; }    
+
+        .key-points {    
+            border: 2px dashed #48ff00;    
+            border-radius: 15px;    
+            padding: 20px;    
+            background: rgba(72, 255, 0, 0.05);    
+            box-shadow: inset 0 0 10px rgba(72, 255, 0, 0.1);
+        }    
+
+        ul { margin: 0; padding-left: 20px; }    
+        li { margin-bottom: 10px; font-size: 14px; color: #fff; text-shadow: 0 0 5px rgba(255,255,255,0.2); }    
+
+        .formula-box {    
+            background: #000;    
+            border: 2px solid #ff00ff;    
+            border-radius: 20px;    
+            padding: 20px;    
+            text-align: center;    
+            font-size: 26px;    
+            color: #ff00ff;    
+            margin-top: 25px;    
+            box-shadow: 0 0 15px #ff00ff;    
+        }
+    </style>    
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>    
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>  
+</head>    
+<body>  
+    <div class="header">    
+        <a href="phy-chapters.html" class="back-btn">BACK</a>    
+        <div class="topper-text">    
+            <span class="small">SMART STUDY</span>    
+            <span class="large">FOR TOPPERS</span>    
+        </div>    
+    </div>    
+
+    <div class="container">    
+        <div class="topic-page">    
+            <h1 class="topic-title">1. Dual Nature of Radiation</h1>    
+            <div class="box"><span class="eng-txt">English: Dual nature of radiation means light acts like a wave when it travels through space, but behaves like a particle (photon) when it hits matter. This concept shows that energy and matter have both properties.</span></div>    
+            <div class="box"><span class="hin-txt">Hindi: Radiation ki dohari prakriti ka matlab hai ki light chalte waqt wave ki tarah aur takrate waqt particle ki tarah behave karti hai.</span></div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>It explains both light and matter properties.</li>    
+                    <li>Wave nature shows interference patterns.</li>    
+                    <li>Particle nature explains the photoelectric effect.</li>    
+                    <li>It was a revolutionary idea in quantum physics.</li>    
+                    <li>Proposed by De-Broglie for all moving objects.</li>    
+                </ul>    
+            </div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">2. Wave Nature of Light</h1>    
+            <div class="box"><span class="eng-txt">English: Wave nature describes light as an electromagnetic wave that can travel through a vacuum. It is used to explain how light spreads out and overlaps with other light waves.</span></div>    
+            <div class="box"><span class="hin-txt">Hindi: Wave nature light ko ek electromagnetic wave ki tarah dekhta hai jo bina kisi medium ke bhi travel kar sakti hai.</span></div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>Explains the phenomenon of Interference.</li>    
+                    <li>Explains the bending of light in Diffraction.</li>    
+                    <li>Describes light using frequency and wavelength.</li>    
+                    <li>Requires no material medium for propagation.</li>    
+                    <li>Proven by Young's Double Slit Experiment.</li>    
+                </ul>    
+            </div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">3. Particle Nature of Light</h1>    
+            <div class="box"><span class="eng-txt">English: Particle nature suggests that light is made of tiny packets of energy called photons. These photons move in a straight line and carry a specific amount of momentum and energy.</span></div>    
+            <div class="box"><span class="hin-txt">Hindi: Iska matlab hai ki light energy ke chhote-chhote packets (photons) se bani hoti hai jo seedhi line mein chalte hain.</span></div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>Light behaves like a stream of photons.</li>    
+                    <li>Each photon carries energy $E = h\nu$.</li>    
+                    <li>Photons have zero rest mass.</li>    
+                    <li>Explains the emission of electrons from metals.</li>    
+                    <li>Photons are electrically neutral particles.</li>    
+                </ul>    
+            </div>    
+            <div class="formula-box">$$ E = h\nu $$</div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">4. Photoelectric Effect</h1>    
+            <div class="box"><span class="eng-txt">English: Photoelectric effect is the emission of electrons from a metal surface when light of a high enough frequency falls on it. This effect is used in solar cells and light sensors.</span></div>    
+            <div class="box"><span class="hin-txt">Hindi: Jab sahi frequency ki light kisi metal par girti hai aur wahan se electrons nikalne lagte hain, toh use photoelectric effect kehte hain.</span></div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>Proves that light consists of particles.</li>    
+                    <li>Emission starts immediately without any delay.</li>    
+                    <li>Depends on the frequency of the light used.</li>    
+                    <li>Requires a minimum energy called work function.</li>    
+                    <li>Used in many modern electronic devices.</li>    
+                </ul>    
+            </div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">5. Photoelectrons</h1>    
+            <div class="box"><span class="eng-txt">English: Photoelectrons are the specific electrons that are ejected from a metal surface during the photoelectric process. Their speed depends on the energy of the incoming light photons.</span></div>    
+            <div class="box"><span class="hin-txt">Hindi: Photoelectric effect ke waqt metal se bahar nikalne waale electrons ko photoelectrons kaha jata hai.</span></div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>These are identical to normal electrons.</li>    
+                    <li>They carry a negative electric charge.</li>    
+                    <li>Their kinetic energy varies with frequency.</li>    
+                    <li>They create the photoelectric current.</li>    
+                    <li>Number of electrons depends on light intensity.</li>    
+                </ul>    
+            </div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">6. Photoelectric Current</h1>    
+            <div class="box"><span class="eng-txt">English: Photoelectric current is the flow of ejected photoelectrons across a circuit. This current increases as the intensity (brightness) of the incident light becomes stronger.</span></div>    
+            <div class="box"><span class="hin-txt">Hindi: Photoelectrons ke bahne se jo bijli (current) paida hoti hai use photoelectric current kehte hain.</span></div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>Directly proportional to light intensity.</li>    
+                    <li>Depends on the number of photons hitting the metal.</li>    
+                    <li>Becomes zero at a specific negative voltage.</li>    
+                    <li>Can be measured using a sensitive ammeter.</li>    
+                    <li>Used to detect the presence of light.</li>    
+                </ul>    
+            </div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">7. Threshold Frequency</h1>    
+            <div class="box"><span class="eng-txt">English: Threshold frequency is the minimum frequency of light required to knock an electron out of a metal surface. Below this frequency, no electrons will ever be emitted.</span></div>    
+            <div class="box"><span class="hin-txt">Hindi: Wo kam se kam frequency jiske bina metal se electrons nahi nikal sakte, use threshold frequency kehte hain.</span></div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>It is constant for a specific type of metal.</li>    
+                    <li>Denoted by the symbol $\nu_0$.</li>    
+                    <li>If light frequency < $\nu_0$, no emission occurs.</li>    
+                    <li>Determines the start of photoelectric effect.</li>    
+                    <li>Is related directly to the metal's work function.</li>    
+                </ul>    
+            </div>    
+            <div class="formula-box">$$ \nu_0 $$</div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">8. Work Function</h1>    
+            <div class="box"><span class="eng-txt">English: Work function is the minimum energy needed to just pull an electron out of a metal surface. It represents how tightly the electrons are held by the metal.</span></div>    
+            <div class="box"><span class="hin-txt">Hindi: Metal se electron bahar nikalne ke liye zaroori sabse kam energy ko work function kehte hain.</span></div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>Denoted by the symbol $\Phi_0$.</li>    
+                    <li>Usually measured in electron-volts (eV).</li>    
+                    <li>Depends on the nature of the metal surface.</li>    
+                    <li>Higher work function means it is harder to emit.</li>    
+                    <li>$\Phi_0 = h\nu_0$ is the mathematical relation.</li>    
+                </ul>    
+            </div>    
+            <div class="formula-box">$$ \Phi_0 = h\nu_0 $$</div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">9. Stopping Potential</h1>    
+            <div class="box"><span class="eng-txt">English: Stopping potential is the negative voltage needed to completely stop the fastest moving photoelectrons from reaching the collector. It measures their maximum kinetic energy.</span></div>    
+            <div class="box"><span class="hin-txt">Hindi: Wo rukanewala negative voltage jis par photoelectric current zero ho jata hai, use stopping potential kehte hain.</span></div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>Independent of the intensity of light.</li>    
+                    <li>Increases with the frequency of incident light.</li>    
+                    <li>Also called the cut-off potential.</li>    
+                    <li>Helps calculate maximum electron speed.</li>    
+                    <li>$K_{max} = eV_0$ is the core energy equation.</li>    
+                </ul>    
+            </div>    
+            <div class="formula-box">$$ K_{max} = eV_0 $$</div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">10. Laws of Photoelectric Emission</h1>    
+            <div class="box"><span class="eng-txt">English: These laws state that electron emission is instant, the number of electrons depends on intensity, and their energy depends only on the light's frequency.</span></div>    
+            <div class="box"><span class="hin-txt">Hindi: Ye niyam batate hain ki electron emission turant hota hai aur unki energy light ki frequency par depend karti hai.</span></div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>Emission is an instantaneous process.</li>    
+                    <li>Current is proportional to light intensity.</li>    
+                    <li>Max kinetic energy depends only on frequency.</li>    
+                    <li>No emission below threshold frequency.</li>    
+                    <li>One photon ejects exactly one electron.</li>    
+                </ul>    
+            </div>    
+        </div>    
+        <div class="topic-page">    
+            <h1 class="topic-title">1. Photoelectric Effect Experiment</h1>    
+            <div class="box"><span class="eng-txt"><b>English:</b> This experiment uses a vacuum tube with two electrodes to study how light ejects electrons from a metal. It measures how changing light properties affects the resulting electric current.</span></div>    
+            <div class="box"><span class="hin-txt"><b>Hindi:</b> Is experiment mein ek vacuum tube ka use karke ye dekha jata hai ki light kaise metal se electrons nikalti hai aur current banati hai.</span></div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>Uses a photosensitive plate and a collector.</li>    
+                    <li>Measures current using a sensitive micro-ammeter.</li>    
+                    <li>Proves the particle nature of light waves.</li>    
+                    <li>Studied under different light intensities and voltages.</li>    
+                    <li>Foundation for Einstein's photoelectric theory.</li>    
+                </ul>    
+            </div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">2. Variation of Current with Intensity</h1>    
+            <div class="box"><span class="eng-txt"><b>English:</b> Photoelectric current increases linearly with the intensity of incident light, provided frequency is above threshold. This means more light brightness produces more photoelectrons per second.</span></div>    
+            <div class="box"><span class="hin-txt"><b>Hindi:</b> Light jitni zyada bright (intensity) hogi, nikalne waale electrons ki sankhya aur current utna hi zyada badhega.</span></div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>Current is directly proportional to intensity ($I \propto L$).</li>    
+                    <li>Number of photons increases with intensity.</li>    
+                    <li>Energy of individual electrons remains unchanged.</li>    
+                    <li>Graph between current and intensity is a straight line.</li>    
+                    <li>Frequency must be kept constant for this study.</li>    
+                </ul>    
+            </div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">3. Variation of Current with Voltage</h1>    
+            <div class="box"><span class="eng-txt"><b>English:</b> As positive potential on the collector increases, the current rises until it reaches a maximum (saturation) value. Applying negative potential eventually stops the current completely.</span></div>    
+            <div class="box"><span class="hin-txt"><b>Hindi:</b> Positive voltage badhane se current ek limit tak badhta hai, aur negative voltage ise poori tarah rok sakta hai.</span></div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>Maximum current is called Saturation Current.</li>    
+                    <li>Negative voltage stops even the fastest electrons.</li>    
+                    <li>Current depends on the flow rate of electrons.</li>    
+                    <li>Saturation depends on light intensity used.</li>    
+                    <li>Helps in understanding the Stopping Potential.</li>    
+                </ul>    
+            </div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">4. Variation with Frequency</h1>    
+            <div class="box"><span class="eng-txt"><b>English:</b> Changing the frequency of light affects the stopping potential and the kinetic energy of electrons. Higher frequency light produces faster electrons, even if intensity is constant.</span></div>    
+            <div class="box"><span class="hin-txt"><b>Hindi:</b> Light ki frequency badalne se nikalne waale electrons ki raftar aur stopping potential badh jata hai.</span></div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>Stopping potential increases with frequency.</li>    
+                    <li>Kinetic energy is independent of intensity.</li>    
+                    <li>Saturation current stays same for different frequencies.</li>    
+                    <li>Proves light energy comes in discrete packets.</li>    
+                    <li>$\nu > \nu_0$ is necessary for any current flow.</li>    
+                </ul>    
+            </div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">5. Einstein’s Photoelectric Equation</h1>    
+            <div class="box"><span class="eng-txt"><b>English:</b> This equation states that the energy of an incident photon is used in two ways: to overcome the work function and to provide kinetic energy to the electron.</span></div>    
+            <div class="box"><span class="hin-txt"><b>Hindi:</b> Einstein ki equation batati hai ki photon ki energy electron ko nikalne aur use raftar dene mein kharch hoti hai.</span></div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>Based on the Law of Conservation of Energy.</li>    
+                    <li>Formula: $h\nu = \Phi_0 + K_{max}$.</li>    
+                    <li>Explains why threshold frequency is needed.</li>    
+                    <li>Earned Albert Einstein the Nobel Prize.</li>    
+                    <li>Predicts linear relation between $V_0$ and frequency.</li>    
+                </ul>    
+            </div>    
+            <div class="formula-box">$$ K_{max} = h\nu - \Phi_0 $$</div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">6. Energy of Photon (Einstein)</h1>    
+            <div class="box"><span class="eng-txt"><b>English:</b> According to Einstein, the energy of a single photon is directly proportional to its frequency. This energy is transferred instantly to an electron during a collision.</span></div>    
+            <div class="box"><span class="hin-txt"><b>Hindi:</b> Einstein ke anusar ek photon ki energy uski frequency par nirbhar karti hai ($E = h\nu$).</span></div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>Photons are packets of electromagnetic energy.</li>    
+                    <li>Energy does not depend on the beam's intensity.</li>    
+                    <li>All photons of same frequency have same energy.</li>    
+                    <li>Energy is inversely proportional to wavelength.</li>    
+                    <li>Higher frequency means more energetic photons.</li>    
+                </ul>    
+            </div>    
+            <div class="formula-box">$$ E = h\nu = \frac{hc}{\lambda} $$</div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">7. Photon</h1>    
+            <div class="box"><span class="eng-txt"><b>English:</b> A photon is an elementary particle representing a quantum of light. It travels at the speed of light in a vacuum and carries energy and momentum but has no rest mass.</span></div>    
+            <div class="box"><span class="hin-txt"><b>Hindi:</b> Photon light ka ek chota kan (particle) hai jo light ki speed se chalta hai aur jisme mass nahi hota.</span></div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>Always moves with speed $c = 3 \times 10^8 \, m/s$.</li>    
+                    <li>It is electrically neutral (no charge).</li>    
+                    <li>It can collide with other particles like electrons.</li>    
+                    <li>Energy and momentum are conserved in collisions.</li>    
+                    <li>Rest mass of a photon is always zero.</li>    
+                </ul>    
+            </div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">8. Energy of Photon</h1>    
+            <div class="box"><span class="eng-txt"><b>English:</b> The energy of a photon is defined by the Planck-Einstein relation. It describes how much work a single unit of light can perform on an atomic scale.</span></div>    
+            <div class="box"><span class="hin-txt"><b>Hindi:</b> Photon ki energy uski frequency se judi hoti hai, jo atomic level par kaam karne ki shamta rakhti hai.</span></div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>Value depends on Planck's constant ($h$).</li>    
+                    <li>Unit is Joule (J) or Electron-Volt (eV).</li>    
+                    <li>Frequency increase = Energy increase.</li>    
+                    <li>Wavelength increase = Energy decrease.</li>    
+                    <li>$h \approx 6.63 \times 10^{-34} \, Js$.</li>    
+                </ul>    
+            </div>    
+            <div class="formula-box">$$ E = h\nu $$</div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">9. Momentum of Photon</h1>    
+            <div class="box"><span class="eng-txt"><b>English:</b> Even though photons have no mass, they carry momentum related to their wavelength. This allows light to exert pressure on surfaces it hits.</span></div>    
+            <div class="box"><span class="hin-txt"><b>Hindi:</b> Mass na hone ke bawajood photon mein momentum hota hai, jiski wajah se light pressure daal sakti hai.</span></div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>Relation: $p = E/c$.</li>    
+                    <li>Also defined as $p = h/\lambda$.</li>    
+                    <li>Responsible for "Radiation Pressure".</li>    
+                    <li>Momentum is transferred during collisions.</li>    
+                    <li>Direction is same as the light's propagation.</li>    
+                </ul>    
+            </div>    
+            <div class="formula-box">$$ p = \frac{h}{\lambda} $$</div>    
+        </div>
+        <div class="topic-page">    
+            <h1 class="topic-title">1. Matter Waves</h1>    
+            <div class="box"><span class="eng-txt"><b>English:</b> Matter waves, also known as de Broglie waves, are waves associated with moving material particles. They suggest that just like light, matter also exhibits wave-particle duality.</span></div>    
+            <div class="box"><span class="hin-txt"><b>Hindi:</b> Chalte huye particles (jaise electron) ke saath jo waves judi hoti hain, unhe matter waves ya de Broglie waves kehte hain.</span></div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>Waves are only associated with moving particles.</li>    
+                    <li>Lighter particles produce longer wavelengths.</li>    
+                    <li>They are not electromagnetic in nature.</li>    
+                    <li>Wave nature is only visible at the atomic level.</li>    
+                    <li>Velocity of matter wave is different from particle velocity.</li>    
+                </ul>    
+            </div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">2. de Broglie Hypothesis</h1>    
+            <div class="box"><span class="eng-txt"><b>English:</b> This hypothesis states that every moving object is accompanied by a wave. Louis de Broglie proposed this based on the symmetry of nature, suggesting matter should behave like radiation.</span></div>    
+            <div class="box"><span class="hin-txt"><b>Hindi:</b> de Broglie ka kehna tha ki duniya ki har chalti hui cheez ek wave ki tarah kaam karti hai, chahe wo dikhe ya na dikhe.</span></div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>Proposed a mathematical relation for duality.</li>    
+                    <li>Suggested that nature loves symmetry.</li>    
+                    <li>Applied to both microscopic and macroscopic objects.</li>    
+                    <li>Forms the basis of modern wave mechanics.</li>    
+                    <li>Confirmed later by various electron experiments.</li>    
+                </ul>    
+            </div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">3. de Broglie Wavelength</h1>    
+            <div class="box"><span class="eng-txt"><b>English:</b> It is the wavelength ($\lambda$) associated with a moving particle, calculated by dividing Planck's constant by the particle's momentum. It decreases as the speed of the particle increases.</span></div>    
+            <div class="box"><span class="hin-txt"><b>Hindi:</b> Kisi chalte huye particle ki wave ki lambai ko de Broglie wavelength kehte hain, jo uski speed par depend karti hai.</span></div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>Formula: $\lambda = h/mv = h/p$.</li>    
+                    <li>Inversely proportional to particle momentum.</li>    
+                    <li>Wavelength is negligible for large heavy objects.</li>    
+                    <li>Crucial for calculating electron behavior in atoms.</li>    
+                    <li>Measured using the unit Angstrom or Nanometer.</li>    
+                </ul>    
+            </div>    
+            <div class="formula-box">$$ \lambda = \frac{h}{p} = \frac{h}{mv} $$</div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">4. Wave Nature of Electron</h1>    
+            <div class="box"><span class="eng-txt"><b>English:</b> Electrons, traditionally seen as particles, also show wave properties like diffraction. This wave nature explains how electrons are arranged in shells around the atomic nucleus.</span></div>    
+            <div class="box"><span class="hin-txt"><b>Hindi:</b> Electron sirf particle nahi hai, balki wo wave ki tarah diffract (muda) bhi ho sakta hai, jo uski wave nature ko dikhata hai.</span></div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>Electrons show diffraction patterns like X-rays.</li>    
+                    <li>Explains stable orbits in Bohr's atomic model.</li>    
+                    <li>Basis for the operation of Electron Microscopes.</li>    
+                    <li>Visible when electrons hit a crystal lattice.</li>    
+                    <li>Wavelength depends on accelerating voltage.</li>    
+                </ul>    
+            </div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">5. Davisson-Germer Experiment</h1>    
+            <div class="box"><span class="eng-txt"><b>English:</b> This historic experiment provided the first direct evidence of the wave nature of electrons. It showed that electrons scatter off a nickel crystal just like waves diffracting.</span></div>    
+            <div class="box"><span class="hin-txt"><b>Hindi:</b> Davisson aur Germer ne experiment se ye saabit kiya ki electrons waqai mein wave ki tarah behave karte hain.</span></div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>Used an electron gun and a nickel crystal.</li>    
+                    <li>Observed a maximum intensity at 54V and 50° angle.</li>    
+                    <li>Confirmed de Broglie's mathematical predictions.</li>    
+                    <li>Proven using the concept of Bragg's Law.</li>    
+                    <li>Opened the doors for quantum mechanics research.</li>    
+                </ul>    
+            </div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">6. Applications of Photoelectric Effect</h1>    
+            <div class="box"><span class="eng-txt"><b>English:</b> The photoelectric effect is used in various devices to convert light energy into electrical signals. It is the core principle behind modern automation and renewable energy.</span></div>    
+            <div class="box"><span class="hin-txt"><b>Hindi:</b> Photoelectric effect ka use karke hum light ko electricity mein badalte hain, jo aaj ki technology mein bahut kaam aata hai.</span></div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>Solar panels (converting sunlight to power).</li>    
+                    <li>Photocells used in automatic street lights.</li>    
+                    <li>Light sensors in digital cameras (pixels).</li>    
+                    <li>Burglar alarms and automatic door openers.</li>    
+                    <li>Sound track reproduction in cinema films.</li>    
+                </ul>    
+            </div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">7. Applications of Matter Waves</h1>    
+            <div class="box"><span class="eng-txt"><b>English:</b> Understanding matter waves allows scientists to see things much smaller than what light can show. It is used in high-precision scientific instruments for medical and material research.</span></div>    
+            <div class="box"><span class="hin-txt"><b>Hindi:</b> Matter waves ki wajah se hum un cheezon ko bhi dekh sakte hain jo aam light se nahi dikhti, jaise virus ya atoms.</span></div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>Electron Microscope (very high magnification).</li>    
+                    <li>Study of crystal structures (Electron Diffraction).</li>    
+                    <li>Quantum computing development.</li>    
+                    <li>Understanding chemical bonding in molecules.</li>    
+                    <li>Medical research on cell and virus structures.</li>    
+                </ul>    
+            </div>    
+        </div>
+
+    </div> 
+    <div style="text-align:center; margin-bottom:20px;">
+    <h1 style="color:#ff00c8; font-family:sans-serif; text-transform:uppercase; text-shadow:0 0 10px #ff00c8;">Dual Nature Practice Set</h1>
+    <p style="color:#FFD700; font-family:sans-serif; font-weight:bold;">Sahi option chuno aur topper bano!</p>
+</div>
+
+<div id="quiz-box" style="max-width:600px; margin:auto; position:relative; z-index:1;"></div>
+
+<div id="quiz-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; z-index:9999; flex-direction:column; align-items:center; justify-content:center; pointer-events:none;">
+    <div id="status-strip" style="width:100%; text-align:center; padding:30px 0;">
+        <h1 id="status-title" style="margin:0; padding:0;"></h1>
+        <p id="status-message" style="margin:10px 0; font-family:sans-serif; font-weight:bold;"></p>
+        <p id="next-msg" style="margin:0; font-family:sans-serif;"></p>
+    </div>
+</div>
+
+<style>
+/* Naya Dynamic Neon Color Animation */
+@keyframes exotic-glow {
+    0% { border-color: #ff00c8; box-shadow: 0 0 10px #ff00c8; }
+    33% { border-color: #7a00ff; box-shadow: 0 0 10px #7a00ff; }
+    66% { border-color: #ff7300; box-shadow: 0 0 10px #ff7300; }
+    100% { border-color: #ff00c8; box-shadow: 0 0 10px #ff00c8; }
+}
+
+.quiz-card {
+    background: rgba(255,255,255,0.05); 
+    padding: 20px; 
+    margin: 15px 0; 
+    border-radius: 15px; 
+    border: 3px solid #ff00c8; 
+    animation: exotic-glow 5s linear infinite;
+}
+
+.opt-btn {
+    display: block; 
+    width: 100%; 
+    margin: 12px 0; 
+    padding: 15px; 
+    background: rgba(255,255,255,0.08); 
+    color: #fff; 
+    border: 1.5px solid #ff00c8; 
+    border-radius: 12px; 
+    text-align: left; 
+    font-weight: 600; 
+    cursor: pointer;
+    animation: exotic-glow 4s linear infinite;
+}
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+const questions = [
+    // Pattern: 10 Questions with Answer 'B' (index 1)
+    { q:"Photons are the basic units of:", opts:["Electric charge","Electromagnetic radiation","Magnetic flux","Gravitational waves"], ans:1 },
+    { q:"The rest mass of a photon is:", opts:["Equal to electron","Zero","Variable","Infinite"], ans:1 },
+    { q:"Who won the Nobel prize for Photoelectric Effect?", opts:["Max Planck","Albert Einstein","Niels Bohr","de Broglie"], ans:1 },
+    { q:"Photoelectric effect proves which nature of light?", opts:["Wave nature","Particle nature","Transverse nature","Magnetic nature"], ans:1 },
+    { q:"Energy of a single photon is given by:", opts:["E = mc²","E = hν","E = 1/2 mv²","E = hλ"], ans:1 },
+    { q:"Photoelectric current is directly proportional to:", opts:["Frequency","Intensity","Voltage","Distance"], ans:1 },
+    { q:"Threshold frequency is the ____ frequency for emission.", opts:["Maximum","Minimum","Average","Zero"], ans:1 },
+    { q:"One eV is equal to how many Joules?", opts:["6.6 x 10⁻³⁴","1.6 x 10⁻¹⁹","3 x 10⁸","9.1 x 10⁻³¹"], ans:1 },
+    { q:"Planck's constant (h) has the dimensions of:", opts:["Linear momentum","Angular momentum","Force","Power"], ans:1 },
+    { q:"The stopping potential depends on:", opts:["Intensity","Frequency","Time","Area"], ans:1 },
+
+    // Pattern: 10 Questions with Answer 'A' (index 0)
+    { q:"de Broglie wavelength formula is:", opts:["λ = h/p","λ = p/h","λ = h/mc²","λ = E/c"], ans:0 },
+    { q:"Matter waves are associated with:", opts:["Moving particles","Stationary particles","Only photons","Only electrons"], ans:0 },
+    { q:"Stopping potential is independent of:", opts:["Intensity","Frequency","Wavelength","Energy"], ans:0 },
+    { q:"Davisson-Germer experiment confirmed:", opts:["Wave nature of electrons","Mass of protons","Charge of atoms","Speed of light"], ans:0 },
+    { q:"As the speed of particle increases, its wavelength:", opts:["Decreases","Increases","Remains same","Becomes zero"], ans:0 },
+    { q:"Emission of electrons by light is called:", opts:["Photoelectric effect","Thermionic emission","Field emission","Secondary emission"], ans:0 },
+    { q:"Slope of V₀ vs ν graph gives:", opts:["h/e","e/h","h","e"], ans:0 },
+    { q:"Work function is the minimum energy required to:", opts:["Emit an electron","Heat the metal","Melt the surface","Ionize the core"], ans:0 },
+    { q:"Which has the highest frequency photon?", opts:["Gamma rays","Radio waves","Infrared","Visible light"], ans:0 },
+    { q:"Nature of light is explained as:", opts:["Dual Nature","Only Wave","Only Particle","None"], ans:0 },
+
+    // Pattern: 10 Questions with Answer 'C' (index 2)
+    { q:"The idea of matter waves was proposed by:", opts:["Einstein","Planck","de Broglie","Hertz"], ans:2 },
+    { q:"Work function depends on:", opts:["Intensity","Frequency","Nature of metal surface","Time"], ans:2 },
+    { q:"At stopping potential, the current is:", opts:["Maximum","Saturation","Zero","Infinite"], ans:2 },
+    { q:"Wavelength of matter waves is inversely proportional to:", opts:["Mass only","Velocity only","Momentum","None"], ans:2 },
+    { q:"Dimension of Planck's constant is same as:", opts:["Work","Energy","Action","Torque"], ans:2 },
+    { q:"Unit of Work Function is usually:", opts:["Watt","Joule-sec","Electron-Volt (eV)","Newton"], ans:2 },
+    { q:"Photoelectric emission is which type of process?", opts:["Slow","Delayed","Instantaneous","Thermal"], ans:2 },
+    { q:"If ν < ν₀, the number of photoelectrons emitted is:", opts:["Maximum","Infinite","Zero","Half"], ans:2 },
+    { q:"Heisenberg’s Principle is applicable to:", opts:["Cars","Stars","Microscopic particles","Planets"], ans:2 },
+    { q:"Charge of a photon is:", opts:["+e","-e","Zero","Infinite"], ans:2 },
+
+    // Pattern: 10 Questions with Answer 'D' (index 3)
+    { q:"Momentum of a photon is:", opts:["mc","hν","hλ","h/λ"], ans:3 },
+    { q:"Threshold wavelength is the ______ wavelength.", opts:["Minimum","Zero","Average","Maximum"], ans:3 },
+    { q:"If intensity is doubled, max kinetic energy:", opts:["Doubles","Halves","Triples","Stays Same"], ans:3 },
+    { q:"Electron microscope uses which property?", opts:["Reflection","Refraction","Particle nature","Wave nature of electron"], ans:3 },
+    { q:"Which metal has lowest work function?", opts:["Platinum","Copper","Iron","Cesium"], ans:3 },
+    { q:"1 Joule is approximately:", opts:["1.6 x 10⁻¹⁹ eV","3 x 10⁸ eV","10⁷ eV","6.24 x 10¹⁸ eV"], ans:3 },
+    { q:"Mass of moving photon is:", opts:["Zero","m₀","Infinite","hν/c²"], ans:3 },
+    { q:"Einstein's equation: Kmax = ", opts:["Φ₀","hν","hν + Φ₀","hν - Φ₀"], ans:3 },
+    { q:"Dual nature was first seen in:", opts:["Matter","Atoms","Molecules","Radiation"], ans:3 },
+    { q:"Light intensity determines the number of:", opts:["Protons","Neutrons","Colors","Photoelectrons"], ans:3 },
+
+    // Pattern: Final 10 Mixed Confusion
+    { q:"Davisson-Germer used which crystal?", opts:["Nickel","Gold","Diamond","Silicon"], ans:0 },
+    { q:"Photons are not deflected by:", opts:["Magnetic fields","Electric fields","Gravity","Both A & B"], ans:3 },
+    { q:"λ of electron accelerated by V volts is approx:", opts:["12.27/√V Å","√V/12.27 Å","12.27/V Å","Zero"], ans:0 },
+    { q:"Who verified Einstein's equation experimentally?", opts:["Newton","Millikan","Maxwell","Hertz"], ans:1 },
+    { q:"Photon energy in eV is approx (λ in Å):", opts:["12400/λ","λ/12400","1.24/λ","Zero"], ans:0 },
+    { q:"Which has no charge?", opts:["Electron","Proton","Photon","Alpha particle"], ans:2 },
+    { q:"Saturation current depends on:", opts:["Frequency","Intensity","Voltage","Time"], ans:1 },
+    { q:"Photoelectric effect is based on:", opts:["Bohr theory","Wave theory","Quantum theory","Field theory"], ans:2 },
+    { q:"Wavelength of an electron at 100V is approx:", opts:["1.227 Å","12.27 Å","0.122 Å","122 Å"], ans:0 },
+    { q:"If frequency doubles, stopping potential will:", opts:["Double","Stay same","Become more than double","Halve"], ans:2 }
+];
+
+const quizBox = document.getElementById('quiz-box');
+
+questions.forEach((item, index) => {
+    let card = document.createElement('div');
+    card.className = "quiz-card";
+
+    card.innerHTML = `<p style="color:#FFD700; font-size:18px; font-weight:bold;">Q${index+1}. ${item.q}</p>`;
+
+    item.opts.forEach((opt, oIdx) => {
+        let btn = document.createElement('button');
+        btn.innerText = opt;
+        btn.className = "opt-btn";
+
+        btn.onclick = () => {
+            const overlay = document.getElementById('quiz-overlay');
+            const title = document.getElementById('status-title');
+            const msg = document.getElementById('status-message');
+            const nxt = document.getElementById('next-msg');
+            const strip = document.getElementById('status-strip');
+
+            overlay.style.display = "flex";
+            overlay.style.pointerEvents = "auto"; 
+
+            if(oIdx === item.ans){
+                overlay.style.background = "rgba(0,0,0,0.85)";
+                strip.style.background = "transparent";
+                title.style.cssText = "font-family:'Dancing Script', cursive; color:#fff; font-size:60px; text-shadow:0 0 20px #00f7ff, 0 0 40px #00f7ff;";
+                title.innerText = "Congratulations";
+                msg.innerText = "Excellent! You are a true Topper.";
+                msg.style.color = "#00f7ff";
+                nxt.innerText = "Go to next question...";
+
+                var end = Date.now() + 1500;
+                var colors = ['#00f7ff','#ff0000','#ffffff','#ff00c8','#48ff00'];
+                (function frame(){
+                    confetti({particleCount:15,angle:60,spread:65,origin:{x:0},colors:colors, zIndex: 999999});
+                    confetti({particleCount:15,angle:120,spread:65,origin:{x:1},colors:colors, zIndex: 999999});
+                    if(Date.now() < end) requestAnimationFrame(frame);
+                })();
+            } else {
+                overlay.style.background = "radial-gradient(rgba(139,0,0,0.5) 10%, rgba(0,0,0,0.85) 90%)";
+                strip.style.background = "rgba(0,0,0,0.6)";
+                strip.style.width = "100%";
+                strip.style.padding = "30px 0";
+                title.style.cssText = "font-family:'Oswald', sans-serif; color:red; font-size:80px; font-weight:900; letter-spacing:10px; text-shadow:4px 4px 0px #000;";
+                title.innerText = "WASTED";
+                msg.innerText = "Oops! Try again with focus.";
+                msg.style.color = "#fff";
+                nxt.innerText = "";
+            }
+
+            setTimeout(() => {
+                overlay.style.display = "none";
+                overlay.style.pointerEvents = "none"; 
+            }, 2500);
+        };
+        card.appendChild(btn);
+    });
+    quizBox.appendChild(card);
+});
+});
+</script>
+<div style="text-align:center; margin-bottom:20px;">
+    <h1 style="color:#00ffcc; font-family:sans-serif; text-transform:uppercase; text-shadow:0 0 15px #00ffcc;">Advanced Level: Q51 - Q100</h1>
+    <p style="color:#ffffff; font-family:sans-serif; font-weight:bold;">Chapter 11: Dual Nature (Topper's Challenge)</p>
+</div>
+
+<div id="quiz-box" style="max-width:600px; margin:auto; position:relative; z-index:1;"></div>
+
+<div id="quiz-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; z-index:9999; flex-direction:column; align-items:center; justify-content:center; pointer-events:none;">
+    <div id="status-strip" style="width:100%; text-align:center; padding:30px 0;">
+        <h1 id="status-title"></h1>
+        <p id="status-message" style="font-weight:bold;"></p>
+        <p id="next-msg"></p>
+    </div>
+</div>
+
+<style>
+@keyframes rgb-glow {
+    0% { border-color: #ff00c8; box-shadow: 0 0 8px #ff00c8; }
+    33% { border-color: #00f7ff; box-shadow: 0 0 8px #00f7ff; }
+    66% { border-color: #7a00ff; box-shadow: 0 0 8px #7a00ff; }
+    100% { border-color: #ff00c8; box-shadow: 0 0 8px #ff00c8; }
+}
+
+.quiz-card {
+    background: linear-gradient(145deg, #0f2027, #152a32, #1b2735); 
+    padding: 20px; 
+    margin: 15px 0; 
+    border-radius: 15px; 
+    border: 3px solid #ff00c8; 
+    animation: rgb-glow 4s linear infinite;
+}
+
+.opt-btn {
+    display: block; 
+    width: 100%; 
+    margin: 10px 0; 
+    padding: 14px; 
+    background: rgba(255,255,255,0.05); 
+    color: #fff; 
+    border: 1.5px solid #ff00c8; 
+    border-radius: 10px; 
+    text-align: left; 
+    font-weight: 600; 
+    cursor: pointer;
+    animation: rgb-glow 3s linear infinite;
+}
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+const questions = [
+    // Pattern Mixed - Food Chain Style
+    {q:"If the frequency of incident light is doubled, the stopping potential V₀ will:",opts:["Be doubled","Remain same","Be less than double","Be more than double"],ans:3},
+    {q:"Two photons of same energy 'E' move in opposite directions. The magnitude of total momentum is:",opts:["2E/c","Zero","E/c","E/2c"],ans:1},
+    {q:"Ratio of de-Broglie wavelength of a proton and an alpha particle of same kinetic energy is:",opts:["1:1","2:1","1:2","4:1"],ans:1},
+    {q:"If an electron and a photon have same wavelength λ, then their momentum ratio is:",opts:["1:1","h:λ","2:1","Zero"],ans:0},
+    {q:"The maximum velocity of photoelectrons is 'v'. If frequency becomes four times, velocity will be:",opts:["2v","4v","> 2v","< 2v"],ans:2},
+    
+    {q:"A photon and electron have same energy E. The ratio of their wavelengths λph/λe is proportional to:",opts:["E","1/E","√E","1/√E"],ans:3},
+    {q:"In Davisson-Germer experiment, maximum intensity was observed at scattering angle:",opts:["45°","60°","50°","90°"],ans:2},
+    {q:"Which graph is linear for Einstein's Photoelectric equation?", opts:["V₀ vs λ","V₀ vs 1/λ","Kmax vs Intensity","None"],ans:1},
+    {q:"The work function of a metal is 4.2 eV. If light of 2000 Å falls on it, emission will be:",opts:["Maximum","Zero","Average","Continuous"],ans:1},
+    {q:"Total number of photons emitted per second by a 10W source of monochromatic light is proportional to:",opts:["Frequency","Wavelength","Square of λ","1/λ"],ans:1},
+
+    {q:"An alpha particle is accelerated through 100V. Its de-Broglie wavelength is approximately:",opts:["0.122 Å","0.01 Å","0.25 Å","0.006 Å"],ans:3},
+    {q:"If the pressure of radiation on a surface is P, then for perfectly reflecting surface it is:",opts:["P/2","P","2P","Zero"],ans:2},
+    {q:"Photoelectric effect supports:",opts:["Classical wave theory","Newton's corpuscular theory","Maxwell's EM theory","Quantum theory"],ans:3},
+    {q:"The slope of the Kmax versus frequency graph is same for:",opts:["Only Alkali metals","Only transition metals","All metals","None"],ans:2},
+    {q:"Wavelength of an electron with energy 1 MeV is:", opts:["1.2 x 10⁻¹² m","1.2 x 10⁻¹⁰ m","2.4 x 10⁻¹² m","None"],ans:0},
+
+    {q:"If λ₀ is the threshold wavelength, photoelectric effect occurs when incident λ is:",opts:["λ > λ₀","λ < λ₀","λ = λ₀ only","Always"],ans:1},
+    {q:"Relation between stopping potential V₀ and max velocity v is:",opts:["V₀ = mv/2e","V₀ = mv²/2e","V₀ = 2e/mv²","V₀ = ev²/2m"],ans:1},
+    {q:"Number of photoelectrons emitted per second depends on:",opts:["Wavelength","Frequency","Work function","Intensity"],ans:3},
+    {q:"If momentum of a particle is increased by 3 times, percentage change in λ is:",opts:["300%","75%","66.6%","33.3%"],ans:1},
+    {q:"Maximum Kinetic energy is independent of:",opts:["Frequency","Material","Wavelength","Intensity"],ans:3},
+
+    {q:"A proton and alpha particle have same de-Broglie wavelength. The ratio of their velocities is:",opts:["1:4","4:1","1:2","2:1"],ans:1},
+    {q:"Threshold wavelength for a metal is 5200 Å. Photoelectrons will be emitted for:",opts:["Infrared light","UV light","Red light","Yellow light"],ans:1},
+    {q:"The rest mass energy of an electron is:",opts:["0.51 MeV","1.02 MeV","931 MeV","0.1 MeV"],ans:0},
+    {q:"If the potential difference of an electron increases 4 times, its λ becomes:",opts:["Double","Half","Four times","One-fourth"],ans:1},
+    {q:"Light of intensity I falls on a metal. If intensity is tripled, current becomes:",opts:["I/3","I","3I","9I"],ans:2},
+
+    {q:"Which of the following is NOT a property of photon?",opts:["Zero rest mass","Momentum = h/λ","Deflected by B-field","Travels at speed of light"],ans:2},
+    {q:"Photoelectric effect is a phenomenon of:",opts:["Surface","Volume","Nuclear","Chemical"],ans:0},
+    {q:"de-Broglie wavelength of a gas molecule at temperature T is proportional to:",opts:["T","1/T","√T","1/√T"],ans:3},
+    {q:"When intensity of light is increased:",opts:["Energy of photon increases","KE of electron increases","Stopping potential increases","Number of photons increases"],ans:3},
+    {q:"Dynamic mass of a photon of wavelength λ is:",opts:["Zero","h/cλ","hλ/c","hc/λ"],ans:1},
+
+    {q:"If λ₁ and λ₂ are wavelengths of two photons with energy E₁ and E₂=2E₁, then:",opts:["λ₁ = λ₂","λ₁ = 2λ₂","λ₂ = 2λ₁","λ₁ = √2λ₂"],ans:1},
+    {q:"A metal surface ejects electrons when hit by Green light but not Yellow. It will work for:",opts:["Red light","Orange light","Blue light","None"],ans:2},
+    {q:"The value of Planck's constant in eV-s is:",opts:["6.63 x 10⁻³⁴","4.14 x 10⁻¹⁵","1.6 x 10⁻¹⁹","None"],ans:1},
+    {q:"If an electron is at rest, its de-Broglie wavelength is:",opts:["Zero","Infinite","h/mc","1 Å"],ans:1},
+    {q:"In photoelectric effect, if we use light of higher frequency, the saturation current:",opts:["Increases","Decreases","Remains same","Becomes zero"],ans:2},
+
+    {q:"If E₁ and E₂ are energies of two photons with λ₁=2λ₂, then E₁/E₂ is:",opts:["2","1/2","4","1/4"],ans:1},
+    {q:"Stopping potential for a metal is 3V. Maximum KE of photoelectrons is:",opts:["3 J","3 eV","1.5 eV","Zero"],ans:1},
+    {q:"Thermal neutrons have λ proportional to:",opts:["T","1/√T","1/T","T²"],ans:1},
+    {q:"Which particle has the longest λ for same velocity?",opts:["Proton","Neutron","Electron","Alpha"],ans:2},
+    {q:"Photocell is based on:",opts:["Ohm's law","Faraday's law","Einstein's equation","Newton's law"],ans:2},
+
+    {q:"Relativistic mass of a particle moving at speed 'v' is:",opts:["m₀","m₀/√(1-v²/c²)","m₀√(1-v²/c²)","Zero"],ans:1},
+    {q:"Power of a laser is 2mW. Wavelength is 600nm. Photons per second is approx:",opts:["6x10¹⁵","6x10¹⁸","6x10¹²","6x10¹³"],ans:0},
+    {q:"Stopping potential depends on nature of:",opts:["Source","Emitter","Collector","Vacuum"],ans:1},
+    {q:"For an electron, λ (in Å) is equal to:",opts:["150/V","√150/V","√(150/V)","12.27/V"],ans:2},
+    {q:"The work function of a metal depends on:",opts:["Purity","Temperature","Nature of surface","All of these"],ans:3},
+
+    {q:"Photoelectric effect can be explained by assuming light is a:",opts:["Wave","Particle","Ray","Scalar"],ans:1},
+    {q:"If distance of light source from cell is doubled, current:",opts:["Doubles","Quadruples","Halves","One-fourth"],ans:3},
+    {q:"Slope of V₀ vs 1/λ graph is:",opts:["hc/e","h/e","e/hc","h/mc"],ans:0},
+    {q:"Davisson-Germer experiment used voltage in range:",opts:["1-10V","44-68V","100-500V","220V"],ans:1},
+    {q:"The momentum of a photon of frequency ν is:",opts:["hν/c","hνc","h/cν","c/hν"],ans:0}
+];
+
+const quizBox = document.getElementById('quiz-box');
+
+questions.forEach((item, index) => {
+    let card = document.createElement('div');
+    card.className = "quiz-card";
+
+    card.innerHTML = `<p style="color:#00ffcc; font-size:18px; font-weight:bold;">Q${index+51}. ${item.q}</p>`;
+
+    item.opts.forEach((opt, oIdx) => {
+        let btn = document.createElement('button');
+        btn.innerText = opt;
+        btn.className = "opt-btn";
+
+        btn.onclick = () => {
+            const overlay = document.getElementById('quiz-overlay');
+            const title = document.getElementById('status-title');
+            const msg = document.getElementById('status-message');
+            const nxt = document.getElementById('next-msg');
+            const strip = document.getElementById('status-strip');
+
+            overlay.style.display = "flex";
+            overlay.style.pointerEvents = "auto"; 
+
+            if(oIdx === item.ans){
+                overlay.style.background = "rgba(0,0,0,0.85)";
+                strip.style.background = "transparent";
+                title.style.cssText = "font-family:'Dancing Script', cursive; color:#fff; font-size:60px; text-shadow:0 0 20px #00f7ff, 0 0 40px #00f7ff;";
+                title.innerText = "Physics Master";
+                msg.innerText = "Incredible! Your concepts are solid.";
+                msg.style.color = "#00f7ff";
+                nxt.innerText = "Next conceptual challenge...";
+
+                var end = Date.now() + 1500;
+                var colors = ['#00f7ff','#ff0000','#ffffff','#ff00c8','#48ff00'];
+                (function frame(){
+                    confetti({particleCount:15,angle:60,spread:65,origin:{x:0},colors:colors, zIndex: 999999});
+                    confetti({particleCount:15,angle:120,spread:65,origin:{x:1},colors:colors, zIndex: 999999});
+                    if(Date.now() < end) requestAnimationFrame(frame);
+                })();
+            } else {
+                overlay.style.background = "radial-gradient(rgba(139,0,0,0.5) 10%, rgba(0,0,0,0.85) 90%)";
+                strip.style.background = "rgba(0,0,0,0.6)";
+                strip.style.width = "100%";
+                strip.style.padding = "30px 0";
+                title.style.cssText = "font-family:'Oswald', sans-serif; color:red; font-size:80px; font-weight:900; letter-spacing:10px; text-shadow:4px 4px 0px #000;";
+                title.innerText = "WASTED";
+                msg.innerText = "Wrong! Focus on the theory.";
+                msg.style.color = "#fff";
+                nxt.innerText = "";
+            }
+
+            setTimeout(() => {
+                overlay.style.display = "none";
+                overlay.style.pointerEvents = "none"; 
+            }, 2500);
+        };
+        card.appendChild(btn);
+    });
+    quizBox.appendChild(card);
+});
+});
+</script>
+<div id="long-questions-part2" style="max-width:800px; margin:auto; font-family:Arial, sans-serif;">
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px; box-shadow: 0 10px 15px rgba(0,0,0,0.3);">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q1. Derive Einstein's Photoelectric Equation and explain the laws of photoelectric emission using it.</p>
+        <button onclick="toggleQ('ans1')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ans1" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:1.8;">
+            <b style="color:#fffb00;">Einstein's Analysis:</b><br>
+            - Energy of photon (h&nu;) is used in two ways: Work function (&Phi;<sub>0</sub>) and Max KE (K<sub>max</sub>).<br>
+            - <b>h&nu; = &Phi;<sub>0</sub> + K<sub>max</sub></b><br>
+            - <b>K<sub>max</sub> = h&nu; - h&nu;<sub>0</sub></b> (where &nu;<sub>0</sub> is threshold frequency).<br>
+            - <b>Equation:</b> 
+            <div style="text-align:center; padding:10px; color:#48ff00; font-size:1.2rem;">
+                <b>K<sub>max</sub> = h(&nu; - &nu;<sub>0</sub>)</b>
+            </div>
+            <b style="color:#fffb00;">Laws Explained:</b><br>
+            1. If &nu; < &nu;<sub>0</sub>, K<sub>max</sub> is negative (Impossible), so no emission.<br>
+            2. K<sub>max</sub> depends linearly on frequency &nu;.<br>
+            3. Intensity only increases the number of photoelectrons, not their energy.
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q2. Derive the expression for de-Broglie wavelength of an electron accelerated through a potential difference V.</p>
+        <button onclick="toggleQ('ans2')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ans2" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:2;">
+            <b style="color:#fffb00;">Derivation Steps:</b><br>
+            1. Kinetic Energy <b>K = eV</b>.<br>
+            2. Also, <b>K = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">p<sup>2</sup></td></tr><tr><td>2m</td></tr></table></b>.<br>
+            3. So, momentum <b>p = &radic;(2meV)</b>.<br>
+            4. From de-Broglie relation: <b>&lambda; = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">h</td></tr><tr><td>p</td></tr></table></b>.<br>
+            5. Substituting p: <b>&lambda; = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">h</td></tr><tr><td>&radic;2meV</td></tr></table></b>.<br>
+            6. Putting values of h, m, and e:<br>
+            <div style="text-align:center; padding:15px; background:#222; border-radius:10px; color:#48ff00; font-size:1.4rem;">
+                <b>&lambda; = <table style="display:inline-table; vertical-align:middle; color:#48ff00;"><tr><td style="border-bottom:1px solid #48ff00;">12.27</td></tr><tr><td>&radic;V</td></tr></table> &Aring;</b>
+            </div>
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q3. Describe Davisson-Germer experiment with a neat diagram. How does it prove wave nature?</p>
+        <button onclick="toggleQ('ans3')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Explanation</button>
+        <div id="ans3" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:1.8;">
+            <b style="color:#fffb00;">Key Observations:</b><br>
+            - Fine beam of electrons is struck on a <b>Nickel Crystal</b>.<br>
+            - Scattered electrons are collected by a movable detector.<br>
+            - A "bump" (max intensity) is observed at <b>V = 54V</b> and angle <b>&Phi; = 50&deg;</b>.<br>
+            <b style="color:#fffb00;">Theoretical Proof:</b><br>
+            1. Using Bragg's Law: <b>&lambda; = 1.65 &Aring;</b>.<br>
+            2. Using de-Broglie's Formula: <b>&lambda; = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">12.27</td></tr><tr><td>&radic;54</td></tr></table> = 1.67 &Aring;</b>.<br>
+            - Both values match, proving that moving electrons behave like waves.
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q4. Write any five important properties of photons. Derive the relation between Photon energy and momentum.</p>
+        <button onclick="toggleQ('ans4')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Details</button>
+        <div id="ans4" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:2.2;">
+            1. Photons travel with speed <b>c</b> in vacuum.<br>
+            2. Rest mass of a photon is <b>zero</b>.<br>
+            3. They are electrically neutral (not deflected by E or B fields).<br>
+            4. Energy <b>E = h&nu;</b>.<br>
+            5. <b>Momentum Derivation:</b><br>
+            - From Einstein's mass-energy relation: <b>E = mc<sup>2</sup></b>.<br>
+            - Also <b>p = mc</b>, so <b>E = pc</b>.<br>
+            <div style="text-align:center; padding:10px; color:#48ff00; font-size:1.4rem;">
+                <b>p = <table style="display:inline-table; vertical-align:middle; color:#48ff00;"><tr><td style="border-bottom:1px solid #48ff00;">E</td></tr><tr><td>c</td></tr></table> = <table style="display:inline-table; vertical-align:middle; color:#48ff00;"><tr><td style="border-bottom:1px solid #48ff00;">h</td></tr><tr><td>&lambda;</td></tr></table></b>
+            </div>
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q5. Explain the failure of Wave Theory of light to explain Photoelectric Effect.</p>
+        <button onclick="toggleQ('ans5')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Reasoning</button>
+        <div id="ans5" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:2;">
+            <b style="color:#fffb00;">Three Major Failures:</b><br>
+            1. <b>Intensity vs KE:</b> Wave theory says more intensity = more energy. But in reality, KE depends on frequency, not intensity.<br>
+            2. <b>Threshold Frequency:</b> Wave theory says any frequency can eject electrons if intensity is high. Experimentally, below &nu;<sub>0</sub>, nothing happens.<br>
+            3. <b>Time Lag:</b> Wave theory predicts a long time lag for energy accumulation. Photoelectric effect is <b>instantaneous</b> (10<sup>-9</sup> s).
+        </div>
+    </div>
+
+</div>
+
+<script>
+function toggleQ(id) {
+    var x = document.getElementById(id);
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+</script>
+
+<style>
+@keyframes moveBg { 
+    0% { background-position: 0% 50%; } 
+    50% { background-position: 100% 50%; } 
+    100% { background-position: 0% 50%; } 
+}
+</style>
+<div id="long-questions-part3" style="max-width:800px; margin:auto; font-family:Arial, sans-serif;">
+
+    <div style="background: linear-gradient(135deg, #00c6ff, #0072ff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px; box-shadow: 0 10px 15px rgba(0,0,0,0.3);">
+        <p style="color:#fff; font-weight:900; font-size:1.1rem;">Q6. Draw and explain the variation of Photoelectric Current with Collector Plate Potential for (i) Different Intensities and (ii) Different Frequencies.</p>
+        <button onclick="toggleQ('ans6')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Graph Analysis</button>
+        <div id="ans6" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:1.8;">
+            <b style="color:#fffb00;">(i) Different Intensities (Same Frequency):</b><br>
+            - Stopping Potential (V<sub>0</sub>) remains the <b>same</b> for all intensities.<br>
+            - Saturation current is <b>proportional</b> to intensity (Higher intensity = Higher current).<br>
+            <b style="color:#fffb00;">(ii) Different Frequencies (Same Intensity):</b><br>
+            - Saturation current remains the <b>same</b> for all frequencies.<br>
+            - Higher the frequency (&nu;), higher is the negative Stopping Potential (V<sub>0</sub>).<br>
+            - Relation: <b>eV<sub>0</sub> = h&nu; - &Phi;<sub>0</sub></b>
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #00c6ff, #0072ff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#fff; font-weight:900; font-size:1.1rem;">Q7. How did de-Broglie explain Bohr's second postulate of quantization of angular momentum? Derive the condition.</p>
+        <button onclick="toggleQ('ans7')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ans7" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:2;">
+            <b style="color:#fffb00;">Derivation:</b><br>
+            1. According to de-Broglie, an electron in a circular orbit must form a <b>Stationary Wave</b>.<br>
+            2. For a stable orbit, the circumference must be an integral multiple of wavelength:<br>
+            <div style="text-align:center; padding:10px;">
+                <b>2&pi;r = n&lambda;</b>
+            </div>
+            3. But de-Broglie wavelength <b>&lambda; = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">h</td></tr><tr><td>mv</td></tr></table></b>.<br>
+            4. Substituting &lambda;: <b>2&pi;r = n(<table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">h</td></tr><tr><td>mv</td></tr></table>)</b>.<br>
+            5. Rearranging for Angular Momentum (L = mvr):<br>
+            <div style="text-align:center; padding:15px; background:#222; border-radius:10px; color:#48ff00; font-size:1.4rem;">
+                <b>mvr = <table style="display:inline-table; vertical-align:middle; color:#48ff00;"><tr><td style="border-bottom:1px solid #48ff00;">nh</td></tr><tr><td>2&pi;</td></tr></table></b>
+            </div>
+            - This proves Bohr's quantization condition.
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #00c6ff, #0072ff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#fff; font-weight:900; font-size:1.1rem;">Q8. Derive the expression for the number of photons emitted per second by a monochromatic source of power P and wavelength &lambda;.</p>
+        <button onclick="toggleQ('ans8')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Mathematical Steps</button>
+        <div id="ans8" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:2;">
+            1. Let <b>n</b> be the number of photons emitted per second.<br>
+            2. Energy of one photon <b>E = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">hc</td></tr><tr><td>&lambda;</td></tr></table></b>.<br>
+            3. Total power <b>P = Energy &times; n</b>.<br>
+            4. <b>P = n &times; <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">hc</td></tr><tr><td>&lambda;</td></tr></table></b>.<br>
+            5. Final expression for <b>n</b>:<br>
+            <div style="text-align:center; padding:15px; background:#222; border-radius:10px; color:#48ff00; font-size:1.4rem;">
+                <b>n = <table style="display:inline-table; vertical-align:middle; color:#48ff00;"><tr><td style="border-bottom:1px solid #48ff00;">P &middot; &lambda;</td></tr><tr><td>h &middot; c</td></tr></table></b>
+            </div>
+            - Note: Number of photons is directly proportional to power and wavelength.
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #00c6ff, #0072ff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#fff; font-weight:900; font-size:1.1rem;">Q9. Explain why the wave nature of matter is not apparent in our daily life (macro-objects).</p>
+        <button onclick="toggleQ('ans9')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Reasoning</button>
+        <div id="ans9" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:1.8;">
+            - According to de-Broglie: <b>&lambda; = h / mv</b>.<br>
+            - In our daily life, objects (like a ball or car) have a very <b>large mass (m)</b>.<br>
+            - Since <b>h</b> (Planck's constant) is extremely small (10<sup>-34</sup>), the resulting wavelength <b>&lambda;</b> becomes so tiny that it cannot be measured or detected by any instrument.<br>
+            - Hence, macro-objects show only particle properties, while micro-objects (electrons) show wave properties.
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #00c6ff, #0072ff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#fff; font-weight:900; font-size:1.1rem;">Q10. Define (a) Work Function, (b) Threshold Frequency, and (c) Stopping Potential. Give their SI units.</p>
+        <button onclick="toggleQ('ans10')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Definitions</button>
+        <div id="ans10" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:2.2;">
+            <b style="color:#fffb00;">(a) Work Function (&Phi;<sub>0</sub>):</b> Minimum energy required to just eject an electron from a metal surface. Unit: <b>eV</b> or <b>Joule</b>.<br>
+            <b style="color:#fffb00;">(b) Threshold Frequency (&nu;<sub>0</sub>):</b> Minimum frequency of incident light below which no photoelectric emission occurs. Unit: <b>Hertz (Hz)</b>.<br>
+            <b style="color:#fffb00;">(c) Stopping Potential (V<sub>0</sub>):</b> The minimum negative potential applied to the collector plate at which the photoelectric current becomes zero. Unit: <b>Volt (V)</b>.
+        </div>
+    </div>
+
+</div>
+
+<script>
+function toggleQ(id) {
+    var x = document.getElementById(id);
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+</script>
+
+<style>
+@keyframes moveBg { 
+    0% { background-position: 0% 50%; } 
+    50% { background-position: 100% 50%; } 
+    100% { background-position: 0% 50%; } 
+}
+</style>
+
+</body>    
+</html>

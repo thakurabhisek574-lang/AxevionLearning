@@ -1,0 +1,1113 @@
+<!DOCTYPE html>  <html lang="en">    <head>    
+    <meta charset="UTF-8">    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>Atoms - Smart Study for Toppers</title>    
+    <style>    
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap');  
+        
+        body {    
+            background-color: #000;    
+            color: #fff;    
+            font-family: 'Poppins', sans-serif;    
+            margin: 0;    
+            padding: 0;    
+            overflow-x: hidden;    
+        }    
+
+        .header {    
+            position: fixed;    
+            top: 0;    
+            left: 0;    
+            width: 100%;    
+            height: 65px;    
+            background: #000;    
+            display: flex;    
+            justify-content: space-between;    
+            align-items: center;    
+            padding: 0 20px;    
+            z-index: 10000;    
+            box-sizing: border-box;    
+            border-bottom: 1px solid rgba(0, 247, 255, 0.2);    
+        }    
+
+        .back-btn {    
+            background: transparent;    
+            color: #00f7ff;    
+            border: 2px solid #00f7ff;    
+            padding: 5px 18px;    
+            border-radius: 8px;    
+            text-decoration: none;    
+            font-weight: bold;    
+            font-size: 14px;    
+            text-transform: uppercase;    
+        }    
+
+        .topper-text {    
+            text-align: right;    
+            line-height: 1.1;    
+        }    
+
+        .topper-text .small {    
+            color: #FFD700;    
+            font-size: 10px;    
+            font-weight: bold;    
+            display: block;    
+        }    
+
+        .topper-text .large {    
+            color: #fff;    
+            font-size: 16px;    
+            font-weight: bold;    
+        }    
+
+        .container {    
+            padding: 80px 15px 20px 15px; 
+        }    
+
+        @keyframes neon-glow {    
+            0% { border-color: #ff00ff; box-shadow: 0 0 15px #ff00ff; }    
+            25% { border-color: #00f7ff; box-shadow: 0 0 25px #00f7ff; }    
+            50% { border-color: #48ff00; box-shadow: 0 0 15px #48ff00; }    
+            75% { border-color: #FFD700; box-shadow: 0 0 25px #FFD700; }    
+            100% { border-color: #ff00ff; box-shadow: 0 0 15px #ff00ff; }    
+        }    
+
+        .topic-page {    
+            min-height: 85vh;    
+            border: 4px solid;    
+            border-radius: 40px;    
+            margin-bottom: 40px;    
+            padding: 25px;    
+            display: flex;    
+            flex-direction: column;    
+            justify-content: center;    
+            animation: neon-glow 8s infinite linear;    
+            background: linear-gradient(180deg, rgba(15,15,15,1) 0%, rgba(0,0,0,1) 100%);    
+            box-sizing: border-box;
+        }    
+
+        .topic-title {    
+            font-size: 26px;    
+            color: #00f7ff;    
+            text-decoration: underline;    
+            margin-bottom: 20px;    
+            text-shadow: 0 0 10px #00f7ff;    
+            text-transform: uppercase;    
+        }    
+
+        .box {    
+            background: rgba(255, 255, 255, 0.05);    
+            padding: 15px;    
+            border-radius: 15px;    
+            margin-bottom: 12px;    
+        }    
+
+        .box span { font-weight: bold; display: block; margin-bottom: 5px; }    
+        .eng-txt { color: #00f7ff; }    
+        .hin-txt { color: #FFD700; }    
+
+        .key-points {    
+            border: 1.5px dashed #48ff00;    
+            border-radius: 15px;    
+            padding: 15px;    
+            background: rgba(72, 255, 0, 0.03);    
+        }    
+
+        ul { margin: 0; padding-left: 20px; }    
+        li { margin-bottom: 8px; font-size: 14px; color: #ddd; }    
+
+        .formula-box {    
+            background: #000;    
+            border: 1px solid rgba(255,255,255,0.1);    
+            border-radius: 20px;    
+            padding: 20px;    
+            text-align: center;    
+            font-size: 24px;    
+            color: #00f7ff;    
+            margin-top: 20px;    
+            box-shadow: inset 0 0 15px rgba(0, 247, 255, 0.3);    
+        }
+    </style>    
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>    
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>  
+</head>    
+<body>  
+    <div class="header">    
+        <a href="phy-chapters.html" class="back-btn">BACK</a>    
+        <div class="topper-text">    
+            <span class="small">SMART STUDY</span>    
+            <span class="large">FOR TOPPERS</span>    
+        </div>    
+    </div>    
+
+    <div class="container">    
+        <div class="topic-page">    
+            <h1 class="topic-title">1. Thomson Model of Atom</h1>    
+            <div class="box"><span class="eng-txt">English:</span> Also known as the Plum Pudding model, it suggests an atom is a sphere of positive charge with electrons embedded in it.</div>    
+            <div class="box"><span class="hin-txt">Hindi:</span> Isse Watermelon model bhi kehte hain, jisme poora atom positive charge hai aur electrons usme beej ki tarah dhasse hain.</div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>Proposed by J.J. Thomson in 1904.</li>    
+                    <li>Atoms are electrically neutral.</li>    
+                    <li>Total positive charge equals total negative charge.</li>    
+                    <li>It could not explain the results of scattering experiments.</li>    
+                </ul>    
+            </div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">2. Limitations of Thomson Model</h1>    
+            <div class="box"><span class="eng-txt">English:</span> It failed to explain how positive and negative charges stay together and couldn't justify the large-angle scattering of alpha particles.</div>    
+            <div class="box"><span class="hin-txt">Hindi:</span> Ye model ye nahi bata paya ki positive aur negative charge ek saath kaise rehte hain aur scattering experiment ko fail kar diya.</div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>No experimental evidence for the distribution of mass.</li>    
+                    <li>Failed to explain the hydrogen spectrum.</li>    
+                    <li>Unable to explain Rutherford's alpha scattering results.</li>    
+                    <li>The model was static and lacked stability.</li>    
+                </ul>    
+            </div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">3. Rutherford's Alpha Scattering</h1>    
+            <div class="box"><span class="eng-txt">English:</span> Alpha particles were fired at a thin gold foil to observe their deflection, leading to the discovery of the nucleus.</div>    
+            <div class="box"><span class="hin-txt">Hindi:</span> Rutherford ne gold foil par alpha particles maare taaki atom ki sahi banawat ka pata chal sake.</div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>Most particles passed straight (space is empty).</li>    
+                    <li>Few particles deflected at small angles.</li>    
+                    <li>Very few (1 in 8000) bounced back (nucleus is heavy).</li>    
+                    <li>Proved mass is concentrated in a tiny center.</li>    
+                </ul>    
+            </div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">4. Rutherford Model of Atom</h1>    
+            <div class="box"><span class="eng-txt">English:</span> An atom consists of a tiny, dense, positively charged nucleus surrounded by electrons revolving like planets around the sun.</div>    
+            <div class="box"><span class="hin-txt">Hindi:</span> Atom ke beech mein ek chhota nucleus hota hai aur electrons uske charo taraf grahon ki tarah ghumte hain.</div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>Discovery of the Nucleus.</li>    
+                    <li>Electrons and nucleus are held by electrostatic force.</li>    
+                    <li>Most of the atom's volume is empty space.</li>    
+                    <li>Nucleus size is very small ($10^{-15}m$) compared to atom.</li>    
+                </ul>    
+            </div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">5. Limitations of Rutherford Model</h1>    
+            <div class="box"><span class="eng-txt">English:</span> According to EM theory, accelerating electrons should lose energy and fall into the nucleus, making the atom unstable.</div>    
+            <div class="box"><span class="hin-txt">Hindi:</span> EM theory ke hisab se ghumte electrons ko energy khoni chahiye aur nucleus mein gir jaana chahiye, jo atom ko unstable banata hai.</div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>It could not explain the stability of an atom.</li>    
+                    <li>It could not explain the discrete line spectrum of atoms.</li>    
+                    <li>Electron's path and energy were not well-defined.</li>    
+                    <li>Atomic collapse was the biggest theoretical flaw.</li>    
+                </ul>    
+            </div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">6. Atomic Spectra</h1>    
+            <div class="box"><span class="eng-txt">English:</span> The spectrum of light emitted or absorbed by an atom, used as a "fingerprint" to identify the element.</div>    
+            <div class="box"><span class="hin-txt">Hindi:</span> Jab atom light emit ya absorb karta hai, toh ek khas pattern banta hai jise atomic spectra kehte hain.</div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>Consists of discrete lines, not a continuous band.</li>    
+                    <li>Every element has a unique spectrum.</li>    
+                    <li>Helps in identifying chemical composition.</li>    
+                    <li>Relies on electron transitions between energy levels.</li>    
+                </ul>    
+            </div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">7. Emission Spectrum</h1>    
+            <div class="box"><span class="eng-txt">English:</span> Formed when electrons move from higher to lower energy levels, releasing energy as light.</div>    
+            <div class="box"><span class="hin-txt">Hindi:</span> Jab electron high energy level se niche aata hai, toh wo light nikalta hai, jise emission spectrum kehte hain.</div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>Consists of bright lines on a dark background.</li>    
+                    <li>Produced by excited gases or vapors.</li>    
+                    <li>Energy released equals the difference in levels.</li>    
+                    <li>Specific wavelengths are emitted for each element.</li>    
+                </ul>    
+            </div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">8. Absorption Spectrum</h1>    
+            <div class="box"><span class="eng-txt">English:</span> Formed when light passes through a cool gas, and certain wavelengths are absorbed by atoms to jump to higher levels.</div>    
+            <div class="box"><span class="hin-txt">Hindi:</span> Jab light kisi gas se guzarti hai aur kuch khas rang gayab ho jate hain kyunki atoms unhe absorb kar lete hain.</div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>Consists of dark lines on a continuous bright background.</li>    
+                    <li>It is a reverse of the emission spectrum.</li>    
+                    <li>Atoms only absorb photons that match transition energy.</li>    
+                    <li>Used in astronomy to study star atmospheres.</li>    
+                </ul>    
+            </div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">9. Continuous Spectrum</h1>    
+            <div class="box"><span class="eng-txt">English:</span> A spectrum that contains all wavelengths of light without any gaps, like a rainbow.</div>    
+            <div class="box"><span class="hin-txt">Hindi:</span> Aisa spectrum jisme saare rang bina kisi break ke hote hain, jaise indradhanush.</div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>Produced by incandescent solids or hot dense gases.</li>    
+                    <li>Sunlight (visible part) is an example.</li>    
+                    <li>Shows no discrete lines or breaks.</li>    
+                    <li>Depends on temperature, not on chemical identity.</li>    
+                </ul>    
+            </div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">10. Line Spectrum</h1>    
+            <div class="box"><span class="eng-txt">English:</span> A spectrum consisting of distinct, separated lines of specific wavelengths.</div>    
+            <div class="box"><span class="hin-txt">Hindi:</span> Isme saaf alag-alag lines hoti hain jo kisi khas element ki pehchan hoti hain.</div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>Typical for atoms in a gaseous state.</li>    
+                    <li>Proves that electrons stay in fixed energy levels.</li>    
+                    <li>Used in spectroscopy for analysis.</li>    
+                    <li>The Hydrogen spectrum is the most famous line spectrum.</li>    
+                </ul>    
+            </div>    
+        </div>    
+<div class="topic-page">    
+    <h1 class="topic-title">1. Bohr Model of Atom</h1>    
+    <div class="box"><span class="eng-txt">English:</span> A model where electrons revolve in stable circular orbits around the nucleus without radiating energy.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Ek aisa model jisme electron nucleus ke charo taraf nishchit aur sthir orbits mein ghumte hain.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Proposed by Neils Bohr in 1913.</li>    
+            <li>Combines classical physics with early quantum concepts.</li>    
+            <li>Electrons are held in orbit by electrostatic attraction.</li>    
+            <li>Only certain 'permissible' orbits are allowed for electrons.</li>    
+        </ul>    
+    </div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">2. Postulates of Bohr Model</h1>    
+    <div class="box"><span class="eng-txt">English:</span> The fundamental assumptions defining electron orbits and energy transitions.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Bohr model ke mukhya niyam jo electron ki position aur energy batate hain.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li><b>Quantization:</b> Angular momentum $L = n(h/2\pi)$.</li>    
+            <li><b>Stationary Orbits:</b> Electrons do not radiate energy while in these orbits.</li>    
+            <li><b>Energy Jump:</b> Energy is emitted/absorbed only during transitions ($E_2 - E_1 = h\nu$).</li>    
+            <li>The integer 'n' is called the Principal Quantum Number.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ mvr = \frac{nh}{2\pi} $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">3. Radius of Orbit</h1>    
+    <div class="box"><span class="eng-txt">English:</span> The mathematical derivation for the distance of an electron from the nucleus in the $n^{th}$ orbit.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Nucleus se electron ki doori nikalne ka formula.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Radius $r_n$ is directly proportional to $n^2$.</li>    
+            <li>Radius is inversely proportional to Atomic Number ($Z$).</li>    
+            <li>Bohr Radius ($a_0$) for Hydrogen ($n=1$) is $0.529 \, \unicode{x212B}$.</li>    
+            <li>As 'n' increases, the orbits get further apart.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ r_n = \frac{\epsilon_0 n^2 h^2}{\pi m Z e^2} $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">4. Energy of Electron</h1>    
+    <div class="box"><span class="eng-txt">English:</span> The total energy of an electron (Kinetic + Potential) in a specific orbit.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Kisi khas orbit mein electron ki kul energy.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Total energy is negative, indicating the electron is "bound".</li>    
+            <li>Potential energy is twice the total energy but negative.</li>    
+            <li>Kinetic energy is equal to the magnitude of total energy.</li>    
+            <li>Energy increases (becomes less negative) as 'n' increases.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ E_n = -13.6 \frac{Z^2}{n^2} \, eV $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">5. Velocity of Electron</h1>    
+    <div class="box"><span class="eng-txt">English:</span> The speed at which an electron travels in its permissible orbit.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Electron ke apni orbit mein ghumne ki raftar.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Velocity $v_n$ is inversely proportional to $n$.</li>    
+            <li>Velocity is directly proportional to Atomic Number ($Z$).</li>    
+            <li>Electron moves fastest in the innermost orbit ($n=1$).</li>    
+            <li>Speed in the 1st orbit of Hydrogen is approx $1/137$ of speed of light.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ v_n \propto \frac{Z}{n} $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">6. Hydrogen Spectrum</h1>    
+    <div class="box"><span class="eng-txt">English:</span> The series of discrete wavelengths emitted when a Hydrogen electron jumps between levels.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Hydrogen electron ke transition se nikalne wali light ka pattern.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>It is a line emission spectrum.</li>    
+            <li>Each line corresponds to a specific energy transition.</li>    
+            <li>Explained perfectly by Bohr's third postulate.</li>    
+            <li>Used to study the internal structure of atoms.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ \Delta E = h\nu $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">7. Spectral Series</h1>    
+    <div class="box"><span class="eng-txt">English:</span> Grouping of spectral lines based on the final orbit ($n_1$) where the electron lands.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Electron jis level par laut-ta hai, uske hisab se banne wali lines ke group.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li><b>Lyman:</b> Ends at $n=1$ (Ultraviolet region).</li>    
+            <li><b>Balmer:</b> Ends at $n=2$ (Visible region).</li>    
+            <li><b>Paschen:</b> Ends at $n=3$ (Infrared region).</li>    
+            <li><b>Brackett/Pfund:</b> End at $n=4, 5$ (Far Infrared).</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ \frac{1}{\lambda} = R \left( \frac{1}{n_1^2} - \frac{1}{n_2^2} \right) $$</div>    
+</div>
+<div class="topic-page">    
+    <h1 class="topic-title">1. Lyman Series</h1>    
+    <div class="box"><span class="eng-txt">English:</span> The spectral series formed when an electron jumps from any higher orbit to the first orbit (n=1).</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Jab electron kisi bhi bahar wali orbit se pehli orbit (n=1) par koodta hai.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>It lies in the Ultraviolet (UV) region.</li>    
+            <li>The formula for wavelength uses $n_1 = 1$ and $n_2 = 2, 3, 4...$</li>    
+            <li>It has the highest energy and shortest wavelengths.</li>    
+            <li>First discovered spectral series for hydrogen.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ n_1 = 1, \text{ (Ultraviolet)} $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">2. Balmer Series</h1>    
+    <div class="box"><span class="eng-txt">English:</span> The series formed when an electron jumps from higher orbits to the second orbit (n=2).</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Jab electron bahar se dusri orbit (n=2) par aata hai.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>This is the only series that lies in the Visible region.</li>    
+            <li>Wavelength formula uses $n_1 = 2$ and $n_2 = 3, 4, 5...$</li>    
+            <li>It allows us to see the colors of the hydrogen spectrum.</li>    
+            <li>The lines are named $H_\alpha, H_\beta, H_\gamma$ etc.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ n_1 = 2, \text{ (Visible)} $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">3. Paschen Series</h1>    
+    <div class="box"><span class="eng-txt">English:</span> Transitions ending at the third orbit (n=3) from orbits $n=4, 5, 6...$</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Jab electron teesri orbit (n=3) par laut-ta hai.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>It lies in the Infrared (IR) region.</li>    
+            <li>Wavelength formula uses $n_1 = 3$.</li>    
+            <li>Not visible to the naked eye.</li>    
+            <li>Discovered by Friedrich Paschen in 1908.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ n_1 = 3, \text{ (Infrared)} $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">4. Brackett Series</h1>    
+    <div class="box"><span class="eng-txt">English:</span> Spectral lines produced by transitions ending at the fourth orbit (n=4).</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Jab electron chauthi orbit (n=4) par transition karta hai.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>It lies in the Far Infrared region.</li>    
+            <li>Wavelength formula uses $n_1 = 4$ and $n_2 = 5, 6, 7...$</li>    
+            <li>Energy of photons in this series is very low.</li>    
+            <li>Wavelengths are much longer than the Balmer series.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ n_1 = 4, \text{ (Far IR)} $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">5. Pfund Series</h1>    
+    <div class="box"><span class="eng-txt">English:</span> Transitions ending at the fifth orbit (n=5) from any higher energy level.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Jab electron panchwi orbit (n=5) par girta hai.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>It lies deep in the Far Infrared region.</li>    
+            <li>Wavelength formula uses $n_1 = 5$ and $n_2 = 6, 7...$</li>    
+            <li>Named after August Herman Pfund.</li>    
+            <li>Has the longest wavelengths in the standard series.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ n_1 = 5, \text{ (Deep IR)} $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">6. Energy Levels</h1>    
+    <div class="box"><span class="eng-txt">English:</span> Fixed paths or states around the nucleus where electrons have a constant energy.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Nucleus ke charo taraf wo raste jahan electron ki energy fix hoti hai.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Represented by 'n' (1, 2, 3...).</li>    
+            <li>As 'n' increases, the energy of the level increases.</li>    
+            <li>Energy is quantized (not continuous).</li>    
+            <li>Gaps between levels decrease as we move away from nucleus.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ E_n \propto -\frac{1}{n^2} $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">7. Excited State</h1>    
+    <div class="box"><span class="eng-txt">English:</span> Any energy level higher than the ground state where an electron moves after absorbing energy.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Ground state se upar wala koi bhi level jahan electron energy lekar pahunchta hai.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>This state is unstable for the electron.</li>    
+            <li>Electron stays here for a very short time ($10^{-8}$ s).</li>    
+            <li>It returns to a lower state by emitting a photon.</li>    
+            <li>Requires external energy (heat, light) to reach.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ \text{Unstable State} $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">8. Ground State</h1>    
+    <div class="box"><span class="eng-txt">English:</span> The lowest energy state of an atom where electrons are most stable (n=1).</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Atom ka sabse niche wala energy level jahan electron sabse shant rehta hai.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>For Hydrogen, Ground state energy is $-13.6 \, eV$.</li>    
+            <li>This is the most stable configuration.</li>    
+            <li>Electrons naturally try to stay in this level.</li>    
+            <li>No energy is radiated in this state.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ E_1 = -13.6 \, eV $$</div>    
+</div>    
+
+<div class="topic-page">    
+    <h1 class="topic-title">9. Limitations of Bohr Theory</h1>    
+    <div class="box"><span class="eng-txt">English:</span> Flaws in Bohr's model that it couldn't explain for complex atoms.</div>    
+    <div class="box"><span class="hin-txt">Hindi:</span> Bohr model ki wo kamiyan jo bade atoms par apply nahi hoti thin.</div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Valid only for Hydrogen-like atoms (single electron).</li>    
+            <li>Couldn't explain the Zeeman effect (magnetic field split).</li>    
+            <li>Couldn't explain the Stark effect (electric field split).</li>    
+            <li>Violates Heisenberg Uncertainty Principle.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ \text{H-like atoms only} $$</div>    
+</div>
+<div class="topic-page">    
+    <h1 class="topic-title">de Broglie Connection</h1>    
+    <div class="box">
+        <span class="eng-txt">de Broglie Explanation of Bohr Model:</span> 
+        Louis de Broglie explained Bohr's quantization of angular momentum by proposing that electrons behave as standing waves in circular orbits.
+    </div>    
+    <div class="box">
+        <span class="hin-txt">Hindi:</span> 
+        de Broglie ne samjhaya ki Bohr ka model isliye sahi hai kyunki electron orbit mein ek "standing wave" ki tarah vyavhaar karta hai.
+    </div>    
+    <div class="key-points">    
+        <ul>    
+            <li>Only those orbits are stable where the circumference is an integral multiple of the wavelength ($2\pi r = n\lambda$).</li>    
+            <li>Combining this with $\lambda = h/p$ gives Bohr's postulate: $mvr = nh/2\pi$.</li>    
+            <li>It justifies why electrons can only stay in specific "quantized" orbits.</li>    
+            <li>This provided a theoretical wave-nature basis for Bohr's atomic model.</li>    
+        </ul>    
+    </div>    
+    <div class="formula-box">$$ 2\pi r_n = n\lambda $$</div>    
+</div>
+    </div> 
+    <div style="text-align:center; margin-bottom:20px;">
+    <h1 style="color:#00f7ff; font-family:sans-serif; text-transform:uppercase; text-shadow:0 0 10px #00f7ff;">Atoms (Chapter 12) Practice</h1>
+    <p style="color:#FFD700; font-family:sans-serif; font-weight:bold;">Click to choose correct answer</p>
+</div>
+
+<div id="quiz-box" style="max-width:600px; margin:auto; position:relative; z-index:1;"></div>
+
+<div id="quiz-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; z-index:9999; flex-direction:column; align-items:center; justify-content:center; pointer-events:none;">
+    <div id="status-strip" style="width:100%; text-align:center; padding:30px 0;">
+        <h1 id="status-title" style="margin:0; padding:0;"></h1>
+        <p id="status-message" style="margin:10px 0; font-family:sans-serif; font-weight:bold;"></p>
+        <p id="next-msg" style="margin:0; font-family:sans-serif;"></p>
+    </div>
+</div>
+
+<style>
+/* 8 Color RGB Animation */
+@keyframes rgb-8-glow {
+    0% { border-color: #00f7ff; box-shadow: 0 0 10px #00f7ff; } /* Cyan */
+    12.5% { border-color: #ff00c8; box-shadow: 0 0 10px #ff00c8; } /* Pink */
+    25% { border-color: #48ff00; box-shadow: 0 0 10px #48ff00; } /* Green */
+    37.5% { border-color: #ffff00; box-shadow: 0 0 10px #ffff00; } /* Yellow */
+    50% { border-color: #ff8c00; box-shadow: 0 0 10px #ff8c00; } /* Orange */
+    62.5% { border-color: #9400d3; box-shadow: 0 0 10px #9400d3; } /* Purple */
+    75% { border-color: #ff0000; box-shadow: 0 0 10px #ff0000; } /* Red */
+    87.5% { border-color: #0000ff; box-shadow: 0 0 10px #0000ff; } /* Blue */
+    100% { border-color: #00f7ff; box-shadow: 0 0 10px #00f7ff; }
+}
+
+.quiz-card {
+    background: rgba(255,255,255,0.05); 
+    padding: 20px; 
+    margin: 15px 0; 
+    border-radius: 15px; 
+    border: 3px solid #00f7ff; 
+    animation: rgb-8-glow 6s linear infinite;
+}
+
+.opt-btn {
+    display: block; 
+    width: 100%; 
+    margin: 12px 0; 
+    padding: 15px; 
+    background: rgba(255,255,255,0.08); 
+    color: #fff; 
+    border: 2px solid #00f7ff; 
+    border-radius: 12px; 
+    text-align: left; 
+    font-weight: 600; 
+    cursor: pointer;
+    animation: rgb-8-glow 5s linear infinite;
+    transition: 0.3s;
+}
+.opt-btn:hover { background: rgba(255,255,255,0.2); }
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+const questions = [
+    { q:"Alpha-particle scattering experiment was performed by:", opts:["J.J. Thomson","Rutherford","Dalton","Bohr"], ans:1 },
+    { q:"The size of nucleus is of the order of:", opts:["10⁻¹⁰ m","10⁻¹⁵ m","10⁻⁸ m","10⁻¹² m"], ans:1 },
+    { q:"Most of the mass of an atom is concentrated in:", opts:["Electrons","Nucleus","Orbits","Empty space"], ans:1 },
+    { q:"Distance of closest approach depends on:", opts:["Mass","Charge","Velocity","All of these"], ans:3 },
+    { q:"In Bohr's model, angular momentum is quantized as:", opts:["nh/2π","h/2π","n²h/2π","nh/π"], ans:0 },
+    { q:"The energy of an electron in the ground state of Hydrogen is:", opts:["-13.6 eV","13.6 eV","-3.4 eV","0 eV"], ans:0 },
+    { q:"Balmer series of Hydrogen spectrum lies in:", opts:["Ultraviolet","Infrared","Visible","X-rays"], ans:2 },
+    { q:"Lyman series lies in which region?", opts:["Visible","Infrared","Ultraviolet","Far-infrared"], ans:2 },
+    { q:"The radius of an orbit is proportional to:", opts:["n","n²","1/n","1/n²"], ans:1 },
+    { q:"When electron jumps from n=2 to n=1, it emits:", opts:["Energy","Mass","Alpha particle","Proton"], ans:0 },
+    { q:"The spectrum of Hydrogen atom is:", opts:["Continuous","Band","Line","None"], ans:2 },
+    { q:"Rydberg constant (R) value is approximately:", opts:["1.097 x 10⁷ m⁻¹","6.63 x 10⁻³⁴","9.1 x 10⁻³¹","1.6 x 10⁻¹⁹"], ans:0 },
+    { q:"Total energy of electron in an orbit is:", opts:["Positive","Zero","Negative","Infinite"], ans:2 },
+    { q:"Impact parameter (b) for head-on collision is:", opts:["Maximum","Minimum","Zero","Infinite"], ans:2 },
+    { q:"Ratio of KE to Total Energy in Bohr's orbit is:", opts:["1:1","1:-1","2:1","1:-2"], ans:1 },
+    { q:"The first excitation potential of Hydrogen is:", opts:["13.6 V","10.2 V","3.4 V","1.5 V"], ans:1 },
+    { q:"Velocity of electron in n-th orbit is proportional to:", opts:["n","n²","1/n","1/n²"], ans:2 },
+    { q:"Paschen series lies in:", opts:["Visible","UV","Infrared","None"], ans:2 },
+    { q:"Bohr's model is valid for:", opts:["He atom","H-like atoms","All atoms","Nucleus"], ans:1 },
+    { q:"Ionization energy of Hydrogen atom is:", opts:["13.6 eV","-13.6 eV","10.2 eV","0 eV"], ans:0 },
+    { q:"The number of spectral lines when electron jumps from n=4 to n=1 is:", opts:["3","4","6","10"], ans:2 },
+    { q:"The concept of 'Stationary Orbits' was given by:", opts:["Rutherford","Bohr","Thomson","Sommerfeld"], ans:1 },
+    { q:"Radius of 1st Bohr orbit of Hydrogen is:", opts:["0.53 Å","5.3 Å","0.053 Å","53 Å"], ans:0 },
+    { q:"In Bohr's formula, E is proportional to:", opts:["Z/n","Z²/n²","Z/n²","Z²/n"], ans:1 },
+    { q:"The series of lines ending at n=3 is called:", opts:["Lyman","Balmer","Paschen","Pfund"], ans:2 },
+    { q:"Potential Energy of electron in Hydrogen atom is:", opts:["-ke²/r","+ke²/r","ke²/2r","-ke²/2r"], ans:0 },
+    { q:"The wave number is equal to:", opts:["λ","1/λ","c/λ","h/λ"], ans:1 },
+    { q:"According to Bohr, electrons radiate energy when:", opts:["Moving in orbit","Jumping levels","Staying at rest","None"], ans:1 },
+    { q:"Brackett series lies in:", opts:["Visible","UV","Near IR","Far IR"], ans:3 },
+    { q:"The ratio of radii of first three Bohr orbits is:", opts:["1:2:3","1:4:9","1:8:27","1:1:1"], ans:1 },
+    { q:"Kinetic Energy of electron in an orbit is:", opts:["Positive","Negative","Zero","Imaginary"], ans:0 },
+    { q:"Which series is not in the IR region?", opts:["Paschen","Pfund","Lyman","Brackett"], ans:2 },
+    { q:"The largest wavelength in Balmer series is for transition:", opts:["n=3 to n=2","n=∞ to n=2","n=2 to n=1","n=4 to n=2"], ans:0 },
+    { q:"Rutherford model could not explain:", opts:["Nucleus","Stability of atom","Alpha scattering","Mass of atom"], ans:1 },
+    { q:"What is the charge of an alpha particle?", opts:["+e","+2e","-e","Zero"], ans:1 },
+    { q:"Thomson's model is also known as:", opts:["Nuclear model","Plum pudding model","Planetary model","Quantum model"], ans:1 },
+    { q:"Bohr radius is the radius of orbit for:", opts:["n=0","n=1","n=∞","n=2"], ans:1 },
+    { q:"Angular momentum is a vector quantity along:", opts:["Radius","Tangent","Axis of rotation","None"], ans:2 },
+    { q:"Transition from n=5 to n=2 gives a line in:", opts:["Lyman","Balmer","Paschen","Pfund"], ans:1 },
+    { q:"Value of h/2π is also called:", opts:["Rydberg constant","Reduced Planck's constant","Bohr magneton","None"], ans:1 },
+    { q:"Energy required to remove an electron is:", opts:["Excitation energy","Binding energy","Kinetic energy","Potential energy"], ans:1 },
+    { q:"Maximum frequency is for transition:", opts:["n=2 to n=1","n=3 to n=2","n=4 to n=3","n=5 to n=4"], ans:0 },
+    { q:"Frequency of revolution in n-th orbit is proportional to:", opts:["n³","1/n³","n²","1/n²"], ans:1 },
+    { q:"Centripetal force in Bohr's atom is provided by:", opts:["Gravity","Magnetism","Electrostatic force","Friction"], ans:2 },
+    { q:"Pfund series starts from transition from n=:", opts:["5","6","4","Infinity"], ans:1 },
+    { q:"Mass of alpha particle is approx ______ times of proton.", opts:["2","4","1836","1"], ans:1 },
+    { q:"The atom is electrically ______.", opts:["Positive","Negative","Neutral","Ionized"], ans:2 },
+    { q:"Quantization of orbits was explained by:", opts:["Newton","de Broglie","Maxwell","Einstein"], ans:1 },
+    { q:"Excited hydrogen atom emits radiation in:", opts:["Visible only","All regions","UV only","Infrared only"], ans:1 },
+    { q:"Ground state energy of He+ ion is:", opts:["-13.6 eV","-54.4 eV","-27.2 eV","-3.4 eV"], ans:1 }
+];
+
+const quizBox = document.getElementById('quiz-box');
+
+questions.forEach((item, index) => {
+    let card = document.createElement('div');
+    card.className = "quiz-card";
+    card.innerHTML = `<p style="color:#FFD700; font-size:18px; font-weight:bold;">Q${index+1}. ${item.q}</p>`;
+
+    item.opts.forEach((opt, oIdx) => {
+        let btn = document.createElement('button');
+        btn.innerText = opt;
+        btn.className = "opt-btn";
+        btn.onclick = () => {
+            const overlay = document.getElementById('quiz-overlay');
+            const title = document.getElementById('status-title');
+            const msg = document.getElementById('status-message');
+            const nxt = document.getElementById('next-msg');
+            const strip = document.getElementById('status-strip');
+
+            overlay.style.display = "flex";
+            overlay.style.pointerEvents = "auto"; 
+
+            if(oIdx === item.ans){
+                overlay.style.background = "rgba(0,0,0,0.85)";
+                strip.style.background = "transparent";
+                title.style.cssText = "font-family:'Dancing Script', cursive; color:#fff; font-size:60px; text-shadow:0 0 20px #00f7ff, 0 0 40px #00f7ff;";
+                title.innerText = "Congratulations";
+                msg.innerText = "Excellent! You are an Atom Expert.";
+                msg.style.color = "#00f7ff";
+                nxt.innerText = "Moving to next question...";
+
+                var end = Date.now() + 1500;
+                var colors = ['#00f7ff','#ff00c8','#48ff00','#ffff00','#ff8c00','#9400d3','#ff0000','#0000ff'];
+                (function frame(){
+                    confetti({particleCount:15,angle:60,spread:65,origin:{x:0},colors:colors, zIndex: 999999});
+                    confetti({particleCount:15,angle:120,spread:65,origin:{x:1},colors:colors, zIndex: 999999});
+                    if(Date.now() < end) requestAnimationFrame(frame);
+                })();
+            } else {
+                overlay.style.background = "radial-gradient(rgba(139,0,0,0.5) 10%, rgba(0,0,0,0.85) 90%)";
+                strip.style.background = "rgba(0,0,0,0.6)";
+                title.style.cssText = "font-family:'Oswald', sans-serif; color:red; font-size:80px; font-weight:900; letter-spacing:10px; text-shadow:4px 4px 0px #000;";
+                title.innerText = "WASTED";
+                msg.innerText = "Wrong Answer! Focus on the Orbits.";
+                msg.style.color = "#fff";
+                nxt.innerText = "";
+            }
+
+            setTimeout(() => {
+                overlay.style.display = "none";
+                overlay.style.pointerEvents = "none"; 
+            }, 2500);
+        };
+        card.appendChild(btn);
+    });
+    quizBox.appendChild(card);
+});
+});
+</script>
+<div style="text-align:center; margin-bottom:20px;">
+    <h1 style="color:#00f7ff; font-family:sans-serif; text-transform:uppercase; text-shadow:0 0 15px #00f7ff;">Topper's Trap: Q51 - Q100 (Atoms)</h1>
+    <p style="color:#ffffff; font-family:sans-serif; font-weight:bold;">Warning: Options are Tricky! Soch samajh kar click kar.</p>
+</div>
+
+<div id="quiz-box" style="max-width:600px; margin:auto; position:relative; z-index:1;"></div>
+
+<div id="quiz-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; z-index:9999; flex-direction:column; align-items:center; justify-content:center; pointer-events:none;">
+    <div id="status-strip" style="width:100%; text-align:center; padding:30px 0;">
+        <h1 id="status-title"></h1>
+        <p id="status-message" style="font-weight:bold;"></p>
+        <p id="next-msg"></p>
+    </div>
+</div>
+
+<style>
+@keyframes rgb-8-glow {
+    0% { border-color: #00f7ff; box-shadow: 0 0 10px #00f7ff; }
+    12.5% { border-color: #ff00c8; box-shadow: 0 0 10px #ff00c8; }
+    25% { border-color: #48ff00; box-shadow: 0 0 10px #48ff00; }
+    37.5% { border-color: #ffff00; box-shadow: 0 0 10px #ffff00; }
+    50% { border-color: #ff8c00; box-shadow: 0 0 10px #ff8c00; }
+    62.5% { border-color: #9400d3; box-shadow: 0 0 10px #9400d3; }
+    75% { border-color: #ff0000; box-shadow: 0 0 10px #ff0000; }
+    87.5% { border-color: #0000ff; box-shadow: 0 0 10px #0000ff; }
+    100% { border-color: #00f7ff; box-shadow: 0 0 10px #00f7ff; }
+}
+
+.quiz-card {
+    background: linear-gradient(145deg, #0f2027, #203a43, #2c5364); 
+    padding: 20px; 
+    margin: 15px 0; 
+    border-radius: 15px; 
+    border: 3px solid #00f7ff; 
+    animation: rgb-8-glow 6s linear infinite;
+}
+
+.opt-btn {
+    display: block; 
+    width: 100%; 
+    margin: 10px 0; 
+    padding: 14px; 
+    background: rgba(255,255,255,0.05); 
+    color: #fff; 
+    border: 2px solid #00f7ff; 
+    border-radius: 10px; 
+    text-align: left; 
+    font-weight: 600; 
+    cursor: pointer;
+    animation: rgb-8-glow 5s linear infinite;
+}
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+const questions = [
+    {q:"If electron moves from n=2 to n=4, the energy is:",opts:["Emitted","Absorbed","Remains same","Converted to mass"],ans:1},
+    {q:"The ratio of KE to PE of an electron in Bohr orbit is:",opts:["1 : 2","1 : -2","-1 : 2","2 : 1"],ans:2},
+    {q:"Bohr's model is NOT applicable to:",opts:["H-atom","He+ ion","Li++ ion","Neutral Helium"],ans:3},
+    {q:"Wavelength of the first line of Lyman series is approx:",opts:["912 Å","1216 Å","1026 Å","6563 Å"],ans:1},
+    {q:"What happens to the velocity of electron if 'n' is doubled?",opts:["Doubles","Halved","Four times","No change"],ans:1},
+    {q:"The energy required to ionize H-atom from n=2 state is:",opts:["13.6 eV","10.2 eV","3.4 eV","1.51 eV"],ans:2},
+    {q:"Angular momentum in 2nd orbit is 'L'. In 4th orbit, it will be:",opts:["L","2L","4L","L/2"],ans:1},
+    {q:"The spectrum of atoms is a proof of:",opts:["Wave nature","Quantized energy levels","Continuous energy","Particle nature"],ans:1},
+    {q:"In Rutherford scattering, impact parameter b=0 means θ is:",opts:["0°","90°","180°","45°"],ans:2},
+    {q:"The force keeping electrons in orbit is:",opts:["Magnetic","Centrifugal","Electrostatic","Gravitational"],ans:2},
+    {q:"Radius of 2nd orbit compared to 1st orbit is:",opts:["Double","Triple","4 times","Half"],ans:2},
+    {q:"Which series lies in the Visible region?",opts:["Lyman","Paschen","Balmer","Brackett"],ans:2},
+    {q:"If an alpha particle hits nucleus head-on, its KE at closest approach is:",opts:["Maximum","Zero","Negative","Half"],ans:1},
+    {q:"The ground state energy of Li++ ion is:",opts:["-13.6 eV","-40.8 eV","-122.4 eV","-27.2 eV"],ans:2},
+    {q:"Series limit wavelength refers to transition from n=:",opts:["1","2","Infinity","10"],ans:2},
+    {q:"Frequency of emitted photon is highest for:",opts:["n=2 to 1","n=3 to 2","n=4 to 3","n=10 to 2"],ans:0},
+    {q:"Bohr's postulate $mvr = nh/2π$ is based on:",opts:["Conservation of Mass","Quantization of Momentum","Relativity","Lenz's Law"],ans:1},
+    {q:"The distance between levels as 'n' increases:",opts:["Increases","Decreases","Constant","Becomes zero"],ans:1},
+    {q:"Rydberg constant R has dimensions of:",opts:["Length","1/Length","Energy","Time"],ans:1},
+    {q:"Potential Energy of electron is:",opts:["Positive","Zero","Negative","Always 13.6"],ans:2},
+    {q:"If n increases, the Time Period of electron:",opts:["Decreases","Increases","Constant","First increases then decreases"],ans:1},
+    {q:"Which series is NOT in the Infrared region?",opts:["Paschen","Brackett","Pfund","Lyman"],ans:3},
+    {q:"Ratio of radii of n=1 and n=2 orbits in H-atom is:",opts:["1:2","2:1","1:4","4:1"],ans:2},
+    {q:"Excitation potential for n=1 to n=2 in H-atom is:",opts:["13.6 V","10.2 V","3.4 V","1.89 V"],ans:1},
+    {q:"Mass of nucleus is approx how many times of electron?",opts:["10","100","2000","8000"],ans:2},
+    {q:"Total energy of electron in 1st excited state of H-atom:",opts:["-13.6 eV","-3.4 eV","-1.51 eV","-0.85 eV"],ans:1},
+    {q:"Who discovered the nucleus?",opts:["Thomson","Bohr","Rutherford","Chadwick"],ans:2},
+    {q:"Stability of atom was first properly explained by:",opts:["Dalton","Rutherford","Bohr","Newton"],ans:2},
+    {q:"The $H_\gamma$ line in Balmer series is due to n=:",opts:["3 to 2","4 to 2","5 to 2","6 to 2"],ans:2},
+    {q:"Binding energy is always:",opts:["Positive","Negative","Zero","Infinite"],ans:0},
+    {q:"Ratio of speed of light to speed of electron in 1st orbit is:",opts:["1","137","2","3000"],ans:1},
+    {q:"Spectral lines are sharp because levels are:",opts:["Broad","Quantized","Continuous","Moving"],ans:1},
+    {q:"Which shell corresponds to n=3?",opts:["K","L","M","N"],ans:2},
+    {q:"Atoms are mostly:",opts:["Solid","Liquid","Empty space","Electrons"],ans:2},
+    {q:"Value of Bohr radius $a_0$ is approx:",opts:["0.53 cm","0.53 Å","0.53 m","0.53 mm"],ans:1},
+    {q:"If an atom loses an electron, it becomes:",opts:["Negative ion","Positive ion","Neutral","Isotope"],ans:1},
+    {q:"Angular momentum is a ______ multiple of $h/2π$.",opts:["Fractional","Integral","Zero","Square"],ans:1},
+    {q:"The 'Excited State' is:",opts:["Stable","Unstable","Permanent","Ground"],ans:1},
+    {q:"Wave number unit is:",opts:["m","m/s","m⁻¹","s⁻¹"],ans:2},
+    {q:"In $E_n = -13.6/n^2$, the unit is:",opts:["Joules","Watts","eV","Newtons"],ans:2},
+    {q:"Transitions to n=4 belong to:",opts:["Paschen","Brackett","Pfund","Lyman"],ans:1},
+    {q:"Electron jump from n=4 to n=2 emits how many Balmer lines?",opts:["1","2","3","4"],ans:0},
+    {q:"Isotope has same number of:",opts:["Neutrons","Protons","Nucleons","Mass"],ans:1},
+    {q:"Bohr's theory fails for:",opts:["H-atom","He+ ion","Oxygen atom","Li++ ion"],ans:2},
+    {q:"Kinetic energy formula is:",opts:["-Total Energy","PE / 2","Both A and B","None"],ans:0},
+    {q:"Alpha particle is a ______ nucleus.",opts:["Hydrogen","Helium","Lithium","Beryllium"],ans:1},
+    {q:"Balmer series limit wavelength is approx:",opts:["3646 Å","6563 Å","1216 Å","912 Å"],ans:0},
+    {q:"Centripetal force is $mv^2/r$. In atom, it equals:",opts:["mg","ke²/r²","BIl","qE"],ans:1},
+    {q:"Atomic spectra is used for:",opts:["Cooking","Chemical analysis","X-rays","None"],ans:1},
+    {q:"Total number of lines for jump n=3 to 1 is:",opts:["1","2","3","4"],ans:2}
+];
+
+const quizBox = document.getElementById('quiz-box');
+
+questions.forEach((item, index) => {
+    let card = document.createElement('div');
+    card.className = "quiz-card";
+    card.innerHTML = `<p style="color:#00ffcc; font-size:18px; font-weight:bold;">Q${index+51}. ${item.q}</p>`;
+
+    item.opts.forEach((opt, oIdx) => {
+        let btn = document.createElement('button');
+        btn.innerText = opt;
+        btn.className = "opt-btn";
+
+        btn.onclick = () => {
+            const overlay = document.getElementById('quiz-overlay');
+            const title = document.getElementById('status-title');
+            const msg = document.getElementById('status-message');
+            const nxt = document.getElementById('next-msg');
+            const strip = document.getElementById('status-strip');
+
+            overlay.style.display = "flex";
+            overlay.style.pointerEvents = "auto"; 
+
+            if(oIdx === item.ans){
+                overlay.style.background = "rgba(0,0,0,0.85)";
+                strip.style.background = "transparent";
+                title.style.cssText = "font-family:'Dancing Script', cursive; color:#fff; font-size:60px; text-shadow:0 0 20px #00f7ff, 0 0 40px #00f7ff;";
+                title.innerText = "Physics Master";
+                msg.innerText = "Kya baat hai! Trap se bach gaya.";
+                msg.style.color = "#00f7ff";
+                nxt.innerText = "Next conceptual challenge...";
+
+                var end = Date.now() + 1500;
+                var colors = ['#00f7ff','#ff00c8','#48ff00','#ffff00','#ff8c00','#9400d3','#ff0000','#0000ff'];
+                (function frame(){
+                    confetti({particleCount:15,angle:60,spread:65,origin:{x:0},colors:colors, zIndex: 999999});
+                    confetti({particleCount:15,angle:120,spread:65,origin:{x:1},colors:colors, zIndex: 999999});
+                    if(Date.now() < end) requestAnimationFrame(frame);
+                })();
+            } else {
+                overlay.style.background = "radial-gradient(rgba(139,0,0,0.5) 10%, rgba(0,0,0,0.85) 90%)";
+                strip.style.background = "rgba(0,0,0,0.6)";
+                strip.style.width = "100%";
+                strip.style.padding = "30px 0";
+                title.style.cssText = "font-family:'Oswald', sans-serif; color:red; font-size:80px; font-weight:900; letter-spacing:10px; text-shadow:4px 4px 0px #000;";
+                title.innerText = "WASTED";
+                msg.innerText = "Trap mein phans gaya! Focus kar.";
+                msg.style.color = "#fff";
+                nxt.innerText = "";
+            }
+
+            setTimeout(() => {
+                overlay.style.display = "none";
+                overlay.style.pointerEvents = "none"; 
+            }, 2500);
+        };
+        card.appendChild(btn);
+    });
+    quizBox.appendChild(card);
+});
+});
+</script>
+<div id="long-questions-atoms" style="max-width:800px; margin:auto; font-family:Arial, sans-serif;">
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px; box-shadow: 0 10px 15px rgba(0,0,0,0.3);">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q1. State Bohr's three postulates for the model of a Hydrogen atom.</p>
+        <button onclick="toggleQ('ans1')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Explanation</button>
+        <div id="ans1" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:1.8;">
+            1. Electrons revolve in stable circular orbits around the nucleus.<br>
+            2. They do not radiate energy while in these stationary orbits.<br>
+            3. Angular momentum is quantized: <b>L = n &times; <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">h</td></tr><tr><td>2&pi;</td></tr></table></b>.<br>
+            4. Transition happens only when energy is absorbed or emitted.<br>
+            5. Energy of photon <b>h&nu; = E<sub>2</sub> - E<sub>1</sub></b>.<br>
+            6. Only certain orbits (permissible orbits) are allowed.<br>
+            7. The nucleus is considered to be at the center and massive.<br>
+            8. Electrostatic force provides the necessary centripetal force.<br>
+            9. This model explains the stability of the Hydrogen atom.<br>
+            10. It accounts for the discrete line spectrum of Hydrogen.
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q2. Derive the expression for the Radius of the n-th Bohr orbit of Hydrogen atom.</p>
+        <button onclick="toggleQ('ans2')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ans2" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:2;">
+            1. Centripetal force = Electrostatic force.<br>
+            2. <b><table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">mv<sup>2</sup></td></tr><tr><td>r</td></tr></table> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1</td></tr><tr><td>4&pi;&epsilon;<sub>0</sub></td></tr></table> &times; <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">e<sup>2</sup></td></tr><tr><td>r<sup>2</sup></td></tr></table></b>.<br>
+            3. Bohr's quantization: <b>v = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">nh</td></tr><tr><td>2&pi;mr</td></tr></table></b>.<br>
+            4. Substitute the value of <b>v</b> in the force equation.<br>
+            5. Rearranging for <b>r</b> leads to the final expression.<br>
+            6. <b>Final Result:</b>
+            <div style="text-align:center; padding:10px;">
+                <b>r<sub>n</sub> = <table style="display:inline-table; vertical-align:middle; color:#48ff00;"><tr><td style="border-bottom:1px solid #48ff00;">n<sup>2</sup> h<sup>2</sup> &epsilon;<sub>0</sub></td></tr><tr><td>&pi; m e<sup>2</sup></td></tr></table></b>
+            </div>
+            7. Here <b>n</b> is the principal quantum number.<br>
+            8. Radius is directly proportional to <b>n<sup>2</sup></b>.<br>
+            9. For Hydrogen (n=1), it's called Bohr radius (0.53 Å).<br>
+            10. This proves orbits are spaced non-uniformly.
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q3. Derive the expression for Total Energy of an electron in the n-th Bohr orbit.</p>
+        <button onclick="toggleQ('ans3')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ans3" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:2.2;">
+            1. Total Energy (E) = Kinetic Energy (K) + Potential Energy (U).<br>
+            2. KE <b>K = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">e<sup>2</sup></td></tr><tr><td>8&pi;&epsilon;<sub>0</sub>r</td></tr></table></b>.<br>
+            3. PE <b>U = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">-e<sup>2</sup></td></tr><tr><td>4&pi;&epsilon;<sub>0</sub>r</td></tr></table></b>.<br>
+            4. Total Energy <b>E = K + U = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">-e<sup>2</sup></td></tr><tr><td>8&pi;&epsilon;<sub>0</sub>r</td></tr></table></b>.<br>
+            5. Substitute the expression for radius <b>r<sub>n</sub></b>.<br>
+            6. After simplification, we get the energy formula.<br>
+            7. <b>Final Result:</b>
+            <div style="text-align:center; padding:10px;">
+                <b>E<sub>n</sub> = <table style="display:inline-table; vertical-align:middle; color:#48ff00;"><tr><td style="border-bottom:1px solid #48ff00;">-me<sup>4</sup></td></tr><tr><td>8&epsilon;<sub>0</sub><sup>2</sup> n<sup>2</sup> h<sup>2</sup></td></tr></table></b>
+            </div>
+            8. The negative sign shows that electron is bound to nucleus.<br>
+            9. For Hydrogen ground state, <b>E = -13.6 eV</b>.<br>
+            10. Energy increases (becomes less negative) as <b>n</b> increases.
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q4. Explain the origin of Spectral Series of Hydrogen atom based on Bohr's theory.</p>
+        <button onclick="toggleQ('ans4')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Analysis</button>
+        <div id="ans4" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:1.8;">
+            1. Spectral lines occur when electron jumps between levels.<br>
+            2. Wave number: <b><table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1</td></tr><tr><td>&lambda;</td></tr></table> = R <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:2px solid #fff;">( 1 - 1 )</td></tr><tr><td>n<sub>1</sub><sup>2</sup> n<sub>2</sub><sup>2</sup></td></tr></table></b>.<br>
+            3. <b>Lyman Series:</b> n<sub>1</sub> = 1, n<sub>2</sub> = 2, 3... (UV Region).<br>
+            4. <b>Balmer Series:</b> n<sub>1</sub> = 2, n<sub>2</sub> = 3, 4... (Visible Region).<br>
+            5. <b>Paschen Series:</b> n<sub>1</sub> = 3, n<sub>2</sub> = 4, 5... (Infrared Region).<br>
+            6. <b>Brackett Series:</b> n<sub>1</sub> = 4, n<sub>2</sub> = 5, 6... (Infrared Region).<br>
+            7. <b>Pfund Series:</b> n<sub>1</sub> = 5, n<sub>2</sub> = 6, 7... (Infrared Region).<br>
+            8. R is Rydberg constant approx 1.097 &times; 10<sup>7</sup> m<sup>-1</sup>.<br>
+            9. Transitions to n=1 have highest energy photons.<br>
+            10. This discrete emission confirms quantization of levels.
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q5. How did de-Broglie explain Bohr's second postulate of quantization of angular momentum?</p>
+        <button onclick="toggleQ('ans5')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ans5" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:2.2;">
+            1. de-Broglie suggested electrons act as stationary waves.<br>
+            2. Only those orbits are stable where circumference is a whole multiple of wavelength.<br>
+            3. Condition: <b>2&pi;r = n&lambda;</b>.<br>
+            4. According to de-Broglie: <b>&lambda; = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">h</td></tr><tr><td>mv</td></tr></table></b>.<br>
+            5. Substitute value of <b>&lambda;</b> in circumference equation.<br>
+            6. <b>2&pi;r = n &times; <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">h</td></tr><tr><td>mv</td></tr></table></b>.<br>
+            7. Rearranging the terms: <b>mvr = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">nh</td></tr><tr><td>2&pi;</td></tr></table></b>.<br>
+            8. This is exactly Bohr's second postulate.<br>
+            9. It provides a wave-mechanical basis for the atom model.<br>
+            10. Non-integer orbits are not possible because waves would cancel out.
+        </div>
+    </div>
+
+</div>
+
+<script>
+function toggleQ(id) {
+    var x = document.getElementById(id);
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+</script>
+
+<style>
+@keyframes moveBg { 
+    0% { background-position: 0% 50%; } 
+    50% { background-position: 100% 50%; } 
+    100% { background-position: 0% 50%; } 
+}
+</style>
+<div id="long-questions-atoms-part2" style="max-width:800px; margin:auto; font-family:Arial, sans-serif;">
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px; box-shadow: 0 10px 15px rgba(0,0,0,0.3);">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q6. Establish the relationship between Kinetic Energy, Potential Energy, and Total Energy of an electron.</p>
+        <button onclick="toggleQ('ans6')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ans6" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:2;">
+            1. Electrostatic force provides centripetal force: <b><table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">mv<sup>2</sup></td></tr><tr><td>r</td></tr></table> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">e<sup>2</sup></td></tr><tr><td>4&pi;&epsilon;<sub>0</sub>r<sup>2</sup></td></tr></table></b>.<br>
+            2. From this, <b>mv<sup>2</sup> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">e<sup>2</sup></td></tr><tr><td>4&pi;&epsilon;<sub>0</sub>r</td></tr></table></b>.<br>
+            3. Kinetic Energy <b>K = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1</td></tr><tr><td>2</td></tr></table> mv<sup>2</sup> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">e<sup>2</sup></td></tr><tr><td>8&pi;&epsilon;<sub>0</sub>r</td></tr></table></b>.<br>
+            4. Potential Energy <b>U = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">-e<sup>2</sup></td></tr><tr><td>4&pi;&epsilon;<sub>0</sub>r</td></tr></table></b>.<br>
+            5. Total Energy <b>E = K + U = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">e<sup>2</sup></td></tr><tr><td>8&pi;&epsilon;<sub>0</sub>r</td></tr></table> - <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">e<sup>2</sup></td></tr><tr><td>4&pi;&epsilon;<sub>0</sub>r</td></tr></table></b>.<br>
+            6. Simplifying gives <b>E = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">-e<sup>2</sup></td></tr><tr><td>8&pi;&epsilon;<sub>0</sub>r</td></tr></table></b>.<br>
+            7. Relation 1: <b>E = -K</b> (Total energy is negative of KE).<br>
+            8. Relation 2: <b>K = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">-U</td></tr><tr><td>2</td></tr></table></b> (KE is half of negative PE).<br>
+            9. Relation 3: <b>E = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">U</td></tr><tr><td>2</td></tr></table></b> (Total energy is half of PE).<br>
+            10. This explains why bound electrons have negative total energy.
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q7. Derive the expression for the Velocity of an electron in the n-th Bohr orbit.</p>
+        <button onclick="toggleQ('ans7')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ans7" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:2.2;">
+            1. Bohr's quantization condition: <b>mvr = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">nh</td></tr><tr><td>2&pi;</td></tr></table></b>.<br>
+            2. From force balance: <b>mv<sup>2</sup>r = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">e<sup>2</sup></td></tr><tr><td>4&pi;&epsilon;<sub>0</sub></td></tr></table></b>.<br>
+            3. Divide the force equation by the quantization equation.<br>
+            4. <b><table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">mv<sup>2</sup>r</td></tr><tr><td>mvr</td></tr></table> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">e<sup>2</sup> / 4&pi;&epsilon;<sub>0</sub></td></tr><tr><td>nh / 2&pi;</td></tr></table></b>.<br>
+            5. This simplifies directly to the velocity formula.<br>
+            6. <b>Final Result:</b>
+            <div style="text-align:center; padding:10px;">
+                <b>v<sub>n</sub> = <table style="display:inline-table; vertical-align:middle; color:#48ff00;"><tr><td style="border-bottom:1px solid #48ff00;">e<sup>2</sup></td></tr><tr><td>2 &epsilon;<sub>0</sub> n h</td></tr></table></b>
+            </div>
+            7. Velocity is inversely proportional to <b>n</b> (v &propto; 1/n).<br>
+            8. As the electron moves to outer orbits, its speed decreases.<br>
+            9. For n=1, velocity is approximately <b><table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">c</td></tr><tr><td>137</td></tr></table></b>.<br>
+            10. This formula is valid for all Hydrogen-like atoms.
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q8. Describe Rutherford's Alpha-particle scattering experiment and its observations.</p>
+        <button onclick="toggleQ('ans8')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Analysis</button>
+        <div id="ans8" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:1.8;">
+            1. High-energy Alpha particles were bombarded on a thin gold foil.<br>
+            2. A Zinc Sulphide screen was used to detect scattered particles.<br>
+            3. <b>Observation 1:</b> Most particles passed straight without deviation.<br>
+            4. <b>Observation 2:</b> Some particles were scattered by small angles.<br>
+            5. <b>Observation 3:</b> Very few (1 in 8000) rebounded back at 180°.<br>
+            6. <b>Conclusion 1:</b> Most of the space inside the atom is empty.<br>
+            7. <b>Conclusion 2:</b> Positive charge is concentrated in a tiny center.<br>
+            8. <b>Conclusion 3:</b> This center is very dense and called the Nucleus.<br>
+            9. Number of scattered particles <b>N &propto; <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1</td></tr><tr><td>sin<sup>4</sup>(&theta;/2)</td></tr></table></b>.<br>
+            10. This experiment disproved Thomson's Plum Pudding model.
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q9. Derive the expression for the Distance of Closest Approach of an alpha particle.</p>
+        <button onclick="toggleQ('ans9')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ans9" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:2.2;">
+            1. At the distance of closest approach (r<sub>0</sub>), KE = PE.<br>
+            2. Initial KE of alpha particle = <b><table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1</td></tr><tr><td>2</td></tr></table> mv<sup>2</sup></b>.<br>
+            3. Charge of Alpha particle q<sub>1</sub> = 2e, Charge of Nucleus q<sub>2</sub> = Ze.<br>
+            4. Potential Energy at r<sub>0</sub> = <b><table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1</td></tr><tr><td>4&pi;&epsilon;<sub>0</sub></td></tr></table> &times; <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">(2e)(Ze)</td></tr><tr><td>r<sub>0</sub></td></tr></table></b>.<br>
+            5. Equating both: <b>K = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">2Ze<sup>2</sup></td></tr><tr><td>4&pi;&epsilon;<sub>0</sub>r<sub>0</sub></td></tr></table></b>.<br>
+            6. Rearranging for <b>r<sub>0</sub></b> gives the final formula.<br>
+            7. <b>Final Result:</b>
+            <div style="text-align:center; padding:10px;">
+                <b>r<sub>0</sub> = <table style="display:inline-table; vertical-align:middle; color:#48ff00;"><tr><td style="border-bottom:1px solid #48ff00;">Ze<sup>2</sup></td></tr><tr><td>&pi; &epsilon;<sub>0</sub> m v<sup>2</sup></td></tr></table></b>
+            </div>
+            8. This value gives an estimate of the size of the nucleus.<br>
+            9. r<sub>0</sub> is inversely proportional to the square of velocity.<br>
+            10. It depends on the atomic number (Z) of the target foil.
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q10. Discuss the major drawbacks or limitations of Bohr's Atomic Model.</p>
+        <button onclick="toggleQ('ans10')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Answer</button>
+        <div id="ans10" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:2;">
+            1. It is only applicable to Hydrogen-like (single electron) atoms.<br>
+            2. It fails to explain the spectra of multi-electron atoms like Helium.<br>
+            3. It cannot explain the relative intensity of spectral lines.<br>
+            4. It fails to explain the <b>Zeeman Effect</b> (splitting in magnetic field).<br>
+            5. It fails to explain the <b>Stark Effect</b> (splitting in electric field).<br>
+            6. It assumes orbits are circular, while they can be elliptical.<br>
+            7. It violates the Heisenberg Uncertainty Principle.<br>
+            8. It treats electron only as a particle, ignoring its wave nature.<br>
+            9. Fine structure of spectral lines is not explained by this model.<br>
+            10. It does not provide any information about the distribution of electrons.
+        </div>
+    </div>
+
+</div>
+
+<script>
+function toggleQ(id) {
+    var x = document.getElementById(id);
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+</script>
+
+<style>
+@keyframes moveBg { 
+    0% { background-position: 0% 50%; } 
+    50% { background-position: 100% 50%; } 
+    100% { background-position: 0% 50%; } 
+}
+</style>
+
+</body>    
+</html>

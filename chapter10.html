@@ -1,0 +1,1329 @@
+<!DOCTYPE html>  <html lang="en">    <head>    
+    <meta charset="UTF-8">    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">    
+    <title>Wave Optics - Smart Study for Toppers</title>    
+    <style>    
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap');  
+        
+        /* Stop horizontal and vertical shaking */
+        html, body {    
+            background-color: #000;    
+            color: #fff;    
+            font-family: 'Poppins', sans-serif;    
+            margin: 0;    
+            padding: 0;    
+            overflow-x: hidden;
+            width: 100%;
+            position: relative;
+        }    
+
+        /* HEADER FIXED - NO SHAKING */    
+        .header {    
+            position: fixed;    
+            top: 0;    
+            left: 0;    
+            width: 100%;    
+            height: 70px; /* Fixed height to prevent layout shift */    
+            background: #000;    
+            display: flex;    
+            justify-content: space-between;    
+            align-items: center;    
+            padding: 0 20px;    
+            z-index: 10000;    
+            box-sizing: border-box;    
+            border-bottom: 1px solid rgba(0, 247, 255, 0.2);    
+        }    
+
+        .back-btn {    
+            background: transparent;    
+            color: #00f7ff;    
+            border: 2px solid #00f7ff;    
+            padding: 5px 18px;    
+            border-radius: 8px;    
+            text-decoration: none;    
+            font-weight: bold;    
+            font-size: 14px;    
+            text-transform: uppercase;    
+        }    
+
+        .topper-text {    
+            text-align: right;    
+            line-height: 1.1;    
+        }    
+
+        .topper-text .small {    
+            color: #FFD700;    
+            font-size: 10px;    
+            font-weight: bold;    
+            display: block;    
+        }    
+
+        .topper-text .large {    
+            color: #fff;    
+            font-size: 16px;    
+            font-weight: bold;    
+        }    
+
+        /* CONTAINER - EXACT MARGIN TO STOP JUMPING */    
+        .container {    
+            padding: 90px 15px 30px 15px; 
+            max-width: 100%;
+            box-sizing: border-box;
+        }    
+
+        @keyframes neon-glow {    
+            0% { border-color: #ff00ff; box-shadow: 0 0 15px #ff00ff; }    
+            25% { border-color: #00f7ff; box-shadow: 0 0 25px #00f7ff; }    
+            50% { border-color: #48ff00; box-shadow: 0 0 15px #48ff00; }    
+            75% { border-color: #FFD700; box-shadow: 0 0 25px #FFD700; }    
+            100% { border-color: #ff00ff; box-shadow: 0 0 15px #ff00ff; }    
+        }    
+
+        .topic-page {    
+            min-height: 80vh; /* Consistent height to stop jumping */
+            border: 4px solid;    
+            border-radius: 40px;    
+            margin-bottom: 40px;    
+            padding: 25px;    
+            display: flex;    
+            flex-direction: column;    
+            justify-content: center;    
+            animation: neon-glow 8s infinite linear;    
+            background: linear-gradient(180deg, rgba(15,15,15,1) 0%, rgba(0,0,0,1) 100%);    
+            box-sizing: border-box;
+            contain: content; /* Optimizes rendering to stop layout shifts */
+        }    
+
+        .topic-title {    
+            font-size: 26px;    
+            color: #00f7ff;    
+            text-decoration: underline;    
+            margin-bottom: 20px;    
+            text-shadow: 0 0 10px #00f7ff;    
+            text-transform: uppercase;    
+        }    
+
+        .box {    
+            background: rgba(255, 255, 255, 0.05);    
+            padding: 15px;    
+            border-radius: 15px;    
+            margin-bottom: 12px;    
+        }    
+
+        .box span { font-weight: bold; display: block; margin-bottom: 5px; }    
+        .eng-txt { color: #00f7ff; }    
+        .hin-txt { color: #FFD700; }    
+
+        .key-points {    
+            border: 1.5px dashed #48ff00;    
+            border-radius: 15px;    
+            padding: 15px;    
+            background: rgba(72, 255, 0, 0.03);    
+        }    
+
+        ul { margin: 0; padding-left: 20px; }    
+        li { margin-bottom: 8px; font-size: 14px; color: #ddd; }    
+
+        .formula-box {    
+            background: #000;    
+            border: 1px solid rgba(255,255,255,0.1);    
+            border-radius: 20px;    
+            padding: 20px;    
+            text-align: center;    
+            font-size: 24px;    
+            color: #00f7ff;    
+            margin-top: 20px;    
+            box-shadow: inset 0 0 15px rgba(0, 247, 255, 0.3);    
+            min-height: 60px; /* Reserves space for MathJax to prevent shifting */
+        }
+    </style>    
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>    
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>  
+</head>    
+<body>  
+    <div class="header">    
+        <a href="phy-chapters.html" class="back-btn">BACK</a>    
+        <div class="topper-text">    
+            <span class="small">SMART STUDY</span>    
+            <span class="large">FOR TOPPERS</span>    
+        </div>    
+    </div>    
+
+    <div class="container">    
+        <div class="topic-page">    
+            <h1 class="topic-title">1. Wave Nature of Light</h1>
+            <div class="box"><span class="eng-txt">English:</span> Light is an electromagnetic wave that can travel through vacuum.</div>    
+            <div class="box"><span class="hin-txt">Hindi:</span> Light ek electromagnetic wave hai jo bina kisi medium (vacuum) ke bhi chal sakti hai.</div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>It was first proposed by Christian Huygens.</li>    
+                    <li>Explains phenomena like Interference, Diffraction, and Polarization.</li>    
+                    <li>Light waves are transverse in nature.</li>    
+                    <li>Speed of light ($c$) depends on the medium's properties.</li>    
+                </ul>    
+            </div>    
+            <div class="formula-box">$$ v = \frac{c}{n} $$</div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">2. Huygens' Principle</h1>
+            <div class="box"><span class="eng-txt">English:</span> Every point on a wavefront acts as a source of secondary wavelets.</div>    
+            <div class="box"><span class="hin-txt">Hindi:</span> Wavefront ka har point ek naye light source ki tarah kaam karta hai.</div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>Secondary wavelets spread out in all directions with the speed of light.</li>    
+                    <li>A tangent to these wavelets gives the new position of the wavefront.</li>    
+                    <li>The wavelets are most effective in the forward direction.</li>    
+                    <li>Helps in proving laws of Reflection and Refraction.</li>    
+                </ul>    
+            </div>    
+            <div class="formula-box">$$ \text{Primary WF} \rightarrow \text{Secondary Wavelets} $$</div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">3. Wavefront</h1>
+            <div class="box"><span class="eng-txt">English:</span> The locus of all points vibrating in the same phase at a given time.</div>    
+            <div class="box"><span class="hin-txt">Hindi:</span> Ek hi phase mein vibrate karne wale sabhi points ke raste ko Wavefront kehte hain.</div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>Phase difference between any two points on a wavefront is zero.</li>    
+                    <li>Rays are always perpendicular to the wavefront.</li>    
+                    <li>Energy flows in a direction normal to the wavefront.</li>    
+                    <li>It travels with the speed of light in that medium.</li>    
+                </ul>    
+            </div>    
+            <div class="formula-box">$$ \text{Ray} \perp \text{Wavefront} $$</div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">4. Types of Wavefront</h1>
+            <div class="box"><span class="eng-txt">English:</span> Depending on the source, wavefronts can be spherical, cylindrical, or plane.</div>    
+            <div class="box"><span class="hin-txt">Hindi:</span> Light source ke aadhar par wavefront teen tarah ke hote hain.</div>    
+            <div class="key-points">    
+                <ul>    
+                    <li><b>Spherical:</b> Produced by a point source.</li>    
+                    <li><b>Cylindrical:</b> Produced by a linear source (slit).</li>    
+                    <li><b>Plane:</b> Produced by a source at a very large distance (Infinity).</li>    
+                    <li>Intensity remains constant for a plane wavefront.</li>    
+                </ul>    
+            </div>    
+            <div class="formula-box">$$ I \propto \frac{1}{r^2} $$</div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">5. Secondary Wavelets</h1>
+            <div class="box"><span class="eng-txt">English:</span> Small disturbances that emerge from the primary wavefront.</div>    
+            <div class="box"><span class="hin-txt">Hindi:</span> Primary wavefront se nikalne wali chhoti-chhoti tarangein (waves).</div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>They originate from every point of the existing wavefront.</li>    
+                    <li>Radius of a secondary wavelet after time $t$ is $v \times t$.</li>    
+                    <li>They interfere to form a new wavefront.</li>    
+                    <li>Explains why light spreads around sharp corners.</li>    
+                </ul>    
+            </div>    
+            <div class="formula-box">$$ \text{Distance} = v \cdot t $$</div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">6. Reflection (Wave Theory)</h1>
+            <div class="box"><span class="eng-txt">English:</span> Proving the bouncing of light using Huygens' Wave Theory.</div>    
+            <div class="box"><span class="hin-txt">Hindi:</span> Wavefronts ka use karke light ke reflection ko samjhana.</div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>Incident plane wavefront strikes a reflecting surface.</li>    
+                    <li>Points on the surface become sources of secondary wavelets.</li>    
+                    <li>Common tangent to these wavelets forms the reflected wavefront.</li>    
+                    <li>Velocity of light remains same before and after reflection.</li>    
+                </ul>    
+            </div>    
+            <div class="formula-box">$$ v_1 = v_2 $$</div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">7. Laws of Reflection (Wave Explanation)</h1>
+            <div class="box"><span class="eng-txt">English:</span> Proving $\angle i = \angle r$ through geometrical construction of wavefronts.</div>    
+            <div class="box"><span class="hin-txt">Hindi:</span> Wavefront ke geometry se ye dikhana ki $\angle i$ aur $\angle r$ barabar hote hain.</div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>Time taken by different wavelets to reach the tangent surface is same.</li>    
+                    <li>Triangles formed by incident and reflected wavefronts are congruent.</li>    
+                    <li>By CPCT, the angle of incidence equals the angle of reflection.</li>    
+                    <li>Incident ray, reflected ray, and normal lie in the same plane.</li>    
+                </ul>    
+            </div>    
+            <div class="formula-box">$$ \angle i = \angle r $$</div>    
+        </div>    
+
+           <div class="topic-page">    
+            <h1 class="topic-title">8. Refraction (Wave Theory)</h1>    
+            <div class="box"><span class="eng-txt">English:</span> Change in the direction of a wavefront when it passes from one medium to another.</div>    
+            <div class="box"><span class="hin-txt">Hindi:</span> Jab ek wavefront ek medium se doosre medium mein jata hai toh uski disha badal jati hai.</div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>Different parts of the wavefront travel with different speeds in different media.</li>    
+                    <li>The wavefront bends towards or away from the normal based on the speed change.</li>    
+                    <li>Frequency remains constant, but wavelength and velocity change during refraction.</li>    
+                    <li>Common tangent to new wavelets gives the refracted wavefront position.</li>    
+                </ul>    
+            </div>    
+            <div class="formula-box">$$ n = \frac{v_1}{v_2} $$</div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">9. Laws of Refraction (Wave Explanation)</h1>    
+            <div class="box"><span class="eng-txt">English:</span> Deriving Snell's Law ($\frac{\sin i}{\sin r} = \mu$) using wave theory.</div>    
+            <div class="box"><span class="hin-txt">Hindi:</span> Wave theory ka use karke Snell's Law prove karna.</div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>In time '$t$', incident wave travels $v_1 t$ and refracted wave travels $v_2 t$.</li>    
+                    <li>Using the geometry of triangles formed by wavefronts, we find $\sin i$ and $\sin r$.</li>    
+                    <li>The ratio $\frac{\sin i}{\sin r}$ becomes equal to the ratio of velocities $\frac{v_1}{v_2}$.</li>    
+                    <li>This proves that the refractive index is a constant for a given pair of media.</li>    
+                </ul>    
+            </div>    
+            <div class="formula-box">$$ \frac{\sin i}{\sin r} = \frac{v_1}{v_2} = n $$</div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">10. Interference of Light</h1>    
+            <div class="box"><span class="eng-txt">English:</span> Redistribution of light energy due to the superposition of two light waves.</div>    
+            <div class="box"><span class="hin-txt">Hindi:</span> Do light waves ke aapas mein milne se energy ka naye tarike se batna.</div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>Waves must be coherent (same frequency and constant phase difference).</li>    
+                    <li>Resultant intensity is different from the sum of individual intensities.</li>    
+                    <li>It produces alternate bright and dark patterns called fringes.</li>    
+                    <li>Energy remains conserved, it only shifts from dark regions to bright ones.</li>    
+                </ul>    
+            </div>    
+            <div class="formula-box">$$ I = I_1 + I_2 + 2\sqrt{I_1 I_2}\cos\phi $$</div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">11. Constructive Interference</h1>    
+            <div class="box"><span class="eng-txt">English:</span> Occurs when two waves meet in the same phase, leading to maximum intensity.</div>    
+            <div class="box"><span class="hin-txt">Hindi:</span> Jab do waves ek hi phase mein milti hain, toh light ki chamak (intensity) sabse zyada ho jati hai.</div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>Crest of one wave falls on the crest of another wave.</li>    
+                    <li>Phase difference must be an even multiple of $\pi$.</li>    
+                    <li>Path difference is an integral multiple of wavelength ($\lambda$).</li>    
+                    <li>The resulting points appear as bright fringes.</li>    
+                </ul>    
+            </div>    
+            <div class="formula-box">$$ \Delta x = n\lambda $$</div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">12. Destructive Interference</h1>    
+            <div class="box"><span class="eng-txt">English:</span> Occurs when two waves meet in opposite phase, leading to minimum intensity.</div>    
+            <div class="box"><span class="hin-txt">Hindi:</span> Jab do waves ek doosre ke ulte phase mein milti hain, toh intensity sabse kam (ya zero) ho jati hai.</div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>Crest of one wave falls on the trough of another wave.</li>    
+                    <li>Phase difference is an odd multiple of $\pi$.</li>    
+                    <li>Path difference is an odd multiple of half-wavelength ($\frac{\lambda}{2}$).</li>    
+                    <li>The resulting points appear as dark fringes.</li>    
+                </ul>    
+            </div>    
+            <div class="formula-box">$$ \Delta x = (2n-1)\frac{\lambda}{2} $$</div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">13. Conditions for Interference</h1>    
+            <div class="box"><span class="eng-txt">English:</span> Set of requirements to observe a stable and clear interference pattern.</div>    
+            <div class="box"><span class="hin-txt">Hindi:</span> Ek saaf aur rukey huye interference pattern ko dekhne ke liye zaroori shartein.</div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>The two sources of light must be coherent.</li>    
+                    <li>The sources should emit waves of the same frequency/wavelength.</li>    
+                    <li>The amplitude of the two waves should preferably be equal for better contrast.</li>    
+                    <li>The two sources should be narrow and close to each other.</li>    
+                </ul>    
+            </div>    
+            <div class="formula-box">$$ \text{Coherent Sources} $$</div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">14. Young's Double Slit Experiment</h1>    
+            <div class="box"><span class="eng-txt">English:</span> A classic experiment that demonstrated the wave nature of light using two slits.</div>    
+            <div class="box"><span class="hin-txt">Hindi:</span> Do slits ka use karke light ke wave nature ko dikhane wala mahan experiment.</div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>Light from a single source passes through two narrow slits $S_1$ and $S_2$.</li>    
+                    <li>These two slits act as coherent sources.</li>    
+                    <li>Interference happens in the region where waves from both slits overlap.</li>    
+                    <li>A pattern of bright and dark bands is seen on a distant screen.</li>    
+                </ul>    
+            </div>    
+            <div class="formula-box">$$ \text{S}_1, \text{S}_2 \text{ (Coherent)} $$</div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">15. Fringe Pattern</h1>    
+            <div class="box"><span class="eng-txt">English:</span> The series of alternate bright and dark bands observed on the screen in YDSE.</div>    
+            <div class="box"><span class="hin-txt">Hindi:</span> Screen par dikhne wali chamkili aur andheri patiyon (bands) ki series.</div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>The center of the pattern is always a bright fringe (Central Maxima).</li>    
+                    <li>Bright and dark fringes are equally spaced in YDSE.</li>    
+                    <li>Shape of fringes is generally hyperbolic but appears straight near the center.</li>    
+                    <li>Intensity of all bright fringes is ideally the same.</li>    
+                </ul>    
+            </div>    
+            <div class="formula-box">$$ \text{Bright} \leftrightarrow \text{Dark} $$</div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">16. Fringe Width</h1>    
+            <div class="box"><span class="eng-txt">English:</span> The distance between two consecutive bright or dark fringes.</div>    
+            <div class="box"><span class="hin-txt">Hindi:</span> Do lagatar chamkili ya do lagatar andheri fringes ke beech ki doori.</div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>Fringe width ($\beta$) is directly proportional to the wavelength of light.</li>    
+                    <li>It increases if the distance between screen and slits ($D$) increases.</li>    
+                    <li>It decreases if the distance between the two slits ($d$) increases.</li>    
+                    <li>If the experiment is dipped in water, fringe width decreases.</li>    
+                </ul>    
+            </div>    
+            <div class="formula-box">$$ \beta = \frac{\lambda D}{d} $$</div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">17. Path Difference</h1>    
+            <div class="box"><span class="eng-txt">English:</span> The difference in the distances traveled by waves from two sources to a point.</div>    
+            <div class="box"><span class="hin-txt">Hindi:</span> Do sources se nikalne wali waves dwara taye ki gayi doori ka antar.</div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>It determines whether a point on the screen will be bright or dark.</li>    
+                    <li>In YDSE, for a point at distance '$y$' from center, path diff is $\frac{yd}{D}$.</li>    
+                    <li>At the center of the screen, path difference is always zero.</li>    
+                    <li>Phase difference is related to path difference by $\frac{2\pi}{\lambda} \times \Delta x$.</li>    
+                </ul>    
+            </div>    
+            <div class="formula-box">$$ \Delta x = \frac{yd}{D} $$</div>    
+        </div>
+         <div class="topic-page">    
+            <h1 class="topic-title">18. Coherent Sources</h1>    
+            <div class="box"><span class="eng-txt">English:</span> Sources that emit light waves of the same frequency and constant phase difference.</div>    
+            <div class="box"><span class="hin-txt">Hindi:</span> Wo sources jo ek hi frequency aur constant phase difference wali light waves nikalte hain.</div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>Two independent sources can never be perfectly coherent.</li>    
+                    <li>Coherent sources are usually derived from a single original source.</li>    
+                    <li>They are essential for producing a stable interference pattern.</li>    
+                    <li>Laser is a very good example of a coherent light source.</li>    
+                </ul>    
+            </div>    
+            <div class="formula-box">$$ \Delta \phi = \text{Constant} $$</div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">19. Conditions for Coherence</h1>    
+            <div class="box"><span class="eng-txt">English:</span> The requirements for two sources to maintain a fixed phase relationship.</div>    
+            <div class="box"><span class="hin-txt">Hindi:</span> Do sources ke beech ek jaisa rishta (phase) banaye rakhne ki shartein.</div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>Sources must emit waves of exactly the same wavelength ($\lambda$).</li>    
+                    <li>The phase difference between them must not change with time.</li>    
+                    <li>Waves should be in the same state of polarization.</li>    
+                    <li>The path difference between waves should be small.</li>    
+                </ul>    
+            </div>    
+            <div class="formula-box">$$ \frac{d(\Delta \phi)}{dt} = 0 $$</div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">20. Diffraction of Light</h1>    
+            <div class="box"><span class="eng-txt">English:</span> The bending of light waves around the corners of an obstacle or aperture.</div>    
+            <div class="box"><span class="hin-txt">Hindi:</span> Kisi rukawat ya kinaare se light ka thoda sa mud jana Diffraction kehlata hai.</div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>Size of the obstacle must be comparable to the wavelength of light.</li>    
+                    <li>It proves that light does not always travel in a perfectly straight line.</li>    
+                    <li>More pronounced when light passes through very narrow slits.</li>    
+                    <li>Diffraction limits the clarity of images formed by optical instruments.</li>    
+                </ul>    
+            </div>    
+            <div class="formula-box">$$ \text{Bending} \propto \frac{\lambda}{d} $$</div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">21. Diffraction due to Single Slit</h1>    
+            <div class="box"><span class="eng-txt">English:</span> Light passing through one narrow slit spreads and creates an interference-like pattern.</div>    
+            <div class="box"><span class="hin-txt">Hindi:</span> Ek hi patli slit se light guzarne par jo pattern banta hai.</div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>Waves from different parts of the same wavefront interfere with each other.</li>    
+                    <li>Produces a central bright fringe surrounded by weaker dark and bright fringes.</li>    
+                    <li>Minima condition: $a \sin \theta = n \lambda$.</li>    
+                    <li>Secondary Maxima are much less intense than the central one.</li>    
+                </ul>    
+            </div>    
+            <div class="formula-box">$$ a \sin \theta = n \lambda $$</div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">22. Diffraction Pattern</h1>    
+            <div class="box"><span class="eng-txt">English:</span> The distribution of light intensity on a screen after passing through an aperture.</div>    
+            <div class="box"><span class="hin-txt">Hindi:</span> Screen par dikhne wali diffraction ki chamak aur andhere ka batwara.</div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>Consists of a broad central maximum and smaller secondary maxima.</li>    
+                    <li>Intensity decreases rapidly as we move away from the center.</li>    
+                    <li>Unlike interference, all bright fringes do NOT have the same width.</li>    
+                    <li>Fringes are not equally bright.</li>    
+                </ul>    
+            </div>    
+            <div class="formula-box">$$ \text{Central} \gg \text{Secondary} $$</div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">23. Width of Central Maximum</h1>    
+            <div class="box"><span class="eng-txt">English:</span> The distance between the first minima on either side of the center.</div>    
+            <div class="box"><span class="hin-txt">Hindi:</span> Center ke dono taraf pehle andhere (minima) ke beech ki doori.</div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>Angular width is given by $2\theta = \frac{2\lambda}{a}$.</li>    
+                    <li>Linear width on screen is $W = \frac{2\lambda D}{a}$.</li>    
+                    <li>If the slit width '$a$' decreases, the central maximum becomes wider.</li>    
+                    <li>Depends on the wavelength of the light used.</li>    
+                </ul>    
+            </div>    
+            <div class="formula-box">$$ W = \frac{2\lambda D}{a} $$</div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">24. Resolving Power</h1>    
+            <div class="box"><span class="eng-txt">English:</span> The ability of an optical instrument to show two close objects as separate.</div>    
+            <div class="box"><span class="hin-txt">Hindi:</span> Kisi instrument ki wo kshamta jisse wo do paas wali cheezon ko alag-alag dikha sake.</div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>It is the reciprocal of the limit of resolution.</li>    
+                    <li>For a telescope, it depends on the diameter of the objective lens.</li>    
+                    <li>For a microscope, it depends on the numerical aperture and wavelength.</li>    
+                    <li>Higher resolving power means better detail in the image.</li>    
+                </ul>    
+            </div>    
+            <div class="formula-box">$$ R.P. = \frac{1}{\Delta \theta} $$</div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">25. Limit of Resolution</h1>    
+            <div class="box"><span class="eng-txt">English:</span> The minimum distance or angle between two objects for them to be just distinguishable.</div>    
+            <div class="box"><span class="hin-txt">Hindi:</span> Kam se kam wo doori jis par do cheezein saaf alag-alag dikh sakein.</div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>Based on Rayleigh's Criterion for resolution.</li>    
+                    <li>For a telescope, limit of resolution is $d\theta = \frac{1.22 \lambda}{D}$.</li>    
+                    <li>Smaller limit of resolution means better quality of the instrument.</li>    
+                    <li>It is directly proportional to the wavelength of light used.</li>    
+                </ul>    
+            </div>    
+            <div class="formula-box">$$ \Delta \theta = \frac{1.22 \lambda}{D} $$</div>    
+        </div>
+        <div class="topic-page">    
+            <h1 class="topic-title">26. Polarization</h1>    
+            <div class="box"><span class="eng-txt">English:</span> The phenomenon of restricting the vibrations of light to a single plane.</div>    
+            <div class="box"><span class="hin-txt">Hindi:</span> Light ke vibrations ko sirf ek hi disha (plane) mein rokne ki prakriya.</div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>It proves that light waves are transverse in nature.</li>    
+                    <li>Sound waves cannot be polarized because they are longitudinal.</li>    
+                    <li>Polaroid filters are used to achieve polarization.</li>    
+                    <li>Used in sunglasses to reduce glare from surfaces.</li>    
+                </ul>    
+            </div>    
+            <div class="formula-box">$$ I = I_0 \cos^2 \theta $$</div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">27. Plane Polarized Light</h1>    
+            <div class="box"><span class="eng-txt">English:</span> Light in which vibrations take place in only one direction perpendicular to propagation.</div>    
+            <div class="box"><span class="hin-txt">Hindi:</span> Wo light jisme vibrations sirf ek hi plane mein hote hain.</div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>Also known as linearly polarized light.</li>    
+                    <li>Produced when unpolarized light passes through a polarizer.</li>    
+                    <li>The plane containing the vibrations is called the plane of oscillation.</li>    
+                    <li>The plane perpendicular to vibrations is the plane of polarization.</li>    
+                </ul>    
+            </div>    
+            <div class="formula-box">$$ \text{Single Plane Vibrations} $$</div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">28. Unpolarized Light</h1>    
+            <div class="box"><span class="eng-txt">English:</span> Light having vibrations in all possible directions perpendicular to the direction of travel.</div>    
+            <div class="box"><span class="hin-txt">Hindi:</span> Wo light jiske vibrations har disha mein bikhre hote hain (jaise Suraj ki roshni).</div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>Natural light from most sources (Sun, Bulb) is unpolarized.</li>    
+                    <li>Represented by arrows in all directions or dots/double-headed arrows.</li>    
+                    <li>When it passes through a polarizer, its intensity becomes half ($I_0/2$).</li>    
+                    <li>It is a mixture of many independent waves with random phases.</li>    
+                </ul>    
+            </div>    
+            <div class="formula-box">$$ I_{out} = \frac{1}{2} I_{in} $$</div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">29. Methods of Polarization</h1>    
+            <div class="box"><span class="eng-txt">English:</span> Different techniques used to convert unpolarized light into polarized light.</div>    
+            <div class="box"><span class="hin-txt">Hindi:</span> Unpolarized light ko polarized banane ke alag-alag tarike.</div>    
+            <div class="key-points">    
+                <ul>    
+                    <li><b>Reflection:</b> Polarization at Brewster's angle ($n = \tan i_p$).</li>    
+                    <li><b>Scattering:</b> Light from the blue sky is partially polarized.</li>    
+                    <li><b>Selective Absorption:</b> Using polaroids or tourmaline crystals.</li>    
+                    <li><b>Double Refraction:</b> Using crystals like Calcite or Quartz.</li>    
+                </ul>    
+            </div>    
+            <div class="formula-box">$$ n = \tan i_p $$</div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">30. Applications of Interference</h1>    
+            <div class="box"><span class="eng-txt">English:</span> Practical uses of the superposition principle of light waves.</div>    
+            <div class="box"><span class="hin-txt">Hindi:</span> Light ke interference ke asli zindagi mein upyog.</div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>Colors seen in thin films like soap bubbles or oil on water.</li>    
+                    <li>Testing the optical flatness of glass surfaces.</li>    
+                    <li>Anti-reflection coatings on camera lenses and spectacles.</li>    
+                    <li>Holography (creating 3D images) uses interference of laser beams.</li>    
+                </ul>    
+            </div>    
+            <div class="formula-box">$$ \text{Thin Films} \rightarrow \text{Colors} $$</div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">31. Applications of Diffraction</h1>    
+            <div class="box"><span class="eng-txt">English:</span> How the bending of light affects technology and science.</div>    
+            <div class="box"><span class="hin-txt">Hindi:</span> Diffraction ka vigyan aur technology mein asar.</div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>Determining the structure of crystals using X-ray diffraction.</li>    
+                    <li>Design of spectrometers to study the spectrum of stars.</li>    
+                    <li>Understanding the resolution limits of microscopes and telescopes.</li>    
+                    <li>Diffraction gratings used to separate light into its component colors.</li>    
+                </ul>    
+            </div>    
+            <div class="formula-box">$$ \text{Crystal Structure (X-Rays)} $$</div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title">32. Applications of Polarization</h1>    
+            <div class="box"><span class="eng-txt">English:</span> Common uses of polarized light in daily life and industry.</div>    
+            <div class="box"><span class="hin-txt">Hindi:</span> Polarized light ke rozana zindagi mein kaam.</div>    
+            <div class="key-points">    
+                <ul>    
+                    <li>Used in LCD screens (Calculators, Laptops, Mobile phones).</li>    
+                    <li>3D movies use polarized glasses to show different images to each eye.</li>    
+                    <li>Stress analysis in glass and plastic engineering parts.</li>    
+                    <li>Controlling the intensity of light in airplane windows.</li>    
+                </ul>    
+            </div>    
+            <div class="formula-box">$$ \text{LCDs} \& \text{3D Glasses} $$</div>    
+        </div>
+     </div>
+<div style="text-align:center; margin-bottom:20px;">
+    <h1 style="color:#00f7ff; font-family:sans-serif; text-transform:uppercase; text-shadow:0 0 10px #00f7ff;">Wave Optics MCQ Practice</h1>
+    <p style="color:#FFD700; font-family:sans-serif; font-weight:bold;">Click to choose correct answer</p>
+</div>
+
+<div id="quiz-box" style="max-width:600px; margin:auto; position:relative; z-index:1;"></div>
+
+<div id="quiz-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; z-index:9999; flex-direction:column; align-items:center; justify-content:center; pointer-events:none;">
+    <div id="status-strip" style="width:100%; text-align:center; padding:30px 0;">
+        <h1 id="status-title" style="margin:0; padding:0;"></h1>
+        <p id="status-message" style="margin:10px 0; font-family:sans-serif; font-weight:bold;"></p>
+        <p id="next-msg" style="margin:0; font-family:sans-serif;"></p>
+    </div>
+</div>
+
+<style>
+/* RGB Border Animation */
+@keyframes rgb-glow {
+    0% { border-color: #00f7ff; box-shadow: 0 0 8px #00f7ff; }
+    33% { border-color: #ff00c8; box-shadow: 0 0 8px #ff00c8; }
+    66% { border-color: #48ff00; box-shadow: 0 0 8px #48ff00; }
+    100% { border-color: #00f7ff; box-shadow: 0 0 8px #00f7ff; }
+}
+
+.quiz-card {
+    background: rgba(255,255,255,0.05); 
+    padding: 20px; 
+    margin: 15px 0; 
+    border-radius: 15px; 
+    border: 2px solid #00f7ff; 
+    animation: rgb-glow 4s linear infinite;
+}
+
+.opt-btn {
+    display: block; 
+    width: 100%; 
+    margin: 12px 0; 
+    padding: 15px; 
+    background: rgba(255,255,255,0.08); 
+    color: #fff; 
+    border: 1.5px solid #00f7ff; 
+    border-radius: 12px; 
+    text-align: left; 
+    font-weight: 600; 
+    cursor: pointer;
+    animation: rgb-glow 3s linear infinite;
+}
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+const questions = [
+    { q:"Light travels as a ______ according to Huygens.", opts:["Particle","Transverse Wave","Longitudinal Wave","Mechanical Wave"], ans:1 },
+    { q:"The locus of all points vibrating in the same phase is:", opts:["Ray","Wavefront","Vibration Plane","Frequency"], ans:1 },
+    { q:"Wavefront from a point source is:", opts:["Plane","Cylindrical","Spherical","Linear"], ans:2 },
+    { q:"Wavefront from a very distant source (like Sun) is:", opts:["Spherical","Cylindrical","Plane","None"], ans:2 },
+    { q:"Interference of light proves its ______ nature.", opts:["Particle","Wave","Quantum","Dual"], ans:1 },
+    { q:"For constructive interference, path difference is:", opts:["nλ","(2n+1)λ/2","λ/4","(2n-1)λ"], ans:0 },
+    { q:"For destructive interference, phase difference is:", opts:["2nπ","(2n+1)π","nπ","Zero"], ans:1 },
+    { q:"In YDSE, if setup is in water, fringe width:", opts:["Increases","Decreases","Remains Same","Becomes Zero"], ans:1 },
+    { q:"Central fringe in YDSE is always:", opts:["Dark","Bright","Colored","Invisible"], ans:1 },
+    { q:"Fringe width (β) formula is:", opts:["λd/D","λD/d","Dd/λ","λ/Dd"], ans:1 },
+    { q:"Bending of light around corners is called:", opts:["Reflection","Refraction","Diffraction","Polarization"], ans:2 },
+    { q:"Diffraction proves light is a ______.", opts:["Particle","Wave","Ray","None"], ans:1 },
+    { q:"Polarization proves light is a ______ wave.", opts:["Longitudinal","Transverse","Stationary","Mechanical"], ans:1 },
+    { q:"Sound waves cannot be:", opts:["Reflected","Refracted","Diffracted","Polarized"], ans:3 },
+    { q:"Brewster's Law formula is:", opts:["n = sin i","n = tan i_p","n = cos i","n = 1/sin c"], ans:1 },
+    { q:"Two sources are coherent if they have constant:", opts:["Amplitude","Velocity","Phase Difference","Intensity"], ans:2 },
+    { q:"Colors in thin soap films are due to:", opts:["Diffraction","Interference","Scattering","Dispersion"], ans:1 },
+    { q:"If slit width in YDSE is increased, fringes become:", opts:["Sharper","Fainter","Wider","Disappear"], ans:1 },
+    { q:"Malus Law is:", opts:["I = I₀ sin²θ","I = I₀ cos²θ","I = I₀ tanθ","I = I₀ cosθ"], ans:1 },
+    { q:"Ratio of I_max to I_min is:", opts:["(a1+a2)/(a1-a2)","(a1+a2)²/(a1-a2)²","a1/a2","a1²/a2²"], ans:1 },
+    { q:"Resolving power of telescope depends on:", opts:["Length","Aperture Diameter","Focal length","Magnification"], ans:1 },
+    { q:"Polaroid is used to produce:", opts:["Diffraction","Interference","Plane Polarized Light","UV rays"], ans:2 },
+    { q:"Unpolarized light I₀ through a polaroid becomes:", opts:["I₀","I₀/2","I₀/4","Zero"], ans:1 },
+    { q:"Width of central maxima in diffraction is ______ than secondary maxima.", opts:["Smaller","Equal","Double","Half"], ans:2 },
+    { q:"Angular width of central maxima is:", opts:["λ/a","2λ/a","a/λ","λD/a"], ans:1 },
+    { q:"Which shows both wave and particle nature?", opts:["Light","Sound","Water waves","None"], ans:0 },
+    { q:"Frequency of light ______ on refraction.", opts:["Increases","Decreases","Remains same","Changes"], ans:2 },
+    { q:"Secondary wavelets idea was given by:", opts:["Newton","Young","Huygens","Maxwell"], ans:2 },
+    { q:"YDSE was first performed in:", opts:["1600","1801","1905","1887"], ans:1 },
+    { q:"Light from a linear slit source produces:", opts:["Spherical WF","Cylindrical WF","Plane WF","None"], ans:1 },
+    { q:"Phase difference for path difference λ is:", opts:["π","π/2","2π","Zero"], ans:2 },
+    { q:"Intensity of light is proportional to:", opts:["Amplitude","1/Amplitude","Amplitude²","√Amplitude"], ans:2 },
+    { q:"Limit of resolution for telescope is:", opts:["1.22λ/D","D/1.22λ","λ/d","d/λ"], ans:0 },
+    { q:"In diffraction, all bright fringes have ______ intensity.", opts:["Same","Different","Zero","Infinite"], ans:1 },
+    { q:"Plane of polarization is ______ to vibration plane.", opts:["Parallel","Perpendicular","45°","None"], ans:1 },
+    { q:"If white light is used in YDSE, central fringe is:", opts:["Red","Blue","White","Dark"], ans:2 },
+    { q:"Huygens' theory failed to explain:", opts:["Reflection","Refraction","Photoelectric effect","Diffraction"], ans:2 },
+    { q:"When two waves of same phase overlap, interference is:", opts:["Destructive","Constructive","Zero","None"], ans:1 },
+    { q:"Path difference for nth dark fringe in YDSE:", opts:["nλ","(2n-1)λ/2","(n+1)λ","λ/2"], ans:1 },
+    { q:"Resolving power of microscope increases with:", opts:["Wavelength","Numerical Aperture","Focal length","None"], ans:1 },
+    { q:"Polarization by scattering occurs at ______ angle to incident light.", opts:["0°","45°","90°","180°"], ans:2 },
+    { q:"A wavefront is always ______ to the ray of light.", opts:["Parallel","Perpendicular","Inclined","Opposite"], ans:1 },
+    { q:"Energy in interference is ______ from dark to bright regions.", opts:["Lost","Created","Redistributed","Absorbed"], ans:2 },
+    { q:"Shape of fringes in YDSE is generally:", opts:["Straight","Hyperbolic","Circular","Elliptical"], ans:1 },
+    { q:"Ratio of velocities in two media is equal to:", opts:["Refractive Index","1/Refractive Index","Wavelength","None"], ans:0 },
+    { q:"Blue color of sky is due to:", opts:["Interference","Diffraction","Scattering","Polarization"], ans:2 },
+    { q:"For a single slit, first minima occurs at:", opts:["a sinθ = λ","a sinθ = λ/2","a sinθ = 2λ","a sinθ = 0"], ans:0 },
+    { q:"At Brewster's angle, reflected ray is ______ polarized.", opts:["Partially","Fully Plane","Not","Circularly"], ans:1 },
+    { q:"Wavefront from a tube light is:", opts:["Spherical","Cylindrical","Plane","None"], ans:1 },
+    { q:"1 Angstrom is equal to:", opts:["10⁻¹⁰ m","10⁻⁸ m","10⁻⁶ m","10⁻⁹ m"], ans:0 }
+];
+
+const quizBox = document.getElementById('quiz-box');
+
+questions.forEach((item, index) => {
+    let card = document.createElement('div');
+    card.className = "quiz-card";
+
+    card.innerHTML = `<p style="color:#FFD700; font-size:18px; font-weight:bold;">Q${index+1}. ${item.q}</p>`;
+
+    item.opts.forEach((opt, oIdx) => {
+        let btn = document.createElement('button');
+        btn.innerText = opt;
+        btn.className = "opt-btn";
+
+        btn.onclick = () => {
+            const overlay = document.getElementById('quiz-overlay');
+            const title = document.getElementById('status-title');
+            const msg = document.getElementById('status-message');
+            const nxt = document.getElementById('next-msg');
+            const strip = document.getElementById('status-strip');
+
+            overlay.style.display = "flex";
+            overlay.style.pointerEvents = "auto"; 
+
+            if(oIdx === item.ans){
+                overlay.style.background = "rgba(0,0,0,0.85)";
+                strip.style.background = "transparent";
+                title.style.cssText = "font-family:'Dancing Script', cursive; color:#fff; font-size:60px; text-shadow:0 0 20px #00f7ff, 0 0 40px #00f7ff;";
+                title.innerText = "Congratulations";
+                msg.innerText = "Excellent! You are a true Topper.";
+                msg.style.color = "#00f7ff";
+                nxt.innerText = "Go to next question...";
+
+                var end = Date.now() + 1500;
+                var colors = ['#00f7ff','#ff0000','#ffffff','#ff00c8','#48ff00'];
+                (function frame(){
+                    confetti({particleCount:15,angle:60,spread:65,origin:{x:0},colors:colors, zIndex: 999999});
+                    confetti({particleCount:15,angle:120,spread:65,origin:{x:1},colors:colors, zIndex: 999999});
+                    if(Date.now() < end) requestAnimationFrame(frame);
+                })();
+            } else {
+                overlay.style.background = "radial-gradient(rgba(139,0,0,0.5) 10%, rgba(0,0,0,0.85) 90%)";
+                strip.style.background = "rgba(0,0,0,0.6)";
+                strip.style.width = "100%";
+                strip.style.padding = "30px 0";
+                title.style.cssText = "font-family:'Oswald', sans-serif; color:red; font-size:80px; font-weight:900; letter-spacing:10px; text-shadow:4px 4px 0px #000;";
+                title.innerText = "WASTED";
+                msg.innerText = "Oops! Try again with focus.";
+                msg.style.color = "#fff";
+                nxt.innerText = "";
+            }
+
+            setTimeout(() => {
+                overlay.style.display = "none";
+                overlay.style.pointerEvents = "none"; 
+            }, 2500);
+        };
+        card.appendChild(btn);
+    });
+    quizBox.appendChild(card);
+});
+});
+</script>
+<div style="text-align:center; margin-bottom:20px;">
+    <h1 style="color:#00ffcc; font-family:sans-serif; text-transform:uppercase; text-shadow:0 0 15px #00ffcc;">Advanced Level: Q51 - Q100</h1>
+    <p style="color:#ffffff; font-family:sans-serif; font-weight:bold;">Conceptual Depth: Smart Study for Toppers</p>
+</div>
+
+<div id="quiz-box" style="max-width:600px; margin:auto; position:relative; z-index:1;"></div>
+
+<div id="quiz-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; z-index:9999; flex-direction:column; align-items:center; justify-content:center; pointer-events:none;">
+    <div id="status-strip" style="width:100%; text-align:center; padding:30px 0;">
+        <h1 id="status-title"></h1>
+        <p id="status-message" style="font-weight:bold;"></p>
+        <p id="next-msg"></p>
+    </div>
+</div>
+
+<style>
+/* RGB Border Animation for line color change */
+@keyframes rgb-glow {
+    0% { border-color: #00f7ff; box-shadow: 0 0 8px #00f7ff; }
+    33% { border-color: #ff00c8; box-shadow: 0 0 8px #ff00c8; }
+    66% { border-color: #48ff00; box-shadow: 0 0 8px #48ff00; }
+    100% { border-color: #00f7ff; box-shadow: 0 0 8px #00f7ff; }
+}
+
+.quiz-card {
+    background: linear-gradient(145deg, #0f2027, #203a43, #2c5364); 
+    padding: 20px; 
+    margin: 15px 0; 
+    border-radius: 15px; 
+    border: 2px solid #00f7ff; 
+    animation: rgb-glow 4s linear infinite;
+}
+
+.opt-btn {
+    display: block; 
+    width: 100%; 
+    margin: 10px 0; 
+    padding: 14px; 
+    background: rgba(255,255,255,0.05); 
+    color: #fff; 
+    border: 1.5px solid #00ffcc; 
+    border-radius: 10px; 
+    text-align: left; 
+    font-weight: 600; 
+    cursor: pointer;
+    transition: 0.3s;
+    animation: rgb-glow 3s linear infinite;
+}
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+const questions = [
+    {q:"What is the phase difference between any two points on a wavefront?",opts:["π","Zero","π/2","Infinity"],ans:1},
+    {q:"If the wavelength of light used in YDSE is doubled, the fringe width becomes:",opts:["Half","Remains same","Double","Four times"],ans:2},
+    {q:"Two coherent sources of intensity ratio 81:1 interfere. Ratio of I_max to I_min is:",opts:["25:16","10:8","81:1","100:64"],ans:0},
+    {q:"The idea of secondary wavelets was first proposed by:",opts:["Newton","Maxwell","Fresnel","Huygens"],ans:3},
+    {q:"A plane wavefront is incident on a thin prism. The emerging wavefront is:",opts:["Plane","Spherical","Cylindrical","None"],ans:0},
+    {q:"In YDSE, the shift in fringes when a thin transparent sheet is placed in one path is:",opts:["ntD/d","(n-1)tD/d","(n-1)D/d","tD/d"],ans:1},
+    {q:"The phenomenon of diffraction can be explained by:",opts:["Huygens' principle","Newton's theory","Maxwell's theory","Quantum theory"],ans:0},
+    {q:"In a single slit diffraction, if the slit width is halved, the central maximum width:",opts:["Is halved","Is quadrupled","Is doubled","Remains same"],ans:2},
+    {q:"The resolving power of a microscope depends on the ______ of the medium.",opts:["Density","Viscosity","Refractive Index","None"],ans:2},
+    {q:"At Brewster's angle, the reflected and refracted rays are:",opts:["Parallel","Inclined at 45°","Anti-parallel","Perpendicular"],ans:3},
+    {q:"Which of the following does not change during refraction?",opts:["Wavelength","Velocity","Amplitude","Frequency"],ans:3},
+    {q:"The colors seen in a thin oil film on water are due to:",opts:["Dispersion","Interference","Diffraction","Polarization"],ans:1},
+    {q:"An unpolarized beam of intensity I₀ falls on a polarizer. The transmitted intensity is:",opts:["I₀/2","I₀","I₀ cos²θ","Zero"],ans:0},
+    {q:"For a stable interference pattern, the two sources must be:",opts:["Monochromatic","Intense","Coherent","Far apart"],ans:2},
+    {q:"The central fringe in the interference pattern of white light is:",opts:["White","Red","Blue","Dark"],ans:0},
+    {q:"In diffraction, the width of the central maximum is ______ the width of secondary maxima.",opts:["Equal to","Double","Half of","Triple"],ans:1},
+    {q:"The transverse nature of light is proved by:",opts:["Interference","Polarization","Diffraction","Reflection"],ans:1},
+    {q:"If 'a' is the slit width and 'λ' is wavelength, the condition for first minima is:",opts:["a sinθ = λ","a sinθ = λ/2","a sinθ = 2λ","a sinθ = 0"],ans:0},
+    {q:"Resolving power of a telescope increases if the ______ of the objective increases.",opts:["Focal length","Diameter","Material","Weight"],ans:1},
+    {q:"The path difference for constructive interference is:",opts:["(2n+1)λ/2","λ/2","nλ","(n+1)λ"],ans:2},
+    {q:"The intensity of light at a point where the phase difference is φ is proportional to:",opts:["cos φ","sin φ","sin² φ","cos²(φ/2)"],ans:3},
+    {q:"In YDSE, if the screen is moved away from the slits, the fringe width:",opts:["Increases","Decreases","Remains same","Disappears"],ans:0},
+    {q:"What is the shape of a wavefront from a tube light at a small distance?",opts:["Spherical","Plane","Cylindrical","Hyperbolic"],ans:2},
+    {q:"Which phenomenon shows that light can bend around corners?",opts:["Refraction","Diffraction","Interference","Polarization"],ans:1},
+    {q:"Malus Law relates transmitted intensity to the ______ of angle between polarizers.",opts:["Sine","Square of Cosine","Tangent","Cosine"],ans:1},
+    {q:"If the ratio of amplitudes of two waves is 3:2, the ratio of I_max to I_min is:",opts:["25:1","9:4","5:1","3:2"],ans:0},
+    {q:"A polarizer is rotated. The intensity of light from a bulb changes:",opts:["Continuously","To zero twice","Not at all","To zero once"],ans:2},
+    {q:"The limit of resolution of a telescope is 1.22λ/D. Here D is:",opts:["Diameter of objective","Distance to star","Distance to eyepiece","Wavelength"],ans:0},
+    {q:"Huygens' principle fails to explain ______ effect.", opts:["Interference","Diffraction","Refraction","Photoelectric"],ans:3},
+    {q:"Two independent light sources cannot be coherent because of:",opts:["Amplitude change","Frequency difference","Phase fluctuation","None"],ans:2},
+    {q:"In YDSE, if the distance between slits 'd' is doubled, fringe width:",opts:["Is doubled","Remains same","Is halved","Is quadrupled"],ans:2},
+    {q:"The ratio of maximum and minimum intensities is 100:1. The ratio of amplitudes is:",opts:["10:1","9:1","100:1","11:9"],ans:3},
+    {q:"Which of the following cannot be polarized?",opts:["Ultrasonic waves","Radio waves","Microwaves","X-rays"],ans:0},
+    {q:"A wavefront is always ______ to the direction of propagation.",opts:["Parallel","Perpendicular","At 45°","Inverse"],ans:1},
+    {q:"In a single slit diffraction, the intensity of secondary maxima ______ with order.",opts:["Increases","Remains same","Decreases","Becomes zero"],ans:2},
+    {q:"Polaroid glass is used in sunglasses to reduce:",opts:["Intensity","Wavelength","Glare","Frequency"],ans:2},
+    {q:"The angular width of the central maximum in diffraction is:",opts:["2λ/a","λ/a","a/λ","λD/a"],ans:0},
+    {q:"If light behaves as a ray, it is an approximation of wave theory for ______ wavelength.",opts:["Infinite","Large","Zero","Medium"],ans:2},
+    {q:"When light is reflected from a denser medium, it undergoes a phase change of:",opts:["π","π/2","2π","Zero"],ans:0},
+    {q:"The phenomenon of polarization occurs in ______ waves.",opts:["Longitudinal","Transverse","Both","Neither"],ans:1},
+    {q:"In YDSE, the interference pattern is a series of ______ fringes.",opts:["Circular","Straight","Hyperbolic","Elliptical"],ans:2},
+    {q:"The wavefront associated with a parallel beam of light is:",opts:["Spherical","Plane","Cylindrical","Point"],ans:1},
+    {q:"The wave theory of light was unsuccessful in explaining the ______ of light.",opts:["Bending","Focusing","Rectilinear propagation","None"],ans:2},
+    {q:"For a microscope, resolving power is 2n sinθ / λ. Here n sinθ is:",opts:["Numerical Aperture","Magnification","Focal length","Aperture"],ans:0},
+    {q:"What happens to the fringe width if the whole YDSE is moved from air to glass?",opts:["Increases","Remains same","Decreases","Disappears"],ans:2},
+    {q:"Two coherent sources have intensities 'I'. The intensity at the center of the screen is:",opts:["I","4I","2I","Zero"],ans:1},
+    {q:"Which color has the maximum fringe width in white light YDSE?",opts:["Red","Violet","Green","Yellow"],ans:0},
+    {q:"The locus of points having the same phase at a given time is:",opts:["Wavelet","Ray","Phasefront","Wavefront"],ans:3},
+    {q:"In diffraction, the distance of first minima from center is:",opts:["λD/a","2λD/a","λD/2a","aD/λ"],ans:0},
+    {q:"The principle of superposition is used to understand:",opts:["Interference","Polarization","Both Interference and Diffraction","None"],ans:2}
+];
+
+const quizBox = document.getElementById('quiz-box');
+
+questions.forEach((item, index) => {
+    let card = document.createElement('div');
+    card.className = "quiz-card";
+
+    card.innerHTML = `<p style="color:#00ffcc; font-size:18px; font-weight:bold;">Q${index+51}. ${item.q}</p>`;
+
+    item.opts.forEach((opt, oIdx) => {
+        let btn = document.createElement('button');
+        btn.innerText = opt;
+        btn.className = "opt-btn";
+
+        btn.onclick = () => {
+            const overlay = document.getElementById('quiz-overlay');
+            const title = document.getElementById('status-title');
+            const msg = document.getElementById('status-message');
+            const nxt = document.getElementById('next-msg');
+            const strip = document.getElementById('status-strip');
+
+            overlay.style.display = "flex";
+            overlay.style.pointerEvents = "auto"; 
+
+            if(oIdx === item.ans){
+                overlay.style.background = "rgba(0,0,0,0.85)";
+                strip.style.background = "transparent";
+                title.style.cssText = "font-family:'Dancing Script', cursive; color:#fff; font-size:60px; text-shadow:0 0 20px #00f7ff, 0 0 40px #00f7ff;";
+                title.innerText = "Physics Master";
+                msg.innerText = "Incredible! Your concepts are solid.";
+                msg.style.color = "#00f7ff";
+                nxt.innerText = "Next conceptual challenge...";
+
+                var end = Date.now() + 1500;
+                var colors = ['#00f7ff','#ff0000','#ffffff','#ff00c8','#48ff00'];
+                (function frame(){
+                    confetti({particleCount:15,angle:60,spread:65,origin:{x:0},colors:colors, zIndex: 999999});
+                    confetti({particleCount:15,angle:120,spread:65,origin:{x:1},colors:colors, zIndex: 999999});
+                    if(Date.now() < end) requestAnimationFrame(frame);
+                })();
+            } else {
+                overlay.style.background = "radial-gradient(rgba(139,0,0,0.5) 10%, rgba(0,0,0,0.85) 90%)";
+                strip.style.background = "rgba(0,0,0,0.6)";
+                strip.style.width = "100%";
+                strip.style.padding = "30px 0";
+                title.style.cssText = "font-family:'Oswald', sans-serif; color:red; font-size:80px; font-weight:900; letter-spacing:10px; text-shadow:4px 4px 0px #000;";
+                title.innerText = "WASTED";
+                msg.innerText = "Wrong! Focus on the theory.";
+                msg.style.color = "#fff";
+                nxt.innerText = "";
+            }
+
+            setTimeout(() => {
+                overlay.style.display = "none";
+                overlay.style.pointerEvents = "none"; 
+            }, 2500);
+        };
+        card.appendChild(btn);
+    });
+    quizBox.appendChild(card);
+});
+});
+</script>
+
+<div id="wave-optics-long-questions" style="max-width:800px; margin:auto; font-family:Arial, sans-serif;">
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px; box-shadow: 0 10px 15px rgba(0,0,0,0.3);">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q1. Using Huygens' Principle, derive the Laws of Reflection at a plane surface.</p>
+        <button onclick="toggleQ('ans1')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ans1" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:1.8;">
+            <b style="color:#fffb00;">Step-by-Step Derivation:</b><br>
+            1. Consider a plane wavefront <b>AB</b> incident on a reflecting surface <b>MM'</b>.<br>
+            2. Let <b>v</b> be the velocity of light and <b>t</b> be the time taken by wavefront to reach from <b>B</b> to <b>C</b>.<br>
+            3. Distance <b>BC = v &times; t</b>. According to Huygens, <b>A</b> becomes a secondary source.<br>
+            4. In time <b>t</b>, the secondary wavelet from <b>A</b> travels a distance <b>AE = v &times; t</b>.<br>
+            5. Draw an arc of radius <b>vt</b> from point <b>A</b> and a tangent <b>CE</b> from <b>C</b>.<br>
+            6. <b>CE</b> represents the reflected wavefront. In <b>&Delta;ABC</b> and <b>&Delta;AEC</b>:<br>
+            7. <b>AC = AC</b> (Common side).<br>
+            8. <b>&ang;ABC = &ang;AEC = 90&deg;</b> (Perpendicular to wavefront).<br>
+            9. <b>BC = AE = vt</b> (Radii of wavelets).<br>
+            10. By RHS congruency, <b>&Delta;ABC &cong; &Delta;AEC</b>.<br>
+            11. Therefore, <b>&ang;BAC = &ang;ECA</b>, which means <b>&ang;i = &ang;r</b>.<br>
+            12. This proves the first law of reflection.
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q2. Derive Snell's Law of Refraction using Huygens' Principle for a plane wave.</p>
+        <button onclick="toggleQ('ans2')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ans2" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:2;">
+            <b style="color:#fffb00;">Full Derivation:</b><br>
+            1. Let a plane wave be incident at angle <b>i</b> on a surface separating two media.<br>
+            2. <b>v<sub>1</sub></b> and <b>v<sub>2</sub></b> are speeds of light in medium 1 and 2 respectively.<br>
+            3. Time taken by wavelet to reach from <b>B</b> to <b>C</b> is <b>t = BC / v<sub>1</sub></b>.<br>
+            4. In the same time <b>t</b>, wavelet from <b>A</b> reaches <b>E</b> in medium 2, so <b>AE = v<sub>2</sub>t</b>.<br>
+            5. In <b>&Delta;ABC</b>, <b>sin i = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">BC</td></tr><tr><td>AC</td></tr></table> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">v<sub>1</sub>t</td></tr><tr><td>AC</td></tr></table></b>.<br>
+            6. In <b>&Delta;AEC</b>, <b>sin r = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">AE</td></tr><tr><td>AC</td></tr></table> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">v<sub>2</sub>t</td></tr><tr><td>AC</td></tr></table></b>.<br>
+            7. Divide <b>sin i</b> by <b>sin r</b>:<br>
+            8. <b><table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">sin i</td></tr><tr><td>sin r</td></tr></table> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">v<sub>1</sub>t / AC</td></tr><tr><td>v<sub>2</sub>t / AC</td></tr></table> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">v<sub>1</sub></td></tr><tr><td>v<sub>2</sub></td></tr></table></b>.<br>
+            9. Since <b>n = c / v</b>, we have <b>v<sub>1</sub> / v<sub>2</sub> = n<sub>2</sub> / n<sub>1</sub></b>.<br>
+            10. <b>Final Result: <table style="display:inline-table; vertical-align:middle; color:#48ff00;"><tr><td style="border-bottom:1px solid #48ff00;">sin i</td></tr><tr><td>sin r</td></tr></table> = n<sub>21</sub></b> (Snell's Law).
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q3. Derive the expression for Fringe Width (&beta;) in Young's Double Slit Experiment.</p>
+        <button onclick="toggleQ('ans3')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ans3" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:1.8;">
+            <b style="color:#fffb00;">Mathematical Steps:</b><br>
+            1. Consider two slits <b>S<sub>1</sub>, S<sub>2</sub></b> separated by distance <b>d</b> and screen at distance <b>D</b>.<br>
+            2. Path difference <b>&Delta;p = S<sub>2</sub>P - S<sub>1</sub>P &approx; <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">xd</td></tr><tr><td>D</td></tr></table></b> (where x is distance from center).<br>
+            3. For <b>n<sup>th</sup></b> bright fringe: <b>&Delta;p = n&lambda;</b>.<br>
+            4. Therefore, <b><table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">x<sub>n</sub> d</td></tr><tr><td>D</td></tr></table> = n&lambda;</b> &rArr; <b>x<sub>n</sub> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">n&lambda;D</td></tr><tr><td>d</td></tr></table></b>.<br>
+            5. For <b>(n+1)<sup>th</sup></b> bright fringe: <b>x<sub>n+1</sub> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">(n+1)&lambda;D</td></tr><tr><td>d</td></tr></table></b>.<br>
+            6. Fringe width <b>&beta; = x<sub>n+1</sub> - x<sub>n</sub></b>.<br>
+            7. <b>&beta; = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">(n+1)&lambda;D</td></tr><tr><td>d</td></tr></table> - <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">n&lambda;D</td></tr><tr><td>d</td></tr></table></b>.<br>
+            8. After subtracting, <b>n</b> terms cancel out.<br>
+            9. <b>Final Expression:</b>
+            <div style="text-align:center; padding:15px; background:#222; border-radius:10px; margin-top:10px; color:#48ff00; font-size:1.4rem;">
+                <b>&beta; = <table style="display:inline-table; vertical-align:middle; color:#48ff00;"><tr><td style="border-bottom:1px solid #48ff00;">&lambda;D</td></tr><tr><td>d</td></tr></table></b>
+            </div>
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q4. Derive the expression for Resultant Intensity in Interference pattern.</p>
+        <button onclick="toggleQ('ans4')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ans4" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:2;">
+            1. Let two waves be <b>y<sub>1</sub> = a<sub>1</sub> sin(&omega;t)</b> and <b>y<sub>2</sub> = a<sub>2</sub> sin(&omega;t + &phi;)</b>.<br>
+            2. By superposition, <b>y = y<sub>1</sub> + y<sub>2</sub> = a<sub>1</sub> sin(&omega;t) + a<sub>2</sub> sin(&omega;t + &phi;)</b>.<br>
+            3. Using expansion: <b>y = a<sub>1</sub> sin&omega;t + a<sub>2</sub>(sin&omega;t cos&phi; + cos&omega;t sin&phi;)</b>.<br>
+            4. <b>y = (a<sub>1</sub> + a<sub>2</sub> cos&phi;) sin&omega;t + (a<sub>2</sub> sin&phi;) cos&omega;t</b>.<br>
+            5. Let <b>R cos&theta; = a<sub>1</sub> + a<sub>2</sub> cos&phi;</b> and <b>R sin&theta; = a<sub>2</sub> sin&phi;</b>.<br>
+            6. Squaring and adding these: <b>R<sup>2</sup> = (a<sub>1</sub> + a<sub>2</sub> cos&phi;)<sup>2</sup> + (a<sub>2</sub> sin&phi;)<sup>2</sup></b>.<br>
+            7. <b>R<sup>2</sup> = a<sub>1</sub><sup>2</sup> + a<sub>2</sub><sup>2</sup> + 2a<sub>1</sub>a<sub>2</sub> cos&phi;</b>.<br>
+            8. Intensity <b>I &prop; R<sup>2</sup></b>, so <b>I = I<sub>1</sub> + I<sub>2</sub> + 2&radic;(I<sub>1</sub>I<sub>2</sub>) cos&phi;</b>.<br>
+            9. For coherent sources with <b>I<sub>1</sub> = I<sub>2</sub> = I<sub>0</sub></b>:<br>
+            10. <b>I = 2I<sub>0</sub> + 2I<sub>0</sub> cos&phi; = 2I<sub>0</sub>(1 + cos&phi;)</b>.<br>
+            11. <b>Final Form: I = 4I<sub>0</sub> cos<sup>2</sup>(<table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">&phi;</td></tr><tr><td>2</td></tr></table>)</b>.
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q5. Discuss Diffraction at a Single Slit and find the condition for Minima.</p>
+        <button onclick="toggleQ('ans5')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ans5" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:2.2;">
+            1. Consider a slit of width <b>a</b> on which a plane wave is incident.<br>
+            2. The path difference between waves from edges of the slit is <b>&Delta;p = a sin&theta;</b>.<br>
+            3. For <b>Central Maxima</b>, <b>&theta; = 0</b>, all wavelets are in phase.<br>
+            4. To find <b>First Minima</b>, divide the slit into two equal halves <b>a/2</b>.<br>
+            5. Path difference between corresponding points is <b><table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">a</td></tr><tr><td>2</td></tr></table> sin&theta;</b>.<br>
+            6. For destructive interference, this must be <b>&lambda;/2</b>.<br>
+            7. <b><table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">a</td></tr><tr><td>2</td></tr></table> sin&theta; = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">&lambda;</td></tr><tr><td>2</td></tr></table></b> &rArr; <b>a sin&theta; = &lambda;</b>.<br>
+            8. Similarly for <b>n<sup>th</sup></b> minima, <b>a sin&theta; = n&lambda;</b>.<br>
+            9. For small angles, <b>sin&theta; &approx; &theta;</b>, so <b>&theta;<sub>n</sub> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">n&lambda;</td></tr><tr><td>a</td></tr></table></b>.<br>
+            10. This explains the formation of alternate dark and bright fringes.
+        </div>
+    </div>
+
+</div>
+
+<script>
+function toggleQ(id) {
+    var x = document.getElementById(id);
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+</script>
+
+<style>
+@keyframes moveBg { 
+    0% { background-position: 0% 50%; } 
+    50% { background-position: 100% 50%; } 
+    100% { background-position: 0% 50%; } 
+}
+</style>
+<div id="wave-optics-long-questions-part2" style="max-width:800px; margin:auto; font-family:Arial, sans-serif;">
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px; box-shadow: 0 10px 15px rgba(0,0,0,0.3);">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q6. State Brewster's Law and prove that reflected and refracted rays are perpendicular at Brewster's angle.</p>
+        <button onclick="toggleQ('ans6')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ans6" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:1.8;">
+            <b style="color:#fffb00;">Proof of Perpendicularity:</b><br>
+            1. Brewster's Law states that <b>n = tan i<sub>p</sub></b>, where <b>i<sub>p</sub></b> is the polarizing angle.<br>
+            2. From Snell's Law: <b>n = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">sin i<sub>p</sub></td></tr><tr><td>sin r</td></tr></table></b>.<br>
+            3. Equating both: <b>tan i<sub>p</sub> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">sin i<sub>p</sub></td></tr><tr><td>sin r</td></tr></table></b>.<br>
+            4. <b><table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">sin i<sub>p</sub></td></tr><tr><td>cos i<sub>p</sub></td></tr></table> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">sin i<sub>p</sub></td></tr><tr><td>sin r</td></tr></table></b>.<br>
+            5. This gives <b>sin r = cos i<sub>p</sub></b>.<br>
+            6. We can write <b>cos i<sub>p</sub> = sin(90&deg; - i<sub>p</sub>)</b>.<br>
+            7. Therefore, <b>r = 90&deg; - i<sub>p</sub></b> &rArr; <b>i<sub>p</sub> + r = 90&deg;</b>.<br>
+            8. The angle between reflected and refracted ray is <b>180&deg; - (i<sub>p</sub> + r)</b>.<br>
+            9. <b>Angle = 180&deg; - 90&deg; = 90&deg;</b>.<br>
+            10. Hence, both rays are mutually perpendicular.
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q7. Define Resolving Power of a Telescope and derive its formula using Rayleigh's Criterion.</p>
+        <button onclick="toggleQ('ans7')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ans7" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:2;">
+            <b style="color:#fffb00;">Derivation Steps:</b><br>
+            1. Resolving power is the ability to see two nearby objects as separate.<br>
+            2. According to Rayleigh, the angular separation <b>d&theta;</b> must be at least <b>1.22 &lambda; / D</b>.<br>
+            3. Here <b>&lambda;</b> is wavelength and <b>D</b> is the diameter of the objective lens.<br>
+            4. Limit of resolution <b>&Delta;&theta; = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1.22 &lambda;</td></tr><tr><td>D</td></tr></table></b>.<br>
+            5. Resolving Power (R.P.) is the reciprocal of the limit of resolution.<br>
+            6. <b>R.P. = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1</td></tr><tr><td>&Delta;&theta;</td></tr></table></b>.<br>
+            7. <b>Final Result:</b>
+            <div style="text-align:center; padding:15px; background:#222; border-radius:10px; margin-top:10px; color:#48ff00; font-size:1.4rem;">
+                <b>R.P. = <table style="display:inline-table; vertical-align:middle; color:#48ff00;"><tr><td style="border-bottom:1px solid #48ff00;">D</td></tr><tr><td>1.22 &lambda;</td></tr></table></b>
+            </div>
+            8. To increase R.P., we need a larger objective lens (D) or smaller wavelength.
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q8. State Malus Law and derive the expression for intensity of light transmitted through a polarizer.</p>
+        <button onclick="toggleQ('ans8')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ans8" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:2;">
+            1. Malus Law states intensity of transmitted light is proportional to square of cosine of angle.<br>
+            2. Let <b>E<sub>0</sub></b> be the amplitude of plane polarized light incident on analyzer.<br>
+            3. Let <b>&theta;</b> be the angle between the transmission axis of polarizer and analyzer.<br>
+            4. The component of amplitude parallel to analyzer axis is <b>E = E<sub>0</sub> cos&theta;</b>.<br>
+            5. Intensity is proportional to the square of amplitude: <b>I &prop; E<sup>2</sup></b>.<br>
+            6. <b>I = k (E<sub>0</sub> cos&theta;)<sup>2</sup></b>.<br>
+            7. <b>I = k E<sub>0</sub><sup>2</sup> cos<sup>2</sup>&theta;</b>.<br>
+            8. Let <b>I<sub>max</sub> = k E<sub>0</sub><sup>2</sup></b> (when &theta; = 0).<br>
+            9. <b>Final Result: I = I<sub>max</sub> cos<sup>2</sup>&theta;</b>.<br>
+            10. If <b>&theta; = 90&deg;</b>, <b>I = 0</b> (Crossed polaroids).
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q9. What are Coherent Sources? Why can two independent sources not be coherent?</p>
+        <button onclick="toggleQ('ans9')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Explanation</button>
+        <div id="ans9" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:1.8;">
+            1. Coherent sources emit light waves of same frequency and constant phase difference.<br>
+            2. They are essential for producing a stable interference pattern.<br>
+            3. Light is emitted by atoms undergoing transitions in very short bursts (10<sup>-8</sup>s).<br>
+            4. In independent sources, these transitions occur randomly.<br>
+            5. The phase of light from one source changes millions of times per second.<br>
+            6. The phase difference between two such sources changes rapidly and randomly.<br>
+            7. Therefore, the interference pattern shifts so fast that our eyes see average intensity.<br>
+            8. This average intensity is just the sum of individual intensities (no fringes).<br>
+            9. To get coherent sources, we must derive two sources from a single parent source.<br>
+            10. Methods include division of wavefront (YDSE) or division of amplitude.
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q10. Distinguish between Interference and Diffraction. Give at least 5 points.</p>
+        <button onclick="toggleQ('ans10')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Comparison</button>
+        <div id="ans10" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px;">
+            <table style="width:100%; border-collapse:collapse; color:#fff;">
+                <tr style="color:#fffb00;">
+                    <th style="border:1px solid #444; padding:10px;">Feature</th>
+                    <th style="border:1px solid #444; padding:10px;">Interference</th>
+                    <th style="border:1px solid #444; padding:10px;">Diffraction</th>
+                </tr>
+                <tr>
+                    <td style="border:1px solid #444; padding:10px;">Source</td>
+                    <td style="border:1px solid #444; padding:10px;">Superposition of waves from 2 coherent sources.</td>
+                    <td style="border:1px solid #444; padding:10px;">Superposition of wavelets from different parts of 1 wavefront.</td>
+                </tr>
+                <tr>
+                    <td style="border:1px solid #444; padding:10px;">Fringe Width</td>
+                    <td style="border:1px solid #444; padding:10px;">Generally all fringes are of equal width.</td>
+                    <td style="border:1px solid #444; padding:10px;">Fringes are of unequal width (Central is widest).</td>
+                </tr>
+                <tr>
+                    <td style="border:1px solid #444; padding:10px;">Intensity</td>
+                    <td style="border:1px solid #444; padding:10px;">All bright fringes have same intensity.</td>
+                    <td style="border:1px solid #444; padding:10px;">Intensity decreases rapidly with order of maxima.</td>
+                </tr>
+                <tr>
+                    <td style="border:1px solid #444; padding:10px;">Dark Fringes</td>
+                    <td style="border:1px solid #444; padding:10px;">Perfectly dark (good contrast).</td>
+                    <td style="border:1px solid #444; padding:10px;">Not perfectly dark (poor contrast).</td>
+                </tr>
+                <tr>
+                    <td style="border:1px solid #444; padding:10px;">Number</td>
+                    <td style="border:1px solid #444; padding:10px;">Large number of fringes are visible.</td>
+                    <td style="border:1px solid #444; padding:10px;">Only a few fringes are visible.</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+<script>
+function toggleQ(id) {
+    var x = document.getElementById(id);
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+</script>
+
+<style>
+@keyframes moveBg { 
+    0% { background-position: 0% 50%; } 
+    50% { background-position: 100% 50%; } 
+    100% { background-position: 0% 50%; } 
+}
+</style>
+<div id="wave-optics-hard-questions" style="max-width:800px; margin:auto; font-family:Arial, sans-serif;">
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px; box-shadow: 0 10px 15px rgba(0,0,0,0.3);">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q11. Derive the expression for the Resolving Power of a Compound Microscope. Explain the role of Numerical Aperture.</p>
+        <button onclick="toggleQ('ans11')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Hard Derivation</button>
+        <div id="ans11" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:1.8;">
+            <b style="color:#fffb00;">Mathematical Analysis:</b><br>
+            1. For a microscope, the objective lens forms a diffraction pattern of the object.<br>
+            2. According to Abbe's criterion, the minimum distance <b>d</b> between two points to be resolved is:<br>
+            3. <b>d = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1.22 &lambda;</td></tr><tr><td>2n sin&beta;</td></tr></table></b> (where <b>&beta;</b> is the half-angle of the cone of light).<br>
+            4. Here, <b>n sin&beta;</b> is called the <b>Numerical Aperture (N.A.)</b>.<br>
+            5. Resolving Power (R.P.) is the reciprocal of this minimum distance <b>d</b>.<br>
+            6. <b>R.P. = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1</td></tr><tr><td>d</td></tr></table> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">2n sin&beta;</td></tr><tr><td>1.22 &lambda;</td></tr></table></b>.<br>
+            7. To increase R.P., we use oil immersion lenses to increase the refractive index <b>n</b>.<br>
+            8. Smaller wavelength <b>&lambda;</b> (like blue light) also improves the resolving power.<br>
+            9. This formula shows why electron microscopes (very small &lambda;) have huge resolving power.<br>
+            10. <b>Final Formula:</b> <b style="color:#48ff00;">R.P. &approx; <table style="display:inline-table; vertical-align:middle; color:#48ff00;"><tr><td style="border-bottom:1px solid #48ff00;">2 N.A.</td></tr><tr><td>&lambda;</td></tr></table></b>.
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q12. Show the change in shape of a plane wavefront when it passes through (i) Thin Prism (ii) Convex Lens (iii) Concave Mirror.</p>
+        <button onclick="toggleQ('ans12')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Visual Logic</button>
+        <div id="ans12" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:2;">
+            1. <b>Concept:</b> A wavefront is the locus of points that take the same time to travel from the source.<br>
+            2. <b>Through Thin Prism:</b> The lower part of the plane wavefront travels more distance in glass (denser).<br>
+            3. Since speed in glass is less, the lower part lags, and the emerging wavefront is <b>tilted plane</b>.<br>
+            4. <b>Through Convex Lens:</b> The center of the wavefront travels through the thickest part of the lens.<br>
+            5. The center lags behind the edges. The emerging wavefront becomes <b>Spherical Converging</b>.<br>
+            6. <b>Through Concave Mirror:</b> The edges of the plane wavefront hit the mirror first and reflect back.<br>
+            7. The center part hits last and reflects later. Result: <b>Spherical Converging</b> wavefront.<br>
+            8. <b>Logic:</b> Time taken by all points of a wavefront from one position to next is always <b>Constant</b>.<br>
+            9. Wavefront is always perpendicular to the rays of light.<br>
+            10. For a Convex Mirror, the reflected wavefront would be <b>Spherical Diverging</b>.
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q13. Explain Doppler Effect for Light. Derive the formula for Doppler Shift (Red shift and Blue shift).</p>
+        <button onclick="toggleQ('ans13')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Derivation</button>
+        <div id="ans13" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:1.8;">
+            1. Doppler effect is the change in frequency of light due to relative motion between source and observer.<br>
+            2. When source moves away, the observer receives peaks at longer intervals (Red Shift).<br>
+            3. Fractional change in frequency: <b><table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">&Delta;&nu;</td></tr><tr><td>&nu;</td></tr></table> = - <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">v<sub>radial</sub></td></tr><tr><td>c</td></tr></table></b>.<br>
+            4. Corresponding change in wavelength: <b><table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">&Delta;&lambda;</td></tr><tr><td>&lambda;</td></tr></table> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">v<sub>radial</sub></td></tr><tr><td>c</td></tr></table></b>.<br>
+            5. <b>Red Shift:</b> If source moves away, <b>v</b> is positive, wavelength increases (shifts to red).<br>
+            6. <b>Blue Shift:</b> If source moves closer, <b>v</b> is negative, wavelength decreases (shifts to violet/blue).<br>
+            7. This shift is used in astronomy to measure the expansion of the Universe.<br>
+            8. For small velocities (v << c), we use the classical approximation formula.<br>
+            9. <b>Formula:</b> <b style="color:#48ff00;">&Delta;&lambda; = <table style="display:inline-table; vertical-align:middle; color:#48ff00;"><tr><td style="border-bottom:1px solid #48ff00;">v &lambda;</td></tr><tr><td>c</td></tr></table></b>.<br>
+            10. This explains why distant galaxies appear redder than they actually are.
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q14. Discuss the concept of Secondary Wavelets. Why doesn't a wavefront move in the backward direction?</p>
+        <button onclick="toggleQ('ans14')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Theory</button>
+        <div id="ans14" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:2;">
+            1. Every point on a primary wavefront acts as a source of secondary wavelets.<br>
+            2. These wavelets spread in all directions with the speed of light.<br>
+            3. The new wavefront is the forward envelope (common tangent) of these secondary wavelets.<br>
+            4. Huygens originally couldn't explain why light doesn't travel backward.<br>
+            5. Later, Fresnel added that the intensity of wavelets is not the same in all directions.<br>
+            6. Intensity <b>I</b> at angle <b>&theta;</b> is proportional to <b>(1 + cos&theta;)<sup>2</sup></b>.<br>
+            7. For forward direction, <b>&theta; = 0&deg;</b>, so <b>1 + cos 0 = 2</b> (Maximum intensity).<br>
+            8. For backward direction, <b>&theta; = 180&deg;</b>, so <b>1 + cos 180 = 1 - 1 = 0</b>.<br>
+            9. This <b>Obliquity Factor</b> mathematically proves that backward wavefronts cannot exist.<br>
+            10. This is one of the most conceptually difficult parts of wave theory.
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q15. Derive the expression for Linear and Angular width of the Central Maximum in single slit diffraction.</p>
+        <button onclick="toggleQ('ans15')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ans15" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:2.2;">
+            1. In single slit diffraction (width <b>a</b>), the first minima occurs when <b>a sin&theta; = &lambda;</b>.<br>
+            2. For small angles, <b>sin&theta; &approx; &theta;</b>, so <b>&theta; = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">&lambda;</td></tr><tr><td>a</td></tr></table></b>.<br>
+            3. The central maximum lies between the first minima on both sides of the center.<br>
+            4. <b>Angular Width:</b> It is the angle between the two first-order minima.<br>
+            5. <b>&omega;<sub>angular</sub> = &theta; - (-&theta;) = 2&theta; = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">2&lambda;</td></tr><tr><td>a</td></tr></table></b>.<br>
+            6. <b>Linear Width (x):</b> If <b>D</b> is distance to screen, then <b>x = D &times; &theta;</b>.<br>
+            7. Linear width from center to first minima is <b><table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">&lambda;D</td></tr><tr><td>a</td></tr></table></b>.<br>
+            8. Total linear width of central maximum is <b>W = 2x = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">2&lambda;D</td></tr><tr><td>a</td></tr></table></b>.<br>
+            9. This shows that central maximum width is double the width of secondary maxima.<br>
+            10. If slit width <b>a</b> decreases, the pattern spreads out (width increases).
+        </div>
+    </div>
+
+</div>
+
+<script>
+function toggleQ(id) {
+    var x = document.getElementById(id);
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+</script>
+
+<style>
+@keyframes moveBg { 
+    0% { background-position: 0% 50%; } 
+    50% { background-position: 100% 50%; } 
+    100% { background-position: 0% 50%; } 
+}
+</style>
+
+    
+</body>    
+</html>

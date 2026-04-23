@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 8: EM Waves - Basic Concepts</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Fixed Top Navigation */
+        .top-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            border-bottom: 2px solid #00ffd5;
+        }
+
+        .back-btn {
+            text-decoration: none;
+            color: #00ffd5;
+            border: 2px solid #00ffd5;
+            padding: 6px 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 14px;
+            text-transform: uppercase;
+            box-shadow: 0 0 10px #00ffd5;
+        }
+
+        .smart-study {
+            color: #fffb00;
+            font-weight: bold;
+            font-size: 14px;
+            text-align: right;
+            line-height: 1.2;
+            text-transform: uppercase;
+            text-shadow: 0 0 8px #fffb00;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 100px auto 40px auto;
+            padding: 10px;
+        }
+
+        /* Heavy Glowing Card - Background is the only card */
+        .topic-card {
+            background: linear-gradient(180deg, #33ff88 0%, #00ccff 50%, #0066ff 100%);
+            background-size: 200% 200%;
+            animation: glowAnim 5s ease infinite;
+            padding: 25px;
+            margin-bottom: 40px;
+            border-radius: 25px;
+            box-shadow: 0 0 30px rgba(0, 255, 213, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        @keyframes glowAnim {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 0% 100%; }
+            100% { background-position: 0% 0%; }
+        }
+
+        .topic-title {
+            color: #000;
+            font-weight: 900;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        /* Labels and Text Body - Direct on Background */
+        .label {
+            font-weight: 900;
+            font-size: 1.2rem;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .eng-label { color: #004422; } /* Dark Green */
+        .hin-label { color: #550044; } /* Dark Pink */
+
+        .text-body {
+            color: #000;
+            font-weight: 700;
+            font-size: 1.1rem;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .key-points {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .key-points li {
+            color: #000;
+            font-weight: 800;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: flex-start;
+            font-size: 1.05rem;
+        }
+
+        .key-points li::before {
+            content: "⚡";
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* Formula box inside the card */
+        .formula-box {
+            background: #000;
+            color: #fffb00;
+            text-align: center;
+            padding: 20px;
+            border-radius: 15px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            border: 2px solid #fffb00;
+            box-shadow: 0 0 15px rgba(255, 251, 0, 0.6);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-nav">
+        <a href="phy-chapters.html" class="back-btn">BACK</a>
+        <div class="smart-study">SMART STUDY<br>FOR TOPPERS</div>
+    </div>
+
+    <div class="container">
+        
+        <div class="topic-card">
+            <h1 class="topic-title">1. Electromagnetic Waves</h1>
+            <span class="label eng-label">English:</span>
+            <p class="text-body">Electromagnetic waves are waves that are created as a result of vibrations between an electric field and a magnetic field. They are composed of oscillating magnetic and electric fields that propagate through space.</p>
+            <span class="label hin-label">Hinglish:</span>
+            <p class="text-body">EM waves tab banti hain jab electric aur magnetic fields ek doosre ke perpendicular vibrate karti hain. Inhe travel karne ke liye kisi medium ki zarurat nahi hoti.</p>
+            <ul class="key-points">
+                <li>Non-mechanical in nature (can travel in vacuum).</li>
+                <li>Transverse waves where fields are at 90°.</li>
+                <li>Travel at the speed of light ($3 \times 10^8$ m/s).</li>
+            </ul>
+            <div class="formula-box">$$ c = \lambda \nu $$</div>
+        </div>
+
+        <div class="topic-card">
+            <h1 class="topic-title">2. Displacement Current</h1>
+            <span class="label eng-label">English:</span>
+            <p class="text-body">It is a type of current that arises in a region where the electric field and electric flux are changing with time. It exists in addition to conduction current to maintain continuity in circuits like capacitors.</p>
+            <span class="label hin-label">Hinglish:</span>
+            <p class="text-body">Ye current tab aata hai jab electric flux badalta hai. Ye capacitor ki plates ke beech mein paida hota hai jahan conduction current zero hota hai.</p>
+            <ul class="key-points">
+                <li>Proposed by Maxwell to fix Ampere's law.</li>
+                <li>Depends on the rate of change of electric flux.</li>
+                <li>Produces a magnetic field just like conduction current.</li>
+            </ul>
+            <div class="formula-box">$$ I_d = \epsilon_0 \frac{d\Phi_E}{dt} $$</div>
+        </div>
+
+        <div class="topic-card">
+            <h1 class="topic-title">3. Need for Displacement Current</h1>
+            <span class="label eng-label">English:</span>
+            <p class="text-body">The need for displacement current arises because Ampere's circuital law was inconsistent for non-steady currents. It was required to explain how magnetic fields exist between capacitor plates where no charges flow.</p>
+            <span class="label hin-label">Hinglish:</span>
+            <p class="text-body">Ampere's law ko poora karne ke liye iski zarurat padi. Iske bina hum ye nahi samjha sakte the ki capacitor ki plates ke beech magnetic field kaise banta hai.</p>
+            <ul class="key-points">
+                <li>Makes Ampere's law logically consistent.</li>
+                <li>Explains the magnetic field in gap regions.</li>
+                <li>Completes the Maxwell-Ampere equation.</li>
+            </ul>
+            <div class="formula-box">$$ \oint \vec{B} \cdot d\vec{l} = \mu_0 (I_c + I_d) $$</div>
+        </div>
+
+        <div class="topic-card">
+            <h1 class="topic-title">4. Maxwell's Equations (Basic Idea)</h1>
+            <span class="label eng-label">English:</span>
+            <p class="text-body">Maxwell's equations are a set of four fundamental laws that unify electricity and magnetism. They describe how electric charges produce electric fields and how currents produce magnetic fields.</p>
+            <span class="label hin-label">Hinglish:</span>
+            <p class="text-body">Maxwell ki 4 equations poori electromagnetism ka aadhar hain. Inse pata chalta hai ki electric aur magnetic fields kaise ek doosre ko badalti hain.</p>
+            <ul class="key-points">
+                <li>Unifies all laws of electricity and magnetism.</li>
+                <li>Predicts the existence of EM waves.</li>
+                <li>Shows light itself is an electromagnetic wave.</li>
+            </ul>
+            <div class="formula-box">$$ \text{Maxwell's 4 Equations} $$</div>
+        </div>
+
+        <div class="topic-card">
+            <h1 class="topic-title">5. Electromagnetic Wave Concept</h1>
+            <span class="label eng-label">English:</span>
+            <p class="text-body">The concept states that an oscillating charge produces an oscillating electric field, which in turn produces an oscillating magnetic field. This cycle creates a wave that propagates through space.</p>
+            <span class="label hin-label">Hinglish:</span>
+            <p class="text-body">Concept ye hai ki accelerated charge ek electric field badalta hai, jisse magnetic field banta hai, aur isi tarah wave aage badhti rehti hai.</p>
+            <ul class="key-points">
+                <li>Oscillating charges are the source.</li>
+                <li>Fields sustain each other without a medium.</li>
+                <li>Energy is transferred through these oscillations.</li>
+            </ul>
+            <div class="formula-box">$$ \text{Source: Accelerated Charge} $$</div>
+        </div>
+
+        <div class="topic-card">
+            <h1 class="topic-title">6. Nature of EM Waves</h1>
+            <span class="label eng-label">English:</span>
+            <p class="text-body">EM waves are non-mechanical waves that do not require any material medium for propagation. They carry energy and momentum and exert pressure (radiation pressure) on surfaces they strike.</p>
+            <span class="label hin-label">Hinglish:</span>
+            <p class="text-body">EM waves ki nature aisi hai ki ye vacuum mein bhi travel kar sakti hain. Inme energy aur momentum dono hota hai aur ye light ki tarah behave karti hain.</p>
+            <ul class="key-points">
+                <li>Electrically neutral (no deflection in fields).</li>
+                <li>Carry energy from source to receiver.</li>
+                <li>Follow the principle of superposition.</li>
+            </ul>
+            <div class="formula-box">$$ \text{Energy Density } u = \epsilon_0 E^2 $$</div>
+        </div>
+
+        <div class="topic-card">
+            <h1 class="topic-title">7. Transverse Nature</h1>
+            <span class="label eng-label">English:</span>
+            <p class="text-body">The transverse nature means that the oscillations of the electric and magnetic fields are perpendicular to each other and also perpendicular to the direction in which the wave is moving.</p>
+            <span class="label hin-label">Hinglish:</span>
+            <p class="text-body">Transverse nature ka matlab hai ki fields wave ke chalne ki disha ke 90 degree par vibrate karti hain. Ye polarization se prove hota hai.</p>
+            <ul class="key-points">
+                <li>E and B are always in the same phase.</li>
+                <li>Direction of wave is given by $\vec{E} \times \vec{B}$.</li>
+                <li>Distinguishes EM waves from sound waves.</li>
+            </ul>
+            <div class="formula-box">$$ \vec{E} \cdot \vec{k} = 0, \vec{B} \cdot \vec{k} = 0 $$</div>
+        </div>
+
+        <div class="topic-card">
+            <h1 class="topic-title">8. Speed of EM Waves</h1>
+            <span class="label eng-label">English:</span>
+            <p class="text-body">The speed of EM waves in vacuum is a fundamental constant. It is determined by the permeability ($\mu_0$) and permittivity ($\epsilon_0$) of free space, resulting in approximately $3 \times 10^8$ m/s.</p>
+            <span class="label hin-label">Hinglish:</span>
+            <p class="text-body">EM waves ki speed vacuum mein light ki speed ke barabar hoti hai. Medium badalne par iski speed $\mu$ aur $\epsilon$ ki wajah se kam ho jati hai.</p>
+            <ul class="key-points">
+                <li>In vacuum: $c = 1/\sqrt{\mu_0 \epsilon_0}$.</li>
+                <li>Independent of frequency in vacuum.</li>
+                <li>Determines the refractive index of materials.</li>
+            </ul>
+            <div class="formula-box">$$ v = \frac{1}{\sqrt{\mu \epsilon}} $$</div>
+        </div>
+
+        <div class="topic-card">
+            <h1 class="topic-title">9. Relation between E and B</h1>
+            <span class="label eng-label">English:</span>
+            <p class="text-body">In an EM wave, the magnitudes of the electric field (E) and magnetic field (B) are related to each other by the speed of light. They reach their maximum and minimum values at the same time.</p>
+            <span class="label hin-label">Hinglish:</span>
+            <p class="text-body">Electric field aur Magnetic field ka ratio hamesha light ki speed (c) ke barabar hota hai. E ki value B se bahut zyada badi hoti hai magnitude mein.</p>
+            <ul class="key-points">
+                <li>Ratio $E_0 / B_0 = c$.</li>
+                <li>Both fields are in the same phase.</li>
+                <li>Energy is equally shared between E and B.</li>
+            </ul>
+            <div class="formula-box">$$ E = cB $$</div>
+        </div>
+
+        <div class="topic-card">
+            <h1 class="topic-title">10. Energy of EM Waves</h1>
+            <span class="label eng-label">English:</span>
+            <p class="text-body">EM waves carry energy as they travel through space. This energy is shared equally between the electric and magnetic field components and can be absorbed by objects in their path.</p>
+            <span class="label hin-label">Hinglish:</span>
+            <p class="text-body">EM waves apne saath energy le kar chalti hain. Ye energy half-half divide hoti hai electric aur magnetic fields ke beech mein.</p>
+            <ul class="key-points">
+                <li>Total energy density $u = u_E + u_B$.</li>
+                <li>Energy is proportional to the square of amplitude.</li>
+                <li>Intensity is the energy per unit area per second.</li>
+            </ul>
+            <div class="formula-box">$$ u_{avg} = \frac{1}{2} \epsilon_0 E_0^2 $$</div>
+        </div>
+
+    </div>
+
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+<style>
+    /* Page stability ke liye scroll aur overflow fix */
+    .container {
+        overflow-x: hidden;
+        width: 100%;
+        position: relative;
+    }
+
+    /* Pehle wale notes jaisa exact style - No Shaking */
+    .topic-card {
+        background: linear-gradient(180deg, #00f2fe 0%, #4facfe 100%);
+        padding: 25px;
+        margin-bottom: 35px;
+        border-radius: 25px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .topic-title {
+        color: #000;
+        font-weight: 900;
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .label {
+        font-weight: 900;
+        font-size: 1.1rem;
+        display: block;
+        margin-bottom: 5px;
+    }
+    .eng-label { color: #003311; } 
+    .hin-label { color: #440033; } 
+
+    .text-body {
+        color: #000;
+        font-weight: 700;
+        font-size: 1.05rem;
+        line-height: 1.5;
+        margin-bottom: 20px;
+    }
+
+    .key-points {
+        list-style: none;
+        margin-bottom: 20px;
+    }
+
+    .key-points li {
+        color: #000;
+        font-weight: 800;
+        margin-bottom: 12px;
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .key-points li::before {
+        content: "⚡";
+        margin-right: 10px;
+    }
+
+    .formula-box {
+        background: #000;
+        color: #fffb00;
+        text-align: center;
+        padding: 20px;
+        border-radius: 15px;
+        font-size: 1.3rem;
+        font-weight: bold;
+        border: 2px solid #fffb00;
+    }
+</style>
+
+<div class="topic-card">
+    <h1 class="topic-title">1. Electromagnetic Spectrum</h1>
+    <span class="label eng-label">English:</span>
+    <p class="text-body">The electromagnetic spectrum is the range of all types of EM radiation. Each type of radiation in the spectrum has a unique wavelength and frequency, ranging from long radio waves to very short gamma rays.</p>
+    <span class="label hin-label">Hinglish:</span>
+    <p class="text-body">Electromagnetic spectrum sari EM waves ki ek range hai. Isme waves ko unki frequency aur wavelength ke hisaab se lagaya jata hai, jaise Radio waves se lekar Gamma rays tak.</p>
+    <ul class="key-points">
+        <li>Includes visible and invisible light.</li>
+        <li>Classified by frequency and wavelength.</li>
+        <li>All travel at speed of light in vacuum.</li>
+    </ul>
+    <div class="formula-box">$$ \text{Range: } 10^4 \text{ to } 10^{22} \text{ Hz} $$</div>
+</div>
+
+<div class="topic-card">
+    <h1 class="topic-title">2. Order of EM Waves</h1>
+    <span class="label eng-label">English:</span>
+    <p class="text-body">The standard order of EM waves (increasing frequency) is: Radio waves, Microwaves, Infrared, Visible light, Ultraviolet, X-rays, and Gamma rays. This order helps determine the energy of each wave.</p>
+    <span class="label hin-label">Hinglish:</span>
+    <p class="text-body">EM waves ka sahi order hai: Radio, Micro, Infrared, Visible, UV, X-rays aur Gamma rays. Jaise-jaise frequency badhti hai, wave ki energy bhi badhti jati hai.</p>
+    <ul class="key-points">
+        <li>Radio waves have lowest frequency.</li>
+        <li>Gamma rays have highest frequency.</li>
+        <li>Wavelength follows the opposite order.</li>
+    </ul>
+    <div class="formula-box">$$ \text{Radio } \rightarrow \text{ Visible } \rightarrow \text{ Gamma} $$</div>
+</div>
+
+<div class="topic-card">
+    <h1 class="topic-title">3. Radio Waves</h1>
+    <span class="label eng-label">English:</span>
+    <p class="text-body">Radio waves are produced by accelerated motion of charges in wires. They have the longest wavelength and are primarily used for radio and television communication systems.</p>
+    <span class="label hin-label">Hinglish:</span>
+    <p class="text-body">Radio waves antennas mein charges ke vibrate hone se banti hain. Inka wavelength sabse lamba hota hai aur ye TV aur Radio signals bhejne ke kaam aati hain.</p>
+    <ul class="key-points">
+        <li>Wavelength: > 0.1 m.</li>
+        <li>Used in AM/FM radio broadcasting.</li>
+        <li>Used in cellular phone communication.</li>
+    </ul>
+    <div class="formula-box">$$ \lambda > 1 \text{ meter} $$</div>
+</div>
+
+<div class="topic-card">
+    <h1 class="topic-title">4. Microwaves</h1>
+    <span class="label eng-label">English:</span>
+    <p class="text-body">Microwaves are short-wavelength radio waves produced by special vacuum tubes. They are ideal for radar systems and for heating food in microwave ovens by vibrating water molecules.</p>
+    <span class="label hin-label">Hinglish:</span>
+    <p class="text-body">Microwaves choti radio waves hoti hain. Inka use Radar technology mein jahazon ka rasta dekhne aur kitchen mein khana garam karne ke liye kiya jata hai.</p>
+    <ul class="key-points">
+        <li>Frequency: $10^9$ to $10^{12}$ Hz.</li>
+        <li>Used in satellite communication.</li>
+        <li>Used in Radar for aircraft navigation.</li>
+    </ul>
+    <div class="formula-box">$$ \text{Radar & Oven Use} $$</div>
+</div>
+
+<div class="topic-card">
+    <h1 class="topic-title">5. Infrared Waves</h1>
+    <span class="label eng-label">English:</span>
+    <p class="text-body">Infrared waves are produced by hot bodies and molecules. Often called 'heat waves', they are used in remote controls, night vision goggles, and keeping the Earth warm via the greenhouse effect.</p>
+    <span class="label hin-label">Hinglish:</span>
+    <p class="text-body">Infrared waves garam cheezon se nikalti hain, isiliye inhe "heat waves" kehte hain. TV remote aur night vision cameras mein yahi waves use hoti hain.</p>
+    <ul class="key-points">
+        <li>Wavelength: 700 nm to 1 mm.</li>
+        <li>Used in physical therapy.</li>
+        <li>Responsible for Greenhouse Effect.</li>
+    </ul>
+    <div class="formula-box">$$ \text{Heat Radiation} $$</div>
+</div>
+
+<div class="topic-card">
+    <h1 class="topic-title">6. Visible Light</h1>
+    <span class="label eng-label">English:</span>
+    <p class="text-body">Visible light is the part of the spectrum that our eyes can detect. It ranges from violet to red. It allows us to see the world around us and is essential for photosynthesis.</p>
+    <span class="label hin-label">Hinglish:</span>
+    <p class="text-body">Visible light spectrum ka wo hissa hai jise hum dekh sakte hain. Isme VIBGYOR ke saare rang hote hain aur ye humein cheezein dekhne mein madad karti hai.</p>
+    <ul class="key-points">
+        <li>Range: 400 nm to 700 nm.</li>
+        <li>Smallest part of the spectrum.</li>
+        <li>Source: Sun, light bulbs, etc.</li>
+    </ul>
+    <div class="formula-box">$$ \text{Visible Range: VIBGYOR} $$</div>
+</div>
+
+<div class="topic-card">
+    <h1 class="topic-title">7. Ultraviolet Rays</h1>
+    <span class="label eng-label">English:</span>
+    <p class="text-body">Ultraviolet (UV) rays are high-energy waves from the sun. While they help in water purification and sterilization, overexposure can cause skin damage and eye problems. The ozone layer absorbs most UV rays.</p>
+    <span class="label hin-label">Hinglish:</span>
+    <p class="text-body">UV rays suraj se aati hain aur inme kafi energy hoti hai. Inka use bacteria maarne aur water purification (RO) mein hota hai, lekin ye skin ke liye nuksan-deh ho sakti hain.</p>
+    <ul class="key-points">
+        <li>Wavelength: 1 nm to 400 nm.</li>
+        <li>Used in LASIK eye surgery.</li>
+        <li>Absorbed by the Earth's Ozone layer.</li>
+    </ul>
+    <div class="formula-box">$$ \text{Source: Sun & UV Lamps} $$</div>
+</div>
+
+<div class="topic-card">
+    <h1 class="topic-title">8. X-rays</h1>
+    <span class="label eng-label">English:</span>
+    <p class="text-body">X-rays are highly penetrating radiation used in medical imaging to view bones. They are produced by bombarding a metal target with high-energy electrons.</p>
+    <span class="label hin-label">Hinglish:</span>
+    <p class="text-body">X-rays bahut takatwar hoti hain aur sharir ke andar dekhne ke kaam aati hain. Inka main use hospital mein tuti hui haddiyon ka pata lagane ke liye hota hai.</p>
+    <ul class="key-points">
+        <li>High penetrating power.</li>
+        <li>Used in airport security scanners.</li>
+        <li>Used in CT Scans for diagnosis.</li>
+    </ul>
+    <div class="formula-box">$$ \text{Medical Imaging Use} $$</div>
+</div>
+
+<div class="topic-card">
+    <h1 class="topic-title">9. Gamma Rays</h1>
+    <span class="label eng-label">English:</span>
+    <p class="text-body">Gamma rays have the shortest wavelength and highest frequency. They are produced in nuclear reactions and by radioactive nuclei. They are used in radiotherapy to destroy cancer cells.</p>
+    <span class="label hin-label">Hinglish:</span>
+    <p class="text-body">Gamma rays sabse zyada energy wali waves hain jo nuclear reactions se nikalti hain. Inka use cancer ke ilaaj (radiotherapy) mein cells ko khatam karne ke liye hota hai.</p>
+    <ul class="key-points">
+        <li>Highest energy in the spectrum.</li>
+        <li>Produced by radioactive decay.</li>
+        <li>Used for sterilizing medical equipment.</li>
+    </ul>
+    <div class="formula-box">$$ E = h \nu \text{ (Maximum)} $$</div>
+</div>
+<style>
+    /* Page ko hilne se rokne ke liye fix */
+    .container {
+        overflow-x: hidden;
+        width: 100%;
+        position: relative;
+    }
+
+    /* Stable Cyan-Blue Gradient Style - No Shaking */
+    .topic-card {
+        background: linear-gradient(180deg, #00f2fe 0%, #4facfe 100%);
+        padding: 25px;
+        margin-bottom: 35px;
+        border-radius: 25px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .topic-title {
+        color: #000;
+        font-weight: 900;
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .label {
+        font-weight: 900;
+        font-size: 1.1rem;
+        display: block;
+        margin-bottom: 5px;
+    }
+    .eng-label { color: #003311; } 
+    .hin-label { color: #440033; } 
+
+    .text-body {
+        color: #000;
+        font-weight: 700;
+        font-size: 1.05rem;
+        line-height: 1.5;
+        margin-bottom: 20px;
+    }
+
+    .key-points {
+        list-style: none;
+        margin-bottom: 20px;
+    }
+
+    .key-points li {
+        color: #000;
+        font-weight: 800;
+        margin-bottom: 12px;
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .key-points li::before {
+        content: "⚡";
+        margin-right: 10px;
+    }
+
+    .formula-box {
+        background: #000;
+        color: #fffb00;
+        text-align: center;
+        padding: 20px;
+        border-radius: 15px;
+        font-size: 1.3rem;
+        font-weight: bold;
+        border: 2px solid #fffb00;
+    }
+</style>
+
+<div class="topic-card">
+    <h1 class="topic-title">1. Uses of Radio Waves</h1>
+    <span class="label eng-label">English:</span>
+    <p class="text-body">Radio waves are extensively used for long-distance communication. They are the backbone of radio broadcasting (AM/FM), television signal transmission, and cellular phone networks because they can travel through the atmosphere easily.</p>
+    <span class="label hin-label">Hinglish:</span>
+    <p class="text-body">Radio waves ka sabse bada use communication mein hota hai. TV ke signals, FM radio, aur hamare mobile phone ki calling isi wave ki wajah se possible hai kyunki ye lambi doori tak asani se ja sakti hain.</p>
+    <ul class="key-points">
+        <li>Used in Wireless Communication.</li>
+        <li>Standard for TV and Radio signals.</li>
+        <li>Vital for Air Traffic Control.</li>
+    </ul>
+    <div class="formula-box">$$ \text{Communication Backbone} $$</div>
+</div>
+
+<div class="topic-card">
+    <h1 class="topic-title">2. Uses of Microwaves</h1>
+    <span class="label eng-label">English:</span>
+    <p class="text-body">Microwaves are used in radar systems for aircraft navigation and speed detection by police. In households, they are used in microwave ovens to cook food quickly by vibrating water molecules inside the food.</p>
+    <span class="label hin-label">Hinglish:</span>
+    <p class="text-body">Microwaves ka use Radar systems mein jahazon ki direction pata karne ke liye hota hai. Saath hi, ye Microwave Ovens mein khana banane aur satellite signals bhejane ke liye bhi best hain.</p>
+    <ul class="key-points">
+        <li>Used in Aircraft Radar.</li>
+        <li>Used in Microwave Ovens.</li>
+        <li>Effective for Point-to-Point Communication.</li>
+    </ul>
+    <div class="formula-box">$$ \text{Radar & Satellite Link} $$</div>
+</div>
+
+<div class="topic-card">
+    <h1 class="topic-title">3. Uses of Infrared</h1>
+    <span class="label eng-label">English:</span>
+    <p class="text-body">Infrared waves are used in short-range communication like TV remote controls. They are also used in thermal imaging cameras to see in the dark and in physical therapy to treat muscular strains by providing heat.</p>
+    <span class="label hin-label">Hinglish:</span>
+    <p class="text-body">Infrared ka use hamare TV remote mein hota hai. Inhe "Heat waves" bhi kehte hain, isiliye night vision cameras aur doctor body pain thik karne ke liye inka use karte hain.</p>
+    <ul class="key-points">
+        <li>Used in TV Remote Controls.</li>
+        <li>Night Vision Technology.</li>
+        <li>Horticulture (Greenhouses).</li>
+    </ul>
+    <div class="formula-box">$$ \text{Heat / Thermal Sensing} $$</div>
+</div>
+
+<div class="topic-card">
+    <h1 class="topic-title">4. Uses of Visible Light</h1>
+    <span class="label eng-label">English:</span>
+    <p class="text-body">Visible light is essential for human vision, allowing us to perceive the world. It is also used in photography, fiber optic communication to transmit high-speed data, and is critical for photosynthesis in plants.</p>
+    <span class="label hin-label">Hinglish:</span>
+    <p class="text-body">Visible light ki wajah se hi hum duniya dekh paate hain. Iska use photography aur high-speed internet (Optical Fiber) mein hota hai. Ped-poudhe isi se apna khana banate hain.</p>
+    <ul class="key-points">
+        <li>Enables Vision.</li>
+        <li>Optical Fiber Communication.</li>
+        <li>Used in Photography & Lasers.</li>
+    </ul>
+    <div class="formula-box">$$ \text{Vision & Fiber Optics} $$</div>
+</div>
+
+<div class="topic-card">
+    <h1 class="topic-title">5. Uses of Ultraviolet</h1>
+    <span class="label eng-label">English:</span>
+    <p class="text-body">Ultraviolet (UV) radiation is used for water purification as it kills bacteria and germs. It is also used in LASIK eye surgery, to detect counterfeit currency notes, and to sterilize surgical instruments in hospitals.</p>
+    <span class="label hin-label">Hinglish:</span>
+    <p class="text-body">UV rays ka use bacteria marne ke liye hota hai (RO filters mein). Hospitals mein auzaron ko saaf karne aur nakli notes ki pehchan karne ke liye bhi UV light ka istemal hota hai.</p>
+    <ul class="key-points">
+        <li>Water Sterilization (RO).</li>
+        <li>Detecting Fake Currency.</li>
+        <li>Used in Forensic Investigation.</li>
+    </ul>
+    <div class="formula-box">$$ \text{Sterilization & Security} $$</div>
+</div>
+
+<div class="topic-card">
+    <h1 class="topic-title">6. Uses of X-rays</h1>
+    <span class="label eng-label">English:</span>
+    <p class="text-body">X-rays are primarily used in the medical field to diagnose bone fractures and infections. In security, they are used at airports to scan luggage, and in industries to detect cracks in metal structures.</p>
+    <span class="label hin-label">Hinglish:</span>
+    <p class="text-body">X-rays ka sabse bada use hospital mein haddi (bone) tutne par photo lene ke liye hota hai. Airport par luggage checking aur badi machines ke andar ki dararen check karne mein bhi ye kaam aati hain.</p>
+    <ul class="key-points">
+        <li>Medical Radiography (Fractures).</li>
+        <li>Airport Security Scanning.</li>
+        <li>Cancer treatment (Radiotherapy).</li>
+    </ul>
+    <div class="formula-box">$$ \text{Diagnostic Imaging} $$</div>
+</div>
+
+<div class="topic-card">
+    <h1 class="topic-title">7. Uses of Gamma Rays</h1>
+    <span class="label eng-label">English:</span>
+    <p class="text-body">Gamma rays are used in medicine to destroy cancer cells in radiotherapy. They are also used in the food industry to kill pests and bacteria in packed food to increase its shelf life without affecting its taste.</p>
+    <span class="label hin-label">Hinglish:</span>
+    <p class="text-body">Gamma rays cancer ke ilaaj mein bahut zaruri hain. Ye packed food ko bacteria-free banane aur nuclear research mein use hoti hain kyunki ye bahut takatwar hoti hain.</p>
+    <ul class="key-points">
+        <li>Cancer Radiotherapy.</li>
+        <li>Food Preservation.</li>
+        <li>Nuclear Research & Medicine.</li>
+    </ul>
+    <div class="formula-box">$$ \text{High Energy Therapy} $$</div>
+</div>
+
+<div class="topic-card">
+    <h1 class="topic-title">8. Wavelength</h1>
+    <span class="label eng-label">English:</span>
+    <p class="text-body">Wavelength ($\lambda$) is the distance between two consecutive peaks (crests) or troughs in a wave. In the EM spectrum, radio waves have the longest wavelength while gamma rays have the shortest.</p>
+    <span class="label hin-label">Hinglish:</span>
+    <p class="text-body">Wavelength do crests ya do troughs ke beech ki doori ko kehte hain. Isse hum wave ki "lambai" samajh sakte hain. Radio waves ki wavelength sabse badi hoti hai.</p>
+    <ul class="key-points">
+        <li>Represented by $\lambda$.</li>
+        <li>S.I. Unit is Meter (m).</li>
+        <li>Inverse to Frequency.</li>
+    </ul>
+    <div class="formula-box">$$ \lambda = \frac{v}{f} $$</div>
+</div>
+
+<div class="topic-card">
+    <h1 class="topic-title">9. Frequency</h1>
+    <span class="label eng-label">English:</span>
+    <p class="text-body">Frequency ($f$ or $\nu$) is the number of wave oscillations that pass a fixed point in one second. Higher frequency means the wave carries more energy, which is why Gamma rays are so dangerous.</p>
+    <span class="label hin-label">Hinglish:</span>
+    <p class="text-body">Ek second mein kitni waves guzar rahi hain, usey frequency kehte hain. Frequency jitni zyada hogi, wave ki energy bhi utni hi zyada hogi.</p>
+    <ul class="key-points">
+        <li>Represented by $f$ or $\nu$.</li>
+        <li>S.I. Unit is Hertz (Hz).</li>
+        <li>Determines Wave Energy.</li>
+    </ul>
+    <div class="formula-box">$$ f = \frac{1}{T} $$</div>
+</div>
+
+<div class="topic-card">
+    <h1 class="topic-title">10. Wave Speed Relation</h1>
+    <span class="label eng-label">English:</span>
+    <p class="text-body">In vacuum, all EM waves travel at the speed of light ($c$). The speed of a wave is always equal to the product of its frequency and wavelength. If wavelength increases, frequency must decrease to keep the speed constant.</p>
+    <span class="label hin-label">Hinglish:</span>
+    <p class="text-body">Vacuum mein har EM wave light ki speed se chalti hai. Speed hamesha frequency aur wavelength ke guna (product) ke barabar hoti hai. Agar wavelength badhegi, toh frequency kam ho jayegi.</p>
+    <ul class="key-points">
+        <li>$c \approx 3 \times 10^8$ m/s.</li>
+        <li>Speed remains constant in vacuum.</li>
+        <li>Fundamental wave equation.</li>
+    </ul>
+    <div class="formula-box">$$ c = \nu \lambda $$</div>
+</div>
+<div style="text-align:center; margin-bottom:20px;">
+    <h1 style="color:#00f7ff; font-family:sans-serif; text-transform:uppercase; text-shadow:0 0 10px #00f7ff;">EM Waves MCQ Practice</h1>
+    <p style="color:#FFD700; font-family:sans-serif; font-weight:bold;">Click to choose correct answer</p>
+</div>
+
+<div id="quiz-box" style="max-width:600px; margin:auto; position:relative; z-index:1;"></div>
+
+<div id="quiz-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; z-index:9999; flex-direction:column; align-items:center; justify-content:center; pointer-events:none;">
+    <div id="status-strip" style="width:100%; text-align:center; padding:30px 0;">
+        <h1 id="status-title" style="margin:0; padding:0;"></h1>
+        <p id="status-message" style="margin:10px 0; font-family:sans-serif; font-weight:bold;"></p>
+        <p id="next-msg" style="margin:0; font-family:sans-serif;"></p>
+    </div>
+</div>
+
+<style>
+/* RGB Border Animation */
+@keyframes rgb-glow {
+    0% { border-color: #00f7ff; box-shadow: 0 0 8px #00f7ff; }
+    33% { border-color: #ff00c8; box-shadow: 0 0 8px #ff00c8; }
+    66% { border-color: #48ff00; box-shadow: 0 0 8px #48ff00; }
+    100% { border-color: #00f7ff; box-shadow: 0 0 8px #00f7ff; }
+}
+
+.quiz-card {
+    background: rgba(255,255,255,0.05); 
+    padding: 20px; 
+    margin: 15px 0; 
+    border-radius: 15px; 
+    border: 2px solid #00f7ff; 
+    animation: rgb-glow 4s linear infinite;
+}
+
+.opt-btn {
+    display: block; 
+    width: 100%; 
+    margin: 12px 0; 
+    padding: 15px; 
+    background: rgba(255,255,255,0.08); 
+    color: #fff; 
+    border: 1.5px solid #00f7ff; 
+    border-radius: 12px; 
+    text-align: left; 
+    font-weight: 600; 
+    cursor: pointer;
+    animation: rgb-glow 3s linear infinite;
+}
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+const questions = [
+    { q:"Which of the following has the shortest wavelength?", opts:["X-rays","Gamma rays","Microwaves","Radio waves"], ans:1 },
+    { q:"EM waves are produced by:", opts:["Static charge","Uniformly moving charge","Accelerated charge","Neutral particles"], ans:2 },
+    { q:"The speed of EM waves in vacuum is given by:", opts:["1/√(μ₀ε₀)","√(μ₀ε₀)","μ₀ε₀","1/(μ₀ε₀)"], ans:0 },
+    { q:"Which part of EM spectrum is used in Radar?", opts:["Infrared","Ultraviolet","Microwaves","X-rays"], ans:2 },
+    { q:"The direction of propagation of EM wave is given by:", opts:["E vector","B vector","E × B","B × E"], ans:2 },
+    { q:"Which waves are used to take pictures in dark/fog?", opts:["Visible light","Infrared","Ultraviolet","X-rays"], ans:1 },
+    { q:"Displacement current was introduced by:", opts:["Ampere","Faraday","Maxwell","Hertz"], ans:2 },
+    { q:"Ratio of amplitudes of E and B in EM wave (E₀/B₀) is:", opts:["Speed of light (c)","1/c","c²","√(μ₀ε₀)"], ans:0 },
+    { q:"Ozone layer absorbs:", opts:["Infrared","Visible light","Ultraviolet","Radio waves"], ans:2 },
+    { q:"Which of the following is NOT an EM wave?", opts:["X-rays","Sound waves","Light waves","Microwaves"], ans:1 },
+    { q:"Wavelength of visible light is in range:", opts:["400nm to 700nm","1nm to 100nm","1mm to 1cm","1m to 10m"], ans:0 },
+    { q:"EM waves are ______ in nature.", opts:["Longitudinal","Transverse","Stationary","Mechanical"], ans:1 },
+    { q:"Greenhouse effect is mainly due to:", opts:["Ultraviolet","Infrared","X-rays","Gamma rays"], ans:1 },
+    { q:"Which wave has the highest frequency?", opts:["Radio waves","Gamma rays","Microwaves","Visible light"], ans:1 },
+    { q:"Formula for Displacement Current (Id) is:", opts:["ε₀ dΦe/dt","μ₀ dΦe/dt","dΦe/dt","ε₀/dt"], ans:0 },
+    { q:"EM waves carry:", opts:["Charge","Mass","Energy and Momentum","None"], ans:2 },
+    { q:"In EM wave, phase difference between E and B is:", opts:["0","π/2","π","π/4"], ans:0 },
+    { q:"Used in water purifiers to kill germs:", opts:["Infrared","Microwaves","Ultraviolet","Radio waves"], ans:2 },
+    { q:"Used to study crystal structure:", opts:["X-rays","Ultraviolet","Microwaves","Radio waves"], ans:0 },
+    { q:"Radio waves are reflected by which layer?", opts:["Stratosphere","Ionosphere","Mesosphere","Troposphere"], ans:1 },
+    { q:"Source of EM waves is:", opts:["Charge at rest","Constant current","Accelerated charge","None"], ans:2 },
+    { q:"Which has highest penetrating power?", opts:["X-rays","Ultraviolet","Gamma rays","Infrared"], ans:2 },
+    { q:"Velocity of EM waves in a medium depends on:", opts:["Amplitude","Permeability & Permittivity","Intensity","Frequency"], ans:1 },
+    { q:"TV remote controls use:", opts:["Infrared","Ultraviolet","Radio waves","X-rays"], ans:0 },
+    { q:"Frequency of visible light is of order:", opts:["10¹⁴ Hz","10¹⁰ Hz","10⁸ Hz","10¹⁸ Hz"], ans:0 },
+    { q:"Maxwell's equations are based on:", opts:["Electricity only","Magnetism only","Electromagnetism","None"], ans:2 },
+    { q:"Pressure exerted by EM waves is called:", opts:["Radiation pressure","Static pressure","Atmospheric pressure","None"], ans:0 },
+    { q:"The energy in EM waves is divided ______ between E and B fields.", opts:["Unequally","Equally","Only in E","Only in B"], ans:1 },
+    { q:"Who first experimentally demonstrated EM waves?", opts:["Maxwell","Hertz","Marconi","Ampere"], ans:1 },
+    { q:"Cellular phones use:", opts:["Radio waves","Microwaves","Visible light","X-rays"], ans:1 },
+    { q:"Wavelength of X-rays is of order:", opts:["1 Angstrom","1 Meter","1 cm","1 km"], ans:0 },
+    { q:"Amplitude of magnetic field B₀ is ______ than E₀.", opts:["Larger","Smaller","Equal","Double"], ans:1 },
+    { q:"EM waves can travel through:", opts:["Vacuum only","Medium only","Both","None"], ans:2 },
+    { q:"Intensity of EM wave is proportional to:", opts:["E₀","E₀²","√E₀","1/E₀"], ans:1 },
+    { q:"Used in treatment of cancer:", opts:["Gamma rays","Microwaves","Radio waves","Infrared"], ans:0 },
+    { q:"Which part of spectrum has waves of frequency 10¹⁹ Hz?", opts:["Radio","Micro","X-rays","Infrared"], ans:2 },
+    { q:"Conduction current is same as displacement current in ______ state.", opts:["Steady","Transient","Both","None"], ans:0 },
+    { q:"Average energy density of E field is:", opts:["1/2 ε₀E²","ε₀E²","1/2 μ₀B²","None"], ans:0 },
+    { q:"EM wave does not show:", opts:["Reflection","Refraction","Deflection in Electric Field","Interference"], ans:2 },
+    { q:"Red light has ______ wavelength than blue light.", opts:["Shorter","Longer","Equal","Half"], ans:1 },
+    { q:"Displacement current exists where E is:", opts:["Constant","Changing with time","Zero","Negative"], ans:1 },
+    { q:"In EM wave, E and B are ______ to each other.", opts:["Parallel","Perpendicular","Antiparallel","None"], ans:1 },
+    { q:"Fingerprints on documents are detected by:", opts:["Infrared","UV light","Microwaves","X-rays"], ans:1 },
+    { q:"Speed of light in air is approx:", opts:["3 × 10⁸ m/s","3 × 10⁶ m/s","3 × 10¹⁰ m/s","340 m/s"], ans:0 },
+    { q:"Ratio of energy density of E to B is:", opts:["1:1","2:1","1:2","c:1"], ans:0 },
+    { q:"Heat radiation is also known as:", opts:["Infrared","Visible","UV","X-rays"], ans:0 },
+    { q:"EM waves are not deflected by:", opts:["Electric field","Magnetic field","Both","None"], ans:2 },
+    { q:"Who predicted EM waves theoretically?", opts:["Maxwell","Hertz","Newton","Einstein"], ans:0 },
+    { q:"Microwave oven works on the principle of:", opts:["Resonance of water molecules","Nuclear energy","Friction","Conduction"], ans:0 },
+    { q:"Unit of Id is same as unit of:", opts:["Voltage","Current","Resistance","Charge"], ans:1 }
+];
+
+const quizBox = document.getElementById('quiz-box');
+
+questions.forEach((item, index) => {
+    let card = document.createElement('div');
+    card.className = "quiz-card";
+    card.innerHTML = `<p style="color:#FFD700; font-size:18px; font-weight:bold;">Q${index+1}. ${item.q}</p>`;
+
+    item.opts.forEach((opt, oIdx) => {
+        let btn = document.createElement('button');
+        btn.innerText = opt;
+        btn.className = "opt-btn";
+        btn.onclick = () => {
+            const overlay = document.getElementById('quiz-overlay');
+            const title = document.getElementById('status-title');
+            const msg = document.getElementById('status-message');
+            const nxt = document.getElementById('next-msg');
+            const strip = document.getElementById('status-strip');
+
+            overlay.style.display = "flex";
+            overlay.style.pointerEvents = "auto"; 
+
+            if(oIdx === item.ans){
+                overlay.style.background = "rgba(0,0,0,0.85)";
+                strip.style.background = "transparent";
+                title.style.cssText = "font-family:'Dancing Script', cursive; color:#fff; font-size:60px; text-shadow:0 0 20px #00f7ff, 0 0 40px #00f7ff;";
+                title.innerText = "Congratulations";
+                msg.innerText = "Excellent! You are a true Topper.";
+                msg.style.color = "#00f7ff";
+                nxt.innerText = "Go to next question...";
+
+                var end = Date.now() + 1500;
+                var colors = ['#00f7ff','#ff0000','#ffffff','#ff00c8','#48ff00'];
+                (function frame(){
+                    confetti({particleCount:15,angle:60,spread:65,origin:{x:0},colors:colors, zIndex: 999999});
+                    confetti({particleCount:15,angle:120,spread:65,origin:{x:1},colors:colors, zIndex: 999999});
+                    if(Date.now() < end) requestAnimationFrame(frame);
+                })();
+            } else {
+                overlay.style.background = "radial-gradient(rgba(139,0,0,0.5) 10%, rgba(0,0,0,0.85) 90%)";
+                strip.style.background = "rgba(0,0,0,0.6)";
+                strip.style.width = "100%";
+                strip.style.padding = "30px 0";
+                title.style.cssText = "font-family:'Oswald', sans-serif; color:red; font-size:80px; font-weight:900; letter-spacing:10px; text-shadow:4px 4px 0px #000;";
+                title.innerText = "WASTED";
+                msg.innerText = "Oops! Try again with focus.";
+                msg.style.color = "#fff";
+                nxt.innerText = "";
+            }
+
+            setTimeout(() => {
+                overlay.style.display = "none";
+                overlay.style.pointerEvents = "none"; 
+            }, 2500);
+        };
+        card.appendChild(btn);
+    });
+    quizBox.appendChild(card);
+});
+});
+</script>
+
+<div style="text-align:center; margin-bottom:20px;">
+    <h1 style="color:#00ffcc; font-family:sans-serif; text-transform:uppercase; text-shadow:0 0 15px #00ffcc;">Advanced Level: Q51 - Q100</h1>
+    <p style="color:#ffffff; font-family:sans-serif; font-weight:bold;">Conceptual Depth: Smart Study for Toppers</p>
+</div>
+
+<div id="quiz-box" style="max-width:600px; margin:auto; position:relative; z-index:1;"></div>
+
+<div id="quiz-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; z-index:9999; flex-direction:column; align-items:center; justify-content:center; pointer-events:none;">
+    <div id="status-strip" style="width:100%; text-align:center; padding:30px 0;">
+        <h1 id="status-title"></h1>
+        <p id="status-message" style="font-weight:bold;"></p>
+        <p id="next-msg"></p>
+    </div>
+</div>
+
+<style>
+/* RGB Border Animation for line color change */
+@keyframes rgb-glow {
+    0% { border-color: #00f7ff; box-shadow: 0 0 8px #00f7ff; }
+    33% { border-color: #ff00c8; box-shadow: 0 0 8px #ff00c8; }
+    66% { border-color: #48ff00; box-shadow: 0 0 8px #48ff00; }
+    100% { border-color: #00f7ff; box-shadow: 0 0 8px #00f7ff; }
+}
+
+.quiz-card {
+    background: linear-gradient(145deg, #0f2027, #203a43, #2c5364); 
+    padding: 20px; 
+    margin: 15px 0; 
+    border-radius: 15px; 
+    border: 2px solid #00f7ff; 
+    animation: rgb-glow 4s linear infinite; /* RGB Glow for cards */
+}
+
+.opt-btn {
+    display: block; 
+    width: 100%; 
+    margin: 10px 0; 
+    padding: 14px; 
+    background: rgba(255,255,255,0.05); 
+    color: #fff; 
+    border: 1.5px solid #00ffcc; 
+    border-radius: 10px; 
+    text-align: left; 
+    font-weight: 600; 
+    cursor: pointer;
+    transition: 0.3s;
+    animation: rgb-glow 3s linear infinite; /* RGB Glow for option lines */
+}
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+const questions = [
+    {q:"A charged particle moves in a magnetic field. Which of the following can change?",opts:["Speed","Kinetic Energy","Momentum","None of these"],ans:2},
+    {q:"If a particle of charge q is moving in B-field with velocity v, the force is zero if the angle is:",opts:["90°","45°","60°","180°"],ans:3},
+    {q:"The magnetic field at a distance r from a long wire is B. What is the field at r/2?",opts:["B/2","2B","B","4B"],ans:1},
+    {q:"A current carrying loop is placed in a uniform B-field. The net force on it is:",opts:["Always zero","Depends on area","Depends on current","Never zero"],ans:0},
+    {q:"The work done by a magnetic field on a moving charge is zero because:",opts:["B is uniform","v is constant","F is perpendicular to v","F is zero"],ans:2},
+    {q:"A solenoid has N turns. If N is doubled and length is halved, the magnetic field becomes:",opts:["Double","Half","Four times","Eight times"],ans:2},
+    {q:"The sensitivity of a moving coil galvanometer is inversely proportional to:",opts:["Number of turns","Area of coil","Magnetic field","Torsional constant (k)"],ans:3},
+    {q:"In a cyclotron, the time taken by a particle to complete a semicircle is:",opts:["Dependent on speed","Independent of speed","Dependent on radius","None"],ans:1},
+    {q:"The torque on a current loop of n turns, area A, and current I in field B is:",opts:["nIAB cosθ","nI/AB","nIAB sinθ","Zero"],ans:2},
+    {q:"At the magnetic poles of Earth, the angle of dip is:",opts:["0°","45°","180°","90°"],ans:3},
+    {q:"Magnetic susceptibility of a superconductor is:",opts:["0","1","Infinity","-1"],ans:3},
+    {q:"Above Curie temperature, a ferromagnetic material behaves like:",opts:["Diamagnetic","Paramagnetic","Superconductor","Insulator"],ans:1},
+    {q:"The property of a material to retain magnetism even after the field is removed is:",opts:["Coercivity","Retentivity","Permeability","Susceptibility"],ans:1},
+    {q:"Which of the following materials has the highest permeability?",opts:["Diamagnetic","Paramagnetic","Ferromagnetic","All same"],ans:2},
+    {q:"A magnetic needle is free to rotate in a vertical plane. At the magnetic equator, it will be:",opts:["Vertical","Horizontal","Inclined at 45°","Random"],ans:1},
+    {q:"The SI unit of magnetic intensity (H) is:",opts:["Tesla","Weber","Ampere-meter","Ampere/meter"],ans:3},
+    {q:"The relation between B, H, and I (intensity of magnetization) is:",opts:["B = μ₀(H+I)","B = μ₀H/I","B = H + μ₀I","None"],ans:0},
+    {q:"For a diamagnetic substance, susceptibility (χ) is:",opts:["Small and positive","Large and positive","Small and negative","Zero"],ans:2},
+    {q:"The temperature at which a ferromagnetic material becomes paramagnetic is:",opts:["Inversion temp","Curie temp","Critical temp","Boyle temp"],ans:1},
+    {q:"Soft iron is used in transformer cores because it has:",opts:["High retentivity","Low coercivity","Low hysteresis loss","Both B and C"],ans:3},
+    {q:"If a magnet is cut into two halves along its length, the pole strength:",opts:["Is doubled","Is halved","Remains same","Becomes zero"],ans:1},
+    {q:"If the same magnet is cut perpendicular to its length, the pole strength:",opts:["Is halved","Is doubled","Remains same","None"],ans:2},
+    {q:"The unit of magnetic flux is Weber. 1 Weber is equal to:",opts:["1 T·m²","1 T/m²","1 T·m","1 T/m"],ans:0},
+    {q:"Gauss's Law for magnetism (∮B·dA = 0) implies:",opts:["Monopoles exist","Monopoles do not exist","Field is uniform","Flux is infinite"],ans:1},
+    {q:"An electron moves in a circle in a B-field. The period of revolution is independent of:",opts:["Mass","Charge","Velocity","Magnetic field"],ans:2},
+    {q:"A current loop behaves as a magnetic dipole. Its dipole moment is:",opts:["I/A","IA","I²A","A/I"],ans:1},
+    {q:"The magnetic field at the center of a circular coil of radius R is B. At a point on the axis at distance R, it is:",opts:["B/2","B/4","B/2√2","B/8"],ans:2},
+    {q:"Two wires carry currents in the same direction. The force between them is:",opts:["Repulsive","Attractive","Zero","Rotating"],ans:1},
+    {q:"Shunt resistance required to convert G to Ammeter of range 'n' times is:",opts:["G/n","G(n-1)","G/(n-1)","G/n²"],ans:2},
+    {q:"High resistance 'R' connected in series with G to make it a Voltmeter is:",opts:["V/Ig - G","V/Ig + G","Ig/V - G","None"],ans:0},
+    {q:"Lorentz force on a charge q moving with v in E and B fields is:",opts:["q(E - v×B)","q(E + v×B)","q(v×B)","qE"],ans:1},
+    {q:"The trajectory of a charge entering a B-field at an angle of 45° is:",opts:["Circle","Helix","Straight line","Parabola"],ans:1},
+    {q:"In a MCG, the purpose of a phosphor-bronze strip is:",opts:["To provide large torque","To conduct current","Both B and C","To provide small k"],ans:2},
+    {q:"Magnetic field inside a hollow conductor carrying current is:",opts:["Constant","Infinite","Zero","Decreasing"],ans:2},
+    {q:"Permanent magnets should have:",opts:["High retentivity, high coercivity","High retentivity, low coercivity","Low retentivity, low coercivity","None"],ans:0},
+    {q:"The ratio of magnetic field at center and at distance R on axis of a circular loop is:",opts:["2:1","1:1","2√2 : 1","1:2"],ans:2},
+    {q:"A dip circle is used to measure:",opts:["Magnetic field","Angle of Dip","Magnetic Declination","Magnetic Moment"],ans:1},
+    {q:"The core of an electromagnet is made of soft iron because it has:",opts:["High permeability","Low retentivity","High coercivity","Both A and B"],ans:3},
+    {q:"Relative permeability (μr) of a paramagnetic substance is:",opts:["μr < 1","μr = 1","μr > 1","μr = 0"],ans:2},
+    {q:"A wire of length L is bent into a circle. Field at center is B. If bent into 2 turns, field is:",opts:["2B","B/2","B/4","4B"],ans:3},
+    {q:"Torque on a dipole is zero when it is:",opts:["Parallel to B","Perpendicular to B","At 45° to B","None"],ans:0},
+    {q:"Potential energy of a magnetic dipole in B-field is:",opts:["m·B","m×B","Zero","-m·B"],ans:3},
+    {q:"The value of Earth's magnetic field at the core is:",opts:["Maximum","Zero","Same as surface","Very high"],ans:1},
+    {q:"Which has a negative susceptibility?",opts:["Iron","Aluminum","Copper","None"],ans:2},
+    {q:"Biot-Savart law is the magnetic equivalent of:",opts:["Ohm's law","Coulomb's law","Faraday's law","None"],ans:1},
+    {q:"Force per unit length between two parallel wires is:",opts:["μ₀I₁I₂ / 2πr","μ₀I₁I₂ / r","μ₀I₁I₂ / 4πr","None"],ans:0},
+    {q:"A cyclotron is not suitable for:",opts:["Protons","Electrons","Alphas","Deuterons"],ans:1},
+    {q:"For a paramagnetic material, χ is proportional to:",opts:["T","1/T","T²","1/√T"],ans:1},
+    {q:"1 Tesla is how many Gauss?",opts:["10²","10⁶","10⁴","10⁻⁴"],ans:2},
+    {q:"Magnetic field lines due to a toroid are confined:",opts:["Outside it","Only inside its core","At the center","None"],ans:1}
+];
+
+const quizBox = document.getElementById('quiz-box');
+
+questions.forEach((item, index) => {
+    let card = document.createElement('div');
+    card.className = "quiz-card";
+
+    card.innerHTML = `<p style="color:#00ffcc; font-size:18px; font-weight:bold;">Q${index+51}. ${item.q}</p>`;
+
+    item.opts.forEach((opt, oIdx) => {
+        let btn = document.createElement('button');
+        btn.innerText = opt;
+        btn.className = "opt-btn";
+
+        btn.onclick = () => {
+            const overlay = document.getElementById('quiz-overlay');
+            const title = document.getElementById('status-title');
+            const msg = document.getElementById('status-message');
+            const nxt = document.getElementById('next-msg');
+            const strip = document.getElementById('status-strip');
+
+            overlay.style.display = "flex";
+            overlay.style.pointerEvents = "auto"; 
+
+            if(oIdx === item.ans){
+                overlay.style.background = "rgba(0,0,0,0.85)";
+                strip.style.background = "transparent";
+                title.style.cssText = "font-family:'Dancing Script', cursive; color:#fff; font-size:60px; text-shadow:0 0 20px #00f7ff, 0 0 40px #00f7ff;";
+                title.innerText = "Physics Master";
+                msg.innerText = "Incredible! Your concepts are solid.";
+                msg.style.color = "#00f7ff";
+                nxt.innerText = "Next conceptual challenge...";
+
+                var end = Date.now() + 1500;
+                var colors = ['#00f7ff','#ff0000','#ffffff','#ff00c8','#48ff00'];
+                (function frame(){
+                    confetti({particleCount:15,angle:60,spread:65,origin:{x:0},colors:colors, zIndex: 999999});
+                    confetti({particleCount:15,angle:120,spread:65,origin:{x:1},colors:colors, zIndex: 999999});
+                    if(Date.now() < end) requestAnimationFrame(frame);
+                })();
+            } else {
+                overlay.style.background = "radial-gradient(rgba(139,0,0,0.5) 10%, rgba(0,0,0,0.85) 90%)";
+                strip.style.background = "rgba(0,0,0,0.6)";
+                strip.style.width = "100%";
+                strip.style.padding = "30px 0";
+                title.style.cssText = "font-family:'Oswald', sans-serif; color:red; font-size:80px; font-weight:900; letter-spacing:10px; text-shadow:4px 4px 0px #000;";
+                title.innerText = "WASTED";
+                msg.innerText = "Wrong! Focus on the theory.";
+                msg.style.color = "#fff";
+                nxt.innerText = "";
+            }
+
+            setTimeout(() => {
+                overlay.style.display = "none";
+                overlay.style.pointerEvents = "none"; 
+            }, 2500);
+        };
+        card.appendChild(btn);
+    });
+    quizBox.appendChild(card);
+});
+});
+</script>
+<div id="long-questions-ch8-full" style="max-width:800px; margin:auto; font-family:Arial, sans-serif;">
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px; box-shadow: 0 10px 15px rgba(0,0,0,0.3);">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q1. What is Displacement Current? Derive its expression using the concept of Electric Flux.</p>
+        <button onclick="toggleQ('ch8_q1')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ch8_q1" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:1.8;">
+            1. Electric field inside capacitor: <b>E = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">q</td></tr><tr><td>&epsilon;<sub>0</sub>A</td></tr></table></b>.<br>
+            2. Electric Flux: <b>&Phi;<sub>E</sub> = E &middot; A</b>.<br>
+            3. Putting value of E: <b>&Phi;<sub>E</sub> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">q</td></tr><tr><td>&epsilon;<sub>0</sub>A</td></tr></table> &middot; A = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">q</td></tr><tr><td>&epsilon;<sub>0</sub></td></tr></table></b>.<br>
+            4. Therefore, charge <b>q = &epsilon;<sub>0</sub> &Phi;<sub>E</sub></b>.<br>
+            5. Rate of change of charge is current: <b>I<sub>d</sub> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">dq</td></tr><tr><td>dt</td></tr></table></b>.<br>
+            6. Differentiating flux: <b>I<sub>d</sub> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">d(&epsilon;<sub>0</sub>&Phi;<sub>E</sub>)</td></tr><tr><td>dt</td></tr></table></b>.<br>
+            7. Final Displacement Current formula:
+            <div style="text-align:center; padding:15px; background:#222; border-radius:10px; margin-top:10px; color:#48ff00; font-size:1.4rem;">
+                <b>I<sub>d</sub> = &epsilon;<sub>0</sub> <table style="display:inline-table; vertical-align:middle; color:#48ff00;"><tr><td style="border-bottom:1px solid #48ff00;">d&Phi;<sub>E</sub></td></tr><tr><td>dt</td></tr></table></b>
+            </div>
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q2. List all four Maxwell's Equations and explain their physical significance.</p>
+        <button onclick="toggleQ('ch8_q2')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Equations</button>
+        <div id="ch8_q2" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:2.2;">
+            1. <b>Gauss’s Law (Electricity):</b> &oint; E&middot;dA = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">q</td></tr><tr><td>&epsilon;<sub>0</sub></td></tr></table> (Electric flux depends on enclosed charge).<br>
+            2. <b>Gauss’s Law (Magnetism):</b> &oint; B&middot;dA = 0 (Magnetic monopoles do not exist).<br>
+            3. <b>Faraday’s Law:</b> &oint; E&middot;dl = -<table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">d&Phi;<sub>B</sub></td></tr><tr><td>dt</td></tr></table> (Changing magnetic field creates electric field).<br>
+            4. <b>Ampere-Maxwell Law:</b> &oint; B&middot;dl = &mu;<sub>0</sub>(I<sub>c</sub> + I<sub>d</sub>).<br>
+            5. Significance: These equations describe how electric and magnetic fields interact and propagate as waves.
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q3. Show the relationship between speed of light (c), permittivity (&epsilon;<sub>0</sub>), and permeability (&mu;<sub>0</sub>).</p>
+        <button onclick="toggleQ('ch8_q3')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ch8_q3" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:2;">
+            1. Velocity of EM wave is determined by <b>c = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">E<sub>0</sub></td></tr><tr><td>B<sub>0</sub></td></tr></table></b>.<br>
+            2. From Maxwell’s equations, <b>c<sup>2</sup> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1</td></tr><tr><td>&mu;<sub>0</sub>&epsilon;<sub>0</sub></td></tr></table></b>.<br>
+            3. Putting value of <b>&mu;<sub>0</sub> = 4&pi; &times; 10<sup>-7</sup></b>.<br>
+            4. Putting value of <b>&epsilon;<sub>0</sub> = 8.85 &times; 10<sup>-12</sup></b>.<br>
+            5. Calculated <b>c = 2.99 &times; 10<sup>8</sup> m/s</b>.<br>
+            6. Result: 
+            <div style="text-align:center; padding:10px; color:#fffb00; font-size:1.3rem;">
+                <b>c = <table style="display:inline-table; vertical-align:middle; color:#fffb00;"><tr><td style="border-bottom:1px solid #fffb00;">1</td></tr><tr><td>&radic;&mu;<sub>0</sub>&epsilon;<sub>0</sub></td></tr></table></b>
+            </div>
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q4. Prove that energy density of electric field and magnetic field are equal in EM waves.</p>
+        <button onclick="toggleQ('ch8_q4')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Proof</button>
+        <div id="ch8_q4" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:2;">
+            1. Electric energy density: <b>u<sub>E</sub> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1</td></tr><tr><td>2</td></tr></table> &epsilon;<sub>0</sub>E<sup>2</sup></b>.<br>
+            2. Magnetic energy density: <b>u<sub>B</sub> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">B<sup>2</sup></td></tr><tr><td>2&mu;<sub>0</sub></td></tr></table></b>.<br>
+            3. We know <b>E = cB</b> and <b>c<sup>2</sup> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1</td></tr><tr><td>&mu;<sub>0</sub>&epsilon;<sub>0</sub></td></tr></table></b>.<br>
+            4. Substitute <b>E<sup>2</sup> = c<sup>2</sup>B<sup>2</sup></b> in <b>u<sub>E</sub></b>.<br>
+            5. <b>u<sub>E</sub> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1</td></tr><tr><td>2</td></tr></table> &epsilon;<sub>0</sub> ( <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1</td></tr><tr><td>&mu;<sub>0</sub>&epsilon;<sub>0</sub></td></tr></table> ) B<sup>2</sup></b>.<br>
+            6. After cancelling <b>&epsilon;<sub>0</sub></b>, we get <b>u<sub>E</sub> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">B<sup>2</sup></td></tr><tr><td>2&mu;<sub>0</sub></td></tr></table></b>.<br>
+            7. <b>Conclusion:</b> <b>u<sub>E</sub> = u<sub>B</sub></b>.
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q5. Mention five important properties of Electromagnetic Waves.</p>
+        <button onclick="toggleQ('ch8_q5')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Properties</button>
+        <div id="ch8_q5" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:2;">
+            1. <b>Transverse Nature:</b> E and B fields are perpendicular to each other and the direction of wave.<br>
+            2. <b>No Medium Required:</b> They can travel through vacuum at speed <b>3 &times; 10<sup>8</sup> m/s</b>.<br>
+            3. <b>Energy and Momentum:</b> EM waves carry both energy and linear momentum.<br>
+            4. <b>Radiation Pressure:</b> They exert pressure on any surface they strike.<br>
+            5. <b>Source:</b> They are produced by accelerated or oscillating charges.
+        </div>
+    </div>
+
+</div>
+
+<script>
+function toggleQ(id) {
+    var x = document.getElementById(id);
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+</script>
+
+<style>
+@keyframes moveBg { 
+    0% { background-position: 0% 50%; } 
+    50% { background-position: 100% 50%; } 
+    100% { background-position: 0% 50%; } 
+}
+</style>
+<div id="long-questions-ch8-part2" style="max-width:800px; margin:auto; font-family:Arial, sans-serif;">
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px; box-shadow: 0 10px 15px rgba(0,0,0,0.3);">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q6. Define Intensity of EM wave and derive its expression in terms of Electric Field.</p>
+        <button onclick="toggleQ('ch8_q6')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ch8_q6" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:1.8;">
+            1. Intensity (I) is energy crossing per unit area per unit time.<br>
+            2. <b>I = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">Total Energy (U)</td></tr><tr><td>Area (A) &times; time (t)</td></tr></table></b>.<br>
+            3. Energy <b>U = u<sub>avg</sub> &times; Volume</b> (where Volume = A &times; c &times; t).<br>
+            4. <b>I = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">u<sub>avg</sub> &times; A &times; c &times; t</td></tr><tr><td>A &times; t</td></tr></table></b>.<br>
+            5. Area and time cancel out: <b>I = u<sub>avg</sub> &times; c</b>.<br>
+            6. Putting <b>u<sub>avg</sub> = &epsilon;<sub>0</sub>E<sub>rms</sub><sup>2</sup></b>.<br>
+            7. <b>Final Intensity Formula:</b>
+            <div style="text-align:center; padding:15px; background:#222; border-radius:10px; margin-top:10px; color:#48ff00; font-size:1.4rem;">
+                <b>I = &epsilon;<sub>0</sub> &middot; c &middot; E<sub>rms</sub><sup>2</sup></b>
+            </div>
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q7. Derive the relation between Energy (U) and Momentum (p) of an EM wave. What is Radiation Pressure?</p>
+        <button onclick="toggleQ('ch8_q7')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Derivation</button>
+        <div id="ch8_q7" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:2.2;">
+            1. EM waves carry energy <b>U</b> and momentum <b>p</b>.<br>
+            2. For a photon, <b>E = mc<sup>2</sup></b> and <b>p = mc</b>.<br>
+            3. Dividing both: <b><table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">U</td></tr><tr><td>p</td></tr></table> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">mc<sup>2</sup></td></tr><tr><td>mc</td></tr></table> = c</b>.<br>
+            4. Therefore, <b>Momentum p = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">U</td></tr><tr><td>c</td></tr></table></b>.<br>
+            5. Radiation Pressure (P) is force per unit area.<br>
+            6. If wave is completely absorbed: <b>P = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">I</td></tr><tr><td>c</td></tr></table></b>.<br>
+            7. If wave is reflected: <b>P = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">2I</td></tr><tr><td>c</td></tr></table></b>.
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q8. Briefly explain Hertz's experiment and how it proved Maxwell’s theory.</p>
+        <button onclick="toggleQ('ch8_q8')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Explanation</button>
+        <div id="ch8_q8" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:2;">
+            1. Maxwell predicted EM waves theoretically, but Hertz proved them experimentally.<br>
+            2. Hertz used an oscillatory LC circuit to produce sparks between two metal spheres.<br>
+            3. These sparks created EM waves that were detected by a receiver loop at a distance.<br>
+            4. He showed these waves could be reflected and refracted like light.<br>
+            5. He calculated the speed of these waves using <b>v = f &lambda;</b>.<br>
+            6. The speed was found to be <b>3 &times; 10<sup>8</sup> m/s</b>, matching the speed of light.<br>
+            7. This confirmed that light is indeed an Electromagnetic Wave.
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q9. Give the full EM spectrum in decreasing order of wavelength. Derive Energy of photon for any part.</p>
+        <button onclick="toggleQ('ch8_q9')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Spectrum Details</button>
+        <div id="ch8_q9" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:2;">
+            1. Order (High &lambda; to Low &lambda;): <b>Radio > Micro > IR > Visible > UV > X-ray > Gamma</b>.<br>
+            2. Frequency (f) is inverse to wavelength (&lambda;): <b>f = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">c</td></tr><tr><td>&lambda;</td></tr></table></b>.<br>
+            3. Energy of a photon <b>E = h &middot; f</b>.<br>
+            4. Substituting frequency: <b>E = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">h &middot; c</td></tr><tr><td>&lambda;</td></tr></table></b>.<br>
+            5. Here <b>h</b> is Planck’s constant (6.63 &times; 10<sup>-34</sup> Js).<br>
+            6. Conclusion: Gamma rays have the highest energy due to the smallest wavelength.
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q10. How are EM waves identified by their frequency? Give specific ranges for any three.</p>
+        <button onclick="toggleQ('ch8_q10')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Frequency Table</button>
+        <div id="ch8_q10" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:2.2;">
+            1. <b>Radio Waves:</b> Frequency 500 kHz to 1000 MHz. Used in AM/FM radio.<br>
+            2. <b>Microwaves:</b> Frequency 1 GHz to 300 GHz. Used in Radar and Ovens.<br>
+            3. <b>Visible Light:</b> Frequency 4 &times; 10<sup>14</sup> Hz to 7 &times; 10<sup>14</sup> Hz. Enables vision.<br>
+            4. <b>X-rays:</b> Frequency 10<sup>16</sup> Hz to 10<sup>20</sup> Hz. Used in medical imaging.<br>
+            5. Note: All these waves travel at <b>c</b> but differ only in their production source and frequency.
+        </div>
+    </div>
+
+</div>
+
+<script>
+function toggleQ(id) {
+    var x = document.getElementById(id);
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+</script>
+
+<style>
+@keyframes moveBg { 
+    0% { background-position: 0% 50%; } 
+    50% { background-position: 100% 50%; } 
+    100% { background-position: 0% 50%; } 
+}
+</style>
+
+</body>
+</html>

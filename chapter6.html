@@ -1,0 +1,1141 @@
+<!DOCTYPE html>  <html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>EMI - Smart Study for Toppers</title>  
+    <style>  
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap');  body {  
+        background-color: #000;  
+        color: #fff;  
+        font-family: 'Poppins', sans-serif;  
+        margin: 0;  
+        padding: 0;  
+        overflow-x: hidden;  
+    }  
+
+    /* HEADER - SCROLL KERNE PER BHI UPER DIKHEGA */  
+    .header {  
+        position: fixed;  
+        top: 0;  
+        left: 0;  
+        width: 100%;  
+        height: 65px;  
+        background: #000;  
+        display: flex;  
+        justify-content: space-between;  
+        align-items: center;  
+        padding: 0 20px;  
+        z-index: 10000;  
+        box-sizing: border-box;  
+        border-bottom: 1px solid rgba(0, 247, 255, 0.2);  
+    }  
+
+    .back-btn {  
+        background: transparent;  
+        color: #00f7ff;  
+        border: 2px solid #00f7ff;  
+        padding: 5px 18px;  
+        border-radius: 8px;  
+        text-decoration: none;  
+        font-weight: bold;  
+        font-size: 14px;  
+        text-transform: uppercase;  
+    }  
+
+    .topper-text {  
+        text-align: right;  
+        line-height: 1.1;  
+    }  
+
+    .topper-text .small {  
+        color: #FFD700;  
+        font-size: 10px;  
+        font-weight: bold;  
+        display: block;  
+    }  
+
+    .topper-text .large {  
+        color: #fff;  
+        font-size: 16px;  
+        font-weight: bold;  
+    }  
+
+    /* NEON LIGHTING CONTAINER */  
+    .container {  
+        padding: 85px 15px 20px 15px; 
+    }  
+
+    @keyframes neon-glow {  
+        0% { border-color: #ff00ff; box-shadow: 0 0 15px #ff00ff; }  
+        25% { border-color: #00f7ff; box-shadow: 0 0 25px #00f7ff; }  
+        50% { border-color: #48ff00; box-shadow: 0 0 15px #48ff00; }  
+        75% { border-color: #FFD700; box-shadow: 0 0 25px #FFD700; }  
+        100% { border-color: #ff00ff; box-shadow: 0 0 15px #ff00ff; }  
+    }  
+
+    .topic-page {  
+        min-height: 90vh;  
+        border: 4px solid;  
+        border-radius: 40px;  
+        margin-bottom: 40px;  
+        padding: 25px;  
+        display: flex;  
+        flex-direction: column;  
+        justify-content: center;  
+        animation: neon-glow 8s infinite linear;  
+        background: linear-gradient(180deg, rgba(15,15,15,1) 0%, rgba(0,0,0,1) 100%);  
+    }  
+
+    .topic-title {  
+        font-size: 28px;  
+        color: #00f7ff;  
+        text-decoration: underline;  
+        margin-bottom: 20px;  
+        text-shadow: 0 0 10px #00f7ff;  
+        text-transform: uppercase;  
+    }  
+
+    .box {  
+        background: rgba(255, 255, 255, 0.05);  
+        padding: 15px;  
+        border-radius: 15px;  
+        margin-bottom: 12px;  
+    }  
+
+    .box span { font-weight: bold; display: block; margin-bottom: 5px; }  
+    .eng-txt { color: #00f7ff; }  
+    .hin-txt { color: #FFD700; }  
+
+    .key-points {  
+        border: 1.5px dashed #48ff00;  
+        border-radius: 15px;  
+        padding: 15px;  
+        background: rgba(72, 255, 0, 0.03);  
+    }  
+
+    ul { margin: 0; padding-left: 20px; }  
+    li { margin-bottom: 8px; font-size: 14px; color: #ddd; }  
+
+    .formula-box {  
+        background: #000;  
+        border: 1px solid rgba(255,255,255,0.1);  
+        border-radius: 20px;  
+        padding: 20px;  
+        text-align: center;  
+        font-size: 26px;  
+        color: #00f7ff;  
+        margin-top: 20px;  
+        box-shadow: inset 0 0 15px rgba(0, 247, 255, 0.3);  
+    }  
+</style>  
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>  
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>  
+<body>  <div class="header">  
+    <a href="phy-chapters.html" class="back-btn">BACK</a>  
+    <div class="topper-text">  
+        <span class="small">SMART STUDY</span>  
+        <span class="large">FOR TOPPERS</span>  
+    </div>  
+</div>  
+
+<div class="container">  
+
+    <div class="topic-page">  
+        <h1 class="topic-title">1. Electromagnetic Induction</h1>  
+        <div class="box"><span class="eng-txt">English:</span> The phenomenon of generating electricity by changing the magnetic field linked with a circuit.</div>  
+        <div class="box"><span class="hin-txt">Hinglish:</span> Magnetic field ko change karke conductor me electricity paida karne ki process ko EMI kehte hain.</div>  
+        <div class="key-points">  
+            <ul>  
+                <li>Iska discovery Michael Faraday ne 1831 me kiya tha.</li>  
+                <li>Ye mechanical energy ko electrical energy me convert karta hai.</li>  
+                <li>Iske bina hum generators aur transformers nahi bana sakte.</li>  
+            </ul>  
+        </div>  
+        <div class="formula-box">$$ \Delta\Phi \rightarrow \text{EMF} $$</div>  
+    </div>  
+
+    <div class="topic-page">  
+        <h1 class="topic-title">2. Induced Current</h1>  
+        <div class="box"><span class="eng-txt">English:</span> The current produced in a closed circuit due to the change in magnetic flux.</div>  
+        <div class="box"><span class="hin-txt">Hinglish:</span> Magnetic flux badalne se jo current behta hai use Induced current kehte hain.</div>  
+        <div class="key-points">  
+            <ul>  
+                <li>Ye current tabhi flow hota hai jab circuit band (closed) ho.</li>  
+                <li>Iska direction Fleming's Right Hand rule se pata chalta hai.</li>  
+                <li>Ye flux change ka oppose karta hai.</li>  
+            </ul>  
+        </div>  
+        <div class="formula-box">$$ I = \frac{e}{R} $$</div>  
+    </div>  
+
+    <div class="topic-page">  
+        <h1 class="topic-title">3. Induced EMF</h1>  
+        <div class="box"><span class="eng-txt">English:</span> The potential difference developed across a conductor when flux changes.</div>  
+        <div class="box"><span class="hin-txt">Hinglish:</span> Flux badalne se jo voltage ya potential difference paida hota hai use Induced EMF kehte hain.</div>  
+        <div class="key-points">  
+            <ul>  
+                <li>EMF open circuit me bhi paida hota hai.</li>  
+                <li>Iski SI unit 'Volt' hoti hai.</li>  
+                <li>Ye flux badalne ki raftaar (rate) par depend karta hai.</li>  
+            </ul>  
+        </div>  
+        <div class="formula-box">$$ e = - \frac{d\Phi}{dt} $$</div>  
+    </div>  
+
+    <div class="topic-page">  
+        <h1 class="topic-title">4. Magnetic Flux</h1>  
+        <div class="box"><span class="eng-txt">English:</span> The total number of magnetic field lines passing through a given area.</div>  
+        <div class="box"><span class="hin-txt">Hinglish:</span> Kisi area se guzarne wali total magnetic field lines ko Magnetic Flux kehte hain.</div>  
+        <div class="key-points">  
+            <ul>  
+                <li>Magnetic flux ek scalar quantity hai.</li>  
+                <li>Iski SI unit 'Weber' (Wb) hoti hai.</li>  
+                <li>Formula B, A aur unke beech ke angle par depend karta hai.</li>  
+            </ul>  
+        </div>  
+        <div class="formula-box">$$ \Phi = B \cdot A \cos \theta $$</div>  
+    </div>  
+
+    <div class="topic-page">  
+        <h1 class="topic-title">5. Change in Magnetic Flux</h1>  
+        <div class="box"><span class="eng-txt">English:</span> The variation in flux over time which is essential for induction.</div>  
+        <div class="box"><span class="hin-txt">Hinglish:</span> Induction hone ke liye flux ka lagatar badalna zaroori hai.</div>  
+        <div class="key-points">  
+            <ul>  
+                <li>Flux ko B, A ya Angle badal kar change kiya ja sakta hai.</li>  
+                <li>Jitna fast badlega utna zyada EMF paida hoga.</li>  
+                <li>Agar flux constant hai toh induction nahi hoga.</li>  
+            </ul>  
+        </div>  
+        <div class="formula-box">$$ \Delta \Phi = \Phi_2 - \Phi_1 $$</div>  
+    </div>  
+
+    <div class="topic-page">  
+        <h1 class="topic-title">6. Faraday's First Law</h1>  
+        <div class="box"><span class="eng-txt">English:</span> Whenever there is a change in flux linked with a circuit, an EMF is induced.</div>  
+        <div class="box"><span class="hin-txt">Hinglish:</span> Jab bhi flux me badlav hoga, circuit me EMF paida hona tay hai.</div>  
+        <div class="key-points">  
+            <ul>  
+                <li>Ye induction ki condition batata hai.</li>  
+                <li>Ye EMF tab tak rehta hai jab tak flux badal raha ho.</li>  
+            </ul>  
+        </div>  
+        <div class="formula-box">$$ \text{Cause: } \frac{d\Phi}{dt} \neq 0 $$</div>  
+    </div>  
+
+    <div class="topic-page">  
+        <h1 class="topic-title">7. Faraday's Second Law</h1>  
+        <div class="box"><span class="eng-txt">English:</span> The magnitude of induced EMF is equal to the rate of change of magnetic flux.</div>  
+        <div class="box"><span class="hin-txt">Hinglish:</span> Paida hone wala EMF kitna hoga, ye flux badalne ki speed se pata chalta hai.</div>  
+        <div class="key-points">  
+            <ul>  
+                <li>Ye quantitative measurement deta hai.</li>  
+                <li>EMF is directly proportional to flux change rate.</li>  
+            </ul>  
+        </div>  
+        <div class="formula-box">$$ e \propto \frac{d\Phi}{dt} $$</div>  
+    </div>  
+
+    <div class="topic-page">  
+        <h1 class="topic-title">8. Mathematical Form</h1>  
+        <div class="box"><span class="eng-txt">English:</span> Combining the observation of flux change with the direction provided by Lenz's Law.</div>  
+        <div class="box"><span class="hin-txt">Hinglish:</span> Faraday ke niyam ko math me likhne par Lenz ka (-) sign bhi lagta hai.</div>  
+        <div class="key-points">  
+            <ul>  
+                <li>Negative sign batata hai ki EMF flux change ko rokne ki koshish karta hai.</li>  
+                <li>Agar coil me 'N' turns hain toh EMF N guna ho jayega.</li>  
+            </ul>  
+        </div>  
+        <div class="formula-box">$$ e = -N \frac{d\Phi}{dt} $$</div>  
+    </div>  
+
+</div>
+
+<div class="container">  
+    <div class="topic-page">  
+        <h1 class="topic-title">1. Lenz’s Law</h1>  
+        <div class="box"><span class="eng-txt">English:</span> The induced current's direction opposes the change in magnetic flux that produced it.</div>  
+        <div class="box"><span class="hin-txt">Hinglish:</span> Induced current hamesha us magnetic flux change ka virodh karta hai jisne use banaya.</div>  
+        <div class="key-points">  
+            <ul>  
+                <li>Based on Conservation of Energy.</li>  
+                <li>Determines current direction.</li>  
+                <li>Explains the (-) sign in Faraday's Law.</li>  
+            </ul>  
+        </div>  
+        <div class="formula-box">$$ \text{Direction} \propto -\Delta\Phi $$</div>  
+    </div>  
+
+    <div class="topic-page">  
+        <h1 class="topic-title">2. Direction of Induced Current</h1>  
+        <div class="box"><span class="eng-txt">English:</span> Current flow is found using Fleming's Right Hand Rule or Lenz's Law.</div>  
+        <div class="box"><span class="hin-txt">Hinglish:</span> Current clockwise hai ya anti-clockwise, ye Fleming's RHR se pata chalta hai.</div>  
+        <div class="key-points">  
+            <ul>  
+                <li>Thumb: Motion, Forefinger: Field.</li>  
+                <li>Middle Finger: Induced Current.</li>  
+                <li>Opposes the cause of induction.</li>  
+            </ul>  
+        </div>  
+        <div class="formula-box">$$ \text{Fleming's RHR} $$</div>  
+    </div>  
+
+    <div class="topic-page">  
+        <h1 class="topic-title">3. Motional EMF</h1>  
+        <div class="box"><span class="eng-txt">English:</span> EMF induced in a conductor moving through a uniform magnetic field.</div>  
+        <div class="box"><span class="hin-txt">Hinglish:</span> Jab rod field mein move karti hai, toh voltage banta hai use Motional EMF kehte hain.</div>  
+        <div class="key-points">  
+            <ul>  
+                <li>Converts mechanical energy to electrical.</li>  
+                <li>Flux change due to area swept by rod.</li>  
+                <li>Depends on velocity and field strength.</li>  
+            </ul>  
+        </div>  
+        <div class="formula-box">$$ e = Bvl $$</div>  
+    </div>  
+
+    <div class="topic-page">  
+        <h1 class="topic-title">4. EMF in Moving Conductor</h1>  
+        <div class="box"><span class="eng-txt">English:</span> Potential difference across a conductor cutting magnetic field lines.</div>  
+        <div class="box"><span class="hin-txt">Hinglish:</span> Jab taar field lines ko cut karta hai, toh uske ends par voltage paida hota hai.</div>  
+        <div class="key-points">  
+            <ul>  
+                <li>Conductor, Field, Velocity are at 90°.</li>  
+                <li>No EMF if moving parallel to field.</li>  
+                <li>Uses Lorentz force principle.</li>  
+            </ul>  
+        </div>  
+        <div class="formula-box">$$ e = (\vec{v} \times \vec{B}) \cdot \vec{l} $$</div>  
+    </div>  
+
+    <div class="topic-page">  
+        <h1 class="topic-title">5. EMF due to Rotation</h1>  
+        <div class="box"><span class="eng-txt">English:</span> EMF induced when a conducting rod is rotated in a magnetic field.</div>  
+        <div class="box"><span class="hin-txt">Hinglish:</span> Jab kisi rod ko ek kile par gol ghumate hain, toh rotation se EMF banta hai.</div>  
+        <div class="key-points">  
+            <ul>  
+                <li>Uses angular velocity ($\omega$).</li>  
+                <li>Observed in cycle spokes.</li>  
+                <li>Proportional to length squared ($l^2$).</li>  
+            </ul>  
+        </div>  
+        <div class="formula-box">$$ e = \frac{1}{2} B \omega l^2 $$</div>  
+    </div>  
+
+    <div class="topic-page">  
+        <h1 class="topic-title">6. EMF due to Changing Magnetic Field</h1>  
+        <div class="box"><span class="eng-txt">English:</span> Induction caused by varying magnetic field strength (B) over time.</div>  
+        <div class="box"><span class="hin-txt">Hinglish:</span> Agar conductor ruka rahe par field (B) kam-zyada ho, toh induction hota hai.</div>  
+        <div class="key-points">  
+            <ul>  
+                <li>Called static induction.</li>  
+                <li>Rate of change is $dB/dt$.</li>  
+                <li>Used in Transformers.</li>  
+            </ul>  
+        </div>  
+        <div class="formula-box">$$ e = -A \frac{dB}{dt} $$</div>  
+    </div>  
+
+    <div class="topic-page">  
+        <h1 class="topic-title">7. EMF due to Changing Area</h1>  
+        <div class="box"><span class="eng-txt">English:</span> EMF induced by changing the effective area of the coil linked with flux.</div>  
+        <div class="box"><span class="hin-txt">Hinglish:</span> Agar hum coil ka area chhota-bada karein, toh EMF generate hota hai.</div>  
+        <div class="key-points">  
+            <ul>  
+                <li>Flux $\Phi = BA$ depends on Area.</li>  
+                <li>Seen in sliding wire experiments.</li>  
+                <li>Faster area change means more EMF.</li>  
+            </ul>  
+        </div>  
+        <div class="formula-box">$$ e = -B \frac{dA}{dt} $$</div>  
+    </div>  
+
+    <div class="topic-page">  
+        <h1 class="topic-title">8. EMF due to Changing Orientation</h1>  
+        <div class="box"><span class="eng-txt">English:</span> Induction caused by changing the angle ($\theta$) between field and area.</div>  
+        <div class="box"><span class="hin-txt">Hinglish:</span> Jab coil ghumti hai aur angle ($\theta$) badalta hai, toh flux change hota hai.</div>  
+        <div class="key-points">  
+            <ul>  
+                <li>Base of AC Generator.</li>  
+                <li>Produces sinusoidal output.</li>  
+                <li>Max EMF at $\theta = 90^\circ$.</li>  
+            </ul>  
+        </div>  
+        <div class="formula-box">$$ e = NBA\omega \sin(\omega t) $$</div>  
+    </div>  
+</div>
+
+<div class="container">  
+    <div class="topic-page">  
+        <h1 class="topic-title">1. Eddy Currents</h1>  
+        <div class="box"><span class="eng-txt">English:</span> Circulating currents induced in bulk pieces of conductors when subjected to changing magnetic flux.</div>  
+        <div class="box"><span class="hin-txt">Hinglish:</span> Jab kisi metal ke bade tukde se juda magnetic flux badalta hai, toh usme gol-gol current paida hota hai jise Eddy Current kehte hain.</div>  
+        <div class="key-points">  
+            <ul>  
+                <li>Also known as Foucault currents.</li>  
+                <li>Produced in solid metallic blocks.</li>  
+                <li>Discovered by Leon Foucault.</li>  
+            </ul>  
+        </div>  
+        <div class="formula-box">Eddy Currents (Circular loops)</div>  
+    </div>  
+
+    <div class="topic-page">  
+        <h1 class="topic-title">2. Applications of Eddy Currents</h1>  
+        <div class="box"><span class="eng-txt">English:</span> Practical uses where eddy currents are utilized for braking or heating.</div>  
+        <div class="box"><span class="hin-txt">Hinglish:</span> Eddy currents ka istemal breaks lagane aur machines ko garam karne mein kiya jata hai.</div>  
+        <div class="key-points">  
+            <ul>  
+                <li>Magnetic Braking in trains.</li>  
+                <li>Induction Furnace (for melting metals).</li>  
+                <li>Electromagnetic Damping (Galvanometers).</li>  
+                <li>Speedometers.</li>  
+            </ul>  
+        </div>  
+    </div>  
+
+    <div class="topic-page">  
+        <h1 class="topic-title">3. Disadvantages of Eddy Currents</h1>  
+        <div class="box"><span class="eng-txt">English:</span> Undesired heat loss in electrical devices like transformers and motors.</div>  
+        <div class="box"><span class="hin-txt">Hinglish:</span> Eddy currents ki wajah se energy heat ke roop mein barbad hoti hai, jo machines ke liye nuksan-deh hai.</div>  
+        <div class="key-points">  
+            <ul>  
+                <li>Causes excessive heating in cores.</li>  
+                <li>Loss of electrical energy.</li>  
+                <li>Minimized by using laminated cores.</li>  
+            </ul>  
+        </div>  
+    </div>  
+
+    <div class="topic-page">  
+        <h1 class="topic-title">4. Self Induction</h1>  
+        <div class="box"><span class="eng-txt">English:</span> The phenomenon where an EMF is induced in a coil due to the change in current through the same coil.</div>  
+        <div class="box"><span class="hin-txt">Hinglish:</span> Jab ek hi coil mein current badalne se usi coil mein EMF paida ho jaye, toh ise Self Induction kehte hain.</div>  
+        <div class="key-points">  
+            <ul>  
+                <li>Known as Inertia of Electricity.</li>  
+                <li>Opposes the growth or decay of current.</li>  
+                <li>Induced EMF is back-EMF.</li>  
+            </ul>  
+        </div>  
+        <div class="formula-box">$$ e = -L \frac{di}{dt} $$</div>  
+    </div>  
+
+    <div class="topic-page">  
+        <h1 class="topic-title">5. Self Inductance (L)</h1>  
+        <div class="box"><span class="eng-txt">English:</span> A measure of a coil's ability to resist changes in the current flowing through it.</div>  
+        <div class="box"><span class="hin-txt">Hinglish:</span> Ye coil ki wo property hai jo current ke badlav ko rokti hai. Iski unit 'Henry' hoti hai.</div>  
+        <div class="key-points">  
+            <ul>  
+                <li>Unit: Henry (H).</li>  
+                <li>Depends on geometry and number of turns.</li>  
+                <li>Represented by 'L'.</li>  
+            </ul>  
+        </div>  
+        <div class="formula-box">$$ \Phi = Li $$</div>  
+    </div>  
+
+    <div class="topic-page">  
+        <h1 class="topic-title">6. Coefficient of Self Induction</h1>  
+        <div class="box"><span class="eng-txt">English:</span> The numerical value of self-inductance defined as flux linkage per unit current.</div>  
+        <div class="box"><span class="hin-txt">Hinglish:</span> Agar current 1 Ampere ho, toh coil se juda total flux hi Coefficient of Self Induction hota hai.</div>  
+        <div class="key-points">  
+            <ul>  
+                <li>$L = \Phi / i$ when $i = 1A$.</li>  
+                <li>$L = e / (di/dt)$ when rate is unit.</li>  
+                <li>Purely depends on coil design.</li>  
+            </ul>  
+        </div>  
+        <div class="formula-box">$$ L = \frac{\mu_0 N^2 A}{l} $$</div>  
+    </div>  
+
+    <div class="topic-page">  
+        <h1 class="topic-title">7. Mutual Induction</h1>  
+        <div class="box"><span class="eng-txt">English:</span> Production of EMF in a secondary coil due to change in current in a nearby primary coil.</div>  
+        <div class="box"><span class="hin-txt">Hinglish:</span> Ek coil (primary) mein current badalne par pados wali dusri coil (secondary) mein EMF paida hona.</div>  
+        <div class="key-points">  
+            <ul>  
+                <li>Involves two coils.</li>  
+                <li>Principle behind Transformers.</li>  
+                <li>Magnetic coupling is essential.</li>  
+            </ul>  
+        </div>  
+        <div class="formula-box">$$ e_s = -M \frac{di_p}{dt} $$</div>  
+    </div>  
+
+    <div class="topic-page">  
+        <h1 class="topic-title">8. Mutual Inductance (M)</h1>  
+        <div class="box"><span class="eng-txt">English:</span> Property of a pair of coils to oppose any change in current through either of them.</div>  
+        <div class="box"><span class="hin-txt">Hinglish:</span> Do coils ke jode ki wo property jo ek dusre ke current change ka virodh karti hai.</div>  
+        <div class="key-points">  
+            <ul>  
+                <li>Unit: Henry (H).</li>  
+                <li>Depends on distance between coils.</li>  
+                <li>Depends on relative orientation.</li>  
+            </ul>  
+        </div>  
+        <div class="formula-box">$$ \Phi_s = M i_p $$</div>  
+    </div>  
+
+    <div class="topic-page">  
+        <h1 class="topic-title">9. Coefficient of Mutual Induction</h1>  
+        <div class="box"><span class="eng-txt">English:</span> Defined as the flux linked with one coil when unit current flows in the other.</div>  
+        <div class="box"><span class="hin-txt">Hinglish:</span> Ye do coils ke beech ka coupling constant hai. Agar primary mein 1A current ho, toh secondary ka flux 'M' ke barabar hoga.</div>  
+        <div class="key-points">  
+            <ul>  
+                <li>$M = k \sqrt{L_1 L_2}$.</li>  
+                <li>Maximum value when coils are wound together.</li>  
+                <li>Same for both coils ($M_{12} = M_{21}$).</li>  
+            </ul>  
+        </div>  
+        <div class="formula-box">$$ M = \frac{\mu_0 N_1 N_2 A}{l} $$</div>  
+    </div>  
+</div>
+<div class="container">  
+    <div class="topic-page">  
+        <h1 class="topic-title">1. Inductor</h1>  
+        <div class="box"><span class="eng-txt">English:</span> A passive electrical component (usually a coil) that stores energy in a magnetic field.</div>  
+        <div class="box"><span class="hin-txt">Hinglish:</span> Ye ek coil jaisa component hota hai jo apne andar magnetic field ke roop mein energy store karta hai.</div>  
+        <div class="key-points">  
+            <ul>  
+                <li>Resists sudden changes in current.</li>  
+                <li>Symbol: L (Inductance).</li>  
+                <li>Ideal inductor has zero resistance.</li>  
+            </ul>  
+        </div>  
+        <div class="formula-box">$$ \text{Symbol: } \text{---}\text{eeee}\text{---} $$</div>  
+    </div>  
+
+    <div class="topic-page">  
+        <h1 class="topic-title">2. Energy Stored in Inductor</h1>  
+        <div class="box"><span class="eng-txt">English:</span> The potential energy stored in the magnetic field of an inductor when current flows through it.</div>  
+        <div class="box"><span class="hin-txt">Hinglish:</span> Jab inductor se current flow hota hai, toh usme kitni magnetic energy jama hoti hai, ye uska formula hai.</div>  
+        <div class="key-points">  
+            <ul>  
+                <li>Stored in the form of magnetic field.</li>  
+                <li>Depends on inductance (L) and current squared ($I^2$).</li>  
+                <li>Work done against back-EMF is stored as energy.</li>  
+            </ul>  
+        </div>  
+        <div class="formula-box">$$ U = \frac{1}{2} LI^2 $$</div>  
+    </div>  
+
+    <div class="topic-page">  
+        <h1 class="topic-title">3. AC Generator</h1>  
+        <div class="box"><span class="eng-txt">English:</span> A device that converts mechanical energy into electrical energy in the form of alternating current.</div>  
+        <div class="box"><span class="hin-txt">Hinglish:</span> Wo machine jo mechanical energy (ghumne wali energy) ko bijli (AC current) mein badalti hai.</div>  
+        <div class="key-points">  
+            <ul>  
+                <li>Produces Alternating Current (AC).</li>  
+                <li>Also known as AC Alternator.</li>  
+                <li>Output voltage varies sinusoidally with time.</li>  
+            </ul>  
+        </div>  
+        <div class="formula-box">$$ \text{Output: } e = e_0 \sin(\omega t) $$</div>  
+    </div>  
+
+    <div class="topic-page">  
+        <h1 class="topic-title">4. Working Principle of Generator</h1>  
+        <div class="box"><span class="eng-txt">English:</span> It works on the principle of Electromagnetic Induction (Faraday's Law).</div>  
+        <div class="box"><span class="hin-txt">Hinglish:</span> Ye Electromagnetic Induction par kaam karta hai—jab coil magnetic field mein ghumti hai toh flux change se current banta hai.</div>  
+        <div class="key-points">  
+            <ul>  
+                <li>Based on changing magnetic flux linkage.</li>  
+                <li>Relative motion between coil and field.</li>  
+                <li>Direction follows Fleming's Right Hand Rule.</li>  
+            </ul>  
+        </div>  
+        <div class="formula-box">$$ \Phi = BA \cos(\theta) $$</div>  
+    </div>  
+
+    <div class="topic-page">  
+        <h1 class="topic-title">5. Construction of Generator</h1>  
+        <div class="box"><span class="eng-txt">English:</span> Main parts include Armature, Field Magnets, Slip Rings, and Brushes.</div>  
+        <div class="box"><span class="hin-txt">Hinglish:</span> Iske main parts hain: Armature (coil), takatwar magnets, Slip Rings aur carbon brushes.</div>  
+        <div class="key-points">  
+            <ul>  
+                <li>Armature: Rectangular coil of many turns.</li>  
+                <li>Slip Rings: Rotate with the coil to maintain contact.</li>  
+                <li>Brushes: Transfer current to the external circuit.</li>  
+            </ul>  
+        </div>  
+    </div>  
+
+    <div class="topic-page">  
+        <h1 class="topic-title">6. Applications of EMI</h1>  
+        <div class="box"><span class="eng-txt">English:</span> Everyday technologies that function based on the principles of EMI.</div>  
+        <div class="box"><span class="hin-txt">Hinglish:</span> EMI ke principles hamari rozana zindagi ki kayi machines mein use hote hain.</div>  
+        <div class="key-points">  
+            <ul>  
+                <li>Transformers (voltage step-up/down).</li>  
+                <li>Induction Cooktops (for cooking).</li>  
+                <li>Electric Guitars (pickups).</li>  
+                <li>ATM Card Swiping/Scanning.</li>  
+            </ul>  
+        </div>  
+    </div>  
+</div>
+
+
+<div style="text-align:center; margin-bottom:20px;">
+    <h1 style="color:#00f7ff; font-family:sans-serif; text-transform:uppercase; text-shadow:0 0 10px #00f7ff;">EMI Questions Practice</h1>
+    <p style="color:#FFD700; font-family:sans-serif; font-weight:bold;">Click to choose correct answer</p>
+</div>
+
+<div id="quiz-box" style="max-width:600px; margin:auto; position:relative; z-index:1;"></div>
+
+<div id="quiz-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; z-index:9999; flex-direction:column; align-items:center; justify-content:center; pointer-events:none;">
+    <div id="status-strip" style="width:100%; text-align:center; padding:30px 0;">
+        <h1 id="status-title" style="margin:0; padding:0;"></h1>
+        <p id="status-message" style="margin:10px 0; font-family:sans-serif; font-weight:bold;"></p>
+        <p id="next-msg" style="margin:0; font-family:sans-serif;"></p>
+    </div>
+</div>
+
+<style>
+/* RGB Border Animation */
+@keyframes rgb-glow {
+    0% { border-color: #00f7ff; box-shadow: 0 0 8px #00f7ff; }
+    33% { border-color: #ff00c8; box-shadow: 0 0 8px #ff00c8; }
+    66% { border-color: #48ff00; box-shadow: 0 0 8px #48ff00; }
+    100% { border-color: #00f7ff; box-shadow: 0 0 8px #00f7ff; }
+}
+
+.quiz-card {
+    background: rgba(255,255,255,0.05); 
+    padding: 20px; 
+    margin: 15px 0; 
+    border-radius: 15px; 
+    border: 2px solid #00f7ff; 
+    animation: rgb-glow 4s linear infinite;
+}
+
+.opt-btn {
+    display: block; 
+    width: 100%; 
+    margin: 12px 0; 
+    padding: 15px; 
+    background: rgba(255,255,255,0.08); 
+    color: #fff; 
+    border: 1.5px solid #00f7ff; 
+    border-radius: 12px; 
+    text-align: left; 
+    font-weight: 600; 
+    cursor: pointer;
+    animation: rgb-glow 3s linear infinite; /* Option boxes also change color */
+}
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+const questions = [
+    { q:"Magnetic flux is a ______ quantity.", opts:["Scalar","Vector","Tensor","Dimensionless"], ans:0 },
+    { q:"SI unit of magnetic flux is:", opts:["Tesla","Weber","Henry","Maxwell"], ans:1 },
+    { q:"Lenz's Law is based on the law of conservation of:", opts:["Charge","Mass","Energy","Momentum"], ans:2 },
+    { q:"The direction of induced current is found by:", opts:["Lenz's Law","Faraday's Law","Oersted's Law","Ampere's Law"], ans:0 },
+    { q:"Induced EMF formula according to Faraday is:", opts:["e = -dΦ/dt","e = Φ/t","e = Blv","e = -LI"], ans:0 },
+    { q:"Eddy currents are also known as:", opts:["Newton currents","Foucault currents","Ampere currents","Tesla currents"], ans:1 },
+    { q:"The unit of self-inductance is:", opts:["Weber","Henry","Tesla","Ohm"], ans:1 },
+    { q:"In a transformer, the principle used is:", opts:["Self Induction","Mutual Induction","Static electricity","Magnetism"], ans:1 },
+    { q:"Energy stored in an inductor is:", opts:["1/2 LI²","1/2 CV²","QV","LI"], ans:0 },
+    { q:"Motional EMF generated in a rod is:", opts:["Blv","B/lv","v/Bl","Bl²/v"], ans:0 },
+    { q:"If flux linked with a coil is constant, induced EMF is:", opts:["Maximum","Zero","Negative","Infinite"], ans:1 },
+    { q:"Self induction is often called:", opts:["Inertia of electricity","Electrical momentum","Magnetic flow","None"], ans:0 },
+    { q:"1 Weber is equal to:", opts:["1 Tesla × m²","1 Tesla / m²","1 Gauss","1 Henry"], ans:0 },
+    { q:"Eddy currents are reduced in transformer cores by:", opts:["Solid cores","Lamination","Thick wires","Cooling"], ans:1 },
+    { q:"The negative sign in Faraday's law represents:", opts:["Faraday's Law","Lenz's Law","Oersted's Law","Coulomb's Law"], ans:1 },
+    { q:"The SI unit of Mutual Inductance is:", opts:["Farad","Tesla","Henry","Weber"], ans:2 },
+    { q:"AC Generator works on the principle of:", opts:["Joule effect","EMI","Self Induction","Mutual Induction"], ans:1 },
+    { q:"Dimensional formula for magnetic flux is:", opts:["ML²T⁻²A⁻¹","MLT⁻²A⁻¹","ML²T⁻¹","L²"], ans:0 },
+    { q:"Mutual inductance between two perpendicular coils is:", opts:["Maximum","Minimum","Zero","Infinite"], ans:2 },
+    { q:"If N increases, self-inductance L:", opts:["Decreases","Increases","Remains Same","Becomes Zero"], ans:1 },
+    { q:"A choke coil is used to control AC in:", opts:["DC circuits","AC circuits","Both","None"], ans:1 },
+    { q:"Formula for energy density in magnetic field:", opts:["B²/2μ₀","1/2 ε₀E²","μ₀B²/2","BA"], ans:0 },
+    { q:"Metal detectors used at airports work on:", opts:["EMI","Sound waves","Gravity","Light"], ans:0 },
+    { q:"1 Henry is equivalent to:", opts:["1 V-s/A","1 V/A","1 Wb-m","1 T/m"], ans:0 },
+    { q:"In India, the frequency of AC is:", opts:["60 Hz","50 Hz","100 Hz","220 Hz"], ans:1 },
+    { q:"L/R has the same dimensions as:", opts:["Frequency","Time","Velocity","Force"], ans:1 },
+    { q:"Induced EMF is independent of:", opts:["Resistance","Flux change","Time","Number of turns"], ans:0 },
+    { q:"When a rod rotates in magnetic field, EMF is:", opts:["1/2 Bωl²","Bvl","Bωl","Zero"], ans:0 },
+    { q:"A solenoid is moving toward a coil, EMF is:", opts:["Induced","Not Induced","Zero","None"], ans:0 },
+    { q:"Core of transformer is usually made of:", opts:["Steel","Soft Iron","Copper","Alnico"], ans:1 },
+    { q:"Lenz's law gives the ______ of induced current.", opts:["Magnitude","Direction","Power","Time"], ans:1 },
+    { q:"For a coil, total flux Φ is proportional to:", opts:["Current I","Resistance R","Voltage V","Time t"], ans:0 },
+    { q:"Self-inductance of a long solenoid is:", opts:["μ₀n²Al","μ₀nAl","μ₀n²l/A","None"], ans:0 },
+    { q:"Which factor doesn't affect mutual inductance?", opts:["Distance","Geometry","Turns","Resistance"], ans:3 },
+    { q:"Induced current in a closed loop depends on:", opts:["Flux change","Resistance","Both","None"], ans:2 },
+    { q:"Unit of dΦ/dt is same as unit of:", opts:["Current","Voltage","Resistance","Charge"], ans:1 },
+    { q:"Coupling constant k is 1 for:", opts:["Tight coupling","Loose coupling","No coupling","Perpendicular"], ans:0 },
+    { q:"Self inductance of a circular coil is proportional to:", opts:["Radius R","R²","1/R","√R"], ans:0 },
+    { q:"Ideal inductor in a DC circuit acts as:", opts:["Open circuit","Short circuit","Capacitor","Resistor"], ans:1 },
+    { q:"Static induction occurs in:", opts:["Transformer","AC Motor","DC Motor","Fan"], ans:0 },
+    { q:"The polarity of induced EMF is determined by:", opts:["Lenz's law","Ampere's law","Gauss's law","Bio-savart"], ans:0 },
+    { q:"When two coils are far apart, M is:", opts:["High","Low/Zero","Infinite","Negative"], ans:1 },
+    { q:"Back EMF is produced in:", opts:["Electric Motor","Heater","Bulb","Iron"], ans:0 },
+    { q:"Flux linked with a coil of N turns is:", opts:["NΦ","Φ/N","N²Φ","Zero"], ans:0 },
+    { q:"Induction furnace uses ______ for heating.", opts:["Direct current","Eddy currents","Voltage","Friction"], ans:1 },
+    { q:"If magnet is dropped into copper pipe, it:", opts:["Accelerates","Decelerates","Stops","Moves at constant g"], ans:1 },
+    { q:"Mutual Inductance M is also equal to:", opts:["k√(L1L2)","k(L1L2)","L1/L2","L1+L2"], ans:0 },
+    { q:"Current in inductor cannot change ______.", opts:["Slowly","Instantly","Continuously","None"], ans:1 },
+    { q:"Dimensional formula for Self Inductance:", opts:["ML²T⁻²A⁻²","MLT⁻²A⁻¹","ML²T⁻²A⁻¹","L²"], ans:0 },
+    { q:"1 Maxwell is equal to ______ Weber.", opts:["10⁻⁸","10⁸","10⁻⁴","10⁴"], ans:0 }
+];
+
+const quizBox = document.getElementById('quiz-box');
+
+questions.forEach((item, index) => {
+    let card = document.createElement('div');
+    card.className = "quiz-card";
+
+    card.innerHTML = `<p style="color:#FFD700; font-size:18px; font-weight:bold;">Q${index+1}. ${item.q}</p>`;
+
+    item.opts.forEach((opt, oIdx) => {
+        let btn = document.createElement('button');
+        btn.innerText = opt;
+        btn.className = "opt-btn";
+
+        btn.onclick = () => {
+            const overlay = document.getElementById('quiz-overlay');
+            const title = document.getElementById('status-title');
+            const msg = document.getElementById('status-message');
+            const nxt = document.getElementById('next-msg');
+            const strip = document.getElementById('status-strip');
+
+            overlay.style.display = "flex";
+            overlay.style.pointerEvents = "auto"; 
+
+            if(oIdx === item.ans){
+                overlay.style.background = "rgba(0,0,0,0.85)";
+                strip.style.background = "transparent";
+                title.style.cssText = "font-family:'Dancing Script', cursive; color:#fff; font-size:60px; text-shadow:0 0 20px #00f7ff, 0 0 40px #00f7ff;";
+                title.innerText = "Congratulations";
+                msg.innerText = "Excellent! You are a true Topper.";
+                msg.style.color = "#00f7ff";
+                nxt.innerText = "Go to next question...";
+
+                var end = Date.now() + 1500;
+                var colors = ['#00f7ff','#ff0000','#ffffff','#ff00c8','#48ff00'];
+                (function frame(){
+                    confetti({particleCount:15,angle:60,spread:65,origin:{x:0},colors:colors, zIndex: 999999});
+                    confetti({particleCount:15,angle:120,spread:65,origin:{x:1},colors:colors, zIndex: 999999});
+                    if(Date.now() < end) requestAnimationFrame(frame);
+                })();
+            } else {
+                overlay.style.background = "radial-gradient(rgba(139,0,0,0.5) 10%, rgba(0,0,0,0.85) 90%)";
+                strip.style.background = "rgba(0,0,0,0.6)";
+                strip.style.width = "100%";
+                strip.style.padding = "30px 0";
+                title.style.cssText = "font-family:'Oswald', sans-serif; color:red; font-size:80px; font-weight:900; letter-spacing:10px; text-shadow:4px 4px 0px #000;";
+                title.innerText = "WASTED";
+                msg.innerText = "Oops! Try again with focus.";
+                msg.style.color = "#fff";
+                nxt.innerText = "";
+            }
+
+            setTimeout(() => {
+                overlay.style.display = "none";
+                overlay.style.pointerEvents = "none"; 
+            }, 2500);
+        };
+        card.appendChild(btn);
+    });
+    quizBox.appendChild(card);
+});
+});
+</script>
+
+<div style="text-align:center; margin-bottom:20px;">
+    <h1 style="color:#00ffcc; font-family:sans-serif; text-transform:uppercase; text-shadow:0 0 15px #00ffcc;">Advanced Level: Q51 - Q100 is completed</h1>
+    <p style="color:#ffffff; font-family:sans-serif; font-weight:bold;">Conceptual Depth: Smart Study for Toppers</p>
+</div>
+
+<div id="quiz-box" style="max-width:600px; margin:auto; position:relative; z-index:1;"></div>
+
+<div id="quiz-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; z-index:9999; flex-direction:column; align-items:center; justify-content:center; pointer-events:none;">
+    <div id="status-strip" style="width:100%; text-align:center; padding:30px 0;">
+        <h1 id="status-title"></h1>
+        <p id="status-message" style="font-weight:bold;"></p>
+        <p id="next-msg"></p>
+    </div>
+</div>
+
+<style>
+/* Color Changing Border Animation */
+@keyframes border-rgb {
+    0% { border-color: #00ffcc; box-shadow: 0 0 10px #00ffcc; }
+    33% { border-color: #ff00c8; box-shadow: 0 0 10px #ff00c8; }
+    66% { border-color: #48ff00; box-shadow: 0 0 10px #48ff00; }
+    100% { border-color: #00ffcc; box-shadow: 0 0 10px #00ffcc; }
+}
+
+.quiz-card-animated {
+    background: linear-gradient(145deg,#0f2027,#203a43,#2c5364); 
+    padding: 20px; 
+    margin: 15px 0; 
+    border-radius: 15px; 
+    border: 2px solid #00ffcc; 
+    animation: border-rgb 4s linear infinite;
+}
+
+.opt-btn-animated {
+    display: block; 
+    width: 100%; 
+    margin: 10px 0; 
+    padding: 14px; 
+    background: #111; 
+    color: #fff; 
+    border: 1.5px solid #00ffcc; 
+    border-radius: 10px; 
+    text-align: left; 
+    font-weight: 600; 
+    cursor: pointer; 
+    transition: 0.3s;
+    animation: border-rgb 3s linear infinite; /* Options also change color */
+}
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+const questions = [
+{q:"Self inductance of a long solenoid is L. If its length is doubled, keeping turns constant, L becomes:",opts:["2L","L/2","4L","L/4"],ans:1},
+{q:"The coefficient of mutual induction between two coils depends on:",opts:["Medium between coils","Distance between coils","Orientation of coils","All of these"],ans:3},
+{q:"When a metal plate is moved in a magnetic field, it stops due to:",opts:["Gravity","Eddy currents","Electrostatic force","Friction"],ans:1},
+{q:"Which device is used to increase or decrease AC voltage?",opts:["Inductor","AC Generator","Transformer","Choke coil"],ans:2},
+{q:"If the rate of change of current is 2 A/s and induced EMF is 10 V, then L is:",opts:["20 H","5 H","0.2 H","12 H"],ans:1},
+{q:"Transformer works on the principle of:",opts:["Self Induction","Mutual Induction","Heating effect","None"],ans:1},
+{q:"A metallic rod of length l is rotating with angular frequency ω. Induced EMF is:",opts:["Bωl²","1/2 Bωl²","2Bωl²","Zero"],ans:1},
+{q:"The magnetic flux linked with a coil of N turns is Φ = NBA cosθ. Max flux is at:",opts:["0°","90°","180°","45°"],ans:0},
+{q:"Two coils of self inductances L1 and L2 are coupled. Max mutual inductance is:",opts:["L1L2","√(L1L2)","L1/L2","(L1+L2)/2"],ans:1},
+{q:"Flux linkage per unit current is called:",opts:["Induced EMF","Self Inductance","Magnetic intensity","Resistance"],ans:1},
+{q:"Current flows from A to B in a straight wire. A loop is moved towards it. Current in loop is:",opts:["Clockwise","Anti-clockwise","Zero","Variable"],ans:0},
+{q:"Eddy currents are produced when:",opts:["Steady current flows","Metal is in varying flux","Metal is in vacuum","None"],ans:1},
+{q:"The unit of L/R is:",opts:["Seconds","Hertz","Amperes","Farads"], ans:0},
+{q:"Dimensional formula for Self Inductance is:",opts:["ML²T⁻²A⁻²","MLT⁻²A⁻¹","ML²T⁻³A⁻¹","L²"],ans:0},
+{q:"If the number of turns in a coil is doubled, its self inductance becomes:",opts:["Double","Half","Four times","Eight times"],ans:2},
+{q:"Induced current produced in a circuit depends on:",opts:["Flux change only","Resistance only","Both flux change and resistance","None"],ans:2},
+{q:"A copper ring is held horizontally and a magnet is dropped through it. Its acceleration is:",opts:["a = g","a > g","a < g","a = 0"],ans:2},
+{q:"Mutual induction between two perpendicular coils is:",opts:["Max","Min","Zero","Infinite"],ans:2},
+{q:"An ideal transformer has 100%:",opts:["Current","Voltage","Efficiency","Power"],ans:2},
+{q:"Magnetic flux density B is also called:",opts:["Magnetic induction","Magnetic flux","Permeability","Susceptibility"],ans:0},
+{q:"A choke coil has:",opts:["High L, Low R","Low L, High R","High L, High R","Low L, Low R"],ans:0},
+{q:"1 Henry is equivalent to:",opts:["1 V·s/A","1 V/A","1 Wb/m","1 T/m"],ans:0},
+{q:"In a step-up transformer, the number of turns in secondary (Ns) compared to primary (Np) is:",opts:["Ns < Np","Ns > Np","Ns = Np","Ns = 0"],ans:1},
+{q:"Lenz's law provides information about:",opts:["Induced EMF magnitude","Induced current direction","Both","Force"],ans:1},
+{q:"Which of the following does not have Eddy currents as an application?",opts:["Induction furnace","Magnetic braking","Speedometer","Electric heater"],ans:3},
+{q:"The core of a transformer is laminated to reduce:",opts:["Copper loss","Hysteresis loss","Eddy current loss","Magnetic leakage"],ans:2},
+{q:"If a coil of N turns has flux Φ, the total flux linkage is:",opts:["NΦ","Φ/N","N²Φ","Zero"],ans:0},
+{q:"Induced EMF in a generator is maximum when the coil is:",opts:["Parallel to B","Perpendicular to B","At 45° to B","Stationary"],ans:0},
+{q:"The energy stored in an inductor is in the form of:",opts:["Heat","Electric field","Magnetic field","Potential energy"],ans:2},
+{q:"Which is used in DC circuits to block AC components?",opts:["Resistor","Capacitor","Inductor","None"],ans:2},
+{q:"1 Tesla is equal to:",opts:["10⁴ Gauss","10² Gauss","10⁶ Gauss","10⁻⁴ Gauss"],ans:0},
+{q:"Induced EMF is produced when there is a change in:",opts:["Magnetic field","Area of coil","Orientation of coil","Any of these"],ans:3},
+{q:"The polarity of induced EMF is such that it opposes change in flux. This is:",opts:["Faraday's Law","Lenz's Law","Ohm's Law","Gauss's Law"],ans:1},
+{q:"Static induction is seen in:",opts:["AC Generator","DC Motor","Transformer","Galvanometer"],ans:2},
+{q:"Unit of dΦ/dt is same as:",opts:["Current","Resistance","Potential difference","Charge"],ans:2},
+{q:"When current in a coil changes from 5A to 2A in 0.1s, EMF is 60V. L is:",opts:["2 H","0.2 H","20 H","1 H"],ans:0},
+{q:"The quantity LI²/2 has dimensions of:",opts:["Power","Energy","Force","Momentum"],ans:1},
+{q:"Coupling constant k = 1 implies:",opts:["No coupling","Partial coupling","Perfect coupling","Perpendicular coils"],ans:2},
+{q:"Secondary EMF in transformer depends on:",opts:["Np/Ns ratio","Ip","Current frequency","All of these"],ans:0},
+{q:"A solenoid is used as a:",opts:["Capacitor","Inductor","Resistor","Battery"],ans:1},
+{q:"Induced EMF in a DC motor is called:",opts:["Forward EMF","Back EMF","Steady EMF","None"],ans:1},
+{q:"Current in a circuit cannot change instantly due to:",opts:["Resistance","Inductance","Capacitance","Voltage"],ans:1},
+{q:"Energy density in magnetic field is:",opts:["B²/2μ₀","μ₀B²/2","1/2 LI²","BA"],ans:0},
+{q:"For an inductor, the relation between Φ and I is:",opts:["Φ = LI","Φ = L/I","Φ = I/L","Φ = L²I"],ans:0},
+{q:"Magnetic flux linked with a coil is zero when area vector is ______ to B-field.",opts:["Parallel","Perpendicular","Opposite","Inclined at 45°"],ans:1},
+{q:"The output frequency of an AC generator depends on:",opts:["B-field","Area","Angular velocity ω","Number of turns"],ans:2},
+{q:"Which factor decreases the efficiency of a transformer?",opts:["Flux leakage","Resistance of windings","Eddy currents","All of these"],ans:3},
+{q:"Soft iron is used in core because of:",opts:["Low retentivity","High permeability","Low hysteresis loss","All of these"],ans:3},
+{q:"If a circuit is purely inductive, the phase difference between V and I is:",opts:["0°","90°","180°","45°"],ans:1},
+{q:"Maximum flux linkage in a generator coil occurs when θ is:",opts:["0°","90°","180°","45°"],ans:0}
+];
+
+const quizBox = document.getElementById('quiz-box');
+
+questions.forEach((item, index) => {
+    let card = document.createElement('div');
+    card.className = "quiz-card-animated";
+
+    card.innerHTML = `<p style="color:#00ffcc; font-size:18px; font-weight:bold;">Q${index+51}. ${item.q}</p>`;
+
+    item.opts.forEach((opt, oIdx) => {
+        let btn = document.createElement('button');
+        btn.innerText = opt;
+        btn.className = "opt-btn-animated";
+
+        btn.onclick = () => {
+            const overlay = document.getElementById('quiz-overlay');
+            const title = document.getElementById('status-title');
+            const msg = document.getElementById('status-message');
+            const nxt = document.getElementById('next-msg');
+            const strip = document.getElementById('status-strip');
+
+            overlay.style.display = "flex";
+            overlay.style.pointerEvents = "auto"; 
+
+            if(oIdx === item.ans){
+                overlay.style.background = "rgba(0,0,0,0.85)";
+                strip.style.background = "transparent";
+                title.style.cssText = "font-family:'Dancing Script', cursive; color:#fff; font-size:60px; text-shadow:0 0 20px #00f7ff, 0 0 40px #00f7ff;";
+                title.innerText = "Physics Master";
+                msg.innerText = "Incredible! Your concepts are solid.";
+                msg.style.color = "#00f7ff";
+                nxt.innerText = "Next conceptual challenge...";
+
+                var end = Date.now() + 1500;
+                var colors = ['#00f7ff','#ff0000','#ffffff','#ff00c8','#48ff00'];
+                (function frame(){
+                    confetti({particleCount:15,angle:60,spread:65,origin:{x:0},colors:colors, zIndex: 999999});
+                    confetti({particleCount:15,angle:120,spread:65,origin:{x:1},colors:colors, zIndex: 999999});
+                    if(Date.now() < end) requestAnimationFrame(frame);
+                })();
+            } else {
+                overlay.style.background = "radial-gradient(rgba(139,0,0,0.5) 10%, rgba(0,0,0,0.85) 90%)";
+                strip.style.background = "rgba(0,0,0,0.6)";
+                strip.style.width = "100%";
+                strip.style.padding = "30px 0";
+                title.style.cssText = "font-family:'Oswald', sans-serif; color:red; font-size:80px; font-weight:900; letter-spacing:10px; text-shadow:4px 4px 0px #000;";
+                title.innerText = "WASTED";
+                msg.innerText = "Wrong! Focus on the theory.";
+                msg.style.color = "#fff";
+                nxt.innerText = "";
+            }
+
+            setTimeout(() => {
+                overlay.style.display = "none";
+                overlay.style.pointerEvents = "none"; 
+            }, 2500);
+        };
+        card.appendChild(btn);
+    });
+    quizBox.appendChild(card);
+});
+});
+</script>
+<div id="long-questions-part-final" style="max-width:800px; margin:auto; font-family:Arial, sans-serif;">
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px; box-shadow: 0 10px 15px rgba(0,0,0,0.3);">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q1. State Faraday's Laws of EMI and derive the expression for Induced EMF (e = -N d&Phi;/dt).</p>
+        <button onclick="toggleQ('ans1_new')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ans1_new" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:1.8;">
+            <b style="color:#fffb00;">Theory:</b> Faraday stated that the magnitude of induced EMF is proportional to the rate of change of magnetic flux.<br>
+            <b style="color:#fffb00;">Step-by-Step Derivation:</b><br>
+            1. Let <b>&Phi;<sub>1</sub></b> be initial flux and <b>&Phi;<sub>2</sub></b> be final flux.<br>
+            2. Change in flux <b>&Delta;&Phi; = &Phi;<sub>2</sub> - &Phi;<sub>1</sub></b>.<br>
+            3. Rate of change of flux = <b><table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">d&Phi;</td></tr><tr><td>dt</td></tr></table></b>.<br>
+            4. From Faraday's 2nd Law: <b>e &prop; <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">d&Phi;</td></tr><tr><td>dt</td></tr></table></b>.<br>
+            5. Using constant k=1: <b>e = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">d&Phi;</td></tr><tr><td>dt</td></tr></table></b>.<br>
+            6. According to Lenz's Law, induced EMF opposes the change: <b>e = - <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">d&Phi;</td></tr><tr><td>dt</td></tr></table></b>.<br>
+            7. For a coil with <b>N</b> turns, the total EMF is:<br>
+            <div style="text-align:center; padding:10px; color:#48ff00; font-size:1.3rem;">
+                <b>e = -N <table style="display:inline-table; vertical-align:middle; color:#48ff00;"><tr><td style="border-bottom:1px solid #48ff00;">d&Phi;</td></tr><tr><td>dt</td></tr></table></b>
+            </div>
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q2. Derive the expression for Motional EMF induced in a conducting rod moving in a uniform magnetic field.</p>
+        <button onclick="toggleQ('ans2_new')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ans2_new" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:2;">
+            1. Consider a rod of length <b>l</b> moving with velocity <b>v</b> in field <b>B</b>.<br>
+            2. Magnetic flux <b>&Phi; = B &times; Area</b>.<br>
+            3. Area covered in time dt: <b>A = l &times; x</b>.<br>
+            4. Flux <b>&Phi; = B &middot; l &middot; x</b>.<br>
+            5. Induced EMF <b>e = - <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">d&Phi;</td></tr><tr><td>dt</td></tr></table></b>.<br>
+            6. <b>e = - <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">d(Blx)</td></tr><tr><td>dt</td></tr></table></b>.<br>
+            7. Constant <b>B</b> and <b>l</b> come out: <b>e = -Bl <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">dx</td></tr><tr><td>dt</td></tr></table></b>.<br>
+            8. Velocity <b>v = - <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">dx</td></tr><tr><td>dt</td></tr></table></b> (negative as x decreases).<br>
+            9. <b>Final Result:</b>
+            <div style="text-align:center; padding:10px; color:#48ff00; font-size:1.3rem;">
+                <b>e = B l v</b>
+            </div>
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q3. Derive the expression for Self-Inductance (L) of a long solenoid.</p>
+        <button onclick="toggleQ('ans3_new')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ans3_new" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:1.8;">
+            1. Magnetic field inside solenoid <b>B = &mu;<sub>0</sub> n I</b>.<br>
+            2. Since <b>n = N/l</b>, then <b>B = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">&mu;<sub>0</sub> N I</td></tr><tr><td>l</td></tr></table></b>.<br>
+            3. Flux through one turn <b>&phi; = B &middot; A</b>.<br>
+            4. Total flux linkage <b>&Phi; = N &middot; &phi; = N (B &middot; A)</b>.<br>
+            5. <b>&Phi; = N &times; (<table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">&mu;<sub>0</sub> N I</td></tr><tr><td>l</td></tr></table>) &times; A</b>.<br>
+            6. <b>&Phi; = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">&mu;<sub>0</sub> N<sup>2</sup> A I</td></tr><tr><td>l</td></tr></table></b>.<br>
+            7. We know <b>&Phi; = L I</b>.<br>
+            8. Comparing: <b>L I = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">&mu;<sub>0</sub> N<sup>2</sup> A I</td></tr><tr><td>l</td></tr></table></b>.<br>
+            9. <b>Self Inductance:</b>
+            <div style="text-align:center; padding:10px; color:#48ff00; font-size:1.3rem;">
+                <b>L = <table style="display:inline-table; vertical-align:middle; color:#48ff00;"><tr><td style="border-bottom:1px solid #48ff00;">&mu;<sub>0</sub> N<sup>2</sup> A</td></tr><tr><td>l</td></tr></table></b>
+            </div>
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q4. Derive the formula for Mutual Inductance (M) of two co-axial long solenoids.</p>
+        <button onclick="toggleQ('ans4_new')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ans4_new" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:1.8;">
+            1. Consider two solenoids S<sub>1</sub> and S<sub>2</sub> with turns N<sub>1</sub> and N<sub>2</sub>.<br>
+            2. Field of outer solenoid S<sub>2</sub>: <b>B<sub>2</sub> = &mu;<sub>0</sub> n<sub>2</sub> I<sub>2</sub> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">&mu;<sub>0</sub> N<sub>2</sub> I<sub>2</sub></td></tr><tr><td>l</td></tr></table></b>.<br>
+            3. Flux through S<sub>1</sub>: <b>&Phi;<sub>1</sub> = N<sub>1</sub> (B<sub>2</sub> A)</b>.<br>
+            4. <b>&Phi;<sub>1</sub> = N<sub>1</sub> &times; (<table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">&mu;<sub>0</sub> N<sub>2</sub> I<sub>2</sub></td></tr><tr><td>l</td></tr></table>) &times; A</b>.<br>
+            5. <b>&Phi;<sub>1</sub> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">&mu;<sub>0</sub> N<sub>1</sub> N<sub>2</sub> A I<sub>2</sub></td></tr><tr><td>l</td></tr></table></b>.<br>
+            6. By Definition: <b>&Phi;<sub>1</sub> = M I<sub>2</sub></b>.<br>
+            7. <b>Result:</b>
+            <div style="text-align:center; padding:10px; color:#48ff00; font-size:1.3rem;">
+                <b>M = <table style="display:inline-table; vertical-align:middle; color:#48ff00;"><tr><td style="border-bottom:1px solid #48ff00;">&mu;<sub>0</sub> N<sub>1</sub> N<sub>2</sub> A</td></tr><tr><td>l</td></tr></table></b>
+            </div>
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q5. Derive the expression for Energy Stored in an Inductor (U = 1/2 LI²).</p>
+        <button onclick="toggleQ('ans5_new')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ans5_new" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:2;">
+            1. Work done to establish current <b>I</b> is stored as energy.<br>
+            2. Power <b>P = |e| &times; I</b>.<br>
+            3. Induced EMF <b>|e| = L <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">dI</td></tr><tr><td>dt</td></tr></table></b>.<br>
+            4. Work done <b>dW = P &middot; dt = |e| I dt</b>.<br>
+            5. <b>dW = (L <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">dI</td></tr><tr><td>dt</td></tr></table>) I dt = L I dI</b>.<br>
+            6. Total Work <b>W = &int;<sub>0</sub><sup>I</sup> L I dI</b>.<br>
+            7. <b>W = L [ <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">I<sup>2</sup></td></tr><tr><td>2</td></tr></table> ]<sub>0</sub><sup>I</sup></b>.<br>
+            8. <b>Final Energy:</b>
+            <div style="text-align:center; padding:10px; color:#48ff00; font-size:1.4rem;">
+                <b>U = <table style="display:inline-table; vertical-align:middle; color:#48ff00;"><tr><td style="border-bottom:1px solid #48ff00;">1</td></tr><tr><td>2</td></tr></table> L I<sup>2</sup></b>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+function toggleQ(id) {
+    var x = document.getElementById(id);
+    x.style.display = (x.style.display === "none") ? "block" : "none";
+}
+</script>
+
+<style>
+@keyframes moveBg { 
+    0% { background-position: 0% 50%; } 
+    50% { background-position: 100% 50%; } 
+    100% { background-position: 0% 50%; } 
+}
+</style>
+<div id="long-questions-part-3" style="max-width:800px; margin:auto; font-family:Arial, sans-serif;">
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px; box-shadow: 0 10px 15px rgba(0,0,0,0.3);">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q6. Explain the principle of an AC Generator and derive the formula for instantaneous EMF.</p>
+        <button onclick="toggleQ('ans6_emi')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ans6_emi" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:1.8;">
+            <b style="color:#fffb00;">Principle:</b> It works on the principle of Electromagnetic Induction (EMI).<br>
+            <b style="color:#fffb00;">Derivation:</b><br>
+            1. Let a coil of <b>N</b> turns and area <b>A</b> rotate in field <b>B</b> with angular velocity <b>&omega;</b>.<br>
+            2. At any time <b>t</b>, the angle <b>&theta; = &omega;t</b>.<br>
+            3. Flux linked with the coil <b>&Phi; = N B A cos&theta; = N B A cos(&omega;t)</b>.<br>
+            4. Induced EMF <b>e = - <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">d&Phi;</td></tr><tr><td>dt</td></tr></table></b>.<br>
+            5. <b>e = - <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">d(NBA cos &omega;t)</td></tr><tr><td>dt</td></tr></table></b>.<br>
+            6. <b>e = -NBA &times; (-&omega; sin &omega;t)</b>.<br>
+            7. <b>e = NBA&omega; sin &omega;t</b>.<br>
+            8. Let <b>e<sub>0</sub> = NBA&omega;</b> (Peak value).<br>
+            9. <b>Final Equation:</b>
+            <div style="text-align:center; padding:10px; color:#48ff00; font-size:1.4rem;">
+                <b>e = e<sub>0</sub> sin &omega;t</b>
+            </div>
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q7. What are Eddy Currents? Mention their applications and how to minimize them.</p>
+        <button onclick="toggleQ('ans7_emi')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Answer</button>
+        <div id="ans7_emi" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:2;">
+            1. <b>Definition:</b> When a bulk piece of metal is placed in a changing magnetic field, circulating currents are induced in it. These are called Eddy Currents.<br>
+            2. They oppose the motion (Lenz's Law) and produce heat.<br>
+            3. <b>Applications:</b> <br>
+            &nbsp;&nbsp;&nbsp;a) Magnetic Braking in trains.<br>
+            &nbsp;&nbsp;&nbsp;b) Induction Furnace (for melting metals).<br>
+            &nbsp;&nbsp;&nbsp;c) Speedometers.<br>
+            4. <b>Minimization:</b> Eddy currents are minimized by using <b>Laminated Cores</b>.<br>
+            5. Lamination increases resistance and breaks the large current loops into smaller ones.
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q8. Explain the theory of a Transformer and derive the relation between Voltage and Number of turns.</p>
+        <button onclick="toggleQ('ans8_emi')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ans8_emi" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:1.8;">
+            <b style="color:#fffb00;">Principle:</b> Mutual Induction.<br>
+            1. Let <b>&Phi;</b> be the flux linked with each turn of primary and secondary coil.<br>
+            2. Primary EMF: <b>e<sub>p</sub> = -N<sub>p</sub> <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">d&Phi;</td></tr><tr><td>dt</td></tr></table></b>.<br>
+            3. Secondary EMF: <b>e<sub>s</sub> = -N<sub>s</sub> <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">d&Phi;</td></tr><tr><td>dt</td></tr></table></b>.<br>
+            4. Dividing eq(3) by eq(2):<br>
+            <div style="text-align:center; padding:10px; color:#48ff00; font-size:1.3rem;">
+                <b><table style="display:inline-table; vertical-align:middle; color:#48ff00;"><tr><td style="border-bottom:1px solid #48ff00;">e<sub>s</sub></td></tr><tr><td>e<sub>p</sub></td></tr></table> = <table style="display:inline-table; vertical-align:middle; color:#48ff00;"><tr><td style="border-bottom:1px solid #48ff00;">N<sub>s</sub></td></tr><tr><td>N<sub>p</sub></td></tr></table> = K</b>
+            </div>
+            5. Here <b>K</b> is called the <b>Transformation Ratio</b>.<br>
+            6. For Step-up: <b>N<sub>s</sub> > N<sub>p</sub></b> (K > 1).<br>
+            7. For Step-down: <b>N<sub>s</sub> < N<sub>p</sub></b> (K < 1).
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q9. Derive the EMF induced in a metallic rod of length 'l' rotating with angular velocity '&omega;' in a uniform B-field.</p>
+        <button onclick="toggleQ('ans9_emi')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ans9_emi" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:2;">
+            1. Consider a small element <b>dr</b> of the rod at distance <b>r</b> from center.<br>
+            2. Linear velocity of this element <b>v = r&omega;</b>.<br>
+            3. Small EMF induced in this element <b>de = B v dr</b>.<br>
+            4. <b>de = B (r&omega;) dr</b>.<br>
+            5. Total EMF <b>e = &int; de</b> from 0 to l.<br>
+            6. <b>e = B&omega; &int;<sub>0</sub><sup>l</sup> r dr</b>.<br>
+            7. <b>e = B&omega; [ <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">r<sup>2</sup></td></tr><tr><td>2</td></tr></table> ]<sub>0</sub><sup>l</sup></b>.<br>
+            8. <b>Result:</b>
+            <div style="text-align:center; padding:10px; color:#48ff00; font-size:1.4rem;">
+                <b>e = <table style="display:inline-table; vertical-align:middle; color:#48ff00;"><tr><td style="border-bottom:1px solid #48ff00;">1</td></tr><tr><td>2</td></tr></table> B &omega; l<sup>2</sup></b>
+            </div>
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q10. Derive the expression for Energy Density (u<sub>B</sub>) in a magnetic field.</p>
+        <button onclick="toggleQ('ans10_emi')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ans10_emi" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:2;">
+            1. Energy stored in inductor <b>U = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1</td></tr><tr><td>2</td></tr></table> L I<sup>2</sup></b>.<br>
+            2. For a solenoid, <b>L = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">&mu;<sub>0</sub> N<sup>2</sup> A</td></tr><tr><td>l</td></tr></table></b>.<br>
+            3. Magnetic field <b>B = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">&mu;<sub>0</sub> N I</td></tr><tr><td>l</td></tr></table></b> &rArr; <b>I = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">B l</td></tr><tr><td>&mu;<sub>0</sub> N</td></tr></table></b>.<br>
+            4. Substitute L and I in U: <b>U = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">1</td></tr><tr><td>2</td></tr></table> (<table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">&mu;<sub>0</sub> N<sup>2</sup> A</td></tr><tr><td>l</td></tr></table>) (<table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">B<sup>2</sup> l<sup>2</sup></td></tr><tr><td>&mu;<sub>0</sub><sup>2</sup> N<sup>2</sup></td></tr></table>)</b>.<br>
+            5. Simplified: <b>U = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">B<sup>2</sup></td></tr><tr><td>2&mu;<sub>0</sub></td></tr></table> (A l)</b>.<br>
+            6. Energy density <b>u<sub>B</sub> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">U</td></tr><tr><td>Volume (Al)</td></tr></table></b>.<br>
+            7. <b>Final Result:</b>
+            <div style="text-align:center; padding:10px; color:#48ff00; font-size:1.4rem;">
+                <b>u<sub>B</sub> = <table style="display:inline-table; vertical-align:middle; color:#48ff00;"><tr><td style="border-bottom:1px solid #48ff00;">B<sup>2</sup></td></tr><tr><td>2 &mu;<sub>0</sub></td></tr></table></b>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+function toggleQ(id) {
+    var x = document.getElementById(id);
+    x.style.display = (x.style.display === "none") ? "block" : "none";
+}
+</script>
+
+<style>
+@keyframes moveBg { 
+    0% { background-position: 0% 50%; } 
+    50% { background-position: 100% 50%; } 
+    100% { background-position: 0% 50%; } 
+}
+</style>
+
+</body>  
+</html>

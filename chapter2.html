@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 2: Electrostatic Potential & Energy</title>
+    <style>
+        body { 
+            background-color: #000; 
+            color: #ffffff; 
+            font-family: 'Segoe UI', sans-serif; 
+            margin: 0; 
+            padding-top: 100px;
+        }
+        
+        /* Fixed Header System */
+        .fixed-header { 
+            position: fixed; top: 0; left: 0; width: 100%; height: 75px; 
+            background: rgba(0, 0, 0, 0.95); 
+            border-bottom: 3px solid #00f7ff; 
+            display: flex; justify-content: space-between; align-items: center; 
+            padding: 0 25px; z-index: 1000; box-sizing: border-box;
+            box-shadow: 0 0 20px #00f7ff;
+        }
+        .back-btn { 
+            background: transparent; color: #ff00ff; border: 2px solid #ff00ff; 
+            padding: 10px 25px; border-radius: 8px; text-decoration: none; 
+            font-weight: bold; font-size: 0.9rem; text-shadow: 0 0 8px #ff00ff;
+            box-shadow: inset 0 0 8px #ff00ff; transition: 0.3s;
+        }
+        .back-btn:hover { background: #ff00ff; color: #000; }
+        .header-text { text-align: right; }
+        .header-text b { 
+            color: #00f7ff; font-size: 1.3rem; text-transform: uppercase; 
+            text-shadow: 0 0 10px #00f7ff;
+        }
+
+        /* Page Layout: 1 Page = 1 Topic */
+        .page {
+            min-height: 100vh;
+            padding: 40px 20px;
+            box-sizing: border-box;
+            border-bottom: 2px solid #1a1a1a;
+        }
+
+        .container { max-width: 850px; margin: auto; }
+        
+        .glow-card { 
+            background: rgba(10, 10, 10, 0.9); 
+            border: 1px solid #333; 
+            border-left: 6px solid #ff00ff; 
+            padding: 40px; 
+            border-radius: 15px; 
+            box-shadow: 0 0 25px rgba(255, 0, 255, 0.2);
+        }
+
+        .topic-title { 
+            color: #ff00ff; font-size: 2rem; margin-top: 0; 
+            text-shadow: 0 0 15px #ff00ff; border-bottom: 2px solid #333; 
+            padding-bottom: 15px; margin-bottom: 30px;
+        }
+        
+        .eng-def { color: #00f7ff; font-style: italic; font-size: 1.1rem; line-height: 1.6; margin-bottom: 20px; border-left: 3px solid #00f7ff; padding-left: 15px; }
+        .hin-exp { color: #e0e0e0; font-size: 1.1rem; line-height: 1.8; text-align: justify; }
+        .highlight { color: #ff00ff; font-weight: bold; }
+
+        /* Formula Box */
+        .neon-formula { 
+            background: rgba(0, 247, 255, 0.05); 
+            padding: 30px; border-radius: 15px; 
+            border: 2px solid #00f7ff; margin: 35px 0; 
+            text-align: center; color: #00f7ff; font-size: 2rem;
+            text-shadow: 0 0 10px #00f7ff;
+        }
+        .frac { display: inline-block; vertical-align: middle; text-align: center; margin: 0 15px; }
+        .num { display: block; border-bottom: 3px solid #00f7ff; padding: 0 20px; }
+        .den { display: block; padding: 0 20px; }
+    </style>
+</head>
+<body>
+
+    <div class="fixed-header">
+        <a href="phy-chapters.html" class="back-btn">BACK</a>
+        <div class="header-text">
+            <span style="color: #888; font-size: 0.8rem;">Smart Study</span><br>
+            <b>FOR TOPPERS</b>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="container">
+            <div class="glow-card">
+                <h2 class="topic-title">1. Electric Potential</h2>
+                <div class="eng-def">
+                    Electric potential at a point in an electric field is the amount of work done in moving a unit positive charge from infinity to that point.
+                </div>
+                <div class="hin-exp">
+                    <b>Hindi Explanation:</b> Kisi electric field mein kisi point par "Electric Potential" ka matlab hai ki ek unit positive charge ko infinity se us point tak lane mein humein kitna kaam (work) karna pada. Ye batata hai ki us point par energy ka level kya hai.
+                </div>
+                <div class="neon-formula">
+                    V = <div class="frac"><span class="num">W</span><span class="den">q₀</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="container">
+            <div class="glow-card">
+                <h2 class="topic-title">2. Potential due to Point Charge</h2>
+                <div class="eng-def">
+                    The electric potential at a distance 'r' from a single point charge 'q' is inversely proportional to the distance.
+                </div>
+                <div class="hin-exp">
+                    <b>Hindi Explanation:</b> Agar hamare paas ek akela charge 'q' hai, toh usse 'r' distance par potential nikalne ke liye hum integration ka use karte hain. Jaise-jaise distance (r) badhti hai, potential kam hota jata hai.
+                </div>
+                <div class="neon-formula">
+                    V = <div class="frac"><span class="num">1</span><span class="den">4πε₀</span></div> <div class="frac"><span class="num">q</span><span class="den">r</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="container">
+            <div class="glow-card">
+                <h2 class="topic-title">3. Potential due to Multiple Charges</h2>
+                <div class="eng-def">
+                    The total electric potential at a point due to a system of point charges is the algebraic sum of the potentials due to individual charges.
+                </div>
+                <div class="hin-exp">
+                    <b>Hindi Explanation:</b> Agar ek jagah bahut saare charges hain, toh kisi point par net potential nikalne ke liye hum har charge ka alag-alag potential nikalte hain aur unhe normal maths ki tarah (+ ya - sign ke saath) jod dete hain.
+                </div>
+                <div class="neon-formula">
+                    V<sub>net</sub> = V₁ + V₂ + V₃ + ...
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="container">
+            <div class="glow-card">
+                <h2 class="topic-title">4. Superposition Principle</h2>
+                <div class="eng-def">
+                    It states that the electric potential at any point due to a group of charges is equal to the sum of the potentials of each charge, as if all other charges were absent.
+                </div>
+                <div class="hin-exp">
+                    <b>Hindi Explanation:</b> Ye principle kehta hai ki jab hum ek charge ka potential nikal rahe hote hain, toh doosre charges wahan ho ya na ho, usse pehle wale charge ke potential par koi asar nahi padta. Hum bas sabka individual potential nikal kar sum kar lete hain.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="container">
+            <div class="glow-card">
+                <h2 class="topic-title">5. Potential Difference</h2>
+                <div class="eng-def">
+                    The difference in electric potential between two points is the work done per unit charge to move it from one point to the other.
+                </div>
+                <div class="hin-exp">
+                    <b>Hindi Explanation:</b> Do points ke beech ka potential ka antar (difference). Ye hamein batata hai ki agar hum ek charge ko point A se point B tak le jayenge, toh humein kitna kaam karna padega.
+                </div>
+                <div class="neon-formula">
+                    ΔV = V<sub>B</sub> - V<sub>A</sub> = <div class="frac"><span class="num">W<sub>AB</sub></span><span class="den">q₀</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="container">
+            <div class="glow-card">
+                <h2 class="topic-title">6. Work Done in Moving Charge</h2>
+                <div class="eng-def">
+                    Work done to move a charge 'q' through a potential difference ΔV is independent of the path taken.
+                </div>
+                <div class="hin-exp">
+                    <b>Hindi Explanation:</b> Kisi charge ko move karne mein jo work hota hai, wo sirf shuruati aur aakhiri point ke potential par depend karta hai. Aap chahe kisi bhi raste (path) se jao, work done same rahega.
+                </div>
+                <div class="neon-formula" style="color: #ff00ff; border-color: #ff00ff; text-shadow: 0 0 10px #ff00ff;">
+                    W = q × ΔV
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="container">
+            <div class="glow-card">
+                <h2 class="topic-title">7. Electric Potential Energy</h2>
+                <div class="eng-def">
+                    The total work done in assembling a system of charges by bringing them from infinity to their current positions.
+                </div>
+                <div class="hin-exp">
+                    <b>Hindi Explanation:</b> Jab hum charges ko door-door se lakar ek system banate hain (jaise ek triangle par set karna), toh us poore process mein jo total mehnat ya kaam hota hai, wahi us system ki Potential Energy ban jati hai.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="container">
+            <div class="glow-card">
+                <h2 class="topic-title">8. Potential Energy of Two Charges</h2>
+                <div class="eng-def">
+                    The energy of a system consisting of two point charges q₁ and q₂ separated by a distance 'r'.
+                </div>
+                <div class="hin-exp">
+                    <b>Hindi Explanation:</b> Do charges ke jode (pair) ki energy. Agar dono charge same sign ke hain toh energy positive hogi (ek doosre ko bhagayenge), aur agar opposite hain toh energy negative hogi (pyar/attraction).
+                </div>
+                <div class="neon-formula">
+                    U = <div class="frac"><span class="num">1</span><span class="den">4πε₀</span></div> <div class="frac"><span class="num">q₁q₂</span><span class="den">r</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="container">
+            <div class="glow-card">
+                <h2 class="topic-title">9. P.E. of System of Charges</h2>
+                <div class="eng-def">
+                    The sum of the potential energies of all possible pairs of charges in the system.
+                </div>
+                <div class="hin-exp">
+                    <b>Hindi Explanation:</b> Agar system mein 3 ya usse zyada charges hain, toh hum saare possible jodon (pairs) ki energy nikalte hain aur un sabko add kar dete hain. Jaise 3 charges mein (1-2), (2-3) aur (1-3) ke pairs banenge.
+                </div>
+                <div class="neon-formula" style="font-size: 1.5rem;">
+                    U<sub>total</sub> = k [ <div class="frac"><span class="num">q₁q₂</span><span class="den">r₁₂</span></div> + <div class="frac"><span class="num">q₂q₃</span><span class="den">r₂₃</span></div> + <div class="frac"><span class="num">q₁q₃</span><span class="den">r₁₃</span></div> ]
+                </div>
+            </div>
+        </div>
+    </div>
+<style>
+    /* Neon Glow Theme - Pink & Blue */
+    .chapters-wrapper { background-color: #000; color: #ffffff; font-family: 'Segoe UI', sans-serif; }
+    
+    .page-section {
+        min-height: 100vh;
+        padding: 60px 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        border-bottom: 2px solid #1a1a1a;
+        box-sizing: border-box;
+    }
+
+    .content-container { max-width: 800px; margin: auto; width: 100%; }
+    
+    .glow-card { 
+        background: rgba(10, 10, 10, 0.9); 
+        border: 1px solid #333; 
+        border-left: 6px solid #ff00ff; 
+        padding: 35px; 
+        border-radius: 12px; 
+        box-shadow: 0 0 20px rgba(255, 0, 255, 0.15);
+    }
+
+    .topic-title { 
+        color: #ff00ff; font-size: 1.8rem; margin-top: 0; 
+        text-shadow: 0 0 12px #ff00ff; border-bottom: 1px solid #333; 
+        padding-bottom: 12px; margin-bottom: 25px;
+    }
+    
+    .eng-def { color: #00f7ff; font-style: italic; font-size: 1.1rem; line-height: 1.6; margin-bottom: 20px; border-left: 3px solid #00f7ff; padding-left: 15px; }
+    .hin-exp { color: #e0e0e0; font-size: 1.1rem; line-height: 1.8; text-align: justify; }
+    .highlight { color: #00f7ff; font-weight: bold; }
+
+    /* Clean Neon Formulas */
+    .neon-formula { 
+        background: rgba(0, 247, 255, 0.05); 
+        padding: 25px; border-radius: 12px; 
+        border: 1.5px solid #00f7ff; margin: 30px 0; 
+        text-align: center; color: #00f7ff; font-size: 1.8rem;
+        text-shadow: 0 0 10px #00f7ff;
+    }
+    
+    .frac { display: inline-block; vertical-align: middle; text-align: center; margin: 0 12px; }
+    .num { display: block; border-bottom: 2px solid #00f7ff; padding: 0 15px; }
+    .den { display: block; padding: 0 15px; }
+</style>
+
+<div class="chapters-wrapper">
+
+    <div class="page-section">
+        <div class="content-container">
+            <div class="glow-card">
+                <h2 class="topic-title">1. Equipotential Surface</h2>
+                <div class="eng-def">
+                    An equipotential surface is a surface on which the electric potential is the same at every point.
+                </div>
+                <div class="hin-exp">
+                    <b>Hindi Explanation:</b> Ye ek aisa surface (satah) hai jiske har ek point par electric potential ki value bilkul barabar hoti hai. Matlab agar aap is surface par ek jagah se doosri jagah jaoge, toh potential nahi badlega.
+                </div>
+                <div class="neon-formula">
+                    V<sub>A</sub> = V<sub>B</sub> = Constant
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-section">
+        <div class="content-container">
+            <div class="glow-card">
+                <h2 class="topic-title">2. Properties of Equipotential Surface</h2>
+                <div class="eng-def">
+                    Key properties include: No work is done in moving a charge, and electric field lines are always perpendicular to the surface.
+                </div>
+                <div class="hin-exp">
+                    <b>Hindi Explanation:</b> 
+                    1. <span class="highlight">Work Done Zero:</span> Charge ko move karne mein koi kaam nahi karna padta ($W=0$). <br>
+                    2. <span class="highlight">Field Angle:</span> Electric field lines hamesha is surface ke saath 90 degree ka angle banati hain. <br>
+                    3. <span class="highlight">Intersection:</span> Do surfaces kabhi ek doosre ko nahi kaat-ti.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-section">
+        <div class="content-container">
+            <div class="glow-card">
+                <h2 class="topic-title">3. Equipotential Surface Shapes</h2>
+                <div class="eng-def">
+                    The shape of the surface depends on the charge distribution, such as concentric spheres for a point charge.
+                </div>
+                <div class="hin-exp">
+                    <b>Hindi Explanation:</b> 
+                    - <span class="highlight">Point Charge:</span> Golaakaar (Spherical) shapes banti hain. <br>
+                    - <span class="highlight">Uniform Field:</span> Seedhi plates (Parallel planes) banti hain. <br>
+                    - <span class="highlight">Line Charge:</span> Cylinder ki tarah shapes banti hain.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-section">
+        <div class="content-container">
+            <div class="glow-card">
+                <h2 class="topic-title">4. Electric Field and Potential Relation</h2>
+                <div class="eng-def">
+                    The electric field is related to the change in potential over a distance.
+                </div>
+                <div class="hin-exp">
+                    <b>Hindi Explanation:</b> Electric field ($E$) batata hai ki distance ke saath potential ($V$) kitni tezi se badal raha hai. Dono ke beech ka rishta bahut hi important formula se dikhaya jata hai.
+                </div>
+                <div class="neon-formula">
+                    E = - <div class="frac"><span class="num">dV</span><span class="den">dr</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-section">
+        <div class="content-container">
+            <div class="glow-card">
+                <h2 class="topic-title">5. Negative Gradient Concept</h2>
+                <div class="eng-def">
+                    The negative sign indicates that the direction of the electric field is in the direction of decreasing potential.
+                </div>
+                <div class="hin-exp">
+                    <b>Hindi Explanation:</b> Formula mein laga minus (-) sign ye dikhata hai ki Electric field hamesha us taraf jati hai jahan potential kam ho raha hota hai. Isse "Potential Gradient" bhi kehte hain.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-section">
+        <div class="content-container">
+            <div class="glow-card">
+                <h2 class="topic-title">6. Field from Potential Graph</h2>
+                <div class="eng-def">
+                    The slope of a Potential vs. Distance graph gives the magnitude of the electric field.
+                </div>
+                <div class="hin-exp">
+                    <b>Hindi Explanation:</b> Agar hum $V$ aur $r$ ka graph banayein, toh us graph ki dhalan (slope) humein batati hai ki Electric field ki taqat (magnitude) kitni hai. Jitna teez dhalan, utni mazboot field.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-section">
+        <div class="content-container">
+            <div class="glow-card">
+                <h2 class="topic-title">7. Electric Dipole</h2>
+                <div class="eng-def">
+                    An electric dipole consists of two equal and opposite charges separated by a small distance.
+                </div>
+                <div class="hin-exp">
+                    <b>Hindi Explanation:</b> Jab do barabar lekin ulte (+ aur -) charges ek doosre se thodi doori par rakhe hon, toh use dipole kehte hain. Iski taqat ko Dipole Moment ($p$) se napa jata hai.
+                </div>
+                <div class="neon-formula">
+                    p = q × 2a
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-section">
+        <div class="content-container">
+            <div class="glow-card">
+                <h2 class="topic-title">8. Potential due to Dipole (Axial Position)</h2>
+                <div class="eng-def">
+                    Electric potential at a point on the axis of the dipole.
+                </div>
+                <div class="hin-exp">
+                    <b>Hindi Explanation:</b> Dipole ki seedhi line (axis) par kisi point par potential nikalne ka formula. Yahan distance '$r$' dipole ke center se naapi jati hai.
+                </div>
+                <div class="neon-formula">
+                    V = <div class="frac"><span class="num">1</span><span class="den">4πε₀</span></div> <div class="frac"><span class="num">p</span><span class="den">r²</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-section">
+        <div class="content-container">
+            <div class="glow-card">
+                <h2 class="topic-title">9. Potential due to Dipole (Equatorial)</h2>
+                <div class="eng-def">
+                    Electric potential at any point on the equatorial line of a dipole is zero.
+                </div>
+                <div class="hin-exp">
+                    <b>Hindi Explanation:</b> Dipole ke bilkul beech se nikalne wali perpendicular line (equatorial line) par potential hamesha **Zero** hota hai. Kyunki wahan se dono charges ki doori barabar hoti hai aur potential ek doosre ko cancel kar dete hain.
+                </div>
+                <div class="neon-formula">
+                    V<sub>equatorial</sub> = 0
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<style>
+    .page-section {
+        min-height: 100vh;
+        padding: 60px 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        border-bottom: 2px solid #1a1a1a;
+        box-sizing: border-box;
+    }
+    .content-container { max-width: 800px; margin: auto; width: 100%; }
+    .glow-card { 
+        background: rgba(10, 10, 10, 0.9); border: 1px solid #333; 
+        border-left: 6px solid #ff00ff; padding: 35px; border-radius: 12px; 
+        box-shadow: 0 0 20px rgba(255, 0, 255, 0.15);
+    }
+    .topic-title { 
+        color: #ff00ff; font-size: 1.8rem; margin-top: 0; 
+        text-shadow: 0 0 12px #ff00ff; border-bottom: 1px solid #333; 
+        padding-bottom: 12px; margin-bottom: 25px;
+    }
+    .eng-def { color: #00f7ff; font-style: italic; font-size: 1.1rem; line-height: 1.6; margin-bottom: 20px; border-left: 3px solid #00f7ff; padding-left: 15px; }
+    .hin-exp { color: #e0e0e0; font-size: 1.1rem; line-height: 1.8; text-align: justify; }
+    .neon-formula { 
+        background: rgba(0, 247, 255, 0.05); padding: 25px; border-radius: 12px; 
+        border: 1.5px solid #00f7ff; margin: 30px 0; text-align: center; 
+        color: #00f7ff; font-size: 1.8rem; text-shadow: 0 0 10px #00f7ff;
+    }
+</style>
+
+<div class="chapters-wrapper">
+
+    <div class="page-section">
+        <div class="content-container">
+            <div class="glow-card">
+                <h2 class="topic-title">1. P.E. of Dipole in External Field</h2>
+                <div class="eng-def">The energy stored in a dipole when it is placed in an external electric field, calculated as the work done in rotating it.</div>
+                <div class="hin-exp"><b>Hindi:</b> Jab dipole ko electric field mein rotate kiya jata hai, toh usme potential energy store hoti hai. Formula: $U = -pE \cos \theta$.</div>
+                <div class="neon-formula">U = -pE cos θ</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-section">
+        <div class="content-container">
+            <div class="glow-card">
+                <h2 class="topic-title">2. Conductors in Electrostatics</h2>
+                <div class="eng-def">Materials which allow the flow of electric charges through them easily due to the presence of free electrons.</div>
+                <div class="hin-exp"><b>Hindi:</b> Wo materials jinme electrons aazadi se move kar sakte hain. Static condition mein inke andar net electric field hamesha zero hoti hai.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-section">
+        <div class="content-container">
+            <div class="glow-card">
+                <h2 class="topic-title">3. Free Charges and Bound Charges</h2>
+                <div class="eng-def">Free charges are mobile electrons in metals, whereas bound charges are fixed positive ions in the nucleus.</div>
+                <div class="hin-exp"><b>Hindi:</b> <span style="color:#00f7ff">Free Charges</span> wo electrons hain jo poore conductor mein ghoom sakte hain. <span style="color:#ff00ff">Bound Charges</span> wo hote hain jo nucleus ke saath fix rehte hain.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-section">
+        <div class="content-container">
+            <div class="glow-card">
+                <h2 class="topic-title">4. Electrostatic Shielding</h2>
+                <div class="eng-def">The method of protecting a certain region from external electric fields by enclosing it in a hollow conductor.</div>
+                <div class="hin-exp"><b>Hindi:</b> Kisi sensitive device ko electric field se bachane ke liye use hollow conductor ke andar rakha jata hai, jise shielding kehte hain.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-section">
+        <div class="content-container">
+            <div class="glow-card">
+                <h2 class="topic-title">5. Properties of Conductors</h2>
+                <div class="eng-def">Under electrostatic conditions, net charge inside a conductor is zero and the potential is constant throughout.</div>
+                <div class="hin-exp"><b>Hindi:</b> Conductor ki khoobiyein: Andar net field zero hoti hai aur sara extra charge surface par distribute ho jata hai.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-section">
+        <div class="content-container">
+            <div class="glow-card">
+                <h2 class="topic-title">6. Electric Field Inside Conductor</h2>
+                <div class="eng-def">In a static situation, the electric field intensity at any point inside the material of a conductor is zero.</div>
+                <div class="hin-exp"><b>Hindi:</b> Static halat mein conductor ke andar koi net electric field nahi hoti, kyunki charges apne aap ko aise arrange kar lete hain ki field cancel ho jaye.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-section">
+        <div class="content-container">
+            <div class="glow-card">
+                <h2 class="topic-title">7. Charge Distribution on Surface</h2>
+                <div class="eng-def">Any excess charge given to a conductor always resides entirely on its outer surface.</div>
+                <div class="hin-exp"><b>Hindi:</b> Conductor ko diya gaya extra charge uske andar nahi rukta, balki repel hokar seedha bahar ki surface par aa jata hai.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-section">
+        <div class="content-container">
+            <div class="glow-card">
+                <h2 class="topic-title">8. Capacitance</h2>
+                <div class="eng-def">Capacitance is the property of a conductor to store electric charge and electrical energy.</div>
+                <div class="hin-exp"><b>Hindi:</b> Ye kisi conductor ki charge store karne ki kshamta (ability) hai. Iski unit Farad (F) hoti hai.</div>
+                <div class="neon-formula">C = Q / V</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-section">
+        <div class="content-container">
+            <div class="glow-card">
+                <h2 class="topic-title">9. Capacitance of Isolated Conductor</h2>
+                <div class="eng-def">The capacitance of a single conductor, which depends on its size, shape, and surrounding medium.</div>
+                <div class="hin-exp"><b>Hindi:</b> Ek akele (isolated) conductor ki capacitance uske geometry aur medium par nirbhar karti hai.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-section">
+        <div class="content-container">
+            <div class="glow-card">
+                <h2 class="topic-title">10. Capacitance of Spherical Conductor</h2>
+                <div class="eng-def">The capacitance of a spherical conductor is directly proportional to its radius R.</div>
+                <div class="hin-exp"><b>Hindi:</b> Ek R radius ke gole (sphere) ki capacitance ka formula: $C = 4 \pi \epsilon_0 R$.</div>
+                <div class="neon-formula">C = 4πε₀ R</div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="chapters-wrapper">
+
+    <div class="page-section">
+        <div class="content-container">
+            <div class="glow-card">
+                <h2 class="topic-title">1. Capacitor</h2>
+                <div class="eng-def">A capacitor is a device used to store electric charge and electrical energy in an electric field.</div>
+                <div class="hin-exp"><b>Hindi:</b> Capacitor ek aisi device hai jo apne andar bijli (electric charge) aur energy ko jama karke rakhti hai. Isme do conductors hote hain jo ek doosre se thodi doori par hote hain.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-section">
+        <div class="content-container">
+            <div class="glow-card">
+                <h2 class="topic-title">2. Types of Capacitors</h2>
+                <div class="eng-def">Capacitors are classified based on their shape and dielectric material, such as parallel plate, spherical, and cylindrical capacitors.</div>
+                <div class="hin-exp"><b>Hindi:</b> Capacitors kai tarah ke hote hain: 1. <span style="color:#00f7ff">Parallel Plate</span> (do seedhi plates), 2. <span style="color:#ff00ff">Spherical</span> (golaakaar), aur 3. <span style="color:#00f7ff">Cylindrical</span>.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-section">
+        <div class="content-container">
+            <div class="glow-card">
+                <h2 class="topic-title">3. Parallel Plate Capacitor</h2>
+                <div class="eng-def">A capacitor consisting of two large plane parallel conducting plates separated by a small distance.</div>
+                <div class="hin-exp"><b>Hindi:</b> Isme do barabar ki metal plates ek doosre ke saamne rakhi jati hain. Ye sabse zyada use hone wala capacitor hai.</div>
+                            </div>
+        </div>
+    </div>
+
+    <div class="page-section">
+        <div class="content-container">
+            <div class="glow-card">
+                <h2 class="topic-title">4. Capacitance without Dielectric</h2>
+                <div class="eng-def">The capacitance of a parallel plate capacitor when the space between the plates is vacuum or air.</div>
+                <div class="hin-exp"><b>Hindi:</b> Jab capacitor ki dono plates ke beech sirf hawa ya vacuum ho, tab uski capacitance ka formula ye hota hai:</div>
+                <div class="neon-formula">C₀ = <div class="frac"><span class="num">ε₀ A</span><span class="den">d</span></div></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-section">
+        <div class="content-container">
+            <div class="glow-card">
+                <h2 class="topic-title">5. Capacitance with Dielectric</h2>
+                <div class="eng-def">When a dielectric medium is placed between the plates, the capacitance increases by a factor of K.</div>
+                <div class="hin-exp"><b>Hindi:</b> Agar plates ke beech koi material (dielectric) bhar diya jaye, toh capacitor ki taqat (capacitance) badh jati hai.</div>
+                <div class="neon-formula">C = K C₀ = <div class="frac"><span class="num">K ε₀ A</span><span class="den">d</span></div></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-section">
+        <div class="content-container">
+            <div class="glow-card">
+                <h2 class="topic-title">6. Dielectric Material</h2>
+                <div class="eng-def">Non-conducting materials (insulators) that can be polarized by an external electric field.</div>
+                <div class="hin-exp"><b>Hindi:</b> Dielectric wo insulators hote hain jo current toh pass nahi karte, lekin electric field ka asar dikhate hain (jaise glass, plastic, mica).</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-section">
+        <div class="content-container">
+            <div class="glow-card">
+                <h2 class="topic-title">7. Dielectric Constant (K)</h2>
+                <div class="eng-def">The ratio of the capacitance with the dielectric medium to the capacitance with vacuum between the plates.</div>
+                <div class="hin-exp"><b>Hindi:</b> Ye ek number hai jo batata hai ki kisi material ko capacitor mein dalne par uski capacitance kitne guna badh jayegi.</div>
+                <div class="neon-formula">K = <div class="frac"><span class="num">C</span><span class="den">C₀</span></div></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-section">
+        <div class="content-container">
+            <div class="glow-card">
+                <h2 class="topic-title">8. Polarization of Dielectric</h2>
+                <div class="eng-def">The process of inducing dipoles in a dielectric material when subjected to an external electric field.</div>
+                <div class="hin-exp"><b>Hindi:</b> Jab dielectric ko field mein rakhte hain, toh uske molecules set ho jate hain aur ek apni field banate hain. Isi process ko Polarization kehte hain.</div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="chapters-wrapper">
+
+    <div class="page-section">
+        <div class="content-container">
+            <div class="glow-card">
+                <h2 class="topic-title">1. Effect on Capacitance</h2>
+                <div class="eng-def">When a dielectric is introduced between the plates of a capacitor, its capacitance increases by a factor of K.</div>
+                <div class="hin-exp"><b>Hindi Explanation:</b> Jab plates ke beech dielectric slab rakhi jati hai, toh capacitor ki charge store karne ki kshamta (capacitance) badh jati hai.</div>
+                <div class="neon-formula">C = K C₀</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-section">
+        <div class="content-container">
+            <div class="glow-card">
+                <h2 class="topic-title">2. Effect on Electric Field</h2>
+                <div class="eng-def">The internal electric field decreases due to the opposing field produced by the polarized dielectric.</div>
+                <div class="hin-exp"><b>Hindi Explanation:</b> Dielectric ke polarization ki wajah se plates ke beech ki net electric field pehle se kam ho jati hai.</div>
+                <div class="neon-formula">E = E₀ / K</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-section">
+        <div class="content-container">
+            <div class="glow-card">
+                <h2 class="topic-title">3. Effect on Potential</h2>
+                <div class="eng-def">The potential difference between the plates decreases when a dielectric is inserted (if the battery is disconnected).</div>
+                <div class="hin-exp"><b>Hindi Explanation:</b> Kyunki field kam hoti hai, isliye plates ke beech ka voltage (Potential Difference) bhi kam ho jata hai.</div>
+                <div class="neon-formula">V = V₀ / K</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-section">
+        <div class="content-container">
+            <div class="glow-card">
+                <h2 class="topic-title">4. Capacitors in Series</h2>
+                <div class="eng-def">In a series combination, the charge on each capacitor is the same, and the total potential is the sum of individual potentials.</div>
+                <div class="hin-exp"><b>Hindi Explanation:</b> Jab capacitors ko ek ke baad ek ek hi line mein joda jata hai, toh sabpar charge (Q) same rehta hai lekin voltage bat jati hai.</div>
+                                <div class="neon-formula">1/Cₛ = 1/C₁ + 1/C₂ + ...</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-section">
+        <div class="content-container">
+            <div class="glow-card">
+                <h2 class="topic-title">5. Capacitors in Parallel</h2>
+                <div class="eng-def">In a parallel combination, the potential difference across each capacitor is the same, and the total charge is the sum of individual charges.</div>
+                <div class="hin-exp"><b>Hindi Explanation:</b> Jab sabhi capacitors ke sire (ends) ek hi point se jude hon, toh unka voltage same rehta hai lekin total capacitance badh jati hai.</div>
+                                <div class="neon-formula">Cₚ = C₁ + C₂ + ...</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-section">
+        <div class="content-container">
+            <div class="glow-card">
+                <h2 class="topic-title">6. Energy Stored in Capacitor</h2>
+                <div class="eng-def">The work done in charging a capacitor is stored in the form of electrostatic potential energy between the plates.</div>
+                <div class="hin-exp"><b>Hindi Explanation:</b> Capacitor ko charge karne mein jo mehnat (work) lagti hai, wahi uske andar energy ban kar ruk jati hai.</div>
+                <div class="neon-formula">U = ½ CV² = ½ Q²/C</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-section">
+        <div class="content-container">
+            <div class="glow-card">
+                <h2 class="topic-title">7. Energy Density</h2>
+                <div class="eng-def">Energy stored per unit volume in the electric field between the plates of a capacitor.</div>
+                <div class="hin-exp"><b>Hindi Explanation:</b> Capacitor ke andar ki jagah (volume) ke har ek tukde mein kitni energy hai, use hi Energy Density kehte hain.</div>
+                <div class="neon-formula">u = ½ ε₀ E²</div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div style="text-align:center; margin-bottom:20px;">
+    <h1 style="color:#00f7ff; font-family:sans-serif; text-transform:uppercase; text-shadow:0 0 10px #00f7ff;">Let's start questions practice</h1>
+    <p style="color:#FFD700; font-family:sans-serif; font-weight:bold;">Click to choose correct answer</p>
+</div>
+
+<div id="quiz-box" style="max-width:600px; margin:auto; position:relative; z-index:1;"></div>
+
+<div id="quiz-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; z-index:9999; flex-direction:column; align-items:center; justify-content:center; pointer-events:none;">
+    <div id="status-strip" style="width:100%; text-align:center; padding:30px 0;">
+        <h1 id="status-title" style="margin:0; padding:0;"></h1>
+        <p id="status-message" style="margin:10px 0; font-family:sans-serif; font-weight:bold;"></p>
+        <p id="next-msg" style="margin:0; font-family:sans-serif;"></p>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+const questions = [
+{ q:"Electric potential is which type of quantity?",opts:["Scalar","Vector","Tensor","None"],ans:0},
+{ q:"Unit of electric potential is:",opts:["Joule","Volt","Coulomb","Ampere"],ans:1},
+{ q:"Potential at infinity is taken as:",opts:["Maximum","Minimum","Zero","100V"],ans:2},
+{ q:"Work done on equipotential surface is:",opts:["Maximum","Minimum","Zero","Infinite"],ans:2},
+{ q:"The SI unit of capacitance is:",opts:["Ohm","Henry","Farad","Tesla"],ans:2},
+{ q:"Dielectric constant for metal is:",opts:["0","1","Infinity","10"],ans:2},
+{ q:"Angle between E and equipotential surface:",opts:["0°","45°","90°","180°"],ans:2},
+{ q:"Capacity of a spherical conductor is:",opts:["4πε₀R","4πε₀/R","R/4πε₀","Zero"],ans:0},
+{ q:"Energy stored in a capacitor is:",opts:["QV","1/2 QV²","1/2 CV²","C/V"],ans:2},
+{ q:"Potential due to point charge varies as:",opts:["1/r","1/r²","r","1/r³"],ans:0},
+{ q:"Electron volt (eV) is a unit of:",opts:["Charge","Potential","Energy","Force"],ans:2},
+{ q:"Capacitors in parallel have the same:",opts:["Charge","Potential","Energy","None"],ans:1},
+{ q:"Capacitors in series have the same:",opts:["Potential","Charge","Energy","None"],ans:1},
+{ q:"Dielectric constant of water is:",opts:["1","10","80","Infinity"],ans:2},
+{ q:"Formula for capacitance (C) is:",opts:["Q/V","V/Q","QV","1/2 QV"],ans:0},
+{ q:"Electric field is the gradient of potential:",opts:["Gradient","Product","Sum","None"],ans:0},
+{ q:"Earth's potential is considered:",opts:["Zero","Maximum","Minimum","Infinite"],ans:0},
+{ q:"Dimensional formula of Potential is:",opts:["ML²T⁻³A⁻¹","MLT⁻³A⁻¹","ML²T⁻²","L²"],ans:0},
+{ q:"1 Farad is equal to:",opts:["1 C/V","1 V/C","1 J/C","1 N/C"],ans:0},
+{ q:"Van de Graaff generator produces:",opts:["High Current","High Voltage","Low Voltage","None"],ans:1},
+{ q:"Energy density in vacuum is:",opts:["1/2 ε₀E²","ε₀E","1/2 CV²","Q/A"],ans:0},
+{ q:"Potential at equatorial point of dipole:",opts:["Maximum","Minimum","Zero","Infinite"],ans:2},
+{ q:"If distance between plates increases, C:",opts:["Increases","Decreases","Remains Same","Zero"],ans:1},
+{ q:"Dielectric reduces the field by factor:",opts:["K","1/K","K²","√K"],ans:1},
+{ q:"Work to rotate dipole from 0 to 180°:",opts:["pE","2pE","Zero","-pE"],ans:1},
+{ q:"Potential due to dipole on axial line:",opts:["kp/r","kp/r²","kp/r³","Zero"],ans:1},
+{ q:"Two 2µF capacitors in series give:",opts:["4 µF","1 µF","2 µF","0.5 µF"],ans:1},
+{ q:"Potential Energy of two charges is:",opts:["kq₁q₂/r","kq₁q₂/r²","1/2 CV²","Zero"],ans:0},
+{ q:"Dielectric strength of air is:",opts:["3e6 V/m","1e6 V/m","10e6 V/m","0"],ans:0},
+{ q:"If plate area doubles, C becomes:",opts:["Half","Double","4 times","Same"],ans:1},
+{ q:"Potential at center of charged ring:",opts:["Zero","kQ/R","kQ/R²","Infinite"],ans:1},
+{ q:"If V is constant everywhere, E must be:",opts:["Infinite","Zero","Positive","Negative"],ans:1},
+{ q:"Energy in capacitor is stored in:",opts:["Plates","Electric field","Wires","Battery"],ans:1},
+{ q:"Negative gradient of potential is:",opts:["Flux","Electric field","Capacitance","Force"],ans:1},
+{ q:"Unit of dielectric constant is:",opts:["F/m","C/V","Dimensionless","N/C"],ans:2},
+{ q:"Work per unit charge from infinity is:",opts:["Force","Potential","Flux","Energy"],ans:1},
+{ q:"Two charges moved apart, system P.E.:",opts:["Increases","Decreases","Remains Same","Zero"],ans:1},
+{ q:"Quantity with unit J/C is:",opts:["Field","Flux","Potential","Capacitance"],ans:2},
+{ q:"Capacitor is a device used to store:",opts:["Current","Voltage","Energy","Resistance"],ans:2},
+{ q:"Dielectric constant for vacuum is:",opts:["0","1","8.85","Infinity"],ans:1},
+{ q:"Which is blocked by a capacitor?",opts:["A.C.","D.C.","Both","None"],ans:1},
+{ q:"Direction of dipole moment is:",opts:["- to +","+ to -","Radial","Circular"],ans:0},
+{ q:"Net charge on a charged capacitor is:",opts:["Q","2Q","Zero","Q/2"],ans:2},
+{ q:"Smallest unit of capacitance is:",opts:["Farad","mF","µF","pF"],ans:3},
+{ q:"Ratio Q/V is called:",opts:["Resistance","Capacitance","Inductance","Conductance"],ans:1},
+{ q:"Potential inside a hollow shell is:",opts:["Zero","Same as surface","Maximum","Minimum"],ans:1},
+{ q:"Potential difference unit is:",opts:["Ampere","Ohm","Volt","Watt"],ans:2},
+{ q:"Capacity of parallel plate capacitor:",opts:["ε₀A/d","d/ε₀A","ε₀d/A","A/ε₀d"],ans:0},
+{ q:"A polar molecule example is:",opts:["H₂","N₂","H₂O","O₂"],ans:2},
+{ q:"Electric field lines are always perpendicular to equipotential:",opts:["Parallel","Perpendicular","Tangent","None"],ans:1}
+];
+
+const quizBox = document.getElementById('quiz-box');
+
+questions.forEach((item, index) => {
+    let card = document.createElement('div');
+    card.style.cssText = "background:rgba(255,255,255,0.05); padding:20px; margin:15px 0; border-radius:15px; border:1px solid rgba(0, 247, 255, 0.3);";
+
+    card.innerHTML = `<p style="color:#FFD700; font-size:18px; font-weight:bold;">Q${index+1}. ${item.q}</p>`;
+
+    item.opts.forEach((opt, oIdx) => {
+        let btn = document.createElement('button');
+        btn.innerText = opt;
+        btn.style.cssText = "display:block; width:100%; margin:12px 0; padding:15px; background:rgba(255,255,255,0.08); color:#fff; border:1.5px solid #00f7ff; border-radius:12px; text-align:left; font-weight:600; cursor:pointer;";
+
+        btn.onclick = () => {
+            const overlay = document.getElementById('quiz-overlay');
+            const title = document.getElementById('status-title');
+            const msg = document.getElementById('status-message');
+            const nxt = document.getElementById('next-msg');
+            const strip = document.getElementById('status-strip');
+
+            overlay.style.display = "flex";
+            overlay.style.pointerEvents = "auto"; 
+
+            if(oIdx === item.ans){
+                // Congratulations Style + Party Paper (Confetti)
+                overlay.style.background = "rgba(0,0,0,0.85)";
+                strip.style.background = "transparent";
+                title.style.cssText = "font-family:'Dancing Script', cursive; color:#fff; font-size:60px; text-shadow:0 0 20px #00f7ff, 0 0 40px #00f7ff;";
+                title.innerText = "Congratulations";
+                msg.innerText = "Excellent! You are a true Topper.";
+                msg.style.color = "#00f7ff";
+                nxt.innerText = "Go to next question...";
+
+                var end = Date.now() + 1500;
+                var colors = ['#00f7ff','#ff0000','#ffffff','#ff00c8','#48ff00'];
+                (function frame(){
+                    confetti({particleCount:15,angle:60,spread:65,origin:{x:0},colors:colors, zIndex: 999999});
+                    confetti({particleCount:15,angle:120,spread:65,origin:{x:1},colors:colors, zIndex: 999999});
+                    if(Date.now() < end) requestAnimationFrame(frame);
+                })();
+            } else {
+                // WASTED Style
+                overlay.style.background = "radial-gradient(rgba(139,0,0,0.5) 10%, rgba(0,0,0,0.85) 90%)";
+                strip.style.background = "rgba(0,0,0,0.6)";
+                strip.style.width = "100%";
+                strip.style.padding = "30px 0";
+                title.style.cssText = "font-family:'Oswald', sans-serif; color:red; font-size:80px; font-weight:900; letter-spacing:10px; text-shadow:4px 4px 0px #000;";
+                title.innerText = "WASTED";
+                msg.innerText = "Oops! Try again with focus.";
+                msg.style.color = "#fff";
+                nxt.innerText = "";
+            }
+
+            setTimeout(() => {
+                overlay.style.display = "none";
+                overlay.style.pointerEvents = "none"; 
+            }, 2500);
+        };
+        card.appendChild(btn);
+    });
+    quizBox.appendChild(card);
+});
+});
+</script>
+
+
+
+<div id="quiz-box" style="max-width:600px; margin:auto; position:relative; z-index:1;"></div>
+
+<div id="quiz-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; z-index:9999; flex-direction:column; align-items:center; justify-content:center; pointer-events:none;">
+    <div id="status-strip" style="width:100%; text-align:center; padding:30px 0;">
+        <h1 id="status-title" style="margin:0; padding:0;"></h1>
+        <p id="status-message" style="margin:10px 0; font-family:sans-serif; font-weight:bold;"></p>
+        <p id="next-msg" style="margin:0; font-family:sans-serif;"></p>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+// Yahan sirf MCQ badle hain (Q51-100), baki logic wahi purana hai
+const questions = [
+{ q:"Capacitance of a parallel plate capacitor is:",opts:["ε₀A/d","d/ε₀A","ε₀d/A","A/ε₀d"],ans:0},
+{ q:"Energy density of a capacitor is proportional to:",opts:["E","E²","1/E","√E"],ans:1},
+{ q:"Which of the following is a non-polar molecule?",opts:["H₂O","HCl","N₂O","CO₂"],ans:3},
+{ q:"The unit of electric flux is:",opts:["V-m","V/m","V-m²","N/C"],ans:0},
+{ q:"When a dielectric is placed between plates, Potential:",opts:["Increases","Decreases","Remains same","Zero"],ans:1},
+{ q:"Work done in rotating a dipole by 90° from stable eq:",opts:["pE","2pE","pE/2","Zero"],ans:0},
+{ q:"Capacity of Earth (Radius 6400km) is:",opts:["1 F","711 µF","1 mF","100 µF"],ans:1},
+{ q:"The torque acting on a dipole is maximum at:",opts:["0°","45°","90°","180°"],ans:2},
+{ q:"Two capacitors of 3µF and 6µF in series give:",opts:["9 µF","2 µF","4.5 µF","18 µF"],ans:1},
+{ q:"Dielectric constant of a vacuum is:",opts:["0","1","8.85","Infinity"],ans:1},
+{ q:"Potential at a point due to a dipole varies as:",opts:["1/r","1/r²","1/r³","r"],ans:1},
+{ q:"A capacitor is a device to store:",opts:["Charge","Voltage","Electric Energy","Current"],ans:2},
+{ q:"The work done in moving 2C charge through 5V is:",opts:["2.5 J","0.4 J","10 J","7 J"],ans:2},
+{ q:"Unit of dielectric strength is:",opts:["V-m","V/m","C/m","F/m"],ans:1},
+{ q:"Potential on the surface of a charged conductor is:",opts:["Zero","Constant","Maximum","Minimum"],ans:1},
+{ q:"If K=2 dielectric is added, Capacitance becomes:",opts:["C/2","2C","C+2","C²"],ans:1},
+{ q:"The net charge on a capacitor is always:",opts:["Q","2Q","Zero","Q/2"],ans:2},
+{ q:"Potential energy of a system of two negative charges:",opts:["Increases","Decreases","Remains same","Zero"],ans:0},
+{ q:"One electron volt (eV) is equal to:",opts:["1.6e-19 J","1.6e-13 J","9.1e-31 J","1 J"],ans:0},
+{ q:"SI unit of potential gradient is:",opts:["V-m","V/m","V/m²","C-m"],ans:1},
+{ q:"1 Joule/Coulomb is equal to:",opts:["1 Watt","1 Ampere","1 Volt","1 Ohm"],ans:2},
+{ q:"Capacitors in parallel have the same:",opts:["Charge","Voltage","Energy","Resistance"],ans:1},
+{ q:"Electric field is zero inside a:",opts:["Plastic","Conductor","Battery","None"],ans:1},
+{ q:"If plate area of a capacitor is halved, C becomes:",opts:["Double","Half","Same","Four times"],ans:1},
+{ q:"Polarization vector has units of:",opts:["C/m","C/m²","C-m","V/m"],ans:1},
+{ q:"The potential at a point (r,θ) due to dipole is:",opts:["kp cosθ/r²","kp sinθ/r²","kp/r","Zero"],ans:0},
+{ q:"Lightning conductor works on the principle of:",opts:["Corona discharge","Induction","Self-induction","None"],ans:0},
+{ q:"Which remains constant when a battery is disconnected?",opts:["V","C","Q","Energy"],ans:2},
+{ q:"Unit of polarizability is:",opts:["C²m/N","Cm²/V","m³","C/V"],ans:2},
+{ q:"Work done in an equipotential surface is:",opts:["Infinite","Zero","Positive","Negative"],ans:1},
+{ q:"Equipotential surfaces for a uniform electric field are:",opts:["Spheres","Planes","Cylinders","Cubes"],ans:1},
+{ q:"If K is very large (Metal), field inside becomes:",opts:["Max","Same","Zero","Infinite"],ans:2},
+{ q:"Potential at the center of a dipole is:",opts:["Max","Min","Zero","Infinite"],ans:2},
+{ q:"Capacity of a parallel plate capacitor depends on:",opts:["Metal","Thickness","Area","Color"],ans:2},
+{ q:"Van de Graaff generator uses:",opts:["D.C.","A.C.","Static electricity","None"],ans:2},
+{ q:"Three 3µF capacitors in parallel give:",opts:["1 µF","9 µF","3 µF","6 µF"],ans:1},
+{ q:"Electric field is the negative gradient of potential:",opts:["Sum","Product","Negative gradient","Inverse"],ans:2},
+{ q:"Energy of a capacitor is stored in:",opts:["Wires","Battery","Electric Field","Plates"],ans:2},
+{ q:"Potential energy of dipole in unstable equilibrium:",opts:["-pE","Zero","pE","2pE"],ans:2},
+{ q:"Which follows inverse square law?",opts:["Point charge V","Point charge E","Dipole V","None"],ans:1},
+{ q:"Unit of energy density is:",opts:["J/m","J/m²","J/m³","J-m"],ans:2},
+{ q:"When two conductors are connected, energy is:",opts:["Gained","Lost","Same","Zero"],ans:1},
+{ q:"The dimensional formula of capacitance is:",opts:["[M⁻¹L⁻²T⁴A²]","[ML²T⁻³A⁻¹]","[MLT⁻²]","[L²]"],ans:0},
+{ q:"Potential at axial point varies as:",opts:["1/r","1/r²","1/r³","r"],ans:1},
+{ q:"Charge given to a conductor resides on its:",opts:["Center","Inner surface","Outer surface","None"],ans:2},
+{ q:"If V=100V and Q=2C, Energy stored is:",opts:["200 J","50 J","100 J","400 J"],ans:2},
+{ q:"Force between plates of a capacitor is:",opts:["Q²/2ε₀A","Q/ε₀A","Zero","Qε₀A"],ans:0},
+{ q:"If distance d is doubled, V becomes:",opts:["Half","Double","Same","Zero"],ans:1},
+{ q:"Potential gradient is a vector quantity:",opts:["Scalar","Vector","Tensor","None"],ans:1},
+{ q:"1 microfarad (µF) is:",opts:["10⁻³ F","10⁻⁶ F","10⁻⁹ F","10⁻¹² F"],ans:1}
+];
+
+const quizBox = document.getElementById('quiz-box');
+
+questions.forEach((item, index) => {
+    let card = document.createElement('div');
+    card.style.cssText = "background:rgba(255,255,255,0.05); padding:20px; margin:15px 0; border-radius:15px; border:1px solid rgba(0, 247, 255, 0.3);";
+    card.innerHTML = `<p style="color:#FFD700; font-size:18px; font-weight:bold;">Q${index+51}. ${item.q}</p>`;
+
+    item.opts.forEach((opt, oIdx) => {
+        let btn = document.createElement('button');
+        btn.innerText = opt;
+        btn.style.cssText = "display:block; width:100%; margin:12px 0; padding:15px; background:rgba(255,255,255,0.08); color:#fff; border:1.5px solid #00f7ff; border-radius:12px; text-align:left; font-weight:600; cursor:pointer;";
+
+        btn.onclick = () => {
+            const overlay = document.getElementById('quiz-overlay');
+            const title = document.getElementById('status-title');
+            const msg = document.getElementById('status-message');
+            const nxt = document.getElementById('next-msg');
+            const strip = document.getElementById('status-strip');
+
+            overlay.style.display = "flex";
+            overlay.style.pointerEvents = "auto"; 
+
+            if(oIdx === item.ans){
+                overlay.style.background = "rgba(0,0,0,0.85)";
+                strip.style.background = "transparent";
+                title.style.cssText = "font-family:'Dancing Script', cursive; color:#fff; font-size:60px; text-shadow:0 0 20px #00f7ff, 0 0 40px #00f7ff;";
+                title.innerText = "Congratulations";
+                msg.innerText = "Excellent! You are a true Topper.";
+                msg.style.color = "#00f7ff";
+                nxt.innerText = "Go to next question...";
+
+                var end = Date.now() + 1500;
+                var colors = ['#00f7ff','#ff0000','#ffffff','#ff00c8','#48ff00'];
+                (function frame(){
+                    confetti({particleCount:15,angle:60,spread:65,origin:{x:0},colors:colors, zIndex: 999999});
+                    confetti({particleCount:15,angle:120,spread:65,origin:{x:1},colors:colors, zIndex: 999999});
+                    if(Date.now() < end) requestAnimationFrame(frame);
+                })();
+            } else {
+                overlay.style.background = "radial-gradient(rgba(139,0,0,0.5) 10%, rgba(0,0,0,0.85) 90%)";
+                strip.style.background = "rgba(0,0,0,0.6)";
+                strip.style.width = "100%";
+                strip.style.padding = "30px 0";
+                title.style.cssText = "font-family:'Oswald', sans-serif; color:red; font-size:80px; font-weight:900; letter-spacing:10px; text-shadow:4px 4px 0px #000;";
+                title.innerText = "WASTED";
+                msg.innerText = "Oops! Try again with focus.";
+                msg.style.color = "#fff";
+                nxt.innerText = "";
+            }
+
+            setTimeout(() => {
+                overlay.style.display = "none";
+                overlay.style.pointerEvents = "none"; 
+            }, 2500);
+        };
+        card.appendChild(btn);
+    });
+    quizBox.appendChild(card);
+});
+});
+</script>
+<style>
+    .smart-study-container { background: #080808; color: #e0e0e0; padding: 15px; font-family: 'Segoe UI', sans-serif; }
+    .q-card { background: #111; border-radius: 12px; padding: 20px; margin-bottom: 25px; border-left: 4px solid #00f7ff; box-shadow: 0 5px 15px rgba(0,0,0,0.5); }
+    .q-title { color: #FFD700; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px; border-bottom: 1px solid #333; padding-bottom: 10px; }
+    .ans-box { display: none; margin-top: 20px; padding: 15px; background: #000; border-radius: 8px; line-height: 1.8; border: 1px solid #222; }
+    
+    .frac { display: inline-block; vertical-align: middle; text-align: center; margin: 0 5px; font-weight: 500; }
+    .num { display: block; border-bottom: 1px solid #00f7ff; padding: 0 10px; color: #00f7ff; }
+    .den { display: block; padding: 0 10px; color: #00f7ff; }
+    
+    .step-head { color: #ff00ff; font-weight: bold; margin-top: 20px; display: block; text-transform: uppercase; font-size: 0.95rem; }
+    .note-side { color: #888; font-style: italic; font-size: 0.85rem; margin-left: 10px; }
+    .result-box { border: 2px solid #00f7ff; padding: 20px; margin: 25px auto; width: fit-content; text-align: center; font-size: 1.3rem; background: rgba(0, 247, 255, 0.05); color: #00f7ff; border-radius: 10px; }
+    .btn-toggle { background: linear-gradient(to right, #222, #333); color: #00f7ff; border: 1px solid #00f7ff; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s; }
+    .btn-toggle:hover { background: #00f7ff; color: #000; }
+</style>
+
+<div class="smart-study-container">
+    <h1 style="text-align:center; color:#00f7ff; text-transform:uppercase;">Physics Class 12: Chapter 2</h1>
+    
+    <div class="q-card">
+        <div class="q-title">Q1. Derive Electric Potential Energy of a system of two point charges.</div>
+        <button class="btn-toggle" onclick="toggleDisplay(this)">Show Detailed Answer</button>
+        <div class="ans-box">
+            <span class="step-head">Step 1: Introduction</span>
+            Consider two point charges q₁ and q₂. Initially q₁ is at position A and q₂ is at infinity.<br>
+            No work is done to bring q₁ because there is no external field.
+            <span class="step-head">Step 2: Small Work Done</span>
+            Now, to bring q₂ from infinity to a point P at distance 'x' from q₁:<br>
+            Electrostatic force F = <div class="frac"><span class="num">k q₁ q₂</span><span class="den">x²</span></div><br>
+            Small work done in moving q₂ by distance dx against the force:<br>
+            dW = F<sub>ext</sub> . dx = F dx cos(180°)<br>
+            dW = - <div class="frac"><span class="num">k q₁ q₂</span><span class="den">x²</span></div> dx
+            <span class="step-head">Step 3: Total Work (Integration)</span>
+            Total work to bring q₂ from infinity (∞) to distance 'r':<br>
+            W = ∫<sub>∞</sub><sup>r</sup> - <div class="frac"><span class="num">k q₁ q₂</span><span class="den">x²</span></div> dx<br>
+            W = - k q₁ q₂ ∫<sub>∞</sub><sup>r</sup> x⁻² dx<br>
+            W = - k q₁ q₂ <span style="font-size:1.2rem;">[</span> <div class="frac"><span class="num">x⁻¹</span><span class="den">-1</span></div> <span style="font-size:1.2rem;">]</span><sub>∞</sub><sup>r</sup><br>
+            W = k q₁ q₂ <span style="font-size:1.2rem;">[</span> <div class="frac"><span class="num">1</span><span class="den">r</span></div> - <div class="frac"><span class="num">1</span><span class="den">∞</span></div> <span style="font-size:1.2rem;">]</span><br>
+            Since 1/∞ = 0, the work done is:<br>
+            W = <div class="frac"><span class="num">k q₁ q₂</span><span class="den">r</span></div>
+            <span class="step-head">Final Result</span>
+            This work is stored as Electrostatic Potential Energy (U):
+            <div class="result-box">
+                U = <div class="frac"><span class="num">1</span><span class="den">4πε₀</span></div> <div class="frac"><span class="num">q₁ q₂</span><span class="den">r</span></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="q-card">
+        <div class="q-title">Q2. Derive Electric Potential at a point on the Axial line of an electric dipole.</div>
+        <button class="btn-toggle" onclick="toggleDisplay(this)">Show Detailed Answer</button>
+        <div class="ans-box">
+            <span class="step-head">Step 1: Setup</span>
+            Consider a dipole of charges -q and +q separated by distance 2l. Point P is at distance 'r' from the center O on the axial line.
+            <span class="step-head">Step 2: Individual Potentials</span>
+            Distance of P from +q is (r - l).<br>
+            V₁ = <div class="frac"><span class="num">k q</span><span class="den">(r - l)</span></div><br>
+            Distance of P from -q is (r + l).<br>
+            V₂ = <div class="frac"><span class="num">- k q</span><span class="den">(r + l)</span></div>
+            <span class="step-head">Step 3: Calculating Net Potential</span>
+            Net potential V = V₁ + V₂<br>
+            V = k q <span style="font-size:1.5rem;">[</span> <div class="frac"><span class="num">1</span><span class="den">r - l</span></div> - <div class="frac"><span class="num">1</span><span class="den">r + l</span></div> <span style="font-size:1.5rem;">]</span><br>
+            V = k q <span style="font-size:1.5rem;">[</span> <div class="frac"><span class="num">(r + l) - (r - l)</span><span class="den">(r - l)(r + l)</span></div> <span style="font-size:1.5rem;">]</span><br>
+            V = k q <span style="font-size:1.5rem;">[</span> <div class="frac"><span class="num">2l</span><span class="den">r² - l²</span></div> <span style="font-size:1.5rem;">]</span><br>
+            V = <div class="frac"><span class="num">k (q × 2l)</span><span class="den">r² - l²</span></div>
+            <span class="step-head">Final Result</span>
+            Using dipole moment p = q × 2l:
+            <div class="result-box">
+                V<sub>axial</sub> = <div class="frac"><span class="num">k p</span><span class="den">r² - l²</span></div>
+            </div>
+            For a short dipole (r >> l): V = kp/r²
+        </div>
+    </div>
+
+    <div class="q-card">
+        <div class="q-title">Q3. Derive the Capacitance of a parallel plate capacitor.</div>
+        <button class="btn-toggle" onclick="toggleDisplay(this)">Show Detailed Answer</button>
+        <div class="ans-box">
+            <span class="step-head">Step 1: Surface Charge Density</span>
+            Two plates of area A are separated by distance d. Charge on plates is +Q and -Q.<br>
+            σ = <div class="frac"><span class="num">Q</span><span class="den">A</span></div>
+            <span class="step-head">Step 2: Electric Field Between Plates</span>
+            Field due to single plate = σ/2ε₀. Net field between plates:<br>
+            E = <div class="frac"><span class="num">σ</span><span class="den">2ε₀</span></div> + <div class="frac"><span class="num">σ</span><span class="den">2ε₀</span></div> = <div class="frac"><span class="num">σ</span><span class="den">ε₀</span></div><br>
+            E = <div class="frac"><span class="num">Q</span><span class="den">Aε₀</span></div>
+            <span class="step-head">Step 3: Potential Difference</span>
+            V = Electric Field × Distance<br>
+            V = E × d = <div class="frac"><span class="num">Q d</span><span class="den">Aε₀</span></div>
+            <span class="step-head">Step 4: Capacitance Definition</span>
+            Using the formula C = <div class="frac"><span class="num">Q</span><span class="den">V</span></div>:<br>
+            C = <div class="frac"><span class="num">Q</span><span class="den">(Q d / Aε₀)</span></div><br>
+            C = <div class="frac"><span class="num">Aε₀</span><span class="den">d</span></div>
+            <div class="result-box">
+                C = <div class="frac"><span class="num">ε₀ A</span><span class="den">d</span></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="q-card">
+        <div class="q-title">Q4. Derive Energy stored in a charged capacitor.</div>
+        <button class="btn-toggle" onclick="toggleDisplay(this)">Show Detailed Answer</button>
+        <div class="ans-box">
+            <span class="step-head">Step 1: Concept</span>
+            Work is done to transfer charge from one plate to another. Let 'q' be the charge at any instant.<br>
+            Potential V = <div class="frac"><span class="num">q</span><span class="den">C</span></div>
+            <span class="step-head">Step 2: Small Work Done</span>
+            Small work done in transferring additional charge dq:<br>
+            dW = V × dq<br>
+            dW = <div class="frac"><span class="num">q</span><span class="den">C</span></div> dq
+            <span class="step-head">Step 3: Total Work (Integration)</span>
+            Integrating from 0 to total charge Q:<br>
+            W = ∫<sub>0</sub><sup>Q</sup> <div class="frac"><span class="num">q</span><span class="den">C</span></div> dq<br>
+            W = <div class="frac"><span class="num">1</span><span class="den">C</span></div> ∫<sub>0</sub><sup>Q</sup> q dq<br>
+            W = <div class="frac"><span class="num">1</span><span class="den">C</span></div> <span style="font-size:1.2rem;">[</span> <div class="frac"><span class="num">q²</span><span class="den">2</span></div> <span style="font-size:1.2rem;">]</span><sub>0</sub><sup>Q</sup><br>
+            W = <div class="frac"><span class="num">Q²</span><span class="den">2C</span></div>
+            <span class="step-head">Final Result</span>
+            Energy (U) = Work Done. Using Q = CV:<br>
+            U = <div class="frac"><span class="num">(CV)²</span><span class="den">2C</span></div>
+            <div class="result-box">
+                U = <div class="frac"><span class="num">1</span><span class="den">2</span></div> CV²
+            </div>
+        </div>
+    </div>
+
+    <div class="q-card">
+        <div class="q-title">Q5. Capacitance with Dielectric Slab (Partial filling).</div>
+        <button class="btn-toggle" onclick="toggleDisplay(this)">Show Detailed Answer</button>
+        <div class="ans-box">
+            <span class="step-head">Step 1: Setup</span>
+            Distance between plates = d. Thickness of slab = t. Dielectric constant = K.<br>
+            Air gap distance = (d - t).
+            <span class="step-head">Step 2: Potentials</span>
+            Electric field in air gap E₀ = σ/ε₀.<br>
+            Electric field in slab E<sub>m</sub> = E₀/K.<br>
+            Total Potential V = E₀(d - t) + E<sub>m</sub>(t)<br>
+            V = E₀(d - t) + <div class="frac"><span class="num">E₀</span><span class="den">K</span></div> t<br>
+            V = E₀ <span style="font-size:1.2rem;">[</span> (d - t) + <div class="frac"><span class="num">t</span><span class="den">K</span></div> <span style="font-size:1.2rem;">]</span>
+            <span class="step-head">Step 3: Result</span>
+            Substitute E₀ = Q/Aε₀ and C = Q/V:<br>
+            C = <div class="frac"><span class="num">Q</span><span class="den">(Q/Aε₀)[d-t+t/K]</span></div>
+            <div class="result-box">
+                C = <div class="frac"><span class="num">A ε₀</span><span class="den">d - t + (t/K)</span></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+function toggleDisplay(btn) {
+    let ans = btn.nextElementSibling;
+    if (ans.style.display === "block") {
+        ans.style.display = "none";
+        btn.innerText = "Show Detailed Answer";
+    } else {
+        ans.style.display = "block";
+        btn.innerText = "Hide Answer";
+    }
+}
+</script>
+
+<style>
+    .smart-study-container { background: #080808; color: #e0e0e0; padding: 15px; font-family: 'Segoe UI', sans-serif; }
+    .q-card { background: #111; border-radius: 12px; padding: 20px; margin-bottom: 25px; border-left: 4px solid #00f7ff; box-shadow: 0 5px 15px rgba(0,0,0,0.5); }
+    .q-title { color: #FFD700; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px; border-bottom: 1px solid #333; padding-bottom: 10px; }
+    .ans-box { display: none; margin-top: 20px; padding: 15px; background: #000; border-radius: 8px; line-height: 1.8; border: 1px solid #222; }
+    
+    .frac { display: inline-block; vertical-align: middle; text-align: center; margin: 0 5px; font-weight: 500; }
+    .num { display: block; border-bottom: 1px solid #00f7ff; padding: 0 10px; color: #00f7ff; }
+    .den { display: block; padding: 0 10px; color: #00f7ff; }
+    
+    .step-head { color: #ff00ff; font-weight: bold; margin-top: 20px; display: block; text-transform: uppercase; font-size: 0.95rem; }
+    .note-side { color: #888; font-style: italic; font-size: 0.85rem; margin-left: 10px; }
+    .result-box { border: 2px solid #00f7ff; padding: 20px; margin: 25px auto; width: fit-content; text-align: center; font-size: 1.3rem; background: rgba(0, 247, 255, 0.05); color: #00f7ff; border-radius: 10px; }
+    .btn-toggle { background: linear-gradient(to right, #222, #333); color: #00f7ff; border: 1px solid #00f7ff; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s; }
+    .btn-toggle:hover { background: #00f7ff; color: #000; }
+</style>
+
+<div class="smart-study-container">
+    <div class="q-card">
+        <div class="q-title">Q6. Derive the relation between Electric Field and Electric Potential.</div>
+        <button class="btn-toggle" onclick="toggleDisplay(this)">Show Detailed Answer</button>
+        <div class="ans-box">
+            <span class="step-head">Step 1: Concept</span>
+            Consider two equipotential surfaces A and B with potentials V and (V + dV). Let 'dr' be the small perpendicular distance between them.
+            <span class="step-head">Step 2: Work Done</span>
+            Work done in moving a unit positive charge from surface B to A:<br>
+            dW = Force × Displacement<br>
+            dW = (q₀E) dr cos(180°)<br>
+            For q₀ = 1: dW = -E dr
+            <span class="step-head">Step 3: Potential Difference Link</span>
+            We know, work done is also equal to potential difference:<br>
+            dW = V<sub>A</sub> - V<sub>B</sub> = V - (V + dV) = -dV
+            <span class="step-head">Step 4: Comparison</span>
+            Equating both equations of dW:<br>
+            -E dr = -dV
+            <div class="result-box">
+                E = - <div class="frac"><span class="num">dV</span><span class="den">dr</span></div>
+            </div>
+            <span class="note-side">Conclusion: Electric field is the negative potential gradient.</span>
+        </div>
+    </div>
+
+    <div class="q-card">
+        <div class="q-title">Q7. Derive Potential Energy of an electric dipole in a uniform electric field.</div>
+        <button class="btn-toggle" onclick="toggleDisplay(this)">Show Detailed Answer</button>
+        <div class="ans-box">
+            <span class="step-head">Step 1: Torque on Dipole</span>
+            Torque experienced by dipole in field E at angle θ:<br>
+            τ = pE sinθ
+            <span class="step-head">Step 2: Small Work Done</span>
+            Small work done in rotating the dipole by angle dθ:<br>
+            dW = τ dθ = (pE sinθ) dθ
+            <span class="step-head">Step 3: Total Work (Integration)</span>
+            Integrating from angle θ₁ to θ₂:<br>
+            W = ∫<sub>θ₁</sub><sup>θ₂</sup> pE sinθ dθ<br>
+            W = pE [ -cosθ ]<sub>θ₁</sub><sup>θ₂</sup><br>
+            W = -pE (cosθ₂ - cosθ₁)
+            <span class="step-head">Step 4: Final Expression</span>
+            Taking θ₁ = 90° and θ₂ = θ:<br>
+            U = -pE (cosθ - cos 90°)
+            <div class="result-box">
+                U = -pE cosθ
+            </div>
+        </div>
+    </div>
+
+    <div class="q-card">
+        <div class="q-title">Q8. Explain Equipotential Surfaces and their key properties.</div>
+        <button class="btn-toggle" onclick="toggleDisplay(this)">Show Detailed Answer</button>
+        <div class="ans-box">
+            <span class="step-head">Definition</span>
+            A surface where electric potential is the same at every point.
+            <span class="step-head">Properties (In Detail)</span>
+            1. <b>Work Done:</b> Work done to move a charge on this surface is zero.<br>
+            2. <b>Direction:</b> Electric field lines are always perpendicular to the surface.<br>
+            3. <b>No Crossing:</b> Two equipotential surfaces can never intersect each other.<br>
+            4. <b>Field Strength:</b> Surfaces are closer in strong field regions and farther in weak regions.
+        </div>
+    </div>
+
+    <div class="q-card">
+        <div class="q-title">Q9. Derive Equivalent Capacitance for Series and Parallel combinations.</div>
+        <button class="btn-toggle" onclick="toggleDisplay(this)">Show Detailed Answer</button>
+        <div class="ans-box">
+            <span class="step-head">Case A: Series Combination</span>
+            In series, charge Q is same, but V = V₁ + V₂ + V₃.<br>
+            Using V = Q/C:<br>
+            <div class="frac"><span class="num">Q</span><span class="den">Cₛ</span></div> = <div class="frac"><span class="num">Q</span><span class="den">C₁</span></div> + <div class="frac"><span class="num">Q</span><span class="den">C₂</span></div> + <div class="frac"><span class="num">Q</span><span class="den">C₃</span></div>
+            <div class="result-box">
+                <div class="frac"><span class="num">1</span><span class="den">Cₛ</span></div> = <div class="frac"><span class="num">1</span><span class="den">C₁</span></div> + <div class="frac"><span class="num">1</span><span class="den">C₂</span></div> + <div class="frac"><span class="num">1</span><span class="den">C₃</span></div>
+            </div>
+
+            <span class="step-head">Case B: Parallel Combination</span>
+            In parallel, V is same, but Q = Q₁ + Q₂ + Q₃.<br>
+            Using Q = CV:<br>
+            CₚV = C₁V + C₂V + C₃V
+            <div class="result-box">
+                Cₚ = C₁ + C₂ + C₃
+            </div>
+        </div>
+    </div>
+
+    <div class="q-card">
+        <div class="q-title">Q10. Derive the expression for Energy Density of a parallel plate capacitor.</div>
+        <button class="btn-toggle" onclick="toggleDisplay(this)">Show Detailed Answer</button>
+        <div class="ans-box">
+            <span class="step-head">Step 1: Total Energy</span>
+            U = <div class="frac"><span class="num">1</span><span class="den">2</span></div> CV²
+            <span class="step-head">Step 2: Substitutions</span>
+            C = <div class="frac"><span class="num">ε₀A</span><span class="den">d</span></div> and V = Ed
+            <span class="step-head">Step 3: Energy Density Formula</span>
+            u = <div class="frac"><span class="num">Total Energy</span><span class="den">Volume (A×d)</span></div><br>
+            u = <div class="frac"><span class="num"><div class="frac"><span class="num">1</span><span class="den">2</span></div> ( <div class="frac"><span class="num">ε₀A</span><span class="den">d</span></div> ) (Ed)²</span><span class="den">Ad</span></div>
+            <span class="step-head">Step 4: Final Calculation</span>
+            After cancelling Area (A) and distance (d):
+            <div class="result-box">
+                u = <div class="frac"><span class="num">1</span><span class="den">2</span></div> ε₀ E²
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function toggleDisplay(btn) {
+    let ans = btn.nextElementSibling;
+    if (ans.style.display === "block") {
+        ans.style.display = "none";
+        btn.innerText = "Show Detailed Answer";
+    } else {
+        ans.style.display = "block";
+        btn.innerText = "Hide Answer";
+    }
+}
+</script>
+
+</body>
+</html>
