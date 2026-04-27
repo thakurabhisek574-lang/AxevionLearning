@@ -1,0 +1,1326 @@
+<!DOCTYPE html>  <html lang="en">    <head>    
+    <meta charset="UTF-8">    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>Chapter 13: Nuclei - Smart Study</title>    
+    <style>    
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap');  
+        
+        body {    
+            background-color: #000;    
+            color: #fff;    
+            font-family: 'Poppins', sans-serif;    
+            margin: 0;    
+            padding: 0;    
+            overflow-x: hidden;    
+        }    
+
+        /* HEADER FIXED */    
+        .header {    
+            position: fixed;    
+            top: 0;    
+            left: 0;    
+            width: 100%;    
+            height: 65px;    
+            background: #000;    
+            display: flex;    
+            justify-content: space-between;    
+            align-items: center;    
+            padding: 0 20px;    
+            z-index: 10000;    
+            box-sizing: border-box;    
+            border-bottom: 1px solid rgba(0, 247, 255, 0.2);    
+        }    
+
+        .back-btn {    
+            background: transparent;    
+            color: #00f7ff;    
+            border: 2px solid #00f7ff;    
+            padding: 5px 18px;    
+            border-radius: 8px;    
+            text-decoration: none;    
+            font-weight: bold;    
+            font-size: 14px;    
+            text-transform: uppercase;    
+        }    
+
+        .topper-text {    
+            text-align: right;    
+            line-height: 1.1;    
+        }    
+
+        .topper-text .small { color: #FFD700; font-size: 10px; font-weight: bold; display: block; }    
+        .topper-text .large { color: #fff; font-size: 16px; font-weight: bold; }    
+
+        /* CONTAINER */    
+        .container { padding: 80px 15px 20px 15px; }    
+
+        @keyframes neon-glow {    
+            0% { border-color: #ff0055; box-shadow: 0 0 20px #ff0055; }    
+            15% { border-color: #00ff00; box-shadow: 0 0 20px #00ff00; }   
+            30% { border-color: #00f7ff; box-shadow: 0 0 20px #00f7ff; }   
+            45% { border-color: #ffff00; box-shadow: 0 0 20px #ffff00; }   
+            60% { border-color: #ff00ff; box-shadow: 0 0 20px #ff00ff; }   
+            75% { border-color: #ff8c00; box-shadow: 0 0 20px #ff8c00; }   
+            90% { border-color: #7a00ff; box-shadow: 0 0 20px #7a00ff; }   
+            100% { border-color: #ff0055; box-shadow: 0 0 20px #ff0055; }  
+        }    
+
+        .topic-page {    
+            min-height: 85vh;    
+            border: 5px solid;    
+            border-radius: 40px;    
+            margin-bottom: 40px;    
+            padding: 25px;    
+            display: flex;    
+            flex-direction: column;    
+            justify-content: center;    
+            animation: neon-glow 6s infinite linear;    
+            background: linear-gradient(180deg, rgba(20,20,20,1) 0%, rgba(0,0,0,1) 100%);    
+            box-sizing: border-box;
+        }    
+
+        .topic-title {    
+            font-size: 28px;    
+            margin-bottom: 20px;    
+            text-transform: uppercase;    
+            font-weight: 900;
+        }    
+
+        /* 8 Chamkne wale Neon Colors */
+        .color1 { color: #ff0055; text-shadow: 0 0 15px #ff0055; } 
+        .color2 { color: #00ff00; text-shadow: 0 0 15px #00ff00; } 
+        .color3 { color: #00f7ff; text-shadow: 0 0 15px #00f7ff; } 
+        .color4 { color: #ffff00; text-shadow: 0 0 15px #ffff00; } 
+        .color5 { color: #ff00ff; text-shadow: 0 0 15px #ff00ff; } 
+        .color6 { color: #ff8c00; text-shadow: 0 0 15px #ff8c00; } 
+        .color7 { color: #4deeea; text-shadow: 0 0 15px #4deeea; } 
+        .color8 { color: #7a00ff; text-shadow: 0 0 15px #7a00ff; } 
+
+        .box { background: rgba(255, 255, 255, 0.08); padding: 18px; border-radius: 15px; margin-bottom: 15px; border-left: 5px solid #fff; }    
+        .box span { font-weight: 900; display: block; margin-bottom: 8px; font-size: 18px; text-transform: uppercase; }    
+
+        .key-points { border: 2px dashed #fff; border-radius: 15px; padding: 15px; background: rgba(255, 255, 255, 0.02); }    
+        ul { margin: 0; padding-left: 20px; }    
+        li { margin-bottom: 10px; font-size: 15px; color: #eee; font-weight: 500; }    
+
+        .formula-box {    
+            background: rgba(0,0,0,0.8);    
+            border: 2px solid rgba(255,255,255,0.2);    
+            border-radius: 20px;    
+            padding: 20px;    
+            text-align: center;    
+            font-size: 26px;    
+            margin-top: 25px;    
+            box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.1);    
+        }
+    </style>    
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>    
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>  
+</head>    
+<body>  
+    <div class="header">    
+        <a href="phy-chapters.html" class="back-btn">BACK</a>    
+        <div class="topper-text">    
+            <span class="small">SMART STUDY</span>    
+            <span class="large">FOR TOPPERS</span>    
+        </div>    
+    </div>    
+
+    <div class="container">    
+        <div class="topic-page">    
+            <h1 class="topic-title color1">1. Atomic Nucleus</h1>    
+            <div class="box" style="border-color:#ff0055;"><span class="color1">English:</span> The central, dense core of an atom containing most of its mass.</div>    
+            <div class="box" style="border-color:#ff0055;"><span class="hin-txt color4">Hindi:</span> Atom ka wo beech wala hissa jo bohot bhari aur chota hota hai.</div>    
+            <div class="key-points" style="border-color:#ff0055;">    
+                <ul>    
+                    <li>Discovered by Lord Rutherford in 1911.</li>    
+                    <li>It contains protons and neutrons (together called nucleons).</li>    
+                    <li>Nucleus is positively charged due to protons.</li>    
+                    <li>The volume of nucleus is very small compared to atom.</li>    
+                </ul>    
+            </div>    
+            <div class="formula-box color1">$$ \text{Mass} \approx \text{Nucleus} $$</div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title color2">2. Nuclear Size</h1>    
+            <div class="box" style="border-color:#00ff00;"><span class="color2">English:</span> The physical dimensions of a nucleus, usually measured in Fermi.</div>    
+            <div class="box" style="border-color:#00ff00;"><span class="hin-txt color4">Hindi:</span> Nucleus kitna bada hai, ise Fermi (fm) mein maapa jata hai.</div>    
+            <div class="key-points" style="border-color:#00ff00;">    
+                <ul>    
+                    <li>Radius depends on the mass number (A).</li>    
+                    <li>$1 \, \text{Fermi} = 10^{-15} \, \text{m}$.</li>    
+                    <li>Typical radius is around $1.2$ to $10 \, \text{fm}$.</li>    
+                    <li>It is $10^5$ times smaller than the atom's radius.</li>    
+                </ul>    
+            </div>    
+            <div class="formula-box color2">$$ R = R_0 A^{1/3} $$</div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title color3">3. Nuclear Density</h1>    
+            <div class="box" style="border-color:#00f7ff;"><span class="color3">English:</span> The ratio of mass of nucleus to its volume, which is constant.</div>    
+            <div class="box" style="border-color:#00f7ff;"><span class="hin-txt color4">Hindi:</span> Nucleus ka wazan aur uski jagah ka ratio, jo hamesha fix rehta hai.</div>    
+            <div class="key-points" style="border-color:#00f7ff;">    
+                <ul>    
+                    <li>It is independent of the mass number (A).</li>    
+                    <li>Value is approx $2.3 \times 10^{17} \, \text{kg/m}^3$.</li>    
+                    <li>This means nuclear matter is extremely compressed.</li>    
+                    <li>All nuclei have nearly the same density.</li>    
+                </ul>    
+            </div>    
+            <div class="formula-box color3">$$ \rho \approx 10^{17} \, \text{kg/m}^3 $$</div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title color5">4. Nuclear Composition</h1>    
+            <div class="box" style="border-color:#ff00ff;"><span class="color5">English:</span> The specific makeup of a nucleus in terms of protons and neutrons.</div>    
+            <div class="box" style="border-color:#ff00ff;"><span class="hin-txt color4">Hindi:</span> Nucleus kin cheezon se milkar bana hai (Protons + Neutrons).</div>    
+            <div class="key-points" style="border-color:#ff00ff;">    
+                <ul>    
+                    <li>Nucleons = Total number of protons and neutrons.</li>    
+                    <li>Mass is concentrated in these nucleons.</li>    
+                    <li>Electrons do not exist inside the nucleus.</li>    
+                    <li>The identity of an element depends on its composition.</li>    
+                </ul>    
+            </div>    
+            <div class="formula-box color5">$$ \text{Composition} = P + N $$</div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title color6">5. Protons</h1>    
+            <div class="box" style="border-color:#ff8c00;"><span class="color6">English:</span> Positively charged subatomic particles found in the nucleus.</div>    
+            <div class="box" style="border-color:#ff8c00;"><span class="hin-txt color4">Hindi:</span> Nucleus ke andar paye jane wale positive charge wale kan.</div>    
+            <div class="key-points" style="border-color:#ff8c00;">    
+                <ul>    
+                    <li>Discovered by Ernest Rutherford (named in 1920).</li>    
+                    <li>Charge: $+1.6 \times 10^{-19} \, \text{C}$.</li>    
+                    <li>Mass is about 1836 times that of an electron.</li>    
+                    <li>The number of protons determines the Atomic Number (Z).</li>    
+                </ul>    
+            </div>    
+            <div class="formula-box color6">$$ p = +e $$</div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title color7">6. Neutrons</h1>    
+            <div class="box" style="border-color:#4deeea;"><span class="color7">English:</span> Neutral subatomic particles found in the nucleus with no charge.</div>    
+            <div class="box" style="border-color:#4deeea;"><span class="hin-txt color4">Hindi:</span> Nucleus ke wo kan jin par koi charge nahi hota, ye neutral hote hain.</div>    
+            <div class="key-points" style="border-color:#4deeea;">    
+                <ul>    
+                    <li>Discovered by James Chadwick in 1932.</li>    
+                    <li>Mass is slightly more than that of a proton.</li>    
+                    <li>Crucial for the stability of heavier nuclei.</li>    
+                    <li>Neutrons do not affect the chemical properties.</li>    
+                </ul>    
+            </div>    
+            <div class="formula-box color7">$$ n = \text{Neutral} $$</div>    
+        </div>    
+
+        <div class="topic-page">    
+            <h1 class="topic-title color8">7. Atomic & Mass Number</h1>    
+            <div class="box" style="border-color:#7a00ff;"><span class="color8">English:</span> Z is the number of protons; A is the sum of protons and neutrons.</div>    
+            <div class="box" style="border-color:#7a00ff;"><span class="hin-txt color4">Hindi:</span> Z matlab protons ki sankhya, aur A matlab total nucleons.</div>    
+            <div class="key-points" style="border-color:#7a00ff;">    
+                <ul>    
+                    <li>Atomic Number (Z) = Number of Protons.</li>    
+                    <li>Mass Number (A) = Number of Protons + Neutrons.</li>    
+                    <li>Number of Neutrons (N) = A - Z.</li>    
+                    <li>Represented as: $^A_Z X$.</li>    
+                </ul>    
+            </div>    
+            <div class="formula-box color8">$$ A = Z + N $$</div>    
+        </div> 
+        
+    </div> 
+    <div class="container" style="padding: 20px 15px; overflow-y: auto;">    
+    <style>
+        /* Stability fix: Shaking rokne ke liye */
+        .topic-page {    
+            min-height: auto !important;
+            height: fit-content;
+            border: 5px solid;    
+            border-radius: 40px;    
+            margin-bottom: 30px;    
+            padding: 25px;    
+            display: block;
+            animation: neon-glow 6s infinite linear;    
+            background: linear-gradient(180deg, rgba(20,20,20,1) 0%, rgba(0,0,0,1) 100%);    
+            box-sizing: border-box;
+            position: relative;
+        }    
+        
+        .formula-box {
+            word-wrap: break-word;
+            overflow-x: auto;
+            background: rgba(0,0,0,0.8);    
+            border: 2px solid rgba(255,255,255,0.2);    
+            border-radius: 20px;    
+            padding: 20px;    
+            text-align: center;    
+            font-size: 26px;    
+            margin-top: 25px;    
+            box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.1);
+        }
+
+        /* Wahi 8 Neon Colors jo pehle wale code mein the */
+        .color1 { color: #ff0055; text-shadow: 0 0 15px #ff0055; } 
+        .color2 { color: #00ff00; text-shadow: 0 0 15px #00ff00; } 
+        .color3 { color: #00f7ff; text-shadow: 0 0 15px #00f7ff; } 
+        .color4 { color: #ffff00; text-shadow: 0 0 15px #ffff00; } 
+        .color5 { color: #ff00ff; text-shadow: 0 0 15px #ff00ff; } 
+        .color6 { color: #ff8c00; text-shadow: 0 0 15px #ff8c00; } 
+        .color7 { color: #4deeea; text-shadow: 0 0 15px #4deeea; } 
+        .color8 { color: #7a00ff; text-shadow: 0 0 15px #7a00ff; } 
+    </style>
+
+    <div class="topic-page">    
+        <h1 class="topic-title color1">8. Isotopes</h1>    
+        <div class="box" style="border-left: 5px solid #ff0055;"><span class="color1">English:</span> Atoms of the same element having the same atomic number but different mass numbers.</div>    
+        <div class="box" style="border-left: 5px solid #ff0055;"><span class="color1">Hindi:</span> Ek hi element ke wo atoms jinka atomic number (Z) same par mass number (A) alag hota hai.</div>    
+        <div class="key-points" style="border-color:#ff0055;">    
+            <ul>    
+                <li>They have an identical number of protons.</li>    
+                <li>They have a different number of neutrons.</li>    
+                <li>Example: $^{1}_{1}H, ^{2}_{1}H, ^{3}_{1}H$ (Isotopes of Hydrogen).</li>    
+            </ul>    
+        </div>    
+        <div class="formula-box color1">$$ \text{Same } Z, \text{ Diff } A $$</div>    
+    </div>    
+
+    <div class="topic-page">    
+        <h1 class="topic-title color2">9. Isobars</h1>    
+        <div class="box" style="border-left: 5px solid #00ff00;"><span class="color2">English:</span> Atoms of different elements having the same mass number but different atomic numbers.</div>    
+        <div class="box" style="border-left: 5px solid #00ff00;"><span class="color2">Hindi:</span> Alag elements ke wo atoms jinka mass number (A) ek jaisa par atomic number (Z) alag hota hai.</div>    
+        <div class="key-points" style="border-color:#00ff00;">    
+            <ul>    
+                <li>They have the same number of nucleons.</li>    
+                <li>Chemical properties are different.</li>    
+                <li>Example: $^{40}_{18}Ar$ and $^{40}_{20}Ca$.</li>    
+            </ul>    
+        </div>    
+        <div class="formula-box color2">$$ \text{Same } A, \text{ Diff } Z $$</div>    
+    </div>    
+
+    <div class="topic-page">    
+        <h1 class="topic-title color3">10. Isotones</h1>    
+        <div class="box" style="border-left: 5px solid #00f7ff;"><span class="color3">English:</span> Atoms of different elements having the same number of neutrons.</div>    
+        <div class="box" style="border-left: 5px solid #00f7ff;"><span class="color3">Hindi:</span> Alag elements ke wo atoms jinme neutrons ki sankhya barabar hoti hai.</div>    
+        <div class="key-points" style="border-color:#00f7ff;">    
+            <ul>    
+                <li>Value of $(A - Z)$ is constant for them.</li>    
+                <li>Both A and Z are different.</li>    
+                <li>Example: $^{14}_{6}C$ and $^{16}_{8}O$.</li>    
+            </ul>    
+        </div>    
+        <div class="formula-box color3">$$ N = A - Z $$</div>    
+    </div>    
+
+    <div class="topic-page">    
+        <h1 class="topic-title color4">11. Nuclear Force</h1>    
+        <div class="box" style="border-left: 5px solid #ffff00;"><span class="color4">English:</span> The strong attractive force that binds nucleons together within the nucleus.</div>    
+        <div class="box" style="border-left: 5px solid #ffff00;"><span class="color4">Hindi:</span> Wo shaktishali force jo nucleus ke andar protons aur neutrons ko bandhe rakhti hai.</div>    
+        <div class="key-points" style="border-color:#ffff00;">    
+            <ul>    
+                <li>Strongest force in nature.</li>    
+                <li>Short-range force.</li>    
+                <li>Charge-independent.</li>    
+            </ul>    
+        </div>    
+        <div class="formula-box color4">$$ \text{Strongest Force} $$</div>    
+    </div>    
+
+    <div class="topic-page">    
+        <h1 class="topic-title color5">12. Properties of Nuclear Force</h1>    
+        <div class="box" style="border-left: 5px solid #ff00ff;"><span class="color5">English:</span> Characteristics including short range, saturation, and charge independence.</div>    
+        <div class="box" style="border-left: 5px solid #ff00ff;"><span class="color5">Hindi:</span> Nuclear force ki khoobiyan jaise ki short range aur charge independence.</div>    
+        <div class="key-points" style="border-color:#ff00ff;">    
+            <ul>    
+                <li>Saturation: Interacts only with immediate neighbors.</li>    
+                <li>Becomes repulsive if distance < 0.5 fm.</li>    
+                <li>Depends on the spin of nucleons.</li>    
+            </ul>    
+        </div>    
+        <div class="formula-box color5">$$ \text{Short Range} $$</div>    
+    </div>    
+
+    <div class="topic-page">    
+        <h1 class="topic-title color6">13. Mass Defect</h1>    
+        <div class="box" style="border-left: 5px solid #ff8c00;"><span class="color6">English:</span> Difference between the sum of masses of nucleons and actual nuclear mass.</div>    
+        <div class="box" style="border-left: 5px solid #ff8c00;"><span class="color6">Hindi:</span> Nucleons ke total wazan aur nucleus ke asli wazan ke beech ka antar.</div>    
+        <div class="key-points" style="border-color:#ff8c00;">    
+            <ul>    
+                <li>$\Delta m = [Z m_p + (A-Z) m_n] - M_{nucleus}$.</li>    
+                <li>Lost mass converts into energy.</li>    
+            </ul>    
+        </div>    
+        <div class="formula-box color6">$$ \Delta m = \sum m - M $$</div>    
+    </div>    
+
+    <div class="topic-page">    
+        <h1 class="topic-title color7">14. Binding Energy</h1>    
+        <div class="box" style="border-left: 5px solid #4deeea;"><span class="color7">English:</span> Energy required to separate nucleons completely from each other.</div>    
+        <div class="box" style="border-left: 5px solid #4deeea;"><span class="color7">Hindi:</span> Nucleus ko tod kar uske nucleons ko alag karne ke liye zaruri energy.</div>    
+        <div class="key-points" style="border-color:#4deeea;">    
+            <ul>    
+                <li>$BE = \Delta m \cdot c^2$.</li>    
+                <li>$BE = \Delta m \times 931.5 \, \text{MeV}$.</li>    
+            </ul>    
+        </div>    
+        <div class="formula-box color7">$$ E = \Delta m c^2 $$</div>    
+    </div>    
+
+    <div class="topic-page">    
+        <h1 class="topic-title color8">15. Binding Energy per Nucleon</h1>    
+        <div class="box" style="border-left: 5px solid #7a00ff;"><span class="color8">English:</span> The average energy required to remove a single nucleon from the nucleus.</div>    
+        <div class="box" style="border-left: 5px solid #7a00ff;"><span class="color8">Hindi:</span> Nucleus se ek single nucleon ko bahar nikalne ki average energy.</div>    
+        <div class="key-points" style="border-color:#7a00ff;">    
+            <ul>    
+                <li>Formula: $BE/A = \text{Total BE} / \text{Mass Number}$.</li>    
+                <li>Indicates the stability of the nucleus.</li>    
+                <li>Maximum for Iron ($^{56}Fe$).</li>    
+            </ul>    
+        </div>    
+        <div class="formula-box color8">$$ \bar{B} = \frac{BE}{A} $$</div>    
+    </div>    
+</div>
+<div class="container" style="padding: 20px 15px; overflow-y: auto;">    
+    <style>
+        .topic-page {    
+            min-height: auto !important;
+            height: fit-content;
+            border: 5px solid;    
+            border-radius: 40px;    
+            margin-bottom: 30px;    
+            padding: 25px;    
+            display: block;
+            animation: neon-glow 6s infinite linear;    
+            background: linear-gradient(180deg, rgba(20,20,20,1) 0%, rgba(0,0,0,1) 100%);    
+            box-sizing: border-box;
+            position: relative;
+        }    
+        
+        .formula-box {
+            word-wrap: break-word;
+            overflow-x: auto;
+            background: rgba(0,0,0,0.8);    
+            border: 2px solid rgba(255,255,255,0.2);    
+            border-radius: 20px;    
+            padding: 20px;    
+            text-align: center;    
+            font-size: 26px;    
+            margin-top: 25px;    
+            box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.1);
+        }
+
+        .color1 { color: #ff0055; text-shadow: 0 0 15px #ff0055; } 
+        .color2 { color: #00ff00; text-shadow: 0 0 15px #00ff00; } 
+        .color3 { color: #00f7ff; text-shadow: 0 0 15px #00f7ff; } 
+        .color4 { color: #ffff00; text-shadow: 0 0 15px #ffff00; } 
+        .color5 { color: #ff00ff; text-shadow: 0 0 15px #ff00ff; } 
+        .color6 { color: #ff8c00; text-shadow: 0 0 15px #ff8c00; } 
+        .color7 { color: #4deeea; text-shadow: 0 0 15px #4deeea; } 
+        .color8 { color: #7a00ff; text-shadow: 0 0 15px #7a00ff; } 
+    </style>
+
+    <div class="topic-page" style="border-color: #ff0055;">    
+        <h1 class="topic-title color1">1. Stability of Nucleus</h1>    
+        <div class="box" style="border-left: 5px solid #ff0055;"><span class="color1">English:</span> The ability of a nucleus to hold itself together without decaying.</div>    
+        <div class="box" style="border-left: 5px solid #ff0055;"><span class="color1">Hindi:</span> Nucleus ki wo kabliyat jisse wo bina toote stable rehta hai.</div>    
+        <div class="key-points">    
+            <ul>    
+                <li>Determined by the ratio of neutrons to protons ($N/Z$ ratio).</li>    
+                <li>Stable nuclei fall within the "Band of Stability".</li>    
+            </ul>    
+        </div>    
+    </div>    
+
+    <div class="topic-page" style="border-color: #00ff00;">    
+        <h1 class="topic-title color2">2. Binding Energy Curve</h1>    
+        <div class="box" style="border-left: 5px solid #00ff00;"><span class="color2">English:</span> A graph showing Binding Energy per nucleon vs Mass Number (A).</div>    
+        <div class="box" style="border-left: 5px solid #00ff00;"><span class="color2">Hindi:</span> Ek graph jo har nucleon ki Binding Energy aur mass number ke rishte ko dikhata hai.</div>    
+        <div class="key-points">    
+            <ul>    
+                <li>Peak of the curve is at $^{56}Fe$, making it the most stable nucleus.</li>    
+                <li>Light nuclei undergo fusion, and heavy nuclei undergo fission for stability.</li>    
+            </ul>    
+        </div>    
+    </div>    
+
+    <div class="topic-page" style="border-color: #00f7ff;">    
+        <h1 class="topic-title color3">3. Radioactivity</h1>    
+        <div class="box" style="border-left: 5px solid #00f7ff;"><span class="color3">English:</span> Spontaneous emission of radiation by unstable nuclei.</div>    
+        <div class="box" style="border-left: 5px solid #00f7ff;"><span class="color3">Hindi:</span> Unstable nuclei se apne aap nikalne wali radiation ki prakriya.</div>    
+        <div class="key-points">    
+            <ul>    
+                <li>Discovered by Henri Becquerel.</li>    
+                <li>It is a nuclear phenomenon, unaffected by temperature or pressure.</li>    
+            </ul>    
+        </div>    
+    </div>    
+
+    <div class="topic-page" style="border-color: #ffff00;">    
+        <h1 class="topic-title color4">4. Radioactive Decay</h1>    
+        <div class="box" style="border-left: 5px solid #ffff00;"><span class="color4">English:</span> Process where an unstable nucleus loses energy by emitting radiation.</div>    
+        <div class="box" style="border-left: 5px solid #ffff00;"><span class="color4">Hindi:</span> Wo process jisme ek nucleus radiation nikal kar doosre element mein badal jata hai.</div>    
+        <div class="formula-box color4">$$ N = N_0 e^{-\lambda t} $$</div>    
+    </div>    
+
+    <div class="topic-page" style="border-color: #ff00ff;">    
+        <h1 class="topic-title color5">5. Half-life ($T_{1/2}$)</h1>    
+        <div class="box" style="border-left: 5px solid #ff00ff;"><span class="color5">English:</span> Time taken for half of the radioactive nuclei in a sample to decay.</div>    
+        <div class="box" style="border-left: 5px solid #ff00ff;"><span class="color5">Hindi:</span> Wo samay jisme kisi sample ke aadhe nuclei toot jate hain.</div>    
+        <div class="formula-box color5">$$ T_{1/2} = \frac{0.693}{\lambda} $$</div>    
+    </div>    
+
+    <div class="topic-page" style="border-color: #ff8c00;">    
+        <h1 class="topic-title color6">6. Mean Life ($\tau$)</h1>    
+        <div class="box" style="border-left: 5px solid #ff8c00;"><span class="color6">English:</span> The average lifetime of all the nuclei in a radioactive sample.</div>    
+        <div class="box" style="border-left: 5px solid #ff8c00;"><span class="color6">Hindi:</span> Radioactive sample ke saare nuclei ki average umar.</div>    
+        <div class="formula-box color6">$$ \tau = \frac{1}{\lambda} = 1.44 \, T_{1/2} $$</div>    
+    </div>    
+
+    <div class="topic-page" style="border-color: #4deeea;">    
+        <h1 class="topic-title color7">7. Decay Constant ($\lambda$)</h1>    
+        <div class="box" style="border-left: 5px solid #4deeea;"><span class="color7">English:</span> Probability of decay per unit time for a nucleus.</div>    
+        <div class="box" style="border-left: 5px solid #4deeea;"><span class="color7">Hindi:</span> Har second ek nucleus ke tootne ki sambhavna.</div>    
+        <div class="key-points">    
+            <ul>    
+                <li>Different for every radioactive element.</li>    
+                <li>Unit is $s^{-1}$ or $\text{year}^{-1}$.</li>    
+            </ul>    
+        </div>    
+    </div>    
+
+    <div class="topic-page" style="border-color: #7a00ff;">    
+        <h1 class="topic-title color8">8. Alpha Decay ($\alpha$)</h1>    
+        <div class="box" style="border-left: 5px solid #7a00ff;"><span class="color8">English:</span> Emission of a Helium nucleus ($^4_2He$) from an unstable atom.</div>    
+        <div class="box" style="border-left: 5px solid #7a00ff;"><span class="color8">Hindi:</span> Nucleus se Helium ke kan ($\alpha$-particle) ka nikalna.</div>    
+        <div class="key-points">    
+            <ul>    
+                <li>Mass Number (A) decreases by 4.</li>    
+                <li>Atomic Number (Z) decreases by 2.</li>    
+            </ul>    
+        </div>    
+    </div>    
+
+    <div class="topic-page" style="border-color: #ff0055;">    
+        <h1 class="topic-title color1">9. Beta Decay ($\beta$)</h1>    
+        <div class="box" style="border-left: 5px solid #ff0055;"><span class="color1">English:</span> Emission of electrons ($\beta^-$) or positrons ($\beta^+$) from a nucleus.</div>    
+        <div class="box" style="border-left: 5px solid #ff0055;"><span class="color1">Hindi:</span> Nucleus se tez raftaar electron ya positron ka nikalna.</div>    
+        <div class="key-points">    
+            <ul>    
+                <li>Mass Number (A) remains same.</li>    
+                <li>Atomic Number (Z) changes by $\pm 1$.</li>    
+            </ul>    
+        </div>    
+    </div>    
+
+    <div class="topic-page" style="border-color: #00ff00;">    
+        <h1 class="topic-title color2">10. Gamma Decay ($\gamma$)</h1>    
+        <div class="box" style="border-left: 5px solid #00ff00;"><span class="color2">English:</span> Emission of high-energy photons to bring an excited nucleus to ground state.</div>    
+        <div class="box" style="border-left: 5px solid #00ff00;"><span class="color2">Hindi:</span> Excited nucleus se high-energy photons (light) ka nikalna.</div>    
+        <div class="key-points">    
+            <ul>    
+                <li>No change in A or Z.</li>    
+                <li>Most penetrating power among $\alpha$, $\beta$, and $\gamma$.</li>    
+            </ul>    
+        </div>    
+    </div>    
+</div>
+
+<div class="container" style="padding: 20px 15px; overflow-y: auto;">    
+    <style>
+        .topic-page {    
+            min-height: auto !important;
+            height: fit-content;
+            border: 5px solid;    
+            border-radius: 40px;    
+            margin-bottom: 30px;    
+            padding: 25px;    
+            display: block;
+            background: linear-gradient(180deg, rgba(20,20,20,1) 0%, rgba(0,0,0,1) 100%);    
+            box-sizing: border-box;
+            position: relative;
+        }    
+        
+        .box { margin-bottom: 15px; padding: 10px; border-radius: 10px; background: rgba(255,255,255,0.05); }
+        .eng-txt { font-weight: bold; text-decoration: underline; }
+        .hin-txt { font-weight: bold; font-style: italic; }
+
+        .key-points ul { margin-top: 15px; padding-left: 20px; }
+        .key-points li { margin-bottom: 8px; font-size: 18px; line-height: 1.4; list-style-type: square; }
+
+        .formula-box {
+            background: rgba(0,0,0,0.8);    
+            border: 2px solid rgba(255,255,255,0.2);    
+            border-radius: 20px;    
+            padding: 20px;    
+            text-align: center;    
+            font-size: 26px;    
+            margin-top: 25px;    
+        }
+
+        /* 8 Topics - 8 Colors */
+        .color1 { color: #ff0055; text-shadow: 0 0 15px #ff0055; } 
+        .color2 { color: #00ff00; text-shadow: 0 0 15px #00ff00; } 
+        .color3 { color: #00f7ff; text-shadow: 0 0 15px #00f7ff; } 
+        .color4 { color: #ffff00; text-shadow: 0 0 15px #ffff00; } 
+        .color5 { color: #ff00ff; text-shadow: 0 0 15px #ff00ff; } 
+        .color6 { color: #ff8c00; text-shadow: 0 0 15px #ff8c00; } 
+        .color7 { color: #4deeea; text-shadow: 0 0 15px #4deeea; } 
+        .color8 { color: #7a00ff; text-shadow: 0 0 15px #7a00ff; } 
+    </style>
+
+    <div class="topic-page" style="border-color: #ff0055;">    
+        <h1 class="topic-title color1">1. Law of Radioactive Decay</h1>    
+        <div class="box"><span class="eng-txt color1">English:</span> The number of nuclei decaying per unit time is proportional to the total number of nuclei present in the sample.</div>    
+        <div class="box"><span class="hin-txt color1">Hindi:</span> Nuclei ke tutne ki raftaar sample mein maujood kul nuclei ki sankhya ke barabar (proportional) hoti hai.</div>    
+        <div class="key-points color1">    
+            <ul>    
+                <li>It is a spontaneous and random process.</li>    
+                <li>Decay rate depends only on the nature of the element.</li>    
+                <li>External factors like temperature don't affect it.</li>    
+                <li>The decay constant is represented by lambda ($\lambda$).</li>    
+                <li>The negative sign shows that nuclei count is decreasing.</li>    
+            </ul>    
+        </div>    
+        <div class="formula-box color1">$$ \frac{dN}{dt} = -\lambda N $$</div>    
+    </div>    
+
+    <div class="topic-page" style="border-color: #00ff00;">    
+        <h1 class="topic-title color2">2. Exponential Decay</h1>    
+        <div class="box"><span class="eng-txt color2">English:</span> The process where the number of undecayed nuclei decreases exponentially over time.</div>    
+        <div class="box"><span class="hin-txt color2">Hindi:</span> Wo prakriya jisme bache hue nuclei ki sankhya samay ke saath tezi se ghat-ti jati hai.</div>    
+        <div class="key-points color2">    
+            <ul>    
+                <li>Initially, the decay happens very rapidly.</li>    
+                <li>As time passes, the rate of decay slows down.</li>    
+                <li>Technically, complete decay takes infinite time.</li>    
+                <li>$N_0$ is the number of nuclei at time $t=0$.</li>    
+                <li>The graph is a curve that never touches the X-axis.</li>    
+            </ul>    
+        </div>    
+        <div class="formula-box color2">$$ N = N_0 e^{-\lambda t} $$</div>    
+    </div>    
+
+    <div class="topic-page" style="border-color: #00f7ff;">    
+        <h1 class="topic-title color3">3. Nuclear Reactions</h1>    
+        <div class="box"><span class="eng-txt color3">English:</span> A reaction that alters the structure, energy, or composition of an atomic nucleus.</div>    
+        <div class="box"><span class="hin-txt color3">Hindi:</span> Wo reaction jo atom ke nucleus ki banawat ya uski energy ko badal deti hai.</div>    
+        <div class="key-points color3">    
+            <ul>    
+                <li>Total atomic number ($Z$) is conserved.</li>    
+                <li>Total mass number ($A$) is always conserved.</li>    
+                <li>Mass is converted into energy during the process.</li>    
+                <li>Reactions can be spontaneous or induced.</li>    
+                <li>They release much more energy than chemical reactions.</li>    
+            </ul>    
+        </div>    
+        <div class="formula-box color3">$$ \text{Reactants} \rightarrow \text{Products} + \text{Energy} $$</div>    
+    </div>    
+
+    <div class="topic-page" style="border-color: #ffff00;">    
+        <h1 class="topic-title color4">4. Fission</h1>    
+        <div class="box"><span class="eng-txt color4">English:</span> Splitting of a heavy nucleus into two or more smaller, stable nuclei.</div>    
+        <div class="box"><span class="hin-txt color4">Hindi:</span> Ek bade aur bhari nucleus ka tut kar do ya zyada halke nuclei mein badalna.</div>    
+        <div class="key-points color4">    
+            <ul>    
+                <li>Uranium-235 is commonly used for fission.</li>    
+                <li>It releases a large amount of heat and neutrons.</li>    
+                <li>Basis of nuclear reactors and atomic bombs.</li>    
+                <li>Requires a 'critical mass' to sustain the reaction.</li>    
+                <li>Produces radioactive waste as a byproduct.</li>    
+            </ul>    
+        </div>    
+        <div class="formula-box color4">$$ _{92}U^{235} + _0n^1 \rightarrow \text{Fission} $$</div>    
+    </div>    
+
+    <div class="topic-page" style="border-color: #ff00ff;">    
+        <h1 class="topic-title color5">5. Fusion</h1>    
+        <div class="box"><span class="eng-txt color5">English:</span> Process where light nuclei combine to form a heavier, more stable nucleus.</div>    
+        <div class="box"><span class="hin-txt color5">Hindi:</span> Halke nuclei ka milkar ek bhari aur mazboot nucleus banane ki prakriya.</div>    
+        <div class="key-points color5">    
+            <ul>    
+                <li>Happens naturally in the Sun and stars.</li>    
+                <li>Releases more energy per unit mass than fission.</li>    
+                <li>Requires extremely high temperature and pressure.</li>    
+                <li>Produces very little radioactive waste.</li>    
+                <li>Hydrogen isotopes are the main fuel for fusion.</li>    
+            </ul>    
+        </div>    
+        <div class="formula-box color5">$$ ^2H + ^3H \rightarrow ^4He + n $$</div>    
+    </div>    
+
+    <div class="topic-page" style="border-color: #ff8c00;">    
+        <h1 class="topic-title color6">6. Nuclear Energy</h1>    
+        <div class="box"><span class="eng-txt color6">English:</span> The energy stored in the nucleus of an atom, released during reactions.</div>    
+        <div class="box"><span class="hin-txt color6">Hindi:</span> Atom ke nucleus mein chhupi hui urja jo reactions ke waqt nikalti hai.</div>    
+        <div class="key-points color6">    
+            <ul>    
+                <li>Comes from the conversion of mass into energy.</li>    
+                <li>Follows Einstein's mass-energy equivalence.</li>    
+                <li>Used for generating electricity in power plants.</li>    
+                <li>It is a low-carbon source of energy.</li>    
+                <li>Calculated using the mass defect ($\Delta m$).</li>    
+            </ul>    
+        </div>    
+        <div class="formula-box color6">$$ E = \Delta m c^2 $$</div>    
+    </div>    
+
+    <div class="topic-page" style="border-color: #4deeea;">    
+        <h1 class="topic-title color7">7. Energy Released in Fission</h1>    
+        <div class="box"><span class="eng-txt color7">English:</span> The specific amount of energy produced when a heavy atom splits.</div>    
+        <div class="box"><span class="hin-txt color7">Hindi:</span> Ek bhari atom ke tutne par nikalne wali urja ki maatra.</div>    
+        <div class="key-points color7">    
+            <ul>    
+                <li>About 200 MeV energy per Uranium-235 nucleus.</li>    
+                <li>Most of it is Kinetic Energy of fragments.</li>    
+                <li>Some energy is released as Gamma radiation.</li>    
+                <li>Mass of products is less than the original nucleus.</li>    
+                <li>This energy is used to boil water into steam.</li>    
+            </ul>    
+        </div>    
+        <div class="formula-box color7">$$ \approx 200 \, \text{MeV per Nucleus} $$</div>    
+    </div>    
+
+    <div class="topic-page" style="border-color: #7a00ff;">    
+        <h1 class="topic-title color8">8. Energy Released in Fusion</h1>    
+        <div class="box"><span class="eng-txt color8">English:</span> Massive energy output generated when light nuclei fuse together.</div>    
+        <div class="box"><span class="hin-txt color8">Hindi:</span> Halke nuclei ke milne par nikalne wali bhari urja.</div>    
+        <div class="key-points color8">    
+            <ul>    
+                <li>Energy per nucleon is much higher than fission.</li>    
+                <li>It powers the core of all active stars.</li>    
+                <li>Basis of the Hydrogen Bomb's power.</li>    
+                <li>Fuel (like Hydrogen) is abundant on Earth.</li>    
+                <li>Clean energy source if controlled effectively.</li>    
+            </ul>    
+        </div>    
+        <div class="formula-box color8">$$ \text{Sun's Energy Source} $$</div>    
+    </div>    
+</div>
+
+<div class="container" style="padding: 20px 15px; overflow-y: auto;">    
+    <style>
+        .topic-page {    
+            min-height: auto !important;
+            height: fit-content;
+            border: 5px solid;    
+            border-radius: 40px;    
+            margin-bottom: 30px;    
+            padding: 25px;    
+            display: block;
+            background: linear-gradient(180deg, rgba(20,20,20,1) 0%, rgba(0,0,0,1) 100%);    
+            box-sizing: border-box;
+            position: relative;
+        }    
+        
+        .box { margin-bottom: 15px; padding: 10px; border-radius: 10px; background: rgba(255,255,255,0.05); }
+        .eng-txt { font-weight: bold; text-decoration: underline; }
+        .hin-txt { font-weight: bold; font-style: italic; }
+
+        .key-points ul { margin-top: 15px; padding-left: 20px; }
+        .key-points li { margin-bottom: 8px; font-size: 18px; line-height: 1.4; list-style-type: square; }
+
+        .formula-box {
+            background: rgba(0,0,0,0.8);    
+            border: 2px solid rgba(255,255,255,0.2);    
+            border-radius: 20px;    
+            padding: 20px;    
+            text-align: center;    
+            font-size: 26px;    
+            margin-top: 25px;    
+        }
+
+        /* Last 2 Topics Colors */
+        .color7 { color: #4deeea; text-shadow: 0 0 15px #4deeea; } 
+        .color8 { color: #7a00ff; text-shadow: 0 0 15px #7a00ff; } 
+    </style>
+
+    <div class="topic-page" style="border-color: #4deeea;">    
+        <h1 class="topic-title color7">1. Applications of Nuclear Energy</h1>    
+        <div class="box"><span class="eng-txt color7">English:</span> The use of nuclear fission or fusion to generate heat, electricity, or for specialized industrial and medical purposes.</div>    
+        <div class="box"><span class="hin-txt color7">Hindi:</span> Nuclear reactions ka istemal bijli banane, ya medical aur industrial kamo mein urja ke liye karna.</div>    
+        <div class="key-points color7">    
+            <ul>    
+                <li>Used in Carbon-14 dating to find age of fossils.</li>    
+                <li>Radioisotopes are used to treat cancer (Radiotherapy).</li>    
+                <li>Nuclear submarines use this energy to run for years without fuel.</li>    
+                <li>Used in agriculture to improve crop quality and pest control.</li>    
+                <li>Provides a massive and constant supply of base-load electricity.</li>    
+            </ul>    
+        </div>    
+    </div>    
+
+    <div class="topic-page" style="border-color: #7a00ff;">    
+        <h1 class="topic-title color8">2. Nuclear Reactor (Basic Idea)</h1>    
+        <div class="box"><span class="eng-txt color8">English:</span> A system designed to maintain and control a sustained nuclear chain reaction to produce power.</div>    
+        <div class="box"><span class="hin-txt color8">Hindi:</span> Ek aisi machine jo nuclear chain reaction ko kabu mein rakh kar bijli paida karti hai.</div>    
+        <div class="key-points color8">    
+            <ul>    
+                <li>Fuel: Usually uses enriched Uranium-235 or Plutonium.</li>    
+                <li>Moderator: Heavy water or Graphite slows down neutrons.</li>    
+                <li>Control Rods: Boron or Cadmium rods absorb extra neutrons.</li>    
+                <li>Coolant: Water or Liquid Sodium carries away the heat.</li>    
+                <li>Safety Shield: Thick concrete walls prevent radiation leaks.</li>    
+            </ul>    
+        </div>    
+        <div class="formula-box color8">$$ \text{Controlled Chain Reaction} $$</div>    
+    </div>    
+</div>
+<div style="text-align:center; margin-bottom:20px;">
+    <h1 style="color:#ff00ff; font-family:sans-serif; text-transform:uppercase; text-shadow:0 0 10px #ff00ff;">Chapter 13: Nuclei Quiz.</h1> 
+    Logic Lagao, Tukka Nahi! Har option ek jaal hai.</h1>
+</div>
+
+<div id="quiz-box" style="max-width:600px; margin:auto; position:relative; z-index:1;"></div>
+
+<div id="quiz-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; z-index:9999; flex-direction:column; align-items:center; justify-content:center; pointer-events:none;">
+    <div id="status-strip" style="width:100%; text-align:center; padding:30px 0;">
+        <h1 id="status-title" style="margin:0; padding:0;"></h1>
+        <p id="status-message" style="margin:10px 0; font-family:sans-serif; font-weight:bold;"></p>
+        <p id="next-msg" style="margin:0; font-family:sans-serif;"></p>
+    </div>
+</div>
+
+<style>
+/* Wahi 8 Neon Colors jo notes mein the - unka ghumne wala effect */
+@keyframes neon-cycle {
+    0%   { border-color: #ff0055; box-shadow: 0 0 10px #ff0055; } /* Color 1: Pink */
+    12%  { border-color: #00ff00; box-shadow: 0 0 10px #00ff00; } /* Color 2: Green */
+    25%  { border-color: #00f7ff; box-shadow: 0 0 10px #00f7ff; } /* Color 3: Cyan */
+    37%  { border-color: #ffff00; box-shadow: 0 0 10px #ffff00; } /* Color 4: Yellow */
+    50%  { border-color: #ff00ff; box-shadow: 0 0 10px #ff00ff; } /* Color 5: Magenta */
+    62%  { border-color: #ff8c00; box-shadow: 0 0 10px #ff8c00; } /* Color 6: Orange */
+    75%  { border-color: #4deeea; box-shadow: 0 0 10px #4deeea; } /* Color 7: Aquamarine */
+    87%  { border-color: #7a00ff; box-shadow: 0 0 10px #7a00ff; } /* Color 8: Purple */
+    100% { border-color: #ff0055; box-shadow: 0 0 10px #ff0055; }
+}
+
+.quiz-card {
+    background: rgba(255,255,255,0.05); 
+    padding: 20px; 
+    margin: 15px 0; 
+    border-radius: 15px; 
+    border: 3px solid #ff0055; 
+    animation: neon-cycle 8s linear infinite;
+}
+
+.opt-btn {
+    display: block; 
+    width: 100%; 
+    margin: 12px 0; 
+    padding: 15px; 
+    background: rgba(255,255,255,0.08); 
+    color: #fff; 
+    border: 2px solid #ff0055; 
+    border-radius: 12px; 
+    text-align: left; 
+    font-weight: 600; 
+    cursor: pointer;
+    animation: neon-cycle 8s linear infinite;
+}
+
+/* Question text ka color humesha Cyan glow rakhte hain */
+.quiz-card p { color: #00f7ff; text-shadow: 0 0 5px #00f7ff; }
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+const questions = [
+    { q:"The discovery of the neutron was done by:", opts:["Rutherford","J.J. Thomson","James Chadwick","Bohr"], ans:2 },
+    { q:"The radius of a nucleus is proportional to:", opts:["A","A^(1/3)","A^(2/3)","A^2"], ans:1 },
+    { q:"Nuclei with the same mass number but different atomic number are:", opts:["Isotopes","Isobars","Isotones","Isomers"], ans:1 },
+    { q:"1 amu (atomic mass unit) is equivalent to:", opts:["931 MeV","1 MeV","100 MeV","9.31 MeV"], ans:0 },
+    { q:"The force that acts between protons and neutrons is:", opts:["Electrostatic force","Strong nuclear force","Gravitational force","Magnetic force"], ans:1 },
+    { q:"Which of the following has the highest ionizing power?", opts:["Alpha rays","Beta rays","Gamma rays","X-rays"], ans:0 },
+    { q:"The density of nuclear matter is independent of:", opts:["Mass number A","Atomic number Z","Both","None"], ans:0 },
+    { q:"Radioactive decay law is given by:", opts:["N = N₀e^(λt)","N = N₀e^(-λt)","N = λN₀","N = N₀/λ"], ans:1 },
+    { q:"The SI unit of radioactivity is:", opts:["Curie","Rutherford","Becquerel","Pascal"], ans:2 },
+    { q:"In a nuclear reactor, heavy water is used as a:", opts:["Fuel","Control rod","Moderator","Coolant"], ans:2 },
+    { q:"The process in which two light nuclei combine is called:", opts:["Nuclear fission","Nuclear fusion","Spontaneous decay","Ionization"], ans:1 },
+    { q:"Binding energy per nucleon is maximum for:", opts:["Uranium","Helium","Iron (Fe)","Hydrogen"], ans:2 },
+    { q:"In alpha decay, the atomic number decreases by:", opts:["1","2","3","4"], ans:1 },
+    { q:"Gamma rays are electromagnetic waves of:", opts:["High frequency","Low frequency","Zero energy","Negative charge"], ans:0 },
+    { q:"The half-life of a radioactive substance depends on:", opts:["Temperature","Pressure","Nature of substance","Initial mass"], ans:2 },
+    { q:"Nuclear fission is the source of energy in:", opts:["Sun","Stars","Atom bomb","Hydrogen bomb"], ans:2 },
+    { q:"Control rods in nuclear reactors are made of:", opts:["Graphite","Cadmium","Uranium","Iron"], ans:1 },
+    { q:"The mass defect is converted into:", opts:["Kinetic energy","Binding energy","Light energy","Sound energy"], ans:1 },
+    { q:"Isotones are atoms having the same number of:", opts:["Protons","Electrons","Neutrons","Nucleons"], ans:2 },
+    { q:"Mean life (τ) is related to decay constant (λ) as:", opts:["τ = λ","τ = 1/λ","τ = 0.693λ","τ = λ^2"], ans:1 },
+    { q:"The energy equivalent of 1 gram of matter is:", opts:["9 x 10^13 J","3 x 10^8 J","1 J","9 x 10^16 J"], ans:0 },
+    { q:"Penetrating power is maximum for:", opts:["Alpha rays","Beta rays","Gamma rays","Protons"], ans:2 },
+    { q:"Nuclear fusion takes place at very:", opts:["Low temperature","High temperature","Room temperature","Absolute zero"], ans:1 },
+    { q:"The volume of a nucleus is proportional to:", opts:["A","A^2","A^(1/3)","1/A"], ans:0 },
+    { q:"A positron is an antiparticle of:", opts:["Proton","Neutron","Electron","Alpha particle"], ans:2 },
+    { q:"During beta minus decay, a neutron transforms into a proton and:", opts:["Alpha particle","Electron and antineutrino","Positron","Gamma ray"], ans:1 },
+    { q:"Nuclear density is approximately:", opts:["10^3 kg/m³","10^17 kg/m³","10^10 kg/m³","10^5 kg/m³"], ans:1 },
+    { q:"The stability of a nucleus is determined by:", opts:["Total mass","Binding energy per nucleon","Number of electrons","Size"], ans:1 },
+    { q:"The particle emitted in beta plus decay is:", opts:["Electron","Positron","Neutron","Proton"], ans:1 },
+    { q:"Solar energy is mainly due to:", opts:["Fission of Uranium","Fusion of Hydrogen","Burning of Coal","Gravity"], ans:1 },
+    { q:"The relation between half-life and mean life is:", opts:["T = 0.693τ","τ = 0.693T","T = τ","T = 2τ"], ans:0 },
+    { q:"Which rays are not deflected by electric or magnetic fields?", opts:["Alpha","Beta","Gamma","Cathode rays"], ans:2 },
+    { q:"Mass of an alpha particle is ______ times the mass of a proton.", opts:["2","3","4","1"], ans:2 },
+    { q:"A nuclear reactor is based on a ______ chain reaction.", opts:["Controlled","Uncontrolled","Fast","Spontaneous"], ans:0 },
+    { q:"Moderator slows down the speed of:", opts:["Protons","Electrons","Neutrons","Alpha particles"], ans:2 },
+    { q:"Curie is a unit of radioactivity equal to:", opts:["1 decay/s","3.7 x 10^10 Bq","10^6 Bq","10^10 Bq"], ans:1 },
+    { q:"One Fermi is equal to:", opts:["10^-15 m","10^-10 m","10^-12 m","10^-9 m"], ans:0 },
+    { q:"Atomic mass of C-12 is exactly:", opts:["12 amu","1 amu","6 amu","1.66 amu"], ans:0 },
+    { q:"The ratio of mass of nucleus to its volume is:", opts:["Constant","Variable","Infinite","Zero"], ans:0 },
+    { q:"Neutrinos are particles with:", opts:["Positive charge","Negative charge","No charge and almost zero mass","Mass but no charge"], ans:2 },
+    { q:"Fraction of radioactive atoms remaining after 'n' half-lives is:", opts:["(1/2)^n","(1/n)^2","2^n","1/2n"], ans:0 },
+    { q:"Nuclear forces are ______ range forces.", opts:["Short","Long","Infinite","Zero"], ans:0 },
+    { q:"Mirror nuclei are those with same A but swapped:", opts:["Z and N","Protons and Electrons","Mass","Energy"], ans:0 },
+    { q:"In gamma decay, the daughter nucleus has:", opts:["Less mass","Same Z and A","More protons","Less neutrons"], ans:1 },
+    { q:"Enriched Uranium has a higher concentration of:", opts:["U-238","U-235","U-239","U-234"], ans:1 },
+    { q:"Packing fraction is zero for:", opts:["Hydrogen","Iron","Carbon-12","Uranium"], ans:2 },
+    { q:"Pair production occurs only if photon energy is >:", opts:["1.02 MeV","0.51 MeV","931 MeV","2.2 MeV"], ans:0 },
+    { q:"Coolant in a fast breeder reactor is usually:", opts:["Water","Liquid Sodium","Air","Graphite"], ans:1 },
+    { q:"Average binding energy per nucleon is about:", opts:["8 MeV","8 eV","100 MeV","0.5 MeV"], ans:0 },
+    { q:"Energy of a photon is given by:", opts:["E = mc^2","E = hf","E = 1/2mv^2","E = qV"], ans:1 }
+];
+
+const quizBox = document.getElementById('quiz-box');
+
+questions.forEach((item, index) => {
+    let card = document.createElement('div');
+    card.className = "quiz-card";
+    card.style.animationDelay = (index * 0.1) + "s";
+
+    card.innerHTML = `<p style="font-size:18px; font-weight:bold;">Q${index+1}. ${item.q}</p>`;
+
+    item.opts.forEach((opt, oIdx) => {
+        let btn = document.createElement('button');
+        btn.innerText = opt;
+        btn.className = "opt-btn";
+        btn.style.animationDelay = (index * 0.1) + "s";
+
+        btn.onclick = () => {
+            const overlay = document.getElementById('quiz-overlay');
+            const title = document.getElementById('status-title');
+            const msg = document.getElementById('status-message');
+            const nxt = document.getElementById('next-msg');
+            const strip = document.getElementById('status-strip');
+
+            overlay.style.display = "flex";
+            overlay.style.pointerEvents = "auto"; 
+
+            if(oIdx === item.ans){
+                overlay.style.background = "rgba(0,0,0,0.85)";
+                strip.style.background = "transparent";
+                title.style.cssText = "font-family:'Dancing Script', cursive; color:#fff; font-size:60px; text-shadow:0 0 20px #00f7ff, 0 0 40px #00f7ff;";
+                title.innerText = "Congratulations";
+                msg.innerText = "Excellent! You are a true Topper.";
+                msg.style.color = "#00f7ff";
+                nxt.innerText = "Next question loading...";
+
+                var end = Date.now() + 1500;
+                var colors = ['#ff0055','#00ff00','#00f7ff','#ffff00','#ff00ff'];
+                (function frame(){
+                    confetti({particleCount:15,angle:60,spread:65,origin:{x:0},colors:colors, zIndex: 999999});
+                    confetti({particleCount:15,angle:120,spread:65,origin:{x:1},colors:colors, zIndex: 999999});
+                    if(Date.now() < end) requestAnimationFrame(frame);
+                })();
+            } else {
+                overlay.style.background = "radial-gradient(rgba(139,0,0,0.5) 10%, rgba(0,0,0,0.85) 90%)";
+                strip.style.background = "rgba(0,0,0,0.6)";
+                strip.style.width = "100%";
+                strip.style.padding = "30px 0";
+                title.style.cssText = "font-family:'Oswald', sans-serif; color:red; font-size:80px; font-weight:900; letter-spacing:10px; text-shadow:4px 4px 0px #000;";
+                title.innerText = "WASTED";
+                msg.innerText = "Oops! Galat Jawab. Focus bhai Focus!";
+                msg.style.color = "#fff";
+                nxt.innerText = "";
+            }
+
+            setTimeout(() => {
+                overlay.style.display = "none";
+                overlay.style.pointerEvents = "none"; 
+            }, 2500);
+        };
+        card.appendChild(btn);
+    });
+    quizBox.appendChild(card);
+});
+});
+</script>
+<div style="text-align:center; margin-bottom:20px;">
+    <h1 style="color:#00f7ff; font-family:sans-serif; text-transform:uppercase; text-shadow:0 0 15px #00f7ff;">Topper's Trap: Q51 - Q100 is completed (Atoms)</h1>
+    <p style="color:#ffffff; font-family:sans-serif; font-weight:bold;.</p>
+</div>
+
+<div id="quiz-box" style="max-width:600px; margin:auto; position:relative; z-index:1;"></div>
+
+<div id="quiz-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; z-index:9999; flex-direction:column; align-items:center; justify-content:center; pointer-events:none;">
+    <div id="status-strip" style="width:100%; text-align:center; padding:30px 0;">
+        <h1 id="status-title"></h1>
+        <p id="status-message" style="font-weight:bold;"></p>
+        <p id="next-msg"></p>
+    </div>
+</div>
+
+<style>
+/* 8 Neon Colors Rotation */
+@keyframes neon-8-cycle {
+    0%   { border-color: #ff0055; box-shadow: 0 0 10px #ff0055; }
+    12%  { border-color: #00ff00; box-shadow: 0 0 10px #00ff00; }
+    25%  { border-color: #00f7ff; box-shadow: 0 0 10px #00f7ff; }
+    37%  { border-color: #ffff00; box-shadow: 0 0 10px #ffff00; }
+    50%  { border-color: #ff00ff; box-shadow: 0 0 10px #ff00ff; }
+    62%  { border-color: #ff8c00; box-shadow: 0 0 10px #ff8c00; }
+    75%  { border-color: #4deeea; box-shadow: 0 0 10px #4deeea; }
+    87%  { border-color: #7a00ff; box-shadow: 0 0 10px #7a00ff; }
+    100% { border-color: #ff0055; box-shadow: 0 0 10px #ff0055; }
+}
+
+.quiz-card {
+    background: linear-gradient(145deg, #0f2027, #2c5364); 
+    padding: 20px; 
+    margin: 15px 0; 
+    border-radius: 15px; 
+    border: 3px solid #ff0055; 
+    animation: neon-8-cycle 7s linear infinite;
+}
+
+.opt-btn {
+    display: block; 
+    width: 100%; 
+    margin: 10px 0; 
+    padding: 14px; 
+    background: rgba(255,255,255,0.03); 
+    color: #fff; 
+    border: 2px solid #ff0055; 
+    border-radius: 10px; 
+    text-align: left; 
+    font-weight: 600; 
+    cursor: pointer;
+    animation: neon-8-cycle 5s linear infinite;
+    transition: 0.3s;
+}
+
+.quiz-card p { color: #00ffcc; text-shadow: 0 0 5px #00ffcc; }
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+const questions = [
+    {q:"If electron moves from n=2 to n=4, the energy is:",opts:["Emitted as photons","Absorbed from external source","Remains constant","Lost as heat"],ans:1},
+    {q:"The ratio of KE to PE of an electron in Bohr orbit is:",opts:["1 : 2","2 : 1","-1 : 2","-2 : 1"],ans:2},
+    {q:"Bohr's model is NOT applicable to:",opts:["Hydrogen atom","Singly ionized Helium","Doubly ionized Lithium","Neutral Helium atom"],ans:3},
+    {q:"What happens to the velocity of electron if 'n' is doubled?",opts:["Velocity becomes double","Velocity is halved","Velocity becomes four times","Velocity is reduced by 1/4"],ans:1},
+    {q:"The energy required to ionize H-atom from n=2 state is:",opts:["13.6 eV","10.2 eV","3.4 eV","1.51 eV"],ans:2},
+    {q:"Angular momentum in 2nd orbit is 'L'. In 4th orbit, it will be:",opts:["L","2L","4L","L/4"],ans:1},
+    {q:"The spectrum of atoms is a proof of:",opts:["Particle nature of light","Quantized energy levels","Continuous flow of energy","Wave nature of matter"],ans:1},
+    {q:"In Rutherford scattering, impact parameter b=0 means scattering angle is:",opts:["0°","90°","180°","45°"],ans:2},
+    {q:"Radius of 2nd orbit compared to 1st orbit in Hydrogen is:",opts:["2 times","3 times","4 times","8 times"],ans:2},
+    {q:"Which series lies purely in the Visible region?",opts:["Lyman","Paschen","Balmer","Brackett"],ans:2},
+    {q:"If an alpha particle hits nucleus head-on, its KE at closest approach is:",opts:["Maximum","Zero","Negative","Infinity"],ans:1},
+    {q:"The ground state energy of Li++ ion (Z=3) is:",opts:["-13.6 eV","-40.8 eV","-122.4 eV","-27.2 eV"],ans:2},
+    {q:"Series limit wavelength refers to transition from n=:",opts:["n=2","n=1","n=Infinity","n=100"],ans:2},
+    {q:"Frequency of emitted photon is highest for transition:",opts:["n=2 to 1","n=3 to 2","n=4 to 3","n=infinite to 2"],ans:0},
+    {q:"Bohr's postulate mvr = nh/2π is based on:",opts:["Mass conservation","Angular momentum quantization","Linear momentum","Relativity theory"],ans:1},
+    {q:"Potential Energy of an electron in an atom is always:",opts:["Positive","Zero","Negative","Imaginary"],ans:2},
+    {q:"If 'n' increases, the Time Period of electron rotation:",opts:["Decreases","Increases","Remains same","Becomes zero"],ans:1},
+    {q:"Which series is NOT in the Infrared region?",opts:["Paschen","Brackett","Pfund","Lyman"],ans:3},
+    {q:"Ratio of radii of n=1 and n=2 orbits is:",opts:["1 : 2","4 : 1","1 : 4","2 : 1"],ans:2},
+    {q:"Excitation potential for n=1 to n=2 in H-atom is:",opts:["13.6 V","10.2 V","3.4 V","1.89 V"],ans:1},
+    {q:"Total energy of electron in 1st excited state (n=2) of H-atom:",opts:["-13.6 eV","-3.4 eV","-1.51 eV","-0.85 eV"],ans:1},
+    {q:"Who discovered the nucleus via gold foil experiment?",opts:["J.J. Thomson","Niels Bohr","Ernest Rutherford","James Chadwick"],ans:2},
+    {q:"The $H_\gamma$ line in Balmer series corresponds to transition:",opts:["n=3 to 2","n=4 to 2","n=5 to 2","n=6 to 2"],ans:2},
+    {q:"Binding energy of an electron in ground state is:",opts:["Positive 13.6 eV","Negative 13.6 eV","Zero","Infinity"],ans:0},
+    {q:"Ratio of speed of light to speed of electron in 1st orbit (1/α):",opts:["1","137","274","3.14"],ans:1},
+    {q:"Which shell corresponds to principal quantum number n=3?",opts:["K-shell","L-shell","M-shell","N-shell"],ans:2},
+    {q:"Value of Bohr radius ($a_0$) is approximately:",opts:["0.53 cm","0.53 Å","0.53 m","5.3 nm"],ans:1},
+    {q:"If an atom loses an electron, its net charge becomes:",opts:["Negative","Positive","Neutral","Double"],ans:1},
+    {q:"The 'Excited State' of an atom is generally:",opts:["Highly stable","Highly unstable","Permanent","Zero energy state"],ans:1},
+    {q:"Wave number is defined as:",opts:["λ","1/λ","c/λ","hf"],ans:1},
+    {q:"In $E_n = -13.6/n^2$, the energy is measured in:",opts:["Joules","Calories","eV (electron Volt)","Watts"],ans:2},
+    {q:"Transitions ending at n=4 level belong to:",opts:["Paschen","Brackett","Pfund","Lyman"],ans:1},
+    {q:"Electron jump from n=4 to n=2 emits how many distinct Balmer lines?",opts:["Only 1","2","3","4"],ans:0},
+    {q:"Kinetic energy of electron is equal to:",opts:["Total Energy","Potential Energy / 2","- (Total Energy)","2 × PE"],ans:2},
+    {q:"Alpha particle is actually a:",opts:["Hydrogen nucleus","Helium nucleus","Proton","Neutron"],ans:1},
+    {q:"The force providing centripetal acceleration to electron is:",opts:["Gravitational","Coulombic (Electrostatic)","Magnetic","Nuclear"],ans:1},
+    {q:"Distance of closest approach depends on:",opts:["Z only","KE of alpha particle only","Both Z and KE","Mass of electron"],ans:2},
+    {q:"Rydberg constant R unit is:",opts:["m","m/s","m⁻¹","eV"],ans:2},
+    {q:"Balmer series limit wavelength is approx:",opts:["3646 Å","6563 Å","1216 Å","912 Å"],ans:0},
+    {q:"Impact parameter for head-on collision is:",opts:["Maximum","Minimum (Zero)","Infinite","1 Å"],ans:1},
+    {q:"Energy of electron in n=infinite is taken as:",opts:["Maximum negative","Zero","13.6 eV","Infinite"],ans:1},
+    {q:"Paschen series lies in:",opts:["UV region","Visible region","Infrared region","Far-Infrared"],ans:2},
+    {q:"Ionization energy for n=3 state of H-atom is:",opts:["1.51 eV","3.4 eV","13.6 eV","0.85 eV"],ans:0},
+    {q:"For H-atom, the ratio of energies $E_1 : E_2 : E_3$ is:",opts:["1 : 2 : 3","1 : 4 : 9","1 : 1/4 : 1/9","9 : 4 : 1"],ans:2},
+    {q:"Wavelength of photon is ______ proportional to energy.",opts:["Directly","Inversely","Not","Logarithmically"],ans:1},
+    {q:"Rutherford's model could not explain:",opts:["Nucleus","Empty space","Stability of atom","Alpha scattering"],ans:2},
+    {q:"Brackett series corresponds to transition to n =:",opts:["3","4","5","2"],ans:1},
+    {q:"Angular momentum is a/an ______ quantity.",opts:["Scalar","Vector","Tensor","Dimensionless"],ans:1},
+    {q:"Total energy of electron ______ as 'n' increases.",opts:["Decreases","Increases (becomes less negative)","Remains same","Becomes zero instantly"],ans:1},
+    {q:"Total number of spectral lines for jump from n=3 to 1 is:",opts:["1","2","3","6"],ans:2}
+];
+
+const quizBox = document.getElementById('quiz-box');
+
+questions.forEach((item, index) => {
+    let card = document.createElement('div');
+    card.className = "quiz-card";
+    card.style.animationDelay = (index * 0.1) + "s";
+    card.innerHTML = `<p style="font-size:18px; font-weight:bold;">Q${index+51}. ${item.q}</p>`;
+
+    item.opts.forEach((opt, oIdx) => {
+        let btn = document.createElement('button');
+        btn.innerText = opt;
+        btn.className = "opt-btn";
+        btn.style.animationDelay = (index * 0.1) + "s";
+
+        btn.onclick = () => {
+            const overlay = document.getElementById('quiz-overlay');
+            const title = document.getElementById('status-title');
+            const msg = document.getElementById('status-message');
+            const nxt = document.getElementById('next-msg');
+            const strip = document.getElementById('status-strip');
+
+            overlay.style.display = "flex";
+            overlay.style.pointerEvents = "auto"; 
+
+            if(oIdx === item.ans){
+                overlay.style.background = "rgba(0,0,0,0.85)";
+                strip.style.background = "transparent";
+                title.style.cssText = "font-family:'Dancing Script', cursive; color:#fff; font-size:60px; text-shadow:0 0 20px #00f7ff, 0 0 40px #00f7ff;";
+                title.innerText = "Physics Master";
+                msg.innerText = "Kya baat hai! Trap se bach gaya.";
+                msg.style.color = "#00f7ff";
+                nxt.innerText = "Next conceptual challenge...";
+
+                var end = Date.now() + 1500;
+                var colors = ['#00f7ff','#ff00c8','#48ff00','#ffff00','#ff8c00','#9400d3','#ff0000','#0000ff'];
+                (function frame(){
+                    confetti({particleCount:15,angle:60,spread:65,origin:{x:0},colors:colors, zIndex: 999999});
+                    confetti({particleCount:15,angle:120,spread:65,origin:{x:1},colors:colors, zIndex: 999999});
+                    if(Date.now() < end) requestAnimationFrame(frame);
+                })();
+            } else {
+                overlay.style.background = "radial-gradient(rgba(139,0,0,0.5) 10%, rgba(0,0,0,0.85) 90%)";
+                strip.style.background = "rgba(0,0,0,0.6)";
+                strip.style.width = "100%";
+                strip.style.padding = "30px 0";
+                title.style.cssText = "font-family:'Oswald', sans-serif; color:red; font-size:80px; font-weight:900; letter-spacing:10px; text-shadow:4px 4px 0px #000;";
+                title.innerText = "WASTED";
+                msg.innerText = "Trap mein phans gaya! Focus kar.";
+                msg.style.color = "#fff";
+                nxt.innerText = "";
+            }
+
+            setTimeout(() => {
+                overlay.style.display = "none";
+                overlay.style.pointerEvents = "none"; 
+            }, 2500);
+        };
+        card.appendChild(btn);
+    });
+    quizBox.appendChild(card);
+});
+});
+</script>
+<div id="long-questions-part1" style="max-width:800px; margin:auto; font-family:Arial, sans-serif;">
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px; box-shadow: 0 10px 15px rgba(0,0,0,0.3);">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q1. Show that the density of nuclear matter is independent of its mass number (A). Derive the formula.</p>
+        <button onclick="toggleQ('ans1')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ans1" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:1.8;">
+            <b style="color:#fffb00;">Step-by-Step Derivation:</b><br>
+            1. Mass of nucleus (M) = <b>m &times; A</b> (where m = average mass of a nucleon).<br>
+            2. Radius of nucleus <b>R = R<sub>0</sub> A<sup>1/3</sup></b>.<br>
+            3. Volume of spherical nucleus <b>V = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td>4</td></tr><tr><td style="border-top:1px solid #fff;">3</td></tr></table> &pi; R<sup>3</sup></b>.<br>
+            4. Put value of R: <b>V = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td>4</td></tr><tr><td style="border-top:1px solid #fff;">3</td></tr></table> &pi; (R<sub>0</sub> A<sup>1/3</sup>)<sup>3</sup> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td>4</td></tr><tr><td style="border-top:1px solid #fff;">3</td></tr></table> &pi; R<sub>0</sub><sup>3</sup> A</b>.<br>
+            5. Density <b>&rho; = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">Mass</td></tr><tr><td>Volume</td></tr></table> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">m &middot; A</td></tr><tr><td><table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td>4</td></tr><tr><td style="border-top:1px solid #fff;">3</td></tr></table> &pi; R<sub>0</sub><sup>3</sup> A</td></tr></table></b>.<br>
+            6. A se A cancel ho jayega: <b>&rho; = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">3m</td></tr><tr><td>4 &pi; R<sub>0</sub><sup>3</sup></td></tr></table></b>.<br>
+            7. Since m, &pi; aur R<sub>0</sub> constants hain, density mass number (A) par depend nahi karti.
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q2. Derive the Radioactive Decay Law (N = N₀ e<sup>-&lambda;t</sup>) step-by-step.</p>
+        <button onclick="toggleQ('ans2')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ans2" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:2;">
+            <b style="color:#fffb00;">Full Derivation:</b><br>
+            1. Rate of decay <b><table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">-dN</td></tr><tr><td>dt</td></tr></table> &prop; N</b>.<br>
+            2. Remove proportionality: <b><table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">dN</td></tr><tr><td>dt</td></tr></table> = -&lambda; N</b>.<br>
+            3. Variables rearrange karo: <b><table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">dN</td></tr><tr><td>N</td></tr></table> = -&lambda; dt</b>.<br>
+            4. Both sides integrate karo: <b>&int; <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">dN</td></tr><tr><td>N</td></tr></table> = &int; -&lambda; dt</b>.<br>
+            5. Result: <b>ln N = -&lambda;t + C</b>.<br>
+            6. At t=0, N=N<sub>0</sub>: Isliye <b>C = ln N<sub>0</sub></b>.<br>
+            7. <b>ln N - ln N<sub>0</sub> = -&lambda;t</b>.<br>
+            8. <b>ln <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td>N</td></tr><tr><td style="border-top:1px solid #fff;">N<sub>0</sub></td></tr></table> = -&lambda;t</b>.<br>
+            9. Exponential form: <b><table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td>N</td></tr><tr><td style="border-top:1px solid #fff;">N<sub>0</sub></td></tr></table> = e<sup>-&lambda;t</sup></b>.<br>
+            10. <b>Final Law: N = N<sub>0</sub> e<sup>-&lambda;t</sup></b>.
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q3. Derive the relation between Half-Life (T<sub>1/2</sub>) and Decay Constant (&lambda;).</p>
+        <button onclick="toggleQ('ans3')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ans3" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:1.8;">
+            <b style="color:#fffb00;">Step-by-Step Derivation:</b><br>
+            1. We know: <b>N = N<sub>0</sub> e<sup>-&lambda;t</sup></b>.<br>
+            2. At half-life (t = T<sub>1/2</sub>), <b>N = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">N<sub>0</sub></td></tr><tr><td>2</td></tr></table></b>.<br>
+            3. Formula mein values rakho: <b><table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">N<sub>0</sub></td></tr><tr><td>2</td></tr></table> = N<sub>0</sub> e<sup>-&lambda; T<sub>1/2</sub></sup></b>.<br>
+            4. N<sub>0</sub> se N<sub>0</sub> cancel: <b><table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td>1</td></tr><tr><td style="border-top:1px solid #fff;">2</td></tr></table> = e<sup>-&lambda; T<sub>1/2</sub></sup></b>.<br>
+            5. Reverse kardo dono side: <b>2 = e<sup>&lambda; T<sub>1/2</sub></sup></b>.<br>
+            6. Logarithm (ln) lo dono side: <b>ln 2 = &lambda; T<sub>1/2</sub></b>.<br>
+            7. ln 2 ki value 0.693 hoti hai: <b>0.693 = &lambda; T<sub>1/2</sub></b>.<br>
+            8. <b>Final Result: T<sub>1/2</sub> = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">0.693</td></tr><tr><td>&lambda;</td></tr></table></b>.
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q4. Explain Mass Defect and derive the formula for Nuclear Binding Energy.</p>
+        <button onclick="toggleQ('ans4')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ans4" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:2.2;">
+            1. Nucleus ka asli mass (M) nucleons ke total mass se kam hota hai.<br>
+            2. Protons ka mass = <b>Z &middot; m<sub>p</sub></b>.<br>
+            3. Neutrons ka mass = <b>(A - Z) &middot; m<sub>n</sub></b>.<br>
+            4. Theoretical mass <b>M' = [Z&middot;m<sub>p</sub> + (A-Z)&middot;m<sub>n</sub>]</b>.<br>
+            5. Mass Defect <b>&Delta;m = M' - M</b>.<br>
+            6. <b>&Delta;m = [Z&middot;m<sub>p</sub> + (A-Z)&middot;m<sub>n</sub>] - M<sub>nucleus</sub></b>.<br>
+            7. Einstein's formula <b>E = &Delta;m &middot; c<sup>2</sup></b>.<br>
+            8. <b>Binding Energy (B.E.) = [Z&middot;m<sub>p</sub> + (A-Z)&middot;m<sub>n</sub> - M] &times; c<sup>2</sup></b>.<br>
+            9. Agar mass 'amu' mein hai, toh <b>B.E. = &Delta;m &times; 931.5 MeV</b>.<br>
+            10. B.E. per nucleon <b>= <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">B.E.</td></tr><tr><td>A</td></tr></table></b>.
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q5. Define Mean Life (&tau;) and derive its relation with the decay constant (&lambda;).</p>
+        <button onclick="toggleQ('ans5')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Derivation</button>
+        <div id="ans5" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:2;">
+            1. Mean life <b>&tau; = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td style="border-bottom:1px solid #fff;">Total life of all nuclei</td></tr><tr><td>Total number of nuclei (N<sub>0</sub>)</td></tr></table></b>.<br>
+            2. Mathematically <b>&tau; = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td>1</td></tr><tr><td style="border-top:1px solid #fff;">N<sub>0</sub></td></tr></table> &int;<sub>0</sub><sup>&infin;</sup> t &middot; dN</b>.<br>
+            3. Rate of decay se hume pata hai: <b>dN = &lambda; N dt</b>.<br>
+            4. Put value: <b>&tau; = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td>1</td></tr><tr><td style="border-top:1px solid #fff;">N<sub>0</sub></td></tr></table> &int;<sub>0</sub><sup>&infin;</sup> t &middot; (&lambda; N<sub>0</sub> e<sup>-&lambda;t</sup>) dt</b>.<br>
+            5. N<sub>0</sub> cancel kardo: <b>&tau; = &lambda; &int;<sub>0</sub><sup>&infin;</sup> t &middot; e<sup>-&lambda;t</sup> dt</b>.<br>
+            6. By integration by parts, integral ki value <b><table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td>1</td></tr><tr><td style="border-top:1px solid #fff;">&lambda;<sup>2</sup></td></tr></table></b> aayegi.<br>
+            7. Isliye <b>&tau; = &lambda; &times; <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td>1</td></tr><tr><td style="border-top:1px solid #fff;">&lambda;<sup>2</sup></td></tr></table></b>.<br>
+            8. Ek &lambda; cancel: <b>&tau; = <table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td>1</td></tr><tr><td style="border-top:1px solid #fff;">&lambda;</td></tr></table></b>.<br>
+            9. Mean Life decay constant ka reciprocal hota hai.<br>
+            10. Relation with Half life: <b>&tau; = 1.44 &times; T<sub>1/2</sub></b>.
+        </div>
+    </div>
+
+</div>
+
+<script>
+function toggleQ(id) {
+    var x = document.getElementById(id);
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+</script>
+
+<style>
+@keyframes moveBg { 
+    0% { background-position: 0% 50%; } 
+    50% { background-position: 100% 50%; } 
+    100% { background-position: 0% 50%; } 
+}
+</style>
+<div id="long-questions-part2" style="max-width:800px; margin:auto; font-family:Arial, sans-serif;">
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px; box-shadow: 0 10px 15px rgba(0,0,0,0.3);">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q6. What are Nuclear Forces? List their 5 main properties with explanation.</p>
+        <button onclick="toggleQ('ans6')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Explanation</button>
+        <div id="ans6" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:1.8;">
+            1. <b>Definition:</b> Wo strong attractive force jo nucleons (P aur N) ko nucleus ke andar bandh kar rakhta hai.<br>
+            2. <b>Strongest Force:</b> Ye nature ka sabse takatwar force hai (Gravity se 10<sup>38</sup> times strong).<br>
+            3. <b>Short Range:</b> Ye sirf bahut kam doori (approx 2-3 fm) tak kaam karta hai.<br>
+            4. <b>Charge Independent:</b> Ye P-P, N-N aur P-N ke beech ek jaisa lagta hai. Charge se koi matlab nahi.<br>
+            5. <b>Saturation Effect:</b> Ek nucleon sirf apne padosi nucleons par hi force lagata hai.<br>
+            6. <b>Non-Central Force:</b> Ye sirf center-to-center line par depend nahi karta, spin par bhi depend karta hai.
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q7. Explain Nuclear Fission with an example and explain the Chain Reaction.</p>
+        <button onclick="toggleQ('ans7')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Full Process</button>
+        <div id="ans7" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:2;">
+            1. Jab ek bhari nucleus (heavy nucleus) do halke nuclei mein toot-ta hai, toh use Fission kehte hain.<br>
+            2. <b>Example:</b> <sub>92</sub>U<sup>235</sup> + <sub>0</sub>n<sup>1</sup> &rarr; <sub>56</sub>Ba<sup>141</sup> + <sub>36</sub>Kr<sup>92</sup> + 3 <sub>0</sub>n<sup>1</sup> + Q (Energy).<br>
+            3. Is process mein bahut saari energy release hoti hai.<br>
+            4. <b>Chain Reaction:</b> Fission mein nikalne wale 3 neutrons aage aur 3 Uranium atoms ko todte hain.<br>
+            5. Ye process multiply hota rehta hai (1 &rarr; 3 &rarr; 9 &rarr; 27...).<br>
+            6. Agar control na kiya jaye toh ye Atom Bomb ban jata hai (Uncontrolled Chain Reaction).<br>
+            7. Agar control rods use karein toh ye Nuclear Reactor banta hai (Controlled Chain Reaction).
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q8. What is Nuclear Fusion? Why is very high temperature required for it?</p>
+        <button onclick="toggleQ('ans8')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Explanation</button>
+        <div id="ans8" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:1.8;">
+            1. Jab do halke nuclei (light nuclei) milkar ek bada nucleus banate hain, toh use Fusion kehte hain.<br>
+            2. <b>Example:</b> <sub>1</sub>H<sup>2</sup> + <sub>1</sub>H<sup>2</sup> &rarr; <sub>2</sub>He<sup>4</sup> + 24 MeV energy.<br>
+            3. Sun aur Stars mein energy ka source yahi Fusion process hai.<br>
+            4. <b>High Temp Requirement:</b> Nuclei positive charge hote hain, isliye wo ek doosre ko repel karte hain.<br>
+            5. Is strong repulsion (Coulomb barrier) ko todne ke liye nuclei ko bahut high kinetic energy chahiye.<br>
+            6. Ye energy sirf 10<sup>7</sup> K jaise high temperature par hi milti hai.<br>
+            7. Isliye Fusion ko "Thermonuclear Reaction" bhi kehte hain.
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q9. Discuss the 4 main features of the Binding Energy per Nucleon curve.</p>
+        <button onclick="toggleQ('ans9')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Features</button>
+        <div id="ans9" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:2.2;">
+            1. <b>Intermediate Nuclei Stability:</b> 30 < A < 170 ke liye B.E./nucleon lagbhag constant (8.0 MeV) hoti hai.<br>
+            2. <b>Maximum Value:</b> Iron (<sub>26</sub>Fe<sup>56</sup>) ki B.E./nucleon sabse zyada (8.8 MeV) hoti hai. Ye sabse stable hai.<br>
+            3. <b>Low A Nuclei:</b> Halke nuclei (A < 30) ki B.E./nucleon kam hoti hai, isliye wo Fusion karte hain stable hone ke liye.<br>
+            4. <b>High A Nuclei:</b> Bhari nuclei (A > 170) ki B.E. kam hone lagti hai (Uranium ki ~7.6 MeV), isliye wo Fission karte hain.<br>
+            5. <b>Conclusion:</b> Curve show karta hai ki nuclei hamesha zyada B.E. (jyada stability) ki taraf jana chahte hain.
+        </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8); background-size: 400% 400%; animation: moveBg 12s ease infinite; padding:20px; margin-bottom:20px; border-radius:20px;">
+        <p style="color:#000; font-weight:900; font-size:1.1rem;">Q10. How is the size of a nucleus related to its Mass Number? Explain the formula R = R₀ A<sup>1/3</sup>.</p>
+        <button onclick="toggleQ('ans10')" style="padding:10px 20px; background:#000; color:#00ffd5; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">Show Derivation</button>
+        <div id="ans10" style="display:none; margin-top:15px; background:rgba(0,0,0,0.95); color:#fff; padding:20px; border-radius:15px; line-height:2;">
+            1. Experimentally ye paya gaya ki Nucleus ka volume (V) uske mass number (A) ke directly proportional hota hai.<br>
+            2. <b>V &prop; A</b>.<br>
+            3. Nucleus ko spherical maante hain, toh <b><table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td>4</td></tr><tr><td style="border-top:1px solid #fff;">3</td></tr></table> &pi; R<sup>3</sup> &prop; A</b>.<br>
+            4. Sabhi constants (<table style="display:inline-table; vertical-align:middle; color:#fff;"><tr><td>4</td></tr><tr><td style="border-top:1px solid #fff;">3</td></tr></table> &pi;) ko remove karein: <b>R<sup>3</sup> &prop; A</b>.<br>
+            5. Dono taraf cube root lene par: <b>R &prop; A<sup>1/3</sup></b>.<br>
+            6. Proportionality constant <b>R<sub>0</sub></b> lagane par: <b>R = R<sub>0</sub> A<sup>1/3</sup></b>.<br>
+            7. Yahan <b>R<sub>0</sub></b> ek constant hai jiski value lagbhag 1.1 &times; 10<sup>-15</sup> m hoti hai.<br>
+            8. Ye formula batata hai ki jaise-jaise nucleons badhte hain, nucleus ka radius slow rate par badhta hai.
+        </div>
+    </div>
+
+</div>
+
+<script>
+function toggleQ(id) {
+    var x = document.getElementById(id);
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+</script>
+
+<style>
+@keyframes moveBg { 
+    0% { background-position: 0% 50%; } 
+    50% { background-position: 100% 50%; } 
+    100% { background-position: 0% 50%; } 
+}
+</style>
+
+</body>    
+</html>
