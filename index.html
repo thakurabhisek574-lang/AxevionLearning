@@ -8,11 +8,16 @@
     await OneSignal.init({
       appId: "f5654d9f-06fc-4c77-b111-809bd3914171",
       allowLocalhostAsSecureOrigin: true,
+      // Ye do lines browser ko sahi path batayengi
+      serviceWorkerPath: "OneSignalSDKWorker.js",
+      serviceWorkerParam: { scope: "/smart-study-for-toppers-physics-12/" }
     });
-    // Ye niche waali line automatic "Allow" ka pop-up samne layegi
+    
+    // Automatic prompt trigger karne ke liye
     await OneSignal.Notifications.requestPermission();
   });
 </script>
+  
   
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
