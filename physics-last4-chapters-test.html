@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Ranker's Reckoning: Elite 20 Mixed Challenge</title>
+    <style>
+    @keyframes rgb-8-glow {
+        0% { border-color: #00f7ff; box-shadow: 0 0 10px #00f7ff; }
+        12.5% { border-color: #ff00c8; box-shadow: 0 0 10px #ff00c8; }
+        25% { border-color: #48ff00; box-shadow: 0 0 10px #48ff00; }
+        37.5% { border-color: #ffff00; box-shadow: 0 0 10px #ffff00; }
+        50% { border-color: #ff8c00; box-shadow: 0 0 10px #ff8c00; }
+        62.5% { border-color: #9400d3; box-shadow: 0 0 10px #9400d3; }
+        75% { border-color: #ff0000; box-shadow: 0 0 10px #ff0000; }
+        87.5% { border-color: #0000ff; box-shadow: 0 0 10px #0000ff; }
+        100% { border-color: #00f7ff; box-shadow: 0 0 10px #00f7ff; }
+    }
+
+    body {
+        background-color: #0b131a; 
+        margin: 0; 
+        padding: 20px;
+        font-family: sans-serif;
+    }
+
+    .header-container {
+        position: relative;
+        max-width: 600px;
+        margin: 0 auto 20px auto;
+        text-align: center;
+    }
+
+    .back-btn {
+        position: absolute;
+        top:-40px;
+        left: 10px;
+        background: rgba(0, 247, 255, 0.1);
+        color: #00f7ff;
+        border: 2px solid #00f7ff;
+        padding: 8px 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .back-btn:hover {
+        background: #00f7ff;
+        color: #000;
+        box-shadow: 0 0 15px #00f7ff;
+        
+    }
+
+    .quiz-card {
+        background: linear-gradient(145deg, #0f2027, #203a43, #2c5364); 
+        padding: 20px; 
+        margin: 20px 0; 
+        border-radius: 15px; 
+        border: 3px solid #00f7ff; 
+        animation: rgb-8-glow 6s linear infinite;
+        position: relative;
+    }
+
+    .opt-btn {
+        display: block; 
+        width: 100%; 
+        margin: 10px 0; 
+        padding: 14px; 
+        background: rgba(255,255,255,0.05); 
+        color: #fff; 
+        border: 2px solid #00f7ff; 
+        border-radius: 10px; 
+        text-align: left; 
+        font-weight: 600; 
+        cursor: pointer;
+        transition: transform 0.2s;
+    }
+
+    .opt-btn:hover {
+        transform: scale(1.01);
+        background: rgba(0, 247, 255, 0.1);
+    }
+
+    .exp-btn {
+        background: transparent;
+        color: #ff00c8;
+        border: 1px solid #ff00c8;
+        padding: 6px 12px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: bold;
+        margin-top: 10px;
+        display: inline-block;
+        transition: all 0.3s ease;
+    }
+
+    .exp-btn:hover {
+        background: #ff00c8;
+        color: #fff;
+        box-shadow: 0 0 10px #ff00c8;
+    }
+
+    .explanation-box {
+        display: none;
+        margin-top: 12px;
+        padding: 12px;
+        background: rgba(255, 255, 255, 0.08);
+        border-left: 4px solid #ff00c8;
+        border-radius: 4px;
+        color: #e0e0e0;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+<div class="header-container">
+    <a href="phy-chapters.html" class="back-btn">← Back</a>
+    <h1 style="color:#00f7ff; text-transform:uppercase; text-shadow:0 0 15px #00f7ff; margin-top: 40px;">The Ranker's Reckoning</h1>
+    <p style="color:#ffffff; font-weight:bold;">Warning: Ultimate Mixed Challenge (20 Elite Questions)! Conceptual traps ahead.</p>
+</div>
+
+<div id="quiz-box" style="max-width:600px; margin:auto; position:relative; z-index:1;"></div>
+
+<div id="quiz-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; z-index:9999; flex-direction:column; align-items:center; justify-content:center; pointer-events:none;">
+    <div id="status-strip" style="width:100%; text-align:center; padding:30px 0;">
+        <h1 id="status-title"></h1>
+        <p id="status-message" style="font-weight:bold;"></p>
+        <p id="next-msg"></p>
+    </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+// Mixed pool of exactly 20 high-level questions (5 from each of the 4 chapters)
+const questions = [
+    {
+        q: "A photon of frequency ν collides with a stationary electron and scatters back. The wavelength of the scattered photon compared to the incident wavelength will be:",
+        opts: ["Exactly the same", "Slightly shorter", "Slightly longer", "Completely independent of scattering angle"],
+        ans: 2,
+        exp: "In Compton scattering, momentum transfer to the stationary electron forces the photon to lose energy. A drop in energy naturally causes a drop in wave frequency, making the resulting scattered wavelength slightly longer."
+    },
+    {
+        q: "In an intrinsic semiconductor, the Fermi energy level lies exactly in the middle of the energy gap. If it is doped with donor impurities (n-type) at room temperature, the Fermi level shifts:",
+        opts: ["Towards the valence band edge", "Towards the conduction band edge", "Remains precisely at the center", "Moves completely outside the forbidden gap"],
+        ans: 1,
+        exp: "Doping with donor atoms heavily fills the conduction band with majority electrons. This elevates the overall probability of electron distribution, shifting the Fermi level upwards closer to the conduction band edge."
+    },
+    {
+        q: "A hydrogen atom in its ground state absorbs a photon of energy E. If the potential energy reference frame is altered such that the electron's PE in this final state is exactly zero, the absolute total energy of the electron in that excited state becomes:",
+        opts: ["E", "-E", "-13.6 eV", "Zero"],
+        ans: 1,
+        exp: "Shifting coordinates changes the absolute potential reading across all layers. Since total energy in a normal hydrogen bound state is E_total = -K, making U = 0 at that precise shell adjusts the final reading calculation value exactly to -E."
+    },
+    {
+        q: "Two nuclei have their mass numbers in the exact ratio 1 : 8. The analytical ratio of their respective nuclear matter densities will evaluate to:",
+        opts: ["1 : 2", "1 : 8", "1 : 1", "2 : 1"],
+        ans: 2,
+        exp: "Nuclear radius scale follows R = R0 * A^(1/3). This means volume tracks directly as V ∝ A. Because density is defined as Mass / Volume, the variables of A cancel out cleanly, producing an unchanging structural density ratio of 1:1."
+    },
+    {
+        q: "A light source of threshold frequency causes photoemission. If the intensity of this light source is doubled while keeping its wave frequency constant, what occurs to the maximum kinetic energy of the emitted photoelectrons?",
+        opts: ["It doubles completely", "It is halved", "It remains completely unchanged", "It increases exponentially"],
+        ans: 2,
+        exp: "Einstein's photoelectric relation reveals that Max KE tracks strictly with the incoming photon's operational frequency. Changing the macroscopic intensity modifies only the quantity of photons emitted per second, leaving individual energy levels static."
+    },
+    {
+        q: "An alpha particle of charge 2e approaches a heavy stationary gold nucleus of charge Ze head-on. If the initial kinetic energy is K, the distance of closest approach is r0. If the particle's initial velocity is doubled, the new closest approach becomes:",
+        opts: ["r0 / 2", "2 * r0", "r0 / 4", "4 * r0"],
+        ans: 2,
+        exp: "Distance of closest approach r0 shares an inverse relationship with the initial Kinetic Energy (r0 ∝ 1/K). Doubling velocity shifts operational Kinetic Energy up by 4 times (since K = 0.5 * m * v^2), forcing the closest approach to contract to r0 / 4."
+    },
+    {
+        q: "When a forward bias voltage is applied across a p-n junction diode, the structural height of the potential barrier and the physical width of the depletion layer respectively:",
+        opts: ["Increase, Increase", "Decrease, Decrease", "Increase, Decrease", "Decrease, Increase"],
+        ans: 1,
+        exp: "Forward biasing sets up an external electrical path running opposite to the internal barrier. This active opposition directly decreases both the width of the physical depletion boundary layer and the net internal barrier potential height."
+    },
+    {
+        q: "A specific radioactive sample exhibits a decay rate of 6400 counts per minute. After an operational tracking window of exactly 24 hours, the active rate drops down to 400 counts per minute. The half-life of this isotope is:",
+        opts: ["4 hours", "6 hours", "8 hours", "12 hours"],
+        ans: 1,
+        exp: "The remaining rate fraction drops as 400 / 6400 = 1 / 16 = (1 / 2)^4. This signals that exactly 4 half-lives passed over the window. Computing the absolute interval yields: T_half = 24 hours / 4 = 6 hours."
+    },
+    {
+        q: "If the orbital angular momentum of a bound electron inside a hydrogen-like atom is quantized as L = nh / 2π, the orbital magnetic dipole moment M exhibits a functional variance with n as:",
+        opts: ["M ∝ n", "M ∝ n²", "M ∝ 1/n", "M is completely independent of n"],
+        ans: 0,
+        exp: "The gyromagnetic relation equates magnetic dipole moment as M = (e / 2m) * L. Since Bohr's core quantization rule holds that angular momentum scales linearly with n, the tracking magnetic moment M must also vary as M ∝ n."
+    },
+    {
+        q: "Two identical metal plates, X and Y, with work functions W_X and W_Y (where W_X > W_Y) are exposed to light of the same frequency. If photoemission occurs on both, the stopping potential V_X compared to V_Y will be:",
+        opts: ["V_X > V_Y", "V_X < V_Y", "V_X = V_Y", "Dependent on the intensity of light"],
+        ans: 1,
+        exp: "Einstein's equation states eV0 = hν - W. Since both experience the same incident photon energy (hν), a larger work function (W_X) leaves less energy for maximum kinetic energy, resulting in a lower stopping potential (V_X < V_Y)."
+    },
+    {
+        q: "In a stable nucleus, the binding energy per nucleon is high. If two very light nuclei (A < 10) undergo a nuclear fusion process to form a single heavier nucleus, the binding energy per nucleon of the product will be:",
+        opts: ["Lower than the reactants", "Higher than the reactants", "Exactly equal to the reactants", "Zero"],
+        ans: 1,
+        exp: "According to the binding energy curve, light nuclei have low binding energy per nucleon. When they undergo fusion, they move towards a more stable state higher up on the curve, meaning the product nucleus possesses a higher binding energy per nucleon."
+    },
+    {
+        q: "An alpha particle and a proton are accelerated from rest through the exact same potential difference V. The ratio of the de Broglie wavelength of the alpha particle to that of the proton (λ_alpha : λ_p) is:",
+        opts: ["1 : 1", "1 : 2", "1 : √8", "1 : 2√2"],
+        ans: 2,
+        exp: "The formula is λ = h / √(2mqV). Here, m_alpha = 4*m_p and q_alpha = 2*q_p. Substituting values yields λ_alpha / λ_p = √[ (m_p * q_p) / (4*m_p * 2*q_p) ] = 1 / √8."
+    },
+    {
+        q: "A photodiode is operated under a reverse-bias condition. When light falls on its junction, the fractional change in the reverse current is much easier to measure than the fractional change in forward current because:",
+        opts: ["Forward current is always zero", "Reverse saturation current is extremely small and dominated by minority carriers", "Reverse bias lowers the potential barrier", "Photons can only generate holes, not electrons"],
+        ans: 1,
+        exp: "Under reverse bias, the background current is very small as it is due to minority carriers. When light creates electron-hole pairs, the percentage/fractional change in this tiny reverse current is massive and easily detectable compared to the already large forward current."
+    },
+    {
+        q: "An electron makes a downward quantum jump from state n to the ground state (n=1). Accounting for the conservation of linear momentum (atomic recoil), the actual frequency of the emitted photon is:",
+        opts: ["Exactly equal to (En - E1)/h", "Slightly greater than (En - E1)/h", "Slightly less than (En - E1)/h", "Completely dependent on observer velocity"],
+        ans: 2,
+        exp: "To maintain zero net momentum, the heavy atom must recoil in the opposite direction of the emitted photon. A small portion of transition energy turns into atomic kinetic energy, leaving the photon frequency slightly less than expected."
+    },
+    {
+        q: "In a p-type semiconductor, the hole concentration is vastly superior to the conduction electron density. This material as a macroscopic whole carries:",
+        opts: ["A net positive charge", "A net negative charge", "Perfect electrical neutrality", "A variable charge depending on thickness"],
+        ans: 2,
+        exp: "Although holes are the majority charge carriers, the semiconductor remains perfectly neutral because the parent dopant atoms (trivalent atoms) and host semiconductor atoms are structurally uncharged before combination."
+    },
+    {
+        q: "An alpha particle of mass m and charge 2e is fired at a heavy stationary nucleus of charge Ze with an initial velocity v. If the impact parameter b is equal to the distance of closest approach r0 for a head-on collision, what is the scattering angle θ?",
+        opts: ["45°", "60°", "90°", "180°"],
+        ans: 2,
+        exp: "Using Rutherford's impact parameter formula: b = (r0 / 2) * cot(θ/2). Setting b = r0 yields r0 = (r0 / 2) * cot(θ/2), which means cot(θ/2) = 2. From scattering mathematics coordinates, this sets the absolute deflection angle θ to exactly 90°."
+    },
+    {
+        q: "In a common half-wave rectifier system operating with an input AC signal frequency of 50 Hz, the fundamental ripple frequency observed in the output DC voltage profile is:",
+        opts: ["25 Hz", "50 Hz", "100 Hz", "0 Hz"],
+        ans: 1,
+        exp: "A half-wave rectifier passes only one half-cycle of the input AC and blocks the other. The structural repetition rate (periodicity) of the output pulses remains exactly identical to the input cycle, preserving the 50 Hz frequency."
+    },
+    {
+        q: "A radioactive nucleus X decays sequentially into nucleus Y and then into stable nucleus Z. If the decay constants of X and Y are λ_X and λ_Y respectively, radioactive equilibrium (transient/secular) is achieved when the ratio of their populations (N_X / N_Y) becomes:",
+        opts: ["λ_X / λ_Y", "λ_Y / λ_X", "1", "λ_X * λ_Y"],
+        ans: 1,
+        exp: "In radioactive equilibrium, the rate of formation of Y equals its rate of decay, meaning λ_X * N_X = λ_Y * N_Y. Rearranging this expression gives the ratio of their atomic populations as N_X / N_Y = λ_Y / λ_X."
+    },
+    {
+        q: "The work function of cesium is 2.14 eV. If incident light of wavelength 600 nm falls on it, the maximum velocity of the emitted photoelectrons will be (Take h = 6.63×10⁻³⁴ J·s, m_e = 9.1×10⁻³¹ kg):",
+        opts: ["v_max ≈ 6 × 10⁵ m/s", "v_max ≈ 2 × 10⁵ m/s", "No photoelectrons are emitted at all", "v_max ≈ 1 × 10⁶ m/s"],
+        ans: 2,
+        exp: "Energy of incident photon E = hc / λ = (1240 eV·nm) / 600 nm ≈ 2.07 eV. Since the incident photon energy (2.07 eV) is strictly lower than the metal's required work function threshold (2.14 eV), no photoemission occurs."
+    },
+    {
+        q: "If the binding energy of a deuteron (₁H²) is 2.23 MeV and that of an alpha particle (₂He⁴) is 28.3 MeV, then the net energy released when two deuterons fuse completely to form one alpha particle is:",
+        opts: ["26.07 MeV", "30.53 MeV", "23.84 MeV", "56.6 MeV"],
+        ans: 2,
+        exp: "The fusion equation is: ₁H² + ₁H² → ₂He⁴ + Energy. Total binding energy of reactants = 2 × 2.23 MeV = 4.46 MeV. Binding energy of the product = 28.3 MeV. Net energy released = BE_products - BE_reactants = 28.3 - 4.46 = 23.84 MeV."
+    }
+];
+
+const quizBox = document.getElementById('quiz-box');
+
+questions.forEach((item, index) => {
+    let card = document.createElement('div');
+    card.className = "quiz-card";
+    card.innerHTML = `<p style="color:#00ffcc; font-size:18px; font-weight:bold;">Q${index+1}. ${item.q}</p>`;
+
+    item.opts.forEach((opt, oIdx) => {
+        let btn = document.createElement('button');
+        btn.innerText = opt;
+        btn.className = "opt-btn";
+
+        btn.onclick = () => {
+            const overlay = document.getElementById('quiz-overlay');
+            const title = document.getElementById('status-title');
+            const msg = document.getElementById('status-message');
+            const nxt = document.getElementById('next-msg');
+            const strip = document.getElementById('status-strip');
+
+            overlay.style.display = "flex";
+            overlay.style.pointerEvents = "auto"; 
+
+            if(oIdx === item.ans){
+                overlay.style.background = "rgba(0,0,0,0.85)";
+                strip.style.background = "transparent";
+                title.style.cssText = "font-family:'Dancing Script', cursive; color:#fff; font-size:60px; text-shadow:0 0 20px #00f7ff, 0 0 40px #00f7ff;";
+                title.innerText = "Physics Master";
+                msg.innerText = "Kya baat hai! Trap se bach gaya.";
+                msg.style.color = "#00f7ff";
+                nxt.innerText = "Next conceptual challenge...";
+
+                var end = Date.now() + 1500;
+                var colors = ['#00f7ff','#ff00c8','#48ff00','#ffff00','#ff8c00','#9400d3','#ff0000','#0000ff'];
+                (function frame(){
+                    confetti({particleCount:15,angle:60,spread:65,origin:{x:0},colors:colors, zIndex: 999999});
+                    confetti({particleCount:15,angle:120,spread:65,origin:{x:1},colors:colors, zIndex: 999999});
+                    if(Date.now() < end) requestAnimationFrame(frame);
+                })();
+            } else {
+                overlay.style.background = "radial-gradient(rgba(139,0,0,0.5) 10%, rgba(0,0,0,0.85) 90%)";
+                strip.style.background = "rgba(0,0,0,0.6)";
+                strip.style.width = "100%";
+                strip.style.padding = "30px 0";
+                title.style.cssText = "font-family:'Oswald', sans-serif; color:red; font-size:80px; font-weight:900; letter-spacing:10px; text-shadow:4px 4px 0px #000;";
+                title.innerText = "WASTED";
+                msg.innerText = "Trap mein phans gaya! Focus kar.";
+                msg.style.color = "#fff";
+                nxt.innerText = "";
+            }
+
+            setTimeout(() => {
+                overlay.style.display = "none";
+                overlay.style.pointerEvents = "none"; 
+            }, 2500);
+        };
+        card.appendChild(btn);
+    });
+
+    // Create dynamic toggle-able explanation segment
+    let expBtn = document.createElement('button');
+    expBtn.innerText = "Show Explanation";
+    expBtn.className = "exp-btn";
+    
+    let expBox = document.createElement('div');
+    expBox.className = "explanation-box";
+    expBox.innerText = item.exp;
+
+    expBtn.onclick = () => {
+        if(expBox.style.display === "block") {
+            expBox.style.display = "none";
+            expBtn.innerText = "Show Explanation";
+        } else {
+            expBox.style.display = "block";
+            expBtn.innerText = "Hide Explanation";
+        }
+    };
+
+    card.appendChild(expBtn);
+    card.appendChild(expBox);
+    quizBox.appendChild(card);
+});
+});
+</script>
+
+</body>
+</html>
