@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://thakurabhisek574-lang.github.io/phverse-physics/sitemap.xml
